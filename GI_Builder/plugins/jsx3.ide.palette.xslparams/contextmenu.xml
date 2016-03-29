@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  ~ Copyright (c) 2001-2011, TIBCO Software Inc.
+  ~ Use, modification, and distribution subject to terms of license.
+  --><data jsxid="jsxroot">
+  <record jsxexecute="(xslparampal.getPlugIn()).onXslParameterDelete(this.getContextRecordId());" jsxid="clear" jsximg="jsxapp:/images/icon_55.gif" jsxtext="Remove Parameter" jsxtip="completely removes this XSL parameter (both name and value) from the object"/>
+</data>

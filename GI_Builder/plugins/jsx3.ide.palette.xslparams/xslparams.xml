@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  ~ Copyright (c) 2001-2011, TIBCO Software Inc.
+  ~ Use, modification, and distribution subject to terms of license.
+  --><serialization xmlns="urn:tibco.com/v3.0">
+  <onAfterDeserialize><![CDATA[objJSX.onPaletteLoaded=function(){var
+P=jsx3.ide.getActiveEditor();if(P)this.onEditorChanged(P,null);};objJSX.onEditorChanged=function(r,m){var
+Ab=r&&r.getMode()=="component"&&(this.getPlugIn()).allAreCacheable(r.getSelection());this._makeActive(Ab);if(Ab)(this.getPlugIn()).onXslParameterChange();};objJSX._makeActive=(jsx3.$F(function(k){if(Boolean(jsxxslparam_name.getEnabled())!=Boolean(k)){jsxxslparam_name.setEnabled(k,true);jsxxslparam_value.setEnabled(k,true);jsxaddxslparam.setEnabled(k,true);if(!k)jsxxslparams.clearXmlData();jsxxslparams.setEnabled(k,!k);namelabel.setColor(k?"#000000":jsx3.gui.Form.DEFAULTDISABLEDCOLOR,true);valuelabel.setColor(k?"#000000":jsx3.gui.Form.DEFAULTDISABLEDCOLOR,true);}})).throttled();objJSX.onSelectionChanged=function(q){this.onEditorChanged(q);};objJSX._paramExec=function(){var
+u=jsxxslparam_name;var
+ub=jsxxslparam_value;var
+D=u.getValue();var
+gb=ub.getValue();if(D&&gb){(this.getPlugIn()).onXslParameterAdd(D,gb);u.setValue("");ub.setValue("");u.focus();}};objJSX.getList=function(){return jsxxslparams;};objJSX.getNameInput=function(){return jsxxslparam_name;};objJSX.getValueInput=function(){return jsxxslparam_value;};]]></onAfterDeserialize>
+  <object type="jsx3.gui.Block">
+   <dynamics jsxbgcolor="@Solid Medium" jsxborder="@Outset"/>
+   <variants jsxleft="0" jsxoverflow="1" jsxtop="0"/>
+   <strings jsxheight="100%" jsxhelpid="ide.palette.xsl" jsxname="xslparampal" jsxwidth="100%"/>
+    <object type="jsx3.gui.LayoutGrid">
+     <variants jsxleft="0" jsxoverflow="2" jsxrelativeposition="0" jsxtop="0"/>
+     <strings jsxheight="100%" jsxname="jsxxslparams_editor" jsxrows="48,*" jsxwidth="100%"/>
+      <object type="jsx3.gui.Block">
+       <dynamics jsxbgcolor="@Solid Medium"/>
+       <variants jsxoverflow="2" jsxrelativeposition="1"/>
+       <strings jsxheight="100%" jsxname="jsxxslparams_namevalueeditor" jsxpadding="22 6 0 98" jsxtextalign="right" jsxwidth="100%"/>
+        <object type="jsx3.gui.Block">
+         <dynamics jsxfontname="@Label1 FN" jsxfontsize="@Label1 FS" jsxfontweight="@Label1 FW" jsxtext="_gen_name"/>
+         <variants jsxleft="6" jsxrelativeposition="0" jsxtop="8" jsxwidth="60"/>
+         <strings jsxname="namelabel" jsxtextalign="right"/>
+        </object>
+        <object type="jsx3.gui.Block">
+         <dynamics jsxfontname="@Label1 FN" jsxfontsize="@Label1 FS" jsxfontweight="@Label1 FW" jsxtext="_gen_value"/>
+         <variants jsxleft="6" jsxrelativeposition="0" jsxtop="28" jsxwidth="60"/>
+         <strings jsxname="valuelabel" jsxtextalign="right"/>
+        </object>
+        <object type="jsx3.gui.Select">
+         <variants jsxleft="70" jsxrelativeposition="0" jsxtop="6" jsxtype="1"/>
+         <strings jsxname="jsxxslparam_name" jsxwidth="100%"/>
+         <events jsxexecute="((this.getParent()).getChild(&quot;jsxxslparam_value&quot;)).focus();"/>
+        </object>
+        <object type="jsx3.gui.TextBox">
+         <variants jsxleft="70" jsxrelativeposition="0" jsxtop="26"/>
+         <strings jsxname="jsxxslparam_value" jsxwidth="100%"/>
+         <events jsxexecute="xslparampal._paramExec();"/>
+        </object>
+        <object type="jsx3.gui.ToolbarButton">
+         <dynamics jsxtip="_atted_add"/>
+         <strings jsximage="jsx:///images/tree/plus.gif" jsxname="jsxaddxslparam"/>
+          <events jsxexecute="xslparampal._paramExec();"/>
+        </object>
+      </object>
+      <object type="jsx3.gui.Block">
+       <dynamics jsxbgcolor="@Solid Medium" jsxborder="@Inset Top"/>
+       <variants jsxoverflow="2"/>
+       <strings jsxheight="100%" jsxwidth="100%"/>
+         <object type="jsx3.gui.Matrix">
+          <dynamics jsxbgcolor="@Solid Light" jsxbodyborder="@Outset"/>
+          <variants jsxpagingmodel="1" jsxreorder="0" jsxresize="1" jsxscalewidth="1" jsxselectionmodel="0"/>
+         <strings jsxfocusstyle=";" jsxmenu="jsxmenu_xslparams" jsxname="jsxxslparams" jsxsortdirection="ascending" jsxsortpath=""/>
+         <events jsxafteredit="(xslparampal.getPlugIn()).onXslParameterEdit(strRECORDID,strNEWVALUE,this);" jsxmenu="strRECORDID!=null&amp;&amp;strRECORDID!=&quot;&quot;;"/>
+          <object type="jsx3.gui.Matrix.Column">
+           <dynamics jsxbg="@Fade TopDown" jsxborder="@Outset" jsxcellbgcolor="@Matrix HeaderCol BG" jsxcellborder="@Matrix HeaderCol Border" jsxtext="_gen_name"/>
+           <strings jsxcellpadding="3" jsxmask="jsxmenu_xslparams" jsxname="jsxxslparams_name" jsxpadding="2 3 0 3" jsxpath="jsxtext" jsxwidth="120"/>
+          </object>
+          <object type="jsx3.gui.Matrix.Column">
+           <dynamics jsxbg="@Fade TopDown" jsxborder="@Outset" jsxcellbgcolor="@Matrix ValueCol BG" jsxcellborder="@Matrix ValueCol Border" jsxtext="_gen_value"/>
+           <strings jsxcellpadding="3" jsxmask="jsxmask_paramstext" jsxname="jsxxslparams_value" jsxpadding="2 3 0 3" jsxpath="value" jsxvaluetemplate="&lt;xsl:template xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;&gt; &lt;xsl:choose&gt;   &lt;xsl:when test=&quot;@value=''&quot;&gt;&lt;span class=&quot;jsx3ide_props_emptystring&quot;&gt;[empty]&lt;/span&gt;&lt;/xsl:when&gt;   &lt;xsl:when test=&quot;@jsxmulti&quot;&gt;&lt;span class=&quot;jsx3ide_props_multi&quot;&gt;[multiple values]&lt;/span&gt;&lt;/xsl:when&gt;   &lt;xsl:otherwise&gt;&lt;xsl:value-of select=&quot;@value&quot; /&gt;&lt;/xsl:otherwise&gt; &lt;/xsl:choose&gt; &lt;/xsl:template&gt;" jsxwidth="*"/>
+             <object type="jsx3.gui.TextBox">
+              <strings jsxname="jsxmask_xslparamtext"/>
+             </object>
+          </object>
+        </object>
+        <object type="jsx3.gui.Menu">
+          <variants jsxshare="1"/> 
+          <strings jsxdisplay="none" jsxname="jsxmenu_xslparams" jsxxmlid="jsx3.ide.palette.xslparams.contextmenu"/>
+        </object>
+      </object>
+    </object>
+  </object>
+</serialization>
