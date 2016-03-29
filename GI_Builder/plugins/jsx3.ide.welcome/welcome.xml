@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  ~ Copyright (c) 2001-2011, TIBCO Software Inc.
+  ~ Use, modification, and distribution subject to terms of license.
+  --><serialization xmlns="urn:tibco.com/v3.0" jsxversion="3.4">
+  <onBeforeDeserialize/>
+  <onAfterDeserialize><![CDATA[objJSX.onCheck=function(o){var
+G=jsx3.ide.getIDESettings();G.set("prefs","builder","welcome_v",jsx3.getVersion(),o.getChecked()==jsx3.gui.CheckBox.CHECKED);};objJSX.onOpenExisting=function(k){var
+x=jsx3.gui.Event.wrap(k);var
+_a=(this.getServer()).getJSXByName("jsx3.ide.welcome.userMenus");_a.showContextMenu(x);};objJSX.openHelpContents=function(){jsx3.ide.openUserGuides();};objJSX.openAPIDoc=function(){var
+kb=jsx3.ide.getPlugIn("jsx3.ide.apidoc");if(kb&&kb.isInstalled())kb.openDoc();else (this.getServer()).alert("API Documentation Not Installed","It appears that the API documentation is not installed correctly in the api/xml directory.");};objJSX.onNewProject=function(){jsx3.ide.newProject();};objJSX.onJoin=function(){var
+v=(this.getServer()).getDynamicProperty("signup_url");jsx3.ide.openConsoleWindow(v,"jsxide_devsignup",null,null,"yes","yes","yes","yes","yes");};objJSX.initTool=function(){var
+la=jsx3.ide.getIDESettings();var
+W=la.get("prefs","builder","welcome_v",jsx3.getVersion());chk_open.setChecked(W||W==null);var
+N=(this.getServer()).getDynamicProperty("jsx3.app.Server.help."+jsx3.app.Browser.getSystem())||(this.getServer()).getDynamicProperty("jsx3.app.Server.help");if(N){var
+hb=jsx3.gui.HotKey.valueOf(N);ctxHelpTip.setText("Type <b>"+hb.getFormatted()+"</b> anywhere in General Interface Builder for context-sensitive help.",true);}var
+P=btn_close;P.setText('<img src="'+(this.getPlugIn()).resolveURI("close-icon.gif")+'" width="12" height="12" style="vertical-align:top;margin-right:4px;" alt="Close"/>'+P.getText(),true);version.setText("Version "+jsx3.getVersion(),true);var
+J="";var
+ta="doOpenProject";var
+Va=(this.getServer()).resolveURI("images/icon_82.gif");var
+Za=jsx3.ide.getRecentProjects();for(var
+fb=0;fb<6&&fb<Za.length;fb++){var
+bb=Za[fb];var
+v=String(bb);if(v&&v.indexOf(jsx3.APP_DIR_NAME)==0)v=v.substring(jsx3.APP_DIR_NAME.length+1);v=jsx3.util.strTruncate(v,24,null,0);J=J+('<img src="'+Va+'" alt="Bullet"/>'+'<a href="#" target="_blank" onclick="jsx3.ide.'+ta+"('"+bb+"'); return false;\">"+v+"</a><br/>");}recentProjects.setText(J,true);updatesRSS.subscribe("xmlbind",this,"_onUpdatesBind");forumRSS.subscribe("xmlbind",this,"_onForumBind");this._mm=new
+jsx3.amp.util.MenuManager();this._mm.addMenuBar("/",menuContainer);var
+yb=new
+jsx3.ide.ui.UserProjMenu(this.getPlugIn(),new
+jsx3.amp.XML({"@id":"jsx3.ide.welcome.userMenus","@path":"/"}));this._mm.addMenu(yb);this._mm.finishInit();};objJSX._onUpdatesBind=function(j){if(j.xml.getNamespaceURI()==jsx3.app.Cache.XSDNS&&(j.xml.getNodeName()=="error"||j.xml.getNodeName()=="timeout")){j.target.unsubscribe("xmlbind",this);j.target.resetXmlCacheData();j.target.setXMLURL(null);j.target.setXMLString("<rss><channel><item>  <title>Got the latest?</title>  <link>http://www.generalinterface.org/alias/download</link>  <description>Visit the General Interface Developer Center for the latest updates, news, articles, tutorials, how-to videos, discussions, downloads, development utilities, and more.</description></item><item>  <title>Where's the source code?</title>  <link>http://www.generalinterface.org/alias/os_home</link>  <description>The General Interface open source project home page connects you with the source code for GI, bug tracking, enhancement requests, specialized GI builds, and more useful tools.</description></item></channel></rss>");}};objJSX._onForumBind=function(h){if(h.xml.getNamespaceURI()==jsx3.app.Cache.XSDNS&&(h.xml.getNodeName()=="error"||h.xml.getNodeName()=="timeout")){h.target.unsubscribe("xmlbind",this);h.target.resetXmlCacheData();h.target.setXMLURL(null);h.target.setXMLString("<rss><channel><item>  <title>GI Development</title>  <link>http://www.generalinterface.org/alias/forum_dev</link></item><item>  <title>GI Performance Profiler</title>  <link>http://www.generalinterface.org/alias/forum_gipp</link></item><item>  <title>GI Test Automation Kit</title>  <link>http://www.generalinterface.org/alias/forum_gitak</link></item></channel></rss>");forumheader.setText("Forums",true);}};]]></onAfterDeserialize>
+  <object type="jsx3.gui.Dialog">
+    <variants jsxloadtype="1" jsxresize="0"/>
+    <strings jsxheight="500" jsxhelpid="ide.welcome" jsxname="ide_welcome" jsxwidth="575"/>
+    <dynamics jsxbgcolor="@Solid Medium"/>
+    <object type="jsx3.gui.WindowBar">
+      <variants/>
+      <strings jsxtext="Welcome"/>
+      <object type="jsx3.gui.ToolbarButton">
+        <variants/>
+        <strings jsxname="welcome_min_button"/>
+        <dynamics jsximage="@Min Icon" jsxtip="jsx3.gui.Dialog.min"/>
+        <events jsxexecute="((this.getParent()).getParent()).doToggleState();"/>
+      </object>
+      <object type="jsx3.gui.ToolbarButton">
+        <variants/>
+        <strings jsxname="welcome_close_button"/>
+        <dynamics jsximage="@Close Icon" jsxtip="jsx3.gui.Dialog.close"/>
+        <events jsxexecute="((this.getParent()).getParent()).doClose();"/>
+      </object>
+    </object>
+    <object type="jsx3.gui.LayoutGrid">
+      <strings jsxrows="70,*,110,28"/>
+      <object type="jsx3.gui.Block">
+        <variants jsxoverflow="2"/>
+        <strings jsxborder="0px;0px;solid 1px #E5E5E5;0px" jsxclassname="jsx3ide_welcome" jsxheight="100%" jsxwidth="100%"/>
+        <object type="jsx3.gui.Image">
+          <variants jsxheight="69" jsxoverflow="3" jsxrelativeposition="0" jsxwidth="567"/>
+          <strings jsxbgcolor="#567BC6" jsxname="image" jsxsrc="ws_header.jpg"/>
+        </object>
+        <object type="jsx3.gui.Block">
+          <variants jsxoverflow="2" jsxrelativeposition="0" jsxtop="51"/>
+          <strings jsxcolor="#DDEEFF" jsxname="version" jsxpadding="0 8 0 0" jsxtext="" jsxtextalign="right" jsxwidth="100%"/>
+        </object>
+        <object type="jsx3.gui.Block">
+          <strings jsxdisplay="none" jsxname="menuContainer"/>
+        </object>
+      </object>
+      <object type="jsx3.gui.Block">
+        <variants jsxoverflow="1"/>
+        <strings jsxbgcolor="#E4EBF1" jsxborder="solid 1px #B1B1B1;0px;0px;0px" jsxclassname="jsx3ide_welcome" jsxheight="100%" jsxpadding="6 0 6 0" jsxwidth="100%"/>
+        <object type="jsx3.gui.LayoutGrid">
+          <strings jsxcols="*,*,205"/>
+          <object type="jsx3.gui.Block">
+            <variants jsxoverflow="2"/>
+            <strings jsxheight="100%" jsxpadding="8 8 8 12" jsxwidth="100%"/>
+            <object type="jsx3.gui.Block">
+              <strings jsxclassname="content_topic" jsxtext="PROJECTS" jsxwidth="100%"/>
+            </object>
+            <object type="jsx3.gui.Block">
+              <strings jsxclassname="content_list" jsxtext="&lt;img src=&quot;GI_Builder/images/icon_57.gif&quot;/&gt;&lt;a                     href=&quot;#&quot; onclick=&quot;jsx3.html.getJSXParent(this).getAncestorOfName('ide_welcome').onNewProject(event);return false;&quot;                     target=&quot;_blank&quot;&gt;Create a New Project&lt;/a&gt;&lt;br/&gt;                   &lt;img src=&quot;GI_Builder/images/icon_60.gif&quot;/&gt;&lt;a                     href=&quot;#&quot; onclick=&quot;jsx3.html.getJSXParent(this).getAncestorOfName('ide_welcome').onOpenExisting(event);return false;&quot;                     target=&quot;_blank&quot;&gt;Open an Existing Project&lt;/a&gt;" jsxwidth="100%"/>
+            </object>
+
+            <object type="jsx3.gui.Block">
+              <strings jsxclassname="content_topic" jsxpadding="12 0 0 0" jsxtext="RECENT PROJECTS" jsxwidth="100%"/>
+            </object>
+            <object type="jsx3.gui.Block">
+              <strings jsxclassname="content_list" jsxname="recentProjects" jsxwidth="100%"/>
+            </object>
+          </object>
+          <object type="jsx3.gui.Block">
+            <variants jsxoverflow="2"/>
+            <strings jsxborder="0px;0px;0px;solid 1px #CED4D9" jsxheight="100%" jsxpadding="8 12 8 12" jsxwidth="100%"/>
+            <object type="jsx3.gui.Block">
+              <strings jsxclassname="content_topic" jsxtext="DOCUMENTATION" jsxwidth="100%"/>
+            </object>
+
+            <object type="jsx3.gui.Block">
+              <strings jsxclassname="content_list" jsxtext="&lt;img src=&quot;GI_Builder/images/icon_16.gif&quot;/&gt;&lt;a                   href=&quot;#&quot; onclick=&quot;jsx3.html.getJSXParent(this).getAncestorOfName('ide_welcome').openHelpContents(event);return false;&quot;                   target=&quot;_blank&quot;&gt;Online User Guides&lt;/a&gt;&lt;br/&gt;                 &lt;img src=&quot;GI_Builder/images/icon_16.gif&quot;/&gt;&lt;a                   href=&quot;#&quot; onclick=&quot;jsx3.html.getJSXParent(this).getAncestorOfName('ide_welcome').openAPIDoc(event);return false;&quot;                   target=&quot;_blank&quot;&gt;API Documentation&lt;/a&gt;" jsxwidth="100%"/>
+            </object>
+
+            <object type="jsx3.gui.Block">
+              <variants jsxoverflow="2"/>
+              <strings jsxcolor="#333333" jsxname="ctxHelpTip" jsxpadding="8 0 0 0" jsxwidth="100%"/>
+            </object>
+          </object>
+          <object type="jsx3.gui.Block">
+            <variants jsxoverflow="2"/>
+            <strings jsxborder="0px;0px;0px;solid 1px #CED4D9" jsxheight="100%" jsxpadding="6 6 6 10" jsxwidth="100%"/>
+
+            <object type="jsx3.gui.LayoutGrid">
+              <strings jsxrows="16,*"/>
+              <object type="jsx3.gui.Block">
+                <strings jsxclassname="content_topic" jsxtext="LATEST NEWS" jsxwidth="100%"/>
+              </object>
+              <object type="jsx3.gui.BlockX">
+                <variants jsxoverflow="1" jsxxmlasync="1"/>
+                <dynamics jsxxmlurl="rss_announce_url"/>
+                <strings jsxclassname="content_list" jsxname="updatesRSS" jsxpadding="0 2 2 0" jsxwidth="100%" jsxxslid="rss.xsl" jsxxslurl="rss.xsl"/>
+                <xslparameters descmaxlength="10000" jsxdisableescape="1" showdate="0" showdesc="1"/>
+              </object>
+            </object>
+
+          </object>
+        </object>
+      </object>
+      <object type="jsx3.gui.Block">
+        <variants jsxoverflow="2"/>
+        <strings jsxborder="solid 1px #83878A;0px;solid 1px #FFFFFF;0px" jsxclassname="jsx3ide_welcome" jsxheight="100%" jsxpadding="4 8 8 14" jsxwidth="100%"/>
+        <object type="jsx3.gui.Image">
+          <variants jsxheight="108" jsxoverflow="3" jsxrelativeposition="0" jsxwidth="567"/>
+          <strings jsxname="image" jsxsrc="community-bg.gif"/>
+        </object>
+        <object type="jsx3.gui.LayoutGrid">
+          <strings jsxrows="22,*"/>
+          <object type="jsx3.gui.Block">
+            <variants jsxoverflow="2"/>
+            <strings jsxstyleoverride="vertical-align:top;" jsxwidth="100%"/>
+            <object type="jsx3.gui.Block">
+              <variants jsxfontsize="15"/>
+              <strings jsxcolor="#FFFFFF" jsxfontweight="bold" jsxstyleoverride="vertical-align:top;" jsxtext="COMMUNITY"/>
+            </object>
+            <object type="jsx3.gui.Block">
+              <variants jsxheight="15"/>
+              <strings jsxpadding="4 0 0 8"/>
+              <object type="jsx3.gui.ImageButton">
+                <variants jsxheight="11" jsxwidth="70"/>
+                <strings jsximage="join.gif" jsxoverimage="join_over.gif"/>
+                <events jsxexecute="ide_welcome.onJoin(this);"/>
+              </object>
+            </object>
+          </object>
+
+          <object type="jsx3.gui.LayoutGrid">
+            <strings jsxcols="130,160,*"/>
+            <object type="jsx3.gui.Block">
+              <variants jsxoverflow="2"/>
+              <strings jsxheight="100%" jsxpadding="0 10 0 0" jsxwidth="100%"/>
+              <object type="jsx3.gui.Block">
+                <strings jsxclassname="cmty_topic" jsxtext="&lt;a href=&quot;http://www.generalinterface.org/alias/learning&quot; target=&quot;_blank&quot;&gt;Learning Center&lt;/a&gt;" jsxwidth="100%"/>
+              </object>
+              <object type="jsx3.gui.Block">
+                <dynamics jsxtext="welcome_text"/>
+                <strings jsxclassname="cmty_list" jsxwidth="100%"/>
+              </object>
+            </object>
+            <object type="jsx3.gui.Block">
+              <variants jsxoverflow="2"/>
+              <strings jsxborder="0px;0px;0px;dotted 1px #C7DEF0" jsxheight="100%" jsxpadding="0 10 0 10" jsxwidth="100%"/>
+              <object type="jsx3.gui.Block">
+                <strings jsxclassname="cmty_topic" jsxtext="&lt;a href=&quot;http://www.generalinterface.org/alias/os_home&quot; target=&quot;_blank&quot;&gt;Open Source Project&lt;/a&gt;" jsxwidth="100%"/>
+              </object>
+              <object type="jsx3.gui.Block">
+                <strings jsxclassname="cmty_list" jsxtext="&lt;a href=&quot;http://www.generalinterface.org/alias/os_browse_code&quot; target=&quot;_blank&quot;&gt;Browse Source Code&lt;/a&gt;&lt;br/&gt;                              &lt;a href=&quot;http://www.generalinterface.org/alias/bugs&quot; target=&quot;_blank&quot;&gt;Bug/Enhancement Tracking&lt;/a&gt;&lt;br/&gt;                              &lt;a href=&quot;http://www.generalinterface.org/alias/planning&quot; target=&quot;_blank&quot;&gt;Planning &amp;#38; Roadmap&lt;/a&gt;" jsxwidth="100%"/>
+              </object>
+            </object>
+            <object type="jsx3.gui.Block">
+              <variants jsxoverflow="2"/>
+              <strings jsxborder="0px;0px;0px;dotted 1px #C7DEF0" jsxheight="100%" jsxpadding="0 0 0 10" jsxwidth="100%"/>
+              <object type="jsx3.gui.Block">
+                <strings jsxclassname="cmty_topic" jsxname="forumheader" jsxtext="Popular Forum Topics" jsxwidth="100%"/>
+              </object>
+              <object type="jsx3.gui.BlockX">
+                <variants jsxxmlasync="1"/>
+                <dynamics jsxxmlurl="rss_popular_url"/>
+                <strings jsxclassname="cmty_list" jsxname="forumRSS" jsxwidth="100%" jsxxslid="rss.xsl" jsxxslurl="rss.xsl"/>
+                <xslparameters maxlength="32"/>
+              </object>
+            </object>
+          </object>
+        </object>
+      </object>
+      <object type="jsx3.gui.Block">
+        <variants jsxoverflow="2"/>
+        <strings jsxborder="solid 1px #D0D1E5;0px;0px;0px;" jsxclassname="jsx3ide_welcome" jsxheight="100%" jsxpadding="4 4 4 16" jsxwidth="100%"/>
+        <dynamics jsxbgcolor="@Solid Medium"/>
+        <object type="jsx3.gui.Image">
+          <variants jsxheight="27" jsxoverflow="3" jsxrelativeposition="0" jsxwidth="568"/>
+          <strings jsxname="image" jsxsrc="ws_footer.jpg"/>
+        </object>
+        <object type="jsx3.gui.CheckBox">
+          <variants jsxchecked="false" jsxheight="18"/>
+          <strings jsxcolor="#FFFFFF" jsxfontweight="bold" jsxname="chk_open" jsxtext="SHOW AT STARTUP"/>
+          <events jsxtoggle="ide_welcome.onCheck(this);"/>
+        </object>
+        <object type="jsx3.gui.Button">
+          <variants jsxheight="18" jsxindex="0" jsxleft="475" jsxrelativeposition="0" jsxtop="4" jsxwidth="72"/>
+          <strings jsxbgcolor="#205D9C" jsxborder="1px solid #F8F9FD;1px solid #B0B5BB;1px solid #B0B5BB;1px solid #F8F9FD" jsxcolor="#FFFFFF" jsxfontweight="bold" jsxmargin="0 4 0 0" jsxname="btn_close" jsxtext="CLOSE" jsxtextalign="center"/>
+          <events jsxexecute="ide_welcome.doClose();"/>
+        </object>
+      </object>
+    </object>
+  </object>
+</serialization>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  ~ Copyright (c) 2001-2011, TIBCO Software Inc.
+  ~ Use, modification, and distribution subject to terms of license.
+  --><serialization xmlns="urn:tibco.com/v3.0" jsxversion="3.2">
+  <onBeforeDeserialize/>
+  <onAfterDeserialize><![CDATA[try{var
+_=jsx3.ide.getSystemRelativeFile("legal/license.txt");if(!_.isFile())_=jsx3.ide.getSystemRelativeFile("LICENSE");if(_.isFile()){licensecontent.setText((_.read()).replace(/\r?\n/g,"<br/>\n"));}else licensecontent.setText("<h2>Could not open license file.</h2>");}catch(Kb){licensecontent.setText("<h2>Error opening license file.</h2>"+jsx3.NativeError.wrap(Kb));}]]></onAfterDeserialize>
+  <object type="jsx3.gui.Dialog">
+    <variants jsxheight="500" jsxmodal="1" jsxresize="0" jsxwidth="700"/>
+    <strings jsxname="dialog"/>
+    <dynamics jsxbgcolor="@Solid Medium"/>
+    <object type="jsx3.gui.WindowBar">
+      <variants/>
+      <strings jsxname="windowBar" jsxtext="License Agreement"/>
+    </object>
+    <object type="jsx3.gui.LayoutGrid">
+      <variants jsxleft="0" jsxoverflow="2" jsxrelativeposition="0" jsxtop="0"/>
+      <strings jsxheight="100%" jsxrows="*,26" jsxwidth="100%"/>
+      <object type="jsx3.gui.Block">
+        <variants jsxoverflow="2"/>
+        <strings jsxheight="100%" jsxpadding="8 8 12 8" jsxwidth="100%"/>
+        <object type="jsx3.gui.Block">
+          <dynamics jsxbgcolor="@Solid Light" jsxborder="@Dashed"/>
+          <variants jsxoverflow="1"/>
+          <strings jsxheight="100%" jsxname="licensecontent" jsxpadding="4" jsxwidth="100%"/>
+<!--
+          <object type="jsx3.gui.IFrame">
+            <strings jsxsrc="jsx:///../legal/license.htm" />
+          </object>
+-->
+        </object>
+      </object>
+      <object type="jsx3.gui.Block">
+        <variants jsxoverflow="1"/>
+        <strings jsxheight="100%" jsxtextalign="center" jsxwidth="100%"/>
+        <object type="jsx3.gui.Button">
+          <variants jsxheight="18" jsxindex="0"/>
+          <strings jsxtext="Agree"/>
+          <events jsxexecute="(dialog.getPlugIn()).agree(dialog);"/>
+        </object>
+        <object type="jsx3.gui.Button">
+          <variants jsxheight="18" jsxindex="0"/>
+          <strings jsxmargin="0 0 0 10" jsxtext="Disagree"/>
+          <events jsxexecute="(dialog.getPlugIn()).disagree(dialog);"/>
+        </object>
+      </object>
+    </object>
+  </object>
+</serialization>
