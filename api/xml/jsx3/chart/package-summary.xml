@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package access="public" id="class:jsx3.chart" name="jsx3.chart" version="1.1&#10; ">
+  <text>Various Charting related constants and utility functions.</text>
+  <author>Jesse Costello-Good</author>
+  <nested access="public" id="nested:jsx3.chart.AreaChart" loaded="1" name="jsx3.chart.AreaChart" shortname="AreaChart" type="class">
+    <text>An area chart.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.chart.AreaSeries" loaded="1" name="jsx3.chart.AreaSeries" shortname="AreaSeries" type="class">
+    <text>A data series for an area chart.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.chart.Axis" loaded="1" name="jsx3.chart.Axis" shortname="Axis" type="class">
+    <text>A base class for all types of axis.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.chart.BCChart" loaded="1" name="jsx3.chart.BCChart" shortname="BCChart" type="class">
+    <text>Superclass of bar and column chart.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.chart.BCSeries" loaded="1" name="jsx3.chart.BCSeries" shortname="BCSeries" type="class">
+    <text>Shared functionality between <code>BarSeries</code> and <code>ColumnSeries</code>.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.chart.BarChart" loaded="1" name="jsx3.chart.BarChart" shortname="BarChart" type="class">
+    <text>A bar chart.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.chart.BarSeries" loaded="1" name="jsx3.chart.BarSeries" shortname="BarSeries" type="class">
+    <text>The data series type for a jsx3.chart.BarChart.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.chart.BubbleSeries" loaded="1" name="jsx3.chart.BubbleSeries" shortname="BubbleSeries" type="class">
+    <text>A data series used for a jsx3.chart.BubbleChart.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.chart.CartesianChart" loaded="1" name="jsx3.chart.CartesianChart" shortname="CartesianChart" type="class">
+    <text>Base chart class for charts that render on a cartesian plane with x and y axes.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.chart.CategoryAxis" loaded="1" name="jsx3.chart.CategoryAxis" shortname="CategoryAxis" type="class">
+    <text>Axis type that displays a set of discrete values (categories).</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.chart.Chart" loaded="1" name="jsx3.chart.Chart" shortname="Chart" type="class">
+    <text>The base class for all charts in this package.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.chart.ChartComponent" loaded="1" name="jsx3.chart.ChartComponent" shortname="ChartComponent" type="class">
+    <text>A base class for every logical component of a chart.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.chart.ChartLabel" loaded="1" name="jsx3.chart.ChartLabel" shortname="ChartLabel" type="class">
+    <text>A chart component to render a text box.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.chart.ColumnChart" loaded="1" name="jsx3.chart.ColumnChart" shortname="ColumnChart" type="class">
+    <text>A column chart.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.chart.ColumnSeries" loaded="1" name="jsx3.chart.ColumnSeries" shortname="ColumnSeries" type="class">
+    <text>The data series type for a jsx3.chart.ColumnChart.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.chart.GridLines" loaded="1" name="jsx3.chart.GridLines" shortname="GridLines" type="class">
+    <text>A chart component that renders a grid of lines and fills aligned with an x and y axis.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.chart.Legend" loaded="1" name="jsx3.chart.Legend" shortname="Legend" type="class">
+    <text>Chart component that renders a simple legend.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.chart.LineChart" loaded="1" name="jsx3.chart.LineChart" shortname="LineChart" type="class">
+    <text>A line chart.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.chart.LineSeries" loaded="1" name="jsx3.chart.LineSeries" shortname="LineSeries" type="class">
+    <text>A data series for a line chart.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.chart.LinearAxis" loaded="1" name="jsx3.chart.LinearAxis" shortname="LinearAxis" type="class">
+    <text>Type of axis that displays a linear range of values.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.chart.LogarithmicAxis" loaded="1" name="jsx3.chart.LogarithmicAxis" shortname="LogarithmicAxis" type="class">
+    <text>An axis that displays a range of values logarithmically (base^n and base^(n+1) occupy same visual space).</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.chart.PieChart" loaded="1" name="jsx3.chart.PieChart" shortname="PieChart" type="class">
+    <text>A pie chart.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.chart.PieSeries" loaded="1" name="jsx3.chart.PieSeries" shortname="PieSeries" type="class">
+    <text>A data series for a pie chart.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.chart.PlotChart" loaded="1" name="jsx3.chart.PlotChart" shortname="PlotChart" type="class">
+    <text>An plot (scatter/point/bubble) chart.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.chart.PlotSeries" loaded="1" name="jsx3.chart.PlotSeries" shortname="PlotSeries" type="class">
+    <text>Class encapsulating behavior shared by PointSeries and BubbleSeries
+ </text>
+  </nested>
+  <nested access="public" id="nested:jsx3.chart.PointSeries" loaded="1" name="jsx3.chart.PointSeries" shortname="PointSeries" type="class">
+    <text>A data series used for a jsx3.chart.PointChart.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.chart.RadialChart" loaded="1" name="jsx3.chart.RadialChart" shortname="RadialChart" type="class">
+    <text>Base class for radial charts (pie chart is only example so far).</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.chart.Series" loaded="1" name="jsx3.chart.Series" shortname="Series" type="class">
+    <text>The base class for all data series classes.</text>
+  </nested>
+  <field access="public" class="jsx3.chart" final="1" fullname="jsx3.chart.QBOTTOM" id="sfield:QBOTTOM" name="QBOTTOM" static="1" value="&quot;bottom&quot;">
+    <type link="1" name="String"/>
+    <text> bottom/south quadrant</text>
+  </field>
+  <field access="public" class="jsx3.chart" final="1" fullname="jsx3.chart.QLEFT" id="sfield:QLEFT" name="QLEFT" static="1" value="&quot;left&quot;">
+    <type link="1" name="String"/>
+    <text> left/west quadrant</text>
+  </field>
+  <field access="public" class="jsx3.chart" final="1" fullname="jsx3.chart.QRIGHT" id="sfield:QRIGHT" name="QRIGHT" static="1" value="&quot;right&quot;">
+    <type link="1" name="String"/>
+    <text> right/east quadrant</text>
+  </field>
+  <field access="public" class="jsx3.chart" final="1" fullname="jsx3.chart.QTOP" id="sfield:QTOP" name="QTOP" static="1" value="&quot;top&quot;">
+    <type link="1" name="String"/>
+    <text> top/north quadrant</text>
+  </field>
+  <nested access="public" id="nested:jsx3.chart.PointRenderer" loaded="1" name="jsx3.chart.PointRenderer" shortname="PointRenderer" type="interface">
+    <text>Objects that implement this interface may be used in Line/Area/Point/Bubble charts to render the points that appear
+at each datapoint.</text>
+  </nested>
+  <method access="public" id="smethod:addGradient" name="addGradient" static="1">
+    <param name="fill" text="the base fill">
+      <type link="1" name="jsx3.vector.Fill"/>
+    </param>
+    <param name="value" text="the gradient in the form &quot;color [angle [alpha [colors ...]]]&quot;">
+      <type link="1" name="String"/>
+    </param>
+    <return text="">
+      <type link="1" name="jsx3.vector.Fill"/>
+    </return>
+    <text>Utility function, combines a vector fill and the property editor string format of a gradient</text>
+  </method>
+  <method access="public" id="smethod:asNumber" name="asNumber" static="1">
+    <param name="v" text="">
+      <type link="1" name="Object"/>
+    </param>
+    <return text="">
+      <type link="1" name="Number"/>
+    </return>
+    <text>Utility function, converts a value to a Number</text>
+  </method>
+  <method access="public" id="smethod:isCategoryAxis" name="isCategoryAxis" static="1">
+    <param name="obj" text="">
+      <type link="1" name="Object"/>
+    </param>
+    <return text="">
+      <type class="Boolean" link="1" name="boolean"/>
+    </return>
+    <text>Tests whether an object is an Axis that displays set of discreet categories</text>
+  </method>
+  <method access="public" id="smethod:isValueAxis" name="isValueAxis" static="1">
+    <param name="obj" text="">
+      <type link="1" name="Object"/>
+    </param>
+    <return text="">
+      <type class="Boolean" link="1" name="boolean"/>
+    </return>
+    <text>Tests whether an object is an Axis that displays a range of number values</text>
+  </method>
+  <method access="public" id="smethod:parseGradient" name="parseGradient" static="1">
+    <param name="value" text="the gradient in the form &quot;color [angle [alpha [colors ...]]]&quot;">
+      <type link="1" name="String"/>
+    </param>
+    <return text="[color,angle,alpha,colors]&#10;   ">
+      <type link="1" name="Array"/>
+    </return>
+    <text>Utility function, parses the property editor string format of a gradient into its constituent parts</text>
+  </method>
+  <method access="public" id="smethod:splitBox" name="splitBox" static="1">
+    <param name="left" text="the left value of the box to split">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <param name="top" text="the top value of the box to split">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <param name="width" text="the width value of the box to split">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <param name="height" text="the height value of the box to split">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <param name="placement" text="{top,left,right,bottom} where to place the first sub-box">
+      <type link="1" name="String"/>
+    </param>
+    <param name="w" text="the desired width of the first sub-box">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <param name="h" text="the desired height of the first sub-box">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <return text="[[l1,t1,w1,h1],[l2,t2,w2,h2]]&#10;   ">
+      <type link="1" name="Array"/>
+    </return>
+    <text>Splits a rectangular box in two pieces.</text>
+  </method>
+</package>

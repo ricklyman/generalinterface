@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface abstract="1" access="public" id="class:jsx3.chart.PointRenderer" name="jsx3.chart.PointRenderer" package="jsx3.chart" shortname="PointRenderer">
+  <text>Objects that implement this interface may be used in Line/Area/Point/Bubble charts to render the points that appear
+at each datapoint.
+<p/>
+Additionally, this interface contains several static fields that are implementors of this interface.
+ </text>
+  <field access="public" class="jsx3.chart.PointRenderer" fullname="jsx3.chart.PointRenderer.BOX" id="sfield:BOX" name="BOX" static="1">
+    <type link="1" name="jsx3.chart.PointRenderer"/>
+    <text> Creates a square point.
+   </text>
+  </field>
+  <field access="public" class="jsx3.chart.PointRenderer" fullname="jsx3.chart.PointRenderer.CIRCLE" id="sfield:CIRCLE" name="CIRCLE" static="1">
+    <type link="1" name="jsx3.chart.PointRenderer"/>
+    <text> Creates a circular point.
+   </text>
+  </field>
+  <field access="public" class="jsx3.chart.PointRenderer" fullname="jsx3.chart.PointRenderer.CROSS" id="sfield:CROSS" name="CROSS" static="1">
+    <type link="1" name="jsx3.chart.PointRenderer"/>
+    <text> Creates a x-shaped cross point.
+   </text>
+  </field>
+  <field access="public" class="jsx3.chart.PointRenderer" fullname="jsx3.chart.PointRenderer.DIAMOND" id="sfield:DIAMOND" name="DIAMOND" static="1">
+    <type link="1" name="jsx3.chart.PointRenderer"/>
+    <text> Creates a diamond shaped point.
+   </text>
+  </field>
+  <field access="public" class="jsx3.chart.PointRenderer" fullname="jsx3.chart.PointRenderer.TRIANGLE" id="sfield:TRIANGLE" name="TRIANGLE" static="1">
+    <type link="1" name="jsx3.chart.PointRenderer"/>
+    <text> Creates an upward-pointing triangular point.
+   </text>
+  </field>
+  <method abstract="1" access="public" id="method:areaToRadius" name="areaToRadius">
+    <param name="area" text="">
+      <type link="1" name="Number"/>
+    </param>
+    <return text="">
+      <type link="1" name="Number"/>
+    </return>
+    <text>Converts the area of the point to display to the radius of the box that it should fill. Required
+   if the point renderer will be used in a plot chart.</text>
+  </method>
+  <method abstract="1" access="public" id="method:render" name="render">
+    <param name="x1" text="">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <param name="y1" text="">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <param name="x2" text="">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <param name="y2" text="">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <param name="fill" text="">
+      <type link="1" name="jsx3.vector.Fill"/>
+    </param>
+    <param name="stroke" text="">
+      <type link="1" name="jsx3.vector.Stroke"/>
+    </param>
+    <return text="">
+      <type link="1" name="jsx3.vector.Tag"/>
+    </return>
+    <text>Renders the point in the bounds specified by {x1,y1} {x2,y2}.</text>
+  </method>
+</interface>
