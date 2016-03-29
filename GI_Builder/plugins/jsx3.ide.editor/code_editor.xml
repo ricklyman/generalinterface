@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  ~ Copyright (c) 2001-2011, TIBCO Software Inc.
+  ~ Use, modification, and distribution subject to terms of license.
+  --><serialization xmlns="urn:tibco.com/v3.0">
+  <onAfterDeserialize><![CDATA[var
+T={script:"js",css:"css",xml:"xml",xsl:"xml",cache:"xml"};objJSX.doIncrSearch=function(b,f,l,e){if(!this._eainited)this._tryEAInit();if(this._eacomplete)return editAreaLoader.doIncrSearch((jsxcodeeditor_content.getRendered()).id,b,f,l,e);};objJSX.getTextArea=function(){return jsxcodeeditor_content;};objJSX.getTextValue=function(){return typeof editAreaLoader!="undefined"&&jsxcodeeditor_content.getRendered()?editAreaLoader.getValue((jsxcodeeditor_content.getRendered()).id):jsxcodeeditor_content.getValue();};objJSX.setTextValue=function(n){typeof editAreaLoader!="undefined"?this._setEAVal(n):jsxcodeeditor_content.setValue(n);};objJSX._setEAVal=function(o){if(jsxcodeeditor_content.getRendered())editAreaLoader.setValue((jsxcodeeditor_content.getRendered()).id,o);else{jsxcodeeditor_content.setValue(o);jsx3.sleep(function(){if(jsxcodeeditor_content.getRendered())editAreaLoader.setValue((jsxcodeeditor_content.getRendered()).id,o);});}};objJSX._getPlugIn=function(){var
+Va=this;while(Va){if(typeof Va.getPlugIn=="function")return Va.getPlugIn();Va=Va.getParent();}};objJSX.initAsType=function(g){var
+ub={a:"txt",b:"net.sf.editarea"};var
+Ka=T[g]||ub.a;var
+Pa=((this._getPlugIn()).getEngine()).getPlugIn(ub.b);if(Pa)(Pa.load()).when((jsx3.$F(function(){this._eatype=Ka;jsx3.sleep(this._tryEAInit,null,this);})).bind(this));};objJSX._onFocus=function(){this._tryEAInit();};objJSX._tryEAInit=function(){var
+ub={a:"no",b:"en",c:"all",d:"Monaco, Courier New, monospace",e:"frame_",f:"keycapture"};if(!this._eainited){var
+F=jsxcodeeditor_content.getRendered();var
+ia=jsx3.html.getRelativePosition(null,F);if(ia.W<=0)return;this._eainited=true;this._eacomplete=false;var
+bb=this;editAreaLoader.window_loaded();editAreaLoader.init({id:F.id,start_highlight:true,allow_resize:ub.a,allow_toggle:false,language:ub.b,syntax:this._eatype,browsers:ub.c,allow_toggle:false,replace_tab_by_spaces:4,font_size:11,font_family:ub.d,EA_load_callback:function(){var
+t=window.frames[ub.e+F.id].editArea;t.settings.plugins.push(ub.f);window.frames[ub.e+F.id].editArea.add_plugin(ub.f,{onkeydown:function(s){var
+ha=jsx3.gui.Event.wrap(s);if(ha.hasModifier()){var
+sa=objJSX;while(sa){if(sa.checkHotKeys(ha))return false;sa=sa.getParent();}}objJSX._onKeyDown();}});bb._eacomplete=true;}});}};objJSX._onKeyDown=function(){this.publish({subject:"keyDown"});};]]></onAfterDeserialize>
+  <object type="jsx3.gui.Block">
+    <variants jsxoverflow="2"/>
+    <strings jsxheight="100%" jsxname="jsxcodeeditor" jsxwidth="100%"/>
+    <object type="jsx3.gui.TextBox">
+      <dynamics jsxbgcolor="@Solid Light" jsxfontname="@Script FN" jsxfontsize="@Script FS"/>
+      <variants jsxleft="0" jsxrelativeposition="1" jsxtop="0" jsxtype="1" jsxwrap="0"/>
+      <strings jsxborder="solid 0px;solid 0px;solid 0px;solid 0px" jsxheight="100%" jsxmargin="-1 0 0 0" jsxname="jsxcodeeditor_content" jsxoverflow="scroll" jsxpadding="2 2 2 2" jsxwidth="100%"/>
+      <events jsxfocus="jsxcodeeditor._onFocus();" jsxkeydown="jsxcodeeditor._onKeyDown(this,objEVENT);"/>
+    </object>
+  </object>
+</serialization>

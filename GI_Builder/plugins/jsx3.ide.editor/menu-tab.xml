@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  ~ Copyright (c) 2001-2011, TIBCO Software Inc.
+  ~ Use, modification, and distribution subject to terms of license.
+  --><data jsxid="jsxroot">
+  <record jsxexecute="jsx3.ide.close(jsx3.ide.getEditorForTab(this.getContextParent()));" jsxid="close" jsximg="jsxapp:/images/icon_24.gif" jsxtext="Close"/>
+  <record jsxexecute="jsx3.ide.revert(jsx3.ide.getEditorForTab(this.getContextParent()));" jsxid="revert" jsxtext="Revert"/>
+  <record CacheEditor="Save to Cache" jsxdivider="1" jsxexecute="jsx3.ide.save(jsx3.ide.getEditorForTab(this.getContextParent()));" jsxid="save" jsximg="jsxapp:/images/icon_13.gif" jsxtext="Save"/>
+  <record jsxexecute="jsx3.ide.saveAndReload(jsx3.ide.getEditorForTab(this.getContextParent()));" jsxid="savereload" jsximg="jsxapp:/images/icon_72.gif" jsxtext="Save and Reload" reload="1"/>
+  <record CacheEditor="Save a Copy to Disk..." jsxexecute="jsx3.ide.saveAs(jsx3.ide.getEditorForTab(this.getContextParent()));" jsxid="saveas" jsximg="jsxapp:/images/icon_14.gif" jsxtext="Save As..."/>
+</data>

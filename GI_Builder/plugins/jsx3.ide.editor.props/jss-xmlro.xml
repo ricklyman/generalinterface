@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  ~ Copyright (c) 2001-2011, TIBCO Software Inc.
+  ~ Use, modification, and distribution subject to terms of license.
+  --><serialization xmlns="urn:tibco.com/v3.0">
+  <onAfterDeserialize><![CDATA[objJSX.onShowMe=function(){var
+E=jsx3.ide.getActiveEditor();var
+ab=E.Bc();var
+Db=content;((Db.getServer()).getCache()).setDocument(Db.getXMLId(),ab);Db.repaint();};]]></onAfterDeserialize>
+    <object type="jsx3.gui.Tab">
+      <variants jsxindex="0"/>
+      <strings jsxhelpid="ide.editor.dynprop.xmlro" jsxname="mode_sourcefmt"/>
+      <events jsxshow="this.onShowMe();"/>
+        <object type="jsx3.gui.Block">
+          <variants jsxindex="0" jsxoverflow="2" jsxrelativeposition="0"/>
+          <strings jsxbgcolor="#ffffff" jsxborder="inset 1px;0px;0px;0px" jsxheight="100%" jsxname="bordertop" jsxwidth="100%"/>
+            <object type="jsx3.gui.BlockX">
+              <variants jsxfontsize="11" jsxoverflow="1" jsxrelativeposition="0"/>
+              <strings jsxheight="100%" jsxname="content" jsxpadding="4" jsxwidth="100%" jsxxslid="jsx:///xsl/xml.xsl" jsxxslurl="jsx:///xsl/xml.xsl"/>
+            </object>
+        </object>
+    </object>
+</serialization>

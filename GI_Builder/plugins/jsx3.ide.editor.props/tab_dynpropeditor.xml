@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  ~ Copyright (c) 2001-2011, TIBCO Software Inc.
+  ~ Use, modification, and distribution subject to terms of license.
+  --><serialization xmlns="urn:tibco.com/v3.0">
+  <onAfterDeserialize><![CDATA[objJSX.getTextArea=function(){return (this.getDescendantOfName("jsxcodeeditor")).getTextArea();};objJSX.getModePane=function(){return swap_pane;};var
+Ia=objJSX.getDescendantOfName("jsxdynpropeditor");(Ia.getChild(1)).setFormatHandler(function(d,j,Ia,h,q,f){if(j=="jsxautorow"){var
+W=(Ia.getAutoRowSession()).jsxid;if(W.indexOf("jsx")==0)(Ia.getAutoRowSession()).jsxid="";d.innerHTML=(Ia.getAutoRowSession()).jsxid;}});(Ia.getChild(0)).setFormatHandler(function(k,c,Ia,p,e,r){if(c=="jsxautorow")k.innerHTML="<div class=\"jsx3ide_dynprops_autorow\" onclick=\"jsx3.IDE.getJSXById('"+Ia.getId()+"').commitAutoRowSession();\">&#160;</div>";});]]></onAfterDeserialize>
+        <object type="jsx3.gui.Block">
+          <variants jsxoverflow="2" jsxrelativeposition="0"/>
+          <strings jsxbgcolor="#e8e8f5" jsxheight="100%" jsxhelpid="ide.editor.dynprop" jsxname="content" jsxoverflow="2" jsxpadding="8 0 0 0" jsxwidth="100%"/>
+            <object type="jsx3.gui.LayoutGrid">
+              <variants/>
+              <strings jsxheight="100%" jsxname="mylayout" jsxrows="*,22" jsxwidth="100%"/>
+                <object type="jsx3.gui.TabbedPane">
+                  <variants jsxshowtabs="0"/>
+                  <strings jsxheight="100%" jsxname="swap_pane" jsxwidth="100%"/>
+                    <object type="jsx3.gui.Tab">
+                      <variants jsxindex="0"/>
+                      <strings jsxname="mode_grid"/>
+                        <object type="jsx3.gui.Block">
+                          <dynamics jsxbgcolor="@Solid Medium"/>
+                          <variants jsxoverflow="2"/>
+                          <strings jsxheight="100%" jsxwidth="100%"/>
+                            <object type="jsx3.gui.Matrix">
+                              <dynamics jsxbgcolor="@Solid Light" jsxbodyborder="@Outset"/>
+                              <variants jsxautorow="2" jsxpagingmodel="1" jsxreorder="0" jsxresize="1" jsxscalewidth="1" jsxselectionmodel="0"/>
+                              <strings jsxfocusstyle=";" jsxmenu="jsxmenu_dynprop" jsxname="jsxdynpropeditor"/>
+                              <events jsxaftercommit="(content.getEditor()).setDirty(true);" jsxafteredit="if(objCOLUMN.getPath()==&quot;jsxid&quot;)this.redrawRecord(strRECORDID);"/>
+                              <xslparameters jsx_autorow_style="background-color:#f0f0f8;color:#0000ff;" jsx_rowbg1="#ffffff" jsx_rowbg2="#ffffff"/>
+                                <object type="jsx3.gui.Matrix.Column">
+                                  <dynamics jsxbg="@Fade TopDown" jsxborder="@Outset" jsxcellborder="@Matrix AllCol Border"/>
+                                  <variants jsxresize="0"/>
+                                  <strings jsxcellpadding="1" jsxname="jsxdyn1" jsxpadding="2 3 0 3" jsxvaluetemplate="@empty" jsxwidth="20"/>
+                                    <object type="jsx3.gui.ImageButton">
+                                     <variants jsxheight="16" jsxwidth="16"/>
+                                     <strings jsximage="jsxapp:/images/icon_55.gif" jsxname="imagebutton"/>
+                                     <events jsxexecute="(content.getEditor()).removeDP((this.emGetSession()).recordId,(this.emGetSession()).matrix);"/>
+                                    </object>
+                                </object>
+                                <object type="jsx3.gui.Matrix.Column">
+                                  <dynamics jsxbg="@Fade TopDown" jsxborder="@Outset" jsxcellborder="@Matrix AllCol Border" jsxtext="_gen_id"/>
+                                  <strings jsxcellpadding="3" jsxmask="myText" jsxname="jsxdyn2" jsxpadding="2 3 0 3" jsxpath="jsxid"/>
+                                    <object type="jsx3.gui.TextBox">
+                                      <dynamics jsxcolor="@Matrix Edit Color"/>
+                                      <strings jsxname="myText"/>
+                                    </object>
+                                </object>
+                                <object type="jsx3.gui.Matrix.Column">
+                                  <dynamics jsxbg="@Fade TopDown" jsxborder="@Outset" jsxcellborder="@Matrix AllCol Border" jsxtext="_gen_type"/>
+                                  <strings jsxcellpadding="3" jsxmask="myComboMask" jsxname="jsxdyn3" jsxpadding="2 3 0 3" jsxpath="type" jsxxsl="&lt;xsl:attribute name=&quot;style&quot;&gt;position:relative;padding-left:7px;&lt;/xsl:attribute&gt;&lt;xsl:value-of select=&quot;@path@&quot;/&gt;&amp;#160;"/>
+                                  <variants jsxwidth="160"/>
+                                    <object type="jsx3.gui.Select">
+                                      <dynamics jsxcolor="@Matrix Edit Color"/>
+                                      <variants jsxtype="1"/>
+                                      <strings jsxformathandler="@lookup" jsxname="myComboMask" jsxvaluetemplate="@empty" jsxxmlurl="jsxplugin://jsx3.ide.editor.props/propertylist.xml"/>
+                                      <xslparameters jsxsortpath="jsxtext"/>
+                                    </object>
+                                </object>
+                                <object type="jsx3.gui.Matrix.Column">
+                                  <dynamics jsxbg="@Fade TopDown" jsxborder="@Outset" jsxcellborder="@Matrix AllCol Border" jsxtext="_gen_eval"/>
+                                  <variants jsxwidth="36"/>
+                                  <strings jsxcellpadding="1" jsxcelltextalign="center" jsxname="jsxdyn4" jsxpadding="2 3 0 3" jsxpath="eval" jsxtextalign="center" jsxvaluetemplate="@empty"/>
+                                    <object type="jsx3.gui.CheckBox">
+                                      <strings jsxname="checkbox"/>
+                                    </object>
+                                </object>
+                                <object type="jsx3.gui.Matrix.Column">
+                                  <dynamics jsxbg="@Fade TopDown" jsxborder="@Outset" jsxcellborder="@Matrix AllCol Border" jsxtext="_gen_value"/>
+                                  <strings jsxcellpadding="3" jsxname="jsxdyn5" jsxpadding="2 3 0 3" jsxpath="jsxtext" jsxwidth="*"/>
+                                    <object type="jsx3.gui.TextBox">
+                                      <dynamics jsxcolor="@Matrix Edit Color"/>
+                                      <strings jsxname="textbox"/>
+                                    </object>
+                                </object>
+                            </object>
+                            <object type="jsx3.gui.Menu">
+                              <strings jsxdisplay="none" jsxname="jsxmenu_dynprop" jsxxmlurl="contextmenu.xml"/>
+                              <events jsxexecute="(this.getContextParent()).insertRecord({jsxid:jsx3.xml.CDF.getKey(),type:&quot;jsxtext&quot;},null,true);(content.getEditor()).setDirty(true);"/>
+                            </object>
+                        </object>
+                    </object>
+                </object>
+                <object type="jsx3.gui.Block">
+                  <variants jsxoverflow="2"/>
+                  <strings jsxbgcolor="#d8d8e5" jsxborder="solid 1px #9898a5;solid 0px;solid 0px;solid 0px" jsxheight="100%" jsxname="mychild1" jsxtextalign="right" jsxwidth="100%"/>
+                    <object type="jsx3.gui.Block">
+                      <variants jsxoverflow="2" jsxrelativeposition="1"/>
+                      <strings jsxbgcolor="#eeeeff" jsxborder="solid 0px;solid 0px;solid 0px;solid 1px #9898a5" jsxmargin="0 0 0 -1" jsxname="jsx_ide_componenteditor_btns"/>
+                        <object type="jsx3.gui.ToolbarButton">
+                          <dynamics jsxtip="_edit_view_grid"/>
+                          <variants jsxenabled="1" jsxleft="0" jsxrelativeposition="1" jsxstate="1" jsxtop="0" jsxtype="2"/>
+                          <strings jsxgroupname="editmode" jsximage="jsxapp:/images/icon_46.gif" jsxmargin="-1 -1 0 0" jsxname="btnViewComp" jsxtext=""/>
+                          <events jsxexecute="(content.getEditor()).setMode(&quot;grid&quot;);"/>
+                        </object>
+                        <object type="jsx3.gui.ToolbarButton">
+                          <dynamics jsxtip="_edit_view_expert"/>
+                          <variants jsxenabled="1" jsxleft="0" jsxrelativeposition="1" jsxtop="0" jsxtype="2"/>
+                          <strings jsxgroupname="editmode" jsximage="jsxapp:/images/icon_21.gif" jsxmargin="-1 -1 0 0" jsxname="btnViewRW" jsxtext=""/>
+                          <events jsxexecute="(content.getEditor()).setMode(&quot;source&quot;);"/>
+                        </object>
+                        <object type="jsx3.gui.ToolbarButton">
+                          <dynamics jsxtip="_edit_view_formatted"/>
+                          <variants jsxenabled="1" jsxleft="0" jsxrelativeposition="1" jsxtop="0" jsxtype="2"/>
+                          <strings jsxgroupname="editmode" jsximage="jsxapp:/images/icon_20.gif" jsxmargin="-1 -1 0 0" jsxname="btnViewRO" jsxtext=""/>
+                          <events jsxexecute="(content.getEditor()).setMode(&quot;sourcefmt&quot;);"/>
+                        </object>
+                        <object type="jsx3.gui.ToolbarButton">
+                          <variants jsxenabled="0" jsxleft="0" jsxrelativeposition="1" jsxstate="0" jsxtop="0" jsxtype="2"/>
+                          <strings jsxgroupname="editmode" jsximage="jsxapp:/images/icon_25.gif" jsxmargin="-1 -1 0 0" jsxname="btnViewHTML" jsxtext=""/>
+                        </object>
+                        <object type="jsx3.gui.ToolbarButton">
+                          <variants jsxenabled="0" jsxleft="0" jsxrelativeposition="1" jsxstate="0" jsxtop="0" jsxtype="2"/>
+                          <strings jsxgroupname="editmode" jsximage="jsxapp:/images/icon_76.gif" jsxmargin="-1 -1 0 0" jsxname="btnViewProfile" jsxtext=""/>
+                        </object>
+                    </object>
+                </object>
+            </object>
+        </object>
+</serialization>

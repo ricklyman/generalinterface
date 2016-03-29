@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  ~ Copyright (c) 2001-2011, TIBCO Software Inc.
+  ~ Use, modification, and distribution subject to terms of license.
+  --><serialization xmlns="urn:tibco.com/v3.0">
+  <onAfterDeserialize><![CDATA[var
+Fb=objJSX;objJSX.onShowMe=function(){var
+t=jsx3.ide.getActiveEditor();var
+Da=t.Bc();var
+Jb=jsx3.ide.makeXmlPretty(Da);this.setTextValue(Jb);(this.getDescendantOfName("jsxcodeeditor")).initAsType("xml");this._jsxdirty=false;};objJSX.getEditor=function(){var
+Xa=this.getAncestorOfType(jsx3.gui.Tab);return jsx3.ide.getEditorForTab(Xa);};(objJSX.getDescendantOfName("jsxcodeeditor")).subscribe("keyDown",(jsx3.$F(function(h){var
+nb=Fb.getEditor();if(!this.isDirty()){var
+Eb=this.getTextValue();jsx3.sleep(function(){if(Eb!=this.getTextValue()){this.setDirty(true);nb.setDirty(true);}},null,this);}})).bind(this));objJSX.getTextValue=function(){return (this.getDescendantOfName("jsxcodeeditor")).getTextValue();};objJSX.setTextValue=function(i){(this.getDescendantOfName("jsxcodeeditor")).setTextValue(i);};objJSX.isDirty=function(){return this._jsxdirty;};objJSX.setDirty=function(j){this._jsxdirty=j;};]]></onAfterDeserialize>
+    <object type="jsx3.gui.Tab">
+      <variants jsxindex="0"/>
+      <strings jsxhelpid="ide.editor.dynprop.xmlrw" jsxname="mode_source"/>
+      <events jsxshow="this.onShowMe();"/>
+        <include async="false" src="jsxplugin://jsx3.ide.editor/code_editor.xml"/>
+    </object>
+</serialization>

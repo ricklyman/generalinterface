@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  ~ Copyright (c) 2001-2011, TIBCO Software Inc.
+  ~ Use, modification, and distribution subject to terms of license.
+  --><serialization xmlns="urn:tibco.com/v3.0">
+  <onAfterDeserialize><![CDATA[objJSX.getTextArea=function(){return (this.getDescendantOfName("jsxcodeeditor")).getTextArea();};objJSX.getModePane=function(){return swap_pane;};objJSX.onColMenu=function(o,r){var
+hb=jsx3.ide.getEditorForTab(this);if(o=="add")hb.addLocaleColumn();else if(o=="del")hb.removeLocaleColumn(r);};colid.setFormatHandler(function(j,d,f,q,k,s){if(d=="jsxautorow"){var
+Ya=(f.getAutoRowSession()).jsxid;if(Ya.indexOf("jsx")==0)(f.getAutoRowSession()).jsxid="";j.innerHTML=(f.getAutoRowSession()).jsxid;}});coldel.setFormatHandler(function(h,f,d,s,b,e){if(f=="jsxautorow")h.innerHTML="<div class=\"jsx3ide_dynprops_autorow\" onclick=\"jsx3.IDE.getJSXById('"+d.getId()+"').commitAutoRowSession();\">&#160;</div>";});coldefault.setFormatHandler(jsx3.ide.PropsBundleEditor.FORMATTER);]]></onAfterDeserialize>
+    <object type="jsx3.gui.Block">
+      <variants jsxoverflow="2" jsxrelativeposition="0"/>
+      <strings jsxbgcolor="#e8e8f5" jsxheight="100%" jsxhelpid="ide.editor.propsbundle" jsxname="content" jsxoverflow="2" jsxpadding="8 0 0 0" jsxwidth="100%"/>
+      <object type="jsx3.gui.LayoutGrid">
+        <variants/>
+        <strings jsxheight="100%" jsxname="mylayout" jsxrows="*,22" jsxwidth="100%"/>
+        <object type="jsx3.gui.TabbedPane">
+          <variants jsxshowtabs="0"/>
+          <strings jsxheight="100%" jsxname="swap_pane" jsxwidth="100%"/>
+          <object type="jsx3.gui.Tab">
+            <variants jsxindex="0"/>
+            <strings jsxname="mode_grid"/>
+            <object type="jsx3.gui.Block">
+              <dynamics jsxbgcolor="@Solid Medium"/>
+              <variants jsxoverflow="2"/>
+              <strings jsxheight="100%" jsxwidth="100%"/>
+              <object type="jsx3.gui.Matrix">
+                <dynamics jsxbgcolor="@Solid Light" jsxbodyborder="@Outset"/>
+                <variants jsxautorow="2" jsxpagingmodel="1" jsxreorder="0" jsxresize="1" jsxselectionmodel="0"/>
+                <strings jsxfocusstyle=";" jsxname="jsxpropsbundleeditor"/>
+                <events jsxaftercommit="(content.getEditor()).setDirty(true);" jsxafteredit="if(objCOLUMN.getPath()==&quot;jsxid&quot;)this.redrawRecord(strRECORDID);"/>
+                <xslparameters jsx_autorow_style="background-color:#f0f0f8;color:#0000ff;" jsx_rowbg1="#ffffff" jsx_rowbg2="#ffffff"/>
+                <object type="jsx3.gui.Matrix.Column">
+                  <dynamics jsxbg="@Fade TopDown" jsxborder="@Outset" jsxcellborder="@Matrix AllCol Border"/>
+                  <variants jsxresize="0"/>
+                  <strings jsxcellpadding="1" jsxname="coldel" jsxpadding="2 3 0 3" jsxvaluetemplate="@empty" jsxwidth="20"/>
+                  <object type="jsx3.gui.ImageButton">
+                    <variants jsxheight="16" jsxwidth="16"/>
+                    <strings jsximage="jsxapp:/images/icon_55.gif" jsxname="imagebutton"/>
+                    <events jsxexecute="(content.getEditor()).removeDP((this.emGetSession()).recordId,(this.emGetSession()).matrix);"/>
+                  </object>
+                </object>
+                <object type="jsx3.gui.Matrix.Column">
+                  <dynamics jsxbg="@Fade TopDown" jsxborder="@Outset" jsxcellborder="@Matrix AllCol Border"/>
+                  <variants jsxresize="1"/>
+                  <strings jsxcellpadding="3" jsxname="colid" jsxpadding="2 3 0 3" jsxpath="jsxid" jsxtext="ID" jsxwidth="125"/>
+                  <object type="jsx3.gui.TextBox">
+                    <dynamics jsxcolor="@Matrix Edit Color"/>
+                    <strings jsxname="myText"/>
+                  </object>
+                </object>
+                <object type="jsx3.gui.Matrix.Column">
+                  <dynamics jsxbg="@Fade TopDown" jsxborder="@Outset" jsxcellborder="@Matrix AllCol Border"/>
+                  <variants jsxsort="0" jsxwidth="100"/>
+                  <strings jsxcellpadding="3" jsxmenu="jsxmenu_propsbundle" jsxname="coldefault" jsxpadding="2 3 0 3" jsxpath="_default" jsxtext="Default"/>
+                  <object type="jsx3.gui.TextBox">
+                    <dynamics jsxcolor="@Matrix Edit Color"/>
+                    <strings jsxname="myText"/>
+                  </object>
+                </object>
+              </object>
+              <object type="jsx3.gui.Menu">
+                <strings jsxdisplay="none" jsxname="jsxmenu_propsbundle" jsxxml="&lt;data jsxid=&quot;jsxroot&quot;&gt;   &lt;record jsxid=&quot;add&quot; jsxtext=&quot;Add New Locale&quot; jsximg=&quot;jsxapp:/images/icon_23.gif&quot;/&gt;   &lt;record jsxid=&quot;del&quot; jsxtext=&quot;Delete Locale&quot; jsximg=&quot;jsxapp:/images/icon_24.gif&quot;/&gt;   &lt;/data&gt;"/>
+                <events jsxexecute="content.onColMenu(strRECORDID,this.getContextParent());" jsxmenu="this.enableItem(&quot;del&quot;,(this.getContextParent()).getPath()!=&quot;_default&quot;);"/>
+              </object>
+            </object>
+          </object>
+        </object>
+        <object type="jsx3.gui.Block">
+          <variants jsxoverflow="2"/>
+          <strings jsxbgcolor="#d8d8e5" jsxborder="solid 1px #9898a5;solid 0px;solid 0px;solid 0px" jsxheight="100%" jsxname="mychild1" jsxtextalign="right" jsxwidth="100%"/>
+          <object type="jsx3.gui.Block">
+            <variants jsxoverflow="2" jsxrelativeposition="1"/>
+            <strings jsxbgcolor="#eeeeff" jsxborder="solid 0px;solid 0px;solid 0px;solid 1px #9898a5" jsxmargin="0 0 0 -1" jsxname="jsx_ide_componenteditor_btns"/>
+            <object type="jsx3.gui.ToolbarButton">
+              <dynamics jsxtip="_edit_view_grid"/>
+              <variants jsxenabled="1" jsxleft="0" jsxrelativeposition="1" jsxstate="1" jsxtop="0" jsxtype="2"/>
+              <strings jsxgroupname="editmode" jsximage="jsxapp:/images/icon_46.gif" jsxmargin="-1 -1 0 0" jsxname="btnViewComp" jsxtext=""/>
+              <events jsxexecute="(content.getEditor()).setMode(&quot;grid&quot;);"/>
+            </object>
+            <object type="jsx3.gui.ToolbarButton">
+              <dynamics jsxtip="_edit_view_expert"/>
+              <variants jsxenabled="1" jsxleft="0" jsxrelativeposition="1" jsxtop="0" jsxtype="2"/>
+              <strings jsxgroupname="editmode" jsximage="jsxapp:/images/icon_21.gif" jsxmargin="-1 -1 0 0" jsxname="btnViewRW" jsxtext=""/>
+              <events jsxexecute="(content.getEditor()).setMode(&quot;source&quot;);"/>
+            </object>
+            <object type="jsx3.gui.ToolbarButton">
+              <dynamics jsxtip="_edit_view_formatted"/>
+              <variants jsxenabled="1" jsxleft="0" jsxrelativeposition="1" jsxtop="0" jsxtype="2"/>
+              <strings jsxgroupname="editmode" jsximage="jsxapp:/images/icon_20.gif" jsxmargin="-1 -1 0 0" jsxname="btnViewRO" jsxtext=""/>
+              <events jsxexecute="(content.getEditor()).setMode(&quot;sourcefmt&quot;);"/>
+            </object>
+            <object type="jsx3.gui.ToolbarButton">
+              <variants jsxenabled="0" jsxleft="0" jsxrelativeposition="1" jsxstate="0" jsxtop="0" jsxtype="2"/>
+              <strings jsxgroupname="editmode" jsximage="jsxapp:/images/icon_25.gif" jsxmargin="-1 -1 0 0" jsxname="btnViewHTML" jsxtext=""/>
+            </object>
+            <object type="jsx3.gui.ToolbarButton">
+              <variants jsxenabled="0" jsxleft="0" jsxrelativeposition="1" jsxstate="0" jsxtop="0" jsxtype="2"/>
+              <strings jsxgroupname="editmode" jsximage="jsxapp:/images/icon_76.gif" jsxmargin="-1 -1 0 0" jsxname="btnViewProfile" jsxtext=""/>
+            </object>
+          </object>
+        </object>
+      </object>
+    </object>
+</serialization>
