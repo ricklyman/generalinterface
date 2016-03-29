@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  ~ Copyright (c) 2001-2011, TIBCO Software Inc.
+  ~ Use, modification, and distribution subject to terms of license.
+  --><serialization xmlns="urn:tibco.com/v3.0">
+  <onAfterDeserialize><![CDATA[var
+ga=jsx3.amp;objJSX.getFirstResponder=function(){return hotkeylist;};objJSX.savePrefs=function(){var
+R=hotkeylist;var
+H={};var
+D=(R.getXML()).selectNodes("//record");for(var
+Ka=D.iterator();Ka.hasNext();){var
+la=Ka.next();var
+kb=la.getAttribute("keycode");var
+ob=la.getAttribute("jsxdefault");var
+Da=la.getAttribute("jsxid");if(kb!=ob)H[Da]=kb;}var
+ea=jsx3.ide.getIDESettings(true);ea.set("hotkeys",H);ea.save();return {title:"Restart Required",message:"You must restart General Interface Builder for the changes to take effect."};};objJSX.loadPrefs=function(){var
+aa=hotkeylist;var
+D=(jsx3.ide.getIDESettings()).get("hotkeys")||{};var
+Ha=((ga.Engine.getEngine(this.getServer())).getPlugIn("jsx3.ide.ui")).getMenuManager();var
+Ba=Ha.getMenus();for(var
+tb=0;tb<Ba.length;tb++){var
+qb=Ba[tb];var
+xa=qb.getItems();for(var
+G=0;G<xa.length;G++){var
+Cb=xa[G];if(Cb instanceof ga.util.Menu){Ba.push(Cb);}else if(Cb instanceof jsx3.ide.ui.IdeMenuItem){var
+cb=Cb.getHotKeyId();if(cb){var
+Ga={};Ga.jsxid=cb;Ga.path=this._getMenuPath(Cb);Ga.jsxdefault=Cb.getDefaultHotKey();Ga.keycode=D[Ga.jsxid]||Ga.jsxdefault;if(Ga.keycode==Ga.jsxdefault)Ga.unchanged="true";if(Ga.keycode)try{var
+Ya=jsx3.gui.HotKey.valueOf(Ga.keycode);Ga.keycodeformatted=Ya.getFormatted();}catch(Kb){((this.getPlugIn()).getLog()).warn("Error parsing hot key string '"+Ga.keycode+"'.");}aa.insertRecord(Ga,null,false);}}}}aa.repaintData();};objJSX.getMenuItemForKey=function(g){var
+A=((ga.Engine.getEngine(this.getServer())).getPlugIn("jsx3.ide.ui")).getMenuManager();var
+y=A.getMenus();for(var
+za=0;za<y.length;za++){var
+Z=y[za];var
+D=Z.getItems();for(var
+F=0;F<D.length;F++){var
+Va=D[F];if(Va instanceof ga.util.Menu){y.push(Va);}else{var
+gb=Va.getHotKey();if(gb){var
+C=jsx3.gui.HotKey.valueOf(gb);if(C.getKey()==g.getKey())return Va;}}}}};objJSX._getMenuPath=function(e){var
+ub={a:" : ",b:/\{([\w\.]+)\}/g};var
+bb=e.getLabel();var
+Na=e.getMenu();while(Na!=null){bb=Na.getLabel()+ub.a+bb;Na=Na.getMenu();}var
+Ya=(this.getServer()).getProperties();bb=bb.replace(ub.b,function(m,l){var
+na=Ya.get(l);return na||m;});return bb;};objJSX._doChoose=function(k,c){var
+ub=this.load("hotkeys-dialog.xml",null,(ga.Engine.getEngine(this.getServer())).getPlugIn("jsx3.ide.settings.ide"));ub.subscribe("default",this,"_onSetDefault");ub.subscribe("set",this,"_onSetKey");ub.onInit((hotkeylist.getRecordNode(c)).getAttribute("jsxid"));ub.focus();};objJSX._onSetDefault=function(f){var
+mb=hotkeylist;var
+D=mb.getValue();var
+Ab=mb.getRecordNode(D);mb.insertRecordProperty(D,"keycode",Ab.getAttribute("jsxdefault"),false);if(Ab.getAttribute("jsxdefault")){var
+qb=jsx3.gui.HotKey.valueOf(Ab.getAttribute("jsxdefault"));mb.insertRecordProperty(D,"keycodeformatted",qb.getFormatted());}else mb.deleteRecordProperty(D,"keycodeformatted");mb.insertRecordProperty(D,"unchanged","true",true);this._makeDirty();};objJSX._onSetKey=function(e){var
+Za=hotkeylist;var
+ia=Za.getValue();Za.insertRecordProperty(ia,"keycode",e.key);var
+eb=jsx3.gui.HotKey.valueOf(e.key);Za.insertRecordProperty(ia,"keycodeformatted",eb.getFormatted());Za.deleteRecordProperty(ia,"unchanged",true);this._makeDirty();};objJSX._makeDirty=function(){(this.getPane()).setDirty(true);};]]></onAfterDeserialize>
+    <object type="jsx3.gui.Block">
+      <variants jsxleft="0" jsxoverflow="3" jsxrelativeposition="0" jsxtop="0"/>
+      <strings jsxheight="100%" jsxhelpid="ide.prefs.hotkeys" jsxname="prefspane" jsxpadding="8 8 4 8" jsxwidth="100%"/>
+          <object type="jsx3.gui.LayoutGrid">
+            <variants/>
+            <strings jsxrows="32,*"/>
+              <object type="jsx3.gui.Block">
+                <variants jsxoverflow="2"/>
+                <strings jsxheight="100%" jsxtext="Double-click on a row in the list to set the hot key for that menu item. Changes take effect after restarting the IDE." jsxwidth="100%"/>
+              </object>
+              <object type="jsx3.gui.Block">
+              <dynamics jsxbgcolor="@Solid Medium" jsxborder="@Inset"/>
+              <variants jsxoverflow="2"/>
+              <strings jsxheight="100%" jsxwidth="100%"/>
+                <object type="jsx3.gui.Matrix">
+                  <dynamics jsxbgcolor="@Solid Light"/>
+                  <variants jsxreorder="0" jsxresize="1" jsxscalewidth="1" jsxselectionmodel="1"/>
+                  <strings jsxbodyborder="1px solid #d8d8e5" jsxfocusstyle=";" jsxname="hotkeylist"/>
+                  <events jsxexecute="prefspane._doChoose(this,strRECORDID);"/>
+                  <xslparameters jsx_rowbg1="#ffffff"/>
+                    <object type="jsx3.gui.Matrix.Column">
+                      <dynamics jsxbg="@Fade TopDown" jsxborder="@Outset" jsxcellbgcolor="@Matrix AllCol BG" jsxcellborder="@Matrix AllCol Border"/>
+                      <strings jsxcellpadding="3" jsxpadding="2 3 0 3" jsxpath="path" jsxtext="Menu" jsxwidth="*"/>
+                    </object>
+                    <object type="jsx3.gui.Matrix.Column">
+                      <dynamics jsxbg="@Fade TopDown" jsxborder="@Outset NoRight" jsxcellbgcolor="@Matrix AllCol BG" jsxcellborder="@Matrix AllCol Border"/>
+                      <strings jsxcellfontname="Lucida Grande, Verdana, sans-serif" jsxcellpadding="3" jsxpadding="2 3 0 3" jsxpath="keycodeformatted" jsxtext="Key" jsxvaluetemplate="&lt;xsl:template xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;&gt;  &lt;xsl:choose&gt;    &lt;xsl:when test=&quot;{0} and not({0}='')&quot;&gt;      &lt;xsl:if test=&quot;@unchanged&quot;&gt;&lt;xsl:attribute name=&quot;style&quot;&gt;color:#9898a5;&lt;/xsl:attribute&gt;&lt;/xsl:if&gt;      &lt;xsl:value-of select=&quot;{0}&quot;/&gt;&lt;/xsl:when&gt;    &lt;xsl:otherwise&gt;&lt;xsl:text&gt;&amp;#160;&lt;/xsl:text&gt;&lt;/xsl:otherwise&gt;  &lt;/xsl:choose&gt;&lt;/xsl:template&gt;" jsxwidth="135"/>
+                    </object>
+                </object>
+            </object>
+        </object>
+    </object>
+</serialization>

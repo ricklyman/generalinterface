@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  ~ Copyright (c) 2001-2011, TIBCO Software Inc.
+  ~ Use, modification, and distribution subject to terms of license.
+  --><serialization xmlns="urn:tibco.com/v3.0">
+ <onAfterDeserialize><![CDATA[objJSX.refreshTree=(jsx3.$F(function(){var
+fa=jsx3.ide.getRecycleBin();var
+ya=jsx3.ide.getActiveEditor();var
+oa=this.getTree();if(fa&&ya.getMode()=="component"){(this.getPlugIn()).fillRecycleBinTree();oa.setDisplay(jsx3.gui.Block.DISPLAYBLOCK,true);}else oa.setDisplay(jsx3.gui.Block.DISPLAYNONE,true);})).throttled();objJSX._doRestore=function(){var
+Xa=this.getTree();var
+w=Xa.getRecord(Xa.getValue());if(w!=null&&w.mayrestore)jsx3.ide.doRecycleRestore(Xa);};objJSX._onSelect=function(c){(this.getPlugIn()).publish({subject:"selection",value:c.getValue()});};objJSX.getTree=function(){return jsx_ide_recycling_tree;};objJSX._doMinimize=function(){this.doToggleState(jsx3.gui.Dialog.MINIMIZED);};objJSX.onRsrcLoad=function(){var
+ub={a:"_doRestore",b:"r",c:"_doMinimize",d:"m",e:"doClose",f:"w",g:"utils",h:"additions",i:"toolbar"};this.registerHotKey(ub.a,ub.b,false,false,true);this.registerHotKey(ub.c,ub.d,false,true,false);this.registerHotKey(ub.e,ub.f,false,false,true);var
+Sa=new
+jsx3.amp.util.ToolbarManager(jsx_ide_recycle_bar);Sa.addSection(ub.g);Sa.addSection(ub.h,true);(((this.getPlugIn()).getExtPoint(ub.i)).processExts()).each(function(d){Sa.addItem(d);});this.refreshTree();};]]></onAfterDeserialize>
+  <object type="jsx3.gui.Dialog">
+   <dynamics jsxbgcolor="@Solid Medium"/>
+   <variants jsxheight="240" jsxoverflow="2" jsxwidth="281"/>
+   <strings jsxhelpid="ide.palette.recyc" jsxname="jsx_ide_recycling_bin"/>
+   <events jsxaftermove="this.constrainPosition();(this.getPlugIn()).doSaveRecycleBinState(this);" jsxafterresize="(this.getPlugIn()).doSaveRecycleBinState(this);"/>
+    <object type="jsx3.gui.WindowBar">
+     <variants/>
+     <strings jsxtext="Recycle Bin"/>
+      <object type="jsx3.gui.ToolbarButton">
+       <dynamics jsximage="@Min Icon" jsxtip="jsx3.gui.Dialog.min"/>
+       <variants/>
+       <strings/>
+       <events jsxexecute="((this.getParent()).getParent()).doToggleState();"/>
+      </object>
+      <object type="jsx3.gui.ToolbarButton">
+       <dynamics jsximage="@Close Icon" jsxtip="jsx3.gui.Dialog.close"/>
+       <variants/>
+       <strings/>
+       <events jsxexecute="((this.getParent()).getParent()).doClose();"/>
+      </object>
+    </object>
+    <object type="jsx3.gui.LayoutGrid">
+     <variants jsxleft="0" jsxoverflow="2" jsxrelativeposition="0" jsxtop="0"/>
+     <strings jsxheight="100%" jsxrows="26,*" jsxwidth="100%"/>
+      <object type="jsx3.gui.WindowBar">
+       <dynamics jsxbgcolor="@Solid Medium"/>
+       <variants jsxbartype="2" jsxfontsize="10" jsxheight="0" jsxoverflow="3" jsxrelativeposition="1"/>
+       <strings jsxname="jsx_ide_recycle_bar"/>
+      </object>
+      <object type="jsx3.gui.Block">
+       <variants jsxoverflow="2"/>
+       <strings jsxbgcolor="white" jsxheight="100%" jsxwidth="100%"/>
+        <object type="jsx3.gui.Tree">
+         <dynamics jsxpadding="@Tree Padding"/>
+         <variants jsxoverflow="3" jsxrelativeposition="1" jsxuseroot="0"/>
+         <strings jsxheight="100%" jsxname="jsx_ide_recycling_tree" jsxwidth="100%" jsxxslid="jsx_ide_recycling"/>
+         <events jsxchange="jsx_ide_recycling_bin._onSelect(this);"/>
+         <xslparameters jsxindent="16"/>
+        </object>
+      </object>
+    </object>
+  </object>
+</serialization>

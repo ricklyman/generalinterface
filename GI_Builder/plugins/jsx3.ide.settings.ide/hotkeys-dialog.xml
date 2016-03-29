@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  ~ Copyright (c) 2001-2011, TIBCO Software Inc.
+  ~ Use, modification, and distribution subject to terms of license.
+  --><serialization xmlns="urn:tibco.com/v3.0" jsxversion="3.2">
+ <onAfterDeserialize><![CDATA[var
+Aa=jsx3.gui.Event;var
+D=jsx3.gui.HotKey;var
+u=jsx3.gui.Form;objJSX.onKeyDown=function(c){var
+Da=c.shiftKey();var
+fa=c.ctrlKey();var
+G=c.altKey();var
+Qa=c.metaKey();var
+db=c.keyCode();if((Da||fa||G||Qa)&&!c.isModifierKey()){if(fa&&!Da&&!G&&!Qa&&db==D.keyDownCharToCode(".")){return;}else try{var
+Na=new
+jsx3.gui.HotKey(new
+Function(""),db,Da,fa,G,Qa);var
+nb=Na.getFormatted();var
+rb=(this.getParent()).getMenuItemForKey(Na);if(rb&&rb.getHotKeyId()!=this._selectedid)nb=nb+('<div style="padding-top:4px;color:#CC0000;font-size:9px;">Used for "'+(this.getParent())._getMenuPath(rb)+'"</div>');keyPane.setText(nb,true);btnSet.setEnabled(u.STATEENABLED,true);this._lasthk=Na;}catch(Kb){jsx3.ide.LOG.warn("Error testing hotkey.",jsx3.NativeError.wrap(Kb));}}else if(db==Aa.KEY_ENTER)if(btnSet.getEnabled()==u.STATEENABLED)this.onSet();if(!c.isModifierKey())c.cancelAll();};objJSX.onDefault=function(){this.publish({subject:"default"});this.doClose();};objJSX.onCancel=function(){this.publish({subject:"cancel"});this.doClose();};objJSX.onSet=function(){this.publish({subject:"set",key:this._lasthk.getKey()});this.doClose();};objJSX.onInit=function(a){this._selectedid=a;};objJSX.registerHotKey("onCancel",".",false,true,false);]]></onAfterDeserialize>
+  <object type="jsx3.gui.Dialog">
+   <dynamics jsxbgcolor="@Solid Medium"/>
+   <variants jsxmodal="1" jsxresize="0"/>
+   <strings jsxheight="130" jsxname="dialog" jsxwidth="250"/>
+   <events jsxkeydown="this.onKeyDown(objEVENT);"/>
+    <object type="jsx3.gui.Block">
+     <variants jsxoverflow="1"/>
+     <strings jsxheight="100%" jsxrelativeposition="1" jsxwidth="100%"/>
+      <object type="jsx3.gui.LayoutGrid">
+       <variants jsxleft="0" jsxoverflow="2" jsxrelativeposition="0" jsxtop="0"/>
+       <strings jsxheight="100%" jsxrows="40,*,30" jsxwidth="100%"/>
+        <object type="jsx3.gui.Block">
+         <dynamics jsxpadding="@8Pixel"/>
+         <variants jsxoverflow="2"/>
+         <strings jsxheight="100%" jsxtext="Press any modifier key combination on the keyboard." jsxwidth="100%"/>
+        </object>
+        <object type="jsx3.gui.Block">
+         <dynamics jsxpadding="@8Pixel"/>
+         <variants jsxoverflow="1"/>
+         <strings jsxfontname="Lucida Grande, Verdana, sans-serif" jsxfontsize="12" jsxfontweight="bold" jsxheight="100%" jsxname="keyPane" jsxtextalign="center" jsxwidth="100%"/>
+        </object>
+        <object type="jsx3.gui.Block">
+         <variants jsxoverflow="1"/>
+         <strings jsxheight="100%" jsxpadding="4 4 0 0" jsxtextalign="right" jsxwidth="100%"/>
+          <object type="jsx3.gui.Button">
+           <variants jsxheight="18" jsxindex="0"/>
+           <strings jsxmargin="0 20 0 0" jsxname="btnDefault" jsxtext="Use Default" jsxtextalign="center"/>
+           <events jsxexecute="(this.getAncestorOfType(jsx3.gui.Dialog)).onDefault();"/>
+          </object>
+          <object type="jsx3.gui.Button">
+           <variants jsxheight="18" jsxindex="0"/>
+           <strings jsxmargin="0 4 0 0" jsxname="btnCancel" jsxtext="Cancel" jsxtextalign="center"/>
+           <events jsxexecute="(this.getAncestorOfType(jsx3.gui.Dialog)).onCancel();"/>
+          </object>
+          <object type="jsx3.gui.Button">
+           <variants jsxenabled="0" jsxheight="18" jsxindex="0"/>
+           <strings jsxfontweight="bold" jsxmargin="0 4 0 0" jsxname="btnSet" jsxtext="Set" jsxtextalign="center"/>
+           <events jsxexecute="(this.getAncestorOfType(jsx3.gui.Dialog)).onSet();"/>
+          </object>
+        </object>
+      </object>
+    </object>
+  </object>
+</serialization>
