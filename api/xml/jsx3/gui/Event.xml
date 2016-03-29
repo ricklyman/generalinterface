@@ -1,0 +1,472 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class access="public" id="class:jsx3.gui.Event" name="jsx3.gui.Event" package="jsx3.gui" shortname="Event" since="3.1&#10; ">
+  <text>Native browser event wrapper.</text>
+  <superclass id="super:0" loaded="1" name="Object"/>
+  <superclass direct="1" id="super:1" loaded="1" name="jsx3.lang.Object"/>
+  <field access="public" class="jsx3.gui.Event" final="1" fullname="jsx3.gui.Event.BEFOREUNLOAD" id="sfield:BEFOREUNLOAD" name="BEFOREUNLOAD" static="1" value="&quot;beforeunload&quot;">
+    <type link="1" name="String"/>
+    <text> The browser native event type <code>beforeunload</code>.</text>
+  </field>
+  <field access="public" class="jsx3.gui.Event" final="1" fullname="jsx3.gui.Event.BLUR" id="sfield:BLUR" name="BLUR" static="1" value="&quot;blur&quot;">
+    <type link="1" name="String"/>
+    <text> The browser native event type <code>blur</code>.</text>
+  </field>
+  <field access="public" class="jsx3.gui.Event" final="1" fullname="jsx3.gui.Event.CHANGE" id="sfield:CHANGE" name="CHANGE" static="1" value="&quot;change&quot;">
+    <type link="1" name="String"/>
+    <text> The browser native event type <code>change</code>.</text>
+  </field>
+  <field access="public" class="jsx3.gui.Event" final="1" fullname="jsx3.gui.Event.CLICK" id="sfield:CLICK" name="CLICK" static="1" value="&quot;click&quot;">
+    <type link="1" name="String"/>
+    <text> The browser native event type <code>click</code>.</text>
+  </field>
+  <field access="public" class="jsx3.gui.Event" final="1" fullname="jsx3.gui.Event.DOUBLECLICK" id="sfield:DOUBLECLICK" name="DOUBLECLICK" static="1" value="&quot;dblclick&quot;">
+    <type link="1" name="String"/>
+    <text> The browser native event type <code>dblclick</code>.</text>
+  </field>
+  <field access="public" class="jsx3.gui.Event" final="1" fullname="jsx3.gui.Event.ERROR" id="sfield:ERROR" name="ERROR" static="1" value="&quot;error&quot;">
+    <type link="1" name="String"/>
+    <text> The browser native event type <code>error</code>.</text>
+  </field>
+  <field access="public" class="jsx3.gui.Event" final="1" fullname="jsx3.gui.Event.FOCUS" id="sfield:FOCUS" name="FOCUS" static="1" value="&quot;focus&quot;">
+    <type link="1" name="String"/>
+    <text> The browser native event type <code>focus</code>.</text>
+  </field>
+  <field access="public" class="jsx3.gui.Event" final="1" fullname="jsx3.gui.Event.KEYDOWN" id="sfield:KEYDOWN" name="KEYDOWN" static="1" value="&quot;keydown&quot;">
+    <type link="1" name="String"/>
+    <text> The browser native event type <code>keydown</code>.</text>
+  </field>
+  <field access="public" class="jsx3.gui.Event" final="1" fullname="jsx3.gui.Event.KEYPRESS" id="sfield:KEYPRESS" name="KEYPRESS" static="1" value="&quot;keypress&quot;">
+    <type link="1" name="String"/>
+    <text> The browser native event type <code>keypress</code>.</text>
+  </field>
+  <field access="public" class="jsx3.gui.Event" final="1" fullname="jsx3.gui.Event.KEYUP" id="sfield:KEYUP" name="KEYUP" static="1" value="&quot;keyup&quot;">
+    <type link="1" name="String"/>
+    <text> The browser native event type <code>keyup</code>.</text>
+  </field>
+  <field access="public" class="jsx3.gui.Event" final="1" fullname="jsx3.gui.Event.KEY_0" id="sfield:KEY_0" name="KEY_0" static="1" value="48">
+    <type class="Number" link="1" name="int"/>
+    <text> The browser native key code for the 0 key.</text>
+  </field>
+  <field access="public" class="jsx3.gui.Event" final="1" fullname="jsx3.gui.Event.KEY_9" id="sfield:KEY_9" name="KEY_9" static="1" value="57">
+    <type class="Number" link="1" name="int"/>
+    <text> The browser native key code for the 9 key.</text>
+  </field>
+  <field access="public" class="jsx3.gui.Event" final="1" fullname="jsx3.gui.Event.KEY_A" id="sfield:KEY_A" name="KEY_A" static="1" value="65">
+    <type class="Number" link="1" name="int"/>
+    <text> The browser native key code for the A key.</text>
+  </field>
+  <field access="public" class="jsx3.gui.Event" final="1" fullname="jsx3.gui.Event.KEY_ALT" id="sfield:KEY_ALT" name="KEY_ALT" static="1" value="18">
+    <type class="Number" link="1" name="int"/>
+    <text> The browser native key code for the Alt key.</text>
+  </field>
+  <field access="public" class="jsx3.gui.Event" final="1" fullname="jsx3.gui.Event.KEY_ARROW_DOWN" id="sfield:KEY_ARROW_DOWN" name="KEY_ARROW_DOWN" static="1" value="40">
+    <type class="Number" link="1" name="int"/>
+    <text> The browser native key code for the down arrow key.</text>
+  </field>
+  <field access="public" class="jsx3.gui.Event" final="1" fullname="jsx3.gui.Event.KEY_ARROW_LEFT" id="sfield:KEY_ARROW_LEFT" name="KEY_ARROW_LEFT" static="1" value="37">
+    <type class="Number" link="1" name="int"/>
+    <text> The browser native key code for the left arrow key.</text>
+  </field>
+  <field access="public" class="jsx3.gui.Event" final="1" fullname="jsx3.gui.Event.KEY_ARROW_RIGHT" id="sfield:KEY_ARROW_RIGHT" name="KEY_ARROW_RIGHT" static="1" value="39">
+    <type class="Number" link="1" name="int"/>
+    <text> The browser native key code for the right arrow key.</text>
+  </field>
+  <field access="public" class="jsx3.gui.Event" final="1" fullname="jsx3.gui.Event.KEY_ARROW_UP" id="sfield:KEY_ARROW_UP" name="KEY_ARROW_UP" static="1" value="38">
+    <type class="Number" link="1" name="int"/>
+    <text> The browser native key code for the up arrow key.</text>
+  </field>
+  <field access="public" class="jsx3.gui.Event" final="1" fullname="jsx3.gui.Event.KEY_BACKSPACE" id="sfield:KEY_BACKSPACE" name="KEY_BACKSPACE" static="1" value="8">
+    <type class="Number" link="1" name="int"/>
+    <text> The browser native key code for the Backspace key.</text>
+  </field>
+  <field access="public" class="jsx3.gui.Event" final="1" fullname="jsx3.gui.Event.KEY_CONTROL" id="sfield:KEY_CONTROL" name="KEY_CONTROL" static="1" value="17">
+    <type class="Number" link="1" name="int"/>
+    <text> The browser native key code for the Ctrl key.</text>
+  </field>
+  <field access="public" class="jsx3.gui.Event" final="1" fullname="jsx3.gui.Event.KEY_DELETE" id="sfield:KEY_DELETE" name="KEY_DELETE" static="1" value="46">
+    <type class="Number" link="1" name="int"/>
+    <text> The browser native key code for the Delete key.</text>
+  </field>
+  <field access="public" class="jsx3.gui.Event" final="1" fullname="jsx3.gui.Event.KEY_END" id="sfield:KEY_END" name="KEY_END" static="1" value="35">
+    <type class="Number" link="1" name="int"/>
+    <text> The browser native key code for the End key.</text>
+  </field>
+  <field access="public" class="jsx3.gui.Event" final="1" fullname="jsx3.gui.Event.KEY_ENTER" id="sfield:KEY_ENTER" name="KEY_ENTER" static="1" value="13">
+    <type class="Number" link="1" name="int"/>
+    <text> The browser native key code for the Enter key.</text>
+  </field>
+  <field access="public" class="jsx3.gui.Event" final="1" fullname="jsx3.gui.Event.KEY_ESCAPE" id="sfield:KEY_ESCAPE" name="KEY_ESCAPE" static="1" value="27">
+    <type class="Number" link="1" name="int"/>
+    <text> The browser native key code for the Esc key.</text>
+  </field>
+  <field access="public" class="jsx3.gui.Event" final="1" fullname="jsx3.gui.Event.KEY_F1" id="sfield:KEY_F1" name="KEY_F1" static="1" value="112">
+    <type class="Number" link="1" name="int"/>
+    <text> The browser native key code for the F1 key.</text>
+  </field>
+  <field access="public" class="jsx3.gui.Event" final="1" fullname="jsx3.gui.Event.KEY_F15" id="sfield:KEY_F15" name="KEY_F15" static="1" value="126">
+    <type class="Number" link="1" name="int"/>
+    <text> The browser native key code for the F15 key.</text>
+  </field>
+  <field access="public" class="jsx3.gui.Event" final="1" fullname="jsx3.gui.Event.KEY_HOME" id="sfield:KEY_HOME" name="KEY_HOME" static="1" value="36">
+    <type class="Number" link="1" name="int"/>
+    <text> The browser native key code for the Home key.</text>
+  </field>
+  <field access="public" class="jsx3.gui.Event" final="1" fullname="jsx3.gui.Event.KEY_INSERT" id="sfield:KEY_INSERT" name="KEY_INSERT" static="1" value="45">
+    <type class="Number" link="1" name="int"/>
+    <text> The browser native key code for the Insert key.</text>
+  </field>
+  <field access="public" class="jsx3.gui.Event" final="1" fullname="jsx3.gui.Event.KEY_META" id="sfield:KEY_META" name="KEY_META" static="1" value="224">
+    <type class="Number" link="1" name="int"/>
+    <text> The browser native key code for the Meta key.</text>
+  </field>
+  <field access="public" class="jsx3.gui.Event" final="1" fullname="jsx3.gui.Event.KEY_NP0" id="sfield:KEY_NP0" name="KEY_NP0" static="1" value="96">
+    <type class="Number" link="1" name="int"/>
+    <text> The browser native key code for the number pad 0 key.</text>
+  </field>
+  <field access="public" class="jsx3.gui.Event" final="1" fullname="jsx3.gui.Event.KEY_NP9" id="sfield:KEY_NP9" name="KEY_NP9" static="1" value="105">
+    <type class="Number" link="1" name="int"/>
+    <text> The browser native key code for the number pad 9 key.</text>
+  </field>
+  <field access="public" class="jsx3.gui.Event" final="1" fullname="jsx3.gui.Event.KEY_NPADD" id="sfield:KEY_NPADD" name="KEY_NPADD" static="1" value="107">
+    <type class="Number" link="1" name="int"/>
+    <text> The browser native key code for the number pad addition (+) key.</text>
+  </field>
+  <field access="public" class="jsx3.gui.Event" final="1" fullname="jsx3.gui.Event.KEY_NPDEC" id="sfield:KEY_NPDEC" name="KEY_NPDEC" static="1" value="110">
+    <type class="Number" link="1" name="int"/>
+    <text> The browser native key code for the number pad decimal (.) key.</text>
+  </field>
+  <field access="public" class="jsx3.gui.Event" final="1" fullname="jsx3.gui.Event.KEY_NPDIV" id="sfield:KEY_NPDIV" name="KEY_NPDIV" static="1" value="111">
+    <type class="Number" link="1" name="int"/>
+    <text> The browser native key code for the number pad division (/) key.</text>
+  </field>
+  <field access="public" class="jsx3.gui.Event" final="1" fullname="jsx3.gui.Event.KEY_NPMUL" id="sfield:KEY_NPMUL" name="KEY_NPMUL" static="1" value="106">
+    <type class="Number" link="1" name="int"/>
+    <text> The browser native key code for the number pad multiply (*) key.</text>
+  </field>
+  <field access="public" class="jsx3.gui.Event" final="1" fullname="jsx3.gui.Event.KEY_NPSUB" id="sfield:KEY_NPSUB" name="KEY_NPSUB" static="1" value="109">
+    <type class="Number" link="1" name="int"/>
+    <text> The browser native key code for the number pad subtract (-) key.</text>
+  </field>
+  <field access="public" class="jsx3.gui.Event" final="1" fullname="jsx3.gui.Event.KEY_PAGE_DOWN" id="sfield:KEY_PAGE_DOWN" name="KEY_PAGE_DOWN" static="1" value="34">
+    <type class="Number" link="1" name="int"/>
+    <text> The browser native key code for the Page Down key.</text>
+  </field>
+  <field access="public" class="jsx3.gui.Event" final="1" fullname="jsx3.gui.Event.KEY_PAGE_UP" id="sfield:KEY_PAGE_UP" name="KEY_PAGE_UP" static="1" value="33">
+    <type class="Number" link="1" name="int"/>
+    <text> The browser native key code for the Page Up key.</text>
+  </field>
+  <field access="public" class="jsx3.gui.Event" final="1" fullname="jsx3.gui.Event.KEY_SHIFT" id="sfield:KEY_SHIFT" name="KEY_SHIFT" static="1" value="16">
+    <type class="Number" link="1" name="int"/>
+    <text> The browser native key code for the Shift key.</text>
+  </field>
+  <field access="public" class="jsx3.gui.Event" final="1" fullname="jsx3.gui.Event.KEY_SPACE" id="sfield:KEY_SPACE" name="KEY_SPACE" static="1" value="32">
+    <type class="Number" link="1" name="int"/>
+    <text> The browser native key code for the space bar key.</text>
+  </field>
+  <field access="public" class="jsx3.gui.Event" final="1" fullname="jsx3.gui.Event.KEY_TAB" id="sfield:KEY_TAB" name="KEY_TAB" static="1" value="9">
+    <type class="Number" link="1" name="int"/>
+    <text> The browser native key code for the Tab key.</text>
+  </field>
+  <field access="public" class="jsx3.gui.Event" final="1" fullname="jsx3.gui.Event.KEY_Z" id="sfield:KEY_Z" name="KEY_Z" static="1" value="90">
+    <type class="Number" link="1" name="int"/>
+    <text> The browser native key code for the Z key.</text>
+  </field>
+  <field access="public" class="jsx3.gui.Event" final="1" fullname="jsx3.gui.Event.LOAD" id="sfield:LOAD" name="LOAD" static="1" value="&quot;load&quot;">
+    <type link="1" name="String"/>
+    <text> The browser native event type <code>load</code>.</text>
+  </field>
+  <field access="public" class="jsx3.gui.Event" final="1" fullname="jsx3.gui.Event.MOUSEDOWN" id="sfield:MOUSEDOWN" name="MOUSEDOWN" static="1" value="&quot;mousedown&quot;">
+    <type link="1" name="String"/>
+    <text> The browser native event type <code>mousedown</code>.</text>
+  </field>
+  <field access="public" class="jsx3.gui.Event" final="1" fullname="jsx3.gui.Event.MOUSEMOVE" id="sfield:MOUSEMOVE" name="MOUSEMOVE" static="1" value="&quot;mousemove&quot;">
+    <type link="1" name="String"/>
+    <text> The browser native event type <code>mousemove</code>.</text>
+  </field>
+  <field access="public" class="jsx3.gui.Event" final="1" fullname="jsx3.gui.Event.MOUSEOUT" id="sfield:MOUSEOUT" name="MOUSEOUT" static="1" value="&quot;mouseout&quot;">
+    <type link="1" name="String"/>
+    <text> The browser native event type <code>mouseout</code>.</text>
+  </field>
+  <field access="public" class="jsx3.gui.Event" final="1" fullname="jsx3.gui.Event.MOUSEOVER" id="sfield:MOUSEOVER" name="MOUSEOVER" static="1" value="&quot;mouseover&quot;">
+    <type link="1" name="String"/>
+    <text> The browser native event type <code>mouseover</code>.</text>
+  </field>
+  <field access="public" class="jsx3.gui.Event" final="1" fullname="jsx3.gui.Event.MOUSEUP" id="sfield:MOUSEUP" name="MOUSEUP" static="1" value="&quot;mouseup&quot;">
+    <type link="1" name="String"/>
+    <text> The browser native event type <code>mouseup</code>.</text>
+  </field>
+  <field access="public" class="jsx3.gui.Event" final="1" fullname="jsx3.gui.Event.MOUSEWHEEL" id="sfield:MOUSEWHEEL" name="MOUSEWHEEL" static="1" value="&quot;mousewheel&quot;">
+    <type link="1" name="String"/>
+    <text> The browser native event type <code>mousewheel</code>.</text>
+  </field>
+  <field access="public" class="jsx3.gui.Event" final="1" fullname="jsx3.gui.Event.RESIZE" id="sfield:RESIZE" name="RESIZE" static="1" value="&quot;resize&quot;">
+    <type link="1" name="String"/>
+    <text> The browser native event type <code>resize</code>.</text>
+  </field>
+  <field access="public" class="jsx3.gui.Event" final="1" fullname="jsx3.gui.Event.UNLOAD" id="sfield:UNLOAD" name="UNLOAD" static="1" value="&quot;unload&quot;">
+    <type link="1" name="String"/>
+    <text> The browser native event type <code>unload</code>.</text>
+  </field>
+  <method access="public" id="method:altKey" name="altKey">
+    <return text="">
+      <type class="Boolean" link="1" name="boolean"/>
+    </return>
+    <text>Returns <code>true</code> if the alt key was pressed.</text>
+  </method>
+  <method access="public" id="method:backspaceKey" name="backspaceKey">
+    <return text="">
+      <type class="Boolean" link="1" name="boolean"/>
+    </return>
+    <text>Returns <code>true</code> if the backspace key was pressed.</text>
+  </method>
+  <method access="public" id="method:button" name="button">
+    <return text="">
+      <type class="Number" link="1" name="int"/>
+    </return>
+    <text>Returns integer designating the mouse button clicked/moused-down/moused-up; 1 (left), 2 (right), and as supported.</text>
+  </method>
+  <method access="public" id="method:cancelBubble" name="cancelBubble">
+    <text>Cancels event bubbling for the event.
+   </text>
+  </method>
+  <method access="public" id="method:cancelKey" name="cancelKey">
+    <text>Cancels the key from firing by setting the keyCode to 0 (zero) for the event.
+   </text>
+  </method>
+  <method access="public" id="method:cancelReturn" name="cancelReturn">
+    <text>Cancels the return value for the event.
+   </text>
+  </method>
+  <method access="public" id="method:clientX" name="clientX">
+    <return text="pixel position&#10;   ">
+      <type class="Number" link="1" name="int"/>
+    </return>
+    <text>Returns the clientX property for the event (where it occurred on-screen).</text>
+  </method>
+  <method access="public" id="method:clientY" name="clientY">
+    <return text="pixel position&#10;   ">
+      <type class="Number" link="1" name="int"/>
+    </return>
+    <text>Returns the clientY property for the event (where it occurred on-screen).</text>
+  </method>
+  <method access="public" id="method:ctrlKey" name="ctrlKey">
+    <return text="">
+      <type class="Boolean" link="1" name="boolean"/>
+    </return>
+    <text>Returns <code>true</code> the ctrl key was pressed.</text>
+  </method>
+  <method access="public" id="method:deleteKey" name="deleteKey">
+    <return text="">
+      <type class="Boolean" link="1" name="boolean"/>
+    </return>
+    <text>Returns <code>true</code> if the delete key was pressed.</text>
+  </method>
+  <method access="public" id="method:downArrow" name="downArrow">
+    <return text="">
+      <type class="Boolean" link="1" name="boolean"/>
+    </return>
+    <text>Returns <code>true</code> if the down-arrow key was pressed.</text>
+  </method>
+  <method access="public" id="method:endKey" name="endKey">
+    <return text="">
+      <type class="Boolean" link="1" name="boolean"/>
+    </return>
+    <text>Returns <code>true</code> if the end key was pressed.</text>
+  </method>
+  <method access="public" id="method:enterKey" name="enterKey">
+    <return text="">
+      <type class="Boolean" link="1" name="boolean"/>
+    </return>
+    <text>Returns <code>true</code> if the enter key was pressed.</text>
+  </method>
+  <method access="public" id="method:escapeKey" name="escapeKey">
+    <return text="">
+      <type class="Boolean" link="1" name="boolean"/>
+    </return>
+    <text>Returns <code>true</code> if the escape key was pressed.</text>
+  </method>
+  <method access="public" deprecated="1" id="method:exists" name="exists">
+    <return text="">
+      <type class="Boolean" link="1" name="boolean"/>
+    </return>
+    <text>Returns <code>true</code> if the native event object is present (if an event of any type actualy occurred).</text>
+  </method>
+  <method access="public" id="method:fromElement" name="fromElement">
+    <return text="HTML object&#10;   ">
+      <type link="1" name="HTMLElement"/>
+    </return>
+    <text>Returns handle to the HTML element that was moused away from (onmouseout).</text>
+  </method>
+  <method access="public" id="method:getTrueX" name="getTrueX">
+    <return text="pixel position&#10;   ">
+      <type class="Number" link="1" name="int"/>
+    </return>
+    <text>Returns the actual position in the browser from the left edge for where the event occurred.</text>
+  </method>
+  <method access="public" id="method:getTrueY" name="getTrueY">
+    <return text="pixel position&#10;   ">
+      <type class="Number" link="1" name="int"/>
+    </return>
+    <text>Returns the actual position in the browser from the top edge for where the event occurred.</text>
+  </method>
+  <method access="public" id="method:getType" name="getType">
+    <return text="event type&#10;   ">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the type of event, e.g. mousedown, click, etc.</text>
+  </method>
+  <method access="public" id="method:homeKey" name="homeKey">
+    <return text="">
+      <type class="Boolean" link="1" name="boolean"/>
+    </return>
+    <text>Returns <code>true</code> if the home key was pressed.</text>
+  </method>
+  <method access="public" id="method:insertKey" name="insertKey">
+    <return text="">
+      <type class="Boolean" link="1" name="boolean"/>
+    </return>
+    <text>Returns <code>true</code> if the insert key was pressed.</text>
+  </method>
+  <method access="public" id="method:isArrowKey" name="isArrowKey">
+    <return text="">
+      <type class="Boolean" link="1" name="boolean"/>
+    </return>
+    <text>Whether one of the four arrow keys was pressed.</text>
+  </method>
+  <method access="public" id="method:isFunctionKey" name="isFunctionKey">
+    <return text="">
+      <type class="Boolean" link="1" name="boolean"/>
+    </return>
+    <text>Whether one of the 15 function keys was pressed.</text>
+  </method>
+  <method access="public" id="method:keyCode" name="keyCode">
+    <return text="keycode&#10;   ">
+      <type class="Number" link="1" name="int"/>
+    </return>
+    <text>Returns integer representing the key code of the key just pressed/keyed-down.</text>
+  </method>
+  <method access="public" id="method:leftArrow" name="leftArrow">
+    <return text="">
+      <type class="Boolean" link="1" name="boolean"/>
+    </return>
+    <text>Returns <code>true</code> if the left-arrow key was pressed.</text>
+  </method>
+  <method access="public" id="method:leftButton" name="leftButton">
+    <return text="">
+      <type class="Boolean" link="1" name="boolean"/>
+    </return>
+    <text>Returns <code>true</code> if the left-mouse-button was clicked.</text>
+  </method>
+  <method access="public" id="method:pageDownKey" name="pageDownKey">
+    <return text="">
+      <type class="Boolean" link="1" name="boolean"/>
+    </return>
+    <text>Returns <code>true</code> if the page-down key was pressed.</text>
+  </method>
+  <method access="public" id="method:pageUpKey" name="pageUpKey">
+    <return text="">
+      <type class="Boolean" link="1" name="boolean"/>
+    </return>
+    <text>Returns <code>true</code> if the page-up key was pressed.</text>
+  </method>
+  <method access="public" id="method:rightArrow" name="rightArrow">
+    <return text="">
+      <type class="Boolean" link="1" name="boolean"/>
+    </return>
+    <text>Returns true if the right-arrow key was pressed</text>
+  </method>
+  <method access="public" id="method:rightButton" name="rightButton">
+    <return text="">
+      <type class="Boolean" link="1" name="boolean"/>
+    </return>
+    <text>Returns <code>true</code> if the right-mouse-button was clicked.</text>
+  </method>
+  <method access="public" id="method:setReturn" name="setReturn">
+    <param name="strReturn" text="string message to set on the returnValue for the event&#10;   ">
+      <type link="1" name="String"/>
+    </param>
+    <text>Sets the the return value for the event.</text>
+  </method>
+  <method access="public" id="method:shiftKey" name="shiftKey">
+    <return text="">
+      <type class="Boolean" link="1" name="boolean"/>
+    </return>
+    <text>Returns <code>true</code> if the shift key was pressed.</text>
+  </method>
+  <method access="public" id="method:spaceKey" name="spaceKey">
+    <return text="">
+      <type class="Boolean" link="1" name="boolean"/>
+    </return>
+    <text>Returns <code>true</code> if the space bar was pressed.</text>
+  </method>
+  <method access="public" id="method:srcElement" name="srcElement">
+    <return text="HTML object&#10;   ">
+      <type link="1" name="HTMLElement"/>
+    </return>
+    <text>Returns handle to the HTML element acted upon (click, mousedown, etc).</text>
+  </method>
+  <method access="public" id="method:tabKey" name="tabKey">
+    <return text="">
+      <type class="Boolean" link="1" name="boolean"/>
+    </return>
+    <text>Returns <code>true</code> if the tab key was pressed.</text>
+  </method>
+  <method access="public" id="method:toElement" name="toElement">
+    <return text="HTML object&#10;   ">
+      <type link="1" name="HTMLElement"/>
+    </return>
+    <text>Returns handle to the HTML element that was moused over (onmouseover).</text>
+  </method>
+  <method access="public" id="method:upArrow" name="upArrow">
+    <return text="">
+      <type class="Boolean" link="1" name="boolean"/>
+    </return>
+    <text>Returns <code>true</code> if the up-arrow key was pressed.</text>
+  </method>
+  <method access="public" id="smethod:subscribe" name="subscribe" static="1">
+    <param name="strEventId" text="the event type, e.g. &lt;code&gt;jsx3.gui.Event.CLICK&lt;/code&gt;.">
+      <type link="1" name="String"/>
+    </param>
+    <param name="objHandler" text="if an object, the instance to notify of events (objFunction is required); if a string, the JSX id of the instance to notify of events (objFunction is required), must exist in the same Server; if a function, the function to call to notify of events (objFunction ignored)">
+      <type link="1" name="Object"/>
+      <type link="1" name="String"/>
+      <type name="function"/>
+    </param>
+    <param name="objFunction" text="if objHandler is a string or object then the function to call on that instance. either a function or a string that is the name of a method of the instance">
+      <type name="function"/>
+      <type link="1" name="String"/>
+    </param>
+    <text>Subscribes an event handler to events of type <code>strEventId</code> that bubble all the way up to the browser window.</text>
+    <see idfk="method:subscribe" source="jsx3.util.EventDispatcher">jsx3.util.EventDispatcher.subscribe()</see>
+  </method>
+  <method access="public" id="smethod:unsubscribe" name="unsubscribe" static="1">
+    <param name="strEventId" text="the event type, e.g. &lt;code&gt;jsx3.gui.Event.CLICK&lt;/code&gt;.">
+      <type link="1" name="String"/>
+    </param>
+    <param name="objHandler"/>
+    <text>Unsubscribes an event handler from events of type <code>strEventId</code> that bubble all the way up to the browser window.</text>
+    <see idfk="method:unsubscribe" source="jsx3.util.EventDispatcher">jsx3.util.EventDispatcher.unsubscribe()</see>
+  </method>
+  <method access="public" id="smethod:unsubscribeAll" name="unsubscribeAll" static="1">
+    <param name="strEventId" text="the event type, e.g. &lt;code&gt;jsx3.gui.Event.CLICK&lt;/code&gt;.">
+      <type link="1" name="String"/>
+    </param>
+    <text>Unsubscribes all event handlers from a events of type <code>strEventId</code> that bubble all the way up to the browser window. </text>
+    <see idfk="method:unsubscribeAll" source="jsx3.util.EventDispatcher">jsx3.util.EventDispatcher.unsubscribeAll()</see>
+  </method>
+  <method id="method:clone" idfk="method:clone" inherited="1" name="clone" source="jsx3.lang.Object"/>
+  <method id="method:equals" idfk="method:equals" inherited="1" name="equals" source="jsx3.lang.Object"/>
+  <method id="method:eval" idfk="method:eval" inherited="1" name="eval" source="jsx3.lang.Object"/>
+  <method id="method:getClass" idfk="method:getClass" inherited="1" name="getClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOf" idfk="method:getInstanceOf" inherited="1" name="getInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfClass" idfk="method:getInstanceOfClass" inherited="1" name="getInstanceOfClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfPackage" idfk="method:getInstanceOfPackage" inherited="1" name="getInstanceOfPackage" source="jsx3.lang.Object"/>
+  <method id="method:instanceOf" idfk="method:instanceOf" inherited="1" name="instanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isInstanceOf" idfk="method:isInstanceOf" inherited="1" name="isInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isSubclassOf" idfk="method:isSubclassOf" inherited="1" name="isSubclassOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:jsxmix" idfk="method:jsxmix" inherited="1" name="jsxmix" source="jsx3.lang.Object"/>
+  <method id="method:jsxsuper" idfk="method:jsxsuper" inherited="1" name="jsxsuper" source="jsx3.lang.Object"/>
+  <method id="method:jsxsupermix" idfk="method:jsxsupermix" inherited="1" name="jsxsupermix" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:setInstanceOf" idfk="method:setInstanceOf" inherited="1" name="setInstanceOf" source="jsx3.lang.Object"/>
+  <method id="method:toString" idfk="method:toString" inherited="1" name="toString" source="jsx3.lang.Object"/>
+</class>

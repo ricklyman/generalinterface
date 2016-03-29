@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class abstract="1" access="public" id="class:jsx3.gui.Painted" name="jsx3.gui.Painted" package="jsx3.gui" shortname="Painted" since="3.1&#10; ">
+  <text>Abstract superclass of model objects that are painted to screen.</text>
+  <superclass id="super:0" loaded="1" name="Object"/>
+  <superclass id="super:1" loaded="1" name="jsx3.lang.Object"/>
+  <superclass direct="1" id="super:2" loaded="1" name="jsx3.app.Model"/>
+  <implements id="implements:0" loaded="1" name="jsx3.util.EventDispatcher"/>
+  <subclass id="sub:0" loaded="1" name="jsx3.gui.Block"/>
+  <subclass id="sub:1" loaded="1" name="jsx3.gui.NativeHidden"/>
+  <subclass id="sub:2" loaded="1" name="jsx3.gui.Sound"/>
+  <constructor access="public" id="method:init" name="init">
+    <param name="strName" text="unique name distinguishing this object from all other JSX GUI objects in the JSX application&#10;   ">
+      <type link="1" name="String"/>
+    </param>
+    <text>instance initializer</text>
+  </constructor>
+  <method access="public" id="method:focus" name="focus">
+    <return text="">
+      <type link="1" name="HTMLElement"/>
+    </return>
+    <text>gives focus to the on-screen VIEW for the element; returns a handle to the html/dhtml element as exposed by the native browser</text>
+  </method>
+  <method access="public" id="method:getAbsolutePosition" name="getAbsolutePosition">
+    <param name="objRoot" text="object reference to IE DOM object (i.e., div, span, etc); if null is passed, the first div child of JSXROOT's on-screen representation will be used">
+      <type link="1" name="HTMLElement"/>
+    </param>
+    <param name="objGUI" text="object reference to item to get absolute position for&amp;#8212;as opposed to this instance (useful for determining placement of html objects contained by JSX objects, but not part of the actual JSX DOM)">
+      <type link="1" name="HTMLElement"/>
+    </param>
+    <return text="JScript object with properties: L, T, W, H (corresponding to left, top width, height)&#10;   ">
+      <type link="1" name="Object">
+        <type link="1" name="String"/>
+        <type class="Number" link="1" name="int"/>
+      </type>
+    </return>
+    <text>Returns the absolute positioning of the object's on-screen view in relation to JSXROOT (whose left/top is 0/0).
+           Returns information as a JavaScript object with properties, L, T, W, H
+           of @objRoot is null, the on-screen view for JSXROOT is used as the object reference</text>
+  </method>
+  <method access="public" id="method:getAttribute" name="getAttribute">
+    <param name="strName" text="the name of the attribute.">
+      <type link="1" name="String"/>
+    </param>
+    <return text="the value of the attribute or &lt;code&gt;undefined&lt;/code&gt; if no such attribute exists.&#10;   ">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the value for the custom attribute with the given name.</text>
+  </method>
+  <method access="public" id="method:getAttributes" name="getAttributes">
+    <return text="">
+      <type link="1" name="Object">
+        <type link="1" name="String"/>
+        <type link="1" name="String"/>
+      </type>
+    </return>
+    <text>Returns handle to the JavaScript Object Array containing all events for the JSX GUI object;
+           NOTE: This object will contain zero or more JavaScript Objects with the following Properties: script, type, system</text>
+  </method>
+  <method access="public" id="method:getRendered" name="getRendered">
+    <param name="objGUI" text="either the HTML document containing the rendered object or an HTML element in that document.&#10;  This argument is optional but improves the efficiency of this method if provided.">
+      <type link="1" name="Object"/>
+      <type link="1" name="jsx3.gui.Event"/>
+    </param>
+    <return text="IE DHTML object&#10;   ">
+      <type link="1" name="HTMLElement"/>
+    </return>
+    <text>Returns handle/reference to the JSX GUI Object's on-screen counterpart—basically a handle to a DHTML object such as a DIV, SPAN, etc</text>
+  </method>
+  <method access="public" deprecated="1" id="method:insertHTML" name="insertHTML">
+    <param name="objChild" text="the child object to paint.">
+      <type link="1" name="jsx3.gui.Painted"/>
+    </param>
+    <return text="this object.">
+      <type link="1" name="jsx3.gui.Painted"/>
+    </return>
+    <text>Paints a child of this object without repainting this entire object. The child is inserted into the view of
+this object as the last child object, regardless of its actual position relative to other children. This method
+has no effect if this object is not currently painted.</text>
+    <deprecated>Replaced with &lt;code&gt;paintChild()&lt;/code&gt;.</deprecated>
+    <see idfk="method:paintChild" source="jsx3.gui.Painted">paintChild()</see>
+  </method>
+  <method access="protected" id="method:onAfterPaint" name="onAfterPaint" since="3.4">
+    <param name="objGUI" text="the rendered HTML element representing this object.">
+      <type link="1" name="HTMLElement"/>
+    </param>
+    <text>A hook that subclasses of Painted may override in order to perform additional manipulation of the HTML DOM
+created by the paint method. The order of steps follows. All steps occur in a single browser thread so that
+the screen does not update between steps 2 and 3.
+<ol>
+  <li>The paint() method of this object is called.</li>
+  <li>The result of the paint() method is inserted into the HTML DOM.</li>
+  <li>The onAfterPaint() method of this object is called, passing in the newly inserted root HTML element.</li>
+</ol>
+<p/>
+    </text>
+  </method>
+  <method access="protected" id="method:onAfterRestoreView" name="onAfterRestoreView" since="3.5">
+    <param name="objGUI" text="the rendered HTML element representing this object.">
+      <type link="1" name="HTMLElement"/>
+    </param>
+    <text>Subclass if restoring of the CSS display of the object necessitates any cleanup of the view. For example, restoring a Matrix
+that was painted while it (or an ancestor) had a CSS display setting of 'none' results in the content height
+being mistaken as 0 (null).</text>
+  </method>
+  <method abstract="1" access="public" id="method:paint" name="paint">
+    <return text="DHTML&#10;   ">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the DHTML, used for this object's on-screen VIEW</text>
+  </method>
+  <method access="public" id="method:paintChild" name="paintChild">
+    <param name="objChild" text="the child object to paint.">
+      <type link="1" name="jsx3.gui.Painted"/>
+    </param>
+    <param name="bGroup" text="&lt;code&gt;true&lt;/code&gt; if this method is being called iteratively over a collection of&#10;  children. This parameter will only be &lt;code&gt;false&lt;/code&gt; on the final call in the iteration.">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <param name="objGUI" text="">
+      <type link="1" name="HTMLElement"/>
+    </param>
+    <param name="bCascadeOnly" text="">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <text>Paints a child of this object without repainting this entire object. The child is inserted into the view of
+this object as the last child object, regardless of its actual position relative to other children. This method
+has no effect if this object is not currently painted.</text>
+  </method>
+  <method access="public" id="method:paintChildren" name="paintChildren">
+    <param name="c" text="the children to paint. If not provided &lt;code&gt;this.getChildren()&lt;/code&gt; is used.">
+      <type link="1" name="Array">
+        <type link="1" name="jsx3.gui.Painted"/>
+      </type>
+    </param>
+    <return text="DHTML&#10;   ">
+      <type link="1" name="String"/>
+    </return>
+    <text>Iterates through children and returns concatenation of paint() method for all children.</text>
+  </method>
+  <method access="public" id="method:recalcBox" name="recalcBox">
+    <param name="properties" text="Will designate by name, those properties that should be updated on the object's VIEW (without requiring the MODEL to repaint), including one or more of the following: padding, margin, border&#10;   ">
+      <type link="1" name="Array"/>
+    </param>
+    <text>Removes the box model abstraction for a given object and its descendants. This effectively resets the box profiler, so dimensions can be recalculated as if the object was just broought into the visual DOM.</text>
+  </method>
+  <method access="public" id="method:removeAttribute" name="removeAttribute">
+    <param name="strName" text="the name of the custom property to remove">
+      <type link="1" name="String"/>
+    </param>
+    <return text="this object&#10;   ">
+      <type link="1" name="jsx3.gui.Painted"/>
+    </return>
+    <text>removes the specific custom property bound to this object; returns a reference to self (this) to facilitate method chaining</text>
+  </method>
+  <method access="public" id="method:removeAttributes" name="removeAttributes">
+    <return text="this object&#10;   ">
+      <type link="1" name="jsx3.gui.Painted"/>
+    </return>
+    <text>removes all events bound to this object; NOTE: The object must still be painted/repainted for its corresponding on-screen view to be likewise updated; returns a reference to self (this) to facilitate method chaining</text>
+  </method>
+  <method access="public" id="method:repaint" name="repaint">
+    <return text="the result of calling &lt;code&gt;paint()&lt;/code&gt; or &lt;code&gt;null&lt;/code&gt; if this object is not displayed.">
+      <type link="1" name="String"/>
+    </return>
+    <text>Updates the view of this object by calling <code>paint()</code> and replacing the current view with the
+returned HTML. This method has no effect if this object is not currently displayed.</text>
+    <see idfk="method:paint" source="jsx3.gui.Painted">paint()</see>
+  </method>
+  <method access="public" id="method:setAttribute" name="setAttribute">
+    <param name="strName" text="the name of the property/attribute">
+      <type link="1" name="String"/>
+    </param>
+    <param name="strValue" text="the value for the property; may not contain double-quotes; escape via jsx3.util.strEscapeHTML if necessary or use combinations of single-quotes and escaped single-quotes">
+      <type link="1" name="String"/>
+    </param>
+    <return text="this object (this)&#10;   ">
+      <type link="1" name="jsx3.gui.Painted"/>
+    </return>
+    <text>Sets a property on the object that when the object is rendered on-screen, the HTML tag will be assigned the given name/value pair as a tag attribute</text>
+  </method>
+  <method id="method:adoptChild" idfk="method:adoptChild" inherited="1" name="adoptChild" source="jsx3.app.Model"/>
+  <method id="method:assembleFromXML" idfk="method:assembleFromXML" inherited="1" name="assembleFromXML" source="jsx3.app.Model"/>
+  <method id="method:doClone" idfk="method:doClone" inherited="1" name="doClone" source="jsx3.app.Model"/>
+  <method id="method:findAncestor" idfk="method:findAncestor" inherited="1" name="findAncestor" source="jsx3.app.Model"/>
+  <method id="method:findDescendants" idfk="method:findDescendants" inherited="1" name="findDescendants" source="jsx3.app.Model"/>
+  <method id="method:getAncestorOfName" idfk="method:getAncestorOfName" inherited="1" name="getAncestorOfName" source="jsx3.app.Model"/>
+  <method id="method:getAncestorOfType" idfk="method:getAncestorOfType" inherited="1" name="getAncestorOfType" source="jsx3.app.Model"/>
+  <method id="method:getChild" idfk="method:getChild" inherited="1" name="getChild" source="jsx3.app.Model"/>
+  <method id="method:getChildIndex" idfk="method:getChildIndex" inherited="1" name="getChildIndex" source="jsx3.app.Model"/>
+  <method id="method:getChildren" idfk="method:getChildren" inherited="1" name="getChildren" source="jsx3.app.Model"/>
+  <method id="method:getDescendantOfName" idfk="method:getDescendantOfName" inherited="1" name="getDescendantOfName" source="jsx3.app.Model"/>
+  <method id="method:getDescendantsOfType" idfk="method:getDescendantsOfType" inherited="1" name="getDescendantsOfType" source="jsx3.app.Model"/>
+  <method id="method:getDynamicProperty" idfk="method:getDynamicProperty" inherited="1" name="getDynamicProperty" source="jsx3.app.Model"/>
+  <method id="method:getFirstChild" idfk="method:getFirstChild" inherited="1" name="getFirstChild" source="jsx3.app.Model"/>
+  <method id="method:getFirstChildOfType" idfk="method:getFirstChildOfType" inherited="1" name="getFirstChildOfType" source="jsx3.app.Model"/>
+  <method id="method:getHelpId" idfk="method:getHelpId" inherited="1" name="getHelpId" source="jsx3.app.Model"/>
+  <method id="method:getId" idfk="method:getId" inherited="1" name="getId" source="jsx3.app.Model"/>
+  <method id="method:getLastChild" idfk="method:getLastChild" inherited="1" name="getLastChild" source="jsx3.app.Model"/>
+  <method id="method:getLoadType" idfk="method:getLoadType" inherited="1" name="getLoadType" source="jsx3.app.Model"/>
+  <method id="method:getMetaValue" idfk="method:getMetaValue" inherited="1" name="getMetaValue" source="jsx3.app.Model"/>
+  <method id="method:getNS" idfk="method:getNS" inherited="1" name="getNS" source="jsx3.app.Model"/>
+  <method id="method:getName" idfk="method:getName" inherited="1" name="getName" source="jsx3.app.Model"/>
+  <method id="method:getNextSibling" idfk="method:getNextSibling" inherited="1" name="getNextSibling" source="jsx3.app.Model"/>
+  <method final="1" id="method:getParent" idfk="method:getParent" inherited="1" name="getParent" source="jsx3.app.Model"/>
+  <method id="method:getPersistence" idfk="method:getPersistence" inherited="1" name="getPersistence" source="jsx3.app.Model"/>
+  <method id="method:getPreviousSibling" idfk="method:getPreviousSibling" inherited="1" name="getPreviousSibling" source="jsx3.app.Model"/>
+  <method id="method:getServer" idfk="method:getServer" inherited="1" name="getServer" source="jsx3.app.Model"/>
+  <method id="method:getUriResolver" idfk="method:getUriResolver" inherited="1" name="getUriResolver" source="jsx3.app.Model"/>
+  <method id="method:insertBefore" idfk="method:insertBefore" inherited="1" name="insertBefore" source="jsx3.app.Model"/>
+  <method id="method:load" idfk="method:load" inherited="1" name="load" source="jsx3.app.Model"/>
+  <method id="method:loadAndCache" idfk="method:loadAndCache" inherited="1" name="loadAndCache" source="jsx3.app.Model"/>
+  <method id="method:loadXML" idfk="method:loadXML" inherited="1" name="loadXML" source="jsx3.app.Model"/>
+  <method id="method:onAfterAssemble" idfk="method:onAfterAssemble" inherited="1" name="onAfterAssemble" source="jsx3.app.Model"/>
+  <method id="method:onAfterAttach" idfk="method:onAfterAttach" inherited="1" name="onAfterAttach" source="jsx3.app.Model"/>
+  <method id="method:onBeforeAssemble" idfk="method:onBeforeAssemble" inherited="1" name="onBeforeAssemble" source="jsx3.app.Model"/>
+  <method id="method:onChangeServer" idfk="method:onChangeServer" inherited="1" name="onChangeServer" source="jsx3.app.Model"/>
+  <method id="method:onChildAdded" idfk="method:onChildAdded" inherited="1" name="onChildAdded" source="jsx3.app.Model"/>
+  <method id="method:onDestroy" idfk="method:onDestroy" inherited="1" name="onDestroy" source="jsx3.app.Model"/>
+  <method id="method:onRemoveChild" idfk="method:onRemoveChild" inherited="1" name="onRemoveChild" source="jsx3.app.Model"/>
+  <method id="method:onSetChild" idfk="method:onSetChild" inherited="1" name="onSetChild" source="jsx3.app.Model"/>
+  <method id="method:onSetParent" idfk="method:onSetParent" inherited="1" name="onSetParent" source="jsx3.app.Model"/>
+  <method id="method:removeChild" idfk="method:removeChild" inherited="1" name="removeChild" source="jsx3.app.Model"/>
+  <method id="method:removeChildren" idfk="method:removeChildren" inherited="1" name="removeChildren" source="jsx3.app.Model"/>
+  <method id="method:selectDescendants" idfk="method:selectDescendants" inherited="1" name="selectDescendants" source="jsx3.app.Model"/>
+  <method id="method:setChild" idfk="method:setChild" inherited="1" name="setChild" source="jsx3.app.Model"/>
+  <method id="method:setDynamicProperty" idfk="method:setDynamicProperty" inherited="1" name="setDynamicProperty" source="jsx3.app.Model"/>
+  <method id="method:setHelpId" idfk="method:setHelpId" inherited="1" name="setHelpId" source="jsx3.app.Model"/>
+  <method id="method:setLoadType" idfk="method:setLoadType" inherited="1" name="setLoadType" source="jsx3.app.Model"/>
+  <method id="method:setMetaValue" idfk="method:setMetaValue" inherited="1" name="setMetaValue" source="jsx3.app.Model"/>
+  <method id="method:setName" idfk="method:setName" inherited="1" name="setName" source="jsx3.app.Model"/>
+  <method id="method:setPersistence" idfk="method:setPersistence" inherited="1" name="setPersistence" source="jsx3.app.Model"/>
+  <method id="method:toString" idfk="method:toString" inherited="1" name="toString" source="jsx3.app.Model"/>
+  <method id="method:toXML" idfk="method:toXML" inherited="1" name="toXML" source="jsx3.app.Model"/>
+  <method id="method:toXMLDoc" idfk="method:toXMLDoc" inherited="1" name="toXMLDoc" source="jsx3.app.Model"/>
+  <method id="method:toXMLElm" idfk="method:toXMLElm" inherited="1" name="toXMLElm" source="jsx3.app.Model"/>
+  <method id="method:publish" idfk="method:publish" inherited="1" name="publish" source="jsx3.util.EventDispatcher"/>
+  <method id="method:subscribe" idfk="method:subscribe" inherited="1" name="subscribe" source="jsx3.util.EventDispatcher"/>
+  <method id="method:unsubscribe" idfk="method:unsubscribe" inherited="1" name="unsubscribe" source="jsx3.util.EventDispatcher"/>
+  <method id="method:unsubscribeAll" idfk="method:unsubscribeAll" inherited="1" name="unsubscribeAll" source="jsx3.util.EventDispatcher"/>
+  <method id="method:clone" idfk="method:clone" inherited="1" name="clone" source="jsx3.lang.Object"/>
+  <method id="method:equals" idfk="method:equals" inherited="1" name="equals" source="jsx3.lang.Object"/>
+  <method id="method:eval" idfk="method:eval" inherited="1" name="eval" source="jsx3.lang.Object"/>
+  <method id="method:getClass" idfk="method:getClass" inherited="1" name="getClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOf" idfk="method:getInstanceOf" inherited="1" name="getInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfClass" idfk="method:getInstanceOfClass" inherited="1" name="getInstanceOfClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfPackage" idfk="method:getInstanceOfPackage" inherited="1" name="getInstanceOfPackage" source="jsx3.lang.Object"/>
+  <method id="method:instanceOf" idfk="method:instanceOf" inherited="1" name="instanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isInstanceOf" idfk="method:isInstanceOf" inherited="1" name="isInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isSubclassOf" idfk="method:isSubclassOf" inherited="1" name="isSubclassOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:jsxmix" idfk="method:jsxmix" inherited="1" name="jsxmix" source="jsx3.lang.Object"/>
+  <method id="method:jsxsuper" idfk="method:jsxsuper" inherited="1" name="jsxsuper" source="jsx3.lang.Object"/>
+  <method id="method:jsxsupermix" idfk="method:jsxsupermix" inherited="1" name="jsxsupermix" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:setInstanceOf" idfk="method:setInstanceOf" inherited="1" name="setInstanceOf" source="jsx3.lang.Object"/>
+</class>

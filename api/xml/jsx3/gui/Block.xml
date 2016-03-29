@@ -1,0 +1,839 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class access="public" id="class:jsx3.gui.Block" name="jsx3.gui.Block" package="jsx3.gui" shortname="Block">
+  <text>This class provides a container-based, object-oriented approach to creating static html objects (basically this class creates "DIV" objects).  This class is useful for creating objects as simple as 'labels' that can be placed anywhere on the screen.  The advantage to using this class instead of trying to insert static html in the html window is that it allows the given HTML string to be managed by the 'container-management' strategy employed by the JSX Architecture
+ </text>
+  <superclass id="super:0" loaded="1" name="Object"/>
+  <superclass id="super:1" loaded="1" name="jsx3.lang.Object"/>
+  <superclass id="super:2" loaded="1" name="jsx3.app.Model"/>
+  <superclass direct="1" id="super:3" loaded="1" name="jsx3.gui.Painted"/>
+  <implements direct="1" id="implements:0" loaded="1" name="jsx3.gui.Interactive"/>
+  <implements id="implements:1" loaded="1" name="jsx3.util.EventDispatcher"/>
+  <subclass id="sub:0" loaded="1" name="jsx3.chart.ChartComponent"/>
+  <subclass id="sub:1" loaded="1" name="jsx3.gui.BlockX"/>
+  <subclass id="sub:2" loaded="1" name="jsx3.gui.Button"/>
+  <subclass id="sub:3" loaded="1" name="jsx3.gui.CDF"/>
+  <subclass id="sub:4" loaded="1" name="jsx3.gui.CheckBox"/>
+  <subclass id="sub:5" loaded="1" name="jsx3.gui.ColorPicker"/>
+  <subclass id="sub:6" loaded="1" name="jsx3.gui.Column"/>
+  <subclass id="sub:7" loaded="1" name="jsx3.gui.DatePicker"/>
+  <subclass id="sub:8" loaded="1" name="jsx3.gui.Dialog"/>
+  <subclass id="sub:9" loaded="1" name="jsx3.gui.DojoWidget"/>
+  <subclass id="sub:10" loaded="1" name="jsx3.gui.IFrame"/>
+  <subclass id="sub:11" loaded="1" name="jsx3.gui.Image"/>
+  <subclass id="sub:12" loaded="1" name="jsx3.gui.ImageButton"/>
+  <subclass id="sub:13" loaded="1" name="jsx3.gui.Label"/>
+  <subclass id="sub:14" loaded="1" name="jsx3.gui.LayoutGrid"/>
+  <subclass id="sub:15" loaded="1" name="jsx3.gui.List"/>
+  <subclass id="sub:16" loaded="1" name="jsx3.gui.Matrix"/>
+  <subclass id="sub:17" loaded="1" name="jsx3.gui.Matrix.Column"/>
+  <subclass id="sub:18" loaded="1" name="jsx3.gui.Menu"/>
+  <subclass id="sub:19" loaded="1" name="jsx3.gui.NativeButton"/>
+  <subclass id="sub:20" loaded="1" name="jsx3.gui.NativeFileUpload"/>
+  <subclass id="sub:21" loaded="1" name="jsx3.gui.NativeForm"/>
+  <subclass id="sub:22" loaded="1" name="jsx3.gui.NativeSelect"/>
+  <subclass id="sub:23" loaded="1" name="jsx3.gui.RadioButton"/>
+  <subclass id="sub:24" loaded="1" name="jsx3.gui.Select"/>
+  <subclass id="sub:25" loaded="1" name="jsx3.gui.Slider"/>
+  <subclass id="sub:26" loaded="1" name="jsx3.gui.Splitter"/>
+  <subclass id="sub:27" loaded="1" name="jsx3.gui.Stack"/>
+  <subclass id="sub:28" loaded="1" name="jsx3.gui.Tab"/>
+  <subclass id="sub:29" loaded="1" name="jsx3.gui.TabbedPane"/>
+  <subclass id="sub:30" loaded="1" name="jsx3.gui.Table"/>
+  <subclass id="sub:31" loaded="1" name="jsx3.gui.Template.Block"/>
+  <subclass id="sub:32" loaded="1" name="jsx3.gui.TextBox"/>
+  <subclass id="sub:33" loaded="1" name="jsx3.gui.TimePicker"/>
+  <subclass id="sub:34" loaded="1" name="jsx3.gui.ToolbarButton"/>
+  <subclass id="sub:35" loaded="1" name="jsx3.gui.Tree"/>
+  <subclass id="sub:36" loaded="1" name="jsx3.gui.WindowBar"/>
+  <subclass id="sub:37" loaded="1" name="jsx3.vector.Block"/>
+  <constructor access="public" id="method:init" name="init">
+    <param name="strName" text="unique name distinguishing this object from all other JSX GUI objects in the JSX application">
+      <type link="1" name="String"/>
+    </param>
+    <param name="vntLeft" text="either a number (i.e, 12, 30, etc) or a number and a unit value (i.e., &quot;25%&quot;, &quot;36pt&quot;, etc); if a number is passed, pixels will be the assumed unit when painted to screen">
+      <type class="Number" link="1" name="int"/>
+      <type link="1" name="String"/>
+    </param>
+    <param name="vntTop" text="either a number (i.e, 12, 30, etc) or a number and a unit value (i.e., &quot;25%&quot;, &quot;36pt&quot;, etc); if a number is passed, pixels will be the assumed unit when painted to screen">
+      <type class="Number" link="1" name="int"/>
+      <type link="1" name="String"/>
+    </param>
+    <param name="vntWidth" text="either a number (i.e, 12, 30, etc) or a number and a unit value (i.e., &quot;25%&quot;, &quot;36pt&quot;, etc); if a number is passed, pixels will be the assumed unit when painted to screen">
+      <type class="Number" link="1" name="int"/>
+      <type link="1" name="String"/>
+    </param>
+    <param name="vntHeight" text="either a number (i.e, 12, 30, etc) or a number and a unit value (i.e., &quot;25%&quot;, &quot;36pt&quot;, etc); if a number is passed, pixels will be the assumed unit when painted to screen">
+      <type class="Number" link="1" name="int"/>
+      <type link="1" name="String"/>
+    </param>
+    <param name="strHTML" text="Text/HTML markup to place in the jsx3.gui.Block instance&#10;   ">
+      <type link="1" name="String"/>
+    </param>
+    <text>instance initializer</text>
+  </constructor>
+  <field access="public" class="jsx3.gui.Block" final="1" fullname="jsx3.gui.Block.ABSOLUTE" id="sfield:ABSOLUTE" name="ABSOLUTE" static="1" value="0">
+    <type class="Number" link="1" name="int"/>
+    <text> 0</text>
+  </field>
+  <field access="public" class="jsx3.gui.Block" final="1" fullname="jsx3.gui.Block.ALIGNCENTER" id="sfield:ALIGNCENTER" name="ALIGNCENTER" static="1" value="&quot;center&quot;">
+    <type link="1" name="String"/>
+    <text> center</text>
+  </field>
+  <field access="public" class="jsx3.gui.Block" final="1" fullname="jsx3.gui.Block.ALIGNLEFT" id="sfield:ALIGNLEFT" name="ALIGNLEFT" static="1" value="&quot;left&quot;">
+    <type link="1" name="String"/>
+    <text> left (default)</text>
+  </field>
+  <field access="public" class="jsx3.gui.Block" final="1" fullname="jsx3.gui.Block.ALIGNRIGHT" id="sfield:ALIGNRIGHT" name="ALIGNRIGHT" static="1" value="&quot;right&quot;">
+    <type link="1" name="String"/>
+    <text> right</text>
+  </field>
+  <field access="public" class="jsx3.gui.Block" fullname="jsx3.gui.Block.DEFAULTCLASSNAME" id="sfield:DEFAULTCLASSNAME" name="DEFAULTCLASSNAME" static="1" value="&quot;jsx30block&quot;">
+    <type link="1" name="String"/>
+    <text> jsx30block
+   </text>
+  </field>
+  <field access="public" class="jsx3.gui.Block" fullname="jsx3.gui.Block.DEFAULTCOLOR" id="sfield:DEFAULTCOLOR" name="DEFAULTCOLOR" static="1" value="&quot;#000000&quot;">
+    <type link="1" name="String"/>
+    <text> #000000
+   </text>
+  </field>
+  <field access="public" class="jsx3.gui.Block" fullname="jsx3.gui.Block.DEFAULTFONTNAME" id="sfield:DEFAULTFONTNAME" name="DEFAULTFONTNAME" static="1" value="&quot;Verdana&quot;">
+    <type link="1" name="String"/>
+    <text> Verdana
+   </text>
+  </field>
+  <field access="public" class="jsx3.gui.Block" fullname="jsx3.gui.Block.DEFAULTFONTSIZE" id="sfield:DEFAULTFONTSIZE" name="DEFAULTFONTSIZE" static="1" value="10">
+    <type class="Number" link="1" name="int"/>
+    <text> 10
+   </text>
+  </field>
+  <field access="public" class="jsx3.gui.Block" fullname="jsx3.gui.Block.DEFAULTTAGNAME" id="sfield:DEFAULTTAGNAME" name="DEFAULTTAGNAME" static="1" value="&quot;span&quot;">
+    <type link="1" name="String"/>
+    <text> span
+   </text>
+  </field>
+  <field access="public" class="jsx3.gui.Block" fullname="jsx3.gui.Block.DEFAULTTEXT" id="sfield:DEFAULTTEXT" name="DEFAULTTEXT" static="1" value="&quot;&amp;#160;&quot;">
+    <type link="1" name="String"/>
+    <text> &amp;#160;
+   </text>
+  </field>
+  <field access="public" class="jsx3.gui.Block" final="1" fullname="jsx3.gui.Block.DISPLAYBLOCK" id="sfield:DISPLAYBLOCK" name="DISPLAYBLOCK" static="1" value="&quot;&quot;">
+    <type link="1" name="String"/>
+    <text> [empty string] (default)</text>
+  </field>
+  <field access="public" class="jsx3.gui.Block" final="1" fullname="jsx3.gui.Block.DISPLAYNONE" id="sfield:DISPLAYNONE" name="DISPLAYNONE" static="1" value="&quot;none&quot;">
+    <type link="1" name="String"/>
+    <text> none</text>
+  </field>
+  <field access="public" class="jsx3.gui.Block" final="1" fullname="jsx3.gui.Block.FONTBOLD" id="sfield:FONTBOLD" name="FONTBOLD" static="1" value="&quot;bold&quot;">
+    <type link="1" name="String"/>
+    <text> bold</text>
+  </field>
+  <field access="public" class="jsx3.gui.Block" final="1" fullname="jsx3.gui.Block.FONTNORMAL" id="sfield:FONTNORMAL" name="FONTNORMAL" static="1" value="&quot;normal&quot;">
+    <type link="1" name="String"/>
+    <text> normal (default)</text>
+  </field>
+  <field access="public" class="jsx3.gui.Block" deprecated="1" fullname="jsx3.gui.Block.NULLSTYLE" id="sfield:NULLSTYLE" name="NULLSTYLE" static="1" value="-1">
+    <type class="Number" link="1" name="int"/>
+    <text> -1</text>
+  </field>
+  <field access="public" class="jsx3.gui.Block" final="1" fullname="jsx3.gui.Block.OVERFLOWEXPAND" id="sfield:OVERFLOWEXPAND" name="OVERFLOWEXPAND" static="1" value="3">
+    <type class="Number" link="1" name="int"/>
+    <text> 3 (default)</text>
+  </field>
+  <field access="public" class="jsx3.gui.Block" final="1" fullname="jsx3.gui.Block.OVERFLOWHIDDEN" id="sfield:OVERFLOWHIDDEN" name="OVERFLOWHIDDEN" static="1" value="2">
+    <type class="Number" link="1" name="int"/>
+    <text> 2</text>
+  </field>
+  <field access="public" class="jsx3.gui.Block" final="1" fullname="jsx3.gui.Block.OVERFLOWSCROLL" id="sfield:OVERFLOWSCROLL" name="OVERFLOWSCROLL" static="1" value="1">
+    <type class="Number" link="1" name="int"/>
+    <text> 1</text>
+  </field>
+  <field access="public" class="jsx3.gui.Block" final="1" fullname="jsx3.gui.Block.RELATIVE" id="sfield:RELATIVE" name="RELATIVE" static="1" value="1">
+    <type class="Number" link="1" name="int"/>
+    <text> 1 (default)</text>
+  </field>
+  <field access="public" class="jsx3.gui.Block" deprecated="1" fullname="jsx3.gui.Block.SCROLLSIZE" id="sfield:SCROLLSIZE" name="SCROLLSIZE" static="1" value="16">
+    <type class="Number" link="1" name="int"/>
+    <text> 16</text>
+  </field>
+  <field access="public" class="jsx3.gui.Block" fullname="jsx3.gui.Block.SPACE" id="sfield:SPACE" name="SPACE" static="1">
+    <type link="1" name="String"/>
+    <text> JSX/images/spc.gif
+   </text>
+  </field>
+  <field access="public" class="jsx3.gui.Block" final="1" fullname="jsx3.gui.Block.VISIBILITYHIDDEN" id="sfield:VISIBILITYHIDDEN" name="VISIBILITYHIDDEN" static="1" value="&quot;hidden&quot;">
+    <type link="1" name="String"/>
+  </field>
+  <field access="public" class="jsx3.gui.Block" final="1" fullname="jsx3.gui.Block.VISIBILITYVISIBLE" id="sfield:VISIBILITYVISIBLE" name="VISIBILITYVISIBLE" static="1" value="&quot;visible&quot;">
+    <type link="1" name="String"/>
+  </field>
+  <method access="public" id="method:getBackground" name="getBackground">
+    <return text="valid CSS property for the background such as:  background-image:url(x.gif);  or background-image:url(x.gif);background-repeat:no-repeat;&#10;   ">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns valid CSS property value for the background such as:  background-image:url(x.gif);  or background-image:url(x.gif);background-repeat:no-repeat;</text>
+  </method>
+  <method access="public" id="method:getBackgroundColor" name="getBackgroundColor">
+    <return text="valid CSS property value, (e.g., red, #ffffff, rgb(255,0,0))&#10;   ">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns valid CSS property value, (e.g., red, #ffffff, rgb(255,0,0))</text>
+  </method>
+  <method access="public" id="method:getBorder" name="getBorder">
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns CSS property value(s) for a border (border: solid 1px #000000)</text>
+  </method>
+  <method access="public" id="method:getCDFAttribute" name="getCDFAttribute">
+    <text>Returns the named attribute on the CDF record to which this object is mapped.</text>
+  </method>
+  <method access="public" id="method:getCDFId" name="getCDFId">
+    <text>Returns the CDF ID of the record to map to.</text>
+  </method>
+  <method access="public" id="method:getCSSOverride" name="getCSSOverride">
+    <return text="CSS text&#10;   ">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns CSS text to override the standard instance properties on the painted object.</text>
+  </method>
+  <method access="public" id="method:getClassName" name="getClassName">
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the named CSS rule(s) to apply to the painted object.</text>
+  </method>
+  <method access="public" id="method:getColor" name="getColor">
+    <return text="valid CSS property value, (e.g., red, #ffffff, rgb(255,0,0))&#10;   ">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns valid CSS property value, (e.g., red, #ffffff, rgb(255,0,0))</text>
+  </method>
+  <method access="public" id="method:getCursor" name="getCursor">
+    <return text="valid CSS property value, (e.g., default,wait,col-resize)&#10;   ">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns valid CSS property value, (e.g., default,wait,col-resize); if no value or an empty string, null is returned</text>
+  </method>
+  <method access="public" id="method:getDimensions" name="getDimensions">
+    <return text="[left,top,width,height]&#10;   ">
+      <type link="1" name="Array">
+        <type class="Number" link="1" name="int"/>
+      </type>
+    </return>
+    <text>Returns the dimensions in an array of four int values</text>
+  </method>
+  <method access="public" id="method:getDisplay" name="getDisplay">
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the CSS display for the object; one of jsx3.gui.Block.DISPLAYNONE (display:none;) and jsx3.gui.Block.DISPLAYBLOCK (display:;)</text>
+  </method>
+  <method access="public" id="method:getFontName" name="getFontName">
+    <return text="valid CSS font-family property value&#10;   ">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the CSS font-family for the object</text>
+  </method>
+  <method access="public" id="method:getFontSize" name="getFontSize">
+    <return text="font-size (in pixels)&#10;   ">
+      <type class="Number" link="1" name="int"/>
+    </return>
+    <text>Returns the CSS font-size for the object</text>
+  </method>
+  <method access="public" id="method:getFontWeight" name="getFontWeight">
+    <return text="[jsx3.gui.Block.FONTBOLD. jsx3.gui.Block.FONTNORMAL]&#10;   ">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the CSS font-weight for the object ("bold" or "normal")</text>
+  </method>
+  <method access="public" id="method:getHeight" name="getHeight">
+    <return text="height.&#10;   ">
+      <type class="Number" link="1" name="int"/>
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the height property of this object.</text>
+  </method>
+  <method access="public" id="method:getIndex" name="getIndex">
+    <return text="">
+      <type class="Number" link="1" name="int"/>
+    </return>
+    <text>Returns IE tab index for setting the tabIndex property for the on-screen DHTML for the object</text>
+  </method>
+  <method access="public" id="method:getLeft" name="getLeft">
+    <return text="left.&#10;   ">
+      <type class="Number" link="1" name="int"/>
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the left property of this object.</text>
+  </method>
+  <method access="public" id="method:getMargin" name="getMargin">
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns CSS property value(s) for a margin (margin:4px;)</text>
+  </method>
+  <method access="public" id="method:getOverflow" name="getOverflow">
+    <return text="[jsx3.gui.Block.OVERFLOWSCROLL, jsx3.gui.Block.OVERFLOWHIDDEN, jsx3.gui.Block.OVERFLOWEXPAND]&#10;   ">
+      <type class="Number" link="1" name="int"/>
+    </return>
+    <text>Returns the overflow property for the object, that defines how its on-screen view will behave when its contents are larger than its specified width and/or height</text>
+  </method>
+  <method access="public" id="method:getPadding" name="getPadding">
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns CSS property value(s) for a padding (padding:4px;)</text>
+  </method>
+  <method access="public" id="method:getRelativePosition" name="getRelativePosition">
+    <return text="">
+      <type class="Number" link="1" name="int"/>
+    </return>
+    <text>Returns if the instance is relatively positioned on-screen; returns one of: jsx3.gui.Block.ABSOLUTE jsx3.gui.Block.RELATIVE</text>
+  </method>
+  <method access="public" id="method:getTagName" name="getTagName">
+    <return text="valid HTML tag name&#10;   ">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns HTML tag name to use when rendering the object on-screen (span is the default); if the property is null,
+         jsx3.gui.Block.DEFAULTTAGNAME is used;</text>
+  </method>
+  <method access="public" id="method:getText" name="getText">
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the text/HTML for the control to be displayed on-screen; returns an empty string if null; since the text
+is rendered on-screen as browser-native HTML, the equivalent of an empty tag (e.g., &lt;span\&gt;) would be an
+enclosing tag with an empty string (no content): &lt;span&gt;&lt;/span&gt;.  To return null would be equivalent to
+&lt;span&gt;null&lt;/span&gt;, which is not the same as &lt;span/&gt;</text>
+  </method>
+  <method access="public" id="method:getTextAlign" name="getTextAlign">
+    <return text="one of: jsx3.gui.Block.ALIGNLEFT, jsx3.gui.Block.ALIGNRIGHT, jsx3.gui.Block.ALIGNCENTER&#10;   ">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the CSS text-align property for the object; if no property value exists, jsx3.gui.Block.ALIGNLEFT is returned by default</text>
+  </method>
+  <method access="public" id="method:getTip" name="getTip">
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the tooltip text to display when the object is hovered over.</text>
+  </method>
+  <method access="public" id="method:getTop" name="getTop">
+    <return text="top.&#10;   ">
+      <type class="Number" link="1" name="int"/>
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the top property of this object.</text>
+  </method>
+  <method access="public" id="method:getVisibility" name="getVisibility">
+    <return text="[jsx3.gui.Block.VISIBILITYVISIBLE, jsx3.gui.Block.VISIBILITYHIDDEN]&#10;   ">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the visibility property for the object</text>
+  </method>
+  <method access="public" id="method:getWidth" name="getWidth">
+    <return text="width.&#10;   ">
+      <type class="Number" link="1" name="int"/>
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the width property of this object.</text>
+  </method>
+  <method access="public" id="method:getZIndex" name="getZIndex">
+    <return text="">
+      <type class="Number" link="1" name="int"/>
+    </return>
+    <text>Returns the CSS z-index property</text>
+  </method>
+  <method access="public" id="method:hideMask" name="hideMask">
+    <text>Removes the "blocking" mask inside the block to stop user interactions with existing content
+   </text>
+  </method>
+  <method access="public" id="method:paint" name="paint">
+    <param name="strData" text="Text/HTML markup that will replace value of getText() during paint&amp;#8212;typically passed by subclass, JSXBlockX after it performs an XML/XSL merge to acquire its data; for memory management purposes, the data is not set via setText() and, instead, is passed as a temporary input parameter, as the object's model would contain the text for no reason">
+      <type link="1" name="String"/>
+    </param>
+    <return text="DHTML&#10;   ">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the DHTML, used for this object's on-screen view</text>
+    <overrides id="overrides:paint" idfk="method:paint" name="paint" source="jsx3.gui.Painted"/>
+  </method>
+  <method access="public" id="method:setBackground" name="setBackground">
+    <param name="strBG" text="valid CSS property value for the background such as:  background-image:url(x.gif);  or background-image:url(x.gif);background-repeat:no-repeat;">
+      <type link="1" name="String"/>
+    </param>
+    <return text="this object&#10;   ">
+      <type link="1" name="jsx3.gui.Block"/>
+    </return>
+    <text>Sets valid CSS property value for the background such as:  background-image:url(x.gif);  or background-image:url(x.gif);background-repeat:no-repeat;
+           returns reference to self to facilitate method chaining;</text>
+  </method>
+  <method access="public" id="method:setBackgroundColor" name="setBackgroundColor">
+    <param name="strColor" text="valid CSS property value, (e.g., red, #ffffff, rgb(255,0,0))">
+      <type link="1" name="String"/>
+    </param>
+    <param name="bUpdateView" text="if &lt;code&gt;true&lt;/code&gt;, the view of this object is immediately updated, obviating the need to call &lt;code&gt;repaint()&lt;/code&gt;.">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <return text="this object&#10;   ">
+      <type link="1" name="jsx3.gui.Block"/>
+    </return>
+    <text>Sets valid CSS property value, (e.g., red, #ffffff, rgb(255,0,0));
+           returns reference to self to facilitate method chaining;</text>
+  </method>
+  <method access="public" id="method:setBorder" name="setBorder">
+    <param name="strCSS" text="valid CSS property value for a border (border: solid 1px #000000)">
+      <type link="1" name="String"/>
+    </param>
+    <param name="bUpdateView" text="if true, the view will be updated with requiring a repaint">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <return text="this object&#10;   ">
+      <type link="1" name="jsx3.gui.Block"/>
+    </return>
+    <text>Sets CSS property value(s) for a border (<code>border: solid 1px #000000</code>). Properties can be strung
+together as in: <code>border:solid 1px #989885;border-left-width:0px;</code>
+    </text>
+  </method>
+  <method access="public" id="method:setCDFAttribute" name="setCDFAttribute">
+    <param name="strAttName" text="">
+      <type link="1" name="String"/>
+    </param>
+    <text>Sets the named attribute on the CDF record to which this object is mapped. Updates to show the new mapped value</text>
+  </method>
+  <method access="public" id="method:setCDFId" name="setCDFId">
+    <param name="strCDFId" text="If not set, the CDF Id used by the nearest ancestor of type &lt;code&gt;jsx3.gui.CDF&lt;/code&gt; will be used.&#10;   ">
+      <type link="1" name="String"/>
+    </param>
+    <text>Sets the CDF ID of the record to map to. Updates to show the new mapped value</text>
+  </method>
+  <method access="public" id="method:setCSSOverride" name="setCSSOverride">
+    <param name="strCSS" text="CSS text.  For example, &lt;code&gt;color:red;background-color:orange;&lt;/code&gt;">
+      <type link="1" name="String"/>
+    </param>
+    <return text="this object&#10;   ">
+      <type link="1" name="jsx3.gui.Block"/>
+    </return>
+    <text>Sets CSS text to override the standard instance properties on the painted object. Convenience method for extending this object. CSS properties affecting layout, including <code>border-width, padding, margin, width, and height</code>
+are strongly discouraged, as they may interfere with the framework's internal box models.
+Since some controls are composited from multiple HTML elements, some styles may not cascade to nested elements.
+<b>Instance Properties</b> are the preferred method for applying styles.</text>
+  </method>
+  <method access="public" id="method:setClassName" name="setClassName">
+    <param name="strClassName" text="CSS property name without the leading &quot;.&quot;">
+      <type link="1" name="String"/>
+    </param>
+    <return text="this object&#10;   ">
+      <type link="1" name="jsx3.gui.Block"/>
+    </return>
+    <text>Sets the named CSS rule(s) to apply to the painted object. Rules that specify <code>border-width, padding, margin, width, and height</code> are strongly discouraged.
+Multiple rules may be specified, delimited with a space.  For example, <code>label emphasis</code>.
+Since some controls are composited from multiple HTML elements, some rule styles may not cascade to nested elements.
+<b>Dynamic Properties</b> are the preferred method for applying global styles.</text>
+  </method>
+  <method access="public" id="method:setColor" name="setColor">
+    <param name="strColor" text="valid CSS property value, (e.g., red, #ffffff, rgb(255,0,0))">
+      <type link="1" name="String"/>
+    </param>
+    <param name="bUpdateView" text="if &lt;code&gt;true&lt;/code&gt;, the view of this object is immediately updated, obviating the need to call &lt;code&gt;repaint()&lt;/code&gt;.">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <return text="this object&#10;   ">
+      <type link="1" name="jsx3.gui.Block"/>
+    </return>
+    <text>Sets valid CSS property value, (e.g., red, #ffffff, rgb(255,0,0));
+           returns reference to self to facilitate method chaining;</text>
+  </method>
+  <method access="public" id="method:setCursor" name="setCursor">
+    <param name="strCursor" text="valid CSS property value, (e.g., default,wait,col-resize)">
+      <type link="1" name="String"/>
+    </param>
+    <param name="bUpdateView" text="if &lt;code&gt;true&lt;/code&gt;, the view of this object is immediately updated, obviating the need to call &lt;code&gt;repaint()&lt;/code&gt;.&#10;   ">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <text>Sets valid CSS property value, (e.g., default,wait,col-resize)</text>
+  </method>
+  <method access="public" id="method:setDimensions" name="setDimensions">
+    <param name="left" text="the new left value or an array containing all four new values">
+      <type class="Number" link="1" name="int"/>
+      <type link="1" name="String"/>
+      <type link="1" name="Array">
+        <typeor>
+          <type class="Number" link="1" name="int"/>
+          <type link="1" name="String"/>
+        </typeor>
+      </type>
+    </param>
+    <param name="top" text="the new top value">
+      <type class="Number" link="1" name="int"/>
+      <type link="1" name="String"/>
+    </param>
+    <param name="width" text="the new width value">
+      <type class="Number" link="1" name="int"/>
+      <type link="1" name="String"/>
+    </param>
+    <param name="height" text="the new height value">
+      <type class="Number" link="1" name="int"/>
+      <type link="1" name="String"/>
+    </param>
+    <param name="bUpdateView" text="whether to update the display of this object immediately. If &lt;code&gt;left&lt;/code&gt; is&#10;   an &lt;code&gt;Array&lt;/code&gt; then this parameter is the second parameter passed to this method.&#10;   ">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <text>Set one to four dimensions at once. This operation is more efficient than calling more than one of
+<code>setLeft</code>, <code>setTop</code>, etc. Any argument can be <code>null</code> to indicate not to update it.</text>
+  </method>
+  <method access="public" id="method:setDisplay" name="setDisplay">
+    <param name="DISPLAY" text="one of &lt;code&gt;jsx3.gui.Block.DISPLAYNONE&lt;/code&gt; or &lt;code&gt;jsx3.gui.Block.DISPLAYBLOCK&lt;/code&gt;">
+      <type link="1" name="String"/>
+    </param>
+    <param name="bUpdateView" text="if &lt;code&gt;true&lt;/code&gt;, the view of this object is immediately updated, obviating the need to call &lt;code&gt;repaint()&lt;/code&gt;.">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <return text="this object&#10;   ">
+      <type link="1" name="jsx3.gui.Block"/>
+    </return>
+    <text>Sets the display for the object. Note that although the framework uses CSS to apply this setting, the actual values that get set are determined by the system.
+Only those parameters listed for @DISPLAY are supported as inputs to this function.</text>
+  </method>
+  <method access="public" id="method:setFontName" name="setFontName">
+    <param name="strFontName" text="valid CSS font-family property value">
+      <type link="1" name="String"/>
+    </param>
+    <return text="this object&#10;   ">
+      <type link="1" name="jsx3.gui.Block"/>
+    </return>
+    <text>Sets the CSS font-family for the object;
+           returns reference to self to facilitate method chaining;</text>
+  </method>
+  <method access="public" id="method:setFontSize" name="setFontSize">
+    <param name="intPixelSize" text="font-size (in pixels)">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <return text="this object&#10;   ">
+      <type link="1" name="jsx3.gui.Block"/>
+    </return>
+    <text>Sets the CSS font-size for the object;
+           returns reference to self to facilitate method chaining;</text>
+  </method>
+  <method access="public" id="method:setFontWeight" name="setFontWeight">
+    <param name="FONTWEIGHT" text="[jsx3.gui.Block.FONTBOLD. jsx3.gui.Block.FONTNORMAL]">
+      <type link="1" name="String"/>
+    </param>
+    <return text="this object&#10;   ">
+      <type link="1" name="jsx3.gui.Block"/>
+    </return>
+    <text>Sets the CSS font-weight for the object ("bold" or "normal");
+           returns reference to self to facilitate method chaining;</text>
+  </method>
+  <method access="public" id="method:setHeight" name="setHeight">
+    <param name="vntHeight" text="the height as a non-negative integer or non-negative percentage. For example: 45%, 12.">
+      <type class="Number" link="1" name="int"/>
+      <type link="1" name="String"/>
+    </param>
+    <param name="bUpdateView" text="if &lt;code&gt;true&lt;/code&gt;, the view of this object is immediately updated, obviating the need to call &lt;code&gt;repaint()&lt;/code&gt;.">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <return text="this object.&#10;   ">
+      <type link="1" name="jsx3.gui.Block"/>
+    </return>
+    <text>Sets the height property of this object.</text>
+  </method>
+  <method access="public" id="method:setIndex" name="setIndex">
+    <param name="intIndex" text="any value in the valid range of -32767 to 32767">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <param name="bUpdateView" text="if &lt;code&gt;true&lt;/code&gt;, the view of this object is immediately updated, obviating the need to call &lt;code&gt;repaint()&lt;/code&gt;.">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <return text="this object&#10;   ">
+      <type link="1" name="jsx3.gui.Block"/>
+    </return>
+    <text>Sets IE tab index for setting the tabIndex property for the on-screen DHTML for the object;
+           returns reference to self to facilitate method chaining;</text>
+  </method>
+  <method access="public" id="method:setLeft" name="setLeft">
+    <param name="vntLeft" text="the left value. Only numeric values and percentages are supported. For example: 25, -10, 20%.">
+      <type class="Number" link="1" name="int"/>
+      <type link="1" name="String"/>
+    </param>
+    <param name="bUpdateView" text="if @vntLeft is in integer (a number with no modifier) and @bUpdateView is true, the object's on-screen view is immediately updated to match its model, obviating the need to call '[object].repaint()'">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <return text="this object.&#10;   ">
+      <type link="1" name="jsx3.gui.Block"/>
+    </return>
+    <text>Sets the left property of this object. The left property specifies the horizontal offset of this object
+from its parent and only applies if this object is absolutely positioned.</text>
+  </method>
+  <method access="public" id="method:setMargin" name="setMargin">
+    <param name="strCSS" text="The preferred method to set margin is by moving clockwise, beginning with the &lt;b&gt;north&lt;/b&gt;&#10;compass position, &lt;b&gt;without&lt;/b&gt; the pixel designation.  For example, to specify a top margin of 8 pixels, use &lt;code&gt;8 0 0 0&lt;/code&gt;. CSS syntax is&#10;supported, but requires that pixels be designated.  For example, using &lt;code&gt;margin:5px;margin-left:10px;&lt;/code&gt;, is equivalent to&#10;&lt;code&gt;5 5 5 10&lt;/code&gt;.">
+      <type link="1" name="String"/>
+    </param>
+    <param name="bUpdateView" text="if true, the view will be updated with requiring a repaint">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <return text="this object&#10;   ">
+      <type link="1" name="jsx3.gui.Block"/>
+    </return>
+    <text>Sets CSS property value for margin.</text>
+  </method>
+  <method access="public" id="method:setOverflow" name="setOverflow">
+    <param name="OVERFLOW" text="[jsx3.gui.Block.OVERFLOWSCROLL, jsx3.gui.Block.OVERFLOWHIDDEN, jsx3.gui.Block.OVERFLOWEXPAND]">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <return text="this object&#10;   ">
+      <type link="1" name="jsx3.gui.Block"/>
+    </return>
+    <text>Sets the overflow property for the object, that defines how its on-screen view will behave when its contents are larger than its specified width and/or height;
+           returns reference to self to facilitate method chaining;</text>
+  </method>
+  <method access="public" id="method:setPadding" name="setPadding">
+    <param name="strCSS" text="The preferred method to set padding is by moving clockwise, beginning with the &lt;b&gt;north&lt;/b&gt;&#10;compass position, &lt;b&gt;without&lt;/b&gt; the pixel designation.  For example, to specify a top padding of 8 pixels, use &lt;code&gt;8 0 0 0&lt;/code&gt;. CSS syntax is&#10;supported, but requires that pixels be designated.  For example, using &lt;code&gt;padding:5px;padding-left:10px;&lt;/code&gt;, is equivalent to&#10;&lt;code&gt;5 5 5 10&lt;/code&gt;.">
+      <type link="1" name="String"/>
+    </param>
+    <param name="bUpdateView" text="if &lt;code&gt;true&lt;/code&gt;, the view will be updated without requiring a repaint.">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <return text="this object.&#10;   ">
+      <type link="1" name="jsx3.gui.Block"/>
+    </return>
+    <text>Sets the CSS property value for padding an object.</text>
+  </method>
+  <method access="public" id="method:setRelativePosition" name="setRelativePosition">
+    <param name="intRelative" text="jsx3.gui.Block.RELATIVE will be applied to the view if null. One of: jsx3.gui.Block.RELATIVE jsx3.gui.Block.ABSOLUTE">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <param name="bUpdateView" text="if &lt;code&gt;true&lt;/code&gt;, the view of this object is immediately updated, obviating the need to call &lt;code&gt;repaint()&lt;/code&gt;.">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <return text="this object&#10;   ">
+      <type link="1" name="jsx3.gui.Block"/>
+    </return>
+    <text>Sets if the jsx3.gui.Block instance is relatively positioned on-screen;
+           returns reference to self to facilitate method chaining;</text>
+  </method>
+  <method access="public" id="method:setTagName" name="setTagName">
+    <param name="strTagName" text="valid HTML tag name (span, div, form, ol, ul, li, etc); if null is passed, the getter will use jsx3.gui.Block.DEFAULTTAGNAME">
+      <type link="1" name="String"/>
+    </param>
+    <return text="this object&#10;   ">
+      <type link="1" name="jsx3.gui.Block"/>
+    </return>
+    <text>Sets HTML tag name to use when rendering the object on-screen (jsx3.gui.Block.DEFAULTTAGNAME is the default);
+           returns reference to self to facilitate method chaining;</text>
+  </method>
+  <method access="public" id="method:setText" name="setText">
+    <param name="strText" text="text/HTML">
+      <type link="1" name="String"/>
+    </param>
+    <param name="bRepaint" text="if &lt;code&gt;true&lt;/code&gt;, the view of this object is immediately updated, obviating the need to call &lt;code&gt;repaint()&lt;/code&gt;.">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <return text="">
+      <type link="1" name="jsx3.gui.Block"/>
+    </return>
+    <text>Sets the text/HTML for the control to be displayed on-screen;
+           returns reference to self to facilitate method chaining;</text>
+  </method>
+  <method access="public" id="method:setTextAlign" name="setTextAlign">
+    <param name="ALIGN" text="one of: jsx3.gui.Block.ALIGNLEFT, jsx3.gui.Block.ALIGNRIGHT, jsx3.gui.Block.ALIGNCENTER">
+      <type link="1" name="String"/>
+    </param>
+    <return text="">
+      <type link="1" name="jsx3.gui.Block"/>
+    </return>
+    <text>Sets the CSS text-align property for the object;
+           returns reference to self to facilitate method chaining;</text>
+  </method>
+  <method access="public" id="method:setTip" name="setTip">
+    <param name="strTip" text="the tip text.">
+      <type link="1" name="String"/>
+    </param>
+    <return text="this object.&#10;   ">
+      <type link="1" name="jsx3.gui.Block"/>
+    </return>
+    <text>Sets the tooltip text to display when the object is hovered over; updates the model and the view
+immediately. Note that the tip text is rendered natively by the browser and that the behavior may vary
+between browsers. Some browsers may honor line breaks in the text and some may have a maximum length that
+then show before truncating the tip. For more consistent rendering across browsers use the <code>SPYGLASS</code>
+event instead.</text>
+  </method>
+  <method access="public" id="method:setTop" name="setTop">
+    <param name="vntTop" text="the top value. Only numeric values and percentages are supported. For example: 25, -10, 20%.">
+      <type class="Number" link="1" name="int"/>
+      <type link="1" name="String"/>
+    </param>
+    <param name="bUpdateView" text="if &lt;code&gt;true&lt;/code&gt;, the view of this object is immediately updated, obviating the need to call &lt;code&gt;repaint()&lt;/code&gt;.">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <return text="this object.&#10;   ">
+      <type link="1" name="jsx3.gui.Block"/>
+    </return>
+    <text>Sets the top property of this object. The top property specifies the vertical offset of this object
+from its parent and only applies if this object is absolutely positioned.</text>
+  </method>
+  <method access="public" id="method:setVisibility" name="setVisibility">
+    <param name="VISIBILITY" text="[jsx3.gui.Block.VISIBILITYVISIBLE, jsx3.gui.Block.VISIBILITYHIDDEN]">
+      <type link="1" name="String"/>
+    </param>
+    <param name="bUpdateView" text="if &lt;code&gt;true&lt;/code&gt;, the view of this object is immediately updated, obviating the need to call &lt;code&gt;repaint()&lt;/code&gt;.&#10;   ">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <text>Sets the CSS visibility property the object</text>
+  </method>
+  <method access="public" id="method:setWidth" name="setWidth">
+    <param name="vntWidth" text="the width as non-negative integer or non-negative percentage. For example: 45%, 12.">
+      <type class="Number" link="1" name="int"/>
+      <type link="1" name="String"/>
+    </param>
+    <param name="bUpdateView" text="if &lt;code&gt;true&lt;/code&gt;, the view of this object is immediately updated, obviating the need to call &lt;code&gt;repaint()&lt;/code&gt;.">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <return text="this object.&#10;   ">
+      <type link="1" name="jsx3.gui.Block"/>
+    </return>
+    <text>Sets the width property of this object.</text>
+  </method>
+  <method access="public" id="method:setZIndex" name="setZIndex">
+    <param name="intZIndex" text="z-index value">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <param name="bUpdateView" text="if &lt;code&gt;true&lt;/code&gt;, the view of this object is immediately updated, obviating the need to call &lt;code&gt;repaint()&lt;/code&gt;.&#10;   ">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <text>Sets the CSS z-index for the object</text>
+  </method>
+  <method access="public" id="method:showMask" name="showMask">
+    <param name="strMessage" text="text/message to display in the blocking mask to tell the user it is disabled&#10;   ">
+      <type link="1" name="String"/>
+    </param>
+    <text>Displays a "blocking mask" inside the block to stop user interactions with content within the block. Applies only to Blocks. Use only on blocks with no padding and with overflow set to hidden.</text>
+  </method>
+  <method access="public" deprecated="1" id="smethod:getJSXParent" name="getJSXParent" static="1">
+    <param name="objGUI" text="HTML element in the view from which to begin looking for the first containing JSX parent in the model">
+      <type link="1" name="HTMLElement"/>
+    </param>
+    <return text="JSX object">
+      <type link="1" name="jsx3.gui.Block"/>
+    </return>
+    <text>Returns the first JSX parent (as a JSX instance in the model) of @objGUI (an HTML element in the view); returns null if no jsx parent could be found</text>
+    <deprecated>Use &lt;code&gt;jsx3.html.getJSXParent()&lt;/code&gt; instead.
+   </deprecated>
+  </method>
+  <method access="public" deprecated="1" id="smethod:getVersion" name="getVersion" static="1">
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the release/build for the class (i.e., "2.2.00")</text>
+  </method>
+  <method id="method:doEvent" idfk="method:doEvent" inherited="1" name="doEvent" source="jsx3.gui.Interactive"/>
+  <method id="method:getCanDrag" idfk="method:getCanDrag" inherited="1" name="getCanDrag" source="jsx3.gui.Interactive"/>
+  <method id="method:getCanDrop" idfk="method:getCanDrop" inherited="1" name="getCanDrop" source="jsx3.gui.Interactive"/>
+  <method id="method:getCanMove" idfk="method:getCanMove" inherited="1" name="getCanMove" source="jsx3.gui.Interactive"/>
+  <method id="method:getCanSpy" idfk="method:getCanSpy" inherited="1" name="getCanSpy" source="jsx3.gui.Interactive"/>
+  <method id="method:getEvent" idfk="method:getEvent" inherited="1" name="getEvent" source="jsx3.gui.Interactive"/>
+  <method id="method:getEvents" idfk="method:getEvents" inherited="1" name="getEvents" source="jsx3.gui.Interactive"/>
+  <method id="method:getMenu" idfk="method:getMenu" inherited="1" name="getMenu" source="jsx3.gui.Interactive"/>
+  <method id="method:hasEvent" idfk="method:hasEvent" inherited="1" name="hasEvent" source="jsx3.gui.Interactive"/>
+  <method id="method:registerHotKey" idfk="method:registerHotKey" inherited="1" name="registerHotKey" source="jsx3.gui.Interactive"/>
+  <method id="method:removeEvent" idfk="method:removeEvent" inherited="1" name="removeEvent" source="jsx3.gui.Interactive"/>
+  <method id="method:removeEvents" idfk="method:removeEvents" inherited="1" name="removeEvents" source="jsx3.gui.Interactive"/>
+  <method id="method:setCanDrag" idfk="method:setCanDrag" inherited="1" name="setCanDrag" source="jsx3.gui.Interactive"/>
+  <method id="method:setCanDrop" idfk="method:setCanDrop" inherited="1" name="setCanDrop" source="jsx3.gui.Interactive"/>
+  <method id="method:setCanMove" idfk="method:setCanMove" inherited="1" name="setCanMove" source="jsx3.gui.Interactive"/>
+  <method id="method:setCanSpy" idfk="method:setCanSpy" inherited="1" name="setCanSpy" source="jsx3.gui.Interactive"/>
+  <method id="method:setEvent" idfk="method:setEvent" inherited="1" name="setEvent" source="jsx3.gui.Interactive"/>
+  <method id="method:setMenu" idfk="method:setMenu" inherited="1" name="setMenu" source="jsx3.gui.Interactive"/>
+  <method id="method:setSpyStyles" idfk="method:setSpyStyles" inherited="1" name="setSpyStyles" source="jsx3.gui.Interactive"/>
+  <method id="method:showSpy" idfk="method:showSpy" inherited="1" name="showSpy" source="jsx3.gui.Interactive"/>
+  <method id="method:focus" idfk="method:focus" inherited="1" name="focus" source="jsx3.gui.Painted"/>
+  <method id="method:getAbsolutePosition" idfk="method:getAbsolutePosition" inherited="1" name="getAbsolutePosition" source="jsx3.gui.Painted"/>
+  <method id="method:getAttribute" idfk="method:getAttribute" inherited="1" name="getAttribute" source="jsx3.gui.Painted"/>
+  <method id="method:getAttributes" idfk="method:getAttributes" inherited="1" name="getAttributes" source="jsx3.gui.Painted"/>
+  <method id="method:getRendered" idfk="method:getRendered" inherited="1" name="getRendered" source="jsx3.gui.Painted"/>
+  <method deprecated="1" id="method:insertHTML" idfk="method:insertHTML" inherited="1" name="insertHTML" source="jsx3.gui.Painted"/>
+  <method id="method:onAfterPaint" idfk="method:onAfterPaint" inherited="1" name="onAfterPaint" source="jsx3.gui.Painted"/>
+  <method id="method:onAfterRestoreView" idfk="method:onAfterRestoreView" inherited="1" name="onAfterRestoreView" source="jsx3.gui.Painted"/>
+  <method id="method:paintChild" idfk="method:paintChild" inherited="1" name="paintChild" source="jsx3.gui.Painted"/>
+  <method id="method:paintChildren" idfk="method:paintChildren" inherited="1" name="paintChildren" source="jsx3.gui.Painted"/>
+  <method id="method:recalcBox" idfk="method:recalcBox" inherited="1" name="recalcBox" source="jsx3.gui.Painted"/>
+  <method id="method:removeAttribute" idfk="method:removeAttribute" inherited="1" name="removeAttribute" source="jsx3.gui.Painted"/>
+  <method id="method:removeAttributes" idfk="method:removeAttributes" inherited="1" name="removeAttributes" source="jsx3.gui.Painted"/>
+  <method id="method:repaint" idfk="method:repaint" inherited="1" name="repaint" source="jsx3.gui.Painted"/>
+  <method id="method:setAttribute" idfk="method:setAttribute" inherited="1" name="setAttribute" source="jsx3.gui.Painted"/>
+  <method id="method:adoptChild" idfk="method:adoptChild" inherited="1" name="adoptChild" source="jsx3.app.Model"/>
+  <method id="method:assembleFromXML" idfk="method:assembleFromXML" inherited="1" name="assembleFromXML" source="jsx3.app.Model"/>
+  <method id="method:doClone" idfk="method:doClone" inherited="1" name="doClone" source="jsx3.app.Model"/>
+  <method id="method:findAncestor" idfk="method:findAncestor" inherited="1" name="findAncestor" source="jsx3.app.Model"/>
+  <method id="method:findDescendants" idfk="method:findDescendants" inherited="1" name="findDescendants" source="jsx3.app.Model"/>
+  <method id="method:getAncestorOfName" idfk="method:getAncestorOfName" inherited="1" name="getAncestorOfName" source="jsx3.app.Model"/>
+  <method id="method:getAncestorOfType" idfk="method:getAncestorOfType" inherited="1" name="getAncestorOfType" source="jsx3.app.Model"/>
+  <method id="method:getChild" idfk="method:getChild" inherited="1" name="getChild" source="jsx3.app.Model"/>
+  <method id="method:getChildIndex" idfk="method:getChildIndex" inherited="1" name="getChildIndex" source="jsx3.app.Model"/>
+  <method id="method:getChildren" idfk="method:getChildren" inherited="1" name="getChildren" source="jsx3.app.Model"/>
+  <method id="method:getDescendantOfName" idfk="method:getDescendantOfName" inherited="1" name="getDescendantOfName" source="jsx3.app.Model"/>
+  <method id="method:getDescendantsOfType" idfk="method:getDescendantsOfType" inherited="1" name="getDescendantsOfType" source="jsx3.app.Model"/>
+  <method id="method:getDynamicProperty" idfk="method:getDynamicProperty" inherited="1" name="getDynamicProperty" source="jsx3.app.Model"/>
+  <method id="method:getFirstChild" idfk="method:getFirstChild" inherited="1" name="getFirstChild" source="jsx3.app.Model"/>
+  <method id="method:getFirstChildOfType" idfk="method:getFirstChildOfType" inherited="1" name="getFirstChildOfType" source="jsx3.app.Model"/>
+  <method id="method:getHelpId" idfk="method:getHelpId" inherited="1" name="getHelpId" source="jsx3.app.Model"/>
+  <method id="method:getId" idfk="method:getId" inherited="1" name="getId" source="jsx3.app.Model"/>
+  <method id="method:getLastChild" idfk="method:getLastChild" inherited="1" name="getLastChild" source="jsx3.app.Model"/>
+  <method id="method:getLoadType" idfk="method:getLoadType" inherited="1" name="getLoadType" source="jsx3.app.Model"/>
+  <method id="method:getMetaValue" idfk="method:getMetaValue" inherited="1" name="getMetaValue" source="jsx3.app.Model"/>
+  <method id="method:getNS" idfk="method:getNS" inherited="1" name="getNS" source="jsx3.app.Model"/>
+  <method id="method:getName" idfk="method:getName" inherited="1" name="getName" source="jsx3.app.Model"/>
+  <method id="method:getNextSibling" idfk="method:getNextSibling" inherited="1" name="getNextSibling" source="jsx3.app.Model"/>
+  <method final="1" id="method:getParent" idfk="method:getParent" inherited="1" name="getParent" source="jsx3.app.Model"/>
+  <method id="method:getPersistence" idfk="method:getPersistence" inherited="1" name="getPersistence" source="jsx3.app.Model"/>
+  <method id="method:getPreviousSibling" idfk="method:getPreviousSibling" inherited="1" name="getPreviousSibling" source="jsx3.app.Model"/>
+  <method id="method:getServer" idfk="method:getServer" inherited="1" name="getServer" source="jsx3.app.Model"/>
+  <method id="method:getUriResolver" idfk="method:getUriResolver" inherited="1" name="getUriResolver" source="jsx3.app.Model"/>
+  <method id="method:insertBefore" idfk="method:insertBefore" inherited="1" name="insertBefore" source="jsx3.app.Model"/>
+  <method id="method:load" idfk="method:load" inherited="1" name="load" source="jsx3.app.Model"/>
+  <method id="method:loadAndCache" idfk="method:loadAndCache" inherited="1" name="loadAndCache" source="jsx3.app.Model"/>
+  <method id="method:loadXML" idfk="method:loadXML" inherited="1" name="loadXML" source="jsx3.app.Model"/>
+  <method id="method:onAfterAssemble" idfk="method:onAfterAssemble" inherited="1" name="onAfterAssemble" source="jsx3.app.Model"/>
+  <method id="method:onAfterAttach" idfk="method:onAfterAttach" inherited="1" name="onAfterAttach" source="jsx3.app.Model"/>
+  <method id="method:onBeforeAssemble" idfk="method:onBeforeAssemble" inherited="1" name="onBeforeAssemble" source="jsx3.app.Model"/>
+  <method id="method:onChangeServer" idfk="method:onChangeServer" inherited="1" name="onChangeServer" source="jsx3.app.Model"/>
+  <method id="method:onChildAdded" idfk="method:onChildAdded" inherited="1" name="onChildAdded" source="jsx3.app.Model"/>
+  <method id="method:onDestroy" idfk="method:onDestroy" inherited="1" name="onDestroy" source="jsx3.app.Model"/>
+  <method id="method:onRemoveChild" idfk="method:onRemoveChild" inherited="1" name="onRemoveChild" source="jsx3.app.Model"/>
+  <method id="method:onSetChild" idfk="method:onSetChild" inherited="1" name="onSetChild" source="jsx3.app.Model"/>
+  <method id="method:onSetParent" idfk="method:onSetParent" inherited="1" name="onSetParent" source="jsx3.app.Model"/>
+  <method id="method:removeChild" idfk="method:removeChild" inherited="1" name="removeChild" source="jsx3.app.Model"/>
+  <method id="method:removeChildren" idfk="method:removeChildren" inherited="1" name="removeChildren" source="jsx3.app.Model"/>
+  <method id="method:selectDescendants" idfk="method:selectDescendants" inherited="1" name="selectDescendants" source="jsx3.app.Model"/>
+  <method id="method:setChild" idfk="method:setChild" inherited="1" name="setChild" source="jsx3.app.Model"/>
+  <method id="method:setDynamicProperty" idfk="method:setDynamicProperty" inherited="1" name="setDynamicProperty" source="jsx3.app.Model"/>
+  <method id="method:setHelpId" idfk="method:setHelpId" inherited="1" name="setHelpId" source="jsx3.app.Model"/>
+  <method id="method:setLoadType" idfk="method:setLoadType" inherited="1" name="setLoadType" source="jsx3.app.Model"/>
+  <method id="method:setMetaValue" idfk="method:setMetaValue" inherited="1" name="setMetaValue" source="jsx3.app.Model"/>
+  <method id="method:setName" idfk="method:setName" inherited="1" name="setName" source="jsx3.app.Model"/>
+  <method id="method:setPersistence" idfk="method:setPersistence" inherited="1" name="setPersistence" source="jsx3.app.Model"/>
+  <method id="method:toString" idfk="method:toString" inherited="1" name="toString" source="jsx3.app.Model"/>
+  <method id="method:toXML" idfk="method:toXML" inherited="1" name="toXML" source="jsx3.app.Model"/>
+  <method id="method:toXMLDoc" idfk="method:toXMLDoc" inherited="1" name="toXMLDoc" source="jsx3.app.Model"/>
+  <method id="method:toXMLElm" idfk="method:toXMLElm" inherited="1" name="toXMLElm" source="jsx3.app.Model"/>
+  <method id="method:publish" idfk="method:publish" inherited="1" name="publish" source="jsx3.util.EventDispatcher"/>
+  <method id="method:subscribe" idfk="method:subscribe" inherited="1" name="subscribe" source="jsx3.util.EventDispatcher"/>
+  <method id="method:unsubscribe" idfk="method:unsubscribe" inherited="1" name="unsubscribe" source="jsx3.util.EventDispatcher"/>
+  <method id="method:unsubscribeAll" idfk="method:unsubscribeAll" inherited="1" name="unsubscribeAll" source="jsx3.util.EventDispatcher"/>
+  <method id="method:clone" idfk="method:clone" inherited="1" name="clone" source="jsx3.lang.Object"/>
+  <method id="method:equals" idfk="method:equals" inherited="1" name="equals" source="jsx3.lang.Object"/>
+  <method id="method:eval" idfk="method:eval" inherited="1" name="eval" source="jsx3.lang.Object"/>
+  <method id="method:getClass" idfk="method:getClass" inherited="1" name="getClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOf" idfk="method:getInstanceOf" inherited="1" name="getInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfClass" idfk="method:getInstanceOfClass" inherited="1" name="getInstanceOfClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfPackage" idfk="method:getInstanceOfPackage" inherited="1" name="getInstanceOfPackage" source="jsx3.lang.Object"/>
+  <method id="method:instanceOf" idfk="method:instanceOf" inherited="1" name="instanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isInstanceOf" idfk="method:isInstanceOf" inherited="1" name="isInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isSubclassOf" idfk="method:isSubclassOf" inherited="1" name="isSubclassOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:jsxmix" idfk="method:jsxmix" inherited="1" name="jsxmix" source="jsx3.lang.Object"/>
+  <method id="method:jsxsuper" idfk="method:jsxsuper" inherited="1" name="jsxsuper" source="jsx3.lang.Object"/>
+  <method id="method:jsxsupermix" idfk="method:jsxsupermix" inherited="1" name="jsxsupermix" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:setInstanceOf" idfk="method:setInstanceOf" inherited="1" name="setInstanceOf" source="jsx3.lang.Object"/>
+</class>

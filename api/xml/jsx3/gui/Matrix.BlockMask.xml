@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface access="public" id="class:jsx3.gui.Matrix.BlockMask" name="jsx3.gui.Matrix.BlockMask" package="jsx3.gui" shortname="Matrix.BlockMask" since="3.2&#10; ">
+  <text>The interface that defines the methods that affect the behavior of a composite object used as an edit mask of a
+matrix column. Any object used as an edit mask that extends <code>jsx3.gui.Block</code> but does not implement
+<code>jsx3.gui.Form</code> will have these methods inserted into it. Such an object only has to define the methods
+whose default behavior it wishes to override.</text>
+  <superclass direct="1" id="super:0" loaded="1" name="jsx3.gui.Matrix.EditMask"/>
+  <method access="public" final="1" id="method:emBeginEdit" name="emBeginEdit">
+    <param name="strValue"/>
+    <param name="objTdDim"/>
+    <param name="objPaneDim"/>
+    <param name="objMatrix"/>
+    <param name="objColumn"/>
+    <param name="strRecordId"/>
+    <param name="objTD"/>
+    <overridesmix id="overrides:emBeginEdit" idfk="method:emBeginEdit" name="emBeginEdit" source="jsx3.gui.Matrix.EditMask"/>
+  </method>
+  <method access="public" final="1" id="method:emEndEdit" name="emEndEdit">
+    <overridesmix id="overrides:emEndEdit" idfk="method:emEndEdit" name="emEndEdit" source="jsx3.gui.Matrix.EditMask"/>
+  </method>
+  <method access="public" final="1" id="method:emGetValue" name="emGetValue">
+    <overridesmix id="overrides:emGetValue" idfk="method:emGetValue" name="emGetValue" source="jsx3.gui.Matrix.EditMask"/>
+  </method>
+  <method access="public" final="1" id="method:emInit" name="emInit">
+    <param name="objColumn"/>
+    <overridesmix id="overrides:emInit" idfk="method:emInit" name="emInit" source="jsx3.gui.Matrix.EditMask"/>
+  </method>
+  <method access="public" id="method:getMaskFirstResponder" name="getMaskFirstResponder">
+    <return text="">
+      <type link="1" name="jsx3.gui.Painted"/>
+    </return>
+    <text>Returns the DOM node that should be focused when the edit session begins. The default behavior is to return
+the first descendant (breadth-first) that implements <code>jsx3.gui.Form</code>.</text>
+  </method>
+  <method access="public" id="method:getMaskValue" name="getMaskValue">
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the value currently stored in this edit mask. The default behavior is to return the value of
+the first descendant (breadth-first) that implements <code>jsx3.gui.Form</code>.</text>
+  </method>
+  <method access="public" id="method:setMaskValue" name="setMaskValue">
+    <param name="strValue" text="">
+      <type link="1" name="String"/>
+    </param>
+    <text>Sets the value currently stored in this edit mask. The default behavior is to set the value of
+the first descendant (breadth-first) that implements <code>jsx3.gui.Form</code>.</text>
+  </method>
+  <method id="method:commitEditMask" idfk="method:commitEditMask" inherited="1" name="commitEditMask" source="jsx3.gui.Matrix.EditMask"/>
+  <method final="1" id="method:emGetSession" idfk="method:emGetSession" inherited="1" name="emGetSession" source="jsx3.gui.Matrix.EditMask"/>
+  <method final="1" id="method:resumeEditSession" idfk="method:resumeEditSession" inherited="1" name="resumeEditSession" source="jsx3.gui.Matrix.EditMask"/>
+  <method final="1" id="method:suspendEditSession" idfk="method:suspendEditSession" inherited="1" name="suspendEditSession" source="jsx3.gui.Matrix.EditMask"/>
+</interface>

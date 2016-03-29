@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class abstract="1" access="public" id="class:jsx3.gui.Matrix.ColumnFormat" name="jsx3.gui.Matrix.ColumnFormat" package="jsx3.gui" shortname="Matrix.ColumnFormat" since="3.2&#10; ">
+  <text>A class that defines the methods required for an object to be used by <code>jsx3.gui.Matrix.Column</code> instances to
+format cells of data.</text>
+  <superclass id="super:0" loaded="1" name="Object"/>
+  <superclass direct="1" id="super:1" loaded="1" name="jsx3.lang.Object"/>
+  <method abstract="1" access="public" id="method:format" name="format">
+    <param name="objDiv" text="on-screen DIV element to be formatted. Note that this DIV is contained within a TD">
+      <type link="1" name="HTMLElement"/>
+    </param>
+    <param name="strCDFKey" text="CDF record id for the record in the data model bound to the affected on-screen row">
+      <type link="1" name="String"/>
+    </param>
+    <param name="objMatrix" text="matrix instance">
+      <type link="1" name="jsx3.gui.Matrix"/>
+    </param>
+    <param name="objMatrixColumn" text="matrix column instance">
+      <type link="1" name="jsx3.gui.Matrix.Column"/>
+    </param>
+    <param name="intRowNumber" text="row number for row containing this cell (1-based)">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <param name="objServer" text="server instance. Useful for querying locale (for localized output)&#10;   ">
+      <type link="1" name="jsx3.app.Server"/>
+    </param>
+    <text>Formats the Matrix cell, a native DIV element.</text>
+  </method>
+  <method access="public" id="method:validate" name="validate">
+    <return text="true if the formatter should be called to iterate and format&#10;   ">
+      <type class="Boolean" link="1" name="boolean"/>
+    </return>
+    <text>Classes that implement this interface must provide this method to allow for browser-specific or similar type 'switch'. If
+false is returned, the formatter will not even attempt to iterate</text>
+  </method>
+  <method access="public" id="smethod:getInstance" name="getInstance" static="1">
+    <param name="strKey" text="">
+      <type link="1" name="String"/>
+    </param>
+    <param name="objColumn" text="">
+      <type link="1" name="jsx3.gui.Matrix.Column"/>
+    </param>
+    <return text="">
+      <type link="1" name="jsx3.gui.Matrix.ColumnFormat"/>
+    </return>
+    <text>Returns a column formatter for a string key. The key may be one of the following:
+<ul>
+<li>
+          <code>@unescape</code> – </li>
+<li>
+          <code>@unescape_all</code> – </li>
+<li>
+          <code>@lookup</code> – </li>
+<li>
+          <code>@datetime[,(short|medium|long|full,<i>format</i>)]</code> – </li>
+<li>
+          <code>@date[,(short|medium|long|full,<i>format</i>)]</code> – </li>
+<li>
+          <code>@time[,(short|medium|long|full,<i>format</i>)]</code> – </li>
+<li>
+          <code>@number[,(integer|percent|currency,<i>format</i>)]</code> – </li>
+<li>
+          <code>@message,<i>format</i>
+          </code> – </li>
+</ul>
+    </text>
+  </method>
+  <method id="method:clone" idfk="method:clone" inherited="1" name="clone" source="jsx3.lang.Object"/>
+  <method id="method:equals" idfk="method:equals" inherited="1" name="equals" source="jsx3.lang.Object"/>
+  <method id="method:eval" idfk="method:eval" inherited="1" name="eval" source="jsx3.lang.Object"/>
+  <method id="method:getClass" idfk="method:getClass" inherited="1" name="getClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOf" idfk="method:getInstanceOf" inherited="1" name="getInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfClass" idfk="method:getInstanceOfClass" inherited="1" name="getInstanceOfClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfPackage" idfk="method:getInstanceOfPackage" inherited="1" name="getInstanceOfPackage" source="jsx3.lang.Object"/>
+  <method id="method:instanceOf" idfk="method:instanceOf" inherited="1" name="instanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isInstanceOf" idfk="method:isInstanceOf" inherited="1" name="isInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isSubclassOf" idfk="method:isSubclassOf" inherited="1" name="isSubclassOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:jsxmix" idfk="method:jsxmix" inherited="1" name="jsxmix" source="jsx3.lang.Object"/>
+  <method id="method:jsxsuper" idfk="method:jsxsuper" inherited="1" name="jsxsuper" source="jsx3.lang.Object"/>
+  <method id="method:jsxsupermix" idfk="method:jsxsupermix" inherited="1" name="jsxsupermix" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:setInstanceOf" idfk="method:setInstanceOf" inherited="1" name="setInstanceOf" source="jsx3.lang.Object"/>
+  <method id="method:toString" idfk="method:toString" inherited="1" name="toString" source="jsx3.lang.Object"/>
+</class>

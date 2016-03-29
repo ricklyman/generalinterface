@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class access="public" id="class:jsx3.gui.NumberInput" name="jsx3.gui.NumberInput" package="jsx3.gui" shortname="NumberInput" since="3.7&#10; ">
+  <text>A form element (text box) that stores a number value. The value can be formatted according to a number format.
+User input is parsed according to the number format before setting the value of the form element.</text>
+  <see source="jsx3.util.NumberFormat">jsx3.util.NumberFormat</see>
+  <see idfk="method:getLocale" source="jsx3.app.Server">jsx3.app.Server.getLocale()</see>
+  <superclass id="super:0" loaded="1" name="Object"/>
+  <superclass id="super:1" loaded="1" name="jsx3.lang.Object"/>
+  <superclass id="super:2" loaded="1" name="jsx3.app.Model"/>
+  <superclass id="super:3" loaded="1" name="jsx3.gui.Painted"/>
+  <superclass id="super:4" loaded="1" name="jsx3.gui.Block"/>
+  <superclass direct="1" id="super:5" loaded="1" name="jsx3.gui.TextBox"/>
+  <implements id="implements:0" loaded="1" name="jsx3.gui.Form"/>
+  <implements id="implements:1" loaded="1" name="jsx3.gui.Interactive"/>
+  <implements id="implements:2" loaded="1" name="jsx3.util.EventDispatcher"/>
+  <method access="public" id="method:getFormat" name="getFormat">
+    <return text="">
+      <type link="1" name="String"/>
+      <type class="Number" link="1" name="int"/>
+    </return>
+    <text>Returns the number format as set with <code>setFormat()</code>.</text>
+    <see idfk="method:setFormat" source="jsx3.gui.NumberInput">setFormat()</see>
+  </method>
+  <method access="public" id="method:setFormat" name="setFormat">
+    <param name="format" text="the new format.">
+      <type link="1" name="String"/>
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <text>Sets the format of this number input. The format should conform to the syntax of <code>jsx3.util.NumberFormat</code>.
+The provided format may also be an integer, in which case it is intepreted as one of of the fields of
+<code>NumberFormat</code> - <code>NUMBER</code>, <code>INTEGER</code>, or <code>CURRENCY</code> - and
+the displayed format will be localized accordingly.</text>
+    <see source="jsx3.util.NumberFormat">jsx3.util.NumberFormat</see>
+    <see idfk="sfield:NUMBER" source="jsx3.util.NumberFormat">jsx3.util.NumberFormat.NUMBER</see>
+    <see idfk="sfield:INTEGER" source="jsx3.util.NumberFormat">jsx3.util.NumberFormat.INTEGER</see>
+    <see idfk="sfield:CURRENCY" source="jsx3.util.NumberFormat">jsx3.util.NumberFormat.CURRENCY</see>
+  </method>
+  <method id="method:beep" idfk="method:beep" inherited="1" name="beep" source="jsx3.gui.TextBox"/>
+  <method id="method:doValidate" idfk="method:doValidate" inherited="1" name="doValidate" source="jsx3.gui.TextBox"/>
+  <method id="method:formatValue" idfk="method:formatValue" inherited="1" name="formatValue" source="jsx3.gui.TextBox"/>
+  <method id="method:getDefaultValue" idfk="method:getDefaultValue" inherited="1" name="getDefaultValue" source="jsx3.gui.TextBox"/>
+  <method id="method:getMaxLength" idfk="method:getMaxLength" inherited="1" name="getMaxLength" source="jsx3.gui.TextBox"/>
+  <method id="method:getReadonly" idfk="method:getReadonly" inherited="1" name="getReadonly" source="jsx3.gui.TextBox"/>
+  <method id="method:getSelection" idfk="method:getSelection" inherited="1" name="getSelection" source="jsx3.gui.TextBox"/>
+  <method id="method:getType" idfk="method:getType" inherited="1" name="getType" source="jsx3.gui.TextBox"/>
+  <method id="method:getValidationExpression" idfk="method:getValidationExpression" inherited="1" name="getValidationExpression" source="jsx3.gui.TextBox"/>
+  <method id="method:getValidationType" idfk="method:getValidationType" inherited="1" name="getValidationType" source="jsx3.gui.TextBox"/>
+  <method id="method:getValue" idfk="method:getValue" inherited="1" name="getValue" source="jsx3.gui.TextBox"/>
+  <method id="method:getWrap" idfk="method:getWrap" inherited="1" name="getWrap" source="jsx3.gui.TextBox"/>
+  <method id="method:paint" idfk="method:paint" inherited="1" name="paint" source="jsx3.gui.TextBox"/>
+  <method id="method:parseValue" idfk="method:parseValue" inherited="1" name="parseValue" source="jsx3.gui.TextBox"/>
+  <method id="method:setDefaultValue" idfk="method:setDefaultValue" inherited="1" name="setDefaultValue" source="jsx3.gui.TextBox"/>
+  <method id="method:setMaxLength" idfk="method:setMaxLength" inherited="1" name="setMaxLength" source="jsx3.gui.TextBox"/>
+  <method id="method:setOverflow" idfk="method:setOverflow" inherited="1" name="setOverflow" source="jsx3.gui.TextBox"/>
+  <method id="method:setReadonly" idfk="method:setReadonly" inherited="1" name="setReadonly" source="jsx3.gui.TextBox"/>
+  <method id="method:setSelection" idfk="method:setSelection" inherited="1" name="setSelection" source="jsx3.gui.TextBox"/>
+  <method id="method:setType" idfk="method:setType" inherited="1" name="setType" source="jsx3.gui.TextBox"/>
+  <method id="method:setValidationExpression" idfk="method:setValidationExpression" inherited="1" name="setValidationExpression" source="jsx3.gui.TextBox"/>
+  <method id="method:setValidationType" idfk="method:setValidationType" inherited="1" name="setValidationType" source="jsx3.gui.TextBox"/>
+  <method id="method:setValue" idfk="method:setValue" inherited="1" name="setValue" source="jsx3.gui.TextBox"/>
+  <method id="method:setWrap" idfk="method:setWrap" inherited="1" name="setWrap" source="jsx3.gui.TextBox"/>
+  <method id="method:doKeyBinding" idfk="method:doKeyBinding" inherited="1" name="doKeyBinding" source="jsx3.gui.Form"/>
+  <method id="method:doReset" idfk="method:doReset" inherited="1" name="doReset" source="jsx3.gui.Form"/>
+  <method id="method:getDisabledBackgroundColor" idfk="method:getDisabledBackgroundColor" inherited="1" name="getDisabledBackgroundColor" source="jsx3.gui.Form"/>
+  <method id="method:getDisabledColor" idfk="method:getDisabledColor" inherited="1" name="getDisabledColor" source="jsx3.gui.Form"/>
+  <method id="method:getEnabled" idfk="method:getEnabled" inherited="1" name="getEnabled" source="jsx3.gui.Form"/>
+  <method id="method:getKeyBinding" idfk="method:getKeyBinding" inherited="1" name="getKeyBinding" source="jsx3.gui.Form"/>
+  <method id="method:getRequired" idfk="method:getRequired" inherited="1" name="getRequired" source="jsx3.gui.Form"/>
+  <method id="method:getValidationState" idfk="method:getValidationState" inherited="1" name="getValidationState" source="jsx3.gui.Form"/>
+  <method id="method:setDisabledBackgroundColor" idfk="method:setDisabledBackgroundColor" inherited="1" name="setDisabledBackgroundColor" source="jsx3.gui.Form"/>
+  <method id="method:setDisabledColor" idfk="method:setDisabledColor" inherited="1" name="setDisabledColor" source="jsx3.gui.Form"/>
+  <method id="method:setEnabled" idfk="method:setEnabled" inherited="1" name="setEnabled" source="jsx3.gui.Form"/>
+  <method id="method:setKeyBinding" idfk="method:setKeyBinding" inherited="1" name="setKeyBinding" source="jsx3.gui.Form"/>
+  <method id="method:setRequired" idfk="method:setRequired" inherited="1" name="setRequired" source="jsx3.gui.Form"/>
+  <method id="method:setValidationState" idfk="method:setValidationState" inherited="1" name="setValidationState" source="jsx3.gui.Form"/>
+  <method id="method:getBackground" idfk="method:getBackground" inherited="1" name="getBackground" source="jsx3.gui.Block"/>
+  <method id="method:getBackgroundColor" idfk="method:getBackgroundColor" inherited="1" name="getBackgroundColor" source="jsx3.gui.Block"/>
+  <method id="method:getBorder" idfk="method:getBorder" inherited="1" name="getBorder" source="jsx3.gui.Block"/>
+  <method id="method:getCDFAttribute" idfk="method:getCDFAttribute" inherited="1" name="getCDFAttribute" source="jsx3.gui.Block"/>
+  <method id="method:getCDFId" idfk="method:getCDFId" inherited="1" name="getCDFId" source="jsx3.gui.Block"/>
+  <method id="method:getCSSOverride" idfk="method:getCSSOverride" inherited="1" name="getCSSOverride" source="jsx3.gui.Block"/>
+  <method id="method:getClassName" idfk="method:getClassName" inherited="1" name="getClassName" source="jsx3.gui.Block"/>
+  <method id="method:getColor" idfk="method:getColor" inherited="1" name="getColor" source="jsx3.gui.Block"/>
+  <method id="method:getCursor" idfk="method:getCursor" inherited="1" name="getCursor" source="jsx3.gui.Block"/>
+  <method id="method:getDimensions" idfk="method:getDimensions" inherited="1" name="getDimensions" source="jsx3.gui.Block"/>
+  <method id="method:getDisplay" idfk="method:getDisplay" inherited="1" name="getDisplay" source="jsx3.gui.Block"/>
+  <method id="method:getFontName" idfk="method:getFontName" inherited="1" name="getFontName" source="jsx3.gui.Block"/>
+  <method id="method:getFontSize" idfk="method:getFontSize" inherited="1" name="getFontSize" source="jsx3.gui.Block"/>
+  <method id="method:getFontWeight" idfk="method:getFontWeight" inherited="1" name="getFontWeight" source="jsx3.gui.Block"/>
+  <method id="method:getHeight" idfk="method:getHeight" inherited="1" name="getHeight" source="jsx3.gui.Block"/>
+  <method id="method:getIndex" idfk="method:getIndex" inherited="1" name="getIndex" source="jsx3.gui.Block"/>
+  <method id="method:getLeft" idfk="method:getLeft" inherited="1" name="getLeft" source="jsx3.gui.Block"/>
+  <method id="method:getMargin" idfk="method:getMargin" inherited="1" name="getMargin" source="jsx3.gui.Block"/>
+  <method id="method:getOverflow" idfk="method:getOverflow" inherited="1" name="getOverflow" source="jsx3.gui.Block"/>
+  <method id="method:getPadding" idfk="method:getPadding" inherited="1" name="getPadding" source="jsx3.gui.Block"/>
+  <method id="method:getRelativePosition" idfk="method:getRelativePosition" inherited="1" name="getRelativePosition" source="jsx3.gui.Block"/>
+  <method id="method:getTagName" idfk="method:getTagName" inherited="1" name="getTagName" source="jsx3.gui.Block"/>
+  <method id="method:getText" idfk="method:getText" inherited="1" name="getText" source="jsx3.gui.Block"/>
+  <method id="method:getTextAlign" idfk="method:getTextAlign" inherited="1" name="getTextAlign" source="jsx3.gui.Block"/>
+  <method id="method:getTip" idfk="method:getTip" inherited="1" name="getTip" source="jsx3.gui.Block"/>
+  <method id="method:getTop" idfk="method:getTop" inherited="1" name="getTop" source="jsx3.gui.Block"/>
+  <method id="method:getVisibility" idfk="method:getVisibility" inherited="1" name="getVisibility" source="jsx3.gui.Block"/>
+  <method id="method:getWidth" idfk="method:getWidth" inherited="1" name="getWidth" source="jsx3.gui.Block"/>
+  <method id="method:getZIndex" idfk="method:getZIndex" inherited="1" name="getZIndex" source="jsx3.gui.Block"/>
+  <method id="method:hideMask" idfk="method:hideMask" inherited="1" name="hideMask" source="jsx3.gui.Block"/>
+  <method id="method:setBackground" idfk="method:setBackground" inherited="1" name="setBackground" source="jsx3.gui.Block"/>
+  <method id="method:setBackgroundColor" idfk="method:setBackgroundColor" inherited="1" name="setBackgroundColor" source="jsx3.gui.Block"/>
+  <method id="method:setBorder" idfk="method:setBorder" inherited="1" name="setBorder" source="jsx3.gui.Block"/>
+  <method id="method:setCDFAttribute" idfk="method:setCDFAttribute" inherited="1" name="setCDFAttribute" source="jsx3.gui.Block"/>
+  <method id="method:setCDFId" idfk="method:setCDFId" inherited="1" name="setCDFId" source="jsx3.gui.Block"/>
+  <method id="method:setCSSOverride" idfk="method:setCSSOverride" inherited="1" name="setCSSOverride" source="jsx3.gui.Block"/>
+  <method id="method:setClassName" idfk="method:setClassName" inherited="1" name="setClassName" source="jsx3.gui.Block"/>
+  <method id="method:setColor" idfk="method:setColor" inherited="1" name="setColor" source="jsx3.gui.Block"/>
+  <method id="method:setCursor" idfk="method:setCursor" inherited="1" name="setCursor" source="jsx3.gui.Block"/>
+  <method id="method:setDimensions" idfk="method:setDimensions" inherited="1" name="setDimensions" source="jsx3.gui.Block"/>
+  <method id="method:setDisplay" idfk="method:setDisplay" inherited="1" name="setDisplay" source="jsx3.gui.Block"/>
+  <method id="method:setFontName" idfk="method:setFontName" inherited="1" name="setFontName" source="jsx3.gui.Block"/>
+  <method id="method:setFontSize" idfk="method:setFontSize" inherited="1" name="setFontSize" source="jsx3.gui.Block"/>
+  <method id="method:setFontWeight" idfk="method:setFontWeight" inherited="1" name="setFontWeight" source="jsx3.gui.Block"/>
+  <method id="method:setHeight" idfk="method:setHeight" inherited="1" name="setHeight" source="jsx3.gui.Block"/>
+  <method id="method:setIndex" idfk="method:setIndex" inherited="1" name="setIndex" source="jsx3.gui.Block"/>
+  <method id="method:setLeft" idfk="method:setLeft" inherited="1" name="setLeft" source="jsx3.gui.Block"/>
+  <method id="method:setMargin" idfk="method:setMargin" inherited="1" name="setMargin" source="jsx3.gui.Block"/>
+  <method id="method:setPadding" idfk="method:setPadding" inherited="1" name="setPadding" source="jsx3.gui.Block"/>
+  <method id="method:setRelativePosition" idfk="method:setRelativePosition" inherited="1" name="setRelativePosition" source="jsx3.gui.Block"/>
+  <method id="method:setTagName" idfk="method:setTagName" inherited="1" name="setTagName" source="jsx3.gui.Block"/>
+  <method id="method:setText" idfk="method:setText" inherited="1" name="setText" source="jsx3.gui.Block"/>
+  <method id="method:setTextAlign" idfk="method:setTextAlign" inherited="1" name="setTextAlign" source="jsx3.gui.Block"/>
+  <method id="method:setTip" idfk="method:setTip" inherited="1" name="setTip" source="jsx3.gui.Block"/>
+  <method id="method:setTop" idfk="method:setTop" inherited="1" name="setTop" source="jsx3.gui.Block"/>
+  <method id="method:setVisibility" idfk="method:setVisibility" inherited="1" name="setVisibility" source="jsx3.gui.Block"/>
+  <method id="method:setWidth" idfk="method:setWidth" inherited="1" name="setWidth" source="jsx3.gui.Block"/>
+  <method id="method:setZIndex" idfk="method:setZIndex" inherited="1" name="setZIndex" source="jsx3.gui.Block"/>
+  <method id="method:showMask" idfk="method:showMask" inherited="1" name="showMask" source="jsx3.gui.Block"/>
+  <method id="method:doEvent" idfk="method:doEvent" inherited="1" name="doEvent" source="jsx3.gui.Interactive"/>
+  <method id="method:getCanDrag" idfk="method:getCanDrag" inherited="1" name="getCanDrag" source="jsx3.gui.Interactive"/>
+  <method id="method:getCanDrop" idfk="method:getCanDrop" inherited="1" name="getCanDrop" source="jsx3.gui.Interactive"/>
+  <method id="method:getCanMove" idfk="method:getCanMove" inherited="1" name="getCanMove" source="jsx3.gui.Interactive"/>
+  <method id="method:getCanSpy" idfk="method:getCanSpy" inherited="1" name="getCanSpy" source="jsx3.gui.Interactive"/>
+  <method id="method:getEvent" idfk="method:getEvent" inherited="1" name="getEvent" source="jsx3.gui.Interactive"/>
+  <method id="method:getEvents" idfk="method:getEvents" inherited="1" name="getEvents" source="jsx3.gui.Interactive"/>
+  <method id="method:getMenu" idfk="method:getMenu" inherited="1" name="getMenu" source="jsx3.gui.Interactive"/>
+  <method id="method:hasEvent" idfk="method:hasEvent" inherited="1" name="hasEvent" source="jsx3.gui.Interactive"/>
+  <method id="method:registerHotKey" idfk="method:registerHotKey" inherited="1" name="registerHotKey" source="jsx3.gui.Interactive"/>
+  <method id="method:removeEvent" idfk="method:removeEvent" inherited="1" name="removeEvent" source="jsx3.gui.Interactive"/>
+  <method id="method:removeEvents" idfk="method:removeEvents" inherited="1" name="removeEvents" source="jsx3.gui.Interactive"/>
+  <method id="method:setCanDrag" idfk="method:setCanDrag" inherited="1" name="setCanDrag" source="jsx3.gui.Interactive"/>
+  <method id="method:setCanDrop" idfk="method:setCanDrop" inherited="1" name="setCanDrop" source="jsx3.gui.Interactive"/>
+  <method id="method:setCanMove" idfk="method:setCanMove" inherited="1" name="setCanMove" source="jsx3.gui.Interactive"/>
+  <method id="method:setCanSpy" idfk="method:setCanSpy" inherited="1" name="setCanSpy" source="jsx3.gui.Interactive"/>
+  <method id="method:setEvent" idfk="method:setEvent" inherited="1" name="setEvent" source="jsx3.gui.Interactive"/>
+  <method id="method:setMenu" idfk="method:setMenu" inherited="1" name="setMenu" source="jsx3.gui.Interactive"/>
+  <method id="method:setSpyStyles" idfk="method:setSpyStyles" inherited="1" name="setSpyStyles" source="jsx3.gui.Interactive"/>
+  <method id="method:showSpy" idfk="method:showSpy" inherited="1" name="showSpy" source="jsx3.gui.Interactive"/>
+  <method id="method:focus" idfk="method:focus" inherited="1" name="focus" source="jsx3.gui.Painted"/>
+  <method id="method:getAbsolutePosition" idfk="method:getAbsolutePosition" inherited="1" name="getAbsolutePosition" source="jsx3.gui.Painted"/>
+  <method id="method:getAttribute" idfk="method:getAttribute" inherited="1" name="getAttribute" source="jsx3.gui.Painted"/>
+  <method id="method:getAttributes" idfk="method:getAttributes" inherited="1" name="getAttributes" source="jsx3.gui.Painted"/>
+  <method id="method:getRendered" idfk="method:getRendered" inherited="1" name="getRendered" source="jsx3.gui.Painted"/>
+  <method deprecated="1" id="method:insertHTML" idfk="method:insertHTML" inherited="1" name="insertHTML" source="jsx3.gui.Painted"/>
+  <method id="method:onAfterPaint" idfk="method:onAfterPaint" inherited="1" name="onAfterPaint" source="jsx3.gui.Painted"/>
+  <method id="method:onAfterRestoreView" idfk="method:onAfterRestoreView" inherited="1" name="onAfterRestoreView" source="jsx3.gui.Painted"/>
+  <method id="method:paintChild" idfk="method:paintChild" inherited="1" name="paintChild" source="jsx3.gui.Painted"/>
+  <method id="method:paintChildren" idfk="method:paintChildren" inherited="1" name="paintChildren" source="jsx3.gui.Painted"/>
+  <method id="method:recalcBox" idfk="method:recalcBox" inherited="1" name="recalcBox" source="jsx3.gui.Painted"/>
+  <method id="method:removeAttribute" idfk="method:removeAttribute" inherited="1" name="removeAttribute" source="jsx3.gui.Painted"/>
+  <method id="method:removeAttributes" idfk="method:removeAttributes" inherited="1" name="removeAttributes" source="jsx3.gui.Painted"/>
+  <method id="method:repaint" idfk="method:repaint" inherited="1" name="repaint" source="jsx3.gui.Painted"/>
+  <method id="method:setAttribute" idfk="method:setAttribute" inherited="1" name="setAttribute" source="jsx3.gui.Painted"/>
+  <method id="method:adoptChild" idfk="method:adoptChild" inherited="1" name="adoptChild" source="jsx3.app.Model"/>
+  <method id="method:assembleFromXML" idfk="method:assembleFromXML" inherited="1" name="assembleFromXML" source="jsx3.app.Model"/>
+  <method id="method:doClone" idfk="method:doClone" inherited="1" name="doClone" source="jsx3.app.Model"/>
+  <method id="method:findAncestor" idfk="method:findAncestor" inherited="1" name="findAncestor" source="jsx3.app.Model"/>
+  <method id="method:findDescendants" idfk="method:findDescendants" inherited="1" name="findDescendants" source="jsx3.app.Model"/>
+  <method id="method:getAncestorOfName" idfk="method:getAncestorOfName" inherited="1" name="getAncestorOfName" source="jsx3.app.Model"/>
+  <method id="method:getAncestorOfType" idfk="method:getAncestorOfType" inherited="1" name="getAncestorOfType" source="jsx3.app.Model"/>
+  <method id="method:getChild" idfk="method:getChild" inherited="1" name="getChild" source="jsx3.app.Model"/>
+  <method id="method:getChildIndex" idfk="method:getChildIndex" inherited="1" name="getChildIndex" source="jsx3.app.Model"/>
+  <method id="method:getChildren" idfk="method:getChildren" inherited="1" name="getChildren" source="jsx3.app.Model"/>
+  <method id="method:getDescendantOfName" idfk="method:getDescendantOfName" inherited="1" name="getDescendantOfName" source="jsx3.app.Model"/>
+  <method id="method:getDescendantsOfType" idfk="method:getDescendantsOfType" inherited="1" name="getDescendantsOfType" source="jsx3.app.Model"/>
+  <method id="method:getDynamicProperty" idfk="method:getDynamicProperty" inherited="1" name="getDynamicProperty" source="jsx3.app.Model"/>
+  <method id="method:getFirstChild" idfk="method:getFirstChild" inherited="1" name="getFirstChild" source="jsx3.app.Model"/>
+  <method id="method:getFirstChildOfType" idfk="method:getFirstChildOfType" inherited="1" name="getFirstChildOfType" source="jsx3.app.Model"/>
+  <method id="method:getHelpId" idfk="method:getHelpId" inherited="1" name="getHelpId" source="jsx3.app.Model"/>
+  <method id="method:getId" idfk="method:getId" inherited="1" name="getId" source="jsx3.app.Model"/>
+  <method id="method:getLastChild" idfk="method:getLastChild" inherited="1" name="getLastChild" source="jsx3.app.Model"/>
+  <method id="method:getLoadType" idfk="method:getLoadType" inherited="1" name="getLoadType" source="jsx3.app.Model"/>
+  <method id="method:getMetaValue" idfk="method:getMetaValue" inherited="1" name="getMetaValue" source="jsx3.app.Model"/>
+  <method id="method:getNS" idfk="method:getNS" inherited="1" name="getNS" source="jsx3.app.Model"/>
+  <method id="method:getName" idfk="method:getName" inherited="1" name="getName" source="jsx3.app.Model"/>
+  <method id="method:getNextSibling" idfk="method:getNextSibling" inherited="1" name="getNextSibling" source="jsx3.app.Model"/>
+  <method final="1" id="method:getParent" idfk="method:getParent" inherited="1" name="getParent" source="jsx3.app.Model"/>
+  <method id="method:getPersistence" idfk="method:getPersistence" inherited="1" name="getPersistence" source="jsx3.app.Model"/>
+  <method id="method:getPreviousSibling" idfk="method:getPreviousSibling" inherited="1" name="getPreviousSibling" source="jsx3.app.Model"/>
+  <method id="method:getServer" idfk="method:getServer" inherited="1" name="getServer" source="jsx3.app.Model"/>
+  <method id="method:getUriResolver" idfk="method:getUriResolver" inherited="1" name="getUriResolver" source="jsx3.app.Model"/>
+  <method id="method:insertBefore" idfk="method:insertBefore" inherited="1" name="insertBefore" source="jsx3.app.Model"/>
+  <method id="method:load" idfk="method:load" inherited="1" name="load" source="jsx3.app.Model"/>
+  <method id="method:loadAndCache" idfk="method:loadAndCache" inherited="1" name="loadAndCache" source="jsx3.app.Model"/>
+  <method id="method:loadXML" idfk="method:loadXML" inherited="1" name="loadXML" source="jsx3.app.Model"/>
+  <method id="method:onAfterAssemble" idfk="method:onAfterAssemble" inherited="1" name="onAfterAssemble" source="jsx3.app.Model"/>
+  <method id="method:onAfterAttach" idfk="method:onAfterAttach" inherited="1" name="onAfterAttach" source="jsx3.app.Model"/>
+  <method id="method:onBeforeAssemble" idfk="method:onBeforeAssemble" inherited="1" name="onBeforeAssemble" source="jsx3.app.Model"/>
+  <method id="method:onChangeServer" idfk="method:onChangeServer" inherited="1" name="onChangeServer" source="jsx3.app.Model"/>
+  <method id="method:onChildAdded" idfk="method:onChildAdded" inherited="1" name="onChildAdded" source="jsx3.app.Model"/>
+  <method id="method:onDestroy" idfk="method:onDestroy" inherited="1" name="onDestroy" source="jsx3.app.Model"/>
+  <method id="method:onRemoveChild" idfk="method:onRemoveChild" inherited="1" name="onRemoveChild" source="jsx3.app.Model"/>
+  <method id="method:onSetChild" idfk="method:onSetChild" inherited="1" name="onSetChild" source="jsx3.app.Model"/>
+  <method id="method:onSetParent" idfk="method:onSetParent" inherited="1" name="onSetParent" source="jsx3.app.Model"/>
+  <method id="method:removeChild" idfk="method:removeChild" inherited="1" name="removeChild" source="jsx3.app.Model"/>
+  <method id="method:removeChildren" idfk="method:removeChildren" inherited="1" name="removeChildren" source="jsx3.app.Model"/>
+  <method id="method:selectDescendants" idfk="method:selectDescendants" inherited="1" name="selectDescendants" source="jsx3.app.Model"/>
+  <method id="method:setChild" idfk="method:setChild" inherited="1" name="setChild" source="jsx3.app.Model"/>
+  <method id="method:setDynamicProperty" idfk="method:setDynamicProperty" inherited="1" name="setDynamicProperty" source="jsx3.app.Model"/>
+  <method id="method:setHelpId" idfk="method:setHelpId" inherited="1" name="setHelpId" source="jsx3.app.Model"/>
+  <method id="method:setLoadType" idfk="method:setLoadType" inherited="1" name="setLoadType" source="jsx3.app.Model"/>
+  <method id="method:setMetaValue" idfk="method:setMetaValue" inherited="1" name="setMetaValue" source="jsx3.app.Model"/>
+  <method id="method:setName" idfk="method:setName" inherited="1" name="setName" source="jsx3.app.Model"/>
+  <method id="method:setPersistence" idfk="method:setPersistence" inherited="1" name="setPersistence" source="jsx3.app.Model"/>
+  <method id="method:toString" idfk="method:toString" inherited="1" name="toString" source="jsx3.app.Model"/>
+  <method id="method:toXML" idfk="method:toXML" inherited="1" name="toXML" source="jsx3.app.Model"/>
+  <method id="method:toXMLDoc" idfk="method:toXMLDoc" inherited="1" name="toXMLDoc" source="jsx3.app.Model"/>
+  <method id="method:toXMLElm" idfk="method:toXMLElm" inherited="1" name="toXMLElm" source="jsx3.app.Model"/>
+  <method id="method:publish" idfk="method:publish" inherited="1" name="publish" source="jsx3.util.EventDispatcher"/>
+  <method id="method:subscribe" idfk="method:subscribe" inherited="1" name="subscribe" source="jsx3.util.EventDispatcher"/>
+  <method id="method:unsubscribe" idfk="method:unsubscribe" inherited="1" name="unsubscribe" source="jsx3.util.EventDispatcher"/>
+  <method id="method:unsubscribeAll" idfk="method:unsubscribeAll" inherited="1" name="unsubscribeAll" source="jsx3.util.EventDispatcher"/>
+  <method id="method:clone" idfk="method:clone" inherited="1" name="clone" source="jsx3.lang.Object"/>
+  <method id="method:equals" idfk="method:equals" inherited="1" name="equals" source="jsx3.lang.Object"/>
+  <method id="method:eval" idfk="method:eval" inherited="1" name="eval" source="jsx3.lang.Object"/>
+  <method id="method:getClass" idfk="method:getClass" inherited="1" name="getClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOf" idfk="method:getInstanceOf" inherited="1" name="getInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfClass" idfk="method:getInstanceOfClass" inherited="1" name="getInstanceOfClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfPackage" idfk="method:getInstanceOfPackage" inherited="1" name="getInstanceOfPackage" source="jsx3.lang.Object"/>
+  <method id="method:instanceOf" idfk="method:instanceOf" inherited="1" name="instanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isInstanceOf" idfk="method:isInstanceOf" inherited="1" name="isInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isSubclassOf" idfk="method:isSubclassOf" inherited="1" name="isSubclassOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:jsxmix" idfk="method:jsxmix" inherited="1" name="jsxmix" source="jsx3.lang.Object"/>
+  <method id="method:jsxsuper" idfk="method:jsxsuper" inherited="1" name="jsxsuper" source="jsx3.lang.Object"/>
+  <method id="method:jsxsupermix" idfk="method:jsxsupermix" inherited="1" name="jsxsupermix" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:setInstanceOf" idfk="method:setInstanceOf" inherited="1" name="setInstanceOf" source="jsx3.lang.Object"/>
+</class>

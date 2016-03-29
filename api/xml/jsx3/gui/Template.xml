@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class access="public" id="class:jsx3.gui.Template" name="jsx3.gui.Template" package="jsx3.gui" shortname="Template" since="3.6&#10; ">
+  <text>Provides template related services to the base template class, jsx3.gui.Template.Block. See the <code>compile</code> method for usage details.</text>
+  <superclass id="super:0" loaded="1" name="Object"/>
+  <superclass direct="1" id="super:1" loaded="1" name="jsx3.lang.Object"/>
+  <nested access="public" id="nested:jsx3.gui.Template.Block" loaded="1" name="jsx3.gui.Template.Block" shortname="Template.Block" since="3.6&#10; " type="class">
+    <text>Provides base class for creating custom GUI classes.</text>
+  </nested>
+  <constructor access="public" id="method:init" name="init">
+    <text>instance initializer
+   </text>
+  </constructor>
+  <method access="public" id="smethod:addLibrary" name="addLibrary" static="1">
+    <param name="strLibraryId" text="The ID for this library.">
+      <type link="1" name="String"/>
+    </param>
+    <param name="arrLibrary" text="An array of objects. Each object has the named properties: id, setid (optional if id is prefixed with a $).&#10;   ">
+      <type link="1" name="Array">
+        <type link="1" name="Object"/>
+      </type>
+    </param>
+    <text>Adds a resolver library. A resolver library is a collection of one or more resolvers. Libraries allow resolvers belonging to different sets
+to be organized into a related group. This simplifies how resolvers are grouped and used as they are shared among classes. Note that
+a library is automatically created for each class that uses the template engine.  For example, if a GUI class named my.Example is
+compiled by the template, a library will be created named my.Example.  Any other GUI class can now use every resolver made
+available to my.Example, by importing this named library.</text>
+  </method>
+  <method access="public" id="smethod:addResolver" name="addResolver" static="1">
+    <param name="strSetId" text="If not provided, the global resolver ID will be used: jsx3.gui.Template">
+      <type link="1" name="String"/>
+    </param>
+    <param name="strResolverId" text="Unique ID for the resolver among all resolvers in this set">
+      <type link="1" name="String"/>
+    </param>
+    <param name="objResolver" text="function handler. The resolver always executes in context of the instance being painted">
+      <type link="1" name="Object"/>
+    </param>
+    <param name="META" text="Extended configuration object with named properties:&#10;       &lt;ul&gt;&lt;li&gt;type (css (default)| attribute | event | box)&lt;/li&gt;&#10;       &lt;li&gt;repaintupdate (true | false (default))&lt;/li&gt;&#10;       &lt;li&gt;name (the name of the attribute or style (i.e., background-color))&lt;/li&gt;&#10;       &lt;li&gt;triggers (array of named triggers that will cause this resolver to update when called)&lt;/li&gt;&#10;       &lt;li&gt;defaultvalue (if the resovler function returns null, this value will be used)&lt;/li&gt;&lt;/ul&gt;">
+      <type link="1" name="Object"/>
+    </param>
+    <return text="Resolver object just created&#10;   ">
+      <type link="1" name="Object"/>
+    </return>
+    <text>Adds a resolver to a given resolver set.</text>
+  </method>
+  <method access="public" id="smethod:compile" name="compile" static="1">
+    <param name="Markup" text="String of XML that validates against the Schema, http://gi.tibco.com/transform/">
+      <type link="1" name="String"/>
+      <type link="1" name="jsx3.xml.Document"/>
+    </param>
+    <param name="objClass" text="An instance of jsx3.lang.Class">
+      <type link="1" name="jsx3.lang.Class"/>
+    </param>
+    <param name="bCache" text="">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <throws text="if strMarkup does not validate or objClass is not an instance of jsx3.lang.Class">
+      <type link="1" name="jsx3.lang.Exception"/>
+    </throws>
+    <text>Converts an HTML template into the relevant JavaScript functions needed by the GUI class.  See jsx3.gui.Template.Block for example
+usage.</text>
+    <see source="jsx3.gui.Template.Block">jsx3.gui.Template.Block</see>
+  </method>
+  <method access="public" id="smethod:precompile" name="precompile" static="1">
+    <param name="strClassName" text="The name of the class to precompile.  For example, WIDGET. This should also be the name of the class as contained within the defineClass method where the given class is instantiated">
+      <type link="1" name="String"/>
+    </param>
+    <param name="strPrototypeName" text="Optional.  The prototype name per the class declaration. For example, widget">
+      <type link="1" name="String"/>
+    </param>
+    <param name="strQualifiedName" text="Optional.  The full name of the class, including the package (use if the class does not belong to the jsx3.gui package). For example, jsx3.ext.SomeRedBoxClass">
+      <type link="1" name="String"/>
+    </param>
+    <return text="JavaScript function code&#10;   ">
+      <type link="1" name="String"/>
+    </return>
+    <text>Call this method during GUI class development to see how your XML template is converted into JavaScript by the template compiler.
+Using the precompiled JavaScript can provide to-the-line debugging information when difficult bugs appear in your GUI class.  To use for testing,
+copy the JavaScript code returned by this method and paste into your GUI class.  Make sure that when you paste it, it is the last
+statement contained by the class. If you paste the generated JavaScript BEFORE the call to 'getTemplateXML', it will be clobbered by the generated code.
+The code returned by this method reflects the exact methods and properties injected by the template class when it converts the markup
+returned by <code>getTemplateXML</code> into JavaScript.</text>
+  </method>
+  <method id="method:clone" idfk="method:clone" inherited="1" name="clone" source="jsx3.lang.Object"/>
+  <method id="method:equals" idfk="method:equals" inherited="1" name="equals" source="jsx3.lang.Object"/>
+  <method id="method:eval" idfk="method:eval" inherited="1" name="eval" source="jsx3.lang.Object"/>
+  <method id="method:getClass" idfk="method:getClass" inherited="1" name="getClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOf" idfk="method:getInstanceOf" inherited="1" name="getInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfClass" idfk="method:getInstanceOfClass" inherited="1" name="getInstanceOfClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfPackage" idfk="method:getInstanceOfPackage" inherited="1" name="getInstanceOfPackage" source="jsx3.lang.Object"/>
+  <method id="method:instanceOf" idfk="method:instanceOf" inherited="1" name="instanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isInstanceOf" idfk="method:isInstanceOf" inherited="1" name="isInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isSubclassOf" idfk="method:isSubclassOf" inherited="1" name="isSubclassOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:jsxmix" idfk="method:jsxmix" inherited="1" name="jsxmix" source="jsx3.lang.Object"/>
+  <method id="method:jsxsuper" idfk="method:jsxsuper" inherited="1" name="jsxsuper" source="jsx3.lang.Object"/>
+  <method id="method:jsxsupermix" idfk="method:jsxsupermix" inherited="1" name="jsxsupermix" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:setInstanceOf" idfk="method:setInstanceOf" inherited="1" name="setInstanceOf" source="jsx3.lang.Object"/>
+  <method id="method:toString" idfk="method:toString" inherited="1" name="toString" source="jsx3.lang.Object"/>
+</class>

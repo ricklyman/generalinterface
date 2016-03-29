@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package access="public" id="class:jsx3.gui" name="jsx3.gui">
+  <text>GUI classes.
+ </text>
+  <nested access="public" id="nested:jsx3.gui.Block" loaded="1" name="jsx3.gui.Block" shortname="Block" type="class">
+    <text>This class provides a container-based, object-oriented approach to creating static html objects (basically this class creates "DIV" objects).</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.gui.BlockX" loaded="1" name="jsx3.gui.BlockX" shortname="BlockX" type="class">
+    <text>Paints the result of an XSL transformation in an Block.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.gui.Button" loaded="1" name="jsx3.gui.Button" shortname="Button" type="class">
+    <text>Provides a object-oriented interface for a standard command button.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.gui.CDF" loaded="1" name="jsx3.gui.CDF" shortname="CDF" type="class">
+    <text>Provides a container that maps to a CDF Document in the cache.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.gui.CheckBox" loaded="1" name="jsx3.gui.CheckBox" shortname="CheckBox" type="class">
+    <text>This class is a wrapper of the standard HTML checkbox.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.gui.ColorPicker" loaded="1" name="jsx3.gui.ColorPicker" shortname="ColorPicker" since="3.2&#10; " type="class">
+    <text>A GUI class that allows the user to pick a color using an HSB (hue-saturation-brightness) picker.</text>
+  </nested>
+  <nested access="public" deprecated="1" id="nested:jsx3.gui.Column" loaded="1" name="jsx3.gui.Column" shortname="Column" type="class">
+    <text>Provides a way to generate a column of data for a <code>jsx3.gui.List</code> instance (or compatible subclass).</text>
+    <deprecated>Use &lt;code&gt;jsx3.gui.Matrix.Column&lt;/code&gt; instead.</deprecated>
+    <see source="jsx3.gui.Matrix.Column">jsx3.gui.Matrix.Column</see>
+  </nested>
+  <nested access="public" id="nested:jsx3.gui.DatePicker" loaded="1" name="jsx3.gui.DatePicker" shortname="DatePicker" since="3.0&#10; " type="class">
+    <text>A form element that allows for the selection of an arbitrary date by showing a navigable calendar.</text>
+    <see source="jsx3.util.DateFormat">jsx3.util.DateFormat</see>
+    <see idfk="method:getLocale" source="jsx3.app.Server">jsx3.app.Server.getLocale()</see>
+  </nested>
+  <nested access="public" id="nested:jsx3.gui.Dialog" loaded="1" name="jsx3.gui.Dialog" shortname="Dialog" type="class">
+    <text>Renders a dialog window.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.gui.DojoWidget" loaded="1" name="jsx3.gui.DojoWidget" shortname="DojoWidget" type="class">
+    <text>An adapter for Dojo widgets.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.gui.Event" loaded="1" name="jsx3.gui.Event" shortname="Event" since="3.1&#10; " type="class">
+    <text>Native browser event wrapper.</text>
+  </nested>
+  <nested access="public" deprecated="1" id="nested:jsx3.gui.Grid" loaded="1" name="jsx3.gui.Grid" shortname="Grid" type="class">
+    <text>The jsx3.gui.Grid class is a subclass of the jsx3.gui.List class.</text>
+    <deprecated>Use &lt;code&gt;jsx3.gui.Matrix&lt;/code&gt; instead.</deprecated>
+    <see source="jsx3.gui.Matrix">jsx3.gui.Matrix</see>
+  </nested>
+  <nested access="public" id="nested:jsx3.gui.Heavyweight" loaded="1" name="jsx3.gui.Heavyweight" shortname="Heavyweight" since="3.0&#10; " type="class">
+    <text>GUI utility class that provides a way to display HTML content on-screen in an HTML equivalent of a heavyweight container.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.gui.HotKey" loaded="1" name="jsx3.gui.HotKey" shortname="HotKey" since="3.2&#10; " type="class">
+    <text>Encapsulates a keydown event listener that is invoked by a certain combination of keys pressed simultaneously.</text>
+    <see idfk="method:registerHotKey" source="jsx3.gui.Interactive">jsx3.gui.Interactive.registerHotKey()</see>
+    <see idfk="method:doKeyBinding" source="jsx3.gui.Form">jsx3.gui.Form.doKeyBinding()</see>
+  </nested>
+  <nested access="public" id="nested:jsx3.gui.IFrame" loaded="1" name="jsx3.gui.IFrame" shortname="IFrame" since="3.4&#10; " type="class">
+    <text>Renders an IFrame.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.gui.Image" loaded="1" name="jsx3.gui.Image" shortname="Image" since="3.2&#10; " type="class">
+    <text>Renders an image.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.gui.ImageButton" loaded="1" name="jsx3.gui.ImageButton" shortname="ImageButton" since="3.1&#10; " type="class">
+    <text>An object-oriented interface onto a GUI button made of various image files.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.gui.Label" loaded="1" name="jsx3.gui.Label" shortname="Label" since="3.9&#10; " type="class">
+    <text>A native HTML &lt;label&gt; element, which supports targeting an input element with for="".</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.gui.LayoutGrid" loaded="1" name="jsx3.gui.LayoutGrid" shortname="LayoutGrid" type="class">
+    <text>This class provides a way to organize a set of GUI objects in a grid.</text>
+  </nested>
+  <nested access="public" deprecated="1" id="nested:jsx3.gui.List" loaded="1" name="jsx3.gui.List" shortname="List" type="class">
+    <text>The jsx3.gui.List class supports sorting, resizing, reordering, selection, discontinuous selection, key and mouse navigation, etc.</text>
+    <deprecated>Use &lt;code&gt;jsx3.gui.Matrix&lt;/code&gt; instead.</deprecated>
+    <see source="jsx3.gui.Matrix">jsx3.gui.Matrix</see>
+  </nested>
+  <nested access="public" id="nested:jsx3.gui.Matrix" loaded="1" name="jsx3.gui.Matrix" shortname="Matrix" since="3.2&#10; " type="class">
+    <text>The Matrix control is the standard visual interface for the Common Data Format (CDF), providing grid and tree-grid functionality that mirrors the
+the record and attribute structures used by the CDF.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.gui.Matrix.Column" loaded="1" name="jsx3.gui.Matrix.Column" shortname="Matrix.Column" since="3.2&#10; " type="class">
+    <text>Column control for use as a child of a jsx3.gui.Matrix class</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.gui.Matrix.ColumnFormat" loaded="1" name="jsx3.gui.Matrix.ColumnFormat" shortname="Matrix.ColumnFormat" since="3.2&#10; " type="class">
+    <text>A class that defines the methods required for an object to be used by <code>jsx3.gui.Matrix.Column</code> instances to
+format cells of data.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.gui.Menu" loaded="1" name="jsx3.gui.Menu" shortname="Menu" type="class">
+    <text>Create GUI menus, similar in functionality to system menus (File, Edit, etc) created by the host OS.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.gui.NativeButton" loaded="1" name="jsx3.gui.NativeButton" shortname="NativeButton" since="3.9&#10; " type="class">
+    <text>The JSX version of a standard HTML input button.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.gui.NativeFileUpload" loaded="1" name="jsx3.gui.NativeFileUpload" shortname="NativeFileUpload" since="3.9&#10; " type="class">
+    <text>The JSX version of a standard HTML input button.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.gui.NativeForm" loaded="1" name="jsx3.gui.NativeForm" shortname="NativeForm" since="3.9&#10; " type="class">
+    <text>The JSX version of a standard FORM element.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.gui.NativeHidden" loaded="1" name="jsx3.gui.NativeHidden" shortname="NativeHidden" since="3.9&#10; " type="class">
+    <text>The JSX version of a standard HTML hidden input field.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.gui.NativeSelect" loaded="1" name="jsx3.gui.NativeSelect" shortname="NativeSelect" since="3.9&#10; " type="class">
+    <text>The JSX version of a standard GUI select box.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.gui.NumberInput" loaded="1" name="jsx3.gui.NumberInput" shortname="NumberInput" since="3.7&#10; " type="class">
+    <text>A form element (text box) that stores a number value.</text>
+    <see source="jsx3.util.NumberFormat">jsx3.util.NumberFormat</see>
+    <see idfk="method:getLocale" source="jsx3.app.Server">jsx3.app.Server.getLocale()</see>
+  </nested>
+  <nested access="public" id="nested:jsx3.gui.Painted" loaded="1" name="jsx3.gui.Painted" shortname="Painted" since="3.1&#10; " type="class">
+    <text>Abstract superclass of model objects that are painted to screen.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.gui.RadioButton" loaded="1" name="jsx3.gui.RadioButton" shortname="RadioButton" type="class">
+    <text>A GUI control that implements a single radio button.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.gui.Select" loaded="1" name="jsx3.gui.Select" shortname="Select" type="class">
+    <text>The JSX version of a standard GUI select box.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.gui.Slider" loaded="1" name="jsx3.gui.Slider" shortname="Slider" since="3.1&#10; " type="class">
+    <text>A GUI control that implements a draggable slider.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.gui.Sound" loaded="1" name="jsx3.gui.Sound" shortname="Sound" since="3.1&#10; " type="class">
+    <text>Class that provides an object-oriented interface for playing sounds in a GI application.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.gui.Splitter" loaded="1" name="jsx3.gui.Splitter" shortname="Splitter" type="class">
+    <text>This class manages layouts by providing a container that will paint its first two child GUI objects separated
+by a 'splitter' (either vertical or horizontal).</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.gui.Stack" loaded="1" name="jsx3.gui.Stack" shortname="Stack" type="class">
+    <text>This class is equivalent to a tab, but uses the stack metaphor; like a tab, it has one child—a block for its content; a jsx3.gui.Stack instance should only be contained by a jsx3.gui.StackGroup instance for proper rendering.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.gui.StackGroup" loaded="1" name="jsx3.gui.StackGroup" shortname="StackGroup" type="class">
+    <text>similar to how a tabbed pane manages a collection of tabs, the stack group is a parent container that manages JSXStack instances
+ </text>
+  </nested>
+  <nested access="public" id="nested:jsx3.gui.Tab" loaded="1" name="jsx3.gui.Tab" shortname="Tab" type="class">
+    <text>Renders a tab in a tabbed pane.</text>
+    <see source="jsx3.gui.TabbedPane">jsx3.gui.TabbedPane</see>
+  </nested>
+  <nested access="public" id="nested:jsx3.gui.TabbedPane" loaded="1" name="jsx3.gui.TabbedPane" shortname="TabbedPane" type="class">
+    <text>Renders a tabbed pane, which consists of a set of tabs, only one of which is visible at a time.</text>
+    <see source="jsx3.gui.Tab">jsx3.gui.Tab</see>
+  </nested>
+  <nested access="public" id="nested:jsx3.gui.Table" loaded="1" name="jsx3.gui.Table" shortname="Table" since="3.5&#10; " type="class">
+    <text>A lightweight control that displays CDF data in an HTML table.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.gui.Template" loaded="1" name="jsx3.gui.Template" shortname="Template" since="3.6&#10; " type="class">
+    <text>Provides template related services to the base template class, jsx3.gui.Template.Block.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.gui.Template.Block" loaded="1" name="jsx3.gui.Template.Block" shortname="Template.Block" since="3.6&#10; " type="class">
+    <text>Provides base class for creating custom GUI classes.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.gui.TextBox" loaded="1" name="jsx3.gui.TextBox" shortname="TextBox" type="class">
+    <text>This jsx3.gui.TextBox class allows integration of a standard HTML text input into the JSX DOM.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.gui.TimePicker" loaded="1" name="jsx3.gui.TimePicker" shortname="TimePicker" since="3.2&#10; " type="class">
+    <text>A form element that allows for the selection of an arbitrary time of day.</text>
+    <see source="jsx3.gui.DatePicker">jsx3.gui.DatePicker</see>
+    <see idfk="method:getLocale" source="jsx3.app.Server">jsx3.app.Server.getLocale()</see>
+  </nested>
+  <nested access="public" id="nested:jsx3.gui.ToolbarButton" loaded="1" name="jsx3.gui.ToolbarButton" shortname="ToolbarButton" type="class">
+    <text>Renders a toolbar button.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.gui.Tree" loaded="1" name="jsx3.gui.Tree" shortname="Tree" type="class">
+    <text>Creates a DHTML-based navigational trees (similar to the tree structure used by Windows Explorer with folders
+and files).</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.gui.Window" loaded="1" name="jsx3.gui.Window" shortname="Window" since="3.2&#10; " type="class">
+    <text>Allows for rendering a branch of the DOM of an application in a separate browser window.</text>
+    <see idfk="method:createAppWindow" source="jsx3.app.Server">jsx3.app.Server.createAppWindow()</see>
+    <see idfk="method:getAppWindow" source="jsx3.app.Server">jsx3.app.Server.getAppWindow()</see>
+    <see idfk="method:loadAppWindow" source="jsx3.app.Server">jsx3.app.Server.loadAppWindow()</see>
+  </nested>
+  <nested access="public" id="nested:jsx3.gui.WindowBar" loaded="1" name="jsx3.gui.WindowBar" shortname="WindowBar" type="class">
+    <text>jsx3.gui.WindowBar instances are used as the captionbar for JSXDialog and JSXAlert instances.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.gui.Alerts" loaded="1" name="jsx3.gui.Alerts" shortname="Alerts" since="3.0&#10; " type="interface">
+    <text>Mixin interface allows implementors to show alerts, confirms, and prompts.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.gui.Form" loaded="1" name="jsx3.gui.Form" shortname="Form" type="interface">
+    <text>Mixin interface.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.gui.Interactive" loaded="1" name="jsx3.gui.Interactive" shortname="Interactive" type="interface">
+    <text>Mixin interface.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.gui.Matrix.BlockMask" loaded="1" name="jsx3.gui.Matrix.BlockMask" shortname="Matrix.BlockMask" since="3.2&#10; " type="interface">
+    <text>The interface that defines the methods that affect the behavior of a composite object used as an edit mask of a
+matrix column.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.gui.Matrix.EditMask" loaded="1" name="jsx3.gui.Matrix.EditMask" shortname="Matrix.EditMask" since="3.2&#10; " type="interface">
+    <text>The interface defining the methods that affect the behavior of an object used as an edit mask in a matrix column.</text>
+    <see source="jsx3.gui.Matrix.BlockMask">jsx3.gui.Matrix.BlockMask</see>
+  </nested>
+</package>

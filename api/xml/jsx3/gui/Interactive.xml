@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface access="public" id="class:jsx3.gui.Interactive" name="jsx3.gui.Interactive" package="jsx3.gui" shortname="Interactive">
+  <text>Mixin interface. Provides functionality to subclasses of jsx3.gui.Painted that allows them to publish model
+events.
+<p/>
+Note that this class requires that implementors of this class extends  the <code>jsx3.gui.Painted</code> class and
+implement the jsx3.util.EventDispatcher interface
+ </text>
+  <implementor id="implementor:0" loaded="1" name="jsx3.chart.AreaChart"/>
+  <implementor id="implementor:1" loaded="1" name="jsx3.chart.AreaSeries"/>
+  <implementor id="implementor:2" loaded="1" name="jsx3.chart.Axis"/>
+  <implementor id="implementor:3" loaded="1" name="jsx3.chart.BCChart"/>
+  <implementor id="implementor:4" loaded="1" name="jsx3.chart.BCSeries"/>
+  <implementor id="implementor:5" loaded="1" name="jsx3.chart.BarChart"/>
+  <implementor id="implementor:6" loaded="1" name="jsx3.chart.BarSeries"/>
+  <implementor id="implementor:7" loaded="1" name="jsx3.chart.BubbleSeries"/>
+  <implementor id="implementor:8" loaded="1" name="jsx3.chart.CartesianChart"/>
+  <implementor id="implementor:9" loaded="1" name="jsx3.chart.CategoryAxis"/>
+  <implementor id="implementor:10" loaded="1" name="jsx3.chart.Chart"/>
+  <implementor id="implementor:11" loaded="1" name="jsx3.chart.ChartComponent"/>
+  <implementor id="implementor:12" loaded="1" name="jsx3.chart.ChartLabel"/>
+  <implementor id="implementor:13" loaded="1" name="jsx3.chart.ColumnChart"/>
+  <implementor id="implementor:14" loaded="1" name="jsx3.chart.ColumnSeries"/>
+  <implementor id="implementor:15" loaded="1" name="jsx3.chart.GridLines"/>
+  <implementor id="implementor:16" loaded="1" name="jsx3.chart.Legend"/>
+  <implementor id="implementor:17" loaded="1" name="jsx3.chart.LineChart"/>
+  <implementor id="implementor:18" loaded="1" name="jsx3.chart.LineSeries"/>
+  <implementor id="implementor:19" loaded="1" name="jsx3.chart.LinearAxis"/>
+  <implementor id="implementor:20" loaded="1" name="jsx3.chart.LogarithmicAxis"/>
+  <implementor id="implementor:21" loaded="1" name="jsx3.chart.PieChart"/>
+  <implementor id="implementor:22" loaded="1" name="jsx3.chart.PieSeries"/>
+  <implementor id="implementor:23" loaded="1" name="jsx3.chart.PlotChart"/>
+  <implementor id="implementor:24" loaded="1" name="jsx3.chart.PlotSeries"/>
+  <implementor id="implementor:25" loaded="1" name="jsx3.chart.PointSeries"/>
+  <implementor id="implementor:26" loaded="1" name="jsx3.chart.RadialChart"/>
+  <implementor id="implementor:27" loaded="1" name="jsx3.chart.Series"/>
+  <implementor id="implementor:28" loaded="1" name="jsx3.gui.Block"/>
+  <implementor id="implementor:29" loaded="1" name="jsx3.gui.BlockX"/>
+  <implementor id="implementor:30" loaded="1" name="jsx3.gui.Button"/>
+  <implementor id="implementor:31" loaded="1" name="jsx3.gui.CDF"/>
+  <implementor id="implementor:32" loaded="1" name="jsx3.gui.CheckBox"/>
+  <implementor id="implementor:33" loaded="1" name="jsx3.gui.ColorPicker"/>
+  <implementor id="implementor:34" loaded="1" name="jsx3.gui.Column"/>
+  <implementor id="implementor:35" loaded="1" name="jsx3.gui.DatePicker"/>
+  <implementor id="implementor:36" loaded="1" name="jsx3.gui.Dialog"/>
+  <implementor id="implementor:37" loaded="1" name="jsx3.gui.DojoWidget"/>
+  <implementor id="implementor:38" loaded="1" name="jsx3.gui.Grid"/>
+  <implementor id="implementor:39" loaded="1" name="jsx3.gui.IFrame"/>
+  <implementor id="implementor:40" loaded="1" name="jsx3.gui.Image"/>
+  <implementor id="implementor:41" loaded="1" name="jsx3.gui.ImageButton"/>
+  <implementor id="implementor:42" loaded="1" name="jsx3.gui.Label"/>
+  <implementor id="implementor:43" loaded="1" name="jsx3.gui.LayoutGrid"/>
+  <implementor id="implementor:44" loaded="1" name="jsx3.gui.List"/>
+  <implementor id="implementor:45" loaded="1" name="jsx3.gui.Matrix"/>
+  <implementor id="implementor:46" loaded="1" name="jsx3.gui.Matrix.Column"/>
+  <implementor id="implementor:47" loaded="1" name="jsx3.gui.Menu"/>
+  <implementor id="implementor:48" loaded="1" name="jsx3.gui.NativeButton"/>
+  <implementor id="implementor:49" loaded="1" name="jsx3.gui.NativeFileUpload"/>
+  <implementor id="implementor:50" loaded="1" name="jsx3.gui.NativeForm"/>
+  <implementor id="implementor:51" loaded="1" name="jsx3.gui.NativeSelect"/>
+  <implementor id="implementor:52" loaded="1" name="jsx3.gui.NumberInput"/>
+  <implementor id="implementor:53" loaded="1" name="jsx3.gui.RadioButton"/>
+  <implementor id="implementor:54" loaded="1" name="jsx3.gui.Select"/>
+  <implementor id="implementor:55" loaded="1" name="jsx3.gui.Slider"/>
+  <implementor id="implementor:56" loaded="1" name="jsx3.gui.Sound"/>
+  <implementor id="implementor:57" loaded="1" name="jsx3.gui.Splitter"/>
+  <implementor id="implementor:58" loaded="1" name="jsx3.gui.Stack"/>
+  <implementor id="implementor:59" loaded="1" name="jsx3.gui.StackGroup"/>
+  <implementor id="implementor:60" loaded="1" name="jsx3.gui.Tab"/>
+  <implementor id="implementor:61" loaded="1" name="jsx3.gui.TabbedPane"/>
+  <implementor id="implementor:62" loaded="1" name="jsx3.gui.Table"/>
+  <implementor id="implementor:63" loaded="1" name="jsx3.gui.Template.Block"/>
+  <implementor id="implementor:64" loaded="1" name="jsx3.gui.TextBox"/>
+  <implementor id="implementor:65" loaded="1" name="jsx3.gui.TimePicker"/>
+  <implementor id="implementor:66" loaded="1" name="jsx3.gui.ToolbarButton"/>
+  <implementor id="implementor:67" loaded="1" name="jsx3.gui.Tree"/>
+  <implementor id="implementor:68" loaded="1" name="jsx3.gui.WindowBar"/>
+  <implementor id="implementor:69" loaded="1" name="jsx3.vector.Block"/>
+  <field access="public" class="jsx3.gui.Interactive" final="1" fullname="jsx3.gui.Interactive.ADOPT" id="sfield:ADOPT" name="ADOPT" static="1" value="&quot;jsxadopt&quot;">
+    <type link="1" name="String"/>
+  </field>
+  <field access="public" class="jsx3.gui.Interactive" final="1" fullname="jsx3.gui.Interactive.AFTER_APPEND" id="sfield:AFTER_APPEND" name="AFTER_APPEND" static="1" value="&quot;jsxafterappend&quot;">
+    <type link="1" name="String"/>
+  </field>
+  <field access="public" class="jsx3.gui.Interactive" final="1" fullname="jsx3.gui.Interactive.AFTER_COMMIT" id="sfield:AFTER_COMMIT" name="AFTER_COMMIT" static="1" value="&quot;jsxaftercommit&quot;">
+    <type link="1" name="String"/>
+  </field>
+  <field access="public" class="jsx3.gui.Interactive" final="1" fullname="jsx3.gui.Interactive.AFTER_EDIT" id="sfield:AFTER_EDIT" name="AFTER_EDIT" static="1" value="&quot;jsxafteredit&quot;">
+    <type link="1" name="String"/>
+  </field>
+  <field access="public" class="jsx3.gui.Interactive" final="1" fullname="jsx3.gui.Interactive.AFTER_MOVE" id="sfield:AFTER_MOVE" name="AFTER_MOVE" static="1" value="&quot;jsxaftermove&quot;">
+    <type link="1" name="String"/>
+  </field>
+  <field access="public" class="jsx3.gui.Interactive" final="1" fullname="jsx3.gui.Interactive.AFTER_REORDER" id="sfield:AFTER_REORDER" name="AFTER_REORDER" static="1" value="&quot;jsxafterreorder&quot;">
+    <type link="1" name="String"/>
+  </field>
+  <field access="public" class="jsx3.gui.Interactive" final="1" fullname="jsx3.gui.Interactive.AFTER_RESIZE" id="sfield:AFTER_RESIZE" name="AFTER_RESIZE" static="1" value="&quot;jsxafterresize&quot;">
+    <type link="1" name="String"/>
+  </field>
+  <field access="public" class="jsx3.gui.Interactive" final="1" fullname="jsx3.gui.Interactive.AFTER_RESIZE_VIEW" id="sfield:AFTER_RESIZE_VIEW" name="AFTER_RESIZE_VIEW" static="1" value="&quot;jsxafterresizeview&quot;">
+    <type link="1" name="String"/>
+  </field>
+  <field access="public" class="jsx3.gui.Interactive" final="1" fullname="jsx3.gui.Interactive.AFTER_SORT" id="sfield:AFTER_SORT" name="AFTER_SORT" static="1" value="&quot;jsxaftersort&quot;">
+    <type link="1" name="String"/>
+  </field>
+  <field access="public" class="jsx3.gui.Interactive" final="1" fullname="jsx3.gui.Interactive.BEFORE_APPEND" id="sfield:BEFORE_APPEND" name="BEFORE_APPEND" static="1" value="&quot;jsxbeforeappend&quot;">
+    <type link="1" name="String"/>
+  </field>
+  <field access="public" class="jsx3.gui.Interactive" final="1" fullname="jsx3.gui.Interactive.BEFORE_DROP" id="sfield:BEFORE_DROP" name="BEFORE_DROP" static="1" value="&quot;jsxbeforedrop&quot;">
+    <type link="1" name="String"/>
+  </field>
+  <field access="public" class="jsx3.gui.Interactive" final="1" fullname="jsx3.gui.Interactive.BEFORE_EDIT" id="sfield:BEFORE_EDIT" name="BEFORE_EDIT" static="1" value="&quot;jsxbeforeedit&quot;">
+    <type link="1" name="String"/>
+  </field>
+  <field access="public" class="jsx3.gui.Interactive" final="1" fullname="jsx3.gui.Interactive.BEFORE_MOVE" id="sfield:BEFORE_MOVE" name="BEFORE_MOVE" static="1" value="&quot;jsxbeforemove&quot;">
+    <type link="1" name="String"/>
+  </field>
+  <field access="public" class="jsx3.gui.Interactive" final="1" fullname="jsx3.gui.Interactive.BEFORE_RESIZE" id="sfield:BEFORE_RESIZE" name="BEFORE_RESIZE" static="1" value="&quot;jsxbeforeresize&quot;">
+    <type link="1" name="String"/>
+  </field>
+  <field access="public" class="jsx3.gui.Interactive" final="1" fullname="jsx3.gui.Interactive.BEFORE_SELECT" id="sfield:BEFORE_SELECT" name="BEFORE_SELECT" static="1" value="&quot;jsxbeforeselect&quot;">
+    <type link="1" name="String"/>
+  </field>
+  <field access="public" class="jsx3.gui.Interactive" final="1" fullname="jsx3.gui.Interactive.BEFORE_SORT" id="sfield:BEFORE_SORT" name="BEFORE_SORT" static="1" value="&quot;jsxbeforesort&quot;">
+    <type link="1" name="String"/>
+  </field>
+  <field access="public" class="jsx3.gui.Interactive" final="1" fullname="jsx3.gui.Interactive.CANCEL_DROP" id="sfield:CANCEL_DROP" name="CANCEL_DROP" static="1" value="&quot;jsxcanceldrop&quot;">
+    <type link="1" name="String"/>
+  </field>
+  <field access="public" class="jsx3.gui.Interactive" final="1" fullname="jsx3.gui.Interactive.CHANGE" id="sfield:CHANGE" name="CHANGE" static="1" value="&quot;jsxchange&quot;">
+    <type link="1" name="String"/>
+  </field>
+  <field access="public" class="jsx3.gui.Interactive" final="1" fullname="jsx3.gui.Interactive.CTRL_DROP" id="sfield:CTRL_DROP" name="CTRL_DROP" static="1" value="&quot;jsxctrldrop&quot;">
+    <type link="1" name="String"/>
+  </field>
+  <field access="public" class="jsx3.gui.Interactive" final="1" fullname="jsx3.gui.Interactive.DATA" id="sfield:DATA" name="DATA" static="1" value="&quot;jsxdata&quot;">
+    <type link="1" name="String"/>
+  </field>
+  <field access="public" class="jsx3.gui.Interactive" final="1" fullname="jsx3.gui.Interactive.DESTROY" id="sfield:DESTROY" name="DESTROY" static="1" value="&quot;jsxdestroy&quot;">
+    <type link="1" name="String"/>
+  </field>
+  <field access="public" class="jsx3.gui.Interactive" final="1" fullname="jsx3.gui.Interactive.DRAG" id="sfield:DRAG" name="DRAG" static="1" value="&quot;jsxdrag&quot;">
+    <type link="1" name="String"/>
+  </field>
+  <field access="public" class="jsx3.gui.Interactive" final="1" fullname="jsx3.gui.Interactive.DROP" id="sfield:DROP" name="DROP" static="1" value="&quot;jsxdrop&quot;">
+    <type link="1" name="String"/>
+  </field>
+  <field access="public" class="jsx3.gui.Interactive" final="1" fullname="jsx3.gui.Interactive.EXECUTE" id="sfield:EXECUTE" name="EXECUTE" static="1" value="&quot;jsxexecute&quot;">
+    <type link="1" name="String"/>
+  </field>
+  <field access="public" class="jsx3.gui.Interactive" final="1" fullname="jsx3.gui.Interactive.FOCUS_STYLE" id="sfield:FOCUS_STYLE" name="FOCUS_STYLE" static="1" value="&quot;text-decoration:underline&quot;">
+    <type link="1" name="String"/>
+  </field>
+  <field access="public" class="jsx3.gui.Interactive" final="1" fullname="jsx3.gui.Interactive.HIDE" id="sfield:HIDE" name="HIDE" static="1" value="&quot;jsxhide&quot;">
+    <type link="1" name="String"/>
+  </field>
+  <field access="public" class="jsx3.gui.Interactive" final="1" fullname="jsx3.gui.Interactive.INCR_CHANGE" id="sfield:INCR_CHANGE" name="INCR_CHANGE" static="1" value="&quot;jsxincchange&quot;">
+    <type link="1" name="String"/>
+  </field>
+  <field access="public" class="jsx3.gui.Interactive" final="1" fullname="jsx3.gui.Interactive.INPUT" id="sfield:INPUT" name="INPUT" static="1" value="&quot;jsxinput&quot;">
+    <type link="1" name="String"/>
+  </field>
+  <field access="public" class="jsx3.gui.Interactive" final="1" fullname="jsx3.gui.Interactive.JSXBLUR" id="sfield:JSXBLUR" name="JSXBLUR" static="1" value="&quot;jsxblur&quot;">
+    <type link="1" name="String"/>
+  </field>
+  <field access="public" class="jsx3.gui.Interactive" final="1" fullname="jsx3.gui.Interactive.JSXCHANGE" id="sfield:JSXCHANGE" name="JSXCHANGE" static="1" value="&quot;jsxchange&quot;">
+    <type link="1" name="String"/>
+  </field>
+  <field access="public" class="jsx3.gui.Interactive" final="1" fullname="jsx3.gui.Interactive.JSXCLICK" id="sfield:JSXCLICK" name="JSXCLICK" static="1" value="&quot;jsxclick&quot;">
+    <type link="1" name="String"/>
+  </field>
+  <field access="public" class="jsx3.gui.Interactive" final="1" fullname="jsx3.gui.Interactive.JSXDOUBLECLICK" id="sfield:JSXDOUBLECLICK" name="JSXDOUBLECLICK" static="1" value="&quot;jsxdblclick&quot;">
+    <type link="1" name="String"/>
+  </field>
+  <field access="public" class="jsx3.gui.Interactive" final="1" fullname="jsx3.gui.Interactive.JSXFOCUS" id="sfield:JSXFOCUS" name="JSXFOCUS" static="1" value="&quot;jsxfocus&quot;">
+    <type link="1" name="String"/>
+  </field>
+  <field access="public" class="jsx3.gui.Interactive" final="1" fullname="jsx3.gui.Interactive.JSXKEYDOWN" id="sfield:JSXKEYDOWN" name="JSXKEYDOWN" static="1" value="&quot;jsxkeydown&quot;">
+    <type link="1" name="String"/>
+  </field>
+  <field access="public" class="jsx3.gui.Interactive" final="1" fullname="jsx3.gui.Interactive.JSXKEYPRESS" id="sfield:JSXKEYPRESS" name="JSXKEYPRESS" static="1" value="&quot;jsxkeypress&quot;">
+    <type link="1" name="String"/>
+  </field>
+  <field access="public" class="jsx3.gui.Interactive" final="1" fullname="jsx3.gui.Interactive.JSXKEYUP" id="sfield:JSXKEYUP" name="JSXKEYUP" static="1" value="&quot;jsxkeyup&quot;">
+    <type link="1" name="String"/>
+  </field>
+  <field access="public" class="jsx3.gui.Interactive" final="1" fullname="jsx3.gui.Interactive.JSXLOAD" id="sfield:JSXLOAD" name="JSXLOAD" static="1" value="&quot;jsxload&quot;">
+    <type link="1" name="String"/>
+  </field>
+  <field access="public" class="jsx3.gui.Interactive" final="1" fullname="jsx3.gui.Interactive.JSXMOUSEDOWN" id="sfield:JSXMOUSEDOWN" name="JSXMOUSEDOWN" static="1" value="&quot;jsxmousedown&quot;">
+    <type link="1" name="String"/>
+  </field>
+  <field access="public" class="jsx3.gui.Interactive" final="1" fullname="jsx3.gui.Interactive.JSXMOUSEOUT" id="sfield:JSXMOUSEOUT" name="JSXMOUSEOUT" static="1" value="&quot;jsxmouseout&quot;">
+    <type link="1" name="String"/>
+  </field>
+  <field access="public" class="jsx3.gui.Interactive" final="1" fullname="jsx3.gui.Interactive.JSXMOUSEOVER" id="sfield:JSXMOUSEOVER" name="JSXMOUSEOVER" static="1" value="&quot;jsxmouseover&quot;">
+    <type link="1" name="String"/>
+  </field>
+  <field access="public" class="jsx3.gui.Interactive" final="1" fullname="jsx3.gui.Interactive.JSXMOUSEUP" id="sfield:JSXMOUSEUP" name="JSXMOUSEUP" static="1" value="&quot;jsxmouseup&quot;">
+    <type link="1" name="String"/>
+  </field>
+  <field access="public" class="jsx3.gui.Interactive" final="1" fullname="jsx3.gui.Interactive.JSXMOUSEWHEEL" id="sfield:JSXMOUSEWHEEL" name="JSXMOUSEWHEEL" static="1" value="&quot;jsxmousewheel&quot;">
+    <type link="1" name="String"/>
+  </field>
+  <field access="public" class="jsx3.gui.Interactive" final="1" fullname="jsx3.gui.Interactive.MENU" id="sfield:MENU" name="MENU" static="1" value="&quot;jsxmenu&quot;">
+    <type link="1" name="String"/>
+  </field>
+  <field access="public" class="jsx3.gui.Interactive" final="1" fullname="jsx3.gui.Interactive.SCROLL" id="sfield:SCROLL" name="SCROLL" static="1" value="&quot;jsxscroll&quot;">
+    <type link="1" name="String"/>
+  </field>
+  <field access="public" class="jsx3.gui.Interactive" final="1" fullname="jsx3.gui.Interactive.SELECT" id="sfield:SELECT" name="SELECT" static="1" value="&quot;jsxselect&quot;">
+    <type link="1" name="String"/>
+  </field>
+  <field access="public" class="jsx3.gui.Interactive" final="1" fullname="jsx3.gui.Interactive.SHOW" id="sfield:SHOW" name="SHOW" static="1" value="&quot;jsxshow&quot;">
+    <type link="1" name="String"/>
+  </field>
+  <field access="public" class="jsx3.gui.Interactive" final="1" fullname="jsx3.gui.Interactive.SPYGLASS" id="sfield:SPYGLASS" name="SPYGLASS" static="1" value="&quot;jsxspy&quot;">
+    <type link="1" name="String"/>
+  </field>
+  <field access="public" class="jsx3.gui.Interactive" final="1" fullname="jsx3.gui.Interactive.TOGGLE" id="sfield:TOGGLE" name="TOGGLE" static="1" value="&quot;jsxtoggle&quot;">
+    <type link="1" name="String"/>
+  </field>
+  <method access="public" id="method:doEvent" name="doEvent">
+    <param name="strType" text="the event type, one of the model event types defined as static fields in this class">
+      <type link="1" name="String"/>
+    </param>
+    <param name="objContext" text="JavaScript object array with name/value pairs that provide a local&#10;   variable stack for the execution of the event script. This argument is also passed as the &lt;code&gt;context&lt;/code&gt;&#10;   property of the event object that is published through the &lt;code&gt;EventDispatcher&lt;/code&gt; interface.">
+      <type link="1" name="Object">
+        <type link="1" name="String"/>
+        <type link="1" name="Object"/>
+      </type>
+    </param>
+    <return text="the result of evaluating the event script or &lt;code&gt;null&lt;/code&gt; if not event script is registered&#10;   ">
+      <type link="1" name="Object"/>
+    </return>
+    <text>Publishes a model event. This method both evaluates any registered event script for the given event type
+<b>and</b> publishes the event through the <code>EventDispatcher</code> interface. This method ensures that any
+registered event script is executed in isolation to prevent most side effects.</text>
+  </method>
+  <method access="public" id="method:getCanDrag" name="getCanDrag">
+    <return text="&lt;code&gt;jsx3.Boolean.TRUE&lt;/code&gt; or &lt;code&gt;jsx3.Boolean.FALSE&lt;/code&gt;&#10;   ">
+      <type class="Number" link="1" name="int"/>
+    </return>
+    <text>Returns whether is object supports programmatic drag, meanining it will allow any contained item to be
+dragged and dropped on another container supporting drop.</text>
+  </method>
+  <method access="public" id="method:getCanDrop" name="getCanDrop">
+    <return text="&lt;code&gt;jsx3.Boolean.TRUE&lt;/code&gt; or &lt;code&gt;jsx3.Boolean.FALSE&lt;/code&gt;&#10;   ">
+      <type class="Number" link="1" name="int"/>
+    </return>
+    <text>Returns whether this object can be the target of a drop event.</text>
+  </method>
+  <method access="public" id="method:getCanMove" name="getCanMove">
+    <return text="&lt;code&gt;jsx3.Boolean.TRUE&lt;/code&gt; or &lt;code&gt;jsx3.Boolean.FALSE&lt;/code&gt;&#10;   ">
+      <type class="Number" link="1" name="int"/>
+    </return>
+    <text>Returns whether is object can be moved around the screen (this is not the same as drag/drop).</text>
+  </method>
+  <method access="public" id="method:getCanSpy" name="getCanSpy">
+    <return text="&lt;code&gt;jsx3.Boolean.TRUE&lt;/code&gt; or &lt;code&gt;jsx3.Boolean.FALSE&lt;/code&gt;&#10;   ">
+      <type class="Number" link="1" name="int"/>
+    </return>
+    <text>Returns whether is object can be spyglassed.</text>
+  </method>
+  <method access="public" id="method:getEvent" name="getEvent">
+    <param name="strType" text="the event type, one of the model event types defined as static fields in this class">
+      <type link="1" name="String"/>
+    </param>
+    <return text="the JavaScript event script">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the event script registered for the given event type. This script could have been set by the
+<code>setEvent()</code> method or during component deserialization.</text>
+    <see idfk="method:setEvent" source="jsx3.gui.Interactive">setEvent()</see>
+  </method>
+  <method access="public" id="method:getEvents" name="getEvents">
+    <return text="an associative array mapping event type to event script&#10;   ">
+      <type link="1" name="Object">
+        <type link="1" name="String"/>
+        <type link="1" name="String"/>
+      </type>
+    </return>
+    <text>Returns the associative array containing all the registered event script of this object. This method returns
+the instance field itself and not a copy.</text>
+  </method>
+  <method access="public" id="method:getMenu" name="getMenu">
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the name of the <code>jsx3.gui.Menu</code> instance to display (as a context menu) when a user
+clicks on this object with the right button.</text>
+  </method>
+  <method access="public" id="method:hasEvent" name="hasEvent">
+    <param name="strType" text="the event type, one of the model event types defined as static fields in this class">
+      <type link="1" name="String"/>
+    </param>
+    <return text="the JavaScript event script&#10;   ">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns true if there is a event script registered for the given event type.</text>
+  </method>
+  <method access="public" id="method:registerHotKey" name="registerHotKey">
+    <param name="vntCallback" text="either a function, or the name of a method bound to this object.&#10;   When a keydown event bubbles up to this object that matches the hot key created by this method, this function&#10;   is called on this object. If this function returns &lt;code&gt;false&lt;/code&gt; then this hot key will not cancel the&#10;   key event. This parameter can also be an instance of &lt;code&gt;HotKey&lt;/code&gt;, in which case all&#10;   other parameters are ignored.">
+      <type link="1" name="String"/>
+      <type link="1" name="Function"/>
+      <type link="1" name="jsx3.gui.HotKey"/>
+    </param>
+    <param name="vntKey" text="if this parameter is a String, the hot key matches that key (the keycode to match is&#10;   determined by &lt;code&gt;HotKey.keyDownCharToCode()&lt;/code&gt;). If it is an integer, the hot key will match that&#10;   keycode value.">
+      <type class="Number" link="1" name="int"/>
+      <type link="1" name="String"/>
+    </param>
+    <param name="bShift" text="if not &lt;code&gt;null&lt;/code&gt; the shift key state of the keydown event must match this value&#10;   to invoke the hot key.">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <param name="bControl" text="if not &lt;code&gt;null&lt;/code&gt; the control key state of the keydown event must match this value&#10;   to invoke the hot key.">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <param name="bAlt" text="if not &lt;code&gt;null&lt;/code&gt; the alt key state of the keydown event must match this value&#10;   to invoke the hot key.">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <return text="the registered hot key.">
+      <type link="1" name="jsx3.gui.HotKey"/>
+    </return>
+    <text>Registers a hot key with this JSX model node. All <code>keydown</code> events that bubble up to this object
+will be checked against the hot key. If an event matches, the callback function will execute and the event
+bubble will be canceled.
+<p/>
+If the four parameters <code>vntKey</code>, <code>bShift</code>, <code>bControl</code>, and <code>bAlt</code>
+match a previously registered hot key, the previous hot key is clobbered by the new one. Only one hot key callback
+function (the most recently registered) will be executed by a single keydown event.</text>
+    <see idfk="smethod:keyDownCharToCode" source="jsx3.gui.HotKey">jsx3.gui.HotKey.keyDownCharToCode()</see>
+  </method>
+  <method access="public" id="method:removeEvent" name="removeEvent">
+    <param name="strType" text="the event type, one of the model event types defined as static fields in this class">
+      <type link="1" name="String"/>
+    </param>
+    <return text="this object&#10;   ">
+      <type link="1" name="jsx3.gui.Interactive"/>
+    </return>
+    <text>Removes an event script registered for the given model event type.</text>
+  </method>
+  <method access="public" id="method:removeEvents" name="removeEvents">
+    <return text="this object&#10;   ">
+      <type link="1" name="jsx3.gui.Interactive"/>
+    </return>
+    <text>Removes all events scripts registered with this object.</text>
+  </method>
+  <method access="public" id="method:setCanDrag" name="setCanDrag">
+    <param name="bDrag" text="&lt;code&gt;jsx3.Boolean.TRUE&lt;/code&gt; or &lt;code&gt;jsx3.Boolean.FALSE&lt;/code&gt;">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <return text="this object&#10;   ">
+      <type link="1" name="jsx3.gui.Interactive"/>
+    </return>
+    <text>Sets whether is object supports programmatic drag, meanining it will allow any contained item to be dragged/dropped.
+Implementing classes can decide whether to consult this value or ignore it.</text>
+  </method>
+  <method access="public" id="method:setCanDrop" name="setCanDrop">
+    <param name="bDrop" text="&lt;code&gt;jsx3.Boolean.TRUE&lt;/code&gt; or &lt;code&gt;jsx3.Boolean.FALSE&lt;/code&gt;">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <return text="this object&#10;   ">
+      <type link="1" name="jsx3.gui.Interactive"/>
+    </return>
+    <text>Sets whether this object can be the target of a drop event. Implementing classes can decide whether to consult
+this value or ignore it.</text>
+  </method>
+  <method access="public" id="method:setCanMove" name="setCanMove">
+    <param name="bMovable" text="&lt;code&gt;jsx3.Boolean.TRUE&lt;/code&gt; or &lt;code&gt;jsx3.Boolean.FALSE&lt;/code&gt;">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <return text="this object&#10;   ">
+      <type link="1" name="jsx3.gui.Interactive"/>
+    </return>
+    <text>Sets whether is object can be moved around the screen (this is not the same as drag/drop). Implementing classes
+can decide whether to consult this value or ignore it.</text>
+  </method>
+  <method access="public" id="method:setCanSpy" name="setCanSpy">
+    <param name="bSpy" text="&lt;code&gt;jsx3.Boolean.TRUE&lt;/code&gt; or &lt;code&gt;jsx3.Boolean.FALSE&lt;/code&gt;">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <return text="this object&#10;   ">
+      <type link="1" name="jsx3.gui.Interactive"/>
+    </return>
+    <text>Sets whether is object can be spyglassed. Implementing classes can decide whether to consult
+this value or ignore it.</text>
+  </method>
+  <method access="public" id="method:setEvent" name="setEvent">
+    <param name="strScript" text="the actual JavaScript code that will execute when the given event is published.&#10;   For example: &lt;code&gt;obj.setEvent(&quot;alert('hello.');&quot;, jsx3.gui.Interactive.EXECUTE);&lt;/code&gt;">
+      <type link="1" name="String"/>
+    </param>
+    <param name="strType" text="the event type. Must be one of the model event types defined as static fields in this class">
+      <type link="1" name="String"/>
+    </param>
+    <return text="reference to this">
+      <type link="1" name="jsx3.gui.Interactive"/>
+    </return>
+    <text>Programmatically sets an event of this instance. Sets the script that will execute when this object publishes
+a model event. The script value will be saved in the serialization file of a component. Not all classes that
+implement this interface will publish events of every type. Consult the documentation of a class for a
+description of the events it publishes.
+<p/>
+For programmatic registering of event handlers when persistence in a serialization file is not required,
+consider using <code>jsx3.util.EventDispatcher.subscribe()</code> instead of this method. Whenever a model
+event is published, it is published using the <code>EventDispatcher</code> interface as well as by executing
+any registered event script.</text>
+    <see idfk="method:subscribe" source="jsx3.util.EventDispatcher">jsx3.util.EventDispatcher.subscribe()</see>
+  </method>
+  <method access="public" id="method:setMenu" name="setMenu">
+    <param name="strMenu" text="name or id (jsxname or jsxid) of the context menu">
+      <type link="1" name="String"/>
+    </param>
+    <return text="this object&#10;   ">
+      <type link="1" name="jsx3.gui.Interactive"/>
+    </return>
+    <text>Sets the name of the <code>jsx3.gui.Menu</code> instance to display when a user
+clicks on this object with the right button. The name is a pointer by-name to a JSX object in the same server.</text>
+  </method>
+  <method access="public" id="method:setSpyStyles" name="setSpyStyles">
+    <param name="strCSS" text="valid CSS. For example, text-decoration:underline;color:red;&#10;   ">
+      <type link="1" name="String"/>
+    </param>
+    <text>Sets the CSS definition to apply to an HTML element when a spyglass is shown for that element</text>
+  </method>
+  <method access="public" id="method:showSpy" name="showSpy">
+    <param name="strHTML" text="HTML/text to display in the spyglass; as the spyglass does not define a height/width, this content will&#10;         have improved layout if it specifies a preferred width in its in-line-style or referenced-css rule.">
+      <type link="1" name="String"/>
+    </param>
+    <param name="intLeft" text="use an integer to specify an on-screen location; otherwise, use a &lt;code&gt;jsx3.gui.Event&lt;/code&gt; instance to have the system automatically calculate the x/y position.">
+      <type class="Number" link="1" name="int"/>
+      <type link="1" name="jsx3.gui.Event"/>
+    </param>
+    <param name="intTop" text="use an integer if &lt;code&gt;intLeft&lt;/code&gt; also uses an integer. Otherwise, use null.&#10;   ">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <text>called by 'window.setTimeout()' to display the spyglass hover for a given object;</text>
+  </method>
+  <method access="public" deprecated="1" id="smethod:getVersion" name="getVersion" static="1">
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the release/build for the class (i.e., "2.2.00")</text>
+  </method>
+</interface>

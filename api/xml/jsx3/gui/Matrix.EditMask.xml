@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface access="public" id="class:jsx3.gui.Matrix.EditMask" name="jsx3.gui.Matrix.EditMask" package="jsx3.gui" shortname="Matrix.EditMask" since="3.2&#10; ">
+  <text>The interface defining the methods that affect the behavior of an object used as an edit mask in a matrix column.
+<p/>
+If an object is placed in the DOM as a child of a matrix column, it will be used as an edit mask. Any methods
+in this interface that the object does not implement will be inserted into the object. This interface is a "loose"
+interface because the class of an edit mask does not need to implement it in its class declaration. The class
+simply needs to define any methods whose default behavior it wishes to override.
+<p/>
+Any edit mask that implements the <code>jsx3.gui.Form</code> interface will have the methods in this interface
+inserted into it. If the edit mask does not implement <code>jsx3.gui.Form</code> but extends
+<code>jsx3.gui.Block</code>, the methods in the <code>jsx3.gui.Matrix.BlockMask</code> interface are inserted
+instead.</text>
+  <see source="jsx3.gui.Matrix.BlockMask">jsx3.gui.Matrix.BlockMask</see>
+  <method access="public" id="method:commitEditMask" name="commitEditMask">
+    <param name="objEvent" text="the wrapped browser event that logically caused this commit to occur. If this&#10;   parameter is provided then all the model events related to committing an edit session are triggered.">
+      <type link="1" name="jsx3.gui.Event"/>
+    </param>
+    <param name="bKeepOpen" text="if &lt;code&gt;true&lt;/code&gt; then the current value of this edit mask is committed without&#10;   closing the current edit session.&#10;   ">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <text>Commits the current edit session of this edit mask.</text>
+  </method>
+  <method access="public" id="method:emBeginEdit" name="emBeginEdit">
+    <param name="strValue" text="">
+      <type link="1" name="String"/>
+    </param>
+    <param name="objTdDim" text="">
+      <type link="1" name="Object">
+        <type link="1" name="String"/>
+        <type class="Number" link="1" name="int"/>
+      </type>
+    </param>
+    <param name="objPaneDim" text="">
+      <type link="1" name="Object">
+        <type link="1" name="String"/>
+        <type class="Number" link="1" name="int"/>
+      </type>
+    </param>
+    <param name="objMatrix" text="">
+      <type link="1" name="jsx3.gui.Matrix"/>
+    </param>
+    <param name="objColumn" text="">
+      <type link="1" name="jsx3.gui.Matrix.Column"/>
+    </param>
+    <param name="strRecordId" text="">
+      <type link="1" name="String"/>
+    </param>
+    <param name="objTD" text="">
+      <type link="1" name="HTMLElement"/>
+    </param>
+    <return text="&lt;code&gt;false&lt;/code&gt; to cancel the edit session.&#10;   ">
+      <type class="Boolean" link="1" name="boolean"/>
+    </return>
+    <text>Called whenever an edit session begins.</text>
+  </method>
+  <method access="public" id="method:emEndEdit" name="emEndEdit">
+    <return text="the edited value.&#10;   ">
+      <type link="1" name="String"/>
+    </return>
+    <text>Called when the current edit session ends. This method should return the edited value.</text>
+  </method>
+  <method access="public" final="1" id="method:emGetSession" name="emGetSession">
+    <return text="the edit session.">
+      <type link="1" name="Object">
+        <type link="1" name="String"/>
+        <type link="1" name="Object"/>
+      </type>
+    </return>
+    <text>Returns the state of the current edit session if this object is involved in a <code>jsx3.gui.Matrix</code>
+edit mask session. The state has the following keys:
+<ul>
+<li>matrix {jsx3.gui.Matrix}</li>
+<li>column {jsx3.gui.Matrix.Column}</li>
+<li>recordId {String}</li>
+<li>td {HTMLElement}</li>
+<li>value {String} may be <code>null</code>
+        </li>
+</ul>
+    </text>
+  </method>
+  <method access="public" id="method:emGetValue" name="emGetValue">
+    <return text="the current value of the edit mask.&#10;   ">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the current value stored in the edit mask.</text>
+  </method>
+  <method access="public" id="method:emInit" name="emInit">
+    <param name="objColumn" text="the matrix column parent.&#10;   ">
+      <type link="1" name="jsx3.gui.Matrix.Column"/>
+    </param>
+    <text>This method is called once when the edit mask is discovered by the matrix column to give it an opportunity
+to initialize itself.</text>
+  </method>
+  <method access="public" final="1" id="method:resumeEditSession" name="resumeEditSession">
+    <text>Resumes an edit session so that the edit session will close the next time this mask loses focus.</text>
+  </method>
+  <method access="public" final="1" id="method:suspendEditSession" name="suspendEditSession">
+    <text>Suspends an edit session so that if this mask loses focus, the edit session does not close.</text>
+  </method>
+</interface>

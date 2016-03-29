@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class abstract="1" access="public" id="class:jsx3.gui.NativeHidden" name="jsx3.gui.NativeHidden" package="jsx3.gui" shortname="NativeHidden" since="3.9&#10; ">
+  <text>The JSX version of a standard HTML hidden input field.</text>
+  <superclass id="super:0" loaded="1" name="Object"/>
+  <superclass id="super:1" loaded="1" name="jsx3.lang.Object"/>
+  <superclass id="super:2" loaded="1" name="jsx3.app.Model"/>
+  <superclass direct="1" id="super:3" loaded="1" name="jsx3.gui.Painted"/>
+  <implements direct="1" id="implements:0" loaded="1" name="jsx3.gui.Form"/>
+  <implements id="implements:1" loaded="1" name="jsx3.util.EventDispatcher"/>
+  <method access="public" id="method:doValidate" name="doValidate">
+    <return text="&lt;code&gt;jsx3.gui.Form.STATEVALID&lt;/code&gt;.&#10;   ">
+      <type class="Number" link="1" name="int"/>
+    </return>
+    <text>Returns <code>STATEVALID</code>.</text>
+    <overridesmix id="overrides:doValidate" idfk="method:doValidate" name="doValidate" source="jsx3.gui.Form"/>
+  </method>
+  <method id="method:doKeyBinding" idfk="method:doKeyBinding" inherited="1" name="doKeyBinding" source="jsx3.gui.Form"/>
+  <method id="method:doReset" idfk="method:doReset" inherited="1" name="doReset" source="jsx3.gui.Form"/>
+  <method id="method:getDisabledBackgroundColor" idfk="method:getDisabledBackgroundColor" inherited="1" name="getDisabledBackgroundColor" source="jsx3.gui.Form"/>
+  <method id="method:getDisabledColor" idfk="method:getDisabledColor" inherited="1" name="getDisabledColor" source="jsx3.gui.Form"/>
+  <method id="method:getEnabled" idfk="method:getEnabled" inherited="1" name="getEnabled" source="jsx3.gui.Form"/>
+  <method id="method:getKeyBinding" idfk="method:getKeyBinding" inherited="1" name="getKeyBinding" source="jsx3.gui.Form"/>
+  <method id="method:getRequired" idfk="method:getRequired" inherited="1" name="getRequired" source="jsx3.gui.Form"/>
+  <method id="method:getValidationState" idfk="method:getValidationState" inherited="1" name="getValidationState" source="jsx3.gui.Form"/>
+  <method id="method:getValue" idfk="method:getValue" inherited="1" name="getValue" source="jsx3.gui.Form"/>
+  <method id="method:setDisabledBackgroundColor" idfk="method:setDisabledBackgroundColor" inherited="1" name="setDisabledBackgroundColor" source="jsx3.gui.Form"/>
+  <method id="method:setDisabledColor" idfk="method:setDisabledColor" inherited="1" name="setDisabledColor" source="jsx3.gui.Form"/>
+  <method id="method:setEnabled" idfk="method:setEnabled" inherited="1" name="setEnabled" source="jsx3.gui.Form"/>
+  <method id="method:setKeyBinding" idfk="method:setKeyBinding" inherited="1" name="setKeyBinding" source="jsx3.gui.Form"/>
+  <method id="method:setRequired" idfk="method:setRequired" inherited="1" name="setRequired" source="jsx3.gui.Form"/>
+  <method id="method:setValidationState" idfk="method:setValidationState" inherited="1" name="setValidationState" source="jsx3.gui.Form"/>
+  <method id="method:setValue" idfk="method:setValue" inherited="1" name="setValue" source="jsx3.gui.Form"/>
+  <method id="method:focus" idfk="method:focus" inherited="1" name="focus" source="jsx3.gui.Painted"/>
+  <method id="method:getAbsolutePosition" idfk="method:getAbsolutePosition" inherited="1" name="getAbsolutePosition" source="jsx3.gui.Painted"/>
+  <method id="method:getAttribute" idfk="method:getAttribute" inherited="1" name="getAttribute" source="jsx3.gui.Painted"/>
+  <method id="method:getAttributes" idfk="method:getAttributes" inherited="1" name="getAttributes" source="jsx3.gui.Painted"/>
+  <method id="method:getRendered" idfk="method:getRendered" inherited="1" name="getRendered" source="jsx3.gui.Painted"/>
+  <method deprecated="1" id="method:insertHTML" idfk="method:insertHTML" inherited="1" name="insertHTML" source="jsx3.gui.Painted"/>
+  <method id="method:onAfterPaint" idfk="method:onAfterPaint" inherited="1" name="onAfterPaint" source="jsx3.gui.Painted"/>
+  <method id="method:onAfterRestoreView" idfk="method:onAfterRestoreView" inherited="1" name="onAfterRestoreView" source="jsx3.gui.Painted"/>
+  <method abstract="1" id="method:paint" idfk="method:paint" inherited="1" name="paint" source="jsx3.gui.Painted"/>
+  <method id="method:paintChild" idfk="method:paintChild" inherited="1" name="paintChild" source="jsx3.gui.Painted"/>
+  <method id="method:paintChildren" idfk="method:paintChildren" inherited="1" name="paintChildren" source="jsx3.gui.Painted"/>
+  <method id="method:recalcBox" idfk="method:recalcBox" inherited="1" name="recalcBox" source="jsx3.gui.Painted"/>
+  <method id="method:removeAttribute" idfk="method:removeAttribute" inherited="1" name="removeAttribute" source="jsx3.gui.Painted"/>
+  <method id="method:removeAttributes" idfk="method:removeAttributes" inherited="1" name="removeAttributes" source="jsx3.gui.Painted"/>
+  <method id="method:repaint" idfk="method:repaint" inherited="1" name="repaint" source="jsx3.gui.Painted"/>
+  <method id="method:setAttribute" idfk="method:setAttribute" inherited="1" name="setAttribute" source="jsx3.gui.Painted"/>
+  <method id="method:adoptChild" idfk="method:adoptChild" inherited="1" name="adoptChild" source="jsx3.app.Model"/>
+  <method id="method:assembleFromXML" idfk="method:assembleFromXML" inherited="1" name="assembleFromXML" source="jsx3.app.Model"/>
+  <method id="method:doClone" idfk="method:doClone" inherited="1" name="doClone" source="jsx3.app.Model"/>
+  <method id="method:findAncestor" idfk="method:findAncestor" inherited="1" name="findAncestor" source="jsx3.app.Model"/>
+  <method id="method:findDescendants" idfk="method:findDescendants" inherited="1" name="findDescendants" source="jsx3.app.Model"/>
+  <method id="method:getAncestorOfName" idfk="method:getAncestorOfName" inherited="1" name="getAncestorOfName" source="jsx3.app.Model"/>
+  <method id="method:getAncestorOfType" idfk="method:getAncestorOfType" inherited="1" name="getAncestorOfType" source="jsx3.app.Model"/>
+  <method id="method:getChild" idfk="method:getChild" inherited="1" name="getChild" source="jsx3.app.Model"/>
+  <method id="method:getChildIndex" idfk="method:getChildIndex" inherited="1" name="getChildIndex" source="jsx3.app.Model"/>
+  <method id="method:getChildren" idfk="method:getChildren" inherited="1" name="getChildren" source="jsx3.app.Model"/>
+  <method id="method:getDescendantOfName" idfk="method:getDescendantOfName" inherited="1" name="getDescendantOfName" source="jsx3.app.Model"/>
+  <method id="method:getDescendantsOfType" idfk="method:getDescendantsOfType" inherited="1" name="getDescendantsOfType" source="jsx3.app.Model"/>
+  <method id="method:getDynamicProperty" idfk="method:getDynamicProperty" inherited="1" name="getDynamicProperty" source="jsx3.app.Model"/>
+  <method id="method:getFirstChild" idfk="method:getFirstChild" inherited="1" name="getFirstChild" source="jsx3.app.Model"/>
+  <method id="method:getFirstChildOfType" idfk="method:getFirstChildOfType" inherited="1" name="getFirstChildOfType" source="jsx3.app.Model"/>
+  <method id="method:getHelpId" idfk="method:getHelpId" inherited="1" name="getHelpId" source="jsx3.app.Model"/>
+  <method id="method:getId" idfk="method:getId" inherited="1" name="getId" source="jsx3.app.Model"/>
+  <method id="method:getLastChild" idfk="method:getLastChild" inherited="1" name="getLastChild" source="jsx3.app.Model"/>
+  <method id="method:getLoadType" idfk="method:getLoadType" inherited="1" name="getLoadType" source="jsx3.app.Model"/>
+  <method id="method:getMetaValue" idfk="method:getMetaValue" inherited="1" name="getMetaValue" source="jsx3.app.Model"/>
+  <method id="method:getNS" idfk="method:getNS" inherited="1" name="getNS" source="jsx3.app.Model"/>
+  <method id="method:getName" idfk="method:getName" inherited="1" name="getName" source="jsx3.app.Model"/>
+  <method id="method:getNextSibling" idfk="method:getNextSibling" inherited="1" name="getNextSibling" source="jsx3.app.Model"/>
+  <method final="1" id="method:getParent" idfk="method:getParent" inherited="1" name="getParent" source="jsx3.app.Model"/>
+  <method id="method:getPersistence" idfk="method:getPersistence" inherited="1" name="getPersistence" source="jsx3.app.Model"/>
+  <method id="method:getPreviousSibling" idfk="method:getPreviousSibling" inherited="1" name="getPreviousSibling" source="jsx3.app.Model"/>
+  <method id="method:getServer" idfk="method:getServer" inherited="1" name="getServer" source="jsx3.app.Model"/>
+  <method id="method:getUriResolver" idfk="method:getUriResolver" inherited="1" name="getUriResolver" source="jsx3.app.Model"/>
+  <method id="method:insertBefore" idfk="method:insertBefore" inherited="1" name="insertBefore" source="jsx3.app.Model"/>
+  <method id="method:load" idfk="method:load" inherited="1" name="load" source="jsx3.app.Model"/>
+  <method id="method:loadAndCache" idfk="method:loadAndCache" inherited="1" name="loadAndCache" source="jsx3.app.Model"/>
+  <method id="method:loadXML" idfk="method:loadXML" inherited="1" name="loadXML" source="jsx3.app.Model"/>
+  <method id="method:onAfterAssemble" idfk="method:onAfterAssemble" inherited="1" name="onAfterAssemble" source="jsx3.app.Model"/>
+  <method id="method:onAfterAttach" idfk="method:onAfterAttach" inherited="1" name="onAfterAttach" source="jsx3.app.Model"/>
+  <method id="method:onBeforeAssemble" idfk="method:onBeforeAssemble" inherited="1" name="onBeforeAssemble" source="jsx3.app.Model"/>
+  <method id="method:onChangeServer" idfk="method:onChangeServer" inherited="1" name="onChangeServer" source="jsx3.app.Model"/>
+  <method id="method:onChildAdded" idfk="method:onChildAdded" inherited="1" name="onChildAdded" source="jsx3.app.Model"/>
+  <method id="method:onDestroy" idfk="method:onDestroy" inherited="1" name="onDestroy" source="jsx3.app.Model"/>
+  <method id="method:onRemoveChild" idfk="method:onRemoveChild" inherited="1" name="onRemoveChild" source="jsx3.app.Model"/>
+  <method id="method:onSetChild" idfk="method:onSetChild" inherited="1" name="onSetChild" source="jsx3.app.Model"/>
+  <method id="method:onSetParent" idfk="method:onSetParent" inherited="1" name="onSetParent" source="jsx3.app.Model"/>
+  <method id="method:removeChild" idfk="method:removeChild" inherited="1" name="removeChild" source="jsx3.app.Model"/>
+  <method id="method:removeChildren" idfk="method:removeChildren" inherited="1" name="removeChildren" source="jsx3.app.Model"/>
+  <method id="method:selectDescendants" idfk="method:selectDescendants" inherited="1" name="selectDescendants" source="jsx3.app.Model"/>
+  <method id="method:setChild" idfk="method:setChild" inherited="1" name="setChild" source="jsx3.app.Model"/>
+  <method id="method:setDynamicProperty" idfk="method:setDynamicProperty" inherited="1" name="setDynamicProperty" source="jsx3.app.Model"/>
+  <method id="method:setHelpId" idfk="method:setHelpId" inherited="1" name="setHelpId" source="jsx3.app.Model"/>
+  <method id="method:setLoadType" idfk="method:setLoadType" inherited="1" name="setLoadType" source="jsx3.app.Model"/>
+  <method id="method:setMetaValue" idfk="method:setMetaValue" inherited="1" name="setMetaValue" source="jsx3.app.Model"/>
+  <method id="method:setName" idfk="method:setName" inherited="1" name="setName" source="jsx3.app.Model"/>
+  <method id="method:setPersistence" idfk="method:setPersistence" inherited="1" name="setPersistence" source="jsx3.app.Model"/>
+  <method id="method:toString" idfk="method:toString" inherited="1" name="toString" source="jsx3.app.Model"/>
+  <method id="method:toXML" idfk="method:toXML" inherited="1" name="toXML" source="jsx3.app.Model"/>
+  <method id="method:toXMLDoc" idfk="method:toXMLDoc" inherited="1" name="toXMLDoc" source="jsx3.app.Model"/>
+  <method id="method:toXMLElm" idfk="method:toXMLElm" inherited="1" name="toXMLElm" source="jsx3.app.Model"/>
+  <method id="method:publish" idfk="method:publish" inherited="1" name="publish" source="jsx3.util.EventDispatcher"/>
+  <method id="method:subscribe" idfk="method:subscribe" inherited="1" name="subscribe" source="jsx3.util.EventDispatcher"/>
+  <method id="method:unsubscribe" idfk="method:unsubscribe" inherited="1" name="unsubscribe" source="jsx3.util.EventDispatcher"/>
+  <method id="method:unsubscribeAll" idfk="method:unsubscribeAll" inherited="1" name="unsubscribeAll" source="jsx3.util.EventDispatcher"/>
+  <method id="method:clone" idfk="method:clone" inherited="1" name="clone" source="jsx3.lang.Object"/>
+  <method id="method:equals" idfk="method:equals" inherited="1" name="equals" source="jsx3.lang.Object"/>
+  <method id="method:eval" idfk="method:eval" inherited="1" name="eval" source="jsx3.lang.Object"/>
+  <method id="method:getClass" idfk="method:getClass" inherited="1" name="getClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOf" idfk="method:getInstanceOf" inherited="1" name="getInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfClass" idfk="method:getInstanceOfClass" inherited="1" name="getInstanceOfClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfPackage" idfk="method:getInstanceOfPackage" inherited="1" name="getInstanceOfPackage" source="jsx3.lang.Object"/>
+  <method id="method:instanceOf" idfk="method:instanceOf" inherited="1" name="instanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isInstanceOf" idfk="method:isInstanceOf" inherited="1" name="isInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isSubclassOf" idfk="method:isSubclassOf" inherited="1" name="isSubclassOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:jsxmix" idfk="method:jsxmix" inherited="1" name="jsxmix" source="jsx3.lang.Object"/>
+  <method id="method:jsxsuper" idfk="method:jsxsuper" inherited="1" name="jsxsuper" source="jsx3.lang.Object"/>
+  <method id="method:jsxsupermix" idfk="method:jsxsupermix" inherited="1" name="jsxsupermix" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:setInstanceOf" idfk="method:setInstanceOf" inherited="1" name="setInstanceOf" source="jsx3.lang.Object"/>
+</class>

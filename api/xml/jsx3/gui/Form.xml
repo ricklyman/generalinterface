@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface abstract="1" access="public" id="class:jsx3.gui.Form" name="jsx3.gui.Form" package="jsx3.gui" shortname="Form">
+  <text>Mixin interface. Contains methods and constants encapsulating the functionality of an HTML form control.
+ </text>
+  <implementor id="implementor:0" loaded="1" name="jsx3.gui.Button"/>
+  <implementor id="implementor:1" loaded="1" name="jsx3.gui.CheckBox"/>
+  <implementor id="implementor:2" loaded="1" name="jsx3.gui.ColorPicker"/>
+  <implementor id="implementor:3" loaded="1" name="jsx3.gui.DatePicker"/>
+  <implementor id="implementor:4" loaded="1" name="jsx3.gui.Grid"/>
+  <implementor id="implementor:5" loaded="1" name="jsx3.gui.ImageButton"/>
+  <implementor id="implementor:6" loaded="1" name="jsx3.gui.List"/>
+  <implementor id="implementor:7" loaded="1" name="jsx3.gui.Matrix"/>
+  <implementor id="implementor:8" loaded="1" name="jsx3.gui.Menu"/>
+  <implementor id="implementor:9" loaded="1" name="jsx3.gui.NativeButton"/>
+  <implementor id="implementor:10" loaded="1" name="jsx3.gui.NativeFileUpload"/>
+  <implementor id="implementor:11" loaded="1" name="jsx3.gui.NativeHidden"/>
+  <implementor id="implementor:12" loaded="1" name="jsx3.gui.NativeSelect"/>
+  <implementor id="implementor:13" loaded="1" name="jsx3.gui.NumberInput"/>
+  <implementor id="implementor:14" loaded="1" name="jsx3.gui.RadioButton"/>
+  <implementor id="implementor:15" loaded="1" name="jsx3.gui.Select"/>
+  <implementor id="implementor:16" loaded="1" name="jsx3.gui.Slider"/>
+  <implementor id="implementor:17" loaded="1" name="jsx3.gui.Table"/>
+  <implementor id="implementor:18" loaded="1" name="jsx3.gui.TextBox"/>
+  <implementor id="implementor:19" loaded="1" name="jsx3.gui.TimePicker"/>
+  <implementor id="implementor:20" loaded="1" name="jsx3.gui.ToolbarButton"/>
+  <implementor id="implementor:21" loaded="1" name="jsx3.gui.Tree"/>
+  <field access="public" class="jsx3.gui.Form" fullname="jsx3.gui.Form.DEFAULTDISABLEDBACKGROUNDCOLOR" id="sfield:DEFAULTDISABLEDBACKGROUNDCOLOR" name="DEFAULTDISABLEDBACKGROUNDCOLOR" static="1" value="&quot;#d8d8e5&quot;">
+    <type link="1" name="String"/>
+    <text> #d8d8e5 (default)
+   </text>
+  </field>
+  <field access="public" class="jsx3.gui.Form" fullname="jsx3.gui.Form.DEFAULTDISABLEDCOLOR" id="sfield:DEFAULTDISABLEDCOLOR" name="DEFAULTDISABLEDCOLOR" static="1" value="&quot;#a8a8b5&quot;">
+    <type link="1" name="String"/>
+    <text> #a8a8b5 (default)
+   </text>
+  </field>
+  <field access="public" class="jsx3.gui.Form" final="1" fullname="jsx3.gui.Form.OPTIONAL" id="sfield:OPTIONAL" name="OPTIONAL" static="1" value="0">
+    <type class="Number" link="1" name="int"/>
+    <text> Value for the required field indicating that the form field is optional.</text>
+  </field>
+  <field access="public" class="jsx3.gui.Form" final="1" fullname="jsx3.gui.Form.REQUIRED" id="sfield:REQUIRED" name="REQUIRED" static="1" value="1">
+    <type class="Number" link="1" name="int"/>
+    <text> Value for the required field indicating that the form field is required.</text>
+  </field>
+  <field access="public" class="jsx3.gui.Form" final="1" fullname="jsx3.gui.Form.STATEDISABLED" id="sfield:STATEDISABLED" name="STATEDISABLED" static="1" value="0">
+    <type class="Number" link="1" name="int"/>
+    <text> Value for the enabled field indicating that the form field is disabled.</text>
+  </field>
+  <field access="public" class="jsx3.gui.Form" final="1" fullname="jsx3.gui.Form.STATEENABLED" id="sfield:STATEENABLED" name="STATEENABLED" static="1" value="1">
+    <type class="Number" link="1" name="int"/>
+    <text> Value for the enabled field indicating that the form field is enabled.</text>
+  </field>
+  <field access="public" class="jsx3.gui.Form" final="1" fullname="jsx3.gui.Form.STATEINVALID" id="sfield:STATEINVALID" name="STATEINVALID" static="1" value="0">
+    <type class="Number" link="1" name="int"/>
+    <text> Value for the validation state field indicating that the value of the form field is invalid.</text>
+  </field>
+  <field access="public" class="jsx3.gui.Form" final="1" fullname="jsx3.gui.Form.STATEVALID" id="sfield:STATEVALID" name="STATEVALID" static="1" value="1">
+    <type class="Number" link="1" name="int"/>
+    <text> Value for the validation state field indicating that the value of the form field is valid.</text>
+  </field>
+  <method access="public" id="method:doKeyBinding" name="doKeyBinding">
+    <param name="fctCallback" text="JavaScript function to execute when the given sequence is keyed by the user.">
+      <type link="1" name="Function"/>
+    </param>
+    <param name="strKeys" text="a plus-delimited ('+') key sequence such as &lt;code&gt;ctrl+s&lt;/code&gt; or&#10;  &lt;code&gt;ctrl+shift+alt+h&lt;/code&gt; or &lt;code&gt;shift+a&lt;/code&gt;, etc. Any combination of shift, ctrl, and alt are&#10;  supported, including none. Also supported as the final token are &lt;code&gt;enter&lt;/code&gt;, &lt;code&gt;esc&lt;/code&gt;,&#10;  &lt;code&gt;tab&lt;/code&gt;, &lt;code&gt;del&lt;/code&gt;, and &lt;code&gt;space&lt;/code&gt;. To specify the final token as a key code, the&#10;  last token can be the key code contained in brackets, &lt;code&gt;[13]&lt;/code&gt;.">
+      <type link="1" name="String"/>
+    </param>
+    <return text="the registered hot key or &lt;code&gt;null&lt;/code&gt; if &lt;code&gt;strKeys&lt;/code&gt; is an invalid key &#10;  combination.">
+      <type link="1" name="jsx3.gui.HotKey"/>
+    </return>
+    <text>Binds the given key sequence to a callback function. Any object that has a key binding (specified with
+<code>setKeyBinding()</code>) will call this method when painted to register the key sequence with an appropriate
+ancestor of this form control. Any key down event that bubbles up to the ancestor without being intercepted
+and matches the given key sequence will invoke the given callback function.
+<p/>
+<b>As of 3.2:</b> The hot key will be registered with the first ancestor found that is either a
+<code>jsx3.gui.Window</code>, <code>a jsx3.gui.Dialog</code>, or the root block of a <code>jsx3.app.Server</code>.</text>
+    <see idfk="method:setKeyBinding" source="jsx3.gui.Form">setKeyBinding()</see>
+  </method>
+  <method access="public" id="method:doReset" name="doReset">
+    <return text="this object.&#10;   ">
+      <type link="1" name="jsx3.gui.Form"/>
+    </return>
+    <text>Resets the validation state of this control.</text>
+  </method>
+  <method abstract="1" access="public" id="method:doValidate" name="doValidate">
+    <return text="&lt;code&gt;STATEINVALID&lt;/code&gt; or &lt;code&gt;STATEVALID&lt;/code&gt;.&#10;   ">
+      <type class="Number" link="1" name="int"/>
+    </return>
+    <text>Abstract method that must be implemented by any class that implements the Form interface.</text>
+  </method>
+  <method access="public" id="method:getDisabledBackgroundColor" name="getDisabledBackgroundColor">
+    <return text="valid CSS property value, (i.e., red, #ff0000)&#10;   ">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the background color of this control when it is disabled.</text>
+  </method>
+  <method access="public" id="method:getDisabledColor" name="getDisabledColor">
+    <return text="valid CSS property value, (i.e., red, #ff0000)&#10;   ">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the font color to use when this control is disabled.</text>
+  </method>
+  <method access="public" id="method:getEnabled" name="getEnabled">
+    <return text="&lt;code&gt;STATEDISABLED&lt;/code&gt; or &lt;code&gt;STATEENABLED&lt;/code&gt;.">
+      <type class="Number" link="1" name="int"/>
+    </return>
+    <text>Returns the state for the form field control. If no enabled state is set, this method returns
+<code>STATEENABLED</code>.</text>
+    <see idfk="sfield:STATEDISABLED" source="jsx3.gui.Form">STATEDISABLED</see>
+    <see idfk="sfield:STATEENABLED" source="jsx3.gui.Form">STATEENABLED</see>
+  </method>
+  <method access="public" id="method:getKeyBinding" name="getKeyBinding">
+    <return text="plus-delimited (e.g.,'+') key sequence such as ctrl+s or ctrl+shift+alt+h or shift+a, etc">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the key binding that when keyed will fire the execute event for this control.</text>
+    <see idfk="method:doKeyBinding" source="jsx3.gui.Form">doKeyBinding()</see>
+  </method>
+  <method access="public" id="method:getRequired" name="getRequired">
+    <return text="&lt;code&gt;REQUIRED&lt;/code&gt; or &lt;code&gt;OPTIONAL&lt;/code&gt;.">
+      <type class="Number" link="1" name="int"/>
+    </return>
+    <text>Returns whether or not this control is required. If the required property has never been set, this method returns
+<code>OPTIONAL</code>.</text>
+    <see idfk="sfield:REQUIRED" source="jsx3.gui.Form">REQUIRED</see>
+    <see idfk="sfield:OPTIONAL" source="jsx3.gui.Form">OPTIONAL</see>
+  </method>
+  <method access="public" id="method:getValidationState" name="getValidationState">
+    <return text="&lt;code&gt;STATEINVALID&lt;/code&gt; or &lt;code&gt;STATEVALID&lt;/code&gt;.">
+      <type class="Number" link="1" name="int"/>
+    </return>
+    <text>Returns the validation state of this control. If the validationState property has never been set, this method returns
+<code>STATEVALID</code>.</text>
+    <see idfk="sfield:STATEINVALID" source="jsx3.gui.Form">STATEINVALID</see>
+    <see idfk="sfield:STATEVALID" source="jsx3.gui.Form">STATEVALID</see>
+  </method>
+  <method access="public" id="method:getValue" name="getValue">
+    <return text="">
+      <type link="1" name="Number"/>
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the value of this control.</text>
+  </method>
+  <method access="public" id="method:setDisabledBackgroundColor" name="setDisabledBackgroundColor">
+    <param name="strColor" text="valid CSS property value, (i.e., red, #ff0000)">
+      <type link="1" name="String"/>
+    </param>
+    <return text="this object.&#10;   ">
+      <type link="1" name="jsx3.gui.Form"/>
+    </return>
+    <text>Sets the background color of this form control when it is disabled.</text>
+  </method>
+  <method access="public" id="method:setDisabledColor" name="setDisabledColor">
+    <param name="strColor" text="valid CSS property value, (i.e., red, #ff0000)">
+      <type link="1" name="String"/>
+    </param>
+    <return text="this object.&#10;   ">
+      <type link="1" name="jsx3.gui.Form"/>
+    </return>
+    <text>Sets the font color to use when this control is disabled.</text>
+  </method>
+  <method access="public" id="method:setEnabled" name="setEnabled">
+    <param name="intEnabled" text="&lt;code&gt;STATEDISABLED&lt;/code&gt; or &lt;code&gt;STATEENABLED&lt;/code&gt;. &lt;code&gt;null&lt;/code&gt; is&#10;   equivalent to &lt;code&gt;STATEENABLED&lt;/code&gt;.">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <param name="bRepaint" text="if &lt;code&gt;true&lt;/code&gt; this control is immediately repainted to reflect the new setting.&#10;   ">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <text>Sets whether this control is enabled. Disabled controls do not respond to user interaction.</text>
+  </method>
+  <method access="public" id="method:setKeyBinding" name="setKeyBinding">
+    <param name="strSequence" text="plus-delimited (e.g.,'+') key sequence such as ctrl+s or ctrl+shift+alt+h or shift+a, etc">
+      <type link="1" name="String"/>
+    </param>
+    <return text="this object.">
+      <type link="1" name="jsx3.gui.Form"/>
+    </return>
+    <text>Sets the key binding that when keyed will fire the bound execute (<code>jsx3.gui.Interactive.EXECUTE</code>)
+event for this control.</text>
+    <see idfk="method:doKeyBinding" source="jsx3.gui.Form">doKeyBinding()</see>
+  </method>
+  <method access="public" id="method:setRequired" name="setRequired">
+    <param name="required" text="{int} &lt;code&gt;REQUIRED&lt;/code&gt; or &lt;code&gt;OPTIONAL&lt;/code&gt;.">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <return text="this object.&#10;   ">
+      <type link="1" name="jsx3.gui.Form"/>
+    </return>
+    <text>Sets whether or not this control is required.</text>
+  </method>
+  <method access="public" id="method:setValidationState" name="setValidationState">
+    <param name="intState" text="&lt;code&gt;STATEINVALID&lt;/code&gt; or &lt;code&gt;STATEVALID&lt;/code&gt;.">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <return text="this object.&#10;   ">
+      <type link="1" name="jsx3.gui.Form"/>
+    </return>
+    <text>Sets the validation state of this control. The validation state of a control is not serialized.</text>
+  </method>
+  <method access="public" id="method:setValue" name="setValue">
+    <param name="vntValue" text="string/int value for the component">
+      <type link="1" name="Number"/>
+      <type link="1" name="String"/>
+    </param>
+    <return text="this object.&#10;   ">
+      <type link="1" name="jsx3.gui.Form"/>
+    </return>
+    <text>Sets the value of this control.</text>
+  </method>
+  <method access="public" deprecated="1" id="smethod:getVersion" name="getVersion" static="1">
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the release/build for the class (i.e., "2.2.00")</text>
+  </method>
+  <method access="public" id="smethod:reset" name="reset" static="1">
+    <param name="objJSXContainer" text="JSX GUI object containing all form fields that need to be reset (the 'reset' process will start with this item and be applied to all descendants, not just direct children)">
+      <type link="1" name="jsx3.app.Model"/>
+    </param>
+    <text>Traverses the DOM branch starting at <code>objJSXContainer</code> and calls <code>doReset()</code> on all nodes
+of type <code>jsx3.gui.Form</code>.</text>
+    <see idfk="method:doReset" source="jsx3.gui.Form">doReset()</see>
+  </method>
+  <method access="public" id="smethod:validate" name="validate" static="1">
+    <param name="objJSXContainer" text="JSX GUI object containing all form fields that need to be validated (recursive validation will start with this item and be applied to all descendants, not just direct children)">
+      <type link="1" name="jsx3.app.Model"/>
+    </param>
+    <param name="objHandler" text="a JavaScript function (as object). This function will be passed two parameters: the object reference to the JSX Form object (textbox, selectbox, checkbox, etc) being validated as well as a constant denoting whether or not it validated (0 or 1)&amp;#8212;1 meaning true">
+      <type link="1" name="Function"/>
+    </param>
+    <return text="&lt;code&gt;STATEINVALID&lt;/code&gt; or &lt;code&gt;STATEVALID&lt;/code&gt;.&#10;   ">
+      <type class="Number" link="1" name="int"/>
+    </return>
+    <text>Traverses the DOM branch starting at <code>objJSXContainer</code> and calls <code>doValidate()</code> on all nodes
+of type <code>jsx3.gui.Form</code>. A custom function handler, <code>objHandler</code>, can be passed that will
+be called once for each encountered form control.</text>
+  </method>
+</interface>

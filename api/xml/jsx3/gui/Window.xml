@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class access="public" id="class:jsx3.gui.Window" name="jsx3.gui.Window" package="jsx3.gui" shortname="Window" since="3.2&#10; ">
+  <text>Allows for rendering a branch of the DOM of an application in a separate browser window.
+<p/>
+Access instances of this class with the following methods in the <code>jsx3.app.Server</code> class:
+<ul>
+  <li>createAppWindow()</li>
+  <li>getAppWindow()</li>
+  <li>loadAppWindow()</li>
+</ul>
+  </text>
+  <see idfk="method:createAppWindow" source="jsx3.app.Server">jsx3.app.Server.createAppWindow()</see>
+  <see idfk="method:getAppWindow" source="jsx3.app.Server">jsx3.app.Server.getAppWindow()</see>
+  <see idfk="method:loadAppWindow" source="jsx3.app.Server">jsx3.app.Server.loadAppWindow()</see>
+  <superclass id="super:0" loaded="1" name="Object"/>
+  <superclass id="super:1" loaded="1" name="jsx3.lang.Object"/>
+  <superclass direct="1" id="super:2" loaded="1" name="jsx3.app.Model"/>
+  <implements id="implements:0" loaded="1" name="jsx3.util.EventDispatcher"/>
+  <constructor access="public" id="method:init" name="init">
+    <param name="strName" text="a unique name for this window.&#10;   ">
+      <type link="1" name="String"/>
+    </param>
+    <text>The instance initializer.</text>
+  </constructor>
+  <field access="public" class="jsx3.gui.Window" final="1" fullname="jsx3.gui.Window.DID_FOCUS" id="sfield:DID_FOCUS" name="DID_FOCUS" static="1" value="&quot;focus&quot;">
+    <type link="1" name="String"/>
+    <text> Event subject: published after this window has received focus.</text>
+  </field>
+  <field access="public" class="jsx3.gui.Window" final="1" fullname="jsx3.gui.Window.DID_OPEN" id="sfield:DID_OPEN" name="DID_OPEN" static="1" value="&quot;open&quot;">
+    <type link="1" name="String"/>
+    <text> Event subject: published after this window has successfully opened.</text>
+  </field>
+  <field access="public" class="jsx3.gui.Window" final="1" fullname="jsx3.gui.Window.DID_RESIZE" id="sfield:DID_RESIZE" name="DID_RESIZE" static="1" value="&quot;resize&quot;">
+    <type link="1" name="String"/>
+    <text> Event subject: published after this window has been resized via user interaction.</text>
+  </field>
+  <field access="public" class="jsx3.gui.Window" final="1" fullname="jsx3.gui.Window.PARENT_DID_CLOSE" id="sfield:PARENT_DID_CLOSE" name="PARENT_DID_CLOSE" static="1" value="&quot;pclose&quot;">
+    <type link="1" name="String"/>
+    <text> Event subject: published after this window's parent has closed.</text>
+  </field>
+  <field access="public" class="jsx3.gui.Window" final="1" fullname="jsx3.gui.Window.WILL_CLOSE" id="sfield:WILL_CLOSE" name="WILL_CLOSE" static="1" value="&quot;close&quot;">
+    <type link="1" name="String"/>
+    <text> Event subject: published just before this window will close.</text>
+  </field>
+  <method access="public" id="method:close" name="close">
+    <return text="&lt;code&gt;true&lt;/code&gt; if the window successfully closed or &lt;code&gt;false&lt;/code&gt; if it didn't close&#10;   because of JavaScript security constraints or user interaction.">
+      <type class="Boolean" link="1" name="boolean"/>
+    </return>
+    <throws text="if the window is already closed.&#10;   ">
+      <type link="1" name="jsx3.lang.Exception"/>
+    </throws>
+    <text>Closes the browser window of this window instance. Call to properly close the window and perform all necessary resource cleanup.
+Note: due to differences across the various browsers, calling this method to close the browser window is preferable to allowing the user
+to close the window via the native browser close button in the window's caption bar.</text>
+  </method>
+  <method access="public" id="method:constrainToScreen" name="constrainToScreen">
+    <text>Ensures that this window is at least partially visible on the computer screen.
+   </text>
+  </method>
+  <method access="public" id="method:doClose" name="doClose" since="3.7&#10;   ">
+    <text>Closes the native browser window bound to this window instance AND removes this instance and its descendants from the GI DOM. Note
+that this method will remove this instance and its descendants (the model), regardless of whether or not the
+browser window (the view) was able to be successfully closed. If you need greater control in case of errors affecting the native window, call close
+(e.g., <code>this.close();</code>), followed by a call to removeChild (e.g., <code>this.getParent().removeChild(this);</code>).</text>
+  </method>
+  <method access="public" id="method:focus" name="focus">
+    <throws text="if the window is not open.&#10;   ">
+      <type link="1" name="jsx3.lang.Exception"/>
+    </throws>
+    <text>Focuses the browser window of this window instance.</text>
+  </method>
+  <method access="public" id="method:getHeight" name="getHeight">
+    <return text="">
+      <type class="Number" link="1" name="int"/>
+    </return>
+    <text>Returns the inner (visible) height of this window. This does not include the border and padding that the
+browser may render around the window content.</text>
+  </method>
+  <method access="public" id="method:getOffsetLeft" name="getOffsetLeft">
+    <return text="">
+      <type class="Number" link="1" name="int"/>
+    </return>
+    <throws text="if the window is not open.&#10;   ">
+      <type link="1" name="jsx3.lang.Exception"/>
+    </throws>
+    <text>Returns the current x-coordinate screen position of this browser window relative to the parent application window.
+If the parent window is no longer open, this method returns the position relative to the upper-left
+corner of the screen.</text>
+  </method>
+  <method access="public" id="method:getOffsetTop" name="getOffsetTop">
+    <return text="">
+      <type class="Number" link="1" name="int"/>
+    </return>
+    <throws text="if the window is not open.&#10;   ">
+      <type link="1" name="jsx3.lang.Exception"/>
+    </throws>
+    <text>Returns the current y-coordinate screen position of this browser window relative to the parent application window.
+If the parent window is no longer open, this method returns the position relative to the upper-left
+corner of the screen.</text>
+  </method>
+  <method access="public" id="method:getRootBlock" name="getRootBlock">
+    <return text="">
+      <type link="1" name="jsx3.gui.Block"/>
+    </return>
+    <text>Returns the first DOM child of this window object. If no child exists, this method creates a root block, adds it
+to the DOM, and returns it. A window will only render its first DOM child.</text>
+  </method>
+  <method access="public" id="method:getTitle" name="getTitle">
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the title of this window.</text>
+  </method>
+  <method access="public" id="method:getWidth" name="getWidth">
+    <return text="">
+      <type class="Number" link="1" name="int"/>
+    </return>
+    <text>Returns the inner (visible) width of this window. This does not include the border and padding that the
+browser may render around the window content.</text>
+  </method>
+  <method access="public" id="method:isDependent" name="isDependent">
+    <return text="&lt;code&gt;jsx3.Boolean.TRUE&lt;/code&gt; or &lt;code&gt;jsx3.Boolean.FALSE&lt;/code&gt;.&#10;   ">
+      <type class="Number" link="1" name="int"/>
+    </return>
+    <text>Returns whether this window is "dependent." Dependent windows close automatically when their parents close. If
+a window is not dependent, it will stay open after the parent window closes. Note that the parent window contains
+all the JavaScript code and so it is very likely that interacting with a window after the parent has closed
+will raise errors.</text>
+  </method>
+  <method access="public" id="method:isOpen" name="isOpen">
+    <return text="&lt;code&gt;true&lt;/code&gt; if the window is open.&#10;   ">
+      <type class="Boolean" link="1" name="boolean"/>
+    </return>
+    <text>Returns whether the browser window of this window instance is open.</text>
+  </method>
+  <method access="public" id="method:isParentOpen" name="isParentOpen">
+    <return text="&lt;code&gt;true&lt;/code&gt; if the parent window is open.&#10;   ">
+      <type class="Boolean" link="1" name="boolean"/>
+    </return>
+    <text>Returns whether the parent application window of this window instance is open.</text>
+  </method>
+  <method access="public" id="method:isResizable" name="isResizable">
+    <return text="&lt;code&gt;jsx3.Boolean.TRUE&lt;/code&gt; or &lt;code&gt;jsx3.Boolean.FALSE&lt;/code&gt;.&#10;   ">
+      <type class="Number" link="1" name="int"/>
+    </return>
+    <text>Returns whether this window is resizable via user interaction. The value returned by this method will reflect
+the last value passed to <code>setResizable()</code> and therefore may not truly reflect the current state of the
+browser window.</text>
+  </method>
+  <method access="public" id="method:isScrollable" name="isScrollable">
+    <return text="&lt;code&gt;jsx3.Boolean.TRUE&lt;/code&gt; or &lt;code&gt;jsx3.Boolean.FALSE&lt;/code&gt;.&#10;   ">
+      <type class="Number" link="1" name="int"/>
+    </return>
+    <text>Returns whether this window will show scroll bars if the content outgrows the window. The value returned by
+this method will reflect the last value passed to <code>setScrollable()</code> and therefore may not truly
+reflect the current state of the browser window.</text>
+  </method>
+  <method access="public" id="method:moveTo" name="moveTo">
+    <param name="intOffsetLeft" text="the left offset from the parent window.">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <param name="intOffsetTop" text="the top offset from the parent window.">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <throws text="if the window is not open.&#10;   ">
+      <type link="1" name="jsx3.lang.Exception"/>
+    </throws>
+    <text>Moves the browser window of this window instance to a position on the screen. The arguments specify the 
+offset from the parent application window. If the parent window is no longer open, this window will be moved 
+relative to the upper-left corner of the screen.</text>
+  </method>
+  <method access="public" id="method:open" name="open">
+    <return text="&lt;code&gt;true&lt;/code&gt; if the window successfully opened (probably).">
+      <type class="Boolean" link="1" name="boolean"/>
+    </return>
+    <throws text="if the window is already open.&#10;   ">
+      <type link="1" name="jsx3.lang.Exception"/>
+    </throws>
+    <text>Opens the browser window of this window instance. Depending on security settings and popup blockers, 
+this method may or may not actually open a window. The only safe way to determine whether the window 
+successfully opened is to register for the <code>DID_OPEN</code> event.</text>
+  </method>
+  <method access="public" id="method:repaint" name="repaint">
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>Repaints the root block of this window.</text>
+  </method>
+  <method access="public" id="method:setDependent" name="setDependent">
+    <param name="bDependent" text="">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <text>Sets whether this window is "dependent." This method not affect a currently-open window.</text>
+    <see idfk="method:isDependent" source="jsx3.gui.Window">isDependent()</see>
+  </method>
+  <method access="public" id="method:setHeight" name="setHeight">
+    <param name="intHeight" text="the inner height of the window in pixels.&#10;   ">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <text>Sets the inner (visible) height of this window. If the window is currently open, the window will be resized
+immediately.</text>
+  </method>
+  <method access="public" id="method:setResizable" name="setResizable">
+    <param name="bResizable" text="">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <text>Sets whether this window is resizable via user interaction. This method will not affect a currently-open window.</text>
+  </method>
+  <method access="public" id="method:setScrollable" name="setScrollable">
+    <param name="bScrollable" text="">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <text>Sets whether this window will show scroll bars if the content outgrows the window. This method will not affect a
+currently-open window.</text>
+  </method>
+  <method access="public" id="method:setTitle" name="setTitle">
+    <param name="strTitle" text="the title of the window.&#10;   ">
+      <type link="1" name="String"/>
+    </param>
+    <text>Sets the title of the window. The title is displayed in the title bar of the browser window. If the window is
+currently open, the title will be updated immediately.</text>
+  </method>
+  <method access="public" id="method:setWidth" name="setWidth">
+    <param name="intWidth" text="the inner width of the window in pixels.&#10;   ">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <text>Sets the inner (visible) width of this window. If the window is currently open, the window will be resized
+immediately.</text>
+  </method>
+  <method access="public" id="method:toString" name="toString">
+    <param name="strTitle"/>
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <overrides id="overrides:toString" idfk="method:toString" name="toString" source="jsx3.app.Model"/>
+  </method>
+  <method id="method:adoptChild" idfk="method:adoptChild" inherited="1" name="adoptChild" source="jsx3.app.Model"/>
+  <method id="method:assembleFromXML" idfk="method:assembleFromXML" inherited="1" name="assembleFromXML" source="jsx3.app.Model"/>
+  <method id="method:doClone" idfk="method:doClone" inherited="1" name="doClone" source="jsx3.app.Model"/>
+  <method id="method:findAncestor" idfk="method:findAncestor" inherited="1" name="findAncestor" source="jsx3.app.Model"/>
+  <method id="method:findDescendants" idfk="method:findDescendants" inherited="1" name="findDescendants" source="jsx3.app.Model"/>
+  <method id="method:getAncestorOfName" idfk="method:getAncestorOfName" inherited="1" name="getAncestorOfName" source="jsx3.app.Model"/>
+  <method id="method:getAncestorOfType" idfk="method:getAncestorOfType" inherited="1" name="getAncestorOfType" source="jsx3.app.Model"/>
+  <method id="method:getChild" idfk="method:getChild" inherited="1" name="getChild" source="jsx3.app.Model"/>
+  <method id="method:getChildIndex" idfk="method:getChildIndex" inherited="1" name="getChildIndex" source="jsx3.app.Model"/>
+  <method id="method:getChildren" idfk="method:getChildren" inherited="1" name="getChildren" source="jsx3.app.Model"/>
+  <method id="method:getDescendantOfName" idfk="method:getDescendantOfName" inherited="1" name="getDescendantOfName" source="jsx3.app.Model"/>
+  <method id="method:getDescendantsOfType" idfk="method:getDescendantsOfType" inherited="1" name="getDescendantsOfType" source="jsx3.app.Model"/>
+  <method id="method:getDynamicProperty" idfk="method:getDynamicProperty" inherited="1" name="getDynamicProperty" source="jsx3.app.Model"/>
+  <method id="method:getFirstChild" idfk="method:getFirstChild" inherited="1" name="getFirstChild" source="jsx3.app.Model"/>
+  <method id="method:getFirstChildOfType" idfk="method:getFirstChildOfType" inherited="1" name="getFirstChildOfType" source="jsx3.app.Model"/>
+  <method id="method:getHelpId" idfk="method:getHelpId" inherited="1" name="getHelpId" source="jsx3.app.Model"/>
+  <method id="method:getId" idfk="method:getId" inherited="1" name="getId" source="jsx3.app.Model"/>
+  <method id="method:getLastChild" idfk="method:getLastChild" inherited="1" name="getLastChild" source="jsx3.app.Model"/>
+  <method id="method:getLoadType" idfk="method:getLoadType" inherited="1" name="getLoadType" source="jsx3.app.Model"/>
+  <method id="method:getMetaValue" idfk="method:getMetaValue" inherited="1" name="getMetaValue" source="jsx3.app.Model"/>
+  <method id="method:getNS" idfk="method:getNS" inherited="1" name="getNS" source="jsx3.app.Model"/>
+  <method id="method:getName" idfk="method:getName" inherited="1" name="getName" source="jsx3.app.Model"/>
+  <method id="method:getNextSibling" idfk="method:getNextSibling" inherited="1" name="getNextSibling" source="jsx3.app.Model"/>
+  <method final="1" id="method:getParent" idfk="method:getParent" inherited="1" name="getParent" source="jsx3.app.Model"/>
+  <method id="method:getPersistence" idfk="method:getPersistence" inherited="1" name="getPersistence" source="jsx3.app.Model"/>
+  <method id="method:getPreviousSibling" idfk="method:getPreviousSibling" inherited="1" name="getPreviousSibling" source="jsx3.app.Model"/>
+  <method id="method:getServer" idfk="method:getServer" inherited="1" name="getServer" source="jsx3.app.Model"/>
+  <method id="method:getUriResolver" idfk="method:getUriResolver" inherited="1" name="getUriResolver" source="jsx3.app.Model"/>
+  <method id="method:insertBefore" idfk="method:insertBefore" inherited="1" name="insertBefore" source="jsx3.app.Model"/>
+  <method id="method:load" idfk="method:load" inherited="1" name="load" source="jsx3.app.Model"/>
+  <method id="method:loadAndCache" idfk="method:loadAndCache" inherited="1" name="loadAndCache" source="jsx3.app.Model"/>
+  <method id="method:loadXML" idfk="method:loadXML" inherited="1" name="loadXML" source="jsx3.app.Model"/>
+  <method id="method:onAfterAssemble" idfk="method:onAfterAssemble" inherited="1" name="onAfterAssemble" source="jsx3.app.Model"/>
+  <method id="method:onAfterAttach" idfk="method:onAfterAttach" inherited="1" name="onAfterAttach" source="jsx3.app.Model"/>
+  <method id="method:onBeforeAssemble" idfk="method:onBeforeAssemble" inherited="1" name="onBeforeAssemble" source="jsx3.app.Model"/>
+  <method id="method:onChangeServer" idfk="method:onChangeServer" inherited="1" name="onChangeServer" source="jsx3.app.Model"/>
+  <method id="method:onChildAdded" idfk="method:onChildAdded" inherited="1" name="onChildAdded" source="jsx3.app.Model"/>
+  <method id="method:onDestroy" idfk="method:onDestroy" inherited="1" name="onDestroy" source="jsx3.app.Model"/>
+  <method id="method:onRemoveChild" idfk="method:onRemoveChild" inherited="1" name="onRemoveChild" source="jsx3.app.Model"/>
+  <method id="method:onSetChild" idfk="method:onSetChild" inherited="1" name="onSetChild" source="jsx3.app.Model"/>
+  <method id="method:onSetParent" idfk="method:onSetParent" inherited="1" name="onSetParent" source="jsx3.app.Model"/>
+  <method id="method:removeChild" idfk="method:removeChild" inherited="1" name="removeChild" source="jsx3.app.Model"/>
+  <method id="method:removeChildren" idfk="method:removeChildren" inherited="1" name="removeChildren" source="jsx3.app.Model"/>
+  <method id="method:selectDescendants" idfk="method:selectDescendants" inherited="1" name="selectDescendants" source="jsx3.app.Model"/>
+  <method id="method:setChild" idfk="method:setChild" inherited="1" name="setChild" source="jsx3.app.Model"/>
+  <method id="method:setDynamicProperty" idfk="method:setDynamicProperty" inherited="1" name="setDynamicProperty" source="jsx3.app.Model"/>
+  <method id="method:setHelpId" idfk="method:setHelpId" inherited="1" name="setHelpId" source="jsx3.app.Model"/>
+  <method id="method:setLoadType" idfk="method:setLoadType" inherited="1" name="setLoadType" source="jsx3.app.Model"/>
+  <method id="method:setMetaValue" idfk="method:setMetaValue" inherited="1" name="setMetaValue" source="jsx3.app.Model"/>
+  <method id="method:setName" idfk="method:setName" inherited="1" name="setName" source="jsx3.app.Model"/>
+  <method id="method:setPersistence" idfk="method:setPersistence" inherited="1" name="setPersistence" source="jsx3.app.Model"/>
+  <method id="method:toXML" idfk="method:toXML" inherited="1" name="toXML" source="jsx3.app.Model"/>
+  <method id="method:toXMLDoc" idfk="method:toXMLDoc" inherited="1" name="toXMLDoc" source="jsx3.app.Model"/>
+  <method id="method:toXMLElm" idfk="method:toXMLElm" inherited="1" name="toXMLElm" source="jsx3.app.Model"/>
+  <method id="method:publish" idfk="method:publish" inherited="1" name="publish" source="jsx3.util.EventDispatcher"/>
+  <method id="method:subscribe" idfk="method:subscribe" inherited="1" name="subscribe" source="jsx3.util.EventDispatcher"/>
+  <method id="method:unsubscribe" idfk="method:unsubscribe" inherited="1" name="unsubscribe" source="jsx3.util.EventDispatcher"/>
+  <method id="method:unsubscribeAll" idfk="method:unsubscribeAll" inherited="1" name="unsubscribeAll" source="jsx3.util.EventDispatcher"/>
+  <method id="method:clone" idfk="method:clone" inherited="1" name="clone" source="jsx3.lang.Object"/>
+  <method id="method:equals" idfk="method:equals" inherited="1" name="equals" source="jsx3.lang.Object"/>
+  <method id="method:eval" idfk="method:eval" inherited="1" name="eval" source="jsx3.lang.Object"/>
+  <method id="method:getClass" idfk="method:getClass" inherited="1" name="getClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOf" idfk="method:getInstanceOf" inherited="1" name="getInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfClass" idfk="method:getInstanceOfClass" inherited="1" name="getInstanceOfClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfPackage" idfk="method:getInstanceOfPackage" inherited="1" name="getInstanceOfPackage" source="jsx3.lang.Object"/>
+  <method id="method:instanceOf" idfk="method:instanceOf" inherited="1" name="instanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isInstanceOf" idfk="method:isInstanceOf" inherited="1" name="isInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isSubclassOf" idfk="method:isSubclassOf" inherited="1" name="isSubclassOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:jsxmix" idfk="method:jsxmix" inherited="1" name="jsxmix" source="jsx3.lang.Object"/>
+  <method id="method:jsxsuper" idfk="method:jsxsuper" inherited="1" name="jsxsuper" source="jsx3.lang.Object"/>
+  <method id="method:jsxsupermix" idfk="method:jsxsupermix" inherited="1" name="jsxsupermix" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:setInstanceOf" idfk="method:setInstanceOf" inherited="1" name="setInstanceOf" source="jsx3.lang.Object"/>
+</class>
