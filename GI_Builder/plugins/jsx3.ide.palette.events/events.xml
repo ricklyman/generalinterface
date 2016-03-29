@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  ~ Copyright (c) 2001-2011, TIBCO Software Inc.
+  ~ Use, modification, and distribution subject to terms of license.
+  --><serialization xmlns="urn:tibco.com/v3.0">
+  <onAfterDeserialize><![CDATA[objJSX.onPaletteLoaded=function(){var
+P=jsx3.ide.getActiveEditor();if(P)this.onEditorChanged(P,null);};objJSX.onEditorChanged=function(r,m){var
+Ab=r&&r.getMode()=="component";this.makeActive(Ab);if(Ab)this.onSelectionChanged(r);};objJSX.onSelectionChanged=function(g){var
+zb=(this.getPlugIn()).onModelEventChange();this.makeActive(zb);};objJSX.makeActive=function(b){jsxmodelevents.setDisplay(b?jsx3.gui.Block.DISPLAYBLOCK:jsx3.gui.Block.DISPLAYNONE,true);};objJSX._makeSpy=function(g,m){var
+A=g.getRecordNode(m);if(A==null)return null;var
+ka=(jsx3.ide.getSelected())[0];var
+Gb=A.getAttribute("deprecated");var
+jb="";jb=jb+"<span class='jsx3ide_eventspy'>";jb=jb+("<div class='name"+(Gb?" deprecated":"")+"'>"+A.getAttribute("jsxtext")+"</div>");if(Gb)jb=jb+("<div class='desc dep'><span class='title'>Deprecated.</span> "+(Gb!="1"?Gb:"")+"</div>");jb=jb+("<div class='desc'>"+A.getAttribute("jsxtip")+"</div>");jb=jb+("<div class='field'><span class='title'>Event Type:</span> "+A.getAttribute("jsxid")+"</div>");if(A.getAttribute("vetoable"))jb=jb+"<div class='cancel'><span class='title'>Cancelable:</span> Evaluate to <code>false</code> to cancel event.</div>";var
+ta=A.selectNodeIterator('./record[not(@vartype) or not(@vartype="return")]');if(ta.hasNext()){jb=jb+"<div class='return'>The following context variables are available in the event scriptlet.</div>";while(ta.hasNext()){var
+w=ta.next();var
+ra=w.getAttribute("type");var
+Gb=w.getAttribute("deprecated");var
+la=Gb?"<span class='dep'><span class='title'>Deprecated.</span> "+(Gb!="1"?Gb:"")+"</span> ":"";if(ka!=null&&ra)ra=ra.replace(/\$class\$/g,(ka.getClass()).getName());jb=jb+("<div class='var'><b"+(Gb?" class='deprecated'":"")+">"+w.getAttribute("jsxid")+"</b>"+(ra!=null?" {<span class='type'>"+jsx3.util.strEscapeHTML(ra)+"</span>}":"")+": "+la+w.getAttribute("jsxtext")+"</div>");}}var
+ta=A.selectNodeIterator('./record[@vartype="return" or @vartype="inout"]');if(ta.hasNext()){jb=jb+"<div class='return'>The event may evaluate to an object in order to pass back any of the following fields to the caller.</div>";while(ta.hasNext()){var
+w=ta.next();var
+ra=w.getAttribute("type");var
+Gb=w.getAttribute("deprecated");var
+la=Gb?"<span class='dep'><span class='title'>Deprecated.</span> "+(Gb!="1"?Gb:"")+"</span> ":"";if(ka!=null&&ra)ra=ra.replace(/\$class\$/g,(ka.getClass()).getName());var
+za=w.getAttribute("jsxreturntext")||w.getAttribute("jsxtext");jb=jb+("<div class='var'><b"+(Gb?" class='deprecated'":"")+">"+w.getAttribute("jsxid")+"</b>"+(ra!=null?" {<span class='type'>"+jsx3.util.strEscapeHTML(ra)+"</span>}":"")+": "+la+za+"</div>");}}jb=jb+"</span>";return jb;};]]></onAfterDeserialize>
+    <object type="jsx3.gui.Block">
+      <!--<dynamics jsxborder="@Outset"/>-->
+      <variants jsxleft="0" jsxoverflow="2" jsxtop="0"/>
+      <strings jsxheight="100%" jsxhelpid="ide.palette.events" jsxname="eventpal" jsxwidth="100%"/>
+        <object type="jsx3.gui.Block">
+          <dynamics jsxbgcolor="@Solid Medium"/>
+          <variants jsxoverflow="2"/>
+          <strings jsxheight="100%" jsxwidth="100%"/>
+            <object type="jsx3.gui.Matrix">
+              <dynamics jsxbgcolor="@Solid Light" jsxbodyborder="@Outset"/>
+              <variants jsxpagingmodel="1" jsxreorder="0" jsxresize="1" jsxscalewidth="1" jsxselectionmodel="0" jsxsort="0" jsxspy="1"/>
+              <strings jsxfocusstyle=";" jsxmenu="jsxmenu_modelevents" jsxname="jsxmodelevents" jsxrenderingmodel="shallow" jsxspystylekeys="" jsxspystylevalues="" jsxxmlid="modelevents"/>
+              <events jsxafteredit="(eventpal.getPlugIn()).onModelEventEdit(this,strRECORDID,strNEWVALUE);" jsxmenu="objCOLUMN!=null&amp;&amp;strRECORDID!=&quot;&quot;;" jsxspy="objCOLUMN==jsxmodelevents_name?eventpal._makeSpy(this,strRECORDID):null;"/>
+              <xslparameters jsx_no_tip="1"/>
+                <object type="jsx3.gui.Matrix.Column">
+                  <dynamics jsxbg="@Fade TopDown" jsxborder="@Outset" jsxcellbgcolor="@Matrix HeaderCol BG" jsxcellborder="@Matrix HeaderCol Border" jsxtext="_gen_name"/>
+                  <strings jsxcellpadding="3" jsxname="jsxmodelevents_name" jsxpadding="2 3 0 3" jsxpath="jsxtext" jsxwidth="120"/>
+                </object>
+                <object type="jsx3.gui.Matrix.Column">
+                  <dynamics jsxbg="@Fade TopDown" jsxborder="@Outset" jsxcellbgcolor="@Matrix ValueCol BG" jsxcellborder="@Matrix ValueCol Border" jsxtext="_gen_value"/>
+                  <strings jsxcellpadding="3" jsxname="jsxmodelevents_value" jsxpadding="2 3 0 3" jsxpath="value" jsxvaluetemplate="&lt;xsl:template xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;&gt;        &lt;xsl:choose&gt;          &lt;xsl:when test=&quot;@value=''&quot;&gt;&lt;span class=&quot;jsx3ide_props_emptystring&quot;&gt;[empty]&lt;/span&gt;&lt;/xsl:when&gt;          &lt;xsl:when test=&quot;@jsxmulti&quot;&gt;&lt;span class=&quot;jsx3ide_props_multi&quot;&gt;[multiple values]&lt;/span&gt;&lt;/xsl:when&gt;          &lt;xsl:otherwise&gt;&lt;xsl:value-of select=&quot;@value&quot; /&gt;&lt;/xsl:otherwise&gt;        &lt;/xsl:choose&gt;        &lt;/xsl:template&gt;" jsxwidth="*"/>
+                    <object type="jsx3.gui.TextBox">
+                      <variants jsxheight="60" jsxtype="1"/>
+                      <strings jsxname="myText"/>
+                    </object>
+                </object>
+            </object>
+            <object type="jsx3.gui.Menu">
+              <variants jsxleft="0" jsxrelativeposition="0" jsxshare="1" jsxtop="0"/>
+              <strings jsxdisplay="none" jsximage="jsxapp:/images/icon_62.gif" jsxname="jsxmenu_modelevents" jsxtip="menu..." jsxxmlid="jsx3.ide.palette.events.contextmenu"/>
+              <events jsxexecute="(eventpal.getPlugIn()).onModelEventMenuExecute(this.getContextRecordId());"/>
+             </object>
+        </object>
+    </object>
+</serialization>

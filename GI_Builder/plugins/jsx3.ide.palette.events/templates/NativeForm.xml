@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  ~ Copyright (c) 2001-2011, TIBCO Software Inc.
+  ~ Use, modification, and distribution subject to terms of license.
+  --><data jsxid="jsxroot">
+
+  <record always="1" jsxid="jsxdata" jsxtext="Response" jsxtip="Fires when the form receives a response, error or timeout from the server.">
+    <record jsxid="this" jsxtext="the object that publishes this event." type="$class$"/>
+    <record jsxid="type" jsxtext="the event type: load, error or timeout." type="String"/>
+  </record>
+
+  <record always="1" jsxid="jsxdestroy" jsxtext="Destroy" jsxtip="Fires after this object is removed from the DOM.">
+    <record jsxid="this" jsxtext="the object that publishes this event." type="$class$"/>
+    <record jsxid="objPARENT" jsxtext="the parent of this object before it is removed from the DOM. " type="jsx3.app.Model"/>
+  </record>
+
+</data>

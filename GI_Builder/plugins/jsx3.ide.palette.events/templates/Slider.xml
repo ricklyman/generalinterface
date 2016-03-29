@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  ~ Copyright (c) 2001-2011, TIBCO Software Inc.
+  ~ Use, modification, and distribution subject to terms of license.
+  --><data jsxid="jsxroot">
+
+  <record jsxid="jsxchange" jsxtext="Change" jsxtip="Fires after the user drags the handle of this slider to a different value or clicks along this slider to move the handle to that position. Canceling this event prevents the slider position from changing." vetoable="1">
+    <record jsxid="this" jsxtext="the object that publishes this event." type="$class$"/>
+    <record jsxid="objEVENT" jsxtext="the browser event that triggers this event." type="jsx3.gui.Event"/>
+    <record jsxid="fpPREVIOUS" jsxtext="the previous value." type="Number"/>
+    <record jsxid="fpVALUE" jsxtext="the new value." type="Number"/>
+  </record>
+
+  <record jsxid="jsxincchange" jsxtext="Incr. Change" jsxtip="Fires at every mouse move while the user drags the handle of this slider.">
+    <record jsxid="this" jsxtext="the object that publishes this event." type="$class$"/>
+    <record jsxid="objEVENT" jsxtext="the browser event that triggers this event." type="jsx3.gui.Event"/>
+    <record jsxid="fpVALUE" jsxtext="the current value." type="Number"/>
+  </record>
+
+  <record always="1" jsxid="jsxdestroy" jsxtext="Destroy" jsxtip="Fires after this slider is removed from the DOM.">
+    <record jsxid="this" jsxtext="the object that publishes this event." type="$class$"/>
+    <record jsxid="objPARENT" jsxtext="the parent of this slider before it is removed from the DOM." type="jsx3.app.Model"/>
+  </record>
+
+</data>

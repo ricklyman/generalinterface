@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  ~ Copyright (c) 2001-2011, TIBCO Software Inc.
+  ~ Use, modification, and distribution subject to terms of license.
+  --><data jsxid="jsxroot">
+
+  <record always="1" jsxid="jsxchange" jsxtext="Change" jsxtip="Fires when the active tab changes.">
+    <record jsxid="this" jsxtext="the object that publishes this event." type="$class$"/>
+  </record>
+
+  <record jsxid="jsxdrop" jsxtext="Drop" jsxtip="Fires after the user drops an object on this tabbed pane.">
+    <record jsxid="this" jsxtext="the object that publishes this event." type="$class$"/>
+    <record jsxid="objEVENT" jsxtext="the browser event that triggers this event." type="jsx3.gui.Event"/>
+    <record jsxid="objSOURCE" jsxtext="the object where the drag begins." type="jsx3.gui.Block"/>
+    <record jsxid="strDRAGTYPE" jsxtext="the type of drag (JSXDragType)." type="String"/>
+    <record jsxid="strDRAGID" jsxtext="the id of dragged element (JSXDragId)." type="String"/>
+    <record jsxid="objGUI" jsxtext="the HTML element acted upon." type="HTMLElement"/>
+  </record>
+
+  <record jsxid="jsxctrldrop" jsxtext="Ctrl Drop" jsxtip="Fires after the user drops an object on this tabbed pane while pressing the Ctrl key.">
+    <record jsxid="this" jsxtext="the object that publishes this event." type="$class$"/>
+    <record jsxid="objEVENT" jsxtext="the browser event that triggers this event." type="jsx3.gui.Event"/>
+    <record jsxid="objSOURCE" jsxtext="the object where the drag begins." type="jsx3.gui.Block"/>
+    <record jsxid="strDRAGTYPE" jsxtext="the type of drag (JSXDragType)." type="String"/>
+    <record jsxid="strDRAGID" jsxtext="the id of dragged element (JSXDragId)." type="String"/>
+    <record jsxid="objGUI" jsxtext="the HTML element acted upon." type="HTMLElement"/>
+  </record>
+
+  <record always="1" jsxid="jsxdestroy" jsxtext="Destroy" jsxtip="Fires after this tabbed pane is removed from the DOM.">
+    <record jsxid="this" jsxtext="the object that publishes this event." type="$class$"/>
+    <record jsxid="objPARENT" jsxtext="the parent of this tabbed pane before it is removed from the DOM. " type="jsx3.app.Model"/>
+  </record>
+
+</data>

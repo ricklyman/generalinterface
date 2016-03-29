@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  ~ Copyright (c) 2001-2011, TIBCO Software Inc.
+  ~ Use, modification, and distribution subject to terms of license.
+  --><data jsxid="jsxroot">
+
+  <record jsxid="jsxexecute" jsxtext="Execute" jsxtip="Fires after the user double-clicks a record in this tree or presses the Enter key with focus in a record of this tree.">
+    <record jsxid="this" jsxtext="the object that publishes this event." type="$class$"/>
+    <record jsxid="objEVENT" jsxtext="the browser event that triggers this event." type="jsx3.gui.Event"/>
+    <record jsxid="strRECORDID" jsxtext="the CDF jsxid of the selected record." type="String"/>
+    <record jsxid="strRECORDIDS" jsxtext="the list of CDF jsxids of the selected records." type="Array&lt;String&gt;"/>
+    <record deprecated="Use strRECORDID instead." jsxid="objRECORD" jsxtext="the object handle to the CDF record." type="jsx3.xml.Entity"/>
+  </record>
+
+  <record deprecated="Use the Change event instead." jsxid="jsxselect" jsxtext="Select" jsxtip="Fires after one or more records has changed from unselected to selected.">
+    <record jsxid="this" jsxtext="the object that publishes this event." type="$class$"/>
+    <record jsxid="objEVENT" jsxtext="the browser event that triggers this event." type="jsx3.gui.Event"/>
+    <record jsxid="strRECORDID" jsxtext="the CDF jsxid of the selected object." type="String"/>
+    <record jsxid="strRECORDIDS" jsxtext="the list of CDF jsxids of the selected records." type="Array&lt;String&gt;"/>
+  </record>
+
+  <record jsxid="jsxchange" jsxtext="Change" jsxtip="Fires when the user changes the selection of this tree.">
+    <record jsxid="this" jsxtext="the object that publishes this event." type="$class$"/>
+    <record jsxid="objEVENT" jsxtext="the browser event that triggers this event." type="jsx3.gui.Event"/>
+    <record jsxid="preVALUE" jsxtext="the result of &lt;code&gt;this.getValue()&lt;/code&gt; before the change event occurs." type="String | Array&lt;String&gt;"/>
+    <record jsxid="newVALUE" jsxtext="the current value of &lt;code&gt;this.getValue()&lt;/code&gt;." type="String | Array&lt;String&gt;"/>
+  </record>
+
+  <record jsxid="jsxtoggle" jsxtext="Toggle" jsxtip="Fires when the user expands or collapses a record with nested records in this tree.">
+    <record jsxid="this" jsxtext="the object that publishes this event." type="$class$"/>
+    <record jsxid="objEVENT" jsxtext="the browser event that triggers this event." type="jsx3.gui.Event"/>
+    <record jsxid="strRECORDID" jsxtext="the CDF jsxid of the toggled node." type="String"/>
+    <record jsxid="objRECORD" jsxtext="the CDF node for the toggled node." type="jsx3.xml.Entity"/>
+    <record jsxid="bOPEN" jsxtext="the new open value for object." type="boolean"/>
+  </record>
+
+  <record jsxid="jsxdrag" jsxtext="Drag" jsxtip="Fires when the user drags a record(s) of this tree. Canceling this event prevents the drag from occurring." vetoable="1">
+    <record jsxid="this" jsxtext="the object that publishes this event." type="$class$"/>
+    <record jsxid="objEVENT" jsxtext="the browser event that triggers this event." type="jsx3.gui.Event"/>
+    <record jsxid="strDRAGTYPE" jsxtext="the type of drag (JSXDragType)." type="String"/>
+    <record jsxid="strDRAGID" jsxtext="the CDF jsxid of the record to be dragged." type="String"/>
+    <record jsxid="strDRAGIDS" jsxtext="an array containing the CDF jsxids of the dragged records." type="Array&lt;String&gt;"/>
+    <record jsxid="objGUI" jsxtext="the HTML element acted upon." type="HTMLElement"/>
+  </record>
+
+  <record jsxid="jsxbeforedrop" jsxtext="Before Drop" jsxtip="Fires continuously as the user drags the mouse over a record in this tree during a drag-and-drop operation. Canceling this event prevents the drop indicator from displaying." vetoable="1">
+    <record jsxid="this" jsxtext="the object that publishes this event." type="$class$"/>
+    <record jsxid="objEVENT" jsxtext="the browser event that triggers this event." type="jsx3.gui.Event"/>
+    <record jsxid="objSOURCE" jsxtext="the object where the drag begins." type="jsx3.gui.Block"/>
+    <record jsxid="strDRAGTYPE" jsxtext="the type of drag (JSXDragType)." type="String"/>
+    <record jsxid="strDRAGID" jsxtext="the CDF jsxid of the dragged record." type="String"/>
+    <record jsxid="strDRAGIDS" jsxtext="an array containing the CDF jsxids of the dragged records." type="Array&lt;String&gt;"/>
+    <record jsxid="strRECORDID" jsxtext="the CDF jsxid corresponding to the node hovered over in the view." type="String"/>
+    <record jsxid="bINSERTBEFORE" jsxtext="whether the dropped record would be inserted before &lt;code&gt;strRECORDID&lt;/code&gt;. Otherwise, it would be appended as a child of &lt;code&gt;strRECORDID&lt;/code&gt;." type="boolean"/>
+    <record jsxid="objGUI" jsxtext="the HTML element acted upon." type="HTMLElement"/>
+  </record>
+
+  <record jsxid="jsxcanceldrop" jsxtext="Cancel Drop" jsxtip="Fires after the user drags the mouse off this tree during a drag-and-drop operation.">
+    <record jsxid="this" jsxtext="the object that publishes this event." type="$class$"/>
+    <record jsxid="objEVENT" jsxtext="the browser event that triggers this event." type="jsx3.gui.Event"/>
+    <record jsxid="objSOURCE" jsxtext="the object where the drag begins." type="jsx3.gui.Block"/>
+    <record jsxid="strDRAGTYPE" jsxtext="the type of drag (JSXDragType)." type="String"/>
+    <record jsxid="strDRAGID" jsxtext="the CDF jsxid of the dragged record." type="String"/>
+    <record jsxid="strDRAGIDS" jsxtext="an array containing the CDF jsxids of the dragged records." type="Array&lt;String&gt;"/>
+    <record jsxid="strRECORDID" jsxtext="the CDF jsxid corresponding to the node hovered over in the view." type="String"/>
+    <record jsxid="objGUI" jsxtext="the HTML element acted upon." type="HTMLElement"/>
+  </record>
+
+  <record jsxid="jsxdrop" jsxtext="Drop" jsxtip="Fires after the user drops a record on this tree. Canceling this event prevents the CDF adoption from occurring." vetoable="1">
+    <record jsxid="this" jsxtext="the object that publishes this event." type="$class$"/>
+    <record jsxid="objEVENT" jsxtext="the browser event that triggers this event." type="jsx3.gui.Event"/>
+    <record jsxid="objSOURCE" jsxtext="the object where the drag begins." type="jsx3.gui.Block"/>
+    <record jsxid="strDRAGTYPE" jsxtext="the type of drag (JSXDragType)." type="String"/>
+    <record jsxid="strDRAGID" jsxtext="the CDF jsxid of the dragged record." type="String"/>
+    <record jsxid="strDRAGIDS" jsxtext="an array containing the CDF jsxids of the dragged records." type="Array&lt;String&gt;"/>
+    <record jsxid="strRECORDID" jsxtext="the CDF jsxid corresponding to the node hovered over in the view." type="String"/>
+    <record jsxid="bINSERTBEFORE" jsxtext="whether the dropped record should be inserted before &lt;code&gt;strRECORDID&lt;/code&gt;. Otherwise, it is appended as a child of &lt;code&gt;strRECORDID&lt;/code&gt;." type="boolean"/>
+    <record jsxid="bALLOWADOPT" jsxtext="whether the source of the dragged CDF record allows the adoption." type="boolean"/>
+  </record>
+
+  <record jsxid="jsxctrldrop" jsxtext="Ctrl Drop" jsxtip="Fires after the user drops a record on this tree while pressing the Ctrl key. Canceling this event prevents the CDF adoption from occurring." vetoable="1">
+    <record jsxid="this" jsxtext="the object that publishes this event." type="$class$"/>
+    <record jsxid="objEVENT" jsxtext="the browser event that triggers this event." type="jsx3.gui.Event"/>
+    <record jsxid="objSOURCE" jsxtext="the object where the drag begins." type="jsx3.gui.Block"/>
+    <record jsxid="strDRAGTYPE" jsxtext="the type of drag (JSXDragType)." type="String"/>
+    <record jsxid="strDRAGID" jsxtext="the CDF jsxid of the dragged record." type="String"/>
+    <record jsxid="strDRAGIDS" jsxtext="an array containing the CDF jsxids of the dragged records." type="Array&lt;String&gt;"/>
+    <record jsxid="strRECORDID" jsxtext="the CDF jsxid corresponding to the node hovered over in the view." type="String"/>
+    <record jsxid="bINSERTBEFORE" jsxtext="whether the dropped record should be inserted before &lt;code&gt;strRECORDID&lt;/code&gt;. Otherwise, it is appended as a child of &lt;code&gt;strRECORDID&lt;/code&gt;." type="boolean"/>
+    <record jsxid="bALLOWADOPT" jsxtext="whether the source of the dragged CDF record allows the adoption." type="boolean"/>
+  </record>
+
+  <record jsxid="jsxadopt" jsxtext="Adopt" jsxtip="Fires before a record from this tree is adopted by another object. Canceling this event prevents the CDF adoption from occurring." vetoable="1">
+    <record jsxid="this" jsxtext="the object that publishes this event." type="$class$"/>
+    <record jsxid="objEVENT" jsxtext="the browser event that triggers this event." type="jsx3.gui.Event"/>
+    <record jsxid="strRECORDID" jsxtext="the CDF jsxid of the record to adopt." type="String"/>
+    <record jsxid="strRECORDIDS" jsxtext="an array containing the jsxids of the records to adopt." type="Array&lt;String&gt;"/>
+    <record jsxid="objTARGET" jsxtext="the object that will adopt the record(s)." type="jsx3.gui.Tree"/>
+    <record jsxid="bCONTROL" jsxtext="&lt;code&gt;true&lt;/code&gt; if Ctrl Drop, &lt;code&gt;false&lt;/code&gt; otherwise." type="boolean"/>
+  </record>
+
+  <record jsxid="jsxspy" jsxtext="Spyglass" jsxtip="Fires after the user hovers the mouse over this tree and before the spyglass displays. The event script must evaluate to the HTML content to display in the spyglass. Canceling this event prevents the spyglass from displaying." vetoable="1">
+    <record jsxid="this" jsxtext="the object that publishes this event." type="$class$"/>
+    <record jsxid="objEVENT" jsxtext="the browser event that triggers this event." type="jsx3.gui.Event"/>
+    <record jsxid="strRECORDID" jsxtext="the CDF jsxid of the spied record." type="String"/>
+  </record>
+
+  <record jsxid="jsxmenu" jsxtext="Menu" jsxtip="Fires after the user right-clicks this tree and before the bound context menu displays. Canceling this event prevents the menu from displaying." vetoable="1">
+    <record jsxid="this" jsxtext="the object that publishes this event." type="$class$"/>
+    <record jsxid="objEVENT" jsxtext="the browser event that triggers this event." type="jsx3.gui.Event"/>
+    <record jsxid="objMENU" jsxreturntext="use this field to override the default menu with an instance of &lt;code&gt;jsx3.gui.Menu&lt;/code&gt;." jsxtext="the menu to display." type="jsx3.gui.Menu" vartype="inout"/>
+    <record jsxid="strRECORDID" jsxtext="the CDF jsxid of the selected record." type="String"/>
+  </record>
+
+  <record jsxid="jsxdata" jsxtext="Data" jsxtip="Fires after the user expands a node with attribute @jsxlazy equal to '1'.">
+    <record jsxid="this" jsxtext="the object that publishes this event." type="$class$"/>
+    <record jsxid="objXML" jsxtext="the XML document of this tree." type="jsx3.xml.Document"/>
+    <record jsxid="objNODE" jsxtext="the XML node that is being expanded." type="jsx3.xml.Entity"/>
+    <record jsxid="bCLEAR" jsxtext="if &lt;code&gt;true&lt;/code&gt;, the jsxlazy attribute of objNODE is cleared." type="boolean" vartype="return"/>
+    <record jsxid="arrNODES" jsxtext="if not &lt;code&gt;null&lt;/code&gt;, all child nodes of objNODE are removed and replaced with the contents of this array." type="Array&lt;jsx3.xml.Entity&gt;" vartype="return"/>
+  </record>
+
+  <record always="1" jsxid="jsxdestroy" jsxtext="Destroy" jsxtip="Fires after this tree is removed from the DOM.">
+    <record jsxid="this" jsxtext="the object that publishes this event." type="$class$"/>
+    <record jsxid="objPARENT" jsxtext="the parent of this tree before it is removed from the DOM. " type="jsx3.app.Model"/>
+  </record>
+
+</data>

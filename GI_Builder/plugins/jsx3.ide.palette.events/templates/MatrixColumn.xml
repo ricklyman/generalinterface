@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  ~ Copyright (c) 2001-2011, TIBCO Software Inc.
+  ~ Use, modification, and distribution subject to terms of license.
+  --><data jsxid="jsxroot">
+
+
+  <record jsxid="jsxadopt" jsxtext="Adopt" jsxtip="Fires before a record from this matrix column is adopted by another object. Canceling this event prevents the CDF adoption from occurring." vetoable="1">
+    <record jsxid="this" jsxtext="the object that publishes this event." type="$class$"/>
+    <record jsxid="objEVENT" jsxtext="the browser event that triggers this event." type="jsx3.gui.Event"/>
+    <record jsxid="strRECORDID" jsxtext="the CDF jsxid of the record to adopt." type="String"/>
+    <record jsxid="objTARGET" jsxtext="the object that will adopt the record(s)." type="jsx3.gui.List"/>
+    <record jsxid="bCONTROL" jsxtext="&lt;code&gt;true&lt;/code&gt; if Ctrl Drop, &lt;code&gt;false&lt;/code&gt; otherwise." type="boolean"/>
+  </record>
+
+  <record jsxid="jsxmenu" jsxtext="Menu" jsxtip="Fires after the user right-clicks this matrix column and before the bound context menu displays. Canceling this event prevents the menu from displaying." vetoable="1">
+    <record jsxid="this" jsxtext="the object that publishes this event." type="$class$"/>
+    <record jsxid="objEVENT" jsxtext="the browser event that triggers this event." type="jsx3.gui.Event"/>
+    <record jsxid="objMENU" jsxreturntext="use this field to override the default menu with an instance of &lt;code&gt;jsx3.gui.Menu&lt;/code&gt;." jsxtext="the menu to display." type="jsx3.gui.Menu" vartype="inout"/>
+  </record>
+
+  <record always="1" jsxid="jsxdestroy" jsxtext="Destroy" jsxtip="Fires after this matrix column is removed from the DOM.">
+    <record jsxid="this" jsxtext="the object that publishes this event." type="$class$"/>
+    <record jsxid="objPARENT" jsxtext="the parent of this matrix column before it is removed from the DOM." type="jsx3.app.Model"/>
+  </record>
+
+</data>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  ~ Copyright (c) 2001-2011, TIBCO Software Inc.
+  ~ Use, modification, and distribution subject to terms of license.
+  --><serialization xmlns="urn:tibco.com/v3.0">
+  <onAfterDeserialize><![CDATA[objJSX.getSelection=function(){return jsxcache.getValue();};objJSX.onEditorChanged=function(){(this.getPlugIn()).updateCacheForActive();};objJSX._onSelection=function(l){(this.getPlugIn()).publish({subject:"selection",values:l});};objJSX.onPaletteLoaded=function(){var
+ub={a:"/",b:"ctxmenu",c:"ctxmenu-item",d:"edit",e:"delete",f:"additions",g:"toolbar"};var
+nb=new
+jsx3.amp.util.MenuManager();nb.addMenuBar(ub.a,menuBar);(((this.getPlugIn()).getExtPoint(ub.b)).processExts()).each(function(p){nb.addMenu(p);});(((this.getPlugIn()).getExtPoint(ub.c)).processExts()).each(function(m){nb.addItem(m);});nb.finishInit();var
+ib=new
+jsx3.amp.util.ToolbarManager(jsx_ide_cache_bar);ib.addSection(ub.d);ib.addSection(ub.e,true);ib.addSection(ub.f,true);(((this.getPlugIn()).getExtPoint(ub.g)).processExts()).each(function(h){ib.addItem(h);});(this.getPlugIn()).updateCache();};objJSX.getCacheTree=function(){return jsxcache;};]]></onAfterDeserialize>
+    <object type="jsx3.gui.Block">
+      <dynamics/>
+      <variants jsxleft="0" jsxoverflow="2" jsxtop="0"/>
+      <strings jsxheight="100%" jsxhelpid="ide.palette.cache" jsxname="cachepal" jsxwidth="100%"/>
+      <object type="jsx3.gui.Block">
+        <strings jsxdisplay="none" jsxname="menuBar"/>
+      </object>
+        <object type="jsx3.gui.LayoutGrid">
+          <variants jsxoverflow="2" jsxrelativeposition="0"/>
+          <strings jsxheight="100%" jsxname="jsx_ide_cache_layout" jsxrows="26,*" jsxwidth="100%"/>
+          <events/>
+          <properties/>
+            <object type="jsx3.gui.WindowBar">
+              <dynamics jsxbgcolor="@Solid Medium" jsxborder="@Outset"/>
+              <variants jsxbartype="2" jsxfontsize="10" jsxoverflow="3" jsxrelativeposition="1"/>
+              <strings jsxname="jsx_ide_cache_bar"/>
+            </object>
+            <object type="jsx3.gui.Block">
+              <dynamics jsxborder="@Outset"/>
+              <variants jsxleft="0" jsxoverflow="2" jsxtop="0"/>
+              <strings jsxheight="100%" jsxname="jsx_ide_cache_treeblock" jsxwidth="100%"/>
+                <object type="jsx3.gui.Tree">
+                  <dynamics jsxbgcolor="@Solid Light" jsxpadding="@Tree Padding"/>
+                  <variants jsxmultiselect="1"/>
+                  <strings jsxheight="100%" jsxmenu="jsx3.ide.cachectx" jsxname="jsxcache" jsxuseroot="0" jsxwidth="100%"/>
+                  <events jsxchange="cachepal._onSelection(this.getValue());" jsxexecute="(cachepal.getPlugIn()).editSelectedCacheDoc(strRECORDIDS);" jsxmenu="(cachepal.getPlugIn()).configCacheMenu(this,objMENU);"/>
+                  <xslparameters jsxindent="16"/>
+                </object>
+            </object>
+        </object>
+    </object>
+</serialization>

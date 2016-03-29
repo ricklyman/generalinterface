@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  ~ Copyright (c) 2001-2011, TIBCO Software Inc.
+  ~ Use, modification, and distribution subject to terms of license.
+  --><data jsxid="jsxroot">
+
+  <record jsxid="jsxexecute" jsxtext="Execute" jsxtip="Fires after the user clicks an item in this menu or after an equivalent event.">
+    <record jsxid="this" jsxtext="the object that publishes this event." type="$class$"/>
+    <record jsxid="objEVENT" jsxtext="the browser event that triggers this event." type="jsx3.gui.Event"/>
+    <record jsxid="strRECORDID" jsxtext="the CDF jsxid of the selected record." type="String"/>
+    <record jsxid="objRECORD" jsxtext="the object handle to the CDF record." type="jsx3.xml.Entity"/>
+  </record>
+
+  <record jsxid="jsxmenu" jsxtext="Before Show" jsxtip="Fires before this menu displays. Canceling this event prevents the menu from displaying. If this menu will be used as an edit mask for a Matrix instance, any call to request the edit session (emGetSession) requires that an instance of jsx3.gui.Event be provided. For example, &lt;code&gt;this.emGetSession(objEVENT)&lt;/code&gt;" vetoable="1">
+    <record jsxid="this" jsxtext="the object that publishes this event." type="$class$"/>
+    <record jsxid="objEVENT" jsxtext="the browser event that triggers this event." type="jsx3.gui.Event"/>
+    <record jsxid="objANCHOR" jsxtext="the on-screen HTML element next to which the menu displays. May be &lt;code&gt;null&lt;/code&gt; if a context menu or invoked by a hot key." type="HTMLElement"/>
+    <record jsxid="intINDEX" jsxtext="the 1-based nesting index of the menu. The root menu or context menu is 1. Nested menus are 2, 3, 4, and so on. May be &lt;code&gt;null&lt;/code&gt; if invoked by hot key." type="int"/>
+    <record jsxid="strPARENTID" jsxtext="the CDF jsxid of the menu item expanding to show a nested menu. May be &lt;code&gt;null&lt;/code&gt; if a top-level menu." type="String"/>
+  </record>
+
+  <record jsxid="jsxspy" jsxtext="Spyglass" jsxtip="Fires after the user hovers the mouse over this menu and before the spyglass displays. The event script must evaluate to the HTML content to display in the spyglass. Canceling this event prevents the spyglass from displaying." vetoable="1">
+    <record jsxid="this" jsxtext="the object that publishes this event." type="$class$"/>
+    <record jsxid="objEVENT" jsxtext="the browser event that triggers this event." type="jsx3.gui.Event"/>
+    <record jsxid="strRECORDID" jsxtext="the CDF jsxid of the spied record." type="String"/>
+  </record>
+
+  <record always="1" jsxid="jsxhide" jsxtext="Hide" jsxtip="Fires after this menu closes.">
+    <record jsxid="this" jsxtext="the object that publishes this event." type="$class$"/>
+  </record>
+
+  <record always="1" jsxid="jsxdestroy" jsxtext="Destroy" jsxtip="Fires after this menu is removed from the DOM.">
+    <record jsxid="this" jsxtext="the object that publishes this event." type="$class$"/>
+    <record jsxid="objPARENT" jsxtext="the parent of this menu before it is removed from the DOM. " type="jsx3.app.Model"/>
+  </record>
+
+</data>
