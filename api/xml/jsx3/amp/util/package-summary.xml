@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package access="public" id="class:jsx3.amp.util" name="jsx3.amp.util" since="3.7&#10; ">
+  <text>The standard library of AMP application utility classes. Classes in this package are loaded via AMP plug-ins.
+</text>
+  <nested access="public" id="nested:jsx3.amp.util.Menu" loaded="1" name="jsx3.amp.util.Menu" shortname="Menu" type="class">
+    <text>A managed menu.</text>
+    <see source="jsx3.amp.util.MenuManager">jsx3.amp.util.MenuManager</see>
+  </nested>
+  <nested access="public" id="nested:jsx3.amp.util.MenuItem" loaded="1" name="jsx3.amp.util.MenuItem" shortname="MenuItem" type="class">
+    <text>A managed menu item.</text>
+    <see source="jsx3.amp.util.MenuManager">jsx3.amp.util.MenuManager</see>
+  </nested>
+  <nested access="public" id="nested:jsx3.amp.util.MenuManager" loaded="1" name="jsx3.amp.util.MenuManager" shortname="MenuManager" type="class">
+    <text>Manages a set of menus.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.amp.util.Prefs" loaded="1" name="jsx3.amp.util.Prefs" shortname="Prefs" type="class">
+    <text>A preferences panel.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.amp.util.PrefsPane" loaded="1" name="jsx3.amp.util.PrefsPane" shortname="PrefsPane" type="class">
+    <text>A pane in a preferences panel.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.amp.util.ToolbarItem" loaded="1" name="jsx3.amp.util.ToolbarItem" shortname="ToolbarItem" type="class">
+    <text>Manages a toolbar.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.amp.util.ToolbarManager" loaded="1" name="jsx3.amp.util.ToolbarManager" shortname="ToolbarManager" type="class">
+    <text>Manages a toolbar.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.amp.util.Wizard" loaded="1" name="jsx3.amp.util.Wizard" shortname="Wizard" type="class">
+    <text>A wizard.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.amp.util.WizardPane" loaded="1" name="jsx3.amp.util.WizardPane" shortname="WizardPane" type="class">
+    <text>A pane of a wizard.</text>
+  </nested>
+</package>

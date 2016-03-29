@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class access="public" id="class:jsx3.amp.util.Prefs" name="jsx3.amp.util.Prefs" package="jsx3.amp.util" shortname="Prefs">
+  <text>A preferences panel. Provided by the <code>jsx3.amp.util.prefspanel</code> plug-in.
+ </text>
+  <superclass id="super:0" loaded="1" name="Object"/>
+  <superclass direct="1" id="super:1" loaded="1" name="jsx3.lang.Object"/>
+  <implements direct="1" id="implements:0" loaded="1" name="jsx3.util.EventDispatcher"/>
+  <constructor access="public" id="method:init" name="init">
+    <text>The instance initializer.
+   </text>
+  </constructor>
+  <field access="public" class="jsx3.amp.util.Prefs" fullname="jsx3.amp.util.Prefs.SAVE" id="sfield:SAVE" name="SAVE" static="1" value="&quot;save&quot;">
+    <type link="1" name="String"/>
+    <text> Event subject published when a preferences panel is saved. </text>
+  </field>
+  <field access="public" class="jsx3.amp.util.Prefs" fullname="jsx3.amp.util.Prefs.SWITCH" id="sfield:SWITCH" name="SWITCH" static="1" value="&quot;switch&quot;">
+    <type link="1" name="String"/>
+    <text> Event subject published when the active pane of a preferences panel is changed. </text>
+  </field>
+  <field access="public" class="jsx3.amp.util.Prefs" fullname="jsx3.amp.util.Prefs.UNLOAD" id="sfield:UNLOAD" name="UNLOAD" static="1" value="&quot;unload&quot;">
+    <type link="1" name="String"/>
+    <text> Event subject published when a preferences panel is closed. </text>
+  </field>
+  <method access="public" id="method:addPane" name="addPane">
+    <param name="objPane" text="the pane to add.&#10;   ">
+      <type link="1" name="jsx3.amp.util.PrefsPane"/>
+    </param>
+    <text>Adds a prefs pane to this controller. This method may be called either before or after <code>renderIn()</code>
+has been called.</text>
+  </method>
+  <method access="public" id="method:apply" name="apply">
+    <text>Saves the state of the current pane. </text>
+  </method>
+  <method access="public" id="method:getCollapse" name="getCollapse">
+    <return text="">
+      <type class="Boolean" link="1" name="boolean"/>
+    </return>
+    <text>Returns whether to collapse the left side pane list.</text>
+  </method>
+  <method access="public" id="method:renderIn" name="renderIn">
+    <param name="objParent" text="the parent to load this panel into.">
+      <type name="jsx3.gui.Model"/>
+    </param>
+    <param name="intPaneToShow" text="optionally, the pane to reveal initially.&#10;   ">
+      <type class="Number" link="1" name="int"/>
+      <type link="1" name="jsx3.amp.util.PrefsPane"/>
+    </param>
+    <text>Renders the preferences panel in <code>objParent</code>.</text>
+  </method>
+  <method access="public" id="method:save" name="save">
+    <text>Saves the state of the current pane and closes this panel. </text>
+  </method>
+  <method access="public" id="method:setCollapse" name="setCollapse">
+    <param name="bCollapse" text="">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <text>Sets whether to collapse the left side pane list.</text>
+  </method>
+  <method access="public" async="1" id="method:showPane" name="showPane">
+    <param name="objPane" text="the pane to switch to.">
+      <type link="1" name="jsx3.amp.util.PrefsPane"/>
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <param name="bForce" text="if &lt;code&gt;true&lt;/code&gt;, the current pane is unloaded without saving changes.&#10;   ">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <return text="">
+      <type link="1" name="jsx3.$AsyncRV"/>
+    </return>
+    <text>Displays a prefs pane in the edit area. Unloads the current prefs pane if necessary. If the current prefs
+pane is dirty, the user will be prompted to save or discard changes before the prefs pane is switched.
+<p/>
+The asynchronous return value is <code>true</code> only if the pane was shown successfully.</text>
+  </method>
+  <method access="public" async="1" id="method:unload" name="unload">
+    <param name="bForce" text="whether to force the removal even if there are unsaved changes.&#10;   ">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <return text="">
+      <type link="1" name="jsx3.$AsyncRV"/>
+    </return>
+    <text>Removes this preferences panel from the view.
+<p/>
+The asynchronous return value is <code>true</code> only if the preferences panel was unloaded successfully.</text>
+  </method>
+  <method id="method:publish" idfk="method:publish" inherited="1" name="publish" source="jsx3.util.EventDispatcher"/>
+  <method id="method:subscribe" idfk="method:subscribe" inherited="1" name="subscribe" source="jsx3.util.EventDispatcher"/>
+  <method id="method:unsubscribe" idfk="method:unsubscribe" inherited="1" name="unsubscribe" source="jsx3.util.EventDispatcher"/>
+  <method id="method:unsubscribeAll" idfk="method:unsubscribeAll" inherited="1" name="unsubscribeAll" source="jsx3.util.EventDispatcher"/>
+  <method id="method:clone" idfk="method:clone" inherited="1" name="clone" source="jsx3.lang.Object"/>
+  <method id="method:equals" idfk="method:equals" inherited="1" name="equals" source="jsx3.lang.Object"/>
+  <method id="method:eval" idfk="method:eval" inherited="1" name="eval" source="jsx3.lang.Object"/>
+  <method id="method:getClass" idfk="method:getClass" inherited="1" name="getClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOf" idfk="method:getInstanceOf" inherited="1" name="getInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfClass" idfk="method:getInstanceOfClass" inherited="1" name="getInstanceOfClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfPackage" idfk="method:getInstanceOfPackage" inherited="1" name="getInstanceOfPackage" source="jsx3.lang.Object"/>
+  <method id="method:instanceOf" idfk="method:instanceOf" inherited="1" name="instanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isInstanceOf" idfk="method:isInstanceOf" inherited="1" name="isInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isSubclassOf" idfk="method:isSubclassOf" inherited="1" name="isSubclassOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:jsxmix" idfk="method:jsxmix" inherited="1" name="jsxmix" source="jsx3.lang.Object"/>
+  <method id="method:jsxsuper" idfk="method:jsxsuper" inherited="1" name="jsxsuper" source="jsx3.lang.Object"/>
+  <method id="method:jsxsupermix" idfk="method:jsxsupermix" inherited="1" name="jsxsupermix" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:setInstanceOf" idfk="method:setInstanceOf" inherited="1" name="setInstanceOf" source="jsx3.lang.Object"/>
+  <method id="method:toString" idfk="method:toString" inherited="1" name="toString" source="jsx3.lang.Object"/>
+</class>

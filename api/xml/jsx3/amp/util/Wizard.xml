@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class access="public" id="class:jsx3.amp.util.Wizard" name="jsx3.amp.util.Wizard" package="jsx3.amp.util" shortname="Wizard">
+  <text>A wizard. Provided by the <code>jsx3.amp.util.wizard</code> plug-in.
+ </text>
+  <superclass id="super:0" loaded="1" name="Object"/>
+  <superclass direct="1" id="super:1" loaded="1" name="jsx3.lang.Object"/>
+  <implements direct="1" id="implements:0" loaded="1" name="jsx3.util.EventDispatcher"/>
+  <constructor access="public" id="method:init" name="init">
+    <text>The instance initializer.
+   </text>
+  </constructor>
+  <field access="public" class="jsx3.amp.util.Wizard" fullname="jsx3.amp.util.Wizard.CANCEL" id="sfield:CANCEL" name="CANCEL" static="1" value="&quot;cancel&quot;">
+    <type link="1" name="String"/>
+    <text> Event subject published when a wizard is cancelled. </text>
+  </field>
+  <field access="public" class="jsx3.amp.util.Wizard" fullname="jsx3.amp.util.Wizard.FINISH" id="sfield:FINISH" name="FINISH" static="1" value="&quot;finish&quot;">
+    <type link="1" name="String"/>
+    <text> Event subject published when a wizard is finished. </text>
+  </field>
+  <field access="public" class="jsx3.amp.util.Wizard" fullname="jsx3.amp.util.Wizard.NEXT" id="sfield:NEXT" name="NEXT" static="1" value="&quot;next&quot;">
+    <type link="1" name="String"/>
+    <text> Event subject published when a wizard advances to the next pane. </text>
+  </field>
+  <field access="public" class="jsx3.amp.util.Wizard" fullname="jsx3.amp.util.Wizard.PREVIOUS" id="sfield:PREVIOUS" name="PREVIOUS" static="1" value="&quot;previous&quot;">
+    <type link="1" name="String"/>
+    <text> Event subject published when a wizard advances to the previous pane. </text>
+  </field>
+  <method access="public" id="method:addPane" name="addPane">
+    <param name="p" text="">
+      <type link="1" name="jsx3.amp.util.WizardPane"/>
+    </param>
+    <text>Adds a pane to this wizard.</text>
+  </method>
+  <method access="public" id="method:cancel" name="cancel">
+    <text>Invokes the cancel button.
+   </text>
+  </method>
+  <method access="public" id="method:finish" name="finish">
+    <text>Invokes the finish button.
+   </text>
+  </method>
+  <method access="public" id="method:getPane" name="getPane">
+    <param name="index" text="">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <return text="">
+      <type link="1" name="jsx3.amp.util.WizardPane"/>
+    </return>
+    <text>Returns a pane of this wizard by its index.</text>
+  </method>
+  <method access="public" id="method:getPaneCount" name="getPaneCount">
+    <return text="">
+      <type class="Number" link="1" name="int"/>
+    </return>
+    <text>Returns the number of panes in this wizard.</text>
+  </method>
+  <method access="public" id="method:getPaneIndex" name="getPaneIndex">
+    <param name="p" text="">
+      <type link="1" name="jsx3.amp.util.WizardPane"/>
+    </param>
+    <return text="">
+      <type class="Number" link="1" name="int"/>
+    </return>
+    <text>Returns the index of a pane of this wizard.</text>
+  </method>
+  <method access="public" id="method:getSession" name="getSession">
+    <return text="">
+      <type link="1" name="Object"/>
+    </return>
+    <text>Returns the wizard session object. The session can be used by wizard panes to store arbitrary data for the
+duration of the wizard.</text>
+  </method>
+  <method access="public" id="method:next" name="next">
+    <text>Invokes the next button.
+   </text>
+  </method>
+  <method access="public" id="method:previous" name="previous">
+    <text>Invokes the previous button.
+   </text>
+  </method>
+  <method access="public" id="method:removePane" name="removePane">
+    <param name="index" text="">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <text>Removes a pane from this wizard by its list index.</text>
+  </method>
+  <method access="public" id="method:renderIn" name="renderIn">
+    <param name="objContainer" text="">
+      <type link="1" name="jsx3.app.Model"/>
+    </param>
+    <text>Renders the wizard UI as a child of <code>objContainer</code>.</text>
+  </method>
+  <method access="public" id="method:setButtonState" name="setButtonState">
+    <param name="previous" text="">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <param name="next" text="">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <param name="finish" text="">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <param name="cancel" text="">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <text>Updates the enabled button states of the four wizard buttons.</text>
+  </method>
+  <method id="method:publish" idfk="method:publish" inherited="1" name="publish" source="jsx3.util.EventDispatcher"/>
+  <method id="method:subscribe" idfk="method:subscribe" inherited="1" name="subscribe" source="jsx3.util.EventDispatcher"/>
+  <method id="method:unsubscribe" idfk="method:unsubscribe" inherited="1" name="unsubscribe" source="jsx3.util.EventDispatcher"/>
+  <method id="method:unsubscribeAll" idfk="method:unsubscribeAll" inherited="1" name="unsubscribeAll" source="jsx3.util.EventDispatcher"/>
+  <method id="method:clone" idfk="method:clone" inherited="1" name="clone" source="jsx3.lang.Object"/>
+  <method id="method:equals" idfk="method:equals" inherited="1" name="equals" source="jsx3.lang.Object"/>
+  <method id="method:eval" idfk="method:eval" inherited="1" name="eval" source="jsx3.lang.Object"/>
+  <method id="method:getClass" idfk="method:getClass" inherited="1" name="getClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOf" idfk="method:getInstanceOf" inherited="1" name="getInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfClass" idfk="method:getInstanceOfClass" inherited="1" name="getInstanceOfClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfPackage" idfk="method:getInstanceOfPackage" inherited="1" name="getInstanceOfPackage" source="jsx3.lang.Object"/>
+  <method id="method:instanceOf" idfk="method:instanceOf" inherited="1" name="instanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isInstanceOf" idfk="method:isInstanceOf" inherited="1" name="isInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isSubclassOf" idfk="method:isSubclassOf" inherited="1" name="isSubclassOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:jsxmix" idfk="method:jsxmix" inherited="1" name="jsxmix" source="jsx3.lang.Object"/>
+  <method id="method:jsxsuper" idfk="method:jsxsuper" inherited="1" name="jsxsuper" source="jsx3.lang.Object"/>
+  <method id="method:jsxsupermix" idfk="method:jsxsupermix" inherited="1" name="jsxsupermix" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:setInstanceOf" idfk="method:setInstanceOf" inherited="1" name="setInstanceOf" source="jsx3.lang.Object"/>
+  <method id="method:toString" idfk="method:toString" inherited="1" name="toString" source="jsx3.lang.Object"/>
+</class>
