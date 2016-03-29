@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class access="public" id="class:Array" name="Array" native="1" package="window" shortname="Array">
+  <text>Native JavaScript class Array. Includes GI extensions.</text>
+  <superclass direct="1" id="super:0" loaded="1" name="Object"/>
+  <subclass id="sub:0" loaded="1" name="jsx3.$Array"/>
+  <constructor access="public" id="method:Array" name="Array" native="1"/>
+  <field access="public" class="Array" fullname="Array.length" id="field:length" name="length" native="1">
+    <type class="Number" link="1" name="int"/>
+    <text> An unsigned, 32-bit integer that specifies the number of elements in an array.</text>
+  </field>
+  <method access="public" deprecated="1" id="method:clone" name="clone">
+    <return text="">
+      <type link="1" name="Array"/>
+    </return>
+    <text>creates a copy of this array</text>
+    <deprecated>Use the &lt;code&gt;jsx3.util.List&lt;/code&gt; class.
+ </deprecated>
+  </method>
+  <method access="public" id="method:concat" name="concat" native="1">
+    <param name="array" text="">
+      <type link="1" name="Array" varargs="1"/>
+    </param>
+    <return text="">
+      <type link="1" name="Array"/>
+    </return>
+    <text>Joins two or more arrays and returns a new array.</text>
+  </method>
+  <method access="public" deprecated="1" id="method:contains" name="contains">
+    <param name="objElement"/>
+    <deprecated>Use the &lt;code&gt;jsx3.util.List&lt;/code&gt; class.
+ </deprecated>
+  </method>
+  <method access="public" deprecated="1" id="method:contentsEqual" name="contentsEqual">
+    <param name="a" text="">
+      <type link="1" name="Array"/>
+    </param>
+    <return text="">
+      <type class="Boolean" link="1" name="boolean"/>
+    </return>
+    <text>Returns true if this array and <code>a</code> have the same length and this[n] = a[n] for all n.</text>
+    <deprecated>Use the &lt;code&gt;jsx3.util.List&lt;/code&gt; class.
+ </deprecated>
+  </method>
+  <method access="public" deprecated="1" id="method:filter" name="filter" since="3.1">
+    <param name="fctFilter" text="a function that is called once for each item in this array and returns true if the item&#10;   should be included in the filtered list. The signature of this function is&#10;   &lt;code&gt;function(item : Object) : boolean&lt;/code&gt;.">
+      <type link="1" name="Function"/>
+    </param>
+    <return text="">
+      <type link="1" name="Array"/>
+    </return>
+    <text>Creates a new array with the filtered contents of this array. The <code>fctFilter</code> parameter defines
+the filtering function.</text>
+    <deprecated>Use the &lt;code&gt;jsx3.util.List&lt;/code&gt; class.
+ </deprecated>
+  </method>
+  <method access="public" deprecated="1" id="method:indexOf" name="indexOf">
+    <param name="objElement" text="the item to find">
+      <type link="1" name="Object"/>
+    </param>
+    <param name="intStartAt" text="">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <return text="the index of the found object or -1 if not found">
+      <type class="Number" link="1" name="int"/>
+    </return>
+    <text>Returns the index of the first occurrence of <code>objElement</code> in this array.</text>
+    <deprecated>Use the &lt;code&gt;jsx3.util.List&lt;/code&gt; class.
+ </deprecated>
+  </method>
+  <method access="public" id="method:join" name="join" native="1">
+    <param name="separator" text="">
+      <type link="1" name="String"/>
+    </param>
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>Joins all elements of an array into a string.</text>
+  </method>
+  <method access="public" deprecated="1" id="method:lastIndexOf" name="lastIndexOf">
+    <param name="objElement" text="the item to find">
+      <type link="1" name="Object"/>
+    </param>
+    <param name="intStartAt" text="">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <return text="the index of the found object or -1 if not found">
+      <type class="Number" link="1" name="int"/>
+    </return>
+    <text>Returns the index of the last occurrence of <code>objElement</code> in this array.</text>
+    <deprecated>Use the &lt;code&gt;jsx3.util.List&lt;/code&gt; class.
+ </deprecated>
+  </method>
+  <method access="public" deprecated="1" id="method:map" name="map" since="3.1">
+    <param name="fctMapper" text="a function that is called once for each item in this array and returns the mapped&#10;   value. The signature of this function depends on the values for the &lt;code&gt;bExpand&lt;/code&gt; and&#10;   &lt;code&gt;bObject&lt;/code&gt; parameters.">
+      <type link="1" name="Function"/>
+    </param>
+    <param name="bExpand" text="if &lt;code&gt;true&lt;/code&gt;, the resulting mapped array or object may any number of values&#10;   corresponding to each item in this list. Otherwise, it will have exactly one value for each item in this list.">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <param name="bObject" text="if &lt;code&gt;true&lt;/code&gt;, this array is mapped to an object with property name/value pairs.&#10;   Otherwise this array is mapped to another array.">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <return text="an &lt;code&gt;Array&lt;/code&gt; if the &lt;code&gt;bObject&lt;/code&gt; parameter is &lt;code&gt;null&lt;/code&gt; or&#10;   &lt;code&gt;false&lt;/code&gt;, otherwise an &lt;code&gt;Object&lt;/code&gt;.">
+      <type link="1" name="Array"/>
+      <type link="1" name="Object"/>
+    </return>
+    <text>Creates a new array with the mapped contents of this array. The <code>fctMapper</code> parameter defines
+the mapping function.
+<p/>
+This method has four modes corresponding to the four possible values for <code>{bExpand, bObject}</code>:
+<ul>
+<li>
+          <code>{false, false}</code> (default) – the filtering function takes an item in this list and returns
+   a single object value which will take the place of the item in the mapped result.</li>
+<li>
+          <code>{true, false}</code> – the filtering function takes an item in this list and returns
+   a single object value or an array of values, all of which will be inserted into the mapped result at the index
+   of the item.</li>
+<li>
+          <code>{false, true}</code> – the filtering function takes an item in this list and returns an array with
+   exactly two values, which become a name/value pair in the mapped result.</li>
+<li>
+          <code>{true, true}</code> – the filtering function takes an item in this list and returns an array with
+   zero or an even number of items, which become name/value pairs in the mapped result.</li>
+</ul>
+    </text>
+    <deprecated>Use the &lt;code&gt;jsx3.util.List&lt;/code&gt; class.
+ </deprecated>
+  </method>
+  <method access="public" id="method:pop" name="pop" native="1">
+    <return text="">
+      <type link="1" name="Object"/>
+    </return>
+    <text>Removes the last element from an array and returns that element. This method  changes the length of the array.</text>
+  </method>
+  <method access="public" id="method:push" name="push" native="1">
+    <param name="element" text="">
+      <type link="1" name="Object" varargs="1"/>
+    </param>
+    <return text="the new length of the array">
+      <type class="Number" link="1" name="int"/>
+    </return>
+    <text>Adds one or more elements to the end of an array and returns the new length of the array. This method changes 
+the length of the array.</text>
+  </method>
+  <method access="public" deprecated="1" id="method:pushAll" name="pushAll">
+    <param name="a" text="">
+      <type link="1" name="Array"/>
+    </param>
+    <text>pushes the contents of an Array onto this Array.</text>
+    <deprecated>Use the &lt;code&gt;jsx3.util.List&lt;/code&gt; class.
+ </deprecated>
+  </method>
+  <method access="public" deprecated="1" id="method:remove" name="remove">
+    <param name="objElement" text="the object to remove"/>
+    <return text="the removed object or null if no object was removed"/>
+    <text>removes the first occurrence of <code>objElement</code> in this array</text>
+    <deprecated>Use the &lt;code&gt;jsx3.util.List&lt;/code&gt; class.
+ </deprecated>
+  </method>
+  <method access="public" id="method:reverse" name="reverse" native="1">
+    <text>Transposes the elements of an array: the first array element becomes the last and the last becomes the first.</text>
+  </method>
+  <method access="public" id="method:shift" name="shift" native="1">
+    <return text="">
+      <type link="1" name="Object"/>
+    </return>
+    <text>Removes the first element from an array and returns that element. This method changes the length of the array.</text>
+  </method>
+  <method access="public" id="method:slice" name="slice" native="1">
+    <param name="begin" text="Zero-based index at which to begin extraction.">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <param name="end" text="Zero-based index at which to end extraction.">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <return text="">
+      <type link="1" name="Array"/>
+    </return>
+    <text>Extracts a section of an array and returns a new array.
+<ul>
+<li> slice extracts up to but not including end. slice(1,4) extracts the second element through the fourth element (elements indexed 1, 2, and 3)</li>
+<li> As a negative index, end indicates an offset from the end of the sequence. slice(2,-1) extracts the third element through the second to last element in the sequence.</li>
+<li> If end is omitted, slice extracts to the end of the sequence.</li>
+</ul>
+    </text>
+  </method>
+  <method access="public" id="method:sort" name="sort" native="1">
+    <param name="compareFunction" text="Specifies a function that defines the sort order. If omitted, the array&#10;   is sorted lexicographically (in dictionary order) according to the string conversion of each element.">
+      <type link="1" name="Function"/>
+    </param>
+    <text>Sorts the elements of an array.
+<p/>
+If compareFunction is supplied, the array elements are sorted according to the return value of the compare 
+function. If a and b are two elements being compared, then:
+<ul>
+<li>If compareFunction(a, b) is less than 0, sort b to a lower index than a.</li>
+<li>If compareFunction(a, b) returns 0, leave a and b unchanged with respect to each other, but sorted with respect to all different elements.</li>
+<li>If compareFunction(a, b) is greater than 0, sort b to a higher index than a.</li>
+</ul>
+    </text>
+  </method>
+  <method access="public" id="method:splice" name="splice" native="1">
+    <param name="index" text="Index at which to start changing the array.">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <param name="howMany" text="An integer indicating the number of old array elements to remove. If howMany is 0, no&#10;   elements are removed. In this case, you should specify at least one new element.">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <param name="element" text="The elements to add to the array. If you don't specify any elements, splice simply&#10;   removes elements from the array.">
+      <type link="1" name="Object" varargs="1"/>
+    </param>
+    <return text="an array containing the removed elements">
+      <type link="1" name="Array"/>
+    </return>
+    <text>Changes the content of an array, adding new elements while removing old elements.</text>
+  </method>
+  <method access="public" id="method:toString" name="toString" native="1">
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns a string representing the specified array and its elements.</text>
+    <overrides id="overrides:toString" idfk="method:toString" name="toString" source="Object"/>
+  </method>
+  <method access="public" id="method:unshift" name="unshift" native="1">
+    <param name="element" text="">
+      <type link="1" name="Object" varargs="1"/>
+    </param>
+    <return text="the new length of the array">
+      <type class="Number" link="1" name="int"/>
+    </return>
+    <text>Adds one or more elements to the beginning of an array and returns the new length of the array.</text>
+  </method>
+</class>
