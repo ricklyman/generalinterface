@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class access="public" id="class:jsx3.app.AddIn" name="jsx3.app.AddIn" package="jsx3.app" shortname="AddIn" since="3.2&#10; ">
+  <text>A class that represents a JSX add-in. The JSX system creates an instance of this class for every add-in that 
+is loaded.</text>
+  <superclass id="super:0" loaded="1" name="Object"/>
+  <superclass direct="1" id="super:1" loaded="1" name="jsx3.lang.Object"/>
+  <implements direct="1" id="implements:0" loaded="1" name="jsx3.net.URIResolver"/>
+  <field access="public" class="jsx3.app.AddIn" final="1" fullname="jsx3.app.AddIn.PROTOTYPES_DIR" id="sfield:PROTOTYPES_DIR" name="PROTOTYPES_DIR" static="1" value="&quot;prototypes/&quot;">
+    <type link="1" name="String"/>
+  </field>
+  <method access="public" id="method:getDescription" name="getDescription">
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+  </method>
+  <method access="public" id="method:getId" name="getId">
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+  </method>
+  <method access="public" id="method:getKey" name="getKey">
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+  </method>
+  <method access="public" id="method:getName" name="getName">
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+  </method>
+  <method access="public" id="method:getSettings" name="getSettings">
+    <return text="">
+      <type link="1" name="jsx3.app.Settings"/>
+    </return>
+  </method>
+  <method access="public" id="method:getUriPrefix" name="getUriPrefix">
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <overridesmix id="overrides:getUriPrefix" idfk="method:getUriPrefix" name="getUriPrefix" source="jsx3.net.URIResolver"/>
+  </method>
+  <method access="public" id="method:getVersion" name="getVersion">
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+  </method>
+  <method access="public" id="method:relativizeURI" name="relativizeURI">
+    <param name="strURI" text="">
+      <type link="1" name="String"/>
+      <type link="1" name="jsx3.net.URI"/>
+    </param>
+    <param name="bRel"/>
+    <return text="">
+      <type link="1" name="jsx3.net.URI"/>
+    </return>
+    <overridesmix id="overrides:relativizeURI" idfk="method:relativizeURI" name="relativizeURI" source="jsx3.net.URIResolver"/>
+  </method>
+  <method access="public" id="method:resolveURI" name="resolveURI">
+    <param name="strURI" text="">
+      <type link="1" name="String"/>
+      <type link="1" name="jsx3.net.URI"/>
+    </param>
+    <return text="">
+      <type link="1" name="jsx3.net.URI"/>
+    </return>
+    <overridesmix id="overrides:resolveURI" idfk="method:resolveURI" name="resolveURI" source="jsx3.net.URIResolver"/>
+  </method>
+  <method access="public" id="method:toString" name="toString">
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <overrides id="overrides:toString" idfk="method:toString" name="toString" source="jsx3.lang.Object"/>
+  </method>
+  <method id="method:clone" idfk="method:clone" inherited="1" name="clone" source="jsx3.lang.Object"/>
+  <method id="method:equals" idfk="method:equals" inherited="1" name="equals" source="jsx3.lang.Object"/>
+  <method id="method:eval" idfk="method:eval" inherited="1" name="eval" source="jsx3.lang.Object"/>
+  <method id="method:getClass" idfk="method:getClass" inherited="1" name="getClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOf" idfk="method:getInstanceOf" inherited="1" name="getInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfClass" idfk="method:getInstanceOfClass" inherited="1" name="getInstanceOfClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfPackage" idfk="method:getInstanceOfPackage" inherited="1" name="getInstanceOfPackage" source="jsx3.lang.Object"/>
+  <method id="method:instanceOf" idfk="method:instanceOf" inherited="1" name="instanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isInstanceOf" idfk="method:isInstanceOf" inherited="1" name="isInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isSubclassOf" idfk="method:isSubclassOf" inherited="1" name="isSubclassOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:jsxmix" idfk="method:jsxmix" inherited="1" name="jsxmix" source="jsx3.lang.Object"/>
+  <method id="method:jsxsuper" idfk="method:jsxsuper" inherited="1" name="jsxsuper" source="jsx3.lang.Object"/>
+  <method id="method:jsxsupermix" idfk="method:jsxsupermix" inherited="1" name="jsxsupermix" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:setInstanceOf" idfk="method:setInstanceOf" inherited="1" name="setInstanceOf" source="jsx3.lang.Object"/>
+</class>
