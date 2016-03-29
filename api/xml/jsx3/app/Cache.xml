@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class access="public" id="class:jsx3.app.Cache" name="jsx3.app.Cache" package="jsx3.app" shortname="Cache">
+  <text>Provides cached access to XML and XSL data.
+<h4>Events</h4>
+Cache instances publish two types of events for every operation that modifies the contents of the cache. The
+schemas of the two event types are
+<ul>
+  <li>
+        <code>subject</code> - <code>Cache.CHANGE</code>
+      </li>
+  <li>
+        <code>id</code> or <code>ids</code> - the ID or array of IDs of the modified documents</li>
+  <li>
+        <code>action</code> - <code>Cache.ADD</code>, <code>Cache.CHANGE</code> or <code>Cache.REMOVE</code>
+      </li>
+</ul>
+and
+<ul>
+  <li>
+        <code>subject</code> - the cache ID of the modified document</li>
+  <li>
+        <code>action</code> - <code>Cache.ADD</code>, <code>Cache.CHANGE</code> or <code>Cache.REMOVE</code>
+      </li>
+</ul>
+<h4>Asynchronous Loading</h4>
+Cache documents can be loaded asychronously with the <code>getOrOpenAsync()</code> method. This method returns
+the corresponding document synchronously if it already exists in the cache. If the document does not exist in the
+cache, then it is loaded asynchronously and the method returns a placeholder document. The namespace URI of this
+placeholder document is <code>Cache.XSDNS</code> and its root node name is <code>"loading"</code>.
+<p/>
+Since the cache stores this placeholder document until the document finishes loading, subsequent calls to
+synchronous APIs (<code>getDocument()</code>, <code>getOrOpenDocument()</code>, etc) may also return the
+placeholder document. It is therefore important to check the namespace of the returned document when any code
+uses the asynchronous APIs.
+<p/>
+Once a document finishes loading asynchronously the placeholder document is replaced with the loaded document.
+This change in value causes the cache to publish a pair of events of action <code>Cache.CHANGE</code>. If
+loading the document fails or times out the placeholder document is instead replaced with another placeholder
+document. This document also has a URI namespace of <code>Cache.XSDNS</code>. Its root node name may be either
+<code>"error"</code> or <code>"timeout"</code>. If the root node name is <code>"error"</code> then the root node
+has an attribute, also named <code>"error"</code>, which contains the XML error message.
+ </text>
+  <superclass id="super:0" loaded="1" name="Object"/>
+  <superclass direct="1" id="super:1" loaded="1" name="jsx3.lang.Object"/>
+  <implements direct="1" id="implements:0" loaded="1" name="jsx3.util.EventDispatcher"/>
+  <constructor access="public" id="method:init" name="init">
+    <text>Creates a new instance of this class.
+   </text>
+  </constructor>
+  <field access="public" class="jsx3.app.Cache" final="1" fullname="jsx3.app.Cache.ADD" id="sfield:ADD" name="ADD" since="3.5" static="1" value="&quot;add&quot;">
+    <type link="1" name="String"/>
+    <text> Event action.</text>
+  </field>
+  <field access="public" class="jsx3.app.Cache" fullname="jsx3.app.Cache.ASYNC_TIMEOUT" id="sfield:ASYNC_TIMEOUT" name="ASYNC_TIMEOUT" since="3.5&#10;   " static="1" value="60000">
+    <type class="Number" link="1" name="int"/>
+    <text> The number of milliseconds before asynchronous document loads time out.</text>
+  </field>
+  <field access="public" class="jsx3.app.Cache" final="1" fullname="jsx3.app.Cache.CHANGE" id="sfield:CHANGE" name="CHANGE" since="3.5" static="1" value="&quot;change&quot;">
+    <type link="1" name="String"/>
+    <text> Event subject and action.</text>
+  </field>
+  <field access="public" class="jsx3.app.Cache" final="1" fullname="jsx3.app.Cache.REMOVE" id="sfield:REMOVE" name="REMOVE" since="3.5" static="1" value="&quot;remove&quot;">
+    <type link="1" name="String"/>
+    <text> Event action.</text>
+  </field>
+  <field access="public" class="jsx3.app.Cache" fullname="jsx3.app.Cache.XSDNS" id="sfield:XSDNS" name="XSDNS" since="3.5&#10;   " static="1" value="&quot;http://xsd.tns.tibco.com/gi/cache&quot;">
+    <type link="1" name="String"/>
+  </field>
+  <method access="public" id="method:clearById" name="clearById">
+    <param name="strId" text="">
+      <type link="1" name="String"/>
+    </param>
+    <return text="the remove document, if any.&#10;   ">
+      <type link="1" name="jsx3.xml.Document"/>
+    </return>
+    <text>Removes the document stored in this cache under id <code>strId</code>.</text>
+  </method>
+  <method access="public" id="method:clearByTimestamp" name="clearByTimestamp">
+    <param name="intTimestamp" text="epoch seconds or a date object.">
+      <type class="Number" link="1" name="int"/>
+      <type link="1" name="Date"/>
+    </param>
+    <return text="the ids of the removed documents.&#10;   ">
+      <type link="1" name="Array">
+        <type link="1" name="String"/>
+      </type>
+    </return>
+    <text>Removes all documents placed in this cache before <code>intTimestamp</code>.</text>
+  </method>
+  <method access="public" id="method:destroy" name="destroy">
+    <text>Removes all references to documents contained in this cache. This cache is no longer usable after calling this
+method.
+   </text>
+  </method>
+  <method access="public" id="method:getDocument" name="getDocument">
+    <param name="strId" text="">
+      <type link="1" name="String"/>
+    </param>
+    <return text="the stored document or &lt;code&gt;null&lt;/code&gt; if none exists.&#10;   ">
+      <type link="1" name="jsx3.xml.Document"/>
+    </return>
+    <text>Returns the document stored in this cache under id <code>strId</code>.</text>
+  </method>
+  <method access="public" id="method:getOrOpenAsync" name="getOrOpenAsync" since="3.5&#10;   ">
+    <param name="strURL" text="url (relative or absolute) the URI of the document to open.">
+      <type link="1" name="String"/>
+      <type link="1" name="jsx3.net.URI"/>
+    </param>
+    <param name="strId" text="the id under which to store the document. If this parameter is not provided, the&#10;   &lt;code&gt;strURL&lt;/code&gt; parameter is used as the id.">
+      <type link="1" name="String"/>
+    </param>
+    <param name="objClass" text="&lt;code&gt;jsx3.xml.Document&lt;/code&gt; (default value) or one of its subclasses. The&#10;   class with which to instantiate the new document instance.">
+      <type link="1" name="jsx3.lang.Class"/>
+    </param>
+    <return text="the document retrieved from the cache or a placeholder document if the document&#10;   is in the process of loading asynchronously.">
+      <type link="1" name="jsx3.xml.Document"/>
+    </return>
+    <text>Asynchronously loads an xml document and stores it in this cache.</text>
+  </method>
+  <method access="public" id="method:getOrOpenDocument" name="getOrOpenDocument">
+    <param name="strURL" text="the URI of the document.">
+      <type link="1" name="String"/>
+      <type link="1" name="jsx3.net.URI"/>
+    </param>
+    <param name="strId" text="the id under which the document is/will be stored. If this parameter is not provided, the&#10;   &lt;code&gt;strURL&lt;/code&gt; parameter is used as the id.">
+      <type link="1" name="String"/>
+    </param>
+    <param name="objClass" text="&lt;code&gt;jsx3.xml.Document&lt;/code&gt; (default value) or one of its subclasses. The&#10;   class with which to instantiate the new document instance if a new document is opened.">
+      <type link="1" name="jsx3.lang.Class"/>
+    </param>
+    <return text="the document retrieved from the cache or loaded.&#10;   ">
+      <type link="1" name="jsx3.xml.Document"/>
+    </return>
+    <text>Retrieves a document from this cache or, if this cache contains no such document, loads the document
+synchronously and returns it.</text>
+  </method>
+  <method access="public" id="method:getTimestamp" name="getTimestamp">
+    <param name="strId" text="the id under which the document is stored.">
+      <type link="1" name="String"/>
+    </param>
+    <return text="the timestamp as an integer (epoch seconds) or &lt;code&gt;null&lt;/code&gt; if no such document exists&#10;   in this cache.&#10;   ">
+      <type class="Number" link="1" name="int"/>
+    </return>
+    <text>Returns the timestamp from when the document stored under id <code>strId</code> was stored in this cache.</text>
+  </method>
+  <method access="public" deprecated="1" id="method:isSystem" name="isSystem">
+    <param name="strId" text="unique identifier for the jsx3.xml.DocumentInstance instance when it was placed in the cache">
+      <type link="1" name="String"/>
+    </param>
+    <return text="&lt;code&gt;false&lt;/code&gt;.">
+      <type class="Boolean" link="1" name="boolean"/>
+    </return>
+    <text>returns whether or not the given document in the cache is owned by the system. If no document by the given ID exists, false is returned.</text>
+  </method>
+  <method access="public" id="method:keys" name="keys">
+    <return text="">
+      <type link="1" name="Array">
+        <type link="1" name="String"/>
+      </type>
+    </return>
+    <text>Returns a list of all the keys in this cache instance.</text>
+  </method>
+  <method access="public" id="method:openDocument" name="openDocument">
+    <param name="strURL" text="url (relative or absolute) the URI of the document to open.">
+      <type link="1" name="String"/>
+      <type link="1" name="jsx3.net.URI"/>
+    </param>
+    <param name="strId" text="the id under which to store the document. If this parameter is not provided, the&#10;   &lt;code&gt;strURL&lt;/code&gt; parameter is used as the id.">
+      <type link="1" name="String"/>
+    </param>
+    <param name="objClass" text="&lt;code&gt;jsx3.xml.Document&lt;/code&gt; (default value) or one of its subclasses. The&#10;   class with which to instantiate the new document instance.">
+      <type link="1" name="jsx3.lang.Class"/>
+    </param>
+    <return text="the loaded document object.&#10;   ">
+      <type link="1" name="jsx3.xml.Document"/>
+    </return>
+    <text>Synchronously loads an xml document, stores it in this cache, and returns the loaded document.</text>
+  </method>
+  <method access="public" id="method:setDocument" name="setDocument">
+    <param name="strId" text="the id under which to store &lt;code&gt;objDocument&lt;/code&gt;.">
+      <type link="1" name="String"/>
+    </param>
+    <param name="objDocument" text="">
+      <type link="1" name="jsx3.xml.Document"/>
+    </param>
+    <text>Stores the document <code>objDocument</code> in this cache under id <code>strId</code>. If a document already
+exists in this cache under <code>strId</code> then that document is removed from the cache.</text>
+  </method>
+  <method id="method:publish" idfk="method:publish" inherited="1" name="publish" source="jsx3.util.EventDispatcher"/>
+  <method id="method:subscribe" idfk="method:subscribe" inherited="1" name="subscribe" source="jsx3.util.EventDispatcher"/>
+  <method id="method:unsubscribe" idfk="method:unsubscribe" inherited="1" name="unsubscribe" source="jsx3.util.EventDispatcher"/>
+  <method id="method:unsubscribeAll" idfk="method:unsubscribeAll" inherited="1" name="unsubscribeAll" source="jsx3.util.EventDispatcher"/>
+  <method id="method:clone" idfk="method:clone" inherited="1" name="clone" source="jsx3.lang.Object"/>
+  <method id="method:equals" idfk="method:equals" inherited="1" name="equals" source="jsx3.lang.Object"/>
+  <method id="method:eval" idfk="method:eval" inherited="1" name="eval" source="jsx3.lang.Object"/>
+  <method id="method:getClass" idfk="method:getClass" inherited="1" name="getClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOf" idfk="method:getInstanceOf" inherited="1" name="getInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfClass" idfk="method:getInstanceOfClass" inherited="1" name="getInstanceOfClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfPackage" idfk="method:getInstanceOfPackage" inherited="1" name="getInstanceOfPackage" source="jsx3.lang.Object"/>
+  <method id="method:instanceOf" idfk="method:instanceOf" inherited="1" name="instanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isInstanceOf" idfk="method:isInstanceOf" inherited="1" name="isInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isSubclassOf" idfk="method:isSubclassOf" inherited="1" name="isSubclassOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:jsxmix" idfk="method:jsxmix" inherited="1" name="jsxmix" source="jsx3.lang.Object"/>
+  <method id="method:jsxsuper" idfk="method:jsxsuper" inherited="1" name="jsxsuper" source="jsx3.lang.Object"/>
+  <method id="method:jsxsupermix" idfk="method:jsxsupermix" inherited="1" name="jsxsupermix" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:setInstanceOf" idfk="method:setInstanceOf" inherited="1" name="setInstanceOf" source="jsx3.lang.Object"/>
+  <method id="method:toString" idfk="method:toString" inherited="1" name="toString" source="jsx3.lang.Object"/>
+</class>

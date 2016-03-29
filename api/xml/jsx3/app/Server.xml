@@ -1,0 +1,529 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class access="public" id="class:jsx3.app.Server" name="jsx3.app.Server" package="jsx3.app" shortname="Server">
+  <text>The controller of the JSX architecture.
+ </text>
+  <superclass id="super:0" loaded="1" name="Object"/>
+  <superclass direct="1" id="super:1" loaded="1" name="jsx3.lang.Object"/>
+  <implements direct="1" id="implements:0" loaded="1" name="jsx3.gui.Alerts"/>
+  <implements direct="1" id="implements:1" loaded="1" name="jsx3.net.URIResolver"/>
+  <implements direct="1" id="implements:2" loaded="1" name="jsx3.util.EventDispatcher"/>
+  <constructor access="public" id="method:init" name="init">
+    <param name="strAppPath" text="URL (either relative or absolute) for the application to load">
+      <type link="1" name="String"/>
+    </param>
+    <param name="objGUI" text="the browser element (body, div, span, td, etc) into which the GI application should load">
+      <type link="1" name="HTMLElement"/>
+    </param>
+    <param name="bPaint" text="false if null; if true, the application VIEW will immediately be generated.">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <param name="objEnv" text="">
+      <type link="1" name="Object"/>
+    </param>
+    <text>Sets environment variables used by this class (the controller for the JSX architecture)</text>
+  </constructor>
+  <field access="public" class="jsx3.app.Server" deprecated="1" fullname="jsx3.app.Server.Cache" id="field:Cache" name="Cache">
+    <type link="1" name="jsx3.app.Cache"/>
+    <deprecated>Use &lt;code&gt;Server.getCache()&lt;/code&gt;</deprecated>
+    <see idfk="method:getCache" source="jsx3.app.Server">getCache()</see>
+  </field>
+  <field access="public" class="jsx3.app.Server" deprecated="1" fullname="jsx3.app.Server.DOM" id="field:DOM" name="DOM">
+    <type link="1" name="jsx3.app.DOM"/>
+    <deprecated>Use &lt;code&gt;Server.getDOM()&lt;/code&gt;</deprecated>
+    <see idfk="method:getDOM" source="jsx3.app.Server">getDOM()</see>
+  </field>
+  <field access="public" class="jsx3.app.Server" deprecated="1" fullname="jsx3.app.Server.ENVIRONMENT" id="field:ENVIRONMENT" name="ENVIRONMENT">
+    <type link="1" name="Object">
+      <type link="1" name="String"/>
+      <type link="1" name="String"/>
+    </type>
+    <deprecated>Use &lt;code&gt;Server.getEnv()&lt;/code&gt;</deprecated>
+    <see idfk="method:getEnv" source="jsx3.app.Server">getEnv()</see>
+  </field>
+  <field access="public" class="jsx3.app.Server" deprecated="1" fullname="jsx3.app.Server.JSXBODY" id="field:JSXBODY" name="JSXBODY">
+    <type link="1" name="jsx3.gui.Block"/>
+    <deprecated>Use &lt;code&gt;Server.getBodyBlock()&lt;/code&gt;</deprecated>
+    <see idfk="method:getBodyBlock" source="jsx3.app.Server">getBodyBlock()</see>
+  </field>
+  <field access="public" class="jsx3.app.Server" deprecated="1" fullname="jsx3.app.Server.JSXROOT" id="field:JSXROOT" name="JSXROOT">
+    <type link="1" name="jsx3.gui.Block"/>
+    <deprecated>Use &lt;code&gt;Server.getRootBlock()&lt;/code&gt;</deprecated>
+    <see idfk="method:getRootBlock" source="jsx3.app.Server">getRootBlock()</see>
+  </field>
+  <field access="public" class="jsx3.app.Server" fullname="jsx3.app.Server.HELP" id="sfield:HELP" name="HELP" since="3.5&#10;   " static="1" value="&quot;help&quot;">
+    <type link="1" name="String"/>
+    <text> The subject of an event that instances of this class publish when a context help hot key is pressed
+   in the context of a DOM node that has a help ID. The event has the following fields:
+   <ul>
+     <li>
+          <code>target</code> - the server publishing the event.</li>
+     <li>
+          <code>model</code> - the DOM node that received the key event.</li>
+     <li>
+          <code>helpid</code> - the help ID of the nearest ancestor of <code>model</code> that defines a help ID.</li>
+   </ul>
+    </text>
+    <see idfk="method:getHelpId" source="jsx3.app.Model">jsx3.app.Model.getHelpId()</see>
+  </field>
+  <field access="public" class="jsx3.app.Server" fullname="jsx3.app.Server.INITED" id="sfield:INITED" name="INITED" static="1" value="&quot;inited&quot;">
+    <type link="1" name="String"/>
+    <text> The subject of an event that <code>jsx3.app.Server</code> publishes when an instance of this class
+   is created. The target of the event object is the initialized server.
+   </text>
+  </field>
+  <method access="public" id="method:createAppWindow" name="createAppWindow" since="3.2&#10;   ">
+    <param name="strName" text="the unique name of the window to create">
+      <type link="1" name="String"/>
+    </param>
+    <return text="">
+      <type link="1" name="jsx3.gui.Window"/>
+    </return>
+    <throws text="if there already exists a window in this server by that name">
+      <type link="1" name="jsx3.lang.IllegalArgumentException"/>
+    </throws>
+    <text>Creates a new jsx3.gui.Window instance for this server. A branch of the DOM of this application can be placed
+in this window in order to distribute the application across multiple browser windows.</text>
+  </method>
+  <method access="public" id="method:deleteCookie" name="deleteCookie">
+    <param name="name" text="name of the cookie">
+      <type link="1" name="String"/>
+    </param>
+    <param name="path" text="path where the cookie is valid (default: path of calling document)">
+      <type link="1" name="String"/>
+    </param>
+    <param name="domain" text="domain where the cookie is valid (default: domain of calling document)&#10;   ">
+      <type link="1" name="String"/>
+    </param>
+    <text>delete a cookie</text>
+  </method>
+  <method access="public" id="method:destroy" name="destroy">
+    <text>call to shut down a server instance and free up resources used by the server (cache,dom,etc)
+   </text>
+  </method>
+  <method access="public" id="method:getAlertsParent" name="getAlertsParent">
+    <return text="the root block.&#10;   ">
+      <type link="1" name="jsx3.app.Model"/>
+    </return>
+    <text>To implement jsx3.gui.Alerts interface.</text>
+    <overridesmix id="overrides:getAlertsParent" idfk="method:getAlertsParent" name="getAlertsParent" source="jsx3.gui.Alerts"/>
+  </method>
+  <method access="public" id="method:getAppWindow" name="getAppWindow" since="3.2&#10;   ">
+    <param name="strName" text="the unique name of the window to retrieve">
+      <type link="1" name="String"/>
+    </param>
+    <return text="the window instance or &lt;code&gt;null&lt;/code&gt; if no such window exists.">
+      <type link="1" name="jsx3.gui.Window"/>
+    </return>
+    <text>Retrieves a previously created <code>jsx3.gui.Window</code> instance.</text>
+  </method>
+  <method access="public" id="method:getBodyBlock" name="getBodyBlock">
+    <return text="">
+      <type link="1" name="jsx3.gui.Block"/>
+    </return>
+    <text>Returns the body block for this server (JSXBODY)</text>
+  </method>
+  <method access="public" id="method:getCache" name="getCache">
+    <return text="">
+      <type link="1" name="jsx3.app.Cache"/>
+    </return>
+    <text>Returns the XML/XSL cache for this server</text>
+  </method>
+  <method access="public" id="method:getCookie" name="getCookie">
+    <param name="name" text="name of the cookie">
+      <type link="1" name="String"/>
+    </param>
+    <param name="bRaw"/>
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the value for the Cookie with the given @name</text>
+  </method>
+  <method access="public" id="method:getDOM" name="getDOM">
+    <return text="">
+      <type link="1" name="jsx3.app.DOM"/>
+    </return>
+    <text>Returns the DOM for this server</text>
+  </method>
+  <method access="public" id="method:getDefaultLocale" name="getDefaultLocale" since="3.2&#10;   ">
+    <return text="">
+      <type link="1" name="jsx3.util.Locale"/>
+    </return>
+    <text>Returns the default locale of this server. This is configured with the <code>default_locale</code> configuration
+setting.</text>
+  </method>
+  <method access="public" id="method:getDocumentOf" name="getDocumentOf">
+    <param name="objJSX" text="">
+      <type link="1" name="jsx3.app.Model"/>
+    </param>
+    <return text="document object&#10;   ">
+      <type link="1" name="HTMLDocument"/>
+    </return>
+    <text>Returns the browser document object containing a particular JSX object. This method inspects whether the
+JSX object is a descendent of the root block of this server or one of its <code>jsx3.gui.Window</code> roots.</text>
+  </method>
+  <method access="public" id="method:getDynamicProperty" name="getDynamicProperty">
+    <param name="strPropName" text="id for this dynamic property among all properties">
+      <type link="1" name="String"/>
+    </param>
+    <param name="strToken" text="if present tokens such as {0}, {1}, {n} will be replaced with the nth element of this vararg array">
+      <type link="1" name="String" varargs="1"/>
+    </param>
+    <return text="value of the property&#10;   ">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the value of the dynamic property @strPropName</text>
+  </method>
+  <method access="public" id="method:getEnv" name="getEnv">
+    <param name="strEnvKey" text="the case-insensitive key of the environment variable to return.">
+      <type link="1" name="String"/>
+    </param>
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the value of an environment variable of this server. Valid keys correspond to deployment options and
+include:
+<ul>
+<li>VERSION</li>
+<li>APPPATH</li>
+<li>ABSPATH</li>
+<li>CAPTION</li>
+<li>MODE</li>
+<li>SYSTEM</li>
+<li>NAMESPACE</li>
+<li>CANCELERROR</li>
+<li>CANCELRIGHTCLICK</li>
+<li>BODYHOTKEYS</li>
+<li>WIDTH</li>
+<li>HEIGHT</li>
+<li>LEFT</li>
+<li>TOP</li>
+<li>POSITION</li>
+<li>OVERFLOW</li>
+<li>UNICODE</li>
+<li>EVENTSVERS</li>
+</ul>
+Other environment variables may be set either by query parameters in the launch page URL, by attributes
+on the GI <b>script</b> tag, or by entries in the server's <code>config.xml</code> file. Server environment
+variable keys must either begin with <code>"jsxapp"</code> or must not begin with <code>"jsx"</code>.</text>
+    <see idfk="smethod:getEnv" source="jsx3">jsx3.getEnv()</see>
+  </method>
+  <method access="public" id="method:getJSX" name="getJSX">
+    <param name="strId" text="either the id (_jsxid) of the object or its name (jsxname)">
+      <type link="1" name="String"/>
+    </param>
+    <return text="the JSX object or null if none found">
+      <type link="1" name="jsx3.app.Model"/>
+    </return>
+    <text>Looks up a DOM node owned by this server by id or by name.</text>
+    <see idfk="method:get" source="jsx3.app.DOM">jsx3.app.DOM.get()</see>
+  </method>
+  <method access="public" id="method:getJSXById" name="getJSXById">
+    <param name="strId" text="the id (_jsxid) of the object">
+      <type link="1" name="String"/>
+    </param>
+    <return text="the JSX object or null if none found">
+      <type link="1" name="jsx3.app.Model"/>
+    </return>
+    <text>Looks up a DOM node owned by this server by id.</text>
+    <see idfk="method:getById" source="jsx3.app.DOM">jsx3.app.DOM.getById()</see>
+  </method>
+  <method access="public" id="method:getJSXByName" name="getJSXByName">
+    <param name="strId" text="the name (jsxname) of the object">
+      <type link="1" name="String"/>
+    </param>
+    <return text="the JSX object or null if none found">
+      <type link="1" name="jsx3.app.Model"/>
+    </return>
+    <text>Looks up a DOM node owned by this server by name. If more than one such objects exist, only one is returned.</text>
+    <see idfk="method:getByName" source="jsx3.app.DOM">jsx3.app.DOM.getByName()</see>
+  </method>
+  <method access="public" id="method:getLocale" name="getLocale" since="3.2&#10;   ">
+    <return text="">
+      <type link="1" name="jsx3.util.Locale"/>
+    </return>
+    <text>Returns the current locale of this server. If the locale has been set explicitly with <code>setLocale()</code>,
+that locale is returned. Otherwise, <code>getDefaultLocale()</code> is consulted, and finally the system-wide
+locale.</text>
+  </method>
+  <method access="public" id="method:getProperties" name="getProperties">
+    <return text="">
+      <type link="1" name="jsx3.app.Properties"/>
+    </return>
+    <text>Returns the dynamic properties registry for this server. The returned object contains the properties contained
+in all loaded resources of type 'jss' and 'ljss.' It also contains any properties loaded by the system or
+active add-ins. </text>
+  </method>
+  <method access="public" id="method:getRenderedOf" name="getRenderedOf">
+    <param name="objJSX" text="">
+      <type link="1" name="jsx3.app.Model"/>
+    </param>
+    <return text="DOM object&#10;   ">
+      <type link="1" name="HTMLElement"/>
+    </return>
+    <text>Returns the browser DOM object where a particulat JSX object renders. This method inspects the main root of
+this server as well as all of its <code>jsx3.gui.Window</code> roots.</text>
+  </method>
+  <method access="public" id="method:getRootBlock" name="getRootBlock">
+    <return text="">
+      <type link="1" name="jsx3.gui.Block"/>
+    </return>
+    <text>Returns the root block for this server (JSXROOT)</text>
+  </method>
+  <method access="public" id="method:getRootObjects" name="getRootObjects">
+    <return text="">
+      <type link="1" name="Array">
+        <type link="1" name="jsx3.app.Model"/>
+      </type>
+    </return>
+    <text>Returns the list of objects that are children of the body object. These are the root objects
+    in a serialization file and the root nodes in the Component Hierarchy palette.</text>
+  </method>
+  <method access="public" deprecated="1" id="method:getServer" name="getServer">
+    <return text="this object.">
+      <type link="1" name="jsx3.app.Server"/>
+    </return>
+    <text>Conforms to the EventDispatcher contract.</text>
+  </method>
+  <method access="public" id="method:getSettings" name="getSettings">
+    <return text="">
+      <type link="1" name="jsx3.app.Settings"/>
+    </return>
+    <text>Returns the settings of this server/project per config.xml</text>
+  </method>
+  <method access="public" id="method:getTaskBar" name="getTaskBar">
+    <param name="objJSX" text="if null, this.JSXROOT is assumed; otherwise the object in the DOM from which to start looking for a descendant taskbar (a jsx3.gui.WindowBar instance)">
+      <type link="1" name="jsx3.app.Model"/>
+    </param>
+    <return text="">
+      <type link="1" name="jsx3.gui.WindowBar"/>
+    </return>
+    <text>Returns handle to a descendant taskbar belonging to this server instance (this is where JSXDialog instances will try to minimize to if it exists); returns null if none found;
+           if no taskbar is found, dialogs are not minimized, but are 'window shaded'—like a Mac used to do</text>
+  </method>
+  <method access="public" id="method:getUriPrefix" name="getUriPrefix" since="3.2&#10;   ">
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <overridesmix id="overrides:getUriPrefix" idfk="method:getUriPrefix" name="getUriPrefix" source="jsx3.net.URIResolver"/>
+  </method>
+  <method access="public" id="method:invokeHelp" name="invokeHelp" since="3.5">
+    <param name="objJSX" text="">
+      <type link="1" name="jsx3.app.Model"/>
+    </param>
+    <text>Invokes context-sensitive help as though the user had pressed the help hot key in the context of the DOM node
+<code>objJSX</code>.</text>
+    <see idfk="sfield:HELP" source="jsx3.app.Server">HELP</see>
+  </method>
+  <method access="public" id="method:loadAppWindow" name="loadAppWindow" since="3.2&#10;   ">
+    <param name="strSource" text="either an XML document containing the window to load or the URL of the&#10;   component to load.">
+      <type link="1" name="jsx3.xml.Entity"/>
+      <type link="1" name="String"/>
+    </param>
+    <param name="objResolver" text="If this parameter is provided, &lt;code&gt;strSource&lt;/code&gt; is resolved&#10;   relative to it. Additionally, this resolver is stored as the URI resolver for this DOM node and its descendants.">
+      <type link="1" name="jsx3.net.URIResolver"/>
+    </param>
+    <return text="">
+      <type link="1" name="jsx3.gui.Window"/>
+    </return>
+    <throws text="if the loaded entity is not an instance of jsx3.gui.Window or if the name of window is&#10;   not unique with respect to the already loaded windows">
+      <type link="1" name="jsx3.lang.Exception"/>
+    </throws>
+    <text>Loads a new jsx3.gui.Window instance from a component file.</text>
+  </method>
+  <method access="public" id="method:loadInclude" name="loadInclude">
+    <param name="strSrc" text="the path to the resource.">
+      <type link="1" name="String"/>
+      <type link="1" name="jsx3.net.URI"/>
+    </param>
+    <param name="strId" text="the unique identifier of the resource. A resource loaded by this method may clobber&#10;   a previously loaded resource of the same type and id.">
+      <type link="1" name="String"/>
+    </param>
+    <param name="strType" text="the type of include, one of: &lt;code&gt;css&lt;/code&gt;, &lt;code&gt;jss&lt;/code&gt;, &lt;code&gt;xml&lt;/code&gt;,&#10;   &lt;code&gt;xsl&lt;/code&gt;, &lt;code&gt;script&lt;/code&gt; (for JavaScript), &lt;code&gt;services&lt;/code&gt; (for mapping rules),&#10;   or &lt;code&gt;ljss&lt;/code&gt;.">
+      <type link="1" name="String"/>
+    </param>
+    <param name="bReload" text="if &lt;code&gt;true&lt;/code&gt;, a JavaScript or CSS file is reloaded from the remote server&#10;   without checking the local browser cache. Other types of resources are not affected by this parameter.">
+      <type link="1" name="String"/>
+    </param>
+    <return text="the return type depends on the &lt;code&gt;strType&lt;/code&gt;&#10;   parameter. See the method description.">
+      <type link="1" name="jsx3.xml.Document"/>
+      <type link="1" name="jsx3.net.Service"/>
+      <type name="null"/>
+    </return>
+    <throws text="if &lt;code&gt;strType&lt;/code&gt; in not a valid type.&#10;   ">
+      <type link="1" name="jsx3.lang.IllegalArgumentException"/>
+    </throws>
+    <text>Loads an external resource into this server instance. What this method does depends on the <code>strType</code>
+parameter.
+<ul>
+  <li>
+          <code>script</code> - Loads a JavaScript file asynchronously into the memory space of the page hosting this
+      application; returns <code>null</code>.</li>
+  <li>
+          <code>css</code> - Loads a CSS file asynchronously into the memory space of the page hosting this
+      application; returns <code>null</code>.</li>
+  <li>
+          <code>xml</code> or <code>xsl</code> - Loads an XML file synchronously into the XML cache of this
+      application; returns the loaded <code>jsx3.xml.Document</code> instance.</li>
+  <li>
+          <code>jss</code> or <code>ljss</code> - Loads a dynamic properties file or localized properties bundle
+      synchronously into this application; returns <code>null</code>.</li>
+  <li>
+          <code>services</code> - Loads and parses a mapping rules file synchronously; returns a new instance of
+      <code>jsx3.net.Service</code>.</li>
+</ul>
+    </text>
+  </method>
+  <method access="public" id="method:loadResource" name="loadResource">
+    <param name="strId" text="unique identifier for the resource (its unique id as an application resource file).">
+      <type link="1" name="String"/>
+    </param>
+    <return text="the return type depends on the type of resource.&#10;   See the documentation for &lt;code&gt;loadInclude()&lt;/code&gt; for more information.">
+      <type link="1" name="jsx3.xml.Document"/>
+      <type link="1" name="jsx3.net.Service"/>
+      <type name="null"/>
+    </return>
+    <text>Loads an application resource. This method looks up a resource registered with this application by its id.
+The resource must be registered in the <code>config.xml</code> file of this application.</text>
+    <see idfk="method:loadInclude" source="jsx3.app.Server">loadInclude()</see>
+  </method>
+  <method access="public" id="method:paint" name="paint">
+    <param name="objXML" text="the pre-loaded default component document.&#10;   ">
+      <type link="1" name="jsx3.xml.Document"/>
+    </param>
+    <text>Paints this application and its default component into the application view port on the host HTML page. The
+system class loader calls this method once all the required resources of the application have loaded. The
+order of actions taken by this method is:
+<ol>
+  <li>Load the default component file</li>
+  <li>Execute the onload script for the application</li>
+  <li>Paint the default component in the view port</li>
+</ol>
+    </text>
+  </method>
+  <method access="public" id="method:relativizeURI" name="relativizeURI" since="3.2&#10;   ">
+    <param name="strURI" text="the URI to relativize.">
+      <type link="1" name="String"/>
+      <type link="1" name="jsx3.net.URI"/>
+    </param>
+    <param name="bRel"/>
+    <return text="the relativized URI.">
+      <type link="1" name="jsx3.net.URI"/>
+    </return>
+    <overridesmix id="overrides:relativizeURI" idfk="method:relativizeURI" name="relativizeURI" source="jsx3.net.URIResolver"/>
+  </method>
+  <method access="public" id="method:reloadLocalizedResources" name="reloadLocalizedResources" since="3.2&#10;   ">
+    <text>Reloads all resource files that are localized. This method should be called after calling
+<code>setLocale()</code> for the server to render properly in the new locale.</text>
+  </method>
+  <method access="public" id="method:resolveURI" name="resolveURI" since="3.2">
+    <param name="strURI" text="the URI to resolve.">
+      <type link="1" name="String"/>
+      <type link="1" name="jsx3.net.URI"/>
+    </param>
+    <return text="the resolved URI.">
+      <type link="1" name="jsx3.net.URI"/>
+    </return>
+    <text>Resolves a URI that is referenced from a file in this server. This method takes into account the changes in
+resource addressing between 3.1 and 3.2. For version 3.1, the URI is resolved as any URI in the system, using
+<code>jsx3.resolveURI()</code>. In version 3.2, the URI is taken as relative to the application folder. In
+particular, a relative URI will be resolved to a base of the application folder, an absolute URI will be
+unaffected.</text>
+    <see source="jsx3.net.URIResolver">jsx3.net.URIResolver</see>
+    <see idfk="smethod:resolveURI" source="jsx3">jsx3.resolveURI()</see>
+    <overridesmix id="overrides:resolveURI" idfk="method:resolveURI" name="resolveURI" source="jsx3.net.URIResolver"/>
+  </method>
+  <method access="public" id="method:setCookie" name="setCookie">
+    <param name="name" text="name of the cookie">
+      <type link="1" name="String"/>
+    </param>
+    <param name="value" text="value of the cookie">
+      <type link="1" name="String"/>
+    </param>
+    <param name="expires" text="valid jscript date object. for example: new Date(&quot;11:59:59 12-31-2004&quot;)">
+      <type link="1" name="Date"/>
+    </param>
+    <param name="path" text="path where the cookie is valid (default: path of calling document)">
+      <type link="1" name="String"/>
+    </param>
+    <param name="domain" text="domain where the cookie is valid (default: domain of calling document)">
+      <type link="1" name="String"/>
+    </param>
+    <param name="secure" text="valid jscript date object. for example: new Date(&quot;11:59:59 12-31-2004&quot;)&#10;   ">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <param name="bRaw"/>
+    <text>Sets a Cookie with the given name and value</text>
+  </method>
+  <method access="public" id="method:setDimensions" name="setDimensions">
+    <param name="left" text="the new left value or a JavaScript array containing all four new values (in pixels)">
+      <type class="Number" link="1" name="int"/>
+      <type link="1" name="Array"/>
+    </param>
+    <param name="top" text="the new top value (in pixels)">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <param name="width" text="the new width value (in pixels)">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <param name="height" text="the new height value (in pixels)&#10;   ">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <text>set all four dimensions for a jsx3.Server instance, allowing the developer to adjust the width/height/left/width for the server. Must be called during/after the onload event for the server instance as it affects the VIEW for the server.  Updates the absolutely positioned element that contains JSXROOT.</text>
+  </method>
+  <method access="public" id="method:setDynamicProperty" name="setDynamicProperty">
+    <param name="strPropName" text="id for this dynamic property among all properties">
+      <type link="1" name="String"/>
+    </param>
+    <param name="vntValue" text="value of the property; if null, the property with the name, @strPropName will be removed&#10;   ">
+      <type link="1" name="String"/>
+    </param>
+    <text>updates a single dynamic style property; dynamic properties are used by jsx3.gui.Block objects that extend the astract class, jsx3.gui.Block;</text>
+  </method>
+  <method access="public" id="method:setLocale" name="setLocale" since="3.2&#10;   ">
+    <param name="objLocale" text="">
+      <type link="1" name="jsx3.util.Locale"/>
+    </param>
+    <text>Sets the locale of this server.</text>
+  </method>
+  <method access="public" id="method:toString" name="toString">
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <overrides id="overrides:toString" idfk="method:toString" name="toString" source="jsx3.lang.Object"/>
+  </method>
+  <method access="public" id="method:unloadInclude" name="unloadInclude">
+    <param name="strId" text="the id used when loading the resource.">
+      <type link="1" name="String"/>
+    </param>
+    <text>Removes a loaded JavaScript or CSS resource from the browser DOM.</text>
+    <see idfk="method:loadInclude" source="jsx3.app.Server">loadInclude()</see>
+  </method>
+  <method access="public" deprecated="1" id="smethod:getVersion" name="getVersion" static="1">
+    <return text="app version number (major (MM), minor (mm), and dot release (dd)) MM.mm.dd">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns version of the JSX runtime; separate versions are also available for GUI and Operational classes</text>
+  </method>
+  <method id="method:publish" idfk="method:publish" inherited="1" name="publish" source="jsx3.util.EventDispatcher"/>
+  <method id="method:subscribe" idfk="method:subscribe" inherited="1" name="subscribe" source="jsx3.util.EventDispatcher"/>
+  <method id="method:unsubscribe" idfk="method:unsubscribe" inherited="1" name="unsubscribe" source="jsx3.util.EventDispatcher"/>
+  <method id="method:unsubscribeAll" idfk="method:unsubscribeAll" inherited="1" name="unsubscribeAll" source="jsx3.util.EventDispatcher"/>
+  <method id="method:alert" idfk="method:alert" inherited="1" name="alert" source="jsx3.gui.Alerts"/>
+  <method id="method:configureAlert" idfk="method:configureAlert" inherited="1" name="configureAlert" source="jsx3.gui.Alerts"/>
+  <method id="method:confirm" idfk="method:confirm" inherited="1" name="confirm" source="jsx3.gui.Alerts"/>
+  <method id="method:prompt" idfk="method:prompt" inherited="1" name="prompt" source="jsx3.gui.Alerts"/>
+  <method id="method:clone" idfk="method:clone" inherited="1" name="clone" source="jsx3.lang.Object"/>
+  <method id="method:equals" idfk="method:equals" inherited="1" name="equals" source="jsx3.lang.Object"/>
+  <method id="method:eval" idfk="method:eval" inherited="1" name="eval" source="jsx3.lang.Object"/>
+  <method id="method:getClass" idfk="method:getClass" inherited="1" name="getClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOf" idfk="method:getInstanceOf" inherited="1" name="getInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfClass" idfk="method:getInstanceOfClass" inherited="1" name="getInstanceOfClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfPackage" idfk="method:getInstanceOfPackage" inherited="1" name="getInstanceOfPackage" source="jsx3.lang.Object"/>
+  <method id="method:instanceOf" idfk="method:instanceOf" inherited="1" name="instanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isInstanceOf" idfk="method:isInstanceOf" inherited="1" name="isInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isSubclassOf" idfk="method:isSubclassOf" inherited="1" name="isSubclassOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:jsxmix" idfk="method:jsxmix" inherited="1" name="jsxmix" source="jsx3.lang.Object"/>
+  <method id="method:jsxsuper" idfk="method:jsxsuper" inherited="1" name="jsxsuper" source="jsx3.lang.Object"/>
+  <method id="method:jsxsupermix" idfk="method:jsxsupermix" inherited="1" name="jsxsupermix" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:setInstanceOf" idfk="method:setInstanceOf" inherited="1" name="setInstanceOf" source="jsx3.lang.Object"/>
+</class>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class access="public" id="class:jsx3.app.Properties" name="jsx3.app.Properties" package="jsx3.app" shortname="Properties" since="3.2&#10; ">
+  <text>Represents a repository of dynamic properties. Dynamic properties are simply name-value pairs. Dynamic properties
+can be loaded from an XML file in the CDF dynamic property format.</text>
+  <superclass id="super:0" loaded="1" name="Object"/>
+  <superclass direct="1" id="super:1" loaded="1" name="jsx3.lang.Object"/>
+  <subclass id="sub:0" loaded="1" name="jsx3.app.PropsBundle"/>
+  <constructor access="public" id="method:init" name="init">
+    <text>The instance initializer.
+   </text>
+  </constructor>
+  <method access="public" id="method:addParent" name="addParent">
+    <param name="objParent" text="">
+      <type link="1" name="jsx3.app.Properties"/>
+    </param>
+    <text>Adds a parent property repository to this repository. <code>get()</code> consults all parents before returning
+<code>undefined</code>.</text>
+    <see idfk="method:get" source="jsx3.app.Properties">get()</see>
+  </method>
+  <method access="public" id="method:containsKey" name="containsKey">
+    <param name="strKey" text="the property key to query for.">
+      <type link="1" name="String"/>
+    </param>
+    <return text="&lt;code&gt;true&lt;/code&gt; if this repository contains a property with the given key.&#10;   ">
+      <type class="Boolean" link="1" name="boolean"/>
+    </return>
+    <text>Returns whether this property repository contains a particular property. Parent repositories are not consulted.</text>
+  </method>
+  <method access="public" id="method:get" name="get">
+    <param name="strKey" text="the property key to query for.">
+      <type link="1" name="String"/>
+    </param>
+    <return text="">
+      <type link="1" name="Object"/>
+      <type name="undefined"/>
+    </return>
+    <text>Returns the value of a property for a particular key. This method consults the parent repositories as necessary
+until a property is found. If no property is found, <code>undefined</code> is returned.</text>
+  </method>
+  <method access="public" id="method:getKeys" name="getKeys">
+    <return text="">
+      <type link="1" name="Array">
+        <type link="1" name="String"/>
+      </type>
+    </return>
+    <text>Returns a list of all the property keys contained in this repository. Parent repositories are not consulted.</text>
+  </method>
+  <method access="public" id="method:getParents" name="getParents">
+    <return text="">
+      <type link="1" name="Array">
+        <type link="1" name="jsx3.app.Properties"/>
+      </type>
+    </return>
+    <text>Returns the list of parent repositories of this repository.</text>
+  </method>
+  <method access="public" id="method:loadXML" name="loadXML">
+    <param name="objXML" text="">
+      <type link="1" name="jsx3.xml.Entity"/>
+    </param>
+    <param name="strId" text="specifies the id to store the document under. If none is provided, the default space is&#10;   used.&#10;   ">
+      <type link="1" name="String"/>
+    </param>
+    <text>Loads a set of dynamic properties from an XML document into this repository. The document should be a shallow
+CDF document with any number of <code>record</code> elements defined under the root <code>data</code> element.
+<p/>
+The following CDF attributes are supported:
+<ul>
+<li>
+          <code>jsxid</code> – the property key, required.</li>
+<li>
+          <code>jsxtext</code> – the property value, required.</li>
+<li>
+          <code>eval</code> – if <code>"1"</code> or <code>"true"</code> the <code>jsxtext</code> attribute
+   is evaluated with JavaScript, optional.</li>
+</ul>
+    </text>
+  </method>
+  <method access="public" id="method:remove" name="remove">
+    <param name="strKey" text="the key of the property to remove.&#10;   ">
+      <type link="1" name="String"/>
+    </param>
+    <text>Removes a property from this repository. The property is removed from all spaces.</text>
+  </method>
+  <method access="public" id="method:removeAllParents" name="removeAllParents">
+    <text>Removes all parent property repositories.
+   </text>
+  </method>
+  <method access="public" id="method:removeParent" name="removeParent">
+    <param name="objParent" text="the parent repository to remove.&#10;   ">
+      <type link="1" name="jsx3.app.Properties"/>
+    </param>
+    <text>Removes a property repository from the set of parent repositories.</text>
+  </method>
+  <method access="public" id="method:set" name="set">
+    <param name="strKey" text="the key of the property to set.">
+      <type link="1" name="String"/>
+    </param>
+    <param name="strValue" text="the value of the property. This value may be &lt;code&gt;null&lt;/code&gt;, in which case&#10;  &lt;code&gt;null&lt;/code&gt; will be stored as the property value. This value may not be &lt;code&gt;undefined&lt;/code&gt;; use&#10;  &lt;code&gt;remove()&lt;/code&gt; to remove a property value.">
+      <type link="1" name="Object"/>
+    </param>
+    <text>Sets a property in this repository in the global space.</text>
+    <see idfk="method:remove" source="jsx3.app.Properties">remove()</see>
+  </method>
+  <method id="method:clone" idfk="method:clone" inherited="1" name="clone" source="jsx3.lang.Object"/>
+  <method id="method:equals" idfk="method:equals" inherited="1" name="equals" source="jsx3.lang.Object"/>
+  <method id="method:eval" idfk="method:eval" inherited="1" name="eval" source="jsx3.lang.Object"/>
+  <method id="method:getClass" idfk="method:getClass" inherited="1" name="getClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOf" idfk="method:getInstanceOf" inherited="1" name="getInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfClass" idfk="method:getInstanceOfClass" inherited="1" name="getInstanceOfClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfPackage" idfk="method:getInstanceOfPackage" inherited="1" name="getInstanceOfPackage" source="jsx3.lang.Object"/>
+  <method id="method:instanceOf" idfk="method:instanceOf" inherited="1" name="instanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isInstanceOf" idfk="method:isInstanceOf" inherited="1" name="isInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isSubclassOf" idfk="method:isSubclassOf" inherited="1" name="isSubclassOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:jsxmix" idfk="method:jsxmix" inherited="1" name="jsxmix" source="jsx3.lang.Object"/>
+  <method id="method:jsxsuper" idfk="method:jsxsuper" inherited="1" name="jsxsuper" source="jsx3.lang.Object"/>
+  <method id="method:jsxsupermix" idfk="method:jsxsupermix" inherited="1" name="jsxsupermix" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:setInstanceOf" idfk="method:setInstanceOf" inherited="1" name="setInstanceOf" source="jsx3.lang.Object"/>
+  <method id="method:toString" idfk="method:toString" inherited="1" name="toString" source="jsx3.lang.Object"/>
+</class>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class access="public" id="class:jsx3.app.PropsBundle" name="jsx3.app.PropsBundle" package="jsx3.app" shortname="PropsBundle" since="3.4&#10; ">
+  <text>A subclass of <code>jsx3.app.Properties</code> that supports localized properties. Using this class, an application
+can define properties for a number of locales but only load the properties necessary to display a particular
+locale. Additionally, this class supports fall-through so that if a property is not defined for a particular locale
+that locale inherits the value from the next most specific locale.
+<p/>
+A properties bundle can consist of one or more XML files. The main file, <i>fileName.ext</i>, contains the
+properties for the default locale, as well as the properties for any number of other locales, and metadata
+indicating what locales are available external to the main file. The format of this file is:
+<pre>
+&lt;data jsxnamespace="propsbundle" locales="<b>externalLocales</b>"&gt;
+  &lt;!-- the default locale --&gt;
+  &lt;locale&gt;
+    &lt;record jsxid="<b>propId</b>" jsxtext="<b>propValue</b>"/&gt;
+    ...
+  &lt;/locale&gt;
+  &lt;!-- additional locales --&gt;
+  &lt;locale key="en_US"&gt;
+    &lt;record jsxid="<b>propId</b>" jsxtext="<b>propValueEnUs</b>"/&gt;
+    ...
+  &lt;/locale&gt;
+  ...
+&lt;/data&gt;
+</pre>
+<i>externalLocales</i> is a comma-separated list of locales that are available for this properties bundle that
+are defined in separate files. By spreading a properties bundle over many files, loading a bundle for a single
+locale is optimized. For each locale, <i>locKey</i>, listed in <i>externalLocales</i>, there must be a file
+<i>fileName.locKey.ext</i> in the same directory as the main bundle file.
+<p/>
+Each external file has the same format as the main file except that the <code>locales</code> attribute of
+the <code>data</code> tag should not be specified. Any number of locales can be defined. The first locale defined
+should be the locale explicit in the name of the file. Only more specific locales should follow this locale.
+For example, file <code>props.es.xml</code>, should start by defining locale <code>es</code> and could continue
+with locales <code>es_ES</code> and <code>es_MX</code> but should not define locales <code>fr</code> or
+<code>de</code>.</text>
+  <superclass id="super:0" loaded="1" name="Object"/>
+  <superclass id="super:1" loaded="1" name="jsx3.lang.Object"/>
+  <superclass direct="1" id="super:2" loaded="1" name="jsx3.app.Properties"/>
+  <method access="public" id="method:getLocale" name="getLocale">
+    <return text="">
+      <type name="jsx3.app.Locale"/>
+    </return>
+    <text>Returns the locale for which this properties object was created. The value returned by this method is the
+value sent to the <code>getProps()</code> method and not necessarily the most specific locale for which the
+properties in this view are defined.</text>
+    <see idfk="smethod:getProps" source="jsx3.app.PropsBundle">getProps()</see>
+  </method>
+  <method access="public" id="method:getPath" name="getPath">
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the base path of this properties bundle.</text>
+  </method>
+  <method access="public" id="smethod:clearCache" name="clearCache" static="1">
+    <param name="strPath" text="if provided, only clear out the documents stored for the resource at path &lt;code&gt;strPath&lt;/code&gt;.">
+      <type link="1" name="String"/>
+    </param>
+    <param name="objCache" text="if provided in addition to &lt;code&gt;strPath&lt;/code&gt;, clear out any documents&#10;   stored in &lt;code&gt;objCache&lt;/code&gt; associated with the resource at path &lt;code&gt;strPath&lt;/code&gt;.&#10;   ">
+      <type link="1" name="jsx3.app.Cache"/>
+    </param>
+    <text>Clears all the data stored in the caches internal to this class. Repeated calls to <code>getProps()</code>
+consult only these caches. If files have changed on disk this method must be called for the return value of
+<code>getProps()</code> to reflect these changes.</text>
+  </method>
+  <method access="public" id="smethod:getProps" name="getProps" static="1">
+    <param name="strBasePath" text="the relative URI to the main properties file.">
+      <type link="1" name="String"/>
+      <type link="1" name="jsx3.net.URI"/>
+    </param>
+    <param name="objLocale" text="the locale for which to load the localized properties. If this is not&#10;   provided, the system locale is used.">
+      <type link="1" name="jsx3.util.Locale"/>
+    </param>
+    <param name="objCache" text="if provided, any loaded XML documents will be placed in this cache.">
+      <type link="1" name="jsx3.app.Cache"/>
+    </param>
+    <return text="">
+      <type link="1" name="jsx3.app.PropsBundle"/>
+    </return>
+    <throws text="if there is an error loading loading the main bundle file or a subordinate file&#10;   promised by the main file.&#10;   ">
+      <type link="1" name="jsx3.lang.Exception"/>
+    </throws>
+    <text>Returns a properties object representing a localized view onto a properties bundle.</text>
+  </method>
+  <method access="public" id="smethod:getPropsAsync" name="getPropsAsync" since="3.6&#10;   " static="1">
+    <param name="strBasePath" text="the relative URI to the main properties file.">
+      <type link="1" name="String"/>
+      <type link="1" name="jsx3.net.URI"/>
+    </param>
+    <param name="objLocale" text="the locale for which to load the localized properties. If this is not&#10;   provided, the system locale is used.">
+      <type link="1" name="jsx3.util.Locale"/>
+    </param>
+    <param name="fctCallback" text="a callback function to call when the properties bundle has loaded.">
+      <type link="1" name="Function"/>
+    </param>
+    <param name="objCache" text="if provided, any loaded XML documents will be placed in this cache.">
+      <type link="1" name="jsx3.app.Cache"/>
+    </param>
+    <return text="">
+      <type link="1" name="jsx3.app.PropsBundle"/>
+    </return>
+    <text>Returns a properties object representing a localized view onto a properties bundle.</text>
+  </method>
+  <method access="public" id="smethod:getPropsFT" name="getPropsFT" static="1">
+    <param name="strBasePath"/>
+    <param name="objLocale"/>
+    <param name="objCache"/>
+    <return text="">
+      <type link="1" name="jsx3.app.PropsBundle"/>
+    </return>
+    <text>The same as <code>getProps()</code> but if there is an error loading the bundle for <code>objLocale</code> then
+try to load the bundle for the root locale and if there is an error doing that, just return an empty properties
+object.</text>
+    <see idfk="smethod:getProps" source="jsx3.app.PropsBundle">getProps()</see>
+  </method>
+  <method id="method:addParent" idfk="method:addParent" inherited="1" name="addParent" source="jsx3.app.Properties"/>
+  <method id="method:containsKey" idfk="method:containsKey" inherited="1" name="containsKey" source="jsx3.app.Properties"/>
+  <method id="method:get" idfk="method:get" inherited="1" name="get" source="jsx3.app.Properties"/>
+  <method id="method:getKeys" idfk="method:getKeys" inherited="1" name="getKeys" source="jsx3.app.Properties"/>
+  <method id="method:getParents" idfk="method:getParents" inherited="1" name="getParents" source="jsx3.app.Properties"/>
+  <method id="method:loadXML" idfk="method:loadXML" inherited="1" name="loadXML" source="jsx3.app.Properties"/>
+  <method id="method:remove" idfk="method:remove" inherited="1" name="remove" source="jsx3.app.Properties"/>
+  <method id="method:removeAllParents" idfk="method:removeAllParents" inherited="1" name="removeAllParents" source="jsx3.app.Properties"/>
+  <method id="method:removeParent" idfk="method:removeParent" inherited="1" name="removeParent" source="jsx3.app.Properties"/>
+  <method id="method:set" idfk="method:set" inherited="1" name="set" source="jsx3.app.Properties"/>
+  <method id="method:clone" idfk="method:clone" inherited="1" name="clone" source="jsx3.lang.Object"/>
+  <method id="method:equals" idfk="method:equals" inherited="1" name="equals" source="jsx3.lang.Object"/>
+  <method id="method:eval" idfk="method:eval" inherited="1" name="eval" source="jsx3.lang.Object"/>
+  <method id="method:getClass" idfk="method:getClass" inherited="1" name="getClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOf" idfk="method:getInstanceOf" inherited="1" name="getInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfClass" idfk="method:getInstanceOfClass" inherited="1" name="getInstanceOfClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfPackage" idfk="method:getInstanceOfPackage" inherited="1" name="getInstanceOfPackage" source="jsx3.lang.Object"/>
+  <method id="method:instanceOf" idfk="method:instanceOf" inherited="1" name="instanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isInstanceOf" idfk="method:isInstanceOf" inherited="1" name="isInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isSubclassOf" idfk="method:isSubclassOf" inherited="1" name="isSubclassOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:jsxmix" idfk="method:jsxmix" inherited="1" name="jsxmix" source="jsx3.lang.Object"/>
+  <method id="method:jsxsuper" idfk="method:jsxsuper" inherited="1" name="jsxsuper" source="jsx3.lang.Object"/>
+  <method id="method:jsxsupermix" idfk="method:jsxsupermix" inherited="1" name="jsxsupermix" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:setInstanceOf" idfk="method:setInstanceOf" inherited="1" name="setInstanceOf" source="jsx3.lang.Object"/>
+  <method id="method:toString" idfk="method:toString" inherited="1" name="toString" source="jsx3.lang.Object"/>
+</class>

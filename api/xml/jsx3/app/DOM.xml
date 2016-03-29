@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class access="public" id="class:jsx3.app.DOM" name="jsx3.app.DOM" package="jsx3.app" shortname="DOM">
+  <text>Registers all DOM nodes in an instance of <code>jsx3.app.Server</code> and publishes related events.
+This class keeps all contained JSX objects indexed on id and name.
+ </text>
+  <superclass id="super:0" loaded="1" name="Object"/>
+  <superclass direct="1" id="super:1" loaded="1" name="jsx3.lang.Object"/>
+  <implements direct="1" id="implements:0" loaded="1" name="jsx3.util.EventDispatcher"/>
+  <constructor access="public" id="method:init" name="init">
+    <text>The instance initializer.
+   </text>
+  </constructor>
+  <field access="public" class="jsx3.app.DOM" final="1" fullname="jsx3.app.DOM.TYPEADD" id="sfield:TYPEADD" name="TYPEADD" static="1" value="0">
+    <type class="Number" link="1" name="int"/>
+    <text> 0</text>
+  </field>
+  <field access="public" class="jsx3.app.DOM" final="1" fullname="jsx3.app.DOM.TYPEREARRANGE" id="sfield:TYPEREARRANGE" name="TYPEREARRANGE" static="1" value="2">
+    <type class="Number" link="1" name="int"/>
+    <text> 2</text>
+  </field>
+  <field access="public" class="jsx3.app.DOM" final="1" fullname="jsx3.app.DOM.TYPEREMOVE" id="sfield:TYPEREMOVE" name="TYPEREMOVE" static="1" value="1">
+    <type class="Number" link="1" name="int"/>
+    <text> 1</text>
+  </field>
+  <method access="public" id="method:add" name="add">
+    <param name="objJSX" text="">
+      <type link="1" name="jsx3.app.Model"/>
+    </param>
+    <text>Adds a JSX object to this DOM and indexes it by its id and name.</text>
+  </method>
+  <method access="public" id="method:destroy" name="destroy">
+    <text>The instance finalizer.
+   </text>
+  </method>
+  <method access="public" id="method:get" name="get">
+    <param name="strId" text="either the id of the object to return or its name.">
+      <type link="1" name="String"/>
+    </param>
+    <return text="the matching DOM object or &lt;code&gt;null&lt;/code&gt; if none found.&#10;   ">
+      <type link="1" name="jsx3.app.Model"/>
+    </return>
+    <text>Looks up a DOM object contained in this DOM by id or name.</text>
+  </method>
+  <method access="public" id="method:getAllByName" name="getAllByName" since="3.2&#10;   ">
+    <param name="strName" text="the name of the objects to return.">
+      <type link="1" name="String"/>
+    </param>
+    <return text="an array of the matching DOM nodes. This return value should not be mutated as&#10;  that will effect the internal functioning of this DOM.">
+      <type link="1" name="Array">
+        <type link="1" name="jsx3.app.Model"/>
+      </type>
+    </return>
+    <text>Returns all the DOM nodes in this DOM with a name of <code>strName</code>. The name index keeps a bucket of
+DOM nodes for each unique name. Therefore, this method performs efficiently.</text>
+    <see idfk="method:getByName" source="jsx3.app.DOM">getByName()</see>
+  </method>
+  <method access="public" id="method:getById" name="getById">
+    <param name="strId" text="the id of the object to return.">
+      <type link="1" name="String"/>
+    </param>
+    <return text="the matching DOM object or &lt;code&gt;null&lt;/code&gt; if none found.&#10;   ">
+      <type link="1" name="jsx3.app.Model"/>
+    </return>
+    <text>Looks up a DOM object contained in this DOM by id.</text>
+  </method>
+  <method access="public" id="method:getByName" name="getByName">
+    <param name="strName" text="the name of the object to return.">
+      <type link="1" name="String"/>
+    </param>
+    <return text="the matching DOM object or &lt;code&gt;null&lt;/code&gt; if none found.">
+      <type link="1" name="jsx3.app.Model"/>
+    </return>
+    <text>Looks up a DOM object contained in this DOM by name. It is left to the developer to specify unique names for
+all DOM nodes that must be accessed in this manner. If more than one DOM nodes exist with a name of
+<code>strName</code> the behavior of this method is undefined.</text>
+    <see idfk="method:getAllByName" source="jsx3.app.DOM">getAllByName()</see>
+  </method>
+  <method access="public" id="method:onChange" name="onChange">
+    <param name="TYPE" text="one of: jsx3.app.DOM.TYPEADD, jsx3.app.DOM.TYPEREMOVE">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <param name="JSXPARENTID" text="id of dom parent">
+      <type link="1" name="String"/>
+    </param>
+    <param name="JSXID" text="id of dom element either added or removed&#10;   ">
+      <type link="1" name="String"/>
+    </param>
+    <text>called when a change to the JSX DOM occurs for this server instance (adopt, load, delete, etc); publishes an event object (javascript object) with the following named properties: subject (jsx3.app.DOM.EVENT_CHANGE); type (jsx3.app.DOM.TYPEADD | jsx3.app.DOM.TYPEREMOVE); parentId (id of JSX parent); jsxId (id of element added or removed)</text>
+  </method>
+  <method access="public" id="method:onNameChange" name="onNameChange">
+    <param name="objJSX" text="">
+      <type link="1" name="jsx3.app.Model"/>
+    </param>
+    <param name="oldName" text="the name before it was changed&#10;   ">
+      <type link="1" name="String"/>
+    </param>
+    <text>A method that must be called after changing the name of a contained DOM node. This method updates the name
+index appropriately.</text>
+  </method>
+  <method access="public" id="method:remove" name="remove">
+    <param name="objJSX" text="">
+      <type link="1" name="jsx3.app.Model"/>
+    </param>
+    <text>Removes a JSX object from this DOM and removes it from the indices.</text>
+  </method>
+  <method access="public" id="smethod:newId" name="newId" static="1">
+    <param name="strNameSpace" text="the application namespace for which to generate the id.">
+      <type link="1" name="String"/>
+    </param>
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>Creates a new unique system id.</text>
+  </method>
+  <method id="method:publish" idfk="method:publish" inherited="1" name="publish" source="jsx3.util.EventDispatcher"/>
+  <method id="method:subscribe" idfk="method:subscribe" inherited="1" name="subscribe" source="jsx3.util.EventDispatcher"/>
+  <method id="method:unsubscribe" idfk="method:unsubscribe" inherited="1" name="unsubscribe" source="jsx3.util.EventDispatcher"/>
+  <method id="method:unsubscribeAll" idfk="method:unsubscribeAll" inherited="1" name="unsubscribeAll" source="jsx3.util.EventDispatcher"/>
+  <method id="method:clone" idfk="method:clone" inherited="1" name="clone" source="jsx3.lang.Object"/>
+  <method id="method:equals" idfk="method:equals" inherited="1" name="equals" source="jsx3.lang.Object"/>
+  <method id="method:eval" idfk="method:eval" inherited="1" name="eval" source="jsx3.lang.Object"/>
+  <method id="method:getClass" idfk="method:getClass" inherited="1" name="getClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOf" idfk="method:getInstanceOf" inherited="1" name="getInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfClass" idfk="method:getInstanceOfClass" inherited="1" name="getInstanceOfClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfPackage" idfk="method:getInstanceOfPackage" inherited="1" name="getInstanceOfPackage" source="jsx3.lang.Object"/>
+  <method id="method:instanceOf" idfk="method:instanceOf" inherited="1" name="instanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isInstanceOf" idfk="method:isInstanceOf" inherited="1" name="isInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isSubclassOf" idfk="method:isSubclassOf" inherited="1" name="isSubclassOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:jsxmix" idfk="method:jsxmix" inherited="1" name="jsxmix" source="jsx3.lang.Object"/>
+  <method id="method:jsxsuper" idfk="method:jsxsuper" inherited="1" name="jsxsuper" source="jsx3.lang.Object"/>
+  <method id="method:jsxsupermix" idfk="method:jsxsupermix" inherited="1" name="jsxsupermix" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:setInstanceOf" idfk="method:setInstanceOf" inherited="1" name="setInstanceOf" source="jsx3.lang.Object"/>
+  <method id="method:toString" idfk="method:toString" inherited="1" name="toString" source="jsx3.lang.Object"/>
+</class>

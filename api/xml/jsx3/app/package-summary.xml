@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package abstract="1" access="public" id="class:jsx3.app" name="jsx3.app">
+  <text>Application layer classes.
+ </text>
+  <nested access="public" id="nested:jsx3.app.AddIn" loaded="1" name="jsx3.app.AddIn" shortname="AddIn" since="3.2&#10; " type="class">
+    <text>A class that represents a JSX add-in.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.app.Cache" loaded="1" name="jsx3.app.Cache" shortname="Cache" type="class">
+    <text>Provides cached access to XML and XSL data.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.app.DOM" loaded="1" name="jsx3.app.DOM" shortname="DOM" type="class">
+    <text>Registers all DOM nodes in an instance of <code>jsx3.app.Server</code> and publishes related events.</text>
+  </nested>
+  <nested abstract="1" access="public" id="nested:jsx3.app.Model" loaded="1" name="jsx3.app.Model" shortname="Model" type="class">
+    <text>The abstract base class that defines the JSX DOM.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.app.Monitor" loaded="1" name="jsx3.app.Monitor" shortname="Monitor" since="3.1&#10; " type="class">
+    <text>A logging handler that can be instantiated per JSX application and displays logging messages in a separate
+browser window while an application is running.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.app.Properties" loaded="1" name="jsx3.app.Properties" shortname="Properties" since="3.2&#10; " type="class">
+    <text>Represents a repository of dynamic properties.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.app.PropsBundle" loaded="1" name="jsx3.app.PropsBundle" shortname="PropsBundle" since="3.4&#10; " type="class">
+    <text>A subclass of <code>jsx3.app.Properties</code> that supports localized properties.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.app.Server" loaded="1" name="jsx3.app.Server" shortname="Server" type="class">
+    <text>The controller of the JSX architecture.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.app.Settings" loaded="1" name="jsx3.app.Settings" shortname="Settings" since="3.0&#10; " type="class">
+    <text>An object oriented interface onto the XML system settings format.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.app.UserSettings" loaded="1" name="jsx3.app.UserSettings" shortname="UserSettings" since="3.0&#10; " type="class">
+    <text>Read-Write per-User settings for a particular GI application (server).</text>
+  </nested>
+</package>

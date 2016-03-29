@@ -1,0 +1,812 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class abstract="1" access="public" id="class:jsx3.app.Model" name="jsx3.app.Model" package="jsx3.app" shortname="Model">
+  <text>The abstract base class that defines the JSX DOM. Instances of this class exist as nodes in a tree, each with
+a single parent and multiple children. This class includes all the methods for querying and manipulating the DOM's
+tree structure, such as <code>getChild()</code>, <code>adoptChild()</code>, <code>getParent()</code>, etc.</text>
+  <superclass id="super:0" loaded="1" name="Object"/>
+  <superclass direct="1" id="super:1" loaded="1" name="jsx3.lang.Object"/>
+  <implements direct="1" id="implements:0" loaded="1" name="jsx3.util.EventDispatcher"/>
+  <subclass id="sub:0" loaded="1" name="jsx3.gui.Painted"/>
+  <subclass id="sub:1" loaded="1" name="jsx3.gui.Window"/>
+  <subclass id="sub:2" loaded="1" name="jsx3.xml.CDFSchema"/>
+  <constructor access="public" id="method:init" name="init">
+    <param name="strName" text="a unique name distinguishing this object from all other JSX GUI objects in the JSX application">
+      <type link="1" name="String"/>
+    </param>
+    <param name="strInstanceOf" text=""/>
+    <text>The instance initializer.</text>
+  </constructor>
+  <field access="public" class="jsx3.app.Model" fullname="jsx3.app.Model.ASYNC_LOAD_TIMEOUT" id="sfield:ASYNC_LOAD_TIMEOUT" name="ASYNC_LOAD_TIMEOUT" since="3.4&#10;   " static="1" value="60000">
+    <type class="Number" link="1" name="int"/>
+    <text> The number of milliseconds before asynchronous component loads time out.</text>
+  </field>
+  <field access="public" class="jsx3.app.Model" fullname="jsx3.app.Model.CIF_VERSION" id="sfield:CIF_VERSION" name="CIF_VERSION" since="3.2&#10;   " static="1" value="&quot;http://xsd.tns.tibco.com/gi/cif/2006&quot;">
+    <type link="1" name="String"/>
+    <text> Minimum supported version CIF formatted serialization files</text>
+  </field>
+  <field access="public" class="jsx3.app.Model" fullname="jsx3.app.Model.CURRENT_VERSION" id="sfield:CURRENT_VERSION" name="CURRENT_VERSION" static="1" value="&quot;urn:tibco.com/v3.0&quot;">
+    <type link="1" name="String"/>
+    <text> Minimum supported version for serialization files
+   </text>
+  </field>
+  <field access="public" class="jsx3.app.Model" final="1" fullname="jsx3.app.Model.LT_NORMAL" id="sfield:LT_NORMAL" name="LT_NORMAL" static="1" value="0">
+    <type class="Number" link="1" name="int"/>
+    <text> The normal load type for a DOM branch. The DOM branch deserializes and paints with its parent.</text>
+  </field>
+  <field access="public" class="jsx3.app.Model" final="1" fullname="jsx3.app.Model.LT_SHOW_DESER" id="sfield:LT_SHOW_DESER" name="LT_SHOW_DESER" since="3.5&#10;   " static="1" value="5">
+    <type class="Number" link="1" name="int"/>
+    <text> Load type indicating that the DOM branch will deserialize and paint as needed when it becomes visible.
+   It is left to subclasses of Model to implement this functionality.</text>
+  </field>
+  <field access="public" class="jsx3.app.Model" final="1" fullname="jsx3.app.Model.LT_SHOW_PAINT" id="sfield:LT_SHOW_PAINT" name="LT_SHOW_PAINT" since="3.5&#10;   " static="1" value="4">
+    <type class="Number" link="1" name="int"/>
+    <text> Load type indicating that the DOM branch will paint as needed when it becomes visible. It is left to
+   subclasses of Model to implement this functionality.</text>
+  </field>
+  <field access="public" class="jsx3.app.Model" final="1" fullname="jsx3.app.Model.LT_SLEEP_DESER" id="sfield:LT_SLEEP_DESER" name="LT_SLEEP_DESER" since="3.5&#10;   " static="1" value="2">
+    <type class="Number" link="1" name="int"/>
+    <text> Load type indicating that the DOM branch will deserialize and paint after its parent deserializes and the
+   call stack resets.</text>
+  </field>
+  <field access="public" class="jsx3.app.Model" final="1" fullname="jsx3.app.Model.LT_SLEEP_PAINT" id="sfield:LT_SLEEP_PAINT" name="LT_SLEEP_PAINT" since="3.5&#10;   " static="1" value="1">
+    <type class="Number" link="1" name="int"/>
+    <text> Load type indicating that the DOM branch will paint after its parent paints and the call stack resets.</text>
+  </field>
+  <field access="public" class="jsx3.app.Model" final="1" fullname="jsx3.app.Model.LT_SLEEP_PD" id="sfield:LT_SLEEP_PD" name="LT_SLEEP_PD" since="3.5&#10;   " static="1" value="3">
+    <type class="Number" link="1" name="int"/>
+    <text> Load type indicating that the DOM branch will deserialize after its parent deserializes and the call stack
+   resets and will paint after its parent paints and the call stack resets.</text>
+  </field>
+  <field access="public" class="jsx3.app.Model" fullname="jsx3.app.Model.META_FIELDS" id="sfield:META_FIELDS" name="META_FIELDS" static="1">
+    <type link="1" name="Object">
+      <type link="1" name="String"/>
+      <type class="Boolean" link="1" name="boolean"/>
+    </type>
+    <text> The allowed meta data fields. See getMetaValue() and setMetaValue().
+   </text>
+  </field>
+  <field access="public" class="jsx3.app.Model" final="1" fullname="jsx3.app.Model.PERSISTEMBED" id="sfield:PERSISTEMBED" name="PERSISTEMBED" static="1" value="1">
+    <type class="Number" link="1" name="int"/>
+    <text> Normal persistance value for a child that will be persisted.</text>
+  </field>
+  <field access="public" class="jsx3.app.Model" final="1" fullname="jsx3.app.Model.PERSISTNONE" id="sfield:PERSISTNONE" name="PERSISTNONE" static="1" value="0">
+    <type class="Number" link="1" name="int"/>
+    <text> Persistance value fora child that is temporarily part of the DOM tree and will not be persisted.</text>
+  </field>
+  <field access="public" class="jsx3.app.Model" final="1" fullname="jsx3.app.Model.PERSISTREF" id="sfield:PERSISTREF" name="PERSISTREF" static="1" value="2">
+    <type class="Number" link="1" name="int"/>
+    <text> Persistance value for a child that exists in an external serialization file and is referenced by URI.</text>
+  </field>
+  <field access="public" class="jsx3.app.Model" final="1" fullname="jsx3.app.Model.PERSISTREFASYNC" id="sfield:PERSISTREFASYNC" name="PERSISTREFASYNC" static="1" value="3">
+    <type class="Number" link="1" name="int"/>
+    <text> Persistance value for a child that exists in an external serialization file and is referenced by URI. The
+  loading of a child with this persistence value will happen asynchronously after the file that references it is
+  loaded.</text>
+  </field>
+  <method access="public" id="method:adoptChild" name="adoptChild">
+    <param name="objChild" text="the child to adopt">
+      <type link="1" name="jsx3.app.Model"/>
+    </param>
+    <param name="bRepaint" text="if &lt;code&gt;true&lt;/code&gt; or &lt;code&gt;null&lt;/code&gt;, the object being adopted will be added to&#10;   the parent's view via the parent's &lt;code&gt;paintChild()&lt;/code&gt; method.&#10;   This parameter is made available for those situations where a loop is executing and multiple&#10;   objects are being adopted.  As view operations are the most CPU intensive, passing &lt;code&gt;false&lt;/code&gt;&#10;   while looping through a collection of child objects to adopt will improve performance. After the&#10;   last child is adopted, simply call &lt;code&gt;repaint()&lt;/code&gt; on the parent to immediately synchronize the view.">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <param name="bForce" text="if true, the adoption is forced, even if the parent/child don't accept such adoptions (&lt;code&gt;onSetChild()&lt;/code&gt; and &lt;code&gt;onSetParent()&lt;/code&gt; will still be called)">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <text>Appends a DOM node to this object after removing the node from its former parent reference. If the node to append
+does not already have a DOM parent, <code>setChild()</code> should be used instead of this method.</text>
+    <see idfk="method:setChild" source="jsx3.app.Model">setChild()</see>
+  </method>
+  <method access="public" id="method:assembleFromXML" name="assembleFromXML" since="3.9">
+    <param name="objElm" text="the serialized representation of this object.">
+      <type link="1" name="jsx3.xml.Entity"/>
+    </param>
+    <return text="&lt;code&gt;true&lt;/code&gt; to deserialize any child objects or &lt;code&gt;false&lt;/code&gt; to ignore them&#10;   (for example if this method performs a custom child deserialization).">
+      <type class="Boolean" link="1" name="boolean"/>
+    </return>
+    <text>Builds this object from its serialized XML representation. Subclasses of Model may override this method
+along with <code>toXMLElm()</code> to control their own serialized form.
+<p/>
+When this method is called this object has already been instantiated but none of its properties have been set.
+This method sets all of its properties. Any children of this object are automatically deserialized after this
+method returns. </text>
+    <see idfk="method:toXMLElm" source="jsx3.app.Model">toXMLElm()</see>
+  </method>
+  <method access="public" id="method:doClone" name="doClone">
+    <param name="intPersist" text="the persistance value of the clone.">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <param name="intMode" text="&lt;code&gt;0&lt;/code&gt; for insert as the last child of the parent of this object and paint,&#10;    &lt;code&gt;1&lt;/code&gt; for insert as the last child of this parent of this object and do not paint, or &lt;code&gt;2&lt;/code&gt;&#10;    for load as a fragment.">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <return text="the clone.">
+      <type link="1" name="jsx3.app.Model"/>
+    </return>
+    <throws text="if this object has no parent DOM node.&#10;   ">
+      <type link="1" name="jsx3.lang.Exception"/>
+    </throws>
+    <text>Creates and returns an exact replica of the object. The clone will be appended as a new child node of this
+object's parent node.</text>
+  </method>
+  <method access="public" id="method:findAncestor" name="findAncestor">
+    <param name="fctTest" text="test function, takes a single &lt;code&gt;jsx3.app.Model&lt;/code&gt; parameter and returns&#10;   &lt;code&gt;true&lt;/code&gt; if the node matches.">
+      <type link="1" name="Function"/>
+    </param>
+    <param name="bIncludeSelf" text="if &lt;code&gt;true&lt;/code&gt;, include this object in the search">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <return text="">
+      <type link="1" name="jsx3.app.Model"/>
+    </return>
+    <text>Returns the first ancestor passing the given test function.</text>
+  </method>
+  <method access="public" id="method:findDescendants" name="findDescendants">
+    <param name="fctTest" text="test function, takes a single &lt;code&gt;jsx3.app.Model&lt;/code&gt; parameter and returns&#10;   &lt;code&gt;true&lt;/code&gt; if the node matches.">
+      <type link="1" name="Function"/>
+    </param>
+    <param name="bDepthFirst" text="specifies whether to do a depth first or breadth first search.">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <param name="bMultiple" text="if &lt;code&gt;true&lt;/code&gt;, return an array of matches, otherwise just the first match.">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <param name="bShallow" text="if &lt;code&gt;true&lt;/code&gt;, only search direct children.">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <param name="bIncludeSelf" text="if &lt;code&gt;true&lt;/code&gt;, include this node in the search.">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <return text="the match (bMultiple = false) or matches (bMultiple = true).&#10;   ">
+      <type link="1" name="jsx3.app.Model"/>
+      <type link="1" name="Array">
+        <type link="1" name="jsx3.app.Model"/>
+      </type>
+    </return>
+    <text>Finds all DOM nodes descending from this DOM node that pass the given test function. Results are guaranteed to be
+returned in order according to the search order used.</text>
+  </method>
+  <method access="public" id="method:getAncestorOfName" name="getAncestorOfName">
+    <param name="strName" text="the name to query on.">
+      <type link="1" name="String"/>
+    </param>
+    <return text="the first ancestor with the given name or &lt;code&gt;null&lt;/code&gt; if none found.&#10;   ">
+      <type link="1" name="jsx3.app.Model"/>
+    </return>
+    <text>Returns the first ancestor with the given name.</text>
+  </method>
+  <method access="public" id="method:getAncestorOfType" name="getAncestorOfType">
+    <param name="strType" text="the fully-qualified class name, class constructor function,&#10;   or &lt;code&gt;jsx3.Class&lt;/code&gt; instance.">
+      <type link="1" name="String"/>
+      <type link="1" name="Function"/>
+      <type link="1" name="jsx3.lang.Class"/>
+    </param>
+    <return text="the first ancestor of the given type or &lt;code&gt;null&lt;/code&gt; if none found.&#10;   ">
+      <type link="1" name="jsx3.app.Model"/>
+    </return>
+    <text>Returns the first ancestor of the given type.</text>
+  </method>
+  <method access="public" id="method:getChild" name="getChild">
+    <param name="vntIndexOrName" text="either the integer index or the string name of the child.">
+      <type class="Number" link="1" name="int"/>
+      <type link="1" name="String"/>
+    </param>
+    <return text="the child at the given index or with the given name, or &lt;code&gt;null&lt;/code&gt; if no such&#10;    child exists.&#10;   ">
+      <type link="1" name="jsx3.app.Model"/>
+    </return>
+    <text>Returns the child DOM node of this node at the given index or with the given name. If a name is supplied, the
+children are searched in order and the first matching child is returned.</text>
+  </method>
+  <method access="public" id="method:getChildIndex" name="getChildIndex">
+    <return text="the index or &lt;code&gt;-1&lt;/code&gt; if this object does not have a parent.&#10;   ">
+      <type class="Number" link="1" name="int"/>
+    </return>
+    <text>Returns the zero-based index for this DOM node in relation to its siblings.</text>
+  </method>
+  <method access="public" id="method:getChildren" name="getChildren">
+    <return text="">
+      <type link="1" name="Array">
+        <type link="1" name="jsx3.app.Model"/>
+      </type>
+    </return>
+    <text>Returns an array containing all the child DOM nodes of this object. The return value is the original array rather
+than a copy and should not be modified.</text>
+  </method>
+  <method access="public" id="method:getDescendantOfName" name="getDescendantOfName">
+    <param name="strName" text="the name to query on.">
+      <type link="1" name="String"/>
+    </param>
+    <param name="bDepthFirst" text="specifies whether to do a depth first or breadth first search.">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <param name="bChildOnly" text="if &lt;code&gt;true&lt;/code&gt;, only search the children of this DOM node.">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <return text="the descendant with the given name or &lt;code&gt;null&lt;/code&gt; if none found.&#10;   ">
+      <type link="1" name="jsx3.app.Model"/>
+    </return>
+    <text>Finds the first descendant of this DOM node with a the given name.</text>
+  </method>
+  <method access="public" id="method:getDescendantsOfType" name="getDescendantsOfType">
+    <param name="strType" text="the fully-qualified class name, class constructor function,&#10;   or &lt;code&gt;jsx3.Class&lt;/code&gt; instance.">
+      <type link="1" name="String"/>
+      <type link="1" name="Function"/>
+      <type link="1" name="jsx3.lang.Class"/>
+    </param>
+    <param name="bShallow" text="if &lt;code&gt;true&lt;/code&gt;, only search direct children, not all descendants.">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <return text="an array of matching descendants&#10;   ">
+      <type link="1" name="Array">
+        <type link="1" name="jsx3.app.Model"/>
+      </type>
+    </return>
+    <text>Finds all descendants of the given type.</text>
+  </method>
+  <method access="public" id="method:getDynamicProperty" name="getDynamicProperty">
+    <param name="strName" text="property on this GUI object that will now use a dynamic property (e.g., 'jsxleft','jsxtop','jsxheight',etc.);">
+      <type link="1" name="String"/>
+    </param>
+    <return text="value of the property&#10;   ">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the value of the dynamic property @strPropName; if not found, returns null</text>
+  </method>
+  <method access="public" id="method:getFirstChild" name="getFirstChild">
+    <return text="">
+      <type link="1" name="jsx3.app.Model"/>
+    </return>
+    <text>Returns the first child.</text>
+  </method>
+  <method access="public" id="method:getFirstChildOfType" name="getFirstChildOfType">
+    <param name="strType" text="the fully-qualified class name, class constructor function,&#10;   or &lt;code&gt;jsx3.Class&lt;/code&gt; instance.">
+      <type link="1" name="String"/>
+      <type link="1" name="Function"/>
+      <type link="1" name="jsx3.lang.Class"/>
+    </param>
+    <param name="bExact" text="if &lt;code&gt;true&lt;/code&gt; then only return objects whose class is exactly &lt;code&gt;strType&lt;/code&gt;&#10;   (rather than returning subclasses too).">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <return text="the child of the given type or &lt;code&gt;null&lt;/code&gt; if none found.&#10;   ">
+      <type link="1" name="jsx3.app.Model"/>
+    </return>
+    <text>Finds the first child of the given type.</text>
+  </method>
+  <method access="public" id="method:getHelpId" name="getHelpId" since="3.5">
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the help ID of this object.</text>
+    <see idfk="sfield:HELP" source="jsx3.app.Server">jsx3.app.Server.HELP</see>
+  </method>
+  <method access="public" id="method:getId" name="getId">
+    <return text="JSX id&#10;   ">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the custom JSX-generated id for the object (i.e., _jsx2384098324509823049).</text>
+  </method>
+  <method access="public" id="method:getLastChild" name="getLastChild">
+    <return text="">
+      <type link="1" name="jsx3.app.Model"/>
+    </return>
+    <text>Returns the last child.</text>
+  </method>
+  <method access="public" id="method:getLoadType" name="getLoadType" since="3.5&#10;   ">
+    <return text="&lt;code&gt;LT_NORMAL&lt;/code&gt;, &lt;code&gt;LT_SLEEP_PAINT&lt;/code&gt;, &lt;code&gt;LT_SLEEP_DESER&lt;/code&gt;,&#10;   &lt;code&gt;LT_SLEEP_PD&lt;/code&gt;, &lt;code&gt;LT_SHOW_PAINT&lt;/code&gt;, or &lt;code&gt;LT_SHOW_DESER&lt;/code&gt;.">
+      <type class="Number" link="1" name="int"/>
+    </return>
+    <text>Returns the load type of this DOM node and the descending branch. The load type determines how this DOM branch
+deserializes and paints in relation to its parent DOM node.</text>
+    <see idfk="sfield:LT_NORMAL" source="jsx3.app.Model">LT_NORMAL</see>
+    <see idfk="sfield:LT_SLEEP_PAINT" source="jsx3.app.Model">LT_SLEEP_PAINT</see>
+    <see idfk="sfield:LT_SLEEP_DESER" source="jsx3.app.Model">LT_SLEEP_DESER</see>
+    <see idfk="sfield:LT_SLEEP_PD" source="jsx3.app.Model">LT_SLEEP_PD</see>
+    <see idfk="sfield:LT_SHOW_PAINT" source="jsx3.app.Model">LT_SHOW_PAINT</see>
+    <see idfk="sfield:LT_SHOW_DESER" source="jsx3.app.Model">LT_SHOW_DESER</see>
+  </method>
+  <method access="public" id="method:getMetaValue" name="getMetaValue">
+    <param name="strKey" text="the name of the meta data field, one of the keys in &lt;code&gt;META_FIELDS&lt;/code&gt;.">
+      <type link="1" name="String"/>
+    </param>
+    <return text="the meta data value or empty string.">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns one of the meta data values stored at the top of the serialization file that this object was loaded from.</text>
+    <see idfk="sfield:META_FIELDS" source="jsx3.app.Model">META_FIELDS</see>
+  </method>
+  <method access="public" id="method:getNS" name="getNS">
+    <return text="the namespace of the server that owns this object instance.&#10;   ">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the namespace that distinguishes this object's server (owner) from other server instances. The namespace
+is set when this object is bound to a DOM tree.</text>
+  </method>
+  <method access="public" id="method:getName" name="getName">
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the custom developer-defined name of this object.</text>
+  </method>
+  <method access="public" id="method:getNextSibling" name="getNextSibling">
+    <return text="">
+      <type link="1" name="jsx3.app.Model"/>
+    </return>
+    <text>Returns the next sibling.</text>
+  </method>
+  <method access="public" final="1" id="method:getParent" name="getParent">
+    <return text="">
+      <type link="1" name="jsx3.app.Model"/>
+    </return>
+    <text>Returns the parent DOM node of this object.</text>
+  </method>
+  <method access="public" id="method:getPersistence" name="getPersistence">
+    <return text="one of &lt;code&gt;PERSISTNONE&lt;/code&gt;, &lt;code&gt;PERSISTEMBED&lt;/code&gt;, &lt;code&gt;PERSISTREF&lt;/code&gt;,&#10;   &lt;code&gt;PERSISTREFASYNC&lt;/code&gt;.">
+      <type class="Number" link="1" name="int"/>
+    </return>
+    <text>Returns the persistence bit for this model object.</text>
+    <see idfk="sfield:PERSISTNONE" source="jsx3.app.Model">PERSISTNONE</see>
+    <see idfk="sfield:PERSISTEMBED" source="jsx3.app.Model">PERSISTEMBED</see>
+    <see idfk="sfield:PERSISTREF" source="jsx3.app.Model">PERSISTREF</see>
+    <see idfk="sfield:PERSISTREFASYNC" source="jsx3.app.Model">PERSISTREFASYNC</see>
+  </method>
+  <method access="public" id="method:getPreviousSibling" name="getPreviousSibling">
+    <return text="">
+      <type link="1" name="jsx3.app.Model"/>
+    </return>
+    <text>Returns the previous sibling.</text>
+  </method>
+  <method access="public" id="method:getServer" name="getServer">
+    <return text="">
+      <type link="1" name="jsx3.app.Server"/>
+    </return>
+    <text>Returns an object reference to the server that owns this object. This method returns <code>null</code> if this
+object is part of a DOM fragment. Until an object is added to a DOM tree by passing it as the parameter to
+<code>setChild()</code>, the object will be a DOM fragment.</text>
+  </method>
+  <method access="public" id="method:getUriResolver" name="getUriResolver">
+    <return text="">
+      <type link="1" name="jsx3.net.URIResolver"/>
+    </return>
+    <text>Returns the URI resolver for this DOM node. This method returns the server of this object unless this node
+or its ancestor was loaded into the DOM with an explicit URI resolver.</text>
+  </method>
+  <method access="public" id="method:insertBefore" name="insertBefore">
+    <param name="objMoveChild" text="the one being moved. Can belong to this object, another object, or can be a GUI fragment">
+      <type link="1" name="jsx3.app.Model"/>
+    </param>
+    <param name="objPrecedeChild" text="the one to insert before">
+      <type link="1" name="jsx3.app.Model"/>
+    </param>
+    <param name="bRepaint" text="if &lt;code&gt;false&lt;/code&gt; the repaint will be suppressed (useful for multiple obejct updates&#10;   that would lead to unnecessary updates to the VIEW)">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <return text="true if successful&#10;   ">
+      <type class="Boolean" link="1" name="boolean"/>
+    </return>
+    <text>Assigns objMoveChild as the previousSibling of objPrecedeChild</text>
+  </method>
+  <method access="public" id="method:load" name="load">
+    <param name="strURL" text="URL (either relative or absolute) of the serialization file to deserialize.&#10;   This URL is resolved relative to &lt;code&gt;objResolver&lt;/code&gt;, if provided, or the URI resolver of this DOM node.">
+      <type link="1" name="String"/>
+      <type link="1" name="jsx3.net.URI"/>
+    </param>
+    <param name="bRepaint" text="if &lt;code&gt;true&lt;/code&gt; or &lt;code&gt;null&lt;/code&gt; the deserialized objects will be&#10;   added to the parent's view via the parent object's &lt;code&gt;paintChild()&lt;/code&gt; method.">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <param name="objResolver" text="If this parameter is provided, &lt;code&gt;strURL&lt;/code&gt; is resolved&#10;   relative to it. Additionally, this resolver is stored as the URI resolver for this DOM node and its descendants.">
+      <type link="1" name="jsx3.net.URIResolver"/>
+    </param>
+    <return text="the deserialized object. A serialization file may specify more than one root&#10;   object, in which case this method returns the first deserialized object.">
+      <type link="1" name="jsx3.app.Model"/>
+    </return>
+    <throws text="if &lt;code&gt;strURL&lt;/code&gt; is not the URL of a valid XML document.">
+      <type link="1" name="jsx3.lang.Exception"/>
+    </throws>
+    <text>Deserializes a JSX serialization file and appends the deserialized objects as children of this DOM node.</text>
+    <see idfk="method:getUriResolver" source="jsx3.app.Model">getUriResolver()</see>
+  </method>
+  <method access="public" id="method:loadAndCache" name="loadAndCache">
+    <param name="strURL" text="URL (either relative or absolute) of the serialization file to deserialize.&#10;   This URL is resolved relative to &lt;code&gt;objResolver&lt;/code&gt;, if provided, or the URI resolver of this DOM node.">
+      <type link="1" name="String"/>
+      <type link="1" name="jsx3.net.URI"/>
+    </param>
+    <param name="bRepaint" text="if &lt;code&gt;true&lt;/code&gt; or &lt;code&gt;null&lt;/code&gt; the deserialized objects will be&#10;   added to the parent's view via the parent object's &lt;code&gt;paintChild()&lt;/code&gt; method.">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <param name="objCache" text="the cache to store the component XML documents in. If not provided, the cache&#10;   of the server of this model object is used.">
+      <type link="1" name="jsx3.app.Cache"/>
+    </param>
+    <param name="objResolver" text="If this parameter is provided, &lt;code&gt;strURL&lt;/code&gt; is resolved&#10;   relative to it. Additionally, this resolver is stored as the URI resolver for this DOM node and its descendants.">
+      <type link="1" name="jsx3.net.URIResolver"/>
+    </param>
+    <return text="the deserialized object. A serialization file may specify more than one root&#10;   object, in which case this method returns the first deserialized object.">
+      <type link="1" name="jsx3.app.Model"/>
+    </return>
+    <throws text="if &lt;code&gt;strURL&lt;/code&gt; is not the URL of a valid XML document.&#10;   ">
+      <type link="1" name="jsx3.lang.Exception"/>
+    </throws>
+    <text>Loads a component file and caches the document in an XML cache. If the component file already exists in the cache
+then it is loaded from the cache. All component files loaded as a result of this call (referenced files) are also
+cached. This method is a useful replacement for <code>load()</code> when the same URL will be loaded multiple
+times in one application.</text>
+    <see idfk="method:load" source="jsx3.app.Model">load()</see>
+    <see idfk="method:getUriResolver" source="jsx3.app.Model">getUriResolver()</see>
+  </method>
+  <method access="public" id="method:loadXML" name="loadXML">
+    <param name="strXML" text="the XML content of a JSX serialization file.">
+      <type link="1" name="String"/>
+      <type link="1" name="jsx3.xml.Document"/>
+    </param>
+    <param name="bRepaint" text="if &lt;code&gt;true&lt;/code&gt; or &lt;code&gt;null&lt;/code&gt; the deserialized objects will be&#10;   added to the parent's view via the parent object's &lt;code&gt;paintChild()&lt;/code&gt; method.">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <param name="objResolver" text="">
+      <type link="1" name="jsx3.net.URIResolver"/>
+    </param>
+    <return text="the deserialized object. A serialization file may specify more than one root&#10;   object, in which case this method returns the first deserialized object.">
+      <type link="1" name="jsx3.app.Model"/>
+    </return>
+    <throws text="if &lt;code&gt;strXML&lt;/code&gt; is not a valid XML document.&#10;   ">
+      <type link="1" name="jsx3.lang.Exception"/>
+    </throws>
+    <text>Deserializes a JSX serialization file and appends the deserialized objects as children of this DOM node.</text>
+  </method>
+  <method access="protected" id="method:onAfterAssemble" name="onAfterAssemble">
+    <param name="objParent" text="the parent of this object once it is attached to the DOM.">
+      <type link="1" name="jsx3.app.Model"/>
+    </param>
+    <param name="objServer" text="the server that this DOM object will attach to.">
+      <type link="1" name="jsx3.app.Server"/>
+    </param>
+    <text>Called during deserialization of this object. This method provides a hook for initializing
+an object during deserialization since init() is not called. Called after this object has been instantiated and
+after its fields and children have been assembled.This method is called before this object is attached to the
+DOM, therefore <code>getParent()</code>, <code>getServer()</code>, <code>getXML()</code>, etc. return <code>null</code>.</text>
+  </method>
+  <method access="protected" id="method:onAfterAttach" name="onAfterAttach">
+    <text>Called during deserialization of this object. This method provides a hook for initializing
+an object during deserialization since <code>init()</code> is not called. Called after this object has been
+instantiated and after it has been attached to the DOM. Methods overriding this method should usually begin
+with a call to <code>jsxsuper()</code>.
+<p/>
+When a new branch is attached to the DOM, this method is executed on each node in the branch. The order is
+reverse-breadth-first meaning that child nodes are notified from oldest to youngest and before the parent node.
+<p/>
+This implementation of this method executes the on-after-deserialize script of this object.</text>
+  </method>
+  <method access="protected" id="method:onBeforeAssemble" name="onBeforeAssemble">
+    <param name="objParent" text="the parent of this object once it is attached to the DOM.">
+      <type link="1" name="jsx3.app.Model"/>
+    </param>
+    <param name="objServer" text="the server that this DOM object will attach to.">
+      <type link="1" name="jsx3.app.Server"/>
+    </param>
+    <text>Called during deserialization of this object. This method provides a hook for initializing
+an object during deserialization since init() is not called. Called after this object has been instantiated but
+before its fields and children have been assembled. This method is called before this object is attached to the
+DOM, therefore <code>getParent()</code>, <code>getServer()</code>, <code>getXML()</code>, etc. return <code>null</code>.</text>
+  </method>
+  <method access="protected" id="method:onChangeServer" name="onChangeServer" since="3.5&#10;   ">
+    <param name="objNewServer" text="">
+      <type link="1" name="jsx3.app.Server"/>
+    </param>
+    <param name="objOldServer" text="">
+      <type link="1" name="jsx3.app.Server"/>
+    </param>
+    <text>Called when the server owning this DOM node changes.</text>
+  </method>
+  <method access="public" id="method:onChildAdded" name="onChildAdded" since="3.7&#10;   ">
+    <param name="objChild" text="the added child.">
+      <type name="jsx3.gui.Model"/>
+    </param>
+    <text>Hook that notifies the model object that a child has been added to it.</text>
+  </method>
+  <method access="protected" id="method:onDestroy" name="onDestroy">
+    <param name="objParent" text="reference to the former parent">
+      <type link="1" name="jsx3.app.Model"/>
+    </param>
+    <text>The finalizer method. This method provides a hook for subclasses of this class to perform custom logic
+when an instance of this class is removed from the DOM. Methods that override this method should begin with
+a call to <code>jsxsuper()</code>.
+<p/>
+Note that this method is called after this object has been removed from the DOM tree. Therefore
+<code>this.getParent()</code> and <code>this.getServer()</code> will return <code>null</code>. Use the
+<code>objParent</code> parameter for access to the DOM tree.</text>
+  </method>
+  <method access="protected" id="method:onRemoveChild" name="onRemoveChild">
+    <param name="objChild" text="the child that was removed">
+      <type link="1" name="jsx3.app.Model"/>
+      <type link="1" name="Array">
+        <type link="1" name="jsx3.app.Model"/>
+      </type>
+    </param>
+    <param name="intIndex" text="the index of the removed child">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <text>Hook that notifies this model object that one of its children has been removed. This hook exists simply to allow
+this object to perform cleanup/re-render, and does not provide a veto mechanism. This method is called after
+the child has been removed from the model (<code>this.getChildren()</code> does not contain <code>objChild</code>)
+and after the child has been removed from the view (<code>objChild.getRendered()</code> is also null).
+<p/>
+This method is only called if the child is being removed from the DOM but this object (the parent) is not
+being removed. Therefore, this hook cannot be relied upon for garbage collection.
+<p/>
+If <code>removeChildren()</code> is called on this object, this hook is called exactly once after all children
+have been removed. In that case, the first parameter to this method will be the array of children and the
+second parameter will be <code>null</code>.
+<p/>
+In general a method overriding this method should begin by calling <code>jsxsuper</code>.</text>
+  </method>
+  <method access="protected" id="method:onSetChild" name="onSetChild">
+    <param name="objChild"/>
+    <return text="true to allow the set, false to veto">
+      <type class="Boolean" link="1" name="boolean"/>
+    </return>
+    <text>Hook that allows for a prospective parent DOM node to veto the adoption of a child.</text>
+  </method>
+  <method access="protected" id="method:onSetParent" name="onSetParent">
+    <param name="objParent"/>
+    <return text="true to allow the set, false to veto">
+      <type class="Boolean" link="1" name="boolean"/>
+    </return>
+    <text>Hook that allows for a prospective child DOM node to veto its adoption by a parent. This method is only called if
+the prospective parent has not already vetoed the adoption in the <code>onSetChild()</code> method.</text>
+  </method>
+  <method access="public" id="method:removeChild" name="removeChild">
+    <param name="vntItem" text="either the index of the child to remove or the child itself.">
+      <type class="Number" link="1" name="int"/>
+      <type link="1" name="jsx3.app.Model"/>
+    </param>
+    <return text="this object">
+      <type link="1" name="jsx3.app.Model"/>
+    </return>
+    <text>Removes a DOM child from this object. This method removes the on-screen DHTML of the removed object. The removed
+child will be completely derefenced from the DOM and will be prepped for garbage collection. If a DOM child must
+continue to exist after removing it from this parent, <code>adoptChild()</code> should be used instead of this
+method.</text>
+    <see idfk="method:adoptChild" source="jsx3.app.Model">adoptChild()</see>
+  </method>
+  <method access="public" id="method:removeChildren" name="removeChildren">
+    <param name="arrChildren" text="the children to remove. If this parameter is not provided then all&#10;  children are removed.">
+      <type link="1" name="Array">
+        <typeor>
+          <type class="Number" link="1" name="int"/>
+          <type link="1" name="jsx3.app.Model"/>
+        </typeor>
+      </type>
+    </param>
+    <return text="this object.">
+      <type link="1" name="jsx3.app.Model"/>
+    </return>
+    <text>Removes some or all children of this object.</text>
+    <see idfk="method:removeChild" source="jsx3.app.Model">removeChild()</see>
+  </method>
+  <method access="public" id="method:selectDescendants" name="selectDescendants" since="3.8&#10;   ">
+    <param name="strExpr" text="the selection query">
+      <type link="1" name="String"/>
+    </param>
+    <param name="bSingle" text="if &lt;code&gt;true&lt;/code&gt;, return only the first match.">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <return text="">
+      <type link="1" name="Array">
+        <type link="1" name="jsx3.app.Model"/>
+      </type>
+      <type link="1" name="jsx3.app.Model"/>
+    </return>
+    <throws text="if &lt;code&gt;strExpr&lt;/code&gt; is an invalid selection query.">
+      <type link="1" name="jsx3.lang.IllegalArgumentException"/>
+    </throws>
+    <text>Select objects from the DOM using a CSS3-like selection syntax. This method considers the DOM tree whose
+root is this object. The following constructs are supported:
+<ul>
+  <li>
+          <code>jsx3_gui_ClassName</code> - matches objects by their exact class. Replace "." with "_" in the selector.</li>
+  <li>
+          <code>*</code> - matches any object</li>
+  <li>
+          <code>#id</code> - matches objects whose name equals <code>id</code>
+        </li>
+  <li>
+          <code>.class-name</code> - matches objects for which <code>getClassName()</code> is defined and returns a
+     string that contains the token <code>class-name</code>
+        </li>
+  <li>
+          <code>:first</code> and <code>:last</code> - matches objects that are their parents' first and last children</li>
+  <li>
+          <code>:nth(n)</code> and <code>nth-child(n)</code> - matches objects whose child index is equal to <code>n</code>
+        </li>
+  <li>
+          <code>:instanceof(ClassName)</code> - matches objects that are instances of the class or interface <code>ClassName</code>
+        </li>
+  <li>
+          <code>[prop="value"]</code> and <code>[prop*="value"]</code> - matches objects whose value for field
+     <code>prop</code> equals <code>value</code>
+        </li> or, with "*", contains <code>value</code>. The quotes around <code>value</code> are optional.
+  <li>
+          <code>[getter()="value"]</code> and <code>[getter()*="value"]</code> - matches objects whose return value for
+     method <code>getter</code> equals <code>value</code>
+        </li> or, with "*", contains <code>value</code>. The quotes around <code>value</code> are optional.
+  <li>
+          <code>AB</code> - matches objects that match both A and B</li>
+  <li>
+          <code>A B</code> - matches descendants of objects matching A that match B</li>
+  <li>
+          <code>A &gt; B</code> - matches immediate children of objects matching A that match B</li>
+</ul>
+</text>
+  </method>
+  <method access="public" id="method:setChild" name="setChild">
+    <param name="objChild" text="the root node of a DOM fragment.">
+      <type link="1" name="jsx3.app.Model"/>
+    </param>
+    <param name="intPersist" text="defines how the child will be persisted/serialized. The valid values are the four&#10;   persistence values defined as static fields in this class.">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <param name="strSourceURL" text="the path to the serialization file where the child exists. This parameter is only&#10;   relevant if the given &lt;code&gt;intPersist&lt;/code&gt; is &lt;code&gt;PERSISTREF&lt;/code&gt; or &lt;code&gt;PERSISTREFASYNC&lt;/code&gt;.">
+      <type link="1" name="String"/>
+      <type link="1" name="jsx3.net.URI"/>
+    </param>
+    <param name="strNS" text="the namespace of the child to append. This parameter is normally not required but is useful&#10;   when sharing DOM nodes between servers with different namespaces.">
+      <type link="1" name="String"/>
+    </param>
+    <return text="this object or &lt;code&gt;false&lt;/code&gt; if the set was vetoed">
+      <type link="1" name="jsx3.app.Model"/>
+      <type class="Boolean" link="1" name="boolean"/>
+    </return>
+    <throws text="if this object is part of a DOM fragment (the namespace is null) and the&#10;   &lt;code&gt;strNS&lt;/code&gt; parameter is not specified.">
+      <type link="1" name="jsx3.lang.Exception"/>
+    </throws>
+    <text>Appends a child DOM node to this parent DOM node. If the child already has a parent, <code>adoptChild()</code>
+should be used instead to ensure that the child is removed from its current parent.</text>
+    <see idfk="method:adoptChild" source="jsx3.app.Model">adoptChild()</see>
+    <see idfk="sfield:PERSISTNONE" source="jsx3.app.Model">PERSISTNONE</see>
+    <see idfk="sfield:PERSISTEMBED" source="jsx3.app.Model">PERSISTEMBED</see>
+    <see idfk="sfield:PERSISTREF" source="jsx3.app.Model">PERSISTREF</see>
+    <see idfk="sfield:PERSISTREFASYNC" source="jsx3.app.Model">PERSISTREFASYNC</see>
+  </method>
+  <method access="public" id="method:setDynamicProperty" name="setDynamicProperty">
+    <param name="strName" text="property on this GUI object that will now use a dynamic property (e.g., 'jsxleft','jsxtop','jsxheight',etc.);">
+      <type link="1" name="String"/>
+    </param>
+    <param name="strValue" text="name of a dynamic style, whose value will be used">
+      <type link="1" name="String"/>
+    </param>
+    <param name="bNoSave" text="When &lt;code&gt;true&lt;/code&gt;, this dynamic property will not be serialized with the object.">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <return text="this object&#10;   ">
+      <type link="1" name="jsx3.gui.Painted"/>
+    </return>
+    <text>Assigns a dynamic property to one of this object's instance properties.</text>
+  </method>
+  <method access="public" id="method:setHelpId" name="setHelpId" since="3.5">
+    <param name="strId" text="">
+      <type link="1" name="String"/>
+    </param>
+    <text>Sets the help ID of this object.</text>
+    <see idfk="sfield:HELP" source="jsx3.app.Server">jsx3.app.Server.HELP</see>
+  </method>
+  <method access="public" id="method:setLoadType" name="setLoadType" since="3.5&#10;   ">
+    <param name="intLoadType" text="&lt;code&gt;LT_NORMAL&lt;/code&gt;, &lt;code&gt;LT_SLEEP_PAINT&lt;/code&gt;, &lt;code&gt;LT_SLEEP_DESER&lt;/code&gt;,&#10;   &lt;code&gt;LT_SLEEP_PD&lt;/code&gt;, &lt;code&gt;LT_SHOW_PAINT&lt;/code&gt;, or &lt;code&gt;LT_SHOW_DESER&lt;/code&gt;.">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <text>Sets the load type of this DOM node and the descending branch.</text>
+    <see idfk="method:getLoadType" source="jsx3.app.Model">getLoadType()</see>
+  </method>
+  <method access="public" id="method:setMetaValue" name="setMetaValue">
+    <param name="strKey" text="the name of the meta data field, one of the keys in &lt;code&gt;META_FIELDS&lt;/code&gt;">
+      <type link="1" name="String"/>
+    </param>
+    <param name="strValue" text="the new value of the meta data field.">
+      <type link="1" name="String"/>
+    </param>
+    <text>setS one of the meta data values stored at the top of a component's serialization file.</text>
+    <see idfk="sfield:META_FIELDS" source="jsx3.app.Model">META_FIELDS</see>
+  </method>
+  <method access="public" id="method:setName" name="setName">
+    <param name="strName" text="a name unique among all DOM nodes currently loaded in the application.&#10;   ">
+      <type link="1" name="String"/>
+    </param>
+    <text>Sets the custom developer-defined name of this object.</text>
+  </method>
+  <method access="public" id="method:setPersistence" name="setPersistence">
+    <param name="intPersist" text="one of &lt;code&gt;PERSISTNONE&lt;/code&gt;, &lt;code&gt;PERSISTEMBED&lt;/code&gt;, &lt;code&gt;PERSISTREF&lt;/code&gt;,&#10;   &lt;code&gt;PERSISTREFASYNC&lt;/code&gt;.">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <return text="this object">
+      <type link="1" name="jsx3.app.Model"/>
+    </return>
+    <text>Sets the persistence bit for this model object.</text>
+    <see idfk="sfield:PERSISTNONE" source="jsx3.app.Model">PERSISTNONE</see>
+    <see idfk="sfield:PERSISTEMBED" source="jsx3.app.Model">PERSISTEMBED</see>
+    <see idfk="sfield:PERSISTREF" source="jsx3.app.Model">PERSISTREF</see>
+    <see idfk="sfield:PERSISTREFASYNC" source="jsx3.app.Model">PERSISTREFASYNC</see>
+  </method>
+  <method access="public" id="method:toString" name="toString">
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns a string representation of this object.</text>
+    <overrides id="overrides:toString" idfk="method:toString" name="toString" source="jsx3.lang.Object"/>
+  </method>
+  <method access="public" id="method:toXML" name="toXML">
+    <param name="objProperties" text="name-value pairs that affect the serialization. See&#10;  &lt;code&gt;toXMLDoc()&lt;/code&gt; for a description.">
+      <type link="1" name="Object">
+        <type link="1" name="String"/>
+        <type link="1" name="String"/>
+      </type>
+    </param>
+    <return text="this object serialized as an XML string.">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns this object serialized as XML by calling <code>toString()</code> on the result of <code>toXMLDoc()</code>
+called on this object.</text>
+    <see idfk="method:toXMLDoc" source="jsx3.app.Model">toXMLDoc()</see>
+  </method>
+  <method access="public" id="method:toXMLDoc" name="toXMLDoc">
+    <param name="objProperties" text="name-value pairs that affect the serialization. See above for&#10;  valid names and how they affect serialization.">
+      <type link="1" name="Object">
+        <type link="1" name="String"/>
+        <type link="1" name="String"/>
+      </type>
+    </param>
+    <return text="this object serialized as an XML document.&#10;   ">
+      <type link="1" name="jsx3.xml.Document"/>
+    </return>
+    <text>Serializes this object as an XML document.
+<p/>
+The <code>objProperties</code> parameter may include the following keys:
+<ul>
+  <li>onafter {String} - the value of the <code>onAfterDeserialize</code> element</li>
+  <li>onbefore {String} - the value of the <code>onBeforeDeserialize</code> element</li>
+  <li>name {String} - the value of the <code>name</code> element</li>
+  <li>icon {String} - the value of the <code>icon</code> element</li>
+  <li>description {String} - the value of the <code>description</code> element</li>
+  <li>children {boolean} - if <code>true</code> the children of this object, rather than this object, are
+         serialized</li>
+  <li>persistall {boolean} - if <code>true</code> all descendants with persistence PERSISTNONE are included in the
+         serialization</li>
+</ul>
+    </text>
+  </method>
+  <method access="public" id="method:toXMLElm" name="toXMLElm" since="3.9&#10;   ">
+    <param name="objXML" text="">
+      <type link="1" name="jsx3.xml.Document"/>
+    </param>
+    <param name="objProperties" text="the same object passed to &lt;code&gt;toXMLDoc()&lt;/code&gt;.">
+      <type link="1" name="Object"/>
+    </param>
+    <return text="">
+      <type link="1" name="jsx3.xml.Entity"/>
+    </return>
+    <text>Serializes this object as an XML node in the XML document <code>objXML</code>. This method can be
+overridden by subclasses of <code>Model</code> that want to provide their own serialized form. However,
+this method should at least return the node &lt;object type="pkg.Class"/&gt; in order to be compatible with
+deserialization. </text>
+    <see idfk="method:toXMLDoc" source="jsx3.app.Model">toXMLDoc()</see>
+  </method>
+  <method access="public" deprecated="1" id="smethod:getVersion" name="getVersion" static="1">
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the release/build for the class (i.e., "3.0.00")</text>
+  </method>
+  <method id="method:publish" idfk="method:publish" inherited="1" name="publish" source="jsx3.util.EventDispatcher"/>
+  <method id="method:subscribe" idfk="method:subscribe" inherited="1" name="subscribe" source="jsx3.util.EventDispatcher"/>
+  <method id="method:unsubscribe" idfk="method:unsubscribe" inherited="1" name="unsubscribe" source="jsx3.util.EventDispatcher"/>
+  <method id="method:unsubscribeAll" idfk="method:unsubscribeAll" inherited="1" name="unsubscribeAll" source="jsx3.util.EventDispatcher"/>
+  <method id="method:clone" idfk="method:clone" inherited="1" name="clone" source="jsx3.lang.Object"/>
+  <method id="method:equals" idfk="method:equals" inherited="1" name="equals" source="jsx3.lang.Object"/>
+  <method id="method:eval" idfk="method:eval" inherited="1" name="eval" source="jsx3.lang.Object"/>
+  <method id="method:getClass" idfk="method:getClass" inherited="1" name="getClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOf" idfk="method:getInstanceOf" inherited="1" name="getInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfClass" idfk="method:getInstanceOfClass" inherited="1" name="getInstanceOfClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfPackage" idfk="method:getInstanceOfPackage" inherited="1" name="getInstanceOfPackage" source="jsx3.lang.Object"/>
+  <method id="method:instanceOf" idfk="method:instanceOf" inherited="1" name="instanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isInstanceOf" idfk="method:isInstanceOf" inherited="1" name="isInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isSubclassOf" idfk="method:isSubclassOf" inherited="1" name="isSubclassOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:jsxmix" idfk="method:jsxmix" inherited="1" name="jsxmix" source="jsx3.lang.Object"/>
+  <method id="method:jsxsuper" idfk="method:jsxsuper" inherited="1" name="jsxsuper" source="jsx3.lang.Object"/>
+  <method id="method:jsxsupermix" idfk="method:jsxsupermix" inherited="1" name="jsxsupermix" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:setInstanceOf" idfk="method:setInstanceOf" inherited="1" name="setInstanceOf" source="jsx3.lang.Object"/>
+</class>
