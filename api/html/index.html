@@ -1,0 +1,14 @@
+<html xmlns:fn="http://www.w3.org/2005/xpath-functions"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>General Interface 3.9.1 - API Documentation</title><script type="text/javascript">
+        var targetPage = "" + window.location.search;
+        if (targetPage != "" && targetPage != "undefined")
+          targetPage = targetPage.substring(1).replace('!', "#");
+
+        function loadFrames() {
+          if (targetPage != "" && targetPage != "undefined")
+            top.classFrame.location = top.targetPage;
+        }
+      </script></head><frameset cols="20%,80%" onLoad="top.loadFrames();" title=""><frameset onLoad="top.loadFrames();" rows="30%,70%" title=""><frame name="packageListFrame" src="overview-frame.html" title="All Packages"><frame name="packageFrame" src="allclasses-frame.html" title="All classes and interfaces (except non-static nested types)"></frameset><frame name="classFrame" scrolling="yes" src="overview-summary.html" title="Package, class and interface descriptions"><noframes><h2>Frame Alert</h2><p>
+          This document is designed to be viewed using the frames feature. If you see this message, you are using a
+          non-frame-capable web client.
+          <br>
+          Link to <a href="overview-summary.html">Non-frame version.</a></p></noframes></frameset></html>
