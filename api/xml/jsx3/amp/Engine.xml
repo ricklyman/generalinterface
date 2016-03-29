@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class access="public" id="class:jsx3.amp.Engine" name="jsx3.amp.Engine" package="jsx3.amp" shortname="Engine">
+  <text>An AMP engine. There is one engine instance per application that loads the AMP add-in.</text>
+  <see idfk="smethod:getEngine" source="jsx3.amp.Engine">getEngine()</see>
+  <superclass id="super:0" loaded="1" name="Object"/>
+  <superclass direct="1" id="super:1" loaded="1" name="jsx3.lang.Object"/>
+  <implements direct="1" id="implements:0" loaded="1" name="jsx3.util.EventDispatcher"/>
+  <field access="public" class="jsx3.amp.Engine" fullname="jsx3.amp.Engine.ERROR" id="sfield:ERROR" name="ERROR" static="1" value="&quot;error&quot;">
+    <type link="1" name="String"/>
+    <text> Event subject published when an error prevents the engine from loading. </text>
+  </field>
+  <field access="public" class="jsx3.amp.Engine" fullname="jsx3.amp.Engine.LOAD" id="sfield:LOAD" name="LOAD" static="1" value="&quot;load&quot;">
+    <type link="1" name="String"/>
+    <text> Event subject published when an engine finishes loading. </text>
+  </field>
+  <field access="public" class="jsx3.amp.Engine" fullname="jsx3.amp.Engine.PROGRESS" id="sfield:PROGRESS" name="PROGRESS" static="1" value="&quot;progress&quot;">
+    <type link="1" name="String"/>
+    <text> Event subject published when progress is made loading an engine. <code>pct</code> and <code>done</code> 
+         fields may be defined. </text>
+  </field>
+  <field access="public" class="jsx3.amp.Engine" fullname="jsx3.amp.Engine.REGISTER" id="sfield:REGISTER" name="REGISTER" static="1" value="&quot;register&quot;">
+    <type link="1" name="String"/>
+    <text> Event subject published when a plug-in is registered. </text>
+  </field>
+  <method access="public" id="method:deregister" name="deregister">
+    <param name="strId" text="the ID of the plug-in to deregister.&#10;   ">
+      <type link="1" name="String"/>
+    </param>
+    <text>Deregisters a plug-in from this engine. Note that garbage collection may be incomplete if application code
+references the plug-in or any of its extension points or extensions. Also, this method does not unload any
+JavaScript, CSS, or XML resources from the browser page or the AMP application. Unexpecting things may happen
+if this method is called while the plug-in is still loading.
+</text>
+  </method>
+  <method access="public" id="method:getExtPoint" name="getExtPoint">
+    <param name="strId" text="the ID of the extension point.">
+      <type link="1" name="String"/>
+    </param>
+    <return text="">
+      <type link="1" name="jsx3.amp.ExtPoint"/>
+    </return>
+    <text>Returns a registered extension point by ID.</text>
+  </method>
+  <method access="public" id="method:getExts" name="getExts">
+    <param name="strId" text="the ID of the extension point.">
+      <type link="1" name="String"/>
+    </param>
+    <return text="">
+      <type link="1" name="jsx3.$Array">
+        <type link="1" name="jsx3.amp.Ext"/>
+      </type>
+    </return>
+    <text>Returns the extensions registered for a given extension point ID.</text>
+  </method>
+  <method access="public" id="method:getPlugIn" name="getPlugIn">
+    <param name="strId" text="">
+      <type link="1" name="String"/>
+    </param>
+    <return text="">
+      <type link="1" name="jsx3.amp.PlugIn"/>
+    </return>
+    <text>Returns a registered plug-in by ID.</text>
+  </method>
+  <method access="public" id="method:getPlugIns" name="getPlugIns">
+    <return text="">
+      <type link="1" name="jsx3.$Array">
+        <type link="1" name="jsx3.amp.PlugIn"/>
+      </type>
+    </return>
+    <text>Returns all registered plug-ins.</text>
+  </method>
+  <method access="public" id="method:getServer" name="getServer">
+    <return text="">
+      <type link="1" name="jsx3.app.Server"/>
+    </return>
+    <text>Returns the application associated with this engine.</text>
+  </method>
+  <method access="public" id="method:isLoaded" name="isLoaded">
+    <return text="">
+      <type class="Boolean" link="1" name="boolean"/>
+    </return>
+    <text>Returns true if all of the AMP and project plug-ins have been registered.</text>
+  </method>
+  <method access="public" async="1" id="method:register" name="register">
+    <param name="strId" text="the plug-in ID.">
+      <type link="1" name="String"/>
+    </param>
+    <param name="strPath" text="the relative path from the application directory to the directory containing the&#10;   plug-in directory.">
+      <type link="1" name="String"/>
+    </param>
+    <param name="objXML" text="the optional XML declaration of the plug-in. Providing this parameter prevents&#10;   this method from requesting the plug-in descriptor file.&#10;   ">
+      <type link="1" name="jsx3.xml.Entity"/>
+    </param>
+    <return text="">
+      <type link="1" name="jsx3.$AsyncRV"/>
+    </return>
+    <text>Registers a plug-in manually at runtime. Only plug-ins not referenced in the main plugins.xml file should
+be loaded in this way.</text>
+  </method>
+  <method access="public" id="smethod:getEngine" name="getEngine" static="1">
+    <param name="objServer" text="">
+      <type link="1" name="jsx3.app.Server"/>
+    </param>
+    <return text="">
+      <type link="1" name="jsx3.amp.Engine"/>
+    </return>
+    <text>Returns the engine for a given application.
+</text>
+  </method>
+  <method id="method:publish" idfk="method:publish" inherited="1" name="publish" source="jsx3.util.EventDispatcher"/>
+  <method id="method:subscribe" idfk="method:subscribe" inherited="1" name="subscribe" source="jsx3.util.EventDispatcher"/>
+  <method id="method:unsubscribe" idfk="method:unsubscribe" inherited="1" name="unsubscribe" source="jsx3.util.EventDispatcher"/>
+  <method id="method:unsubscribeAll" idfk="method:unsubscribeAll" inherited="1" name="unsubscribeAll" source="jsx3.util.EventDispatcher"/>
+  <method id="method:clone" idfk="method:clone" inherited="1" name="clone" source="jsx3.lang.Object"/>
+  <method id="method:equals" idfk="method:equals" inherited="1" name="equals" source="jsx3.lang.Object"/>
+  <method id="method:eval" idfk="method:eval" inherited="1" name="eval" source="jsx3.lang.Object"/>
+  <method id="method:getClass" idfk="method:getClass" inherited="1" name="getClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOf" idfk="method:getInstanceOf" inherited="1" name="getInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfClass" idfk="method:getInstanceOfClass" inherited="1" name="getInstanceOfClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfPackage" idfk="method:getInstanceOfPackage" inherited="1" name="getInstanceOfPackage" source="jsx3.lang.Object"/>
+  <method id="method:instanceOf" idfk="method:instanceOf" inherited="1" name="instanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isInstanceOf" idfk="method:isInstanceOf" inherited="1" name="isInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isSubclassOf" idfk="method:isSubclassOf" inherited="1" name="isSubclassOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:jsxmix" idfk="method:jsxmix" inherited="1" name="jsxmix" source="jsx3.lang.Object"/>
+  <method id="method:jsxsuper" idfk="method:jsxsuper" inherited="1" name="jsxsuper" source="jsx3.lang.Object"/>
+  <method id="method:jsxsupermix" idfk="method:jsxsupermix" inherited="1" name="jsxsupermix" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:setInstanceOf" idfk="method:setInstanceOf" inherited="1" name="setInstanceOf" source="jsx3.lang.Object"/>
+  <method id="method:toString" idfk="method:toString" inherited="1" name="toString" source="jsx3.lang.Object"/>
+</class>

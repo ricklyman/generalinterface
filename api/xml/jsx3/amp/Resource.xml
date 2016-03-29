@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class access="public" id="class:jsx3.amp.Resource" name="jsx3.amp.Resource" package="jsx3.amp" shortname="Resource">
+  <text>An AMP plug-in resource, such as a JavaScript file or XML file.
+ </text>
+  <superclass id="super:0" loaded="1" name="Object"/>
+  <superclass direct="1" id="super:1" loaded="1" name="jsx3.lang.Object"/>
+  <implements direct="1" id="implements:0" loaded="1" name="jsx3.util.EventDispatcher"/>
+  <constructor access="public" id="method:init" name="init">
+    <param name="objPlugIn" text="the plug-in owning the resource.">
+      <type link="1" name="jsx3.amp.PlugIn"/>
+    </param>
+    <param name="strId" text="the ID of the resource. This ID is unique among all resources of the same plug-in.">
+      <type link="1" name="String"/>
+    </param>
+    <param name="elm" text="the XML declaration of the resource.&#10;   ">
+      <type name="jsx3.xml.Element"/>
+    </param>
+  </constructor>
+  <field access="public" class="jsx3.amp.Resource" fullname="jsx3.amp.Resource.LOAD_EARLY" id="sfield:LOAD_EARLY" name="LOAD_EARLY" static="1" value="&quot;early&quot;">
+    <type link="1" name="String"/>
+    <text> Loads a resource before the plug-in is instantiated and registered. </text>
+  </field>
+  <field access="public" class="jsx3.amp.Resource" fullname="jsx3.amp.Resource.LOAD_MANUAL" id="sfield:LOAD_MANUAL" name="LOAD_MANUAL" static="1" value="&quot;manual&quot;">
+    <type link="1" name="String"/>
+    <text> Waits for a resource to be loaded programatically some time after the plug-in loads. </text>
+  </field>
+  <field access="public" class="jsx3.amp.Resource" fullname="jsx3.amp.Resource.LOAD_NORMAL" id="sfield:LOAD_NORMAL" name="LOAD_NORMAL" static="1" value="&quot;normal&quot;">
+    <type link="1" name="String"/>
+    <text> Loads a resource before the plug-in loads. </text>
+  </field>
+  <field access="public" class="jsx3.amp.Resource" fullname="jsx3.amp.Resource.READY" id="sfield:READY" name="READY" static="1" value="&quot;ready&quot;">
+    <type link="1" name="String"/>
+    <text> Event subject published when this resource has loaded. </text>
+  </field>
+  <field access="public" class="jsx3.amp.Resource" final="1" fullname="jsx3.amp.Resource.TYPE_BUNDLE" id="sfield:TYPE_BUNDLE" name="TYPE_BUNDLE" static="1" value="&quot;propsbundle&quot;">
+    <type link="1" name="String"/>
+  </field>
+  <field access="public" class="jsx3.amp.Resource" final="1" fullname="jsx3.amp.Resource.TYPE_CSS" id="sfield:TYPE_CSS" name="TYPE_CSS" static="1" value="&quot;css&quot;">
+    <type link="1" name="String"/>
+  </field>
+  <field access="public" class="jsx3.amp.Resource" final="1" fullname="jsx3.amp.Resource.TYPE_JSS" id="sfield:TYPE_JSS" name="TYPE_JSS" static="1" value="&quot;jss&quot;">
+    <type link="1" name="String"/>
+  </field>
+  <field access="public" class="jsx3.amp.Resource" final="1" fullname="jsx3.amp.Resource.TYPE_SCRIPT" id="sfield:TYPE_SCRIPT" name="TYPE_SCRIPT" static="1" value="&quot;script&quot;">
+    <type link="1" name="String"/>
+  </field>
+  <field access="public" class="jsx3.amp.Resource" final="1" fullname="jsx3.amp.Resource.TYPE_XML" id="sfield:TYPE_XML" name="TYPE_XML" static="1" value="&quot;xml&quot;">
+    <type link="1" name="String"/>
+  </field>
+  <field access="public" class="jsx3.amp.Resource" final="1" fullname="jsx3.amp.Resource.TYPE_XSL" id="sfield:TYPE_XSL" name="TYPE_XSL" static="1" value="&quot;xsl&quot;">
+    <type link="1" name="String"/>
+  </field>
+  <method access="public" id="method:attr" name="attr">
+    <param name="k" text="the attribute name.&#10;   ">
+      <type link="1" name="String"/>
+    </param>
+    <text>Returns the value of any attribute of the XML declaration of this resource.</text>
+  </method>
+  <method access="public" id="method:getData" name="getData">
+    <param name="bClear" text="if &lt;code&gt;true&lt;/code&gt; then delete the reference to the data object in order to allow&#10;   garbage collection.">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <return text="">
+      <type link="1" name="jsx3.xml.Document"/>
+      <type link="1" name="jsx3.app.Properties"/>
+      <type link="1" name="jsx3.app.PropsBundle"/>
+    </return>
+    <text>Returns the data associated with this resource. Only resources of type xml, xsl, jss, and propsbundle will
+return a defined value.</text>
+  </method>
+  <method access="public" id="method:getId" name="getId">
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the full ID of this resource, which is unique to the entire AMP engine.</text>
+  </method>
+  <method access="public" id="method:getLoadType" name="getLoadType">
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the load type, such as <code>LOAD_NORMAL</code>. The load type is defined using the <code>load</code>
+attribute of the resource XML declaration.</text>
+    <see>LOAD_EARLY</see>
+    <see>LOAD_NORMAL</see>
+    <see>LOAD_MANUAL</see>
+  </method>
+  <method access="public" id="method:getLocalId" name="getLocalId">
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the ID Of this resource, which is unique among all resources of the same plug-in.</text>
+  </method>
+  <method access="public" id="method:getLocales" name="getLocales">
+    <return text="">
+      <type link="1" name="Array">
+        <type link="1" name="String"/>
+      </type>
+    </return>
+    <text>Returns the list of locale keys for which this resources is localized. This is equal to the locales
+attribute of the resource, split by whitespace.</text>
+  </method>
+  <method access="public" id="method:getPath" name="getPath">
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the path of this resource, which is relative to the directory of the plug-in owning this resource.
+The resource type is defined by the <code>id</code> attribute of the resource XML declaration.</text>
+  </method>
+  <method access="public" id="method:getPathForLocale" name="getPathForLocale">
+    <param name="objLocale" text="">
+      <type link="1" name="jsx3.util.Locale"/>
+    </param>
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the path of the best localized version of this resource for <code>objLocale</code>.</text>
+  </method>
+  <method access="public" id="method:getPlugIn" name="getPlugIn">
+    <return text="">
+      <type link="1" name="jsx3.amp.PlugIn"/>
+    </return>
+    <text>Returns the plug-in that owns this resource.</text>
+  </method>
+  <method access="public" id="method:getType" name="getType">
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the resource type, such as <code>TYPE_SCRIPT</code>. The resource type is defined by the element
+node name of the resource XML declaration.</text>
+  </method>
+  <method access="public" id="method:isLoaded" name="isLoaded">
+    <return text="">
+      <type class="Boolean" link="1" name="boolean"/>
+    </return>
+  </method>
+  <method access="public" async="1" id="method:load" name="load">
+    <return text="">
+      <type link="1" name="jsx3.$AsyncRV"/>
+    </return>
+    <text>Asynchronously loads this resource if it is not already loaded.</text>
+    <see idfk="method:loaded" source="jsx3.amp.Resource">loaded()</see>
+  </method>
+  <method access="public" async="1" id="method:loaded" name="loaded">
+    <return text="">
+      <type link="1" name="jsx3.$AsyncRV"/>
+    </return>
+    <text>Returns an asynchronous return value that completes when this resource is loaded.</text>
+    <see idfk="method:load" source="jsx3.amp.Resource">load()</see>
+  </method>
+  <method access="public" id="method:xml" name="xml">
+    <return text="">
+      <type link="1" name="jsx3.xml.Entity"/>
+    </return>
+    <text>Returns the XML declaration of this resource as passed to the constructor.</text>
+  </method>
+  <method id="method:publish" idfk="method:publish" inherited="1" name="publish" source="jsx3.util.EventDispatcher"/>
+  <method id="method:subscribe" idfk="method:subscribe" inherited="1" name="subscribe" source="jsx3.util.EventDispatcher"/>
+  <method id="method:unsubscribe" idfk="method:unsubscribe" inherited="1" name="unsubscribe" source="jsx3.util.EventDispatcher"/>
+  <method id="method:unsubscribeAll" idfk="method:unsubscribeAll" inherited="1" name="unsubscribeAll" source="jsx3.util.EventDispatcher"/>
+  <method id="method:clone" idfk="method:clone" inherited="1" name="clone" source="jsx3.lang.Object"/>
+  <method id="method:equals" idfk="method:equals" inherited="1" name="equals" source="jsx3.lang.Object"/>
+  <method id="method:eval" idfk="method:eval" inherited="1" name="eval" source="jsx3.lang.Object"/>
+  <method id="method:getClass" idfk="method:getClass" inherited="1" name="getClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOf" idfk="method:getInstanceOf" inherited="1" name="getInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfClass" idfk="method:getInstanceOfClass" inherited="1" name="getInstanceOfClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfPackage" idfk="method:getInstanceOfPackage" inherited="1" name="getInstanceOfPackage" source="jsx3.lang.Object"/>
+  <method id="method:instanceOf" idfk="method:instanceOf" inherited="1" name="instanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isInstanceOf" idfk="method:isInstanceOf" inherited="1" name="isInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isSubclassOf" idfk="method:isSubclassOf" inherited="1" name="isSubclassOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:jsxmix" idfk="method:jsxmix" inherited="1" name="jsxmix" source="jsx3.lang.Object"/>
+  <method id="method:jsxsuper" idfk="method:jsxsuper" inherited="1" name="jsxsuper" source="jsx3.lang.Object"/>
+  <method id="method:jsxsupermix" idfk="method:jsxsupermix" inherited="1" name="jsxsupermix" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:setInstanceOf" idfk="method:setInstanceOf" inherited="1" name="setInstanceOf" source="jsx3.lang.Object"/>
+  <method id="method:toString" idfk="method:toString" inherited="1" name="toString" source="jsx3.lang.Object"/>
+</class>

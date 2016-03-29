@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class access="public" id="class:jsx3.amp.ExtProc" name="jsx3.amp.ExtProc" package="jsx3.amp" shortname="ExtProc">
+  <text>An extension processor utility class.</text>
+  <see idfk="smethod:process" source="jsx3.amp.ExtProc">process()</see>
+  <see idfk="method:processExts" source="jsx3.amp.ExtPoint">jsx3.amp.ExtPoint.processExts()</see>
+  <superclass id="super:0" loaded="1" name="Object"/>
+  <superclass direct="1" id="super:1" loaded="1" name="jsx3.lang.Object"/>
+  <field access="public" class="jsx3.amp.ExtProc" fullname="jsx3.amp.ExtProc.EVAL" id="sfield:EVAL" name="EVAL" static="1">
+    <type link="1" name="jsx3.amp.ExtProc"/>
+    <text>Processes an extension by intepreting each child element of the XML extension declaration as code to evaluate.
+The element should be named "eval" and the text body of the element is taken as the JavaScript to evaluate.
+The script is evaluated in the context of the extension object. So, for example, <code>this.getPlugIn()</code>
+grants access in the script to the plug-in defining the extension.
+<p/>
+No value is returned from the extension processing. If the <code>load</code> attribute of the <code>eval</code>
+element is equal to "true" then the plug-in owning the extension is loaded before the script is evaluated.
+Therefore, the script may be evaluated either synchronously or asynchronously, but since there is no value returned
+from the processing, there is no way of knowing which one actually occurred.
+   </text>
+  </field>
+  <field access="public" class="jsx3.amp.ExtProc" fullname="jsx3.amp.ExtProc.RETURN" id="sfield:RETURN" name="RETURN" static="1">
+    <type link="1" name="jsx3.amp.ExtProc"/>
+    <text>Processes an extension by intepreting each child element of the XML extension declaration as code to evaluate.
+The element should be named "eval" and the text body of the element is taken as the JavaScript to evaluate.
+The script is evaluated in the context of the extension object. So, for example, <code>this.getPlugIn()</code>
+grants access in the script to the plug-in defining the extension.
+<p/>
+The value that the script evaluates to is returned from the extension processing.
+   </text>
+  </field>
+  <field access="public" class="jsx3.amp.ExtProc" fullname="jsx3.amp.ExtProc.RETURN_ASYNC" id="sfield:RETURN_ASYNC" name="RETURN_ASYNC" static="1">
+    <type link="1" name="jsx3.amp.ExtProc"/>
+    <text>Processes an extension by intepreting each child element of the XML extension declaration as code to evaluate.
+The element should be named "eval" and the text body of the element is taken as the JavaScript to evaluate.
+The script is evaluated in the context of the extension object. So, for example, <code>this.getPlugIn()</code>
+grants access in the script to the plug-in defining the extension.
+<p/>
+The value returned from the extension processing is an asynchronous return value as defined in the contract for
+<code>jsx3.$Y()</code>. The return value may be notified either asynchronously or synchronously, depending on
+whether the <code>load</code> attribute of the <code>eval</code> element is equal to "true". If it is, then
+the plug-in owning the extension is loaded first and then the script is evaluated asynchronously. The asynchronous
+return value is notified of completion with the value that the script evaluates to.
+   </text>
+  </field>
+  <method access="public" id="smethod:addProcessorFactory" name="addProcessorFactory" static="1">
+    <param name="strType" text="the type of processor that the factory creates.">
+      <type link="1" name="String"/>
+    </param>
+    <param name="fctFactory" text="the factory function.&#10;   ">
+      <type link="1" name="Function"/>
+    </param>
+    <text>Registers a processor factory. A processor factory is the object responsible for creating a processor when
+a <code>&lt;processor&gt;</code> is found as a child of an <code>&lt;extension-point&gt;</code> element. Each processor element must
+declare a type attribute. The factory that has been registered with the matching type is used to create
+the processor. The method signature of the factory method is:
+<code>function(xml : jsx3.amp.XML) : jsx3.amp.ExtProc</code> where <code>xml</code> is the XML representation
+of the <code>&lt;processor&gt;</code> element.</text>
+  </method>
+  <method access="public" id="smethod:getProcessor" name="getProcessor" static="1">
+    <param name="strType" text="the type attribute of the &lt;code&gt;&amp;lt;processor&amp;gt;&lt;/code&gt; element.">
+      <type link="1" name="String"/>
+    </param>
+    <param name="xml" text="the &lt;code&gt;&amp;lt;processor&amp;gt;&lt;/code&gt; element.">
+      <type link="1" name="jsx3.amp.XML"/>
+    </param>
+    <text>Creates a processor object from a <code>&lt;processor&gt;</code> element.</text>
+    <see idfk="smethod:addProcessorFactory" source="jsx3.amp.ExtProc">addProcessorFactory()</see>
+  </method>
+  <method access="public" id="smethod:newDescrProc" name="newDescrProc" static="1">
+    <param name="objClass" text="a class or constructor.">
+      <type link="1" name="String"/>
+      <type link="1" name="jsx3.lang.Class"/>
+      <type link="1" name="Function"/>
+    </param>
+    <return text="">
+      <type link="1" name="jsx3.amp.ExtProc"/>
+    </return>
+    <text>Creates a new extension processor that creates instances of a certain class. The only requirement of the class
+is that is have a two-argument constructor with the signature:
+<code>function init(ext : jsx3.amp.Ext, xml : jsx3.amp.XML)</code>.
+<p/>
+The processing visitor will create a new instance of <code>objClass</code> for each child element of each
+extension. If any child element defines a <code>ext-class</code> attribute, this is interpreted as the
+fully-qualified class name of a subclass of <code>objClass</code>. This class, if it is defined, will be used
+instead of <code>objClass</code> to process that particular child element.</text>
+  </method>
+  <method access="public" id="smethod:process" name="process" static="1">
+    <param name="arrExt" text="">
+      <type link="1" name="Array">
+        <type link="1" name="jsx3.amp.Ext"/>
+      </type>
+    </param>
+    <param name="objVisitor" text="an object that defines method&#10;    &lt;code&gt;process(ext : jsx3.amp.Ext, data: jsx3.amp.XML) : Object&lt;/code&gt; or the function itself.">
+      <type link="1" name="Function"/>
+      <type link="1" name="Object"/>
+    </param>
+    <return text="">
+      <type link="1" name="jsx3.$Array"/>
+    </return>
+    <text>Processes a list of extensions using the visitor pattern. For each extension in <code>arrExt</code>, this
+method iterates over each child element of the extension declaration and invokes <code>objVisitor</code> for
+each element. At each iteration the visitor is passed as arguments the extension object and an XML object
+representing the child element.</text>
+  </method>
+  <method id="method:clone" idfk="method:clone" inherited="1" name="clone" source="jsx3.lang.Object"/>
+  <method id="method:equals" idfk="method:equals" inherited="1" name="equals" source="jsx3.lang.Object"/>
+  <method id="method:eval" idfk="method:eval" inherited="1" name="eval" source="jsx3.lang.Object"/>
+  <method id="method:getClass" idfk="method:getClass" inherited="1" name="getClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOf" idfk="method:getInstanceOf" inherited="1" name="getInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfClass" idfk="method:getInstanceOfClass" inherited="1" name="getInstanceOfClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfPackage" idfk="method:getInstanceOfPackage" inherited="1" name="getInstanceOfPackage" source="jsx3.lang.Object"/>
+  <method id="method:instanceOf" idfk="method:instanceOf" inherited="1" name="instanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isInstanceOf" idfk="method:isInstanceOf" inherited="1" name="isInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isSubclassOf" idfk="method:isSubclassOf" inherited="1" name="isSubclassOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:jsxmix" idfk="method:jsxmix" inherited="1" name="jsxmix" source="jsx3.lang.Object"/>
+  <method id="method:jsxsuper" idfk="method:jsxsuper" inherited="1" name="jsxsuper" source="jsx3.lang.Object"/>
+  <method id="method:jsxsupermix" idfk="method:jsxsupermix" inherited="1" name="jsxsupermix" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:setInstanceOf" idfk="method:setInstanceOf" inherited="1" name="setInstanceOf" source="jsx3.lang.Object"/>
+  <method id="method:toString" idfk="method:toString" inherited="1" name="toString" source="jsx3.lang.Object"/>
+</class>

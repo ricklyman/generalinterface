@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface access="public" id="class:jsx3.amp.Bindable" name="jsx3.amp.Bindable" package="jsx3.amp" shortname="Bindable">
+  <implementor id="implementor:0" loaded="1" name="jsx3.amp.PlugIn"/>
+  <method access="public" id="method:addBindableProp" name="addBindableProp">
+    <param name="key" text="the property name.">
+      <type link="1" name="String"/>
+    </param>
+    <param name="expression" text="the binding expression.&#10;   ">
+      <type link="1" name="String"/>
+    </param>
+    <text>Adds a bindable property to this object.</text>
+  </method>
+  <method access="public" id="method:getBindableProps" name="getBindableProps">
+    <return text="">
+      <type link="1" name="jsx3.$Array">
+        <type link="1" name="String"/>
+      </type>
+    </return>
+    <text>Returns the list of bindable properties of this object.</text>
+  </method>
+  <method access="public" id="method:setBindableProp" name="setBindableProp">
+    <param name="key" text="the property name.">
+      <type link="1" name="String"/>
+    </param>
+    <param name="newValue" text="the next calculated value.&#10;   ">
+      <type link="1" name="Object"/>
+    </param>
+    <text>Sets the current calculated value of a bindable property of this object. If the new value does not match
+the old value, an event is published. The schema of the event is
+<code>{subject: propName, oldValue: previousValue, value: newValue}</code>.</text>
+  </method>
+  <method access="public" id="method:updateBindable" name="updateBindable">
+    <param name="key" text="the property to recalculate.&#10;   ">
+      <type link="1" name="String"/>
+    </param>
+    <text>Causes a bindable property of this object to be recalculated. The property is set to the value of the
+binding expression, evaluated in the context of this object. If the property value has changed then this
+object will publish an event with subject <code>key</code>.</text>
+  </method>
+  <method access="public" id="method:updateBindableOn" name="updateBindableOn">
+    <param name="key" text="the property to update.">
+      <type link="1" name="String"/>
+    </param>
+    <param name="publisher" text="the object to which to subscribe.">
+      <type link="1" name="jsx3.util.EventDispatcher"/>
+    </param>
+    <param name="subject" text="the event subject to which to subscribe.&#10;   ">
+      <type link="1" name="String"/>
+    </param>
+    <text>Causes a bindable property to be updated when <code>publisher</code> publishes an event with subject
+<code>subject</code>.</text>
+  </method>
+</interface>

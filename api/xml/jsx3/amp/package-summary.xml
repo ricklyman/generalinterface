@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package access="public" id="class:jsx3.amp" name="jsx3.amp" since="3.7&#10; ">
+  <text>The General Interface Asynchronous Modular Platform (AMP). Classes in this package are only
+available to applications that enable the AMP add-in.</text>
+  <nested access="public" id="nested:jsx3.amp.Engine" loaded="1" name="jsx3.amp.Engine" shortname="Engine" type="class">
+    <text>An AMP engine.</text>
+    <see idfk="smethod:getEngine" source="jsx3.amp.Engine">getEngine()</see>
+  </nested>
+  <nested access="public" id="nested:jsx3.amp.Ext" loaded="1" name="jsx3.amp.Ext" shortname="Ext" type="class">
+    <text>An AMP extension.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.amp.ExtPoint" loaded="1" name="jsx3.amp.ExtPoint" shortname="ExtPoint" type="class">
+    <text>An AMP extension point.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.amp.ExtProc" loaded="1" name="jsx3.amp.ExtProc" shortname="ExtProc" type="class">
+    <text>An extension processor utility class.</text>
+    <see idfk="smethod:process" source="jsx3.amp.ExtProc">process()</see>
+    <see idfk="method:processExts" source="jsx3.amp.ExtPoint">jsx3.amp.ExtPoint.processExts()</see>
+  </nested>
+  <nested access="public" id="nested:jsx3.amp.PlugIn" loaded="1" name="jsx3.amp.PlugIn" shortname="PlugIn" type="class">
+    <text>An AMP plug-in.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.amp.Resource" loaded="1" name="jsx3.amp.Resource" shortname="Resource" type="class">
+    <text>An AMP plug-in resource, such as a JavaScript file or XML file.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.amp.XML" loaded="1" name="jsx3.amp.XML" shortname="XML" type="class">
+    <text>An XML wrapper that can be backed either by a real XML node or by a nested object structure.</text>
+  </nested>
+  <field access="public" class="jsx3.amp" fullname="jsx3.amp.DESCRIPTOR" id="sfield:DESCRIPTOR" name="DESCRIPTOR" static="1" value="&quot;plugins.xml&quot;">
+    <type link="1" name="String"/>
+    <text> The name of the plug-ins registration file. </text>
+  </field>
+  <field access="public" class="jsx3.amp" fullname="jsx3.amp.DIR" id="sfield:DIR" name="DIR" static="1" value="&quot;plugins&quot;">
+    <type link="1" name="String"/>
+    <text> The path where application plug-ins should reside. </text>
+  </field>
+  <field access="public" class="jsx3.amp" fullname="jsx3.amp.METAFILE" id="sfield:METAFILE" name="METAFILE" static="1" value="&quot;plugin.xml&quot;">
+    <type link="1" name="String"/>
+    <text> The name of a plug-in descriptor file. </text>
+  </field>
+  <field access="public" class="jsx3.amp" fullname="jsx3.amp.NS" id="sfield:NS" name="NS" static="1" value="&quot;http://www.generalinterface.org/gi/amp&quot;">
+    <type link="1" name="String"/>
+    <text> The plug-in definition XML namespace URI. </text>
+  </field>
+  <nested access="public" id="nested:jsx3.amp.Bindable" loaded="1" name="jsx3.amp.Bindable" shortname="Bindable" type="interface"/>
+</package>
