@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class access="public" id="class:jsx3.html.BlockTag" name="jsx3.html.BlockTag" package="jsx3.html" shortname="BlockTag">
+  <text>Represents an HTML element that occupies a rectangle of the screen.
+<p/>
+This class is available only when the Charting add-in is enabled.
+ </text>
+  <superclass id="super:0" loaded="1" name="Object"/>
+  <superclass id="super:1" loaded="1" name="jsx3.lang.Object"/>
+  <superclass direct="1" id="super:2" loaded="1" name="jsx3.html.Tag"/>
+  <subclass id="sub:0" loaded="1" name="jsx3.vector.Canvas"/>
+  <subclass id="sub:1" loaded="1" name="jsx3.vector.Tag"/>
+  <constructor access="public" id="method:init" name="init">
+    <param name="strTagNS" text="">
+      <type link="1" name="String"/>
+    </param>
+    <param name="strTagName" text="">
+      <type link="1" name="String"/>
+    </param>
+    <param name="left" text="left position (in pixels) of the object relative to its parent container">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <param name="top" text="top position (in pixels) of the object relative to its parent container">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <param name="width" text="width (in pixels) of the object">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <param name="height" text="height (in pixels) of the object&#10;   ">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <text>The instance initializer.</text>
+  </constructor>
+  <method access="public" id="method:getBackgroundColor" name="getBackgroundColor">
+    <return text="bgcolor&#10;   ">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the bgcolor field.</text>
+  </method>
+  <method access="public" id="method:getDimensions" name="getDimensions">
+    <return text="[left,top,width,height]&#10;   ">
+      <type link="1" name="Array">
+        <type class="Number" link="1" name="int"/>
+      </type>
+    </return>
+    <text>Returns the dimensions in an array of four int values</text>
+  </method>
+  <method access="public" id="method:getHeight" name="getHeight">
+    <return text="height&#10;   ">
+      <type class="Number" link="1" name="int"/>
+    </return>
+    <text>Returns the height field.</text>
+  </method>
+  <method access="public" id="method:getLeft" name="getLeft">
+    <return text="left&#10;   ">
+      <type class="Number" link="1" name="int"/>
+    </return>
+    <text>Returns the left field.</text>
+  </method>
+  <method access="public" id="method:getMargin" name="getMargin">
+    <return text="margin&#10;   ">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the margin field, as set by setMargin().</text>
+  </method>
+  <method access="public" id="method:getMarginDimensions" name="getMarginDimensions">
+    <return text="[top,right,bottom,left]&#10;   ">
+      <type link="1" name="Array"/>
+    </return>
+    <text>parses the margin field into an array of four int values </text>
+  </method>
+  <method access="public" id="method:getPadding" name="getPadding">
+    <return text="padding&#10;   ">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the padding field, as set by setPadding().</text>
+  </method>
+  <method access="public" id="method:getPaddingDimensions" name="getPaddingDimensions">
+    <return text="[top,right,bottom,left]&#10;   ">
+      <type link="1" name="Array"/>
+    </return>
+    <text>parses the padding field into an array of four int values </text>
+  </method>
+  <method access="public" id="method:getPosition" name="getPosition">
+    <return text="position&#10;   ">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the position field.</text>
+  </method>
+  <method access="public" id="method:getTop" name="getTop">
+    <return text="top&#10;   ">
+      <type class="Number" link="1" name="int"/>
+    </return>
+    <text>Returns the top field.</text>
+  </method>
+  <method access="public" id="method:getWidth" name="getWidth">
+    <return text="width&#10;   ">
+      <type class="Number" link="1" name="int"/>
+    </return>
+    <text>Returns the width field.</text>
+  </method>
+  <method access="public" id="method:getZIndex" name="getZIndex">
+    <return text="zIndex&#10;   ">
+      <type class="Number" link="1" name="int"/>
+    </return>
+    <text>Returns the zIndex field.</text>
+  </method>
+  <method access="public" id="method:setBackgroundColor" name="setBackgroundColor">
+    <param name="bgcolor" text="the new value for bgcolor&#10;   ">
+      <type link="1" name="String"/>
+    </param>
+    <text>Sets the bgcolor field.</text>
+  </method>
+  <method access="public" id="method:setDimensions" name="setDimensions">
+    <param name="left" text="the new left value or an array containing all four new values">
+      <type class="Number" link="1" name="int"/>
+      <type link="1" name="Array">
+        <type class="Number" link="1" name="int"/>
+      </type>
+    </param>
+    <param name="top" text="the new top value">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <param name="width" text="the new width value">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <param name="height" text="the new height value&#10;   ">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <text>Sets all four dimensions at once.</text>
+  </method>
+  <method access="public" id="method:setHeight" name="setHeight">
+    <param name="height" text="the new value for height&#10;   ">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <text>Sets the height field.</text>
+  </method>
+  <method access="public" id="method:setLeft" name="setLeft">
+    <param name="left" text="the new value for left&#10;   ">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <text>Sets the left field.</text>
+  </method>
+  <method access="public" id="method:setMargin" name="setMargin">
+    <param name="margin" text="the new value for margin&#10;   ">
+      <type link="1" name="String"/>
+    </param>
+    <text>Sets the margin field, can be a single value or four values separated by space that correspond to top, right, bottom, and left.</text>
+  </method>
+  <method access="public" id="method:setPadding" name="setPadding">
+    <param name="padding" text="the new value for padding&#10;   ">
+      <type link="1" name="String"/>
+    </param>
+    <text>Sets the padding field, can be a single value or four values separated by space that correspond to top, right, bottom, and left.</text>
+  </method>
+  <method access="public" id="method:setPosition" name="setPosition">
+    <param name="position" text="the new value for position&#10;   ">
+      <type link="1" name="String"/>
+    </param>
+    <text>Sets the position field, can be 'absolute' or 'relative'.</text>
+  </method>
+  <method access="public" id="method:setTop" name="setTop">
+    <param name="top" text="the new value for top&#10;   ">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <text>Sets the top field.</text>
+  </method>
+  <method access="public" id="method:setWidth" name="setWidth">
+    <param name="width" text="the new value for width&#10;   ">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <text>Sets the width field.</text>
+  </method>
+  <method access="public" id="method:setZIndex" name="setZIndex">
+    <param name="zIndex" text="the new value for zIndex&#10;   ">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <text>Sets the zIndex field.</text>
+  </method>
+  <method id="method:appendChild" idfk="method:appendChild" inherited="1" name="appendChild" source="jsx3.html.Tag"/>
+  <method id="method:getChildren" idfk="method:getChildren" inherited="1" name="getChildren" source="jsx3.html.Tag"/>
+  <method id="method:getClassName" idfk="method:getClassName" inherited="1" name="getClassName" source="jsx3.html.Tag"/>
+  <method id="method:getFirstChildOfType" idfk="method:getFirstChildOfType" inherited="1" name="getFirstChildOfType" source="jsx3.html.Tag"/>
+  <method id="method:getId" idfk="method:getId" inherited="1" name="getId" source="jsx3.html.Tag"/>
+  <method id="method:getParent" idfk="method:getParent" inherited="1" name="getParent" source="jsx3.html.Tag"/>
+  <method id="method:getProperty" idfk="method:getProperty" inherited="1" name="getProperty" source="jsx3.html.Tag"/>
+  <method id="method:getStyle" idfk="method:getStyle" inherited="1" name="getStyle" source="jsx3.html.Tag"/>
+  <method id="method:getTagNS" idfk="method:getTagNS" inherited="1" name="getTagNS" source="jsx3.html.Tag"/>
+  <method id="method:getTagName" idfk="method:getTagName" inherited="1" name="getTagName" source="jsx3.html.Tag"/>
+  <method id="method:onAppendChild" idfk="method:onAppendChild" inherited="1" name="onAppendChild" source="jsx3.html.Tag"/>
+  <method id="method:onRemoveChild" idfk="method:onRemoveChild" inherited="1" name="onRemoveChild" source="jsx3.html.Tag"/>
+  <method id="method:paint" idfk="method:paint" inherited="1" name="paint" source="jsx3.html.Tag"/>
+  <method id="method:paintDom" idfk="method:paintDom" inherited="1" name="paintDom" source="jsx3.html.Tag"/>
+  <method id="method:paintUpdate" idfk="method:paintUpdate" inherited="1" name="paintUpdate" source="jsx3.html.Tag"/>
+  <method id="method:release" idfk="method:release" inherited="1" name="release" source="jsx3.html.Tag"/>
+  <method id="method:removeChild" idfk="method:removeChild" inherited="1" name="removeChild" source="jsx3.html.Tag"/>
+  <method id="method:removeChildren" idfk="method:removeChildren" inherited="1" name="removeChildren" source="jsx3.html.Tag"/>
+  <method id="method:removeProperty" idfk="method:removeProperty" inherited="1" name="removeProperty" source="jsx3.html.Tag"/>
+  <method id="method:removeStyle" idfk="method:removeStyle" inherited="1" name="removeStyle" source="jsx3.html.Tag"/>
+  <method id="method:replaceChild" idfk="method:replaceChild" inherited="1" name="replaceChild" source="jsx3.html.Tag"/>
+  <method id="method:setClassName" idfk="method:setClassName" inherited="1" name="setClassName" source="jsx3.html.Tag"/>
+  <method id="method:setExtraStyles" idfk="method:setExtraStyles" inherited="1" name="setExtraStyles" source="jsx3.html.Tag"/>
+  <method id="method:setId" idfk="method:setId" inherited="1" name="setId" source="jsx3.html.Tag"/>
+  <method id="method:setProperty" idfk="method:setProperty" inherited="1" name="setProperty" source="jsx3.html.Tag"/>
+  <method id="method:setStyle" idfk="method:setStyle" inherited="1" name="setStyle" source="jsx3.html.Tag"/>
+  <method id="method:toString" idfk="method:toString" inherited="1" name="toString" source="jsx3.html.Tag"/>
+  <method id="method:clone" idfk="method:clone" inherited="1" name="clone" source="jsx3.lang.Object"/>
+  <method id="method:equals" idfk="method:equals" inherited="1" name="equals" source="jsx3.lang.Object"/>
+  <method id="method:eval" idfk="method:eval" inherited="1" name="eval" source="jsx3.lang.Object"/>
+  <method id="method:getClass" idfk="method:getClass" inherited="1" name="getClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOf" idfk="method:getInstanceOf" inherited="1" name="getInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfClass" idfk="method:getInstanceOfClass" inherited="1" name="getInstanceOfClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfPackage" idfk="method:getInstanceOfPackage" inherited="1" name="getInstanceOfPackage" source="jsx3.lang.Object"/>
+  <method id="method:instanceOf" idfk="method:instanceOf" inherited="1" name="instanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isInstanceOf" idfk="method:isInstanceOf" inherited="1" name="isInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isSubclassOf" idfk="method:isSubclassOf" inherited="1" name="isSubclassOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:jsxmix" idfk="method:jsxmix" inherited="1" name="jsxmix" source="jsx3.lang.Object"/>
+  <method id="method:jsxsuper" idfk="method:jsxsuper" inherited="1" name="jsxsuper" source="jsx3.lang.Object"/>
+  <method id="method:jsxsupermix" idfk="method:jsxsupermix" inherited="1" name="jsxsupermix" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:setInstanceOf" idfk="method:setInstanceOf" inherited="1" name="setInstanceOf" source="jsx3.lang.Object"/>
+</class>
