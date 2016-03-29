@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data jsxid="jsxroot">
+  <record classtype="package" jsxid="jsx3" jsxtext="jsx3" path="jsx3/package-summary.xml" summary="">
+    <record classtype="class" jsxid="jsx3.$Array" jsxtext="$Array" path="jsx3/$Array.xml" summary="Useful extensions to the JavaScript &lt;code&gt;Array&lt;/code&gt; class."/>
+    <record classtype="class" jsxid="jsx3.$AsyncCB" jsxtext="$AsyncCB" path="jsx3/$AsyncCB.xml" summary="The callback object passed as the single argument to an asynchronous method."/>
+    <record classtype="class" jsxid="jsx3.$AsyncRV" jsxtext="$AsyncRV" path="jsx3/$AsyncRV.xml" summary="The return value from an asynchronous method."/>
+    <record classtype="class" jsxid="jsx3.$Function" jsxtext="$Function" path="jsx3/$Function.xml" summary="Useful extensions to the JavaScript &lt;code&gt;Function&lt;/code&gt; class."/>
+    <record classtype="class" jsxid="jsx3.$Hash" jsxtext="$Hash" path="jsx3/$Hash.xml" summary="Useful extensions to the JavaScript &lt;code&gt;Object&lt;/code&gt; class for emulating a hashtable."/>
+    <record classtype="class" jsxid="jsx3.$Object" jsxtext="$Object" path="jsx3/$Object.xml" summary="Useful extensions to the JavaScript &lt;code&gt;Object&lt;/code&gt; class."/>
+    <record classtype="class" jsxid="jsx3.$String" jsxtext="$String" path="jsx3/$String.xml" summary="Useful extensions to the JavaScript &lt;code&gt;String&lt;/code&gt; class."/>
+    <record classtype="interface" deprecated="1" jsxid="jsx3.Alerts" jsxtext="Alerts" path="jsx3/Alerts.xml" summary=""/>
+    <record classtype="class" deprecated="1" jsxid="jsx3.Block" jsxtext="Block" path="jsx3/Block.xml" summary=""/>
+    <record classtype="class" deprecated="1" jsxid="jsx3.BlockX" jsxtext="BlockX" path="jsx3/BlockX.xml" summary=""/>
+    <record classtype="class" jsxid="jsx3.Boolean" jsxtext="Boolean" path="jsx3/Boolean.xml" summary="Boolean class encapsulates GI's XML boolean values (0 and 1 rather than true and false)."/>
+    <record classtype="class" deprecated="1" jsxid="jsx3.Button" jsxtext="Button" path="jsx3/Button.xml" summary=""/>
+    <record classtype="class" deprecated="1" jsxid="jsx3.Cache" jsxtext="Cache" path="jsx3/Cache.xml" summary=""/>
+    <record classtype="interface" deprecated="1" jsxid="jsx3.CDF" jsxtext="CDF" path="jsx3/CDF.xml" summary=""/>
+    <record classtype="class" deprecated="1" jsxid="jsx3.CheckBox" jsxtext="CheckBox" path="jsx3/CheckBox.xml" summary=""/>
+    <record classtype="class" deprecated="1" jsxid="jsx3.Collection" jsxtext="Collection" path="jsx3/Collection.xml" summary=""/>
+    <record classtype="class" deprecated="1" jsxid="jsx3.Column" jsxtext="Column" path="jsx3/Column.xml" summary=""/>
+    <record classtype="class" deprecated="1" jsxid="jsx3.DatePicker" jsxtext="DatePicker" path="jsx3/DatePicker.xml" summary=""/>
+    <record classtype="class" deprecated="1" jsxid="jsx3.Dialog" jsxtext="Dialog" path="jsx3/Dialog.xml" summary=""/>
+    <record classtype="class" deprecated="1" jsxid="jsx3.Document" jsxtext="Document" path="jsx3/Document.xml" summary=""/>
+    <record classtype="class" deprecated="1" jsxid="jsx3.DOM" jsxtext="DOM" path="jsx3/DOM.xml" summary=""/>
+    <record classtype="class" deprecated="1" jsxid="jsx3.Entity" jsxtext="Entity" path="jsx3/Entity.xml" summary=""/>
+    <record classtype="class" deprecated="1" jsxid="jsx3.ERROR" jsxtext="ERROR" path="jsx3/ERROR.xml" summary=""/>
+    <record classtype="interface" deprecated="1" jsxid="jsx3.Event" jsxtext="Event" path="jsx3/Event.xml" summary=""/>
+    <record classtype="interface" deprecated="1" jsxid="jsx3.EventDispatcher" jsxtext="EventDispatcher" path="jsx3/EventDispatcher.xml" summary=""/>
+    <record classtype="class" deprecated="1" jsxid="jsx3.EVT" jsxtext="EVT" path="jsx3/EVT.xml" summary="This class is the static event controller for the GI framework."/>
+    <record classtype="interface" deprecated="1" jsxid="jsx3.Form" jsxtext="Form" path="jsx3/Form.xml" summary=""/>
+    <record classtype="class" deprecated="1" jsxid="jsx3.Grid" jsxtext="Grid" path="jsx3/Grid.xml" summary=""/>
+    <record classtype="class" deprecated="1" jsxid="jsx3.Heavyweight" jsxtext="Heavyweight" path="jsx3/Heavyweight.xml" summary=""/>
+    <record classtype="class" deprecated="1" jsxid="jsx3.HttpForm" jsxtext="HttpForm" path="jsx3/HttpForm.xml" summary=""/>
+    <record classtype="class" deprecated="1" jsxid="jsx3.HttpRequest" jsxtext="HttpRequest" path="jsx3/HttpRequest.xml" summary=""/>
+    <record classtype="class" deprecated="1" jsxid="jsx3.LayoutGrid" jsxtext="LayoutGrid" path="jsx3/LayoutGrid.xml" summary=""/>
+    <record classtype="class" deprecated="1" jsxid="jsx3.List" jsxtext="List" path="jsx3/List.xml" summary=""/>
+    <record classtype="class" deprecated="1" jsxid="jsx3.Menu" jsxtext="Menu" path="jsx3/Menu.xml" summary=""/>
+    <record classtype="class" deprecated="1" jsxid="jsx3.Model" jsxtext="Model" path="jsx3/Model.xml" summary=""/>
+    <record classtype="class" deprecated="1" jsxid="jsx3.RadioButton" jsxtext="RadioButton" path="jsx3/RadioButton.xml" summary=""/>
+    <record classtype="class" deprecated="1" jsxid="jsx3.Select" jsxtext="Select" path="jsx3/Select.xml" summary=""/>
+    <record classtype="class" deprecated="1" jsxid="jsx3.Server" jsxtext="Server" path="jsx3/Server.xml" summary=""/>
+    <record classtype="class" deprecated="1" jsxid="jsx3.Service" jsxtext="Service" path="jsx3/Service.xml" summary=""/>
+    <record classtype="class" deprecated="1" jsxid="jsx3.Settings" jsxtext="Settings" path="jsx3/Settings.xml" summary=""/>
+    <record classtype="class" deprecated="1" jsxid="jsx3.Slider" jsxtext="Slider" path="jsx3/Slider.xml" summary=""/>
+    <record classtype="class" deprecated="1" jsxid="jsx3.Splitter" jsxtext="Splitter" path="jsx3/Splitter.xml" summary=""/>
+    <record classtype="class" deprecated="1" jsxid="jsx3.Stack" jsxtext="Stack" path="jsx3/Stack.xml" summary=""/>
+    <record classtype="class" deprecated="1" jsxid="jsx3.StackGroup" jsxtext="StackGroup" path="jsx3/StackGroup.xml" summary=""/>
+    <record classtype="class" deprecated="1" jsxid="jsx3.Tab" jsxtext="Tab" path="jsx3/Tab.xml" summary=""/>
+    <record classtype="class" deprecated="1" jsxid="jsx3.TabbedPane" jsxtext="TabbedPane" path="jsx3/TabbedPane.xml" summary=""/>
+    <record classtype="class" deprecated="1" jsxid="jsx3.TextBox" jsxtext="TextBox" path="jsx3/TextBox.xml" summary=""/>
+    <record classtype="class" deprecated="1" jsxid="jsx3.ToolbarButton" jsxtext="ToolbarButton" path="jsx3/ToolbarButton.xml" summary=""/>
+    <record classtype="class" deprecated="1" jsxid="jsx3.Tree" jsxtext="Tree" path="jsx3/Tree.xml" summary=""/>
+    <record classtype="class" deprecated="1" jsxid="jsx3.UserSettings" jsxtext="UserSettings" path="jsx3/UserSettings.xml" summary=""/>
+    <record classtype="class" deprecated="1" jsxid="jsx3.WindowBar" jsxtext="WindowBar" path="jsx3/WindowBar.xml" summary=""/>
+  </record>
+  <record classtype="package" jsxid="jsx3.amp" jsxtext="jsx3.amp" path="jsx3/amp/package-summary.xml" summary="The General Interface Asynchronous Modular Platform (AMP).">
+    <record classtype="interface" jsxid="jsx3.amp.Bindable" jsxtext="Bindable" path="jsx3/amp/Bindable.xml" summary=""/>
+    <record classtype="class" jsxid="jsx3.amp.Engine" jsxtext="Engine" path="jsx3/amp/Engine.xml" summary="An AMP engine."/>
+    <record classtype="class" jsxid="jsx3.amp.Ext" jsxtext="Ext" path="jsx3/amp/Ext.xml" summary="An AMP extension."/>
+    <record classtype="class" jsxid="jsx3.amp.ExtPoint" jsxtext="ExtPoint" path="jsx3/amp/ExtPoint.xml" summary="An AMP extension point."/>
+    <record classtype="class" jsxid="jsx3.amp.ExtProc" jsxtext="ExtProc" path="jsx3/amp/ExtProc.xml" summary="An extension processor utility class."/>
+    <record classtype="class" jsxid="jsx3.amp.PlugIn" jsxtext="PlugIn" path="jsx3/amp/PlugIn.xml" summary="An AMP plug-in."/>
+    <record classtype="class" jsxid="jsx3.amp.Resource" jsxtext="Resource" path="jsx3/amp/Resource.xml" summary="An AMP plug-in resource, such as a JavaScript file or XML file."/>
+    <record classtype="class" jsxid="jsx3.amp.XML" jsxtext="XML" path="jsx3/amp/XML.xml" summary="An XML wrapper that can be backed either by a real XML node or by a nested object structure."/>
+  </record>
+  <record classtype="package" jsxid="jsx3.amp.util" jsxtext="jsx3.amp.util" path="jsx3/amp/util/package-summary.xml" summary="The standard library of AMP application utility classes.">
+    <record classtype="class" jsxid="jsx3.amp.util.Menu" jsxtext="Menu" path="jsx3/amp/util/Menu.xml" summary="A managed menu."/>
+    <record classtype="class" jsxid="jsx3.amp.util.MenuItem" jsxtext="MenuItem" path="jsx3/amp/util/MenuItem.xml" summary="A managed menu item."/>
+    <record classtype="class" jsxid="jsx3.amp.util.MenuManager" jsxtext="MenuManager" path="jsx3/amp/util/MenuManager.xml" summary="Manages a set of menus."/>
+    <record classtype="class" jsxid="jsx3.amp.util.Prefs" jsxtext="Prefs" path="jsx3/amp/util/Prefs.xml" summary="A preferences panel."/>
+    <record classtype="class" jsxid="jsx3.amp.util.PrefsPane" jsxtext="PrefsPane" path="jsx3/amp/util/PrefsPane.xml" summary="A pane in a preferences panel."/>
+    <record classtype="class" jsxid="jsx3.amp.util.ToolbarItem" jsxtext="ToolbarItem" path="jsx3/amp/util/ToolbarItem.xml" summary="Manages a toolbar."/>
+    <record classtype="class" jsxid="jsx3.amp.util.ToolbarManager" jsxtext="ToolbarManager" path="jsx3/amp/util/ToolbarManager.xml" summary="Manages a toolbar."/>
+    <record classtype="class" jsxid="jsx3.amp.util.Wizard" jsxtext="Wizard" path="jsx3/amp/util/Wizard.xml" summary="A wizard."/>
+    <record classtype="class" jsxid="jsx3.amp.util.WizardPane" jsxtext="WizardPane" path="jsx3/amp/util/WizardPane.xml" summary="A pane of a wizard."/>
+  </record>
+  <record classtype="package" jsxid="jsx3.app" jsxtext="jsx3.app" path="jsx3/app/package-summary.xml" summary="Application layer classes.">
+    <record classtype="class" jsxid="jsx3.app.AddIn" jsxtext="AddIn" path="jsx3/app/AddIn.xml" summary="A class that represents a JSX add-in."/>
+    <record classtype="class" jsxid="jsx3.app.Cache" jsxtext="Cache" path="jsx3/app/Cache.xml" summary="Provides cached access to XML and XSL data."/>
+    <record classtype="class" jsxid="jsx3.app.DOM" jsxtext="DOM" path="jsx3/app/DOM.xml" summary="Registers all DOM nodes in an instance of &lt;code&gt;jsx3.app.Server&lt;/code&gt; and publishes related events."/>
+    <record classtype="class" jsxid="jsx3.app.Model" jsxtext="Model" path="jsx3/app/Model.xml" summary="The abstract base class that defines the JSX DOM."/>
+    <record classtype="class" jsxid="jsx3.app.Monitor" jsxtext="Monitor" path="jsx3/app/Monitor.xml" summary="A logging handler that can be instantiated per JSX application and displays logging messages in a separate&#10;browser window while an application is running."/>
+    <record classtype="class" jsxid="jsx3.app.Properties" jsxtext="Properties" path="jsx3/app/Properties.xml" summary="Represents a repository of dynamic properties."/>
+    <record classtype="class" jsxid="jsx3.app.PropsBundle" jsxtext="PropsBundle" path="jsx3/app/PropsBundle.xml" summary="A subclass of &lt;code&gt;jsx3.app.Properties&lt;/code&gt; that supports localized properties."/>
+    <record classtype="class" jsxid="jsx3.app.Server" jsxtext="Server" path="jsx3/app/Server.xml" summary="The controller of the JSX architecture."/>
+    <record classtype="class" jsxid="jsx3.app.Settings" jsxtext="Settings" path="jsx3/app/Settings.xml" summary="An object oriented interface onto the XML system settings format."/>
+    <record classtype="class" jsxid="jsx3.app.UserSettings" jsxtext="UserSettings" path="jsx3/app/UserSettings.xml" summary="Read-Write per-User settings for a particular GI application (server)."/>
+  </record>
+  <record classtype="package" jsxid="jsx3.chart" jsxtext="jsx3.chart" path="jsx3/chart/package-summary.xml" summary="Various Charting related constants and utility functions.">
+    <record classtype="class" jsxid="jsx3.chart.AreaChart" jsxtext="AreaChart" path="jsx3/chart/AreaChart.xml" summary="An area chart."/>
+    <record classtype="class" jsxid="jsx3.chart.AreaSeries" jsxtext="AreaSeries" path="jsx3/chart/AreaSeries.xml" summary="A data series for an area chart."/>
+    <record classtype="class" jsxid="jsx3.chart.Axis" jsxtext="Axis" path="jsx3/chart/Axis.xml" summary="A base class for all types of axis."/>
+    <record classtype="class" jsxid="jsx3.chart.BarChart" jsxtext="BarChart" path="jsx3/chart/BarChart.xml" summary="A bar chart."/>
+    <record classtype="class" jsxid="jsx3.chart.BarSeries" jsxtext="BarSeries" path="jsx3/chart/BarSeries.xml" summary="The data series type for a jsx3.chart.BarChart."/>
+    <record classtype="class" jsxid="jsx3.chart.BCChart" jsxtext="BCChart" path="jsx3/chart/BCChart.xml" summary="Superclass of bar and column chart."/>
+    <record classtype="class" jsxid="jsx3.chart.BCSeries" jsxtext="BCSeries" path="jsx3/chart/BCSeries.xml" summary="Shared functionality between &lt;code&gt;BarSeries&lt;/code&gt; and &lt;code&gt;ColumnSeries&lt;/code&gt;."/>
+    <record classtype="class" jsxid="jsx3.chart.BubbleSeries" jsxtext="BubbleSeries" path="jsx3/chart/BubbleSeries.xml" summary="A data series used for a jsx3.chart.BubbleChart."/>
+    <record classtype="class" jsxid="jsx3.chart.CartesianChart" jsxtext="CartesianChart" path="jsx3/chart/CartesianChart.xml" summary="Base chart class for charts that render on a cartesian plane with x and y axes."/>
+    <record classtype="class" jsxid="jsx3.chart.CategoryAxis" jsxtext="CategoryAxis" path="jsx3/chart/CategoryAxis.xml" summary="Axis type that displays a set of discrete values (categories)."/>
+    <record classtype="class" jsxid="jsx3.chart.Chart" jsxtext="Chart" path="jsx3/chart/Chart.xml" summary="The base class for all charts in this package."/>
+    <record classtype="class" jsxid="jsx3.chart.ChartComponent" jsxtext="ChartComponent" path="jsx3/chart/ChartComponent.xml" summary="A base class for every logical component of a chart."/>
+    <record classtype="class" jsxid="jsx3.chart.ChartLabel" jsxtext="ChartLabel" path="jsx3/chart/ChartLabel.xml" summary="A chart component to render a text box."/>
+    <record classtype="class" jsxid="jsx3.chart.ColumnChart" jsxtext="ColumnChart" path="jsx3/chart/ColumnChart.xml" summary="A column chart."/>
+    <record classtype="class" jsxid="jsx3.chart.ColumnSeries" jsxtext="ColumnSeries" path="jsx3/chart/ColumnSeries.xml" summary="The data series type for a jsx3.chart.ColumnChart."/>
+    <record classtype="class" jsxid="jsx3.chart.GridLines" jsxtext="GridLines" path="jsx3/chart/GridLines.xml" summary="A chart component that renders a grid of lines and fills aligned with an x and y axis."/>
+    <record classtype="class" jsxid="jsx3.chart.Legend" jsxtext="Legend" path="jsx3/chart/Legend.xml" summary="Chart component that renders a simple legend."/>
+    <record classtype="class" jsxid="jsx3.chart.LinearAxis" jsxtext="LinearAxis" path="jsx3/chart/LinearAxis.xml" summary="Type of axis that displays a linear range of values."/>
+    <record classtype="class" jsxid="jsx3.chart.LineChart" jsxtext="LineChart" path="jsx3/chart/LineChart.xml" summary="A line chart."/>
+    <record classtype="class" jsxid="jsx3.chart.LineSeries" jsxtext="LineSeries" path="jsx3/chart/LineSeries.xml" summary="A data series for a line chart."/>
+    <record classtype="class" jsxid="jsx3.chart.LogarithmicAxis" jsxtext="LogarithmicAxis" path="jsx3/chart/LogarithmicAxis.xml" summary="An axis that displays a range of values logarithmically (base^n and base^(n+1) occupy same visual space)."/>
+    <record classtype="class" jsxid="jsx3.chart.PieChart" jsxtext="PieChart" path="jsx3/chart/PieChart.xml" summary="A pie chart."/>
+    <record classtype="class" jsxid="jsx3.chart.PieSeries" jsxtext="PieSeries" path="jsx3/chart/PieSeries.xml" summary="A data series for a pie chart."/>
+    <record classtype="class" jsxid="jsx3.chart.PlotChart" jsxtext="PlotChart" path="jsx3/chart/PlotChart.xml" summary="An plot (scatter/point/bubble) chart."/>
+    <record classtype="class" jsxid="jsx3.chart.PlotSeries" jsxtext="PlotSeries" path="jsx3/chart/PlotSeries.xml" summary="Class encapsulating behavior shared by PointSeries and BubbleSeries&#10; "/>
+    <record classtype="interface" jsxid="jsx3.chart.PointRenderer" jsxtext="PointRenderer" path="jsx3/chart/PointRenderer.xml" summary="Objects that implement this interface may be used in Line/Area/Point/Bubble charts to render the points that appear&#10;at each datapoint."/>
+    <record classtype="class" jsxid="jsx3.chart.PointSeries" jsxtext="PointSeries" path="jsx3/chart/PointSeries.xml" summary="A data series used for a jsx3.chart.PointChart."/>
+    <record classtype="class" jsxid="jsx3.chart.RadialChart" jsxtext="RadialChart" path="jsx3/chart/RadialChart.xml" summary="Base class for radial charts (pie chart is only example so far)."/>
+    <record classtype="class" jsxid="jsx3.chart.Series" jsxtext="Series" path="jsx3/chart/Series.xml" summary="The base class for all data series classes."/>
+  </record>
+  <record classtype="package" jsxid="jsx3.gui" jsxtext="jsx3.gui" path="jsx3/gui/package-summary.xml" summary="GUI classes.">
+    <record classtype="interface" jsxid="jsx3.gui.Alerts" jsxtext="Alerts" path="jsx3/gui/Alerts.xml" summary="Mixin interface allows implementors to show alerts, confirms, and prompts."/>
+    <record classtype="class" jsxid="jsx3.gui.Block" jsxtext="Block" path="jsx3/gui/Block.xml" summary="This class provides a container-based, object-oriented approach to creating static html objects (basically this class creates &quot;DIV&quot; objects)."/>
+    <record classtype="class" jsxid="jsx3.gui.BlockX" jsxtext="BlockX" path="jsx3/gui/BlockX.xml" summary="Paints the result of an XSL transformation in an Block."/>
+    <record classtype="class" jsxid="jsx3.gui.Button" jsxtext="Button" path="jsx3/gui/Button.xml" summary="Provides a object-oriented interface for a standard command button."/>
+    <record classtype="class" jsxid="jsx3.gui.CDF" jsxtext="CDF" path="jsx3/gui/CDF.xml" summary="Provides a container that maps to a CDF Document in the cache."/>
+    <record classtype="class" jsxid="jsx3.gui.CheckBox" jsxtext="CheckBox" path="jsx3/gui/CheckBox.xml" summary="This class is a wrapper of the standard HTML checkbox."/>
+    <record classtype="class" jsxid="jsx3.gui.ColorPicker" jsxtext="ColorPicker" path="jsx3/gui/ColorPicker.xml" summary="A GUI class that allows the user to pick a color using an HSB (hue-saturation-brightness) picker."/>
+    <record classtype="class" deprecated="1" jsxid="jsx3.gui.Column" jsxtext="Column" path="jsx3/gui/Column.xml" summary="Provides a way to generate a column of data for a &lt;code&gt;jsx3.gui.List&lt;/code&gt; instance (or compatible subclass)."/>
+    <record classtype="class" jsxid="jsx3.gui.DatePicker" jsxtext="DatePicker" path="jsx3/gui/DatePicker.xml" summary="A form element that allows for the selection of an arbitrary date by showing a navigable calendar."/>
+    <record classtype="class" jsxid="jsx3.gui.Dialog" jsxtext="Dialog" path="jsx3/gui/Dialog.xml" summary="Renders a dialog window."/>
+    <record classtype="class" jsxid="jsx3.gui.DojoWidget" jsxtext="DojoWidget" path="jsx3/gui/DojoWidget.xml" summary="An adapter for Dojo widgets."/>
+    <record classtype="class" jsxid="jsx3.gui.Event" jsxtext="Event" path="jsx3/gui/Event.xml" summary="Native browser event wrapper."/>
+    <record classtype="interface" jsxid="jsx3.gui.Form" jsxtext="Form" path="jsx3/gui/Form.xml" summary="Mixin interface."/>
+    <record classtype="class" deprecated="1" jsxid="jsx3.gui.Grid" jsxtext="Grid" path="jsx3/gui/Grid.xml" summary="The jsx3.gui.Grid class is a subclass of the jsx3.gui.List class."/>
+    <record classtype="class" jsxid="jsx3.gui.Heavyweight" jsxtext="Heavyweight" path="jsx3/gui/Heavyweight.xml" summary="GUI utility class that provides a way to display HTML content on-screen in an HTML equivalent of a heavyweight container."/>
+    <record classtype="class" jsxid="jsx3.gui.HotKey" jsxtext="HotKey" path="jsx3/gui/HotKey.xml" summary="Encapsulates a keydown event listener that is invoked by a certain combination of keys pressed simultaneously."/>
+    <record classtype="class" jsxid="jsx3.gui.IFrame" jsxtext="IFrame" path="jsx3/gui/IFrame.xml" summary="Renders an IFrame."/>
+    <record classtype="class" jsxid="jsx3.gui.Image" jsxtext="Image" path="jsx3/gui/Image.xml" summary="Renders an image."/>
+    <record classtype="class" jsxid="jsx3.gui.ImageButton" jsxtext="ImageButton" path="jsx3/gui/ImageButton.xml" summary="An object-oriented interface onto a GUI button made of various image files."/>
+    <record classtype="interface" jsxid="jsx3.gui.Interactive" jsxtext="Interactive" path="jsx3/gui/Interactive.xml" summary="Mixin interface."/>
+    <record classtype="class" jsxid="jsx3.gui.Label" jsxtext="Label" path="jsx3/gui/Label.xml" summary="A native HTML &amp;lt;label&amp;gt; element, which supports targeting an input element with for=&quot;&quot;."/>
+    <record classtype="class" jsxid="jsx3.gui.LayoutGrid" jsxtext="LayoutGrid" path="jsx3/gui/LayoutGrid.xml" summary="This class provides a way to organize a set of GUI objects in a grid."/>
+    <record classtype="class" deprecated="1" jsxid="jsx3.gui.List" jsxtext="List" path="jsx3/gui/List.xml" summary="The jsx3.gui.List class supports sorting, resizing, reordering, selection, discontinuous selection, key and mouse navigation, etc."/>
+    <record classtype="class" jsxid="jsx3.gui.Matrix" jsxtext="Matrix" path="jsx3/gui/Matrix.xml" summary="The Matrix control is the standard visual interface for the Common Data Format (CDF), providing grid and tree-grid functionality that mirrors the&#10;the record and attribute structures used by the CDF."/>
+    <record classtype="interface" jsxid="jsx3.gui.Matrix.BlockMask" jsxtext="Matrix.BlockMask" path="jsx3/gui/Matrix.BlockMask.xml" summary="The interface that defines the methods that affect the behavior of a composite object used as an edit mask of a&#10;matrix column."/>
+    <record classtype="class" jsxid="jsx3.gui.Matrix.Column" jsxtext="Matrix.Column" path="jsx3/gui/Matrix.Column.xml" summary="Column control for use as a child of a jsx3.gui.Matrix class"/>
+    <record classtype="class" jsxid="jsx3.gui.Matrix.ColumnFormat" jsxtext="Matrix.ColumnFormat" path="jsx3/gui/Matrix.ColumnFormat.xml" summary="A class that defines the methods required for an object to be used by &lt;code&gt;jsx3.gui.Matrix.Column&lt;/code&gt; instances to&#10;format cells of data."/>
+    <record classtype="interface" jsxid="jsx3.gui.Matrix.EditMask" jsxtext="Matrix.EditMask" path="jsx3/gui/Matrix.EditMask.xml" summary="The interface defining the methods that affect the behavior of an object used as an edit mask in a matrix column."/>
+    <record classtype="class" jsxid="jsx3.gui.Menu" jsxtext="Menu" path="jsx3/gui/Menu.xml" summary="Create GUI menus, similar in functionality to system menus (File, Edit, etc) created by the host OS."/>
+    <record classtype="class" jsxid="jsx3.gui.NativeButton" jsxtext="NativeButton" path="jsx3/gui/NativeButton.xml" summary="The JSX version of a standard HTML input button."/>
+    <record classtype="class" jsxid="jsx3.gui.NativeFileUpload" jsxtext="NativeFileUpload" path="jsx3/gui/NativeFileUpload.xml" summary="The JSX version of a standard HTML input button."/>
+    <record classtype="class" jsxid="jsx3.gui.NativeForm" jsxtext="NativeForm" path="jsx3/gui/NativeForm.xml" summary="The JSX version of a standard FORM element."/>
+    <record classtype="class" jsxid="jsx3.gui.NativeHidden" jsxtext="NativeHidden" path="jsx3/gui/NativeHidden.xml" summary="The JSX version of a standard HTML hidden input field."/>
+    <record classtype="class" jsxid="jsx3.gui.NativeSelect" jsxtext="NativeSelect" path="jsx3/gui/NativeSelect.xml" summary="The JSX version of a standard GUI select box."/>
+    <record classtype="class" jsxid="jsx3.gui.NumberInput" jsxtext="NumberInput" path="jsx3/gui/NumberInput.xml" summary="A form element (text box) that stores a number value."/>
+    <record classtype="class" jsxid="jsx3.gui.Painted" jsxtext="Painted" path="jsx3/gui/Painted.xml" summary="Abstract superclass of model objects that are painted to screen."/>
+    <record classtype="class" jsxid="jsx3.gui.RadioButton" jsxtext="RadioButton" path="jsx3/gui/RadioButton.xml" summary="A GUI control that implements a single radio button."/>
+    <record classtype="class" jsxid="jsx3.gui.Select" jsxtext="Select" path="jsx3/gui/Select.xml" summary="The JSX version of a standard GUI select box."/>
+    <record classtype="class" jsxid="jsx3.gui.Slider" jsxtext="Slider" path="jsx3/gui/Slider.xml" summary="A GUI control that implements a draggable slider."/>
+    <record classtype="class" jsxid="jsx3.gui.Sound" jsxtext="Sound" path="jsx3/gui/Sound.xml" summary="Class that provides an object-oriented interface for playing sounds in a GI application."/>
+    <record classtype="class" jsxid="jsx3.gui.Splitter" jsxtext="Splitter" path="jsx3/gui/Splitter.xml" summary="This class manages layouts by providing a container that will paint its first two child GUI objects separated&#10;by a 'splitter' (either vertical or horizontal)."/>
+    <record classtype="class" jsxid="jsx3.gui.Stack" jsxtext="Stack" path="jsx3/gui/Stack.xml" summary="This class is equivalent to a tab, but uses the stack metaphor; like a tab, it has one child&amp;#8212;a block for its content; a jsx3.gui.Stack instance should only be contained by a jsx3.gui.StackGroup instance for proper rendering."/>
+    <record classtype="class" jsxid="jsx3.gui.StackGroup" jsxtext="StackGroup" path="jsx3/gui/StackGroup.xml" summary="similar to how a tabbed pane manages a collection of tabs, the stack group is a parent container that manages JSXStack instances&#10; "/>
+    <record classtype="class" jsxid="jsx3.gui.Tab" jsxtext="Tab" path="jsx3/gui/Tab.xml" summary="Renders a tab in a tabbed pane."/>
+    <record classtype="class" jsxid="jsx3.gui.TabbedPane" jsxtext="TabbedPane" path="jsx3/gui/TabbedPane.xml" summary="Renders a tabbed pane, which consists of a set of tabs, only one of which is visible at a time."/>
+    <record classtype="class" jsxid="jsx3.gui.Table" jsxtext="Table" path="jsx3/gui/Table.xml" summary="A lightweight control that displays CDF data in an HTML table."/>
+    <record classtype="class" jsxid="jsx3.gui.Template" jsxtext="Template" path="jsx3/gui/Template.xml" summary="Provides template related services to the base template class, jsx3.gui.Template.Block."/>
+    <record classtype="class" jsxid="jsx3.gui.Template.Block" jsxtext="Template.Block" path="jsx3/gui/Template.Block.xml" summary="Provides base class for creating custom GUI classes."/>
+    <record classtype="class" jsxid="jsx3.gui.TextBox" jsxtext="TextBox" path="jsx3/gui/TextBox.xml" summary="This jsx3.gui.TextBox class allows integration of a standard HTML text input into the JSX DOM."/>
+    <record classtype="class" jsxid="jsx3.gui.TimePicker" jsxtext="TimePicker" path="jsx3/gui/TimePicker.xml" summary="A form element that allows for the selection of an arbitrary time of day."/>
+    <record classtype="class" jsxid="jsx3.gui.ToolbarButton" jsxtext="ToolbarButton" path="jsx3/gui/ToolbarButton.xml" summary="Renders a toolbar button."/>
+    <record classtype="class" jsxid="jsx3.gui.Tree" jsxtext="Tree" path="jsx3/gui/Tree.xml" summary="Creates a DHTML-based navigational trees (similar to the tree structure used by Windows Explorer with folders&#10;and files)."/>
+    <record classtype="class" jsxid="jsx3.gui.Window" jsxtext="Window" path="jsx3/gui/Window.xml" summary="Allows for rendering a branch of the DOM of an application in a separate browser window."/>
+    <record classtype="class" jsxid="jsx3.gui.WindowBar" jsxtext="WindowBar" path="jsx3/gui/WindowBar.xml" summary="jsx3.gui.WindowBar instances are used as the captionbar for JSXDialog and JSXAlert instances."/>
+  </record>
+  <record classtype="package" jsxid="jsx3.html" jsxtext="jsx3.html" path="jsx3/html/package-summary.xml" summary="Utility methods related to rendering HTML.">
+    <record classtype="class" jsxid="jsx3.html.BlockTag" jsxtext="BlockTag" path="jsx3/html/BlockTag.xml" summary="Represents an HTML element that occupies a rectangle of the screen."/>
+    <record classtype="class" jsxid="jsx3.html.DOM" jsxtext="DOM" path="jsx3/html/DOM.xml" summary="Handles Provides methods to manipulate browser DOM nodes."/>
+    <record classtype="interface" jsxid="jsx3.html.FontTag" jsxtext="FontTag" path="jsx3/html/FontTag.xml" summary="Represents an HTML element that defines font styles."/>
+    <record classtype="class" jsxid="jsx3.html.Style" jsxtext="Style" path="jsx3/html/Style.xml" summary="Handles Provides methods to manipulate browser DOM nodes."/>
+    <record classtype="class" jsxid="jsx3.html.Tag" jsxtext="Tag" path="jsx3/html/Tag.xml" summary="Represents an HTML element."/>
+    <record classtype="class" jsxid="jsx3.html.Text" jsxtext="Text" path="jsx3/html/Text.xml" summary="Represents an HTML text node."/>
+  </record>
+  <record classtype="package" jsxid="jsx3.ide" jsxtext="jsx3.ide" path="jsx3/ide/package-summary.xml" summary="The public API of the General Interface IDE."/>
+  <record classtype="package" jsxid="jsx3.lang" jsxtext="jsx3.lang" path="jsx3/lang/package-summary.xml" summary="">
+    <record classtype="class" jsxid="jsx3.lang.AOP" jsxtext="AOP" path="jsx3/lang/AOP.xml" summary="Simple aspect oriented programming for General Interface."/>
+    <record classtype="class" jsxid="jsx3.lang.Class" jsxtext="Class" path="jsx3/lang/Class.xml" summary="JavaScript class that allows introspection of the JSX class hierarchy."/>
+    <record classtype="class" jsxid="jsx3.lang.ClassLoader" jsxtext="ClassLoader" path="jsx3/lang/ClassLoader.xml" summary="The class loader initializes the system and loads applications and add-ins."/>
+    <record classtype="class" jsxid="jsx3.lang.Exception" jsxtext="Exception" path="jsx3/lang/Exception.xml" summary="The base GI exception class."/>
+    <record classtype="class" jsxid="jsx3.lang.IllegalArgumentException" jsxtext="IllegalArgumentException" path="jsx3/lang/IllegalArgumentException.xml" summary="A special exception type to throw when the caller of a function does not pass arguments according to the method's&#10;contract."/>
+    <record classtype="class" jsxid="jsx3.lang.Method" jsxtext="Method" path="jsx3/lang/Method.xml" summary="JSX Class extends the build in JavaScript class Function."/>
+    <record classtype="class" jsxid="jsx3.lang.NativeError" jsxtext="NativeError" path="jsx3/lang/NativeError.xml" summary="Wraps the browser-native exception object (what might be caught in a typical try/catch/finally block)."/>
+    <record classtype="class" jsxid="jsx3.lang.Object" jsxtext="Object" path="jsx3/lang/Object.xml" summary="Base class for all classes defined with &lt;code&gt;jsx3.lang.Class&lt;/code&gt;."/>
+    <record classtype="class" jsxid="jsx3.lang.Package" jsxtext="Package" path="jsx3/lang/Package.xml" summary="The Package class provides an introspectable API for JavaScript/JSX packages."/>
+    <record classtype="class" jsxid="jsx3.lang.System" jsxtext="System" path="jsx3/lang/System.xml" summary="A collection of GI system related functions."/>
+  </record>
+  <record classtype="package" jsxid="jsx3.net" jsxtext="jsx3.net" path="jsx3/net/package-summary.xml" summary="Networking related classes.">
+    <record classtype="class" jsxid="jsx3.net.Form" jsxtext="Form" path="jsx3/net/Form.xml" summary="Provides support for legacy HTML GET and POST forms."/>
+    <record classtype="class" jsxid="jsx3.net.Request" jsxtext="Request" path="jsx3/net/Request.xml" summary="A generic wrapper to hide the complexities and API-specifics of the native XMLHTTP control for a given browser."/>
+    <record classtype="class" jsxid="jsx3.net.Service" jsxtext="Service" path="jsx3/net/Service.xml" summary="This class is used in conjunction with the XML Mapping Utility to provide transactional support for those services using XML-based messaging."/>
+    <record classtype="class" jsxid="jsx3.net.URI" jsxtext="URI" path="jsx3/net/URI.xml" summary="Represents a Uniform Resource Identifier (URI) reference."/>
+    <record classtype="interface" jsxid="jsx3.net.URIResolver" jsxtext="URIResolver" path="jsx3/net/URIResolver.xml" summary="An interface specifying the methods necessary to define a context against which URIs are resolved."/>
+  </record>
+  <record classtype="package" jsxid="jsx3.util" jsxtext="jsx3.util" path="jsx3/util/package-summary.xml" summary="Utility classes.">
+    <record classtype="class" deprecated="1" jsxid="jsx3.util.Collection" jsxtext="Collection" path="jsx3/util/Collection.xml" summary=""/>
+    <record classtype="class" jsxid="jsx3.util.DateFormat" jsxtext="DateFormat" path="jsx3/util/DateFormat.xml" summary="Formats and parses dates according to a token-based string format."/>
+    <record classtype="class" jsxid="jsx3.util.Dojo" jsxtext="Dojo" path="jsx3/util/Dojo.xml" summary="Provides the ability to load the Dojo JavaScript library."/>
+    <record classtype="interface" jsxid="jsx3.util.EventDispatcher" jsxtext="EventDispatcher" path="jsx3/util/EventDispatcher.xml" summary="An Event Dispatcher mixin interface, adds the ability to register event listeners and dispatch events&#10;to those listeners."/>
+    <record classtype="class" jsxid="jsx3.util.GNode" jsxtext="GNode" path="jsx3/util/GNode.xml" summary=""/>
+    <record classtype="class" jsxid="jsx3.util.Graph" jsxtext="Graph" path="jsx3/util/Graph.xml" summary=""/>
+    <record classtype="interface" jsxid="jsx3.util.Iterator" jsxtext="Iterator" path="jsx3/util/Iterator.xml" summary="An interface that defines an object that can be iterated over."/>
+    <record classtype="class" jsxid="jsx3.util.Job" jsxtext="Job" path="jsx3/util/Job.xml" summary=""/>
+    <record classtype="class" jsxid="jsx3.util.JobGraph" jsxtext="JobGraph" path="jsx3/util/JobGraph.xml" summary=""/>
+    <record classtype="class" jsxid="jsx3.util.List" jsxtext="List" path="jsx3/util/List.xml" summary="An object-oriented version of the built-in JavaScript &lt;code&gt;Array&lt;/code&gt; class."/>
+    <record classtype="class" jsxid="jsx3.util.Locale" jsxtext="Locale" path="jsx3/util/Locale.xml" summary="Represents a region of the world."/>
+    <record classtype="class" jsxid="jsx3.util.Logger" jsxtext="Logger" path="jsx3/util/Logger.xml" summary="A Logger is used to log messages about a particular component of an application."/>
+    <record classtype="class" jsxid="jsx3.util.Logger.AlertHandler" jsxtext="Logger.AlertHandler" path="jsx3/util/Logger.AlertHandler.xml" summary="Handles a logging record by sending it to a JavaScript alert."/>
+    <record classtype="class" jsxid="jsx3.util.Logger.ConsoleHandler" jsxtext="Logger.ConsoleHandler" path="jsx3/util/Logger.ConsoleHandler.xml" summary="Handles a logging record by sending it to the Firebug console."/>
+    <record classtype="class" jsxid="jsx3.util.Logger.FormatHandler" jsxtext="Logger.FormatHandler" path="jsx3/util/Logger.FormatHandler.xml" summary="A subclass of &lt;code&gt;Handler&lt;/code&gt; that includes functionality for formatting logging records as human-readable&#10;strings."/>
+    <record classtype="class" jsxid="jsx3.util.Logger.Handler" jsxtext="Logger.Handler" path="jsx3/util/Logger.Handler.xml" summary="The base logging handler class."/>
+    <record classtype="class" jsxid="jsx3.util.Logger.Manager" jsxtext="Logger.Manager" path="jsx3/util/Logger.Manager.xml" summary="Manager class for the logging system."/>
+    <record classtype="class" jsxid="jsx3.util.Logger.MemoryHandler" jsxtext="Logger.MemoryHandler" path="jsx3/util/Logger.MemoryHandler.xml" summary="A simple Handler class that stores a rotating cache of log records in memory."/>
+    <record classtype="class" jsxid="jsx3.util.Logger.Record" jsxtext="Logger.Record" path="jsx3/util/Logger.Record.xml" summary="Record bean that stores information about a logging message."/>
+    <record classtype="class" jsxid="jsx3.util.MessageFormat" jsxtext="MessageFormat" path="jsx3/util/MessageFormat.xml" summary="Constructs messages from a pattern and parameters."/>
+    <record classtype="class" jsxid="jsx3.util.NumberFormat" jsxtext="NumberFormat" path="jsx3/util/NumberFormat.xml" summary="Formats numbers."/>
+  </record>
+  <record classtype="package" jsxid="jsx3.vector" jsxtext="jsx3.vector" path="jsx3/vector/package-summary.xml" summary="This package and all contained classes are available only when the Charting add-in is enabled.">
+    <record classtype="class" jsxid="jsx3.vector.BaseShape" jsxtext="BaseShape" path="jsx3/vector/BaseShape.xml" summary="A vector tag that can have fill and stroke."/>
+    <record classtype="class" jsxid="jsx3.vector.Block" jsxtext="Block" path="jsx3/vector/Block.xml" summary="Defines a base class for GUI controls that implement both the cross-platform box profile painting introduced in&#10;3.2 and the cross-platform (VML/SVG) vector painting, also introduced in 3.2."/>
+    <record classtype="class" jsxid="jsx3.vector.Canvas" jsxtext="Canvas" path="jsx3/vector/Canvas.xml" summary="Represents a vector canvas in which vector shapes are painted."/>
+    <record classtype="class" jsxid="jsx3.vector.Fill" jsxtext="Fill" path="jsx3/vector/Fill.xml" summary="Represents a vector fill, the color and gradient that fills a solid vector shape."/>
+    <record classtype="class" jsxid="jsx3.vector.Group" jsxtext="Group" path="jsx3/vector/Group.xml" summary="Represents a grouping of vector shapes."/>
+    <record classtype="class" jsxid="jsx3.vector.Line" jsxtext="Line" path="jsx3/vector/Line.xml" summary="Paints a vector line defined by two end points."/>
+    <record classtype="class" jsxid="jsx3.vector.LineGroup" jsxtext="LineGroup" path="jsx3/vector/LineGroup.xml" summary="A more efficient way of painting many vector lines of the same color and thickness."/>
+    <record classtype="class" jsxid="jsx3.vector.Oval" jsxtext="Oval" path="jsx3/vector/Oval.xml" summary="Paints a vector oval bounded by the box defined by its left, top, width, and height."/>
+    <record classtype="class" jsxid="jsx3.vector.Polygon" jsxtext="Polygon" path="jsx3/vector/Polygon.xml" summary="Paints a vector polygon defined by a set of points."/>
+    <record classtype="class" jsxid="jsx3.vector.Rectangle" jsxtext="Rectangle" path="jsx3/vector/Rectangle.xml" summary="Paints a vector rectangle."/>
+    <record classtype="class" jsxid="jsx3.vector.RectangleGroup" jsxtext="RectangleGroup" path="jsx3/vector/RectangleGroup.xml" summary="A more efficient way of painting many vector rectangles of the same fill and stroke."/>
+    <record classtype="class" jsxid="jsx3.vector.Shape" jsxtext="Shape" path="jsx3/vector/Shape.xml" summary="A vector shape element."/>
+    <record classtype="class" jsxid="jsx3.vector.Stroke" jsxtext="Stroke" path="jsx3/vector/Stroke.xml" summary="Represents a vector line style."/>
+    <record classtype="class" jsxid="jsx3.vector.Tag" jsxtext="Tag" path="jsx3/vector/Tag.xml" summary="The base class for jsx3.vector.Group and jsx3.vector.Shape."/>
+    <record classtype="class" jsxid="jsx3.vector.TextLine" jsxtext="TextLine" path="jsx3/vector/TextLine.xml" summary="Renders text along an arbitrary line."/>
+  </record>
+  <record classtype="package" jsxid="jsx3.xml" jsxtext="jsx3.xml" path="jsx3/xml/package-summary.xml" summary="XML related classes.">
+    <record classtype="interface" jsxid="jsx3.xml.Cacheable" jsxtext="Cacheable" path="jsx3/xml/Cacheable.xml" summary="A mixin interface that provides the following capabilities to implementing classes:&#10;"/>
+    <record classtype="interface" jsxid="jsx3.xml.CDF" jsxtext="CDF" path="jsx3/xml/CDF.xml" summary="Mixin interface that provides methods for accessing and manipulating an XML document in CDF schema."/>
+    <record classtype="class" jsxid="jsx3.xml.CDF.Document" jsxtext="CDF.Document" path="jsx3/xml/CDF.Document.xml" summary="A subclass of &lt;code&gt;jsx3.xml.Document&lt;/code&gt; that implements the CDF interface."/>
+    <record classtype="class" jsxid="jsx3.xml.CDFSchema" jsxtext="CDFSchema" path="jsx3/xml/CDFSchema.xml" summary="The CDF data schema."/>
+    <record classtype="class" jsxid="jsx3.xml.Document" jsxtext="Document" path="jsx3/xml/Document.xml" summary="Wrapper of the native browser XML document class."/>
+    <record classtype="class" jsxid="jsx3.xml.DojoDataStore" jsxtext="DojoDataStore" path="jsx3/xml/DojoDataStore.xml" summary="Provides access to Dojo data store through the CDF interface."/>
+    <record classtype="class" jsxid="jsx3.xml.Entity" jsxtext="Entity" path="jsx3/xml/Entity.xml" summary="Wrapper of the native browser XML node class."/>
+    <record classtype="class" deprecated="1" jsxid="jsx3.xml.Processor" jsxtext="Processor" path="jsx3/xml/Processor.xml" summary="Wrapper of the native browser XSLT processor."/>
+    <record classtype="class" jsxid="jsx3.xml.Template" jsxtext="Template" path="jsx3/xml/Template.xml" summary="Wrapper of the native browser XSLT processor."/>
+    <record classtype="class" jsxid="jsx3.xml.XslDocument" jsxtext="XslDocument" path="jsx3/xml/XslDocument.xml" summary="An extension of &lt;code&gt;jsx3.xml.Document&lt;/code&gt; that encapsulates a compiled XSL template."/>
+  </record>
+  <record classtype="package" jsxid="window" jsxtext="window" native="1" path="package-summary.xml" summary="Top-Level properties and functions.">
+    <record classtype="class" jsxid="Array" jsxtext="Array" native="1" path="Array.xml" summary="Native JavaScript class Array."/>
+    <record classtype="class" jsxid="Boolean" jsxtext="Boolean" native="1" path="Boolean.xml" summary="Native JavaScript class Boolean."/>
+    <record classtype="class" jsxid="Date" jsxtext="Date" native="1" path="Date.xml" summary="Native JavaScript class Date."/>
+    <record classtype="class" jsxid="Function" jsxtext="Function" native="1" path="Function.xml" summary="Native JavaScript class Function."/>
+    <record classtype="class" jsxid="HTMLDocument" jsxtext="HTMLDocument" native="1" path="HTMLDocument.xml" summary="Native browser DOM class &lt;code&gt;HTMLDocument&lt;/code&gt;."/>
+    <record classtype="class" jsxid="HTMLElement" jsxtext="HTMLElement" native="1" path="HTMLElement.xml" summary="Native browser DOM class &lt;code&gt;HTMLElement&lt;/code&gt;."/>
+    <record classtype="class" deprecated="1" jsxid="inheritance" jsxtext="inheritance" path="inheritance.xml" summary=""/>
+    <record classtype="class" jsxid="Math" jsxtext="Math" native="1" path="Math.xml" summary="Native JavaScript class Math."/>
+    <record classtype="class" jsxid="Number" jsxtext="Number" native="1" path="Number.xml" summary="Native JavaScript class Number."/>
+    <record classtype="class" jsxid="Object" jsxtext="Object" native="1" path="Object.xml" summary="Native JavaScript class Object."/>
+    <record classtype="class" jsxid="RegExp" jsxtext="RegExp" native="1" path="RegExp.xml" summary="Native JavaScript class RegExp."/>
+    <record classtype="class" jsxid="String" jsxtext="String" native="1" path="String.xml" summary="Native JavaScript class String."/>
+  </record>
+</data>

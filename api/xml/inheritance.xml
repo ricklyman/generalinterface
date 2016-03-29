@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class access="public" deprecated="1" id="class:inheritance" name="inheritance" package="window" shortname="inheritance">
+  <deprecated>Renamed to jsx3.lang.Object</deprecated>
+  <see source="jsx3.lang.Object">jsx3.lang.Object</see>
+</class>

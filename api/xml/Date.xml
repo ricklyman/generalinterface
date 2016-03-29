@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class access="public" id="class:Date" name="Date" native="1" package="window" shortname="Date">
+  <text>Native JavaScript class Date. Includes GI extensions.</text>
+  <superclass direct="1" id="super:0" loaded="1" name="Object"/>
+  <constructor access="public" id="method:Date" name="Date" native="1"/>
+  <method access="public" deprecated="1" id="method:compareTo" name="compareTo">
+    <param name="d" text="the date to compare this date against">
+      <type link="1" name="Date"/>
+    </param>
+    <return text="1 if this date is later than d, 0 if equal, and -1 otherwise">
+      <type class="Number" link="1" name="int"/>
+    </return>
+    <text>compare this date instance to argument <code>d</code>
+    </text>
+  </method>
+  <method access="public" deprecated="1" id="method:equals" name="equals">
+    <param name="o" text="the date to compare this date against">
+      <type link="1" name="Date"/>
+    </param>
+    <text>whether two Date objects represent the same date</text>
+  </method>
+  <method access="public" id="method:getDate" name="getDate" native="1"/>
+  <method access="public" id="method:getDay" name="getDay" native="1"/>
+  <method access="public" id="method:getFullYear" name="getFullYear" native="1"/>
+  <method access="public" id="method:getHours" name="getHours" native="1"/>
+  <method access="public" deprecated="1" id="method:getLastDateOfMonth" name="getLastDateOfMonth">
+    <return text="">
+      <type class="Number" link="1" name="int"/>
+    </return>
+    <text>Returns the date of the last day of the month of this Date object, ie will return 31 for any Date with a January month value (any year and any date)</text>
+  </method>
+  <method access="public" id="method:getMilliseconds" name="getMilliseconds" native="1"/>
+  <method access="public" id="method:getMinutes" name="getMinutes" native="1"/>
+  <method access="public" id="method:getMonth" name="getMonth" native="1"/>
+  <method access="public" id="method:getSeconds" name="getSeconds" native="1"/>
+  <method access="public" id="method:getTime" name="getTime" native="1"/>
+  <method access="public" id="method:getTimezoneOffset" name="getTimezoneOffset" native="1"/>
+  <method access="public" id="method:getUTCDate" name="getUTCDate" native="1"/>
+  <method access="public" id="method:getUTCDay" name="getUTCDay" native="1"/>
+  <method access="public" id="method:getUTCFullYear" name="getUTCFullYear" native="1"/>
+  <method access="public" id="method:getUTCHours" name="getUTCHours" native="1"/>
+  <method access="public" id="method:getUTCMilliseconds" name="getUTCMilliseconds" native="1"/>
+  <method access="public" id="method:getUTCMinutes" name="getUTCMinutes" native="1"/>
+  <method access="public" id="method:getUTCMonth" name="getUTCMonth" native="1"/>
+  <method access="public" id="method:getUTCSeconds" name="getUTCSeconds" native="1"/>
+  <method access="public" id="method:getYear" name="getYear" native="1"/>
+  <method access="public" id="method:setDate" name="setDate" native="1"/>
+  <method access="public" id="method:setFullYear" name="setFullYear" native="1"/>
+  <method access="public" id="method:setHours" name="setHours" native="1"/>
+  <method access="public" id="method:setMilliseconds" name="setMilliseconds" native="1"/>
+  <method access="public" id="method:setMinutes" name="setMinutes" native="1"/>
+  <method access="public" id="method:setMonth" name="setMonth" native="1"/>
+  <method access="public" id="method:setSeconds" name="setSeconds" native="1"/>
+  <method access="public" id="method:setTime" name="setTime" native="1"/>
+  <method access="public" id="method:setUTCDate" name="setUTCDate" native="1"/>
+  <method access="public" id="method:setUTCFullYear" name="setUTCFullYear" native="1"/>
+  <method access="public" id="method:setUTCHours" name="setUTCHours" native="1"/>
+  <method access="public" id="method:setUTCMilliseconds" name="setUTCMilliseconds" native="1"/>
+  <method access="public" id="method:setUTCMinutes" name="setUTCMinutes" native="1"/>
+  <method access="public" id="method:setUTCMonth" name="setUTCMonth" native="1"/>
+  <method access="public" id="method:setUTCSeconds" name="setUTCSeconds" native="1"/>
+  <method access="public" id="method:toGMTString" name="toGMTString" native="1"/>
+  <method access="public" id="method:toLocaleString" name="toLocaleString" native="1"/>
+  <method access="public" id="method:toUTCString" name="toUTCString" native="1"/>
+  <method access="public" id="smethod:parse" name="parse" native="1" static="1"/>
+  <method id="method:toString" idfk="method:toString" inherited="1" name="toString" native="1" source="Object"/>
+</class>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class access="public" id="class:HTMLDocument" name="HTMLDocument" native="1" package="window" shortname="HTMLDocument">
+  <text>Native browser DOM class <code>HTMLDocument</code>. Mozilla browsers call this <code>HTMLDocument</code>, while
+Microsoft Internet Explorer usually reports it as a plain <code>Object</code>.</text>
+  <superclass id="super:0" loaded="1" name="Object"/>
+  <superclass direct="1" id="super:1" loaded="1" name="HTMLElement"/>
+  <method access="public" id="method:getElementById" name="getElementById" native="1">
+    <param name="strId" text="">
+      <type link="1" name="String"/>
+    </param>
+    <return text="">
+      <type link="1" name="HTMLElement"/>
+    </return>
+  </method>
+  <field id="field:childNodes" idfk="field:childNodes" inherited="1" name="childNodes" native="1" source="HTMLElement"/>
+  <field id="field:className" idfk="field:className" inherited="1" name="className" native="1" source="HTMLElement"/>
+  <field id="field:firstChild" idfk="field:firstChild" inherited="1" name="firstChild" native="1" source="HTMLElement"/>
+  <method id="method:getAttribute" idfk="method:getAttribute" inherited="1" name="getAttribute" native="1" source="HTMLElement"/>
+  <field id="field:id" idfk="field:id" inherited="1" name="id" native="1" source="HTMLElement"/>
+  <field id="field:innerHTML" idfk="field:innerHTML" inherited="1" name="innerHTML" native="1" source="HTMLElement"/>
+  <field id="field:lastChild" idfk="field:lastChild" inherited="1" name="lastChild" native="1" source="HTMLElement"/>
+  <field id="field:nextSibling" idfk="field:nextSibling" inherited="1" name="nextSibling" native="1" source="HTMLElement"/>
+  <field id="field:ownerDocument" idfk="field:ownerDocument" inherited="1" name="ownerDocument" native="1" source="HTMLElement"/>
+  <field id="field:parentNode" idfk="field:parentNode" inherited="1" name="parentNode" native="1" source="HTMLElement"/>
+  <field id="field:previousSibling" idfk="field:previousSibling" inherited="1" name="previousSibling" native="1" source="HTMLElement"/>
+  <method id="method:removeAttribute" idfk="method:removeAttribute" inherited="1" name="removeAttribute" native="1" source="HTMLElement"/>
+  <method id="method:setAttribute" idfk="method:setAttribute" inherited="1" name="setAttribute" native="1" source="HTMLElement"/>
+  <field id="field:style" idfk="field:style" inherited="1" name="style" native="1" source="HTMLElement"/>
+  <field id="field:tagName" idfk="field:tagName" inherited="1" name="tagName" native="1" source="HTMLElement"/>
+  <method id="method:toString" idfk="method:toString" inherited="1" name="toString" native="1" source="Object"/>
+</class>

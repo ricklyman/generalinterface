@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package access="public" id="class:window" name="window" native="1">
+  <text>Top-Level properties and functions. Members in this package are accessed either without a namespace prefix or with
+the <code>window.</code> prefix.</text>
+  <nested access="public" id="nested:Array" loaded="1" name="Array" native="1" shortname="Array" type="class">
+    <text>Native JavaScript class Array.</text>
+  </nested>
+  <nested access="public" id="nested:Boolean" loaded="1" name="Boolean" native="1" shortname="Boolean" type="class">
+    <text>Native JavaScript class Boolean.</text>
+  </nested>
+  <nested access="public" id="nested:Date" loaded="1" name="Date" native="1" shortname="Date" type="class">
+    <text>Native JavaScript class Date.</text>
+  </nested>
+  <nested access="public" id="nested:Function" loaded="1" name="Function" native="1" shortname="Function" type="class">
+    <text>Native JavaScript class Function.</text>
+  </nested>
+  <nested access="public" id="nested:HTMLDocument" loaded="1" name="HTMLDocument" native="1" shortname="HTMLDocument" type="class">
+    <text>Native browser DOM class <code>HTMLDocument</code>.</text>
+  </nested>
+  <nested access="public" id="nested:HTMLElement" loaded="1" name="HTMLElement" native="1" shortname="HTMLElement" type="class">
+    <text>Native browser DOM class <code>HTMLElement</code>.</text>
+  </nested>
+  <nested access="public" id="nested:Math" loaded="1" name="Math" native="1" shortname="Math" type="class">
+    <text>Native JavaScript class Math.</text>
+  </nested>
+  <nested access="public" id="nested:Number" loaded="1" name="Number" native="1" shortname="Number" type="class">
+    <text>Native JavaScript class Number.</text>
+  </nested>
+  <nested access="public" id="nested:Object" loaded="1" name="Object" native="1" shortname="Object" type="class">
+    <text>Native JavaScript class Object.</text>
+  </nested>
+  <nested access="public" id="nested:RegExp" loaded="1" name="RegExp" native="1" shortname="RegExp" type="class">
+    <text>Native JavaScript class RegExp.</text>
+  </nested>
+  <nested access="public" id="nested:String" loaded="1" name="String" native="1" shortname="String" type="class">
+    <text>Native JavaScript class String.</text>
+  </nested>
+  <nested access="public" deprecated="1" id="nested:inheritance" loaded="1" name="inheritance" shortname="inheritance" type="class">
+    <deprecated>Renamed to jsx3.lang.Object</deprecated>
+    <see source="jsx3.lang.Object">jsx3.lang.Object</see>
+  </nested>
+  <field access="public" class="window" fullname="window.Infinity" id="sfield:Infinity" name="Infinity" native="1" static="1"/>
+  <field access="public" class="window" fullname="window.NaN" id="sfield:NaN" name="NaN" native="1" static="1"/>
+  <field access="public" class="window" fullname="window.undefined" id="sfield:undefined" name="undefined" native="1" static="1"/>
+  <method access="public" deprecated="1" id="smethod:doDefine" name="doDefine" static="1">
+    <param name="strClassName" text="named class containing the anonymous function to call">
+      <type link="1" name="String"/>
+    </param>
+    <param name="anonymousFunction" text="inner function containing named prototypes to bind">
+      <type link="1" name="String"/>
+    </param>
+    <text>Registers all prototype functions and properties, contained by the inner function @anonymousFunction; used by jsx3.Object</text>
+    <deprecated>Create classes using &lt;code&gt;jsx3.Class&lt;/code&gt;.</deprecated>
+    <see source="jsx3.lang.Class">jsx3.lang.Class</see>
+  </method>
+  <method access="public" deprecated="1" id="smethod:doImplement" name="doImplement" static="1">
+    <param name="subClass" text="named subclass to transfer prototypes to">
+      <type link="1" name="String"/>
+    </param>
+    <param name="superClass" text="named superclass to transfer prototypes from">
+      <type link="1" name="String"/>
+    </param>
+    <return text="the eval value of the script"/>
+    <text>Transfers prototype methods from one class to another.</text>
+    <deprecated>Create classes using &lt;code&gt;jsx3.Class&lt;/code&gt;.</deprecated>
+    <see source="jsx3.lang.Class">jsx3.lang.Class</see>
+  </method>
+  <method access="public" deprecated="1" id="smethod:doInherit" name="doInherit" static="1">
+    <param name="subClass" text="named subclass to transfer prototypes to">
+      <type link="1" name="String"/>
+    </param>
+    <param name="superClass" text="named superclass to transfer prototypes from">
+      <type link="1" name="String"/>
+    </param>
+    <param name="bImplement" text="if true, @superClass is an interface">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <return text="the eval value of the script"/>
+    <text>Transfers prototype methods from one class to another; establishes @superClass as the super for @subClass.</text>
+    <deprecated>Create classes using &lt;code&gt;jsx3.Class&lt;/code&gt;.</deprecated>
+    <see source="jsx3.lang.Class">jsx3.lang.Class</see>
+  </method>
+  <method access="public" deprecated="1" id="smethod:doMixin" name="doMixin" static="1">
+    <param name="objInstance" text="any JavaScript object">
+      <type link="1" name="Object"/>
+    </param>
+    <param name="strClassName" text="the name of a class">
+      <type link="1" name="String"/>
+    </param>
+    <text>Transfers the methods of a class to a object instance.</text>
+    <deprecated>Use &lt;code&gt;jsx3.Class.mixin()&lt;/code&gt;.</deprecated>
+    <see idfk="method:mixin" source="jsx3.lang.Class">jsx3.lang.Class.mixin()</see>
+  </method>
+  <method access="public" id="smethod:escape" name="escape" native="1" static="1"/>
+  <method access="public" id="smethod:eval" name="eval" native="1" static="1"/>
+  <method access="public" id="smethod:isFinite" name="isFinite" native="1" static="1"/>
+  <method access="public" id="smethod:isNaN" name="isNaN" native="1" static="1"/>
+  <method access="public" id="smethod:parseFloat" name="parseFloat" native="1" static="1"/>
+  <method access="public" id="smethod:parseInt" name="parseInt" native="1" static="1"/>
+  <method access="public" id="smethod:unescape" name="unescape" native="1" static="1"/>
+</package>

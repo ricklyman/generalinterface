@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class access="public" id="class:Object" name="Object" native="1" package="window" shortname="Object">
+  <text>Native JavaScript class Object.</text>
+  <subclass id="sub:0" loaded="1" name="Array"/>
+  <subclass id="sub:1" loaded="1" name="Boolean"/>
+  <subclass id="sub:2" loaded="1" name="Date"/>
+  <subclass id="sub:3" loaded="1" name="Function"/>
+  <subclass id="sub:4" loaded="1" name="HTMLElement"/>
+  <subclass id="sub:5" loaded="1" name="Math"/>
+  <subclass id="sub:6" loaded="1" name="Number"/>
+  <subclass id="sub:7" loaded="1" name="RegExp"/>
+  <subclass id="sub:8" loaded="1" name="String"/>
+  <subclass id="sub:9" loaded="1" name="jsx3.$AsyncCB"/>
+  <subclass id="sub:10" loaded="1" name="jsx3.$AsyncRV"/>
+  <subclass id="sub:11" loaded="1" name="jsx3.$Function"/>
+  <subclass id="sub:12" loaded="1" name="jsx3.$Object"/>
+  <subclass id="sub:13" loaded="1" name="jsx3.lang.ClassLoader"/>
+  <subclass id="sub:14" loaded="1" name="jsx3.lang.Object"/>
+  <subclass id="sub:15" loaded="1" name="jsx3.util.GNode"/>
+  <subclass id="sub:16" loaded="1" name="jsx3.util.Graph"/>
+  <subclass id="sub:17" loaded="1" name="jsx3.util.JobGraph"/>
+  <constructor access="public" id="method:Object" name="Object" native="1"/>
+  <method access="public" id="method:toString" name="toString" native="1">
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+  </method>
+</class>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class access="public" id="class:String" name="String" native="1" package="window" shortname="String">
+  <text>Native JavaScript class String. Includes GI extensions.</text>
+  <superclass direct="1" id="super:0" loaded="1" name="Object"/>
+  <constructor access="public" id="method:String" name="String" native="1"/>
+  <field access="public" class="String" fullname="String.length" id="field:length" name="length" native="1"/>
+  <method access="public" id="method:charAt" name="charAt" native="1"/>
+  <method access="public" id="method:charCodeAt" name="charCodeAt" native="1"/>
+  <method access="public" id="method:concat" name="concat" native="1"/>
+  <method access="public" deprecated="1" id="method:constrainLength" name="constrainLength">
+    <param name="intMax"/>
+    <param name="ellipsis"/>
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>trim a string down to a maximum length, put an ellipsis in the middle of the string if the string is too long, showing the beginning and ending of the string.</text>
+    <deprecated>Use &lt;code&gt;jsx3.util.strTruncate()&lt;/code&gt; instead.
+ </deprecated>
+  </method>
+  <method access="public" deprecated="1" id="method:doReplace" name="doReplace">
+    <param name="strReplace" text="string to replace">
+      <type link="1" name="String"/>
+    </param>
+    <param name="strReplaceWith" text="string to replace with">
+      <type link="1" name="String"/>
+    </param>
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>performs a global, case-sensitive replace of all instances of @strReplace with @strReplaceWith</text>
+    <deprecated>Use &lt;code&gt;String.replace()&lt;/code&gt; with regular expression syntax.
+ </deprecated>
+  </method>
+  <method access="public" deprecated="1" id="method:doTruncate" name="doTruncate">
+    <param name="intLength" text="length of the string (including the trailing ..., if necessary)">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>truncates a string to @intLength and appends "..." to the end if the string is is actually truncated</text>
+    <deprecated>Use &lt;code&gt;jsx3.util.strTruncate()&lt;/code&gt; instead.
+ </deprecated>
+  </method>
+  <method access="public" deprecated="1" id="method:endsWith" name="endsWith">
+    <param name="token" text="item to match on the String instance">
+      <type link="1" name="String"/>
+    </param>
+    <return text="">
+      <type class="Boolean" link="1" name="boolean"/>
+    </return>
+    <text>Returns whether or not the string ends with @token</text>
+    <deprecated>Use &lt;code&gt;jsx3.util.strEndsWith()&lt;/code&gt; instead.
+ </deprecated>
+  </method>
+  <method access="public" deprecated="1" id="method:escapeHTML" name="escapeHTML">
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>replaces the following four characters with their escaped equivalent: &amp; &lt; &gt; "</text>
+    <deprecated>Use &lt;code&gt;jsx3.util.strEscapeHTML()&lt;/code&gt; instead.
+ </deprecated>
+  </method>
+  <method access="public" deprecated="1" id="method:fromBase64" name="fromBase64">
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>Decodes this string from its base64 equivalent.</text>
+    <deprecated>Use &lt;code&gt;jsx3.util.strDecodeBase64()&lt;/code&gt; instead.
+ </deprecated>
+  </method>
+  <method access="public" id="method:indexOf" name="indexOf" native="1"/>
+  <method access="public" id="method:match" name="match" native="1"/>
+  <method access="public" id="method:replace" name="replace" native="1"/>
+  <method access="public" id="method:search" name="search" native="1"/>
+  <method access="public" id="method:slice" name="slice" native="1"/>
+  <method access="public" id="method:split" name="split" native="1"/>
+  <method access="public" id="method:substring" name="substring" native="1"/>
+  <method access="public" deprecated="1" id="method:toAbsolute" name="toAbsolute">
+    <return text="URL">
+      <type link="1" name="String"/>
+    </return>
+    <text>takes any string (assumed to be a valid URL) and prepends that string with the appropriate path information. This function
+         is used by the JSX framework to resolve file locations at runtime, and is always used by system methods that need to resolve
+         the location of a resource.  For example, if the application is located at "/system/JSXAPPS/app1/" and a resource is requested
+         at "JSXAPPS/app1/components/appCanval.xml", this method would return "/system/JSXAPPS/app1/components/appCanval.xml"</text>
+    <deprecated>Use &lt;code&gt;jsx3.resolveURI()&lt;/code&gt;.</deprecated>
+    <see idfk="smethod:resolveURI" source="jsx3">jsx3.resolveURI()</see>
+  </method>
+  <method access="public" deprecated="1" id="method:toBase64" name="toBase64">
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>Encodes this string to its base64 equivalent.</text>
+    <deprecated>Use &lt;code&gt;jsx3.util.strEncodeBase64()&lt;/code&gt; instead.
+ </deprecated>
+  </method>
+  <method access="public" id="method:toLowerCase" name="toLowerCase" native="1"/>
+  <method access="public" id="method:toUpperCase" name="toUpperCase" native="1"/>
+  <method access="public" deprecated="1" id="method:trim" name="trim">
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>trims trailing and leading spaces (anything matching  the regexp, \s) from a string</text>
+    <deprecated>Use &lt;code&gt;jsx3.util.strTrim()&lt;/code&gt; instead.
+ </deprecated>
+  </method>
+  <method access="public" deprecated="1" id="method:urlTo" name="urlTo">
+    <param name="strRelative" text="URL to base relativity from">
+      <type link="1" name="String"/>
+    </param>
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns a url, strRelative, relative to the URL represented by this string. For example, if 'this' String is equal to "/perforce/DEV/gi/gi-dev/index.html" and @strRelative is equal to "JSXAPPS/app1/config.xml", then the result of this function would be: "/perforce/DEV/gi/gi-dev/JSXAPPS/app1/config.xml"</text>
+    <deprecated>Create instances of &lt;code&gt;jsx3.net.URI&lt;/code&gt; and use &lt;code&gt;URI.resolve()&lt;/code&gt;.</deprecated>
+    <see source="jsx3.net.URI">jsx3.net.URI</see>
+  </method>
+  <method access="public" id="smethod:fromCharCode" name="fromCharCode" native="1" static="1"/>
+  <method id="method:toString" idfk="method:toString" inherited="1" name="toString" native="1" source="Object"/>
+</class>

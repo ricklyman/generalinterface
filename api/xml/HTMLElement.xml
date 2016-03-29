@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class access="public" id="class:HTMLElement" name="HTMLElement" native="1" package="window" shortname="HTMLElement">
+  <text>Native browser DOM class <code>HTMLElement</code>. Mozilla browsers call this <code>HTMLElement</code>, while
+Microsoft Internet Explorer usually reports it as a plain <code>Object</code>.</text>
+  <superclass direct="1" id="super:0" loaded="1" name="Object"/>
+  <subclass id="sub:0" loaded="1" name="HTMLDocument"/>
+  <field access="public" class="HTMLElement" fullname="HTMLElement.childNodes" id="field:childNodes" name="childNodes" native="1">
+    <type link="1" name="Array">
+      <type link="1" name="HTMLElement"/>
+    </type>
+  </field>
+  <field access="public" class="HTMLElement" fullname="HTMLElement.className" id="field:className" name="className" native="1">
+    <type link="1" name="String"/>
+  </field>
+  <field access="public" class="HTMLElement" fullname="HTMLElement.firstChild" id="field:firstChild" name="firstChild" native="1">
+    <type link="1" name="HTMLElement"/>
+  </field>
+  <field access="public" class="HTMLElement" fullname="HTMLElement.id" id="field:id" name="id" native="1">
+    <type link="1" name="String"/>
+  </field>
+  <field access="public" class="HTMLElement" fullname="HTMLElement.innerHTML" id="field:innerHTML" name="innerHTML" native="1">
+    <type link="1" name="String"/>
+  </field>
+  <field access="public" class="HTMLElement" fullname="HTMLElement.lastChild" id="field:lastChild" name="lastChild" native="1">
+    <type link="1" name="HTMLElement"/>
+  </field>
+  <field access="public" class="HTMLElement" fullname="HTMLElement.nextSibling" id="field:nextSibling" name="nextSibling" native="1">
+    <type link="1" name="HTMLElement"/>
+  </field>
+  <field access="public" class="HTMLElement" fullname="HTMLElement.ownerDocument" id="field:ownerDocument" name="ownerDocument" native="1">
+    <type link="1" name="HTMLDocument"/>
+  </field>
+  <field access="public" class="HTMLElement" fullname="HTMLElement.parentNode" id="field:parentNode" name="parentNode" native="1">
+    <type link="1" name="HTMLElement"/>
+  </field>
+  <field access="public" class="HTMLElement" fullname="HTMLElement.previousSibling" id="field:previousSibling" name="previousSibling" native="1">
+    <type link="1" name="HTMLElement"/>
+  </field>
+  <field access="public" class="HTMLElement" fullname="HTMLElement.style" id="field:style" name="style" native="1">
+    <type link="1" name="Object"/>
+  </field>
+  <field access="public" class="HTMLElement" fullname="HTMLElement.tagName" id="field:tagName" name="tagName" native="1">
+    <type link="1" name="String"/>
+  </field>
+  <method access="public" id="method:getAttribute" name="getAttribute" native="1">
+    <param name="strName" text="">
+      <type link="1" name="String"/>
+    </param>
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+  </method>
+  <method access="public" id="method:removeAttribute" name="removeAttribute" native="1">
+    <param name="strName" text="">
+      <type link="1" name="String"/>
+    </param>
+  </method>
+  <method access="public" id="method:setAttribute" name="setAttribute" native="1">
+    <param name="strName" text="">
+      <type link="1" name="String"/>
+    </param>
+    <param name="strValue" text="">
+      <type link="1" name="String"/>
+    </param>
+  </method>
+  <method id="method:toString" idfk="method:toString" inherited="1" name="toString" native="1" source="Object"/>
+</class>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class access="public" id="class:Math" name="Math" native="1" package="window" shortname="Math">
+  <text>Native JavaScript class Math. Includes GI extensions.</text>
+  <superclass direct="1" id="super:0" loaded="1" name="Object"/>
+  <field access="public" class="Math" fullname="Math.E" id="sfield:E" name="E" native="1" static="1">
+    <type link="1" name="Number"/>
+  </field>
+  <field access="public" class="Math" fullname="Math.LN10" id="sfield:LN10" name="LN10" native="1" static="1">
+    <type link="1" name="Number"/>
+  </field>
+  <field access="public" class="Math" fullname="Math.LN2" id="sfield:LN2" name="LN2" native="1" static="1">
+    <type link="1" name="Number"/>
+  </field>
+  <field access="public" class="Math" fullname="Math.LOG10E" id="sfield:LOG10E" name="LOG10E" native="1" static="1">
+    <type link="1" name="Number"/>
+  </field>
+  <field access="public" class="Math" fullname="Math.LOG2E" id="sfield:LOG2E" name="LOG2E" native="1" static="1">
+    <type link="1" name="Number"/>
+  </field>
+  <field access="public" class="Math" fullname="Math.PI" id="sfield:PI" name="PI" native="1" static="1">
+    <type link="1" name="Number"/>
+  </field>
+  <field access="public" class="Math" fullname="Math.SQRT1_2" id="sfield:SQRT1_2" name="SQRT1_2" native="1" static="1">
+    <type link="1" name="Number"/>
+  </field>
+  <field access="public" class="Math" fullname="Math.SQRT2" id="sfield:SQRT2" name="SQRT2" native="1" static="1">
+    <type link="1" name="Number"/>
+  </field>
+  <method access="public" id="smethod:abs" name="abs" native="1" static="1"/>
+  <method access="public" id="smethod:acos" name="acos" native="1" static="1"/>
+  <method access="public" id="smethod:asin" name="asin" native="1" static="1"/>
+  <method access="public" id="smethod:atan" name="atan" native="1" static="1"/>
+  <method access="public" id="smethod:atan2" name="atan2" native="1" static="1"/>
+  <method access="public" id="smethod:ceil" name="ceil" native="1" static="1"/>
+  <method access="public" id="smethod:cos" name="cos" native="1" static="1"/>
+  <method access="public" id="smethod:exp" name="exp" native="1" static="1"/>
+  <method access="public" id="smethod:floor" name="floor" native="1" static="1"/>
+  <method access="public" deprecated="1" id="smethod:isNaN" name="isNaN" static="1">
+    <param name="value" text="any value">
+      <type link="1" name="Object"/>
+    </param>
+    <return text="">
+      <type class="Boolean" link="1" name="boolean"/>
+    </return>
+    <text>value == null || isNaN(value)</text>
+    <deprecated>Use &lt;code&gt;jsx3.util.numIsNaN()&lt;/code&gt; instead.
+ </deprecated>
+  </method>
+  <method access="public" id="smethod:log" name="log" native="1" static="1"/>
+  <method access="public" id="smethod:max" name="max" native="1" static="1"/>
+  <method access="public" id="smethod:min" name="min" native="1" static="1"/>
+  <method access="public" deprecated="1" id="smethod:modpos" name="modpos" static="1">
+    <param name="v" text="a">
+      <type link="1" name="Number"/>
+    </param>
+    <param name="mod" text="b">
+      <type link="1" name="Number"/>
+    </param>
+    <return text="a mod b if a &gt;= 0, b + a mod b, if a &lt; 0">
+      <type link="1" name="Number"/>
+    </return>
+    <text>calculates a mod b, but the result is not allowed to be negative</text>
+    <deprecated>Use &lt;code&gt;jsx3.util.numMod()&lt;/code&gt; instead.
+ </deprecated>
+  </method>
+  <method access="public" id="smethod:pow" name="pow" native="1" static="1"/>
+  <method access="public" id="smethod:random" name="random" native="1" static="1"/>
+  <method access="public" id="smethod:round" name="round" native="1" static="1"/>
+  <method access="public" id="smethod:sin" name="sin" native="1" static="1"/>
+  <method access="public" id="smethod:sqrt" name="sqrt" native="1" static="1"/>
+  <method access="public" id="smethod:tan" name="tan" native="1" static="1"/>
+  <method id="method:toString" idfk="method:toString" inherited="1" name="toString" native="1" source="Object"/>
+</class>

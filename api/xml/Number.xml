@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class access="public" id="class:Number" name="Number" native="1" package="window" shortname="Number">
+  <text>Native JavaScript class Number. Includes GI extensions.</text>
+  <superclass direct="1" id="super:0" loaded="1" name="Object"/>
+  <constructor access="public" id="method:Number" name="Number" native="1"/>
+  <field access="public" class="Number" fullname="Number.MAX_VALUE" id="sfield:MAX_VALUE" name="MAX_VALUE" native="1" static="1">
+    <type link="1" name="Number"/>
+  </field>
+  <field access="public" class="Number" fullname="Number.MIN_VALUE" id="sfield:MIN_VALUE" name="MIN_VALUE" native="1" static="1">
+    <type link="1" name="Number"/>
+  </field>
+  <field access="public" class="Number" fullname="Number.NEGATIVE_INFINITY" id="sfield:NEGATIVE_INFINITY" name="NEGATIVE_INFINITY" native="1" static="1">
+    <type link="1" name="Number"/>
+  </field>
+  <field access="public" class="Number" fullname="Number.NaN" id="sfield:NaN" name="NaN" native="1" static="1">
+    <type link="1" name="Number"/>
+  </field>
+  <field access="public" class="Number" fullname="Number.POSITIVE_INFINITY" id="sfield:POSITIVE_INFINITY" name="POSITIVE_INFINITY" native="1" static="1">
+    <type link="1" name="Number"/>
+  </field>
+  <method access="public" deprecated="1" id="method:roundTo" name="roundTo">
+    <param name="intUnit" text="unit to use">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <return text="">
+      <type link="1" name="Number"/>
+    </return>
+    <text>Rounds the number (this) to the nearest value that can be divided by @intUnit.</text>
+    <deprecated>Use &lt;code&gt;jsx3.util.numRound()&lt;/code&gt; instead.
+ </deprecated>
+  </method>
+  <method access="public" id="method:toFixed" name="toFixed" native="1"/>
+  <method access="public" id="method:toPrecision" name="toPrecision" native="1"/>
+  <method access="public" deprecated="1" id="method:zeroPad" name="zeroPad">
+    <param name="intDigits" text="the length of the string to return">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>Left pads this number with zeros to return a string of length <code>intDigits</code>.</text>
+    <deprecated>Use the &lt;code&gt;jsx3.util.NumberFormat&lt;/code&gt; class.
+ </deprecated>
+  </method>
+  <method id="method:toString" idfk="method:toString" inherited="1" name="toString" native="1" source="Object"/>
+</class>
