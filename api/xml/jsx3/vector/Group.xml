@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class access="public" id="class:jsx3.vector.Group" name="jsx3.vector.Group" package="jsx3.vector" shortname="Group">
+  <text>Represents a grouping of vector shapes.
+ </text>
+  <superclass id="super:0" loaded="1" name="Object"/>
+  <superclass id="super:1" loaded="1" name="jsx3.lang.Object"/>
+  <superclass id="super:2" loaded="1" name="jsx3.html.Tag"/>
+  <superclass id="super:3" loaded="1" name="jsx3.html.BlockTag"/>
+  <superclass direct="1" id="super:4" loaded="1" name="jsx3.vector.Tag"/>
+  <constructor access="public" id="method:init" name="init">
+    <param name="left" text="left position (in pixels) of the object relative to its parent container">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <param name="top" text="top position (in pixels) of the object relative to its parent container">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <param name="width" text="width (in pixels) of the object">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <param name="height" text="height (in pixels) of the object&#10;   ">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <text>The instance initializer.</text>
+  </constructor>
+  <method id="method:getRotation" idfk="method:getRotation" inherited="1" name="getRotation" source="jsx3.vector.Tag"/>
+  <method id="method:getToolTip" idfk="method:getToolTip" inherited="1" name="getToolTip" source="jsx3.vector.Tag"/>
+  <method id="method:setRotation" idfk="method:setRotation" inherited="1" name="setRotation" source="jsx3.vector.Tag"/>
+  <method id="method:setToolTip" idfk="method:setToolTip" inherited="1" name="setToolTip" source="jsx3.vector.Tag"/>
+  <method id="method:getBackgroundColor" idfk="method:getBackgroundColor" inherited="1" name="getBackgroundColor" source="jsx3.html.BlockTag"/>
+  <method id="method:getDimensions" idfk="method:getDimensions" inherited="1" name="getDimensions" source="jsx3.html.BlockTag"/>
+  <method id="method:getHeight" idfk="method:getHeight" inherited="1" name="getHeight" source="jsx3.html.BlockTag"/>
+  <method id="method:getLeft" idfk="method:getLeft" inherited="1" name="getLeft" source="jsx3.html.BlockTag"/>
+  <method id="method:getMargin" idfk="method:getMargin" inherited="1" name="getMargin" source="jsx3.html.BlockTag"/>
+  <method id="method:getMarginDimensions" idfk="method:getMarginDimensions" inherited="1" name="getMarginDimensions" source="jsx3.html.BlockTag"/>
+  <method id="method:getPadding" idfk="method:getPadding" inherited="1" name="getPadding" source="jsx3.html.BlockTag"/>
+  <method id="method:getPaddingDimensions" idfk="method:getPaddingDimensions" inherited="1" name="getPaddingDimensions" source="jsx3.html.BlockTag"/>
+  <method id="method:getPosition" idfk="method:getPosition" inherited="1" name="getPosition" source="jsx3.html.BlockTag"/>
+  <method id="method:getTop" idfk="method:getTop" inherited="1" name="getTop" source="jsx3.html.BlockTag"/>
+  <method id="method:getWidth" idfk="method:getWidth" inherited="1" name="getWidth" source="jsx3.html.BlockTag"/>
+  <method id="method:getZIndex" idfk="method:getZIndex" inherited="1" name="getZIndex" source="jsx3.html.BlockTag"/>
+  <method id="method:setBackgroundColor" idfk="method:setBackgroundColor" inherited="1" name="setBackgroundColor" source="jsx3.html.BlockTag"/>
+  <method id="method:setDimensions" idfk="method:setDimensions" inherited="1" name="setDimensions" source="jsx3.html.BlockTag"/>
+  <method id="method:setHeight" idfk="method:setHeight" inherited="1" name="setHeight" source="jsx3.html.BlockTag"/>
+  <method id="method:setLeft" idfk="method:setLeft" inherited="1" name="setLeft" source="jsx3.html.BlockTag"/>
+  <method id="method:setMargin" idfk="method:setMargin" inherited="1" name="setMargin" source="jsx3.html.BlockTag"/>
+  <method id="method:setPadding" idfk="method:setPadding" inherited="1" name="setPadding" source="jsx3.html.BlockTag"/>
+  <method id="method:setPosition" idfk="method:setPosition" inherited="1" name="setPosition" source="jsx3.html.BlockTag"/>
+  <method id="method:setTop" idfk="method:setTop" inherited="1" name="setTop" source="jsx3.html.BlockTag"/>
+  <method id="method:setWidth" idfk="method:setWidth" inherited="1" name="setWidth" source="jsx3.html.BlockTag"/>
+  <method id="method:setZIndex" idfk="method:setZIndex" inherited="1" name="setZIndex" source="jsx3.html.BlockTag"/>
+  <method id="method:appendChild" idfk="method:appendChild" inherited="1" name="appendChild" source="jsx3.html.Tag"/>
+  <method id="method:getChildren" idfk="method:getChildren" inherited="1" name="getChildren" source="jsx3.html.Tag"/>
+  <method id="method:getClassName" idfk="method:getClassName" inherited="1" name="getClassName" source="jsx3.html.Tag"/>
+  <method id="method:getFirstChildOfType" idfk="method:getFirstChildOfType" inherited="1" name="getFirstChildOfType" source="jsx3.html.Tag"/>
+  <method id="method:getId" idfk="method:getId" inherited="1" name="getId" source="jsx3.html.Tag"/>
+  <method id="method:getParent" idfk="method:getParent" inherited="1" name="getParent" source="jsx3.html.Tag"/>
+  <method id="method:getProperty" idfk="method:getProperty" inherited="1" name="getProperty" source="jsx3.html.Tag"/>
+  <method id="method:getStyle" idfk="method:getStyle" inherited="1" name="getStyle" source="jsx3.html.Tag"/>
+  <method id="method:getTagNS" idfk="method:getTagNS" inherited="1" name="getTagNS" source="jsx3.html.Tag"/>
+  <method id="method:getTagName" idfk="method:getTagName" inherited="1" name="getTagName" source="jsx3.html.Tag"/>
+  <method id="method:onAppendChild" idfk="method:onAppendChild" inherited="1" name="onAppendChild" source="jsx3.html.Tag"/>
+  <method id="method:onRemoveChild" idfk="method:onRemoveChild" inherited="1" name="onRemoveChild" source="jsx3.html.Tag"/>
+  <method id="method:paint" idfk="method:paint" inherited="1" name="paint" source="jsx3.html.Tag"/>
+  <method id="method:paintDom" idfk="method:paintDom" inherited="1" name="paintDom" source="jsx3.html.Tag"/>
+  <method id="method:paintUpdate" idfk="method:paintUpdate" inherited="1" name="paintUpdate" source="jsx3.html.Tag"/>
+  <method id="method:release" idfk="method:release" inherited="1" name="release" source="jsx3.html.Tag"/>
+  <method id="method:removeChild" idfk="method:removeChild" inherited="1" name="removeChild" source="jsx3.html.Tag"/>
+  <method id="method:removeChildren" idfk="method:removeChildren" inherited="1" name="removeChildren" source="jsx3.html.Tag"/>
+  <method id="method:removeProperty" idfk="method:removeProperty" inherited="1" name="removeProperty" source="jsx3.html.Tag"/>
+  <method id="method:removeStyle" idfk="method:removeStyle" inherited="1" name="removeStyle" source="jsx3.html.Tag"/>
+  <method id="method:replaceChild" idfk="method:replaceChild" inherited="1" name="replaceChild" source="jsx3.html.Tag"/>
+  <method id="method:setClassName" idfk="method:setClassName" inherited="1" name="setClassName" source="jsx3.html.Tag"/>
+  <method id="method:setExtraStyles" idfk="method:setExtraStyles" inherited="1" name="setExtraStyles" source="jsx3.html.Tag"/>
+  <method id="method:setId" idfk="method:setId" inherited="1" name="setId" source="jsx3.html.Tag"/>
+  <method id="method:setProperty" idfk="method:setProperty" inherited="1" name="setProperty" source="jsx3.html.Tag"/>
+  <method id="method:setStyle" idfk="method:setStyle" inherited="1" name="setStyle" source="jsx3.html.Tag"/>
+  <method id="method:toString" idfk="method:toString" inherited="1" name="toString" source="jsx3.html.Tag"/>
+  <method id="method:clone" idfk="method:clone" inherited="1" name="clone" source="jsx3.lang.Object"/>
+  <method id="method:equals" idfk="method:equals" inherited="1" name="equals" source="jsx3.lang.Object"/>
+  <method id="method:eval" idfk="method:eval" inherited="1" name="eval" source="jsx3.lang.Object"/>
+  <method id="method:getClass" idfk="method:getClass" inherited="1" name="getClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOf" idfk="method:getInstanceOf" inherited="1" name="getInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfClass" idfk="method:getInstanceOfClass" inherited="1" name="getInstanceOfClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfPackage" idfk="method:getInstanceOfPackage" inherited="1" name="getInstanceOfPackage" source="jsx3.lang.Object"/>
+  <method id="method:instanceOf" idfk="method:instanceOf" inherited="1" name="instanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isInstanceOf" idfk="method:isInstanceOf" inherited="1" name="isInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isSubclassOf" idfk="method:isSubclassOf" inherited="1" name="isSubclassOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:jsxmix" idfk="method:jsxmix" inherited="1" name="jsxmix" source="jsx3.lang.Object"/>
+  <method id="method:jsxsuper" idfk="method:jsxsuper" inherited="1" name="jsxsuper" source="jsx3.lang.Object"/>
+  <method id="method:jsxsupermix" idfk="method:jsxsupermix" inherited="1" name="jsxsupermix" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:setInstanceOf" idfk="method:setInstanceOf" inherited="1" name="setInstanceOf" source="jsx3.lang.Object"/>
+</class>

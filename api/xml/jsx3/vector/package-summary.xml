@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package abstract="1" access="public" id="class:jsx3.vector" name="jsx3.vector">
+  <text>This package and all contained classes are available only when the Charting add-in is enabled.
+ </text>
+  <nested abstract="1" access="public" id="nested:jsx3.vector.BaseShape" loaded="1" name="jsx3.vector.BaseShape" shortname="BaseShape" type="class">
+    <text>A vector tag that can have fill and stroke.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.vector.Block" loaded="1" name="jsx3.vector.Block" shortname="Block" since="3.5&#10; " type="class">
+    <text>Defines a base class for GUI controls that implement both the cross-platform box profile painting introduced in
+3.2 and the cross-platform (VML/SVG) vector painting, also introduced in 3.2.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.vector.Canvas" loaded="1" name="jsx3.vector.Canvas" shortname="Canvas" type="class">
+    <text>Represents a vector canvas in which vector shapes are painted.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.vector.Fill" loaded="1" name="jsx3.vector.Fill" shortname="Fill" type="class">
+    <text>Represents a vector fill, the color and gradient that fills a solid vector shape.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.vector.Group" loaded="1" name="jsx3.vector.Group" shortname="Group" type="class">
+    <text>Represents a grouping of vector shapes.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.vector.Line" loaded="1" name="jsx3.vector.Line" shortname="Line" type="class">
+    <text>Paints a vector line defined by two end points.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.vector.LineGroup" loaded="1" name="jsx3.vector.LineGroup" shortname="LineGroup" type="class">
+    <text>A more efficient way of painting many vector lines of the same color and thickness.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.vector.Oval" loaded="1" name="jsx3.vector.Oval" shortname="Oval" type="class">
+    <text>Paints a vector oval bounded by the box defined by its left, top, width, and height.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.vector.Polygon" loaded="1" name="jsx3.vector.Polygon" shortname="Polygon" type="class">
+    <text>Paints a vector polygon defined by a set of points.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.vector.Rectangle" loaded="1" name="jsx3.vector.Rectangle" shortname="Rectangle" type="class">
+    <text>Paints a vector rectangle.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.vector.RectangleGroup" loaded="1" name="jsx3.vector.RectangleGroup" shortname="RectangleGroup" type="class">
+    <text>A more efficient way of painting many vector rectangles of the same fill and stroke.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.vector.Shape" loaded="1" name="jsx3.vector.Shape" shortname="Shape" type="class">
+    <text>A vector shape element.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.vector.Stroke" loaded="1" name="jsx3.vector.Stroke" shortname="Stroke" type="class">
+    <text>Represents a vector line style.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.vector.Tag" loaded="1" name="jsx3.vector.Tag" shortname="Tag" type="class">
+    <text>The base class for jsx3.vector.Group and jsx3.vector.Shape.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.vector.TextLine" loaded="1" name="jsx3.vector.TextLine" shortname="TextLine" type="class">
+    <text>Renders text along an arbitrary line.</text>
+  </nested>
+  <method access="public" id="smethod:colorAsHtml" name="colorAsHtml" static="1">
+    <param name="color" text="The number to convert to hex.">
+      <type class="Number" link="1" name="int"/>
+      <type link="1" name="String"/>
+    </param>
+    <return text="The CSS hex string.&#10;   ">
+      <type link="1" name="String"/>
+    </return>
+    <text>Converts an integer color to a CSS hex string color. If the color parameter is not a number, this function
+returns the argument as a string.</text>
+  </method>
+  <method access="public" id="smethod:degreesToRadians" name="degreesToRadians" static="1">
+    <param name="degrees" text="a degree value; 0 points North, increasing values go clockwise.">
+      <type link="1" name="Number"/>
+    </param>
+    <return text="a radian value, between 0 and 2*pi; 0 points East, increasing values go counterclockwise.&#10;   ">
+      <type link="1" name="Number"/>
+    </return>
+    <text>Converts degrees (0 at North, clockwise) to radians (0 at East, counterclockwise).</text>
+  </method>
+  <method access="public" id="smethod:paintEventHandler" name="paintEventHandler" static="1">
+    <param name="obj" text="">
+      <type link="1" name="jsx3.app.Model"/>
+    </param>
+    <param name="strEvtType" text="the event type, one of &lt;code&gt;jsx3.gui.Event.CLICK&lt;/code&gt;, etc.">
+      <type link="1" name="String"/>
+    </param>
+    <param name="strMethod" text="the instance method to call on &lt;code&gt;obj&lt;/code&gt; when the event is received.">
+      <type link="1" name="String"/>
+    </param>
+    <param name="objElm" text="the HTML element to which to add the event handler.&#10;   ">
+      <type link="1" name="jsx3.vector.Tag"/>
+    </param>
+    <text>Renders a cross-platform vector event handler.
+</text>
+  </method>
+  <method access="public" id="smethod:updateVector" name="updateVector" static="1">
+    <param name="objNew" text="">
+      <type link="1" name="jsx3.html.Tag"/>
+    </param>
+    <param name="objExisting" text="">
+      <type link="1" name="HTMLElement"/>
+    </param>
+    <text>Updates a rendered vector HTML element, <code>objExisting</code>, with an in-memory vector tag,
+<code>objNew</code>. For example,
+<pre>
+var objElm = document.getElementById("vectorId");
+var objVector = new jsx3.vector.Oval(0, 0, 100, 100);
+objVector.setFill(new jsx3.vector.Fill(0xFFFF00));
+jsx3.vector.updateVector(objVector, objElm);
+</pre>
+    </text>
+  </method>
+</package>
