@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class access="public" id="class:jsx3.lang.Object" name="jsx3.lang.Object" package="jsx3.lang" shortname="Object" since="3.1">
+  <text>Base class for all classes defined with <code>jsx3.lang.Class</code>.
+<h4>Determining the Class of an Object</h4>
+<p/>
+The class of an object can be determined in one of several ways. 
+<ol>
+<li> <code>jsx3.lang.Object</code> defines the method 
+  <code>getClass()</code>, which returns an instance of <code>jsx3.lang.Class</code>. This method is useful for 
+  testing whether an object is an instance of exactly (not a superclass of) a class.</li>
+<li>To test whether an object is an instance of a class or one of its superclasses, use the JavaScript operator
+  <code>instanceof</code>: <code>obj instanceof jsx3.lang.Object</code>. <i>Note that the right hand argument of this
+  expression must be the constructor function of a class and not of an interface defined with 
+  <code>jsx3.Class.defineInterface()</code>)</i>.</li>
+<li>To test whether an object implements an interface, use the method <code>instanceOf()</code> defined in 
+  <code>jsx3.lang.Object</code>. This method will check against all classes and interfaces but is probably slower
+  than the <code>instanceof</code> operator.</li>
+</ol>
+Examples:
+<pre>
+var doc = new jsx3.gui.Block();
+doc.getClass().equals(jsx3.gui.Block.jsxclass);  // true
+doc.getClass().equals(jsx3.app.Model.jsxclass);  // false, even though Block extends Model
+doc instanceof jsx3.gui.Block;  // true
+doc instanceof jsx3.app.Model;  // true
+doc instanceof jsx3.util.EventDispatcher;  // false, EventDispatcher is an interface
+doc instanceof Object;          // true, works on non-jsx3.Class class constructors
+
+doc.instanceOf(jsx3.gui.Block);            // true
+doc.instanceOf(jsx3.app.Model.jsxclass);   // true, accepts arguments of type jsx3.Class
+doc.instanceOf('jsx3.lang.Object');        // true, accepts arguments of type String
+doc.instanceOf(jsx3.util.EventDispatcher); // true, works on interfaces
+doc.instanceOf(Object);                    // true, works on non-jsx3.Class class constructors
+</pre>
+  </text>
+  <superclass direct="1" id="super:0" loaded="1" name="Object"/>
+  <subclass id="sub:0" loaded="1" name="jsx3.EVT"/>
+  <subclass id="sub:1" loaded="1" name="jsx3.amp.Engine"/>
+  <subclass id="sub:2" loaded="1" name="jsx3.amp.Ext"/>
+  <subclass id="sub:3" loaded="1" name="jsx3.amp.ExtPoint"/>
+  <subclass id="sub:4" loaded="1" name="jsx3.amp.ExtProc"/>
+  <subclass id="sub:5" loaded="1" name="jsx3.amp.PlugIn"/>
+  <subclass id="sub:6" loaded="1" name="jsx3.amp.Resource"/>
+  <subclass id="sub:7" loaded="1" name="jsx3.amp.XML"/>
+  <subclass id="sub:8" loaded="1" name="jsx3.amp.util.MenuItem"/>
+  <subclass id="sub:9" loaded="1" name="jsx3.amp.util.MenuManager"/>
+  <subclass id="sub:10" loaded="1" name="jsx3.amp.util.Prefs"/>
+  <subclass id="sub:11" loaded="1" name="jsx3.amp.util.PrefsPane"/>
+  <subclass id="sub:12" loaded="1" name="jsx3.amp.util.ToolbarItem"/>
+  <subclass id="sub:13" loaded="1" name="jsx3.amp.util.ToolbarManager"/>
+  <subclass id="sub:14" loaded="1" name="jsx3.amp.util.Wizard"/>
+  <subclass id="sub:15" loaded="1" name="jsx3.amp.util.WizardPane"/>
+  <subclass id="sub:16" loaded="1" name="jsx3.app.AddIn"/>
+  <subclass id="sub:17" loaded="1" name="jsx3.app.Cache"/>
+  <subclass id="sub:18" loaded="1" name="jsx3.app.DOM"/>
+  <subclass id="sub:19" loaded="1" name="jsx3.app.Model"/>
+  <subclass id="sub:20" loaded="1" name="jsx3.app.Properties"/>
+  <subclass id="sub:21" loaded="1" name="jsx3.app.Server"/>
+  <subclass id="sub:22" loaded="1" name="jsx3.app.Settings"/>
+  <subclass id="sub:23" loaded="1" name="jsx3.app.UserSettings"/>
+  <subclass id="sub:24" loaded="1" name="jsx3.gui.Event"/>
+  <subclass id="sub:25" loaded="1" name="jsx3.gui.Heavyweight"/>
+  <subclass id="sub:26" loaded="1" name="jsx3.gui.HotKey"/>
+  <subclass id="sub:27" loaded="1" name="jsx3.gui.Matrix.ColumnFormat"/>
+  <subclass id="sub:28" loaded="1" name="jsx3.gui.Template"/>
+  <subclass id="sub:29" loaded="1" name="jsx3.html.DOM"/>
+  <subclass id="sub:30" loaded="1" name="jsx3.html.Style"/>
+  <subclass id="sub:31" loaded="1" name="jsx3.html.Tag"/>
+  <subclass id="sub:32" loaded="1" name="jsx3.lang.AOP"/>
+  <subclass id="sub:33" loaded="1" name="jsx3.lang.Class"/>
+  <subclass id="sub:34" loaded="1" name="jsx3.lang.Exception"/>
+  <subclass id="sub:35" loaded="1" name="jsx3.lang.Method"/>
+  <subclass id="sub:36" loaded="1" name="jsx3.lang.Package"/>
+  <subclass id="sub:37" loaded="1" name="jsx3.lang.System"/>
+  <subclass id="sub:38" loaded="1" name="jsx3.net.Form"/>
+  <subclass id="sub:39" loaded="1" name="jsx3.net.Request"/>
+  <subclass id="sub:40" loaded="1" name="jsx3.net.Service"/>
+  <subclass id="sub:41" loaded="1" name="jsx3.net.URI"/>
+  <subclass id="sub:42" loaded="1" name="jsx3.util.DateFormat"/>
+  <subclass id="sub:43" loaded="1" name="jsx3.util.Dojo"/>
+  <subclass id="sub:44" loaded="1" name="jsx3.util.List"/>
+  <subclass id="sub:45" loaded="1" name="jsx3.util.Locale"/>
+  <subclass id="sub:46" loaded="1" name="jsx3.util.Logger"/>
+  <subclass id="sub:47" loaded="1" name="jsx3.util.Logger.Handler"/>
+  <subclass id="sub:48" loaded="1" name="jsx3.util.Logger.Manager"/>
+  <subclass id="sub:49" loaded="1" name="jsx3.util.Logger.Record"/>
+  <subclass id="sub:50" loaded="1" name="jsx3.util.MessageFormat"/>
+  <subclass id="sub:51" loaded="1" name="jsx3.util.NumberFormat"/>
+  <subclass id="sub:52" loaded="1" name="jsx3.xml.DojoDataStore"/>
+  <subclass id="sub:53" loaded="1" name="jsx3.xml.Entity"/>
+  <subclass id="sub:54" loaded="1" name="jsx3.xml.Processor"/>
+  <subclass id="sub:55" loaded="1" name="jsx3.xml.Template"/>
+  <constructor access="public" id="method:init" name="init">
+    <text>Instance initializer.
+   </text>
+  </constructor>
+  <method access="public" id="method:clone" name="clone">
+    <return text="">
+      <type link="1" name="jsx3.lang.Object"/>
+    </return>
+    <text>Returns a shallow copy of this object.</text>
+  </method>
+  <method access="public" id="method:equals" name="equals">
+    <param name="obj" text="">
+      <type link="1" name="Object"/>
+    </param>
+    <return text="">
+      <type class="Boolean" link="1" name="boolean"/>
+    </return>
+    <text>Returns true if this object is equals to the <code>obj</code> parameter.</text>
+  </method>
+  <method access="public" id="method:eval" name="eval">
+    <param name="strScript" text="the JavaScript to evaluate.">
+      <type link="1" name="String"/>
+    </param>
+    <param name="objContext" text="a map containing the local variable context.">
+      <type link="1" name="Object"/>
+    </param>
+    <return text="the results of evaluating &lt;code&gt;strScript&lt;/code&gt;.">
+      <type link="1" name="Object"/>
+    </return>
+    <text>Evaluates a JavaScript expression in the context of this object with a controlled local variable context. 
+Every name-value pair in <code>objContext</code> will be exposed as a local variable to the evaluated script. 
+All names must be valid JavaScript names in order to be exposed as local variables. Any invalid names will be 
+ignored.
+</text>
+    <see idfk="smethod:eval" source="jsx3">jsx3.eval()</see>
+  </method>
+  <method access="public" id="method:getClass" name="getClass">
+    <return text="">
+      <type link="1" name="jsx3.lang.Class"/>
+    </return>
+    <text>Returns the class of this object.</text>
+  </method>
+  <method access="public" deprecated="1" id="method:getInstanceOf" name="getInstanceOf">
+    <return text="class name of object">
+      <type link="1" name="String"/>
+    </return>
+    <text>gets the class name for the object (the function that was instanced via 'new' to create the object).  For example, jsx3.gui.Block, jsx3.gui.Tree, etc.</text>
+    <deprecated>use Object.getClass()
+   </deprecated>
+  </method>
+  <method access="public" deprecated="1" id="method:getInstanceOfClass" name="getInstanceOfClass">
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>gets the class name (less the package prefix) that this object is an instance of</text>
+    <deprecated>use &lt;code&gt;Object.getClass().getName()&lt;/code&gt; and parse out final token
+   </deprecated>
+  </method>
+  <method access="public" deprecated="1" id="method:getInstanceOfPackage" name="getInstanceOfPackage">
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>returns the name of the package that this class belongs to; returns empty string if no package found</text>
+    <deprecated>use &lt;code&gt;Object.getClass().getPackageName()&lt;/code&gt;
+   </deprecated>
+  </method>
+  <method access="public" id="method:instanceOf" name="instanceOf">
+    <param name="objClass" text="the class to test, may be either the class constructor, and instance &#10;   of jsx3.lang.Class, or the fully-qualified class name">
+      <type link="1" name="Function"/>
+      <type link="1" name="jsx3.lang.Class"/>
+      <type link="1" name="String"/>
+    </param>
+    <return text="">
+      <type class="Boolean" link="1" name="boolean"/>
+    </return>
+    <throws text="if &lt;code&gt;objClass&lt;/code&gt; is a string that is not the name of a registered class&#10;   ">
+      <type link="1" name="jsx3.lang.IllegalArgumentException"/>
+    </throws>
+    <text>Determines whether this object is an instance of <code>objClass</code>, that is, whether 
+   <code>objClass</code> is equal to or a superclass or superinterface of this object's class.</text>
+  </method>
+  <method access="public" deprecated="1" id="method:isInstanceOf" name="isInstanceOf">
+    <param name="strClassName" text="named class">
+      <type link="1" name="String"/>
+    </param>
+    <param name="strPropName" text="default is INTERFACES; one of the strings: INTERFACES or SUPERS">
+      <type link="1" name="String"/>
+    </param>
+    <param name="bIsRecurse" text="BRIDGE CODE; remove when old names fully deprecated/unsupported (release 4.0)">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <return text="">
+      <type class="Boolean" link="1" name="boolean"/>
+    </return>
+    <text>returns whether or not this object is an instance of @strClassName</text>
+    <deprecated>use &lt;code&gt;instanceof&lt;/code&gt; or Object.instanceOf()
+   </deprecated>
+  </method>
+  <method access="public" deprecated="1" id="method:isSubclassOf" name="isSubclassOf">
+    <param name="strClassName" text="named superclass">
+      <type link="1" name="String"/>
+    </param>
+    <return text="">
+      <type class="Boolean" link="1" name="boolean"/>
+    </return>
+    <text>Returns whether or not this object is an instance of a subclass of @strClassName</text>
+    <deprecated>no direct replacement
+   </deprecated>
+  </method>
+  <method access="public" deprecated="1" id="method:jsxmix" name="jsxmix" since="3.5">
+    <param name="arg" text="the variable number of arguments passed to the method mixins.">
+      <type link="1" name="Object" varargs="1"/>
+    </param>
+    <text>No-op.</text>
+    <deprecated>No-op, replaced with &lt;code&gt;jsx3.lang.AOP&lt;/code&gt;.</deprecated>
+    <see source="jsx3.lang.AOP">jsx3.lang.AOP</see>
+  </method>
+  <method access="protected" id="method:jsxsuper" name="jsxsuper">
+    <param name="arg" text="the variable number of arguments passed to the supermethod">
+      <type link="1" name="Object" varargs="1"/>
+    </param>
+    <return text="returns the result of the supermethod">
+      <type link="1" name="Object"/>
+      <type name="undefined"/>
+    </return>
+    <throws text="if called by a static method, if called by a method not defined in a call to &#10;   &lt;code&gt;jsx3.lang.Class.defineClass()&lt;/code&gt;/&lt;code&gt;defineInterface()&lt;/code&gt;, or if no suitable super method exists">
+      <type link="1" name="jsx3.lang.Exception"/>
+    </throws>
+    <text>Calls the supermethod overridden by the method that calls jsxsuper(). The following example shows a chained instance
+initializer method:
+<pre>
+Subclass.prototype.init = function(a, b, c) {
+  this.jsxsuper(a, b);  // calls the init() method in the superclass of Subclass
+  this.c = c;
+};
+</pre>
+</text>
+  </method>
+  <method access="protected" id="method:jsxsupermix" name="jsxsupermix">
+    <param name="arg" text="the variable number of arguments passed to the supermethod">
+      <type link="1" name="Object" varargs="1"/>
+    </param>
+    <return text="returns the result of the supermethod">
+      <type link="1" name="Object"/>
+      <type name="undefined"/>
+    </return>
+    <throws text="if called by a static method, if called by a method not defined in a call to &#10;   &lt;code&gt;jsx3.lang.Class.defineClass()&lt;/code&gt;/&lt;code&gt;defineInterface()&lt;/code&gt;, or if no suitable super method exists">
+      <type link="1" name="jsx3.lang.Exception"/>
+    </throws>
+    <text>Like jsxsuper() but traverses up through all the interfaces implemented by this class and its super classes. This 
+method facilitates modifying the functionality of a mixin interface for a particular class that implements the 
+interface, as the following example shows:
+<pre>
+// imagine that the jsx3.Testable mixin interface defines a method test() that provides basic testing functionality
+jsx3.Class.defineClass('eg.Test', null, [jsx3.Testable], function(Test){
+  Test.prototype.test = function() {
+    this.setUpTest();      // do something before running the test
+    this.jsxsupermix();    // calls test() in jsx3.Testable
+    this.tearDownTest();   // do something after running the test
+  };
+});
+</pre>
+    </text>
+  </method>
+  <method access="public" deprecated="1" id="method:setInstanceOf" name="setInstanceOf">
+    <param name="strInstanceOf" text="type of JSX object, such as jsx3.gui.Tree, jsx3.gui.Button, etc.">
+      <type link="1" name="String"/>
+    </param>
+    <text>sets the JSX object type (only set during object initialization; although custom code can be written to 'cast' an object type to another object type)</text>
+    <deprecated>no direct replacement
+   </deprecated>
+  </method>
+  <method access="public" id="method:toString" name="toString">
+    <return text="a string representation of this object&#10;   ">
+      <type link="1" name="String"/>
+    </return>
+    <overrides id="overrides:toString" idfk="method:toString" name="toString" source="Object"/>
+  </method>
+</class>

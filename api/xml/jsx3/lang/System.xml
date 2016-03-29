@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class access="public" id="class:jsx3.lang.System" name="jsx3.lang.System" package="jsx3.lang" shortname="System">
+  <text>A collection of GI system related functions.
+ </text>
+  <superclass id="super:0" loaded="1" name="Object"/>
+  <superclass direct="1" id="super:1" loaded="1" name="jsx3.lang.Object"/>
+  <method access="public" id="smethod:getLocale" name="getLocale" since="3.2&#10;   " static="1">
+    <text>If the locale has been explicitly set with <code>setLocale()</code>, that locale is returned. Otherwise the
+locale is determined by introspecting the browser. If all else fails the default locale, en_US, is returned.
+</text>
+  </method>
+  <method access="public" id="smethod:getMessage" name="getMessage" since="3.2&#10;   " static="1">
+    <param name="strKey" text="">
+      <type link="1" name="String"/>
+    </param>
+    <param name="strTokens" text="">
+      <type link="1" name="Object" varargs="1"/>
+    </param>
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+  </method>
+  <method access="public" id="smethod:getProperty" name="getProperty" since="3.2&#10;   " static="1">
+    <param name="strKey" text="">
+      <type link="1" name="String"/>
+    </param>
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns a system property as specified by a JSS file loaded by the JSX runtime or an addin.</text>
+  </method>
+  <method access="public" id="smethod:getVersion" name="getVersion" static="1">
+    <return text="&lt;code&gt;&quot;3.1.0&quot;&lt;/code&gt;, etc.&#10;   ">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the version number of General Interface. </text>
+  </method>
+  <method access="public" id="smethod:reloadLocalizedResources" name="reloadLocalizedResources" since="3.2&#10;   " static="1"/>
+  <method access="public" id="smethod:setLocale" name="setLocale" since="3.2&#10;   " static="1">
+    <param name="objLocale"/>
+    <text>Sets the system-wide locale. This in turn affects all applications running under the JSX system.</text>
+  </method>
+  <method id="method:clone" idfk="method:clone" inherited="1" name="clone" source="jsx3.lang.Object"/>
+  <method id="method:equals" idfk="method:equals" inherited="1" name="equals" source="jsx3.lang.Object"/>
+  <method id="method:eval" idfk="method:eval" inherited="1" name="eval" source="jsx3.lang.Object"/>
+  <method id="method:getClass" idfk="method:getClass" inherited="1" name="getClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOf" idfk="method:getInstanceOf" inherited="1" name="getInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfClass" idfk="method:getInstanceOfClass" inherited="1" name="getInstanceOfClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfPackage" idfk="method:getInstanceOfPackage" inherited="1" name="getInstanceOfPackage" source="jsx3.lang.Object"/>
+  <method id="method:instanceOf" idfk="method:instanceOf" inherited="1" name="instanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isInstanceOf" idfk="method:isInstanceOf" inherited="1" name="isInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isSubclassOf" idfk="method:isSubclassOf" inherited="1" name="isSubclassOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:jsxmix" idfk="method:jsxmix" inherited="1" name="jsxmix" source="jsx3.lang.Object"/>
+  <method id="method:jsxsuper" idfk="method:jsxsuper" inherited="1" name="jsxsuper" source="jsx3.lang.Object"/>
+  <method id="method:jsxsupermix" idfk="method:jsxsupermix" inherited="1" name="jsxsupermix" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:setInstanceOf" idfk="method:setInstanceOf" inherited="1" name="setInstanceOf" source="jsx3.lang.Object"/>
+  <method id="method:toString" idfk="method:toString" inherited="1" name="toString" source="jsx3.lang.Object"/>
+</class>

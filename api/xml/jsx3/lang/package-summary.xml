@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package access="public" id="class:jsx3.lang" name="jsx3.lang">
+  <nested access="public" id="nested:jsx3.lang.AOP" loaded="1" name="jsx3.lang.AOP" shortname="AOP" since="3.6&#10; " type="class">
+    <text>Simple aspect oriented programming for General Interface.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.lang.Class" loaded="1" name="jsx3.lang.Class" shortname="Class" since="3.1" type="class">
+    <text>JavaScript class that allows introspection of the JSX class hierarchy.</text>
+    <see source="jsx3.lang.Object">jsx3.lang.Object</see>
+    <see source="jsx3.lang.Method">jsx3.lang.Method</see>
+    <see source="jsx3.lang.Package">jsx3.lang.Package</see>
+  </nested>
+  <nested access="public" id="nested:jsx3.lang.ClassLoader" loaded="1" name="jsx3.lang.ClassLoader" shortname="ClassLoader" type="class">
+    <text>The class loader initializes the system and loads applications and add-ins.</text>
+    <see idfk="method:getType" source="jsx3.lang.ClassLoader">getType()</see>
+    <see idfk="sfield:CLASS_LOADER" source="jsx3">jsx3.CLASS_LOADER</see>
+  </nested>
+  <nested access="public" id="nested:jsx3.lang.Exception" loaded="1" name="jsx3.lang.Exception" shortname="Exception" since="3.1&#10; " type="class">
+    <text>The base GI exception class.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.lang.IllegalArgumentException" loaded="1" name="jsx3.lang.IllegalArgumentException" shortname="IllegalArgumentException" type="class">
+    <text>A special exception type to throw when the caller of a function does not pass arguments according to the method's
+contract.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.lang.Method" loaded="1" name="jsx3.lang.Method" shortname="Method" since="3.1" type="class">
+    <text>JSX Class extends the build in JavaScript class Function.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.lang.NativeError" loaded="1" name="jsx3.lang.NativeError" shortname="NativeError" since="3.1&#10; " type="class">
+    <text>Wraps the browser-native exception object (what might be caught in a typical try/catch/finally block).</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.lang.Object" loaded="1" name="jsx3.lang.Object" shortname="Object" since="3.1" type="class">
+    <text>Base class for all classes defined with <code>jsx3.lang.Class</code>.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.lang.Package" loaded="1" name="jsx3.lang.Package" shortname="Package" since="3.1&#10; " type="class">
+    <text>The Package class provides an introspectable API for JavaScript/JSX packages.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.lang.System" loaded="1" name="jsx3.lang.System" shortname="System" type="class">
+    <text>A collection of GI system related functions.</text>
+  </nested>
+  <method access="public" id="smethod:getCaller" name="getCaller" static="1">
+    <param name="intUp" text="">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <return text="">
+      <type link="1" name="Function"/>
+    </return>
+  </method>
+  <method access="public" id="smethod:getStack" name="getStack" static="1">
+    <param name="intUp" text="">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <return text="">
+      <type link="1" name="Array">
+        <type link="1" name="Function"/>
+      </type>
+    </return>
+  </method>
+</package>

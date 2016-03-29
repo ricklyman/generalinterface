@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class access="public" id="class:jsx3.lang.Package" name="jsx3.lang.Package" package="jsx3.lang" shortname="Package" since="3.1&#10; ">
+  <text>The Package class provides an introspectable API for JavaScript/JSX packages. It also provides a way of defining 
+new packages.
+<p/>
+An instance of this class may be obtained in one of the following ways (<b>this class may not be instantiated 
+directly</b>):
+<ul>
+<li>jsx3.lang.jsxpackage</li>
+<li>jsx3.Package.forName('jsx3.lang')</li>
+</ul>
+In this example, the JavaScript object <code>jsx3.lang</code> is known as the package "namespace," which is a plain
+JavaScript object and is analogous to the constructor property of a jsx3.Class.
+<p/>
+The following is an example of how to define a new package called eg.tests:
+<pre>
+jsx3.lang.Package.definePackage(
+  "eg.tests",                           // the full name of the package to create
+  function(tests) {                  // name the argument of this function "eg"
+    
+    // define a static method like this:
+    tests.staticMethod = function() {
+      ...
+    };
+    // define a static field like this:
+    tests.STATIC_FIELD = "...";
+  }
+);
+</pre>
+  </text>
+  <superclass id="super:0" loaded="1" name="Object"/>
+  <superclass direct="1" id="super:1" loaded="1" name="jsx3.lang.Object"/>
+  <method access="public" id="method:getClasses" name="getClasses">
+    <return text="">
+      <type link="1" name="Array">
+        <type link="1" name="jsx3.lang.Class"/>
+      </type>
+    </return>
+    <text>Returns an array of all the classes defined in this package.</text>
+  </method>
+  <method access="public" id="method:getName" name="getName">
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the fully-qualified name of this class.</text>
+  </method>
+  <method access="public" id="method:getNamespace" name="getNamespace">
+    <return text="">
+      <type link="1" name="Object"/>
+    </return>
+    <text>Returns the namespace of this package. The namespace is the JavaScript object, descending from
+   window, that references this package by its property <code>jsxpackage</code>.</text>
+  </method>
+  <method access="public" id="method:getStaticFieldNames" name="getStaticFieldNames">
+    <return text="an array of String names&#10;   ">
+      <type link="1" name="Array">
+        <type link="1" name="String"/>
+      </type>
+    </return>
+    <text>Returns the array of static fields defined for this package.</text>
+  </method>
+  <method access="public" id="method:getStaticMethod" name="getStaticMethod">
+    <param name="strMethodName" text="the name of the method to find">
+      <type link="1" name="String"/>
+    </param>
+    <return text="the method or null if none found matching &lt;code&gt;strMethodName&lt;/code&gt;&#10;   ">
+      <type link="1" name="jsx3.lang.Method"/>
+    </return>
+    <text>Returns the static method defined in this package with name <code>strMethodName</code>.</text>
+  </method>
+  <method access="public" id="method:getStaticMethods" name="getStaticMethods">
+    <return text="an array of jsx3.Method instances&#10;   ">
+      <type link="1" name="Array">
+        <type link="1" name="jsx3.lang.Method"/>
+      </type>
+    </return>
+    <text>Returns the array of static methods defined for this package.</text>
+  </method>
+  <method access="public" id="method:toString" name="toString">
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <overrides id="overrides:toString" idfk="method:toString" name="toString" source="jsx3.lang.Object"/>
+  </method>
+  <method access="public" id="smethod:definePackage" name="definePackage" static="1">
+    <param name="strName" text="the full package name">
+      <type link="1" name="String"/>
+    </param>
+    <param name="fctBody" text="the function that defines the body of the package. This function takes one argument &#10;   which is the package &quot;namespace&quot;.&#10;   ">
+      <type link="1" name="Function"/>
+    </param>
+    <text>Defines a new package so that it is available for introspection.
+<p/>
+It is not an error if the namespace object already exists prior to calling this method. Any members defined
+by <code>fctBody</code> are simply added to the pre-existing namespace. Then, all members, whether defined
+before the call to this method or with the call to this method, are made introspectable.
+<p/>
+This method may be called more than once with the same <code>strName</code> without causing an error. The
+package is simply redefined. Only the members that are defined in the namespace object after the last call to
+this method will be available for introspection.
+<p/>
+It is an error if, after <code>fctBody</code> is executed, any two members of the namespace object equal the
+same function object. This is know as method aliasing, which can be a useful technique in JavaScript. Any
+method aliasing within the namespace object must occur after the call to this method. Therefore, method aliasing
+will cause an error if this package is redefined later.
+</text>
+  </method>
+  <method access="public" id="smethod:forName" name="forName" static="1">
+    <param name="strName" text="the full name of the package to retrieve">
+      <type link="1" name="String"/>
+    </param>
+    <return text="the package or &lt;code&gt;null&lt;/code&gt; if none matches&#10;   ">
+      <type link="1" name="jsx3.lang.Package"/>
+    </return>
+    <text>Returns the defined package with name equal to <code>strName</code>.</text>
+  </method>
+  <method access="public" id="smethod:getPackages" name="getPackages" static="1">
+    <return text="">
+      <type link="1" name="Array">
+        <type link="1" name="jsx3.lang.Package"/>
+      </type>
+    </return>
+    <text>Returns a list of all defined packages.</text>
+  </method>
+  <method id="method:clone" idfk="method:clone" inherited="1" name="clone" source="jsx3.lang.Object"/>
+  <method id="method:equals" idfk="method:equals" inherited="1" name="equals" source="jsx3.lang.Object"/>
+  <method id="method:eval" idfk="method:eval" inherited="1" name="eval" source="jsx3.lang.Object"/>
+  <method id="method:getClass" idfk="method:getClass" inherited="1" name="getClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOf" idfk="method:getInstanceOf" inherited="1" name="getInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfClass" idfk="method:getInstanceOfClass" inherited="1" name="getInstanceOfClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfPackage" idfk="method:getInstanceOfPackage" inherited="1" name="getInstanceOfPackage" source="jsx3.lang.Object"/>
+  <method id="method:instanceOf" idfk="method:instanceOf" inherited="1" name="instanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isInstanceOf" idfk="method:isInstanceOf" inherited="1" name="isInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isSubclassOf" idfk="method:isSubclassOf" inherited="1" name="isSubclassOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:jsxmix" idfk="method:jsxmix" inherited="1" name="jsxmix" source="jsx3.lang.Object"/>
+  <method id="method:jsxsuper" idfk="method:jsxsuper" inherited="1" name="jsxsuper" source="jsx3.lang.Object"/>
+  <method id="method:jsxsupermix" idfk="method:jsxsupermix" inherited="1" name="jsxsupermix" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:setInstanceOf" idfk="method:setInstanceOf" inherited="1" name="setInstanceOf" source="jsx3.lang.Object"/>
+</class>

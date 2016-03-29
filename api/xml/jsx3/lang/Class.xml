@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class access="public" id="class:jsx3.lang.Class" name="jsx3.lang.Class" package="jsx3.lang" shortname="Class" since="3.1">
+  <text>JavaScript class that allows introspection of the JSX class hierarchy.
+<p/>
+You may obtain an instance of <code>jsx3.lang.Class</code> in one of the following ways:
+<ul>
+  <li>var c = jsx3.Class.forName("jsx3.Object");</li>
+  <li>var c = jsx3.Object.jsxclass;</li>
+</ul>
+This class is also used for defining classes. Use one of <code>defineClass</code> and
+<code>defineInterface</code> to define a class in the JSX class hierarchy. <i>Note that any class defined
+in the package <code>jsx3.lang</code> is aliased into the <code>jsx3</code> package. Therefore 
+<code>jsx3.lang.Object</code> may also be referenced as <code>jsx3.Object</code>.</i>
+<p/>
+The following are class nomenclature definitions using jsx3.lang.Object as an example:
+<ul>
+  <li>jsx3.lang — the package, an instance of (JavaScript, not JSX) <code>Object</code>
+      </li>
+  <li>jsx3.lang.Object — the class constructor, instance of <code>Function</code>
+      </li>
+  <li>jsx3.lang.Object.jsxclass — the class, instance of <code>jsx3.lang.Class</code>
+      </li>
+  <li>jsx3.lang.Object.prototype — the class prototype, instance of <code>Object</code>
+      </li>
+</ul>
+<p/>
+The following is an example of how to define a new class called Example in package eg:
+<pre>
+jsx3.lang.Class.defineClass(
+  "eg.Example",                   // the full name of the class to create
+  eg.Base,                        // the class extends eg.Base
+  [eg.Comparable, eg.Testable],   // the class implements interfaces eg.Comparable and eg.Testable
+  function(Example) {             // name the argument of this function "Example"
+    
+    // every class must define an init method since it is called automatically by the constructor
+    Example.prototype.init = function(arg1) {
+      this.arg1 = arg1;
+    };
+    // define an instance method like this:
+    Example.prototype.instanceMethod = function() {
+      ...
+    };
+    // define an abstract method like this:
+    Example.prototype.abstractMethod = jsx3.Method.newAbstract();
+    // define a static method like this:
+    Example.staticMethod = function() {
+      ...
+    };
+    // define a static field like this:
+    Example.STATIC_FIELD = "...";
+    // define an instance field like this:
+    Example.prototype.instanceField = "...";
+  }
+);
+</pre>
+  </text>
+  <see source="jsx3.lang.Object">jsx3.lang.Object</see>
+  <see source="jsx3.lang.Method">jsx3.lang.Method</see>
+  <see source="jsx3.lang.Package">jsx3.lang.Package</see>
+  <superclass id="super:0" loaded="1" name="Object"/>
+  <superclass direct="1" id="super:1" loaded="1" name="jsx3.lang.Object"/>
+  <method access="public" id="method:addMethodMixin" name="addMethodMixin" since="3.5">
+    <param name="strMethod" text="the name of the method of this class to which to add the advice.">
+      <type link="1" name="String"/>
+    </param>
+    <param name="objClass" text="the type condition for the pointcut.">
+      <type link="1" name="jsx3.lang.Class"/>
+    </param>
+    <param name="strMixin" text="the name of the method to call from the advice function. This method is called on the&#10;  the same instance of this class on which &lt;code&gt;strMethod&lt;/code&gt; is called. ">
+      <type link="1" name="String"/>
+    </param>
+    <text>Adds an after advice function to a method of this class via AOP. The pointcut is only active for instances of
+<code>objClass</code>.</text>
+    <see source="jsx3.lang.AOP">jsx3.lang.AOP</see>
+  </method>
+  <method access="public" id="method:bless" name="bless">
+    <param name="obj" text="Optional parameter. If provided, this method will copy all the properties of &lt;code&gt;obj&lt;/code&gt;&#10;   into the newly created object.">
+      <type link="1" name="Object"/>
+    </param>
+    <return text="a new instance of this class">
+      <type link="1" name="jsx3.lang.Object"/>
+    </return>
+    <throws text="if called on an instance of &lt;code&gt;jsx3.lang.Class&lt;/code&gt; that represents an interface&#10;   ">
+      <type link="1" name="jsx3.lang.Exception"/>
+    </throws>
+    <text>Creates a new instance of this class and populates its properties with the properties of the 
+   <code>obj</code> parameter. <b>Does not call <code>init()</code> when instantiating the class.</b>
+    </text>
+  </method>
+  <method access="public" id="method:getClasses" name="getClasses">
+    <return text="">
+      <type link="1" name="Array">
+        <type link="1" name="jsx3.lang.Class"/>
+      </type>
+    </return>
+    <text>Returns an array of all the classes defined in this class. This method returns the JSX equivalent of Java's 
+public static inner classes. 
+<p/>
+To be returned by this method, a static inner class should be defined after the containing class is defined, 
+like this:
+<pre>
+jsx3.Class.defineClass("eg.ContainingClass", null, null, function(){});
+jsx3.Class.defineClass("eg.ContainingClass.InnerClass", null, null, function(){});
+</pre>
+    </text>
+  </method>
+  <method access="public" id="method:getConstructor" name="getConstructor">
+    <return text="">
+      <type link="1" name="Function"/>
+    </return>
+    <text>Returns the constructor function of this class.</text>
+  </method>
+  <method access="public" id="method:getGetter" name="getGetter">
+    <param name="strProp" text="the name of the bean property whose getter to return">
+      <type link="1" name="String"/>
+    </param>
+    <return text="the method or null if none found&#10;   ">
+      <type link="1" name="jsx3.lang.Method"/>
+    </return>
+    <text>Returns the accessor (getter) method of this class's bean property <code>strProp</code>. Searches this class and
+the classes that it inherits method from
+for an instance method named "getStrProp" or "isStrProp" using the <code>strProp</code> parameter with the first
+letter made uppercase.</text>
+  </method>
+  <method access="public" id="method:getInheritance" name="getInheritance">
+    <return text="an array of jsx3.Class instances&#10;   ">
+      <type link="1" name="Array">
+        <type link="1" name="jsx3.lang.Class"/>
+      </type>
+    </return>
+    <text>Returns the array of classes and interfaces that this class inherits from, ordered by
+precedence from highest to lowest. This is the same order the defines where an inherited method will come from.
+<p/>
+The order is: 
+<ol>
+        <li>this class (not included in the returned array of this method)</li>
+<li>the interfaces that this class implements in the order that they were passed to the defineClass() function</li>
+<li>the superclass of this class ... recursively</li>
+</ol>
+    </text>
+  </method>
+  <method access="public" id="method:getInstanceFieldNames" name="getInstanceFieldNames">
+    <return text="an array of String instances&#10;   ">
+      <type link="1" name="Array">
+        <type link="1" name="String"/>
+      </type>
+    </return>
+    <text>Returns the array of instance fields defined for this class.</text>
+  </method>
+  <method access="public" id="method:getInstanceMethod" name="getInstanceMethod">
+    <param name="strMethodName" text="the name of the method to find">
+      <type link="1" name="String"/>
+    </param>
+    <return text="the method or null if none found matching &lt;code&gt;strMethodName&lt;/code&gt;&#10;   ">
+      <type link="1" name="jsx3.lang.Method"/>
+    </return>
+    <text>Returns the instance method defined in this class with name <code>strMethodName</code>.</text>
+  </method>
+  <method access="public" id="method:getInstanceMethods" name="getInstanceMethods">
+    <return text="an array of jsx3.lang.Method instances&#10;   ">
+      <type link="1" name="Array">
+        <type link="1" name="jsx3.lang.Method"/>
+      </type>
+    </return>
+    <text>Returns the array of instance methods defined for this class.</text>
+  </method>
+  <method access="public" id="method:getInterfaces" name="getInterfaces">
+    <return text="an array of jsx3.Class instances&#10;   ">
+      <type link="1" name="Array">
+        <type link="1" name="jsx3.lang.Class"/>
+      </type>
+    </return>
+    <text>Returns the array of interfaces that this class was defined to implement. This method does not return the 
+interfaces that this class implements by way of its superclass.</text>
+  </method>
+  <method access="public" id="method:getName" name="getName">
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the fully-qualified name of this class.</text>
+  </method>
+  <method access="public" id="method:getPackage" name="getPackage">
+    <return text="">
+      <type link="1" name="jsx3.lang.Package"/>
+    </return>
+    <text>Returns the package of this class. This may be null if the namespace that this class was 
+   defined in was never initialized with <code>jsx3.lang.Package.definePackage</code>.</text>
+  </method>
+  <method access="public" id="method:getPackageName" name="getPackageName">
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the package name of this class, e.g. <code>jsx3.lang</code>. If the package containing this class has
+been defined, then this method returns the name of the package. Otherwise, it returns the fully-qualified name
+of this class less the final token.</text>
+  </method>
+  <method access="public" id="method:getSetter" name="getSetter">
+    <param name="strProp" text="the name of the bean property whose setter to return">
+      <type link="1" name="String"/>
+    </param>
+    <return text="the method or null if none found&#10;   ">
+      <type link="1" name="jsx3.lang.Method"/>
+    </return>
+    <text>Returns the mutator (setter) method of this class's bean property <code>strProp</code>. Searches this class and
+the classes that it inherits method from
+for an instance method named "setStrProp" using the <code>strProp</code> parameter with the first
+letter made uppercase.</text>
+  </method>
+  <method access="public" id="method:getStaticFieldNames" name="getStaticFieldNames">
+    <return text="an array of String instances&#10;   ">
+      <type link="1" name="Array">
+        <type link="1" name="String"/>
+      </type>
+    </return>
+    <text>Returns the array of static fields defined for this class.</text>
+  </method>
+  <method access="public" id="method:getStaticMethod" name="getStaticMethod">
+    <param name="strMethodName" text="the name of the method to find">
+      <type link="1" name="String"/>
+    </param>
+    <return text="the method or null if none found matching &lt;code&gt;strMethodName&lt;/code&gt;&#10;   ">
+      <type link="1" name="jsx3.lang.Method"/>
+    </return>
+    <text>Returns the static method defined in this class with name <code>strMethodName</code>.</text>
+  </method>
+  <method access="public" id="method:getStaticMethods" name="getStaticMethods">
+    <return text="an array of jsx3.lang.Method instances&#10;   ">
+      <type link="1" name="Array">
+        <type link="1" name="jsx3.lang.Method"/>
+      </type>
+    </return>
+    <text>Returns the array of static methods defined for this class.</text>
+  </method>
+  <method access="public" id="method:getSuperClass" name="getSuperClass">
+    <return text="null if no super class is defined&#10;   ">
+      <type link="1" name="jsx3.lang.Class"/>
+    </return>
+    <text>Returns the super class of this class. This will be null for an interface without a super interface or 
+<code>jsx3.lang.Object</code>.</text>
+  </method>
+  <method access="public" id="method:isAssignableFrom" name="isAssignableFrom">
+    <param name="objClass" text="the class to test">
+      <type link="1" name="jsx3.lang.Class"/>
+    </param>
+    <return text="">
+      <type class="Boolean" link="1" name="boolean"/>
+    </return>
+    <text>Determines whether this class is the same as or is a superclass or superinterface
+   of parameter <code>objClass</code>.</text>
+  </method>
+  <method access="public" id="method:isInstance" name="isInstance">
+    <param name="obj" text="the object to test">
+      <type link="1" name="Object"/>
+    </param>
+    <return text="">
+      <type class="Boolean" link="1" name="boolean"/>
+    </return>
+    <throws text="if &lt;code&gt;obj&lt;/code&gt; is &lt;code&gt;null&lt;/code&gt;.&#10;   ">
+      <type name="Error"/>
+    </throws>
+    <text>Determines whether an object is an instance of this class.</text>
+  </method>
+  <method access="public" id="method:isInterface" name="isInterface">
+    <return text="">
+      <type class="Boolean" link="1" name="boolean"/>
+    </return>
+    <text>Returns whether this class was defined as an interface.</text>
+  </method>
+  <method access="public" id="method:mixin" name="mixin">
+    <param name="obj" text="the target of the method transfer">
+      <type link="1" name="Object"/>
+    </param>
+    <param name="bNoClobber" text="if true, then do not transfer any methods already existing in &lt;code&gt;obj&lt;/code&gt;">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <param name="arrNames" text="">
+      <type link="1" name="Array">
+        <type link="1" name="String"/>
+      </type>
+    </param>
+    <text>Copies all the instance methods in this class into an instance (of another class).</text>
+  </method>
+  <method access="public" id="method:newInnerClass" name="newInnerClass">
+    <param name="arg" text="arguments to pass to the constructor, supports up to 10 arguments">
+      <type link="1" name="Object" varargs="1"/>
+    </param>
+    <return text="a new instance of this class&#10;   ">
+      <type link="1" name="jsx3.lang.Object"/>
+    </return>
+    <text>Creates a new instance of this class so that it can be used to create a java-style inner
+class extending this class. This method will instantiate an interface or a class, in which case the 
+<code>init()</code> method will be called. In this way you can accomplish the following:
+<pre>
+var aClass = eg.Testable.jsxclass;       // get jsx3.lang.Class instance
+var innerClass = aClass.newInnerClass(); // create inner class instance
+innerClass.test = function() {};         // implement the eg.Testable interface
+innerClass instanceof eg.Testable;       // evaluates to true
+</pre>
+    </text>
+  </method>
+  <method access="public" id="method:newInstance" name="newInstance">
+    <param name="arg" text="the variable number of arguments to send to the constructor">
+      <type link="1" name="Object" varargs="1"/>
+    </param>
+    <return text="">
+      <type link="1" name="Object"/>
+    </return>
+    <text>Creates a new instance of this class by invoking the class constructor. This is equivalent to calling 
+<code>new()</code> on this class's constructor function and will call the class's <code>init()</code> method.</text>
+  </method>
+  <method access="public" id="method:toString" name="toString">
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <overrides id="overrides:toString" idfk="method:toString" name="toString" source="jsx3.lang.Object"/>
+  </method>
+  <method access="public" id="smethod:defineClass" name="defineClass" static="1">
+    <param name="strName" text="the full name of the class to create, including the package prefix">
+      <type link="1" name="String"/>
+    </param>
+    <param name="objExtends" text="the super class of the class to create; either the class constructor&#10;    or the jsx3.Class instance itself. If no super class is provided, jsx3.Object will be used. May be&#10;    null. If provided and representing an introspectable class, must be a class rather than an interface.">
+      <type link="1" name="Function"/>
+      <type link="1" name="jsx3.lang.Class"/>
+    </param>
+    <param name="arrImplements" text="the array of interfaces that the class to create will implement. Each item in&#10;    the array may be either a class constructor, an instance of jsx3.Class, or a string but must represent an &#10;    interface (a class created with &lt;code&gt;defineInterface&lt;/code&gt;). May also be null or empty.">
+      <type link="1" name="Array">
+        <typeor>
+          <type link="1" name="jsx3.lang.Class"/>
+          <type link="1" name="Function"/>
+          <type link="1" name="String"/>
+        </typeor>
+      </type>
+    </param>
+    <param name="fctBody" text="a function that defines the body of the class. This function takes two arguments,&#10;    the constructor of the newly created interface, and its prototype. See class summary for more information.&#10;   ">
+      <type link="1" name="Function"/>
+    </param>
+    <text>Defines a new class in the JSX hierarchy. After executing this method, an instance of 
+jsx3.lang.Class representing the new class will be available for introspection.</text>
+  </method>
+  <method access="public" id="smethod:defineInterface" name="defineInterface" static="1">
+    <param name="strName" text="the full name of the interface to create, including the package prefix">
+      <type link="1" name="String"/>
+    </param>
+    <param name="objExtends" text="the super interface of the interface to create; either the class &#10;    constructor or the jsx3.Class instance itself. If no super interface is provided, Object will be used. &#10;    May be &lt;code&gt;null&lt;/code&gt;. If provided and representing an introspectable class, must be an interface rather&#10;    than a class.">
+      <type link="1" name="Function"/>
+      <type link="1" name="jsx3.lang.Class"/>
+    </param>
+    <param name="fctBody" text="a function that defines the body of the interface. This function takes two arguments,&#10;    the constructor of the newly created interface, and its prototype. See class summary for more information.&#10;   ">
+      <type link="1" name="Function"/>
+    </param>
+    <text>Defines a new interface in the JSX hierarchy. After executing this method, an 
+instance of jsx3.lang.Class representing the new interface will be available for introspection.</text>
+  </method>
+  <method access="public" id="smethod:forName" name="forName" static="1">
+    <param name="strName" text="the fully-qualified (including package prefix) class name">
+      <type link="1" name="String"/>
+    </param>
+    <return text="">
+      <type link="1" name="jsx3.lang.Class"/>
+    </return>
+    <text>Retrieve an instance of jsx3.Class for a fully-qualified class name. This method will also return aliased 
+classes such as <code>jsx3.Object</code>. Thus the name of the class returned by this method may not always equal the value
+of the <code>strName</code> parameter.
+</text>
+  </method>
+  <method id="method:clone" idfk="method:clone" inherited="1" name="clone" source="jsx3.lang.Object"/>
+  <method id="method:equals" idfk="method:equals" inherited="1" name="equals" source="jsx3.lang.Object"/>
+  <method id="method:eval" idfk="method:eval" inherited="1" name="eval" source="jsx3.lang.Object"/>
+  <method id="method:getClass" idfk="method:getClass" inherited="1" name="getClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOf" idfk="method:getInstanceOf" inherited="1" name="getInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfClass" idfk="method:getInstanceOfClass" inherited="1" name="getInstanceOfClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfPackage" idfk="method:getInstanceOfPackage" inherited="1" name="getInstanceOfPackage" source="jsx3.lang.Object"/>
+  <method id="method:instanceOf" idfk="method:instanceOf" inherited="1" name="instanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isInstanceOf" idfk="method:isInstanceOf" inherited="1" name="isInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isSubclassOf" idfk="method:isSubclassOf" inherited="1" name="isSubclassOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:jsxmix" idfk="method:jsxmix" inherited="1" name="jsxmix" source="jsx3.lang.Object"/>
+  <method id="method:jsxsuper" idfk="method:jsxsuper" inherited="1" name="jsxsuper" source="jsx3.lang.Object"/>
+  <method id="method:jsxsupermix" idfk="method:jsxsupermix" inherited="1" name="jsxsupermix" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:setInstanceOf" idfk="method:setInstanceOf" inherited="1" name="setInstanceOf" source="jsx3.lang.Object"/>
+</class>

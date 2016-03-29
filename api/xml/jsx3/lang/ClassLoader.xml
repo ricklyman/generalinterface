@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class access="public" id="class:jsx3.lang.ClassLoader" name="jsx3.lang.ClassLoader" package="jsx3.lang" shortname="ClassLoader">
+  <text>The class loader initializes the system and loads applications and add-ins. One instance of this class
+(<code>jsx3.CLASS_LOADER</code>) is created when the system loads.
+<p/>
+The following deployment parameters affect the behavior of the class loader:
+<ul>
+ <li>
+        <code>jsx_no_messages</code> - if set the class loader does not load the
+   <code>jsx:/locale/messages.xml</code> properties bundle.</li>
+ <li>
+        <code>jsx_no_locale</code> - if set the class loader does not load the
+   <code>jsx:/locale/locale.xml</code> properties bundle.</li>
+ <li>
+        <code>jsx_logger_config</code> - the relative path to the logging system configuration file. If not set,
+   <code>jsx:/../logger.xml</code> is used. If equal to an empty string then the default configuration is
+   used without loading an external file.</li>
+ <li>
+        <code>jsx_browsers</code> - overrides the default set of supported browsers. The format of this parameter
+   is <code>
+          <b>bt</b>={allow,warn}[,...]</code> where <code>bt</code> is the browser type returned by the
+   <code>getType()</code> method.</li>
+</ul>
+  </text>
+  <see idfk="method:getType" source="jsx3.lang.ClassLoader">getType()</see>
+  <see idfk="sfield:CLASS_LOADER" source="jsx3">jsx3.CLASS_LOADER</see>
+  <superclass direct="1" id="super:0" loaded="1" name="Object"/>
+  <implements direct="1" id="implements:0" loaded="1" name="jsx3.util.EventDispatcher"/>
+  <field access="public" class="jsx3.lang.ClassLoader" final="1" fullname="jsx3.lang.ClassLoader.LOAD_ALWAYS" id="sfield:LOAD_ALWAYS" name="LOAD_ALWAYS" static="1" value="1">
+    <type class="Number" link="1" name="int"/>
+  </field>
+  <field access="public" class="jsx3.lang.ClassLoader" final="1" fullname="jsx3.lang.ClassLoader.LOAD_AUTO" id="sfield:LOAD_AUTO" name="LOAD_AUTO" static="1" value="0">
+    <type class="Number" link="1" name="int"/>
+  </field>
+  <method access="public" id="method:getType" name="getType">
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the browser type as determined by the class loader. The possible return values are:
+<ul>
+  <li>
+          <code>ie6</code> - Microsoft Internet Explorer versions 6.x</li>
+  <li>
+          <code>ie7</code> - Microsoft Internet Explorer versions 7.x</li>
+  <li>
+          <code>ie8</code> - Microsoft Internet Explorer versions 8.x</li>
+  <li>
+          <code>ie9</code> - Microsoft Internet Explorer all versions above 8.x</li>
+  <li>
+          <code>ie</code> - Microsoft Internet Explorer earlier or unrecognized version</li>
+  <li>
+          <code>fx1_5</code> - Mozilla Firefox versions 1.5.x</li>
+  <li>
+          <code>fx2</code> - Mozilla Firefox versions 2.x</li>
+  <li>
+          <code>fx3</code> - Mozilla Firefox versions 3.x</li>
+  <li>
+          <code>fx4</code> - Mozilla Firefox all versions above 3.x</li>
+  <li>
+          <code>fx</code> - Mozilla Firefox earlier or unrecognized version</li>
+  <li>
+          <code>sf3</code> - Apple Safari versions 3.x</li>
+  <li>
+          <code>sf4</code> - Apple Safari all versions above 3.x</li>
+  <li>
+          <code>sf</code> - Apple Safari earlier or unrecognized version</li>
+  <li>
+          <code>gc1</code> - Google Chrome, any version</li>
+  <li>
+          <code>op9</code> - Opera versions 9.x</li>
+  <li>
+          <code>op10</code> - Opera all versions above 9.x</li>
+  <li>
+          <code>op</code> - Opera earlier or unrecognized version</li>
+  <li>
+          <code>gk</code> - other Gecko-based browser</li>
+  <li>
+          <code>xx</code> - unrecognized browser</li>
+</ul>
+    </text>
+  </method>
+  <method access="public" id="method:loadAddin" name="loadAddin" since="3.6&#10;       ">
+    <param name="objAddin" text="">
+      <type link="1" name="String"/>
+      <type link="1" name="jsx3.app.AddIn"/>
+    </param>
+    <return text="">
+      <type link="1" name="jsx3.util.Job"/>
+    </return>
+  </method>
+  <method access="public" id="method:loadApp" name="loadApp" since="3.6&#10;       ">
+    <param name="strAppPath" text="">
+      <type link="1" name="String"/>
+    </param>
+    <param name="objGUI" text="">
+      <type link="1" name="HTMLElement"/>
+    </param>
+    <param name="objEnv" text="">
+      <type link="1" name="Object">
+        <type link="1" name="String"/>
+        <type link="1" name="String"/>
+      </type>
+    </param>
+    <return text="">
+      <type link="1" name="jsx3.util.Job"/>
+    </return>
+  </method>
+  <method access="public" id="method:loadClass" name="loadClass" since="3.5&#10;       ">
+    <param name="strClass" text="the fully-qualified name of the class to load.">
+      <type link="1" name="String"/>
+    </param>
+    <throws text="if no registered classpath matched the class name or if the loaded JS file did not&#10;   define the class to load.">
+      <type link="1" name="jsx3.lang.Exception"/>
+    </throws>
+    <text>Loads a GI class synchronously. The location of the JavaScript file is determined by the classpath.</text>
+  </method>
+  <method access="public" id="method:loadClassAsync" name="loadClassAsync" since="3.9&#10;       ">
+    <param name="strClass" text="the fully-qualified name of the class to load.">
+      <type link="1" name="String"/>
+    </param>
+    <param name="cb" text="an optional callback function, which will be passed the class object when the class loads.">
+      <type link="1" name="Function"/>
+    </param>
+    <text>Loads a GI class asynchronously. The location of the JavaScript file is determined by the classpath.</text>
+  </method>
+  <method access="public" id="method:loadJSFile" name="loadJSFile" since="3.9&#10;       ">
+    <param name="strURI" text="">
+      <type link="1" name="String"/>
+    </param>
+    <param name="cb" text="an optional callback function, which will be passed the script URI when the script loads.">
+      <type link="1" name="Function"/>
+    </param>
+    <text>Loads a JavaScript file asynchronously.</text>
+  </method>
+  <method access="public" id="method:loadJSFileSync" name="loadJSFileSync" since="3.5&#10;       ">
+    <param name="strURI" text="">
+      <type link="1" name="String"/>
+    </param>
+    <return text="&lt;code&gt;true&lt;/code&gt; if the file was loaded successfully.">
+      <type class="Boolean" link="1" name="boolean"/>
+    </return>
+    <throws text="if evaluating the text content of the loaded file raises a JavaScript error.">
+      <type link="1" name="Object"/>
+    </throws>
+    <text>Loads a JavaScript file synchronously.</text>
+  </method>
+  <method id="method:publish" idfk="method:publish" inherited="1" name="publish" source="jsx3.util.EventDispatcher"/>
+  <method id="method:subscribe" idfk="method:subscribe" inherited="1" name="subscribe" source="jsx3.util.EventDispatcher"/>
+  <method id="method:unsubscribe" idfk="method:unsubscribe" inherited="1" name="unsubscribe" source="jsx3.util.EventDispatcher"/>
+  <method id="method:unsubscribeAll" idfk="method:unsubscribeAll" inherited="1" name="unsubscribeAll" source="jsx3.util.EventDispatcher"/>
+  <method id="method:toString" idfk="method:toString" inherited="1" name="toString" native="1" source="Object"/>
+</class>

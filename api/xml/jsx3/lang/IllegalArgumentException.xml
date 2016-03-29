@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class access="public" id="class:jsx3.lang.IllegalArgumentException" name="jsx3.lang.IllegalArgumentException" package="jsx3.lang" shortname="IllegalArgumentException">
+  <text>A special exception type to throw when the caller of a function does not pass arguments according to the method's
+contract.
+ </text>
+  <superclass id="super:0" loaded="1" name="Object"/>
+  <superclass id="super:1" loaded="1" name="jsx3.lang.Object"/>
+  <superclass direct="1" id="super:2" loaded="1" name="jsx3.lang.Exception"/>
+  <constructor access="public" id="method:init" name="init">
+    <param name="strArg" text="the name of the argument ">
+      <type link="1" name="String"/>
+    </param>
+    <param name="objValue" text="the (illegal) value passed to the method&#10;   ">
+      <type link="1" name="Object"/>
+    </param>
+    <text>The instance initializer.</text>
+  </constructor>
+  <method id="method:getCause" idfk="method:getCause" inherited="1" name="getCause" source="jsx3.lang.Exception"/>
+  <method id="method:getMessage" idfk="method:getMessage" inherited="1" name="getMessage" source="jsx3.lang.Exception"/>
+  <method id="method:getStack" idfk="method:getStack" inherited="1" name="getStack" source="jsx3.lang.Exception"/>
+  <method id="method:printStackTrace" idfk="method:printStackTrace" inherited="1" name="printStackTrace" source="jsx3.lang.Exception"/>
+  <method id="method:toString" idfk="method:toString" inherited="1" name="toString" source="jsx3.lang.Exception"/>
+  <method id="method:clone" idfk="method:clone" inherited="1" name="clone" source="jsx3.lang.Object"/>
+  <method id="method:equals" idfk="method:equals" inherited="1" name="equals" source="jsx3.lang.Object"/>
+  <method id="method:eval" idfk="method:eval" inherited="1" name="eval" source="jsx3.lang.Object"/>
+  <method id="method:getClass" idfk="method:getClass" inherited="1" name="getClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOf" idfk="method:getInstanceOf" inherited="1" name="getInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfClass" idfk="method:getInstanceOfClass" inherited="1" name="getInstanceOfClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfPackage" idfk="method:getInstanceOfPackage" inherited="1" name="getInstanceOfPackage" source="jsx3.lang.Object"/>
+  <method id="method:instanceOf" idfk="method:instanceOf" inherited="1" name="instanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isInstanceOf" idfk="method:isInstanceOf" inherited="1" name="isInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isSubclassOf" idfk="method:isSubclassOf" inherited="1" name="isSubclassOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:jsxmix" idfk="method:jsxmix" inherited="1" name="jsxmix" source="jsx3.lang.Object"/>
+  <method id="method:jsxsuper" idfk="method:jsxsuper" inherited="1" name="jsxsuper" source="jsx3.lang.Object"/>
+  <method id="method:jsxsupermix" idfk="method:jsxsupermix" inherited="1" name="jsxsupermix" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:setInstanceOf" idfk="method:setInstanceOf" inherited="1" name="setInstanceOf" source="jsx3.lang.Object"/>
+</class>
