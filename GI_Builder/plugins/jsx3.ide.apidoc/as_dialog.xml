@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  ~ Copyright (c) 2001-2011, TIBCO Software Inc.
+  ~ Use, modification, and distribution subject to terms of license.
+  --><serialization xmlns="urn:tibco.com/v3.0">
+  <onAfterDeserialize><![CDATA[objJSX.saveState=function(){var
+G=jsx3.ide.getIDESettings();var
+_a={left:this.getLeft(),top:this.getTop(),width:this.getWidth(),height:this.getHeight()};G.set("apihelp","position",_a);};objJSX.doMinimize=function(){this.doToggleState(jsx3.gui.Dialog.MINIMIZED);};objJSX.getHelpBlockParent=function(){return this;};objJSX.getHelpBlock=function(){return this.getDescendantOfName("jsx_ide_api");};objJSX.onInit=function(){var
+L=jsx3.ide.getIDESettings();var
+t=L.get("apihelp","position");if(t&&typeof t=="object"&&t.left){this.setDimensions(t.left,t.top,t.width,t.height,true);this.constrainPosition();}};objJSX.registerHotKey("doMinimize","m",false,true,false);objJSX.registerHotKey("doClose","w",false,false,true);objJSX.onInit();]]></onAfterDeserialize>
+    <object type="jsx3.gui.Dialog">
+      <dynamics jsxbgcolor="@Solid Disabled"/>
+      <variants jsxheight="600" jsxoverflow="2" jsxwidth="880"/>
+      <strings jsxhelpid="ide.api" jsxname="jsx_ide_api_dialog"/>
+      <events jsxaftermove="this.constrainPosition();this.saveState();" jsxafterresize="this.saveState(this);"/>
+        <object type="jsx3.gui.WindowBar">
+          <dynamics jsxtext="jsx3.ide.apidoc.title"/>
+          <variants/>
+          <strings jsxname="jsxcbar"/>
+            <object type="jsx3.gui.Menu">
+              <dynamics jsxtext="jsx3.ide.apidoc.m2" jsxtip="jsx3.ide.apidoc.m2t"/>
+              <variants jsxshare="1" jsxstate="0" jsxtype="0"/>
+              <strings jsxname="mnuApiHelp" jsxxmlid="jsx3.ide.apidoc.menu-settings"/>
+              <events jsxexecute="(jsx_ide_api_dialog.getPlugIn()).onApiHelpSettingsSet(this,strRECORDID);" jsxmenu="(jsx_ide_api_dialog.getPlugIn()).onApiHelpMenu(this);"/>
+            </object>
+            <object type="jsx3.gui.ToolbarButton">
+              <dynamics jsxtip="jsx3.ide.apidoc.tog1"/>
+              <strings jsximage="JSX/images/dialog/window.gif" jsxname="jsxminbutton"/>
+              <events jsxexecute="(jsx_ide_api_dialog.getPlugIn()).openApiHelp(true);"/>
+            </object>
+            <object type="jsx3.gui.ToolbarButton">
+              <dynamics jsximage="@Min Icon" jsxtip="jsx3.gui.Dialog.min"/>
+              <variants/>
+              <strings jsxname="jsxminbutton"/>
+              <events jsxexecute="jsx_ide_api_dialog.doToggleState();"/>
+            </object>
+            <object type="jsx3.gui.ToolbarButton">
+              <dynamics jsxtip="jsx3.gui.Dialog.max"/>
+              <variants/>
+              <strings jsximage="JSX/images/dialog/max.gif" jsxname="max button"/>
+              <events jsxexecute="jsx_ide_api_dialog.doMaximize(this);"/>
+            </object>
+            <object type="jsx3.gui.ToolbarButton">
+              <dynamics jsximage="@Close Icon" jsxtip="jsx3.gui.Dialog.close"/>
+              <variants/>
+              <strings jsxname="jsxclosebutton"/>
+              <events jsxexecute="jsx_ide_api_dialog.doClose();"/>
+            </object>
+        </object>
+    </object>
+</serialization>

@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  ~ Copyright (c) 2001-2011, TIBCO Software Inc.
+  ~ Use, modification, and distribution subject to terms of license.
+  --><serialization xmlns="urn:tibco.com/v3.0">
+  <onAfterDeserialize><![CDATA[var
+va=jsx3.xml.Template;objJSX.doClassLink=function(n){var
+ha=jsx_api_classlist;ha.setValue(n,true);this.showClass(ha,n);this.PC(n,"_summary");};objJSX.onClassSelect=function(p,g){this.showClass(p,g);this.PC(g,"_summary");};objJSX.showClass=function(o,f,m,l){if(o==null)o=jsx_api_classlist;var
+Ka=o.getRecord(f);if(Ka==null){var
+ha=jsx_api_memberlist;ha.clearXmlData();ha.repaintData();var
+bb=jsx_api_content;((bb.getServer()).getCache()).clearById(bb.getXMLId());bb.setXMLURL(null);bb.repaint();}else{this.DY(o.getRecordNode(f));this.showContent("class","");this.Ro(o.getRecordNode(f));if(!l){var
+ha=jsx_api_memberlist;ha.selectRecord("_summary",true,null,true);}}if(!m){var
+vb=jsx3.ide.getIDESettings();vb.set("apihelp","class",f);vb.set("apihelp","member","_summary");}};objJSX.onSettingsChange=function(s,o){var
+Za=null;this["_jsx"+s]=o?"1":"0";if(s=="deprecated"){var
+_=jsx_api_classlist;var
+Gb=_.getValue();this.d9(_,true);if(Gb&&_.getRecordNode(Gb)!=null){_.setValue(Gb);_.revealRecord(Gb);}else{Za=false;this.showContent("_blank","_blank");}}this.Ro(Za);};objJSX.d9=function(f,d){if(f==null)f=jsx_api_classlist;f.setXSLParam("showdeprecated",this._jsxdeprecated);f.setSourceXML(this._getMergedXml());if(d){f.repaint();if(f.getValue())f.revealRecord(f.getValue());}};objJSX.Ro=function(k){var
+Ba=jsx_api_memberlist;Ba.resetXmlCacheData();if(k!=null){var
+db=k===false?null:this._getFullPathForRec(k);Ba.setXMLURL(db);}Ba.setXSLParam("showinherited",this._jsxinherited);Ba.setXSLParam("showdeprecated",this._jsxdeprecated);Ba.repaintData();};objJSX.DY=function(f){var
+ab=jsx_api_content;var
+Oa=this._getFullPathForRec(f);if(ab.getXMLURL()!=Oa){((ab.getServer()).getCache()).clearById(ab.getXMLId());ab.setXMLURL(Oa);}};objJSX.doMemberLink=function(s){var
+hb=jsx_api_content;var
+Gb=hb.getXML();var
+ba=Gb.selectSingleNode("//*[@id='"+s+"']");var
+ka=ba.getAttribute("type");if(ba.getAttribute("idfk")==null){this.D6(null,ba.getAttribute("id"),null,null,hb);}else this.D6(ba.getAttribute("source"),ba.getAttribute("idfk"),null,null,hb);};objJSX.doSeeLink=function(f,b){b--;var
+Ea=jsx_api_content;var
+Fa=Ea.getXML();var
+ra=Fa.selectSingleNode("//*[@id='"+f+"']");var
+ha=(ra.selectNodes("see")).get(b);this.D6(ha.getAttribute("source"),ha.getAttribute("idfk"),null,null,Ea);};objJSX.D6=function(d,n,m,j,a,f,o){if(m==null)m=jsx_api_classlist;if(a==null)a=jsx_api_content;if(j==null)j=jsx_api_memberlist;if(d==null)d=m.getValue();var
+Z=m.getRecord(d);if(Z){if(!f&&d!=m.getValue()){m.setValue(d,true);this.showClass(m,d,false,true);}if(j.getValue()!=n)j.selectRecord(n,true,true,true);this.DY(m.getRecordNode(d));var
+ba=a.getXML();if(n=="_summary"){this.showContent("class");}else if(n=="_constructor"){this.showContent("constructor");}else{var
+B=ba.selectSingleNode("(//method | //field)[@id='"+n+"']");if(B)this.showContent(B.getNodeName(),n);}if(!o)this.PC(d,n);}};objJSX.memberSelect=function(e,s){if(s){var
+G=e.getRecord(s);if(G.jsxidfk!=null){this.D6(G.source,G.jsxidfk,Za,null,null,true);}else{var
+Za=jsx_api_classlist;if(Za.getValue())this.D6(Za.getValue(),s,Za,null,null);}}};objJSX.searchLink=function(m,d){this.D6(m,d);};objJSX.showContent=function(a,m){var
+Cb=jsx_api_content;Cb.setXSLParam("membertype",a);Cb.setXSLParam("memberid",m);Cb.setXSLParam("showdeprecated",this._jsxdeprecated);Cb.repaint();};objJSX.doSearch=function(){(((this.getPlugIn()).getResource("ApiSearcher")).load()).when((jsx3.$F(this._doSearch)).bind(this));};objJSX._doSearch=function(){var
+ub={a:/\S/,b:"global",c:",*",d:"L2",e:"yt",f:"class",g:"Please select a class to search in from the class tree or perform a global search.",h:"Searching...",i:"//record[@path]"};var
+Z=search_text.getValue();var
+Jb=search_domain.getValue();Z=jsx3.util.strTrim(Z);if(!(Z&&Z.match(ub.a)))return;if(this._jsxlasttext==Z&&this._jsxlastdomain==Jb&&Jb==ub.b)return;this._jsxlasttext=Z;this._jsxlastdomain=Jb;var
+L=search_layout;L.setRows(L.searchopen+ub.c,true);var
+t=new
+jsx3.ide.ApiSearcher();this._searcher=t;t.subscribe(jsx3.ide.ApiSearcher.COMPLETE,this,ub.d);t.subscribe(jsx3.ide.ApiSearcher.PROGRESS,this,ub.e);var
+Mb=jsx_api_classlist;if(Jb==ub.f){var
+Ib=Mb.getRecordNode(Mb.getValue());if(Ib){t.searchDocuments(new
+jsx3.util.List([this._getFullPathForRec(Ib)]),Z);}else (this.getAncestorOfType(jsx3.gui.Dialog)).alert(null,ub.g);}else if(Jb==ub.b){var
+ua=search_searching;ua.setText(ub.h,true);ua.setDisplay(jsx3.gui.Block.DISPLAYBLOCK,true);var
+za=search_results;za.setDisplay(jsx3.gui.Block.DISPLAYNONE,true);var
+K=(Mb.getXML()).selectNodes(ub.i);var
+qb=K.map((jsx3.$F(function(k){return this._getFullPathForRec(k);})).bind(this));t.searchDocuments(qb,Z);}};objJSX.yt=function(f){var
+xa=f.target;var
+Db=search_searching;Db.setText("Searching... ("+Math.round(100*f.done/f.total)+"%, "+xa.getResultCount()+" Found)",true);};objJSX.L2=function(j){delete this._searcher;var
+W=j.target;var
+za=search_results;((za.getServer()).getCache()).setDocument(za.getXMLId(),W.getResults());za.repaint();var
+qa=search_searching;qa.setDisplay(jsx3.gui.Block.DISPLAYNONE,true);za.setDisplay(jsx3.gui.Block.DISPLAYBLOCK,true);};objJSX.doClearSearch=function(){this._jsxlasttext="";if(this._searcher!=null)this._searcher.cancel();search_text.setValue("");var
+ya=search_layout;ya.setRows(ya.searchclose+",*",true);var
+Na=search_results;((Na.getServer()).getCache()).setDocument(Na.getXMLId(),jsx3.CDF.newDocument());Na.repaint();};objJSX.onRsrcLoad=function(){var
+ub={a:"apihelp",b:"settings",c:"_jsx",d:"1",e:"0",f:"class",g:"_summary",h:"images/inherited.gif",i:"images/protected.gif",j:"images/abstract.gif",k:"images/final.gif",l:"",m:"inherited",n:'<img src="',o:'" width="11" height="10" style="vertical-align: bottom; margin:0px 0px 0px 3px;"/>',p:"access",q:"protected",r:'" width="7" height="11" style="vertical-align: bottom; margin:0px 0px 0px 5px;"/>',s:"abstract",t:'" width="10" height="10" style="vertical-align: bottom; margin:1px 0px 0px 4px;"/>',u:"final",v:'" width="11" height="11" style="vertical-align: bottom; margin:0px 0px 0px 4px;"/>',w:"jsxtext"};var
+Gb=jsx3.ide.getIDESettings();var
+za=Gb.get(ub.a,ub.b);if(za)for(var S in za)this[ub.c+S]=za[S]?ub.d:ub.e;var
+ea=jsx_api_classlist;this.d9(ea);var
+Gb=jsx3.ide.getIDESettings();var
+yb=Gb.get(ub.a,ub.f);if(yb){var
+ea=jsx_api_classlist;jsx3.sleep(function(){if(this.getParent()==null)return;ea.setValue(yb,true);this.showClass(ea,yb);this.PC(yb,ub.g);},null,this);}var
+Na=jsx_api_memberlist;var
+Ha=(this.getPlugIn()).resolveURI(ub.h);var
+T=(this.getPlugIn()).resolveURI(ub.i);var
+ja=(this.getPlugIn()).resolveURI(ub.j);var
+u=(this.getPlugIn()).resolveURI(ub.k);jsx3.html.loadImages(Ha,T,ja);(Na.getChild(0)).setFormatHandler(function(m,a,i,n,g,p){var
+ia=i.getRecordNode(a);if(ia){var
+Ba=ub.l;if(ia.getAttribute(ub.m)==ub.d)Ba=Ba+(ub.n+Ha+ub.o);if(ia.getAttribute(ub.p)==ub.q)Ba=Ba+(ub.n+T+ub.r);if(ia.getAttribute(ub.s)==ub.d)Ba=Ba+(ub.n+ja+ub.t);if(ia.getAttribute(ub.u)==ub.d)Ba=Ba+(ub.n+u+ub.v);if(Ba)m.innerHTML=ia.getAttribute(ub.w)+Ba;}});this.AT=[];this.AN=-1;};objJSX._getMergedXml=function(){var
+ub={a:"syspath"};var
+J=(this.getPlugIn()).getIndexFiles();var
+wa=jsx3.xml.CDF.newDocument();J.each(function(j){var
+G=(new
+jsx3.xml.Document()).load(j);if(!G.hasError())for(var
+ga=G.getChildIterator();ga.hasNext();){var
+Y=(ga.next()).cloneNode(true);Y.setAttribute(ub.a,j);wa.appendChild(Y);}});return wa;};objJSX._getFullPathForRec=function(b){var
+v=b.getAttribute("path");var
+E=null;while(b&&!E){E=b.getAttribute("syspath");b=b.getParent();}if(E)v=(new
+jsx3.net.URI(E)).resolve(v);return (jsx_api_memberlist.getUriResolver()).relativizeURI(v);};objJSX.onBeforeDestroy=function(){if(this._searcher!=null){this._searcher.cancel();delete this._searcher;}};objJSX.goBack=function(){if(this.AN>0){var
+wa=this.AT[
+--this.AN];this.D6(wa[0],wa[1],null,null,null,null,true);this.updateNavButtons();}};objJSX.goForward=function(){if(this.AT.length>this.AN+1){var
+ea=this.AT[
+++this.AN];this.D6(ea[0],ea[1],null,null,null,null,true);this.updateNavButtons();}};objJSX.hasBack=function(){return this.AN>0;};objJSX.hasForward=function(){return this.AT.length>this.AN+1;};objJSX.PC=function(d,m){var
+Za=[d,m];this.AT.splice(
+++this.AN,this.AT.length);this.AT[this.AN]=Za;this.updateNavButtons();};objJSX.updateNavButtons=function(){go_back.setEnabled(this.hasBack(),true);go_forward.setEnabled(this.hasForward(),true);};]]></onAfterDeserialize>
+    <object type="jsx3.gui.Block">
+      <variants jsxoverflow="2"/>
+      <strings jsxheight="100%" jsxname="jsx_ide_api" jsxwidth="100%"/>
+      <events jsxdestroy="this.onBeforeDestroy();"/>
+        <object type="jsx3.gui.Splitter">
+          <variants jsxleft="0" jsxtop="0"/>
+          <strings jsxname="jsxsplitter" jsxsubcontainer1pct="23%" jsxsubcontainer2pct="77%"/>
+            <object type="jsx3.gui.Block">
+              <variants jsxoverflow="2"/>
+              <strings jsxbgcolor="" jsxheight="100%" jsxwidth="100%"/>
+                <object type="jsx3.gui.Tree">
+                  <dynamics jsxborder="@Outset" jsxpadding="@Tree Padding"/>
+                  <variants jsxoverflow="1" jsxshare="1" jsxuseroot="0"/>
+                  <strings jsxicon="" jsxname="jsx_api_classlist" jsxsortdirection="ascending" jsxsortpath="@jsxtext" jsxspystylekeys="" jsxspystylevalues="" jsxxmltrans="jsx3.ide.apidoc.class-tree"/>
+                  <events jsxchange="jsx_ide_api.onClassSelect(this,this.getValue());"/>
+                  <xslparameters jsxindent="6" jsxrootid="jsxroot" jsxsortpath="jsxtext"/>
+                </object>
+            </object>
+            <object type="jsx3.gui.Splitter">
+              <variants jsxleft="0" jsxtop="0"/>
+              <strings jsxname="jsxsplitter" jsxsubcontainer1pct="30%" jsxsubcontainer2pct="70%"/>
+                <object type="jsx3.gui.Block">
+                  <dynamics jsxbgcolor="@Solid Light" jsxborder="@Outset"/>
+                  <variants jsxoverflow="2"/>
+                  <strings jsxheight="100%" jsxwidth="100%"/>
+                    <object type="jsx3.gui.Matrix">
+                      <dynamics jsxbgcolor="@Solid Light"/>
+                      <variants jsxheaderheight="0" jsxpagingmodel="0" jsxreorder="0" jsxresize="0" jsxscalewidth="1" jsxselectionmodel="1" jsxxmlasync="0"/>
+                      <strings jsxfocusstyle=";" jsxname="jsx_api_memberlist" jsxxmltrans="jsx3.ide.apidoc.member-list"/>
+                      <events jsxselect="jsx_ide_api.memberSelect(this,strRECORDID);"/>
+                        <object type="jsx3.gui.Matrix.Column">
+                          <variants/>
+                          <strings jsxcellpadding="3" jsxname="jsxcolumn" jsxpath="jsxtext" jsxwidth="*"/>
+                        </object>
+                    </object>
+                </object>
+                <object type="jsx3.gui.LayoutGrid">
+                  <dynamics jsxborder="@Outset"/>
+                  <variants jsxleft="0" jsxrelativeposition="1" jsxtop="0" searchclose="27" searchopen="200"/>
+                  <strings jsxname="search_layout" jsxrows="27,*"/>
+                    <object type="jsx3.gui.LayoutGrid">
+                      <dynamics jsxbgcolor="@Solid Medium" jsxborder="@Outset Bottom"/>
+                      <variants jsxleft="0" jsxoverflow="2" jsxrelativeposition="0" jsxtop="0"/>
+                      <strings jsxheight="100%" jsxrows="26,*" jsxwidth="100%"/>
+                        <object type="jsx3.gui.Block">
+                          <dynamics jsxbgcolor="@Solid Medium"/>
+                          <variants jsxoverflow="3" jsxrelativeposition="0"/>
+                          <strings/>
+                            <object type="jsx3.gui.LayoutGrid">
+                              <variants/>
+                              <strings jsxcols="40,*,106,71,24" jsxname="search_layout_layout"/>
+                                <object type="jsx3.gui.Block">
+                                  <variants jsxoverflow="2"/>
+                                  <strings jsxpadding="6 0 0 6"/>
+                                    <object type="jsx3.gui.ImageButton">
+                                      <dynamics jsxtip="jsx3.ide.apidoc.prev"/>
+                                      <variants jsxenabled="0" jsxheight="15" jsxwidth="14"/>
+                                      <strings jsxdisabledimage="images/back_disabled.gif" jsximage="images/back.gif" jsxkeycode="ctrl+left" jsxmargin="0 6 0 0" jsxname="go_back"/>
+                                      <events jsxexecute="jsx_ide_api.goBack();"/>
+                                    </object>
+                                    <object type="jsx3.gui.ImageButton">
+                                      <dynamics jsxtip="jsx3.ide.apidoc.next"/>
+                                      <variants jsxenabled="0" jsxheight="15" jsxwidth="14"/>
+                                      <strings jsxdisabledimage="images/forward_disabled.gif" jsximage="images/forward.gif" jsxkeycode="ctrl+right" jsxname="go_forward"/>
+                                      <events jsxexecute="jsx_ide_api.goForward();"/>
+                                    </object>
+                                </object>
+                                <object type="jsx3.gui.Block">
+                                  <dynamics jsxtext="jsx3.ide.apidoc.search"/>
+                                  <variants jsxheight="18"/>
+                                  <strings jsxname="label" jsxpadding="6 4 0 0" jsxtextalign="right"/>
+                                </object>
+                                <object type="jsx3.gui.Block">
+                                  <variants jsxoverflow="2"/>
+                                  <strings jsxpadding="5"/>
+                                    <object type="jsx3.gui.TextBox">
+                                      <dynamics jsxtip="jsx3.ide.apidoc.searchtip"/>
+                                      <variants jsxheight="17" jsxwidth="100"/>
+                                      <strings jsxmargin="0 0 0 0" jsxname="search_text" jsxpadding="0 0 0 0" jsxvalue=""/>
+                                      <events jsxexecute="jsx_ide_api.doSearch();"/>
+                                    </object>
+                                </object>
+                                <object type="jsx3.gui.Block">
+                                  <variants jsxoverflow="2"/>
+                                  <strings jsxpadding="5"/>
+                                    <object type="jsx3.gui.Select">
+                                      <dynamics jsxtip="jsx3.ide.apidoc.typetip"/>
+                                      <variants jsxheight="18" jsxwidth="65"/>
+                                      <strings jsxmargin="0 0 0 0" jsxname="search_domain" jsxvalue="global" jsxxml="&lt;data&gt;&lt;record jsxid=&quot;global&quot; jsxtext=&quot;{jsx3.ide.apidoc.tglobal}&quot;/&gt;&lt;record jsxid=&quot;class&quot; jsxtext=&quot;{jsx3.ide.apidoc.tclass}&quot;/&gt;&lt;/data&gt;"/>
+                                      <events jsxselect="jsx_ide_api.doSearch();"/>
+                                    </object>
+                                </object>
+                                <object type="jsx3.gui.Block">
+                                  <variants jsxoverflow="2"/>
+                                  <strings jsxpadding="6 0 0 2"/>
+                                    <object type="jsx3.gui.ImageButton">
+                                      <dynamics jsxtip="jsx3.ide.apidoc.clear"/>
+                                      <variants jsxheight="16" jsxwidth="16"/>
+                                      <strings jsximage="jsxapp:/images/icon_55.gif" jsxname="search_clear"/>
+                                      <events jsxexecute="jsx_ide_api.doClearSearch();"/>
+                                    </object>
+                                </object>
+
+                            </object>
+                        </object>
+                        <object type="jsx3.gui.Block">
+                          <dynamics jsxbgcolor="@Solid Light"/>
+                          <variants jsxleft="0" jsxoverflow="1" jsxrelativeposition="0" jsxtop="0"/>
+                          <strings jsxborder="dashed 1px #9898a5;0px;dashed 1px #9898a5;0px" jsxheight="100%" jsxwidth="100%"/>
+                            <object type="jsx3.gui.BlockX">
+                              <dynamics jsxbgcolor="@Solid Light"/>
+                              <variants jsxleft="0" jsxrelativeposition="0" jsxshare="1" jsxtop="0"/>
+                              <strings jsxheight="100%" jsxname="search_results" jsxpadding="4 6 4 6" jsxwidth="100%" jsxxslid="jsx3.ide.apidoc.search-results"/>
+                            </object>
+                            <object type="jsx3.gui.Block">
+                              <dynamics jsxbgcolor="@Solid Light"/>
+                              <variants jsxleft="0" jsxrelativeposition="0" jsxtop="0"/>
+                              <strings jsxdisplay="none" jsxheight="100%" jsxname="search_searching" jsxpadding="4 6 4 6" jsxtext="!" jsxwidth="100%"/>
+                            </object>
+                        </object>
+                    </object>
+                    <object type="jsx3.gui.Block">
+                      <dynamics jsxbgcolor="@Solid Light"/>
+                      <variants jsxoverflow="1" jsxrelativeposition="0"/>
+                      <strings jsxheight="100%" jsxwidth="100%"/>
+                        <object type="jsx3.gui.BlockX">
+                          <dynamics jsxbgcolor="@Solid Light" jsxpadding="@8Pixel"/>
+                          <variants jsxoverflow="3" jsxrelativeposition="0" jsxshare="1" jsxxmlasync="0"/>
+                          <strings jsxheight="100%" jsxname="jsx_api_content" jsxwidth="100%" jsxxslid="jsx3.ide.apidoc.content"/>
+                          <xslparameters jsxdisableescape="1"/>
+                        </object>
+                    </object>
+                </object>
+            </object>
+        </object>
+    </object>
+</serialization>
