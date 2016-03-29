@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface abstract="1" access="public" id="class:jsx3.gui.Alerts" name="jsx3.gui.Alerts" package="jsx3.gui" shortname="Alerts" since="3.0&#10; ">
+  <text>Mixin interface allows implementors to show alerts, confirms, and prompts.</text>
+  <implementor id="implementor:0" loaded="1" name="jsx3.app.Server"/>
+  <implementor id="implementor:1" loaded="1" name="jsx3.gui.Dialog"/>
+  <method access="public" id="method:alert" name="alert">
+    <param name="strTitle" text="the title of the dialog">
+      <type link="1" name="String"/>
+    </param>
+    <param name="strMessage" text="the message to display">
+      <type link="1" name="String"/>
+    </param>
+    <param name="fctOnOk" text="callback function on pressing ok button, receives the dialog as an argument; if null the dialog will close itself; if defined must explicitly close the dialog">
+      <type link="1" name="Function"/>
+    </param>
+    <param name="strOk" text="the text of the ok button, can be false to remove button from display">
+      <type link="1" name="String"/>
+    </param>
+    <param name="objParams" text="argument to configureAlert()">
+      <type link="1" name="Object"/>
+    </param>
+    <return text="">
+      <type link="1" name="jsx3.gui.Dialog"/>
+    </return>
+    <text>Shows an alert dialog.</text>
+    <see idfk="method:configureAlert" source="jsx3.gui.Alerts">configureAlert()</see>
+  </method>
+  <method access="protected" id="method:configureAlert" name="configureAlert">
+    <param name="objDialog" text="the dialog">
+      <type link="1" name="jsx3.gui.Dialog"/>
+    </param>
+    <param name="objParams" text="may include fields 'width' {int}, 'height' {int},&#10;    'noTitle' {boolean}, and 'nonModal' {boolean}.">
+      <type link="1" name="Object"/>
+    </param>
+    <text>Configures the alert dialog.</text>
+  </method>
+  <method access="public" id="method:confirm" name="confirm">
+    <param name="strTitle" text="the title of the dialog">
+      <type link="1" name="String"/>
+    </param>
+    <param name="strMessage" text="the message to display">
+      <type link="1" name="String"/>
+    </param>
+    <param name="fctOnOk" text="callback function on pressing ok button, receives the dialog as an argument; if null the dialog will close itself; if defined must explicitly close the dialog">
+      <type link="1" name="Function"/>
+    </param>
+    <param name="fctOnCancel" text="callback function on pressing cancel button, receives the dialog as an argument; if null the dialog will close itself; if defined must explicitly close the dialog">
+      <type link="1" name="Function"/>
+    </param>
+    <param name="strOk" text="the text of the ok button">
+      <type link="1" name="String"/>
+    </param>
+    <param name="strCancel" text="the text of the cancel button">
+      <type link="1" name="String"/>
+    </param>
+    <param name="intBtnDefault" text="the bold button that receives return key, 1:ok, 2:cancel, 3:no">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <param name="fctOnNo" text="callback function on pressing no button, receives the dialog as an argument; if null the dialog will close itself; if defined must explicitly close the dialog">
+      <type link="1" name="Function"/>
+    </param>
+    <param name="strNo" text="the text of the no button">
+      <type link="1" name="String"/>
+    </param>
+    <param name="objParams" text="argument to configureAlert()">
+      <type link="1" name="Object"/>
+    </param>
+    <return text="">
+      <type link="1" name="jsx3.gui.Dialog"/>
+    </return>
+    <text>Shows a confirm alert.</text>
+    <see idfk="method:configureAlert" source="jsx3.gui.Alerts">configureAlert()</see>
+  </method>
+  <method abstract="1" access="protected" id="method:getAlertsParent" name="getAlertsParent">
+    <return text="the parent of the alert dialogs">
+      <type link="1" name="jsx3.app.Model"/>
+    </return>
+    <text>implementors of this mixin interface must implement this method</text>
+  </method>
+  <method access="public" id="method:prompt" name="prompt">
+    <param name="strTitle" text="the title of the dialog">
+      <type link="1" name="String"/>
+    </param>
+    <param name="strMessage" text="the message to display">
+      <type link="1" name="String"/>
+    </param>
+    <param name="fctOnOk" text="callback function on pressing ok button, receives the dialog as an argument, and the value of the text input as a second argument; if null the dialog will close itself; if defined must explicitly close the dialog">
+      <type link="1" name="Function"/>
+    </param>
+    <param name="fctOnCancel" text="callback function on pressing cancel button, receives the dialog as an argument; if null the dialog will close itself; if defined must explicitly close the dialog">
+      <type link="1" name="Function"/>
+    </param>
+    <param name="strOk" text="the text of the ok button">
+      <type link="1" name="String"/>
+    </param>
+    <param name="strCancel" text="the text of the cancel button">
+      <type link="1" name="String"/>
+    </param>
+    <param name="objParams" text="argument to configureAlert()">
+      <type link="1" name="Object"/>
+    </param>
+    <return text="">
+      <type link="1" name="jsx3.gui.Dialog"/>
+    </return>
+    <text>Shows an input prompt alert.</text>
+    <see idfk="method:configureAlert" source="jsx3.gui.Alerts">configureAlert()</see>
+  </method>
+</interface>
