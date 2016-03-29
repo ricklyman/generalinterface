@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class access="public" id="class:jsx3.amp.util.Menu" name="jsx3.amp.util.Menu" package="jsx3.amp.util" shortname="Menu">
+  <text>A managed menu. Provided by the <code>jsx3.amp.util.menumgr</code> plug-in.</text>
+  <see source="jsx3.amp.util.MenuManager">jsx3.amp.util.MenuManager</see>
+  <superclass id="super:0" loaded="1" name="Object"/>
+  <superclass id="super:1" loaded="1" name="jsx3.lang.Object"/>
+  <superclass direct="1" id="super:2" loaded="1" name="jsx3.amp.util.MenuItem"/>
+  <constructor access="public" id="method:init" name="init">
+    <param name="objExt" text="">
+      <type link="1" name="jsx3.amp.Ext"/>
+    </param>
+    <param name="objElm" text="">
+      <type link="1" name="jsx3.amp.XML"/>
+    </param>
+    <text>The instance initializer.</text>
+  </constructor>
+  <method access="public" id="method:addItem" name="addItem">
+    <param name="objItem" text="the item to add.">
+      <type link="1" name="jsx3.amp.util.MenuItem"/>
+    </param>
+    <param name="strSection" text="the section ID.&#10;   ">
+      <type link="1" name="String"/>
+    </param>
+    <text>Adds an item to this menu.</text>
+  </method>
+  <method access="public" id="method:addSection" name="addSection">
+    <param name="strId" text="the section ID.">
+      <type link="1" name="String"/>
+    </param>
+    <param name="bDivider" text="whether the section begins with a visual dividing line.&#10;   ">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <text>Adds a logical section to this menu.</text>
+  </method>
+  <method access="public" id="method:getId" name="getId">
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the ID of this menu.</text>
+    <overrides id="overrides:getId" idfk="method:getId" name="getId" source="jsx3.amp.util.MenuItem"/>
+  </method>
+  <method access="public" id="method:getItem" name="getItem">
+    <param name="id" text="">
+      <type link="1" name="String"/>
+    </param>
+    <return text="">
+      <type link="1" name="jsx3.amp.util.MenuItem"/>
+    </return>
+    <text>Returns the item in this menu whose ID is equal to <code>id</code>.</text>
+  </method>
+  <method access="public" id="method:getItems" name="getItems">
+    <return text="">
+      <type link="1" name="jsx3.$Array">
+        <type link="1" name="jsx3.amp.util.MenuItem"/>
+      </type>
+    </return>
+    <text>Returns all items in this menu.</text>
+  </method>
+  <method access="public" id="method:getNativeMenu" name="getNativeMenu">
+    <return text="">
+      <type link="1" name="jsx3.gui.Menu"/>
+    </return>
+    <text>Returns the native GI menu that was rendered for this AMP menu.</text>
+  </method>
+  <method access="public" id="method:getPath" name="getPath">
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the path of this menu.</text>
+    <overrides id="overrides:getPath" idfk="method:getPath" name="getPath" source="jsx3.amp.util.MenuItem"/>
+  </method>
+  <method access="public" id="method:getXML" name="getXML">
+    <return text="">
+      <type link="1" name="jsx3.xml.Document"/>
+    </return>
+    <text>Returns the CDF data source for this menu. If this is a nested menu then this XML will be inserted into the
+XML document of the base GI Menu.
+<p/>
+This method is the bridge between the object-oriented AMP definition of a menu and the XML-based GI definition
+of a menu.</text>
+  </method>
+  <method access="public" id="method:onShow" name="onShow">
+    <param name="objMenu" text="">
+      <type link="1" name="jsx3.gui.Menu"/>
+    </param>
+    <param name="objElm" text="">
+      <type link="1" name="jsx3.xml.Entity"/>
+    </param>
+    <text>Called just before this menu is expanded. This method may modify any of the XML inside <code>objElm</code>,
+for example by enabling or selecting menu items or generating menu items on the fly.</text>
+  </method>
+  <method id="method:attr" idfk="method:attr" inherited="1" name="attr" source="jsx3.amp.util.MenuItem"/>
+  <method id="method:execute" idfk="method:execute" inherited="1" name="execute" source="jsx3.amp.util.MenuItem"/>
+  <method id="method:getExt" idfk="method:getExt" inherited="1" name="getExt" source="jsx3.amp.util.MenuItem"/>
+  <method id="method:getHotKey" idfk="method:getHotKey" inherited="1" name="getHotKey" source="jsx3.amp.util.MenuItem"/>
+  <method id="method:getImg" idfk="method:getImg" inherited="1" name="getImg" source="jsx3.amp.util.MenuItem"/>
+  <method id="method:getLabel" idfk="method:getLabel" inherited="1" name="getLabel" source="jsx3.amp.util.MenuItem"/>
+  <method id="method:getMenu" idfk="method:getMenu" inherited="1" name="getMenu" source="jsx3.amp.util.MenuItem"/>
+  <method id="method:getRootMenu" idfk="method:getRootMenu" inherited="1" name="getRootMenu" source="jsx3.amp.util.MenuItem"/>
+  <method id="method:getTip" idfk="method:getTip" inherited="1" name="getTip" source="jsx3.amp.util.MenuItem"/>
+  <method id="method:isEnabled" idfk="method:isEnabled" inherited="1" name="isEnabled" source="jsx3.amp.util.MenuItem"/>
+  <method id="method:isSelected" idfk="method:isSelected" inherited="1" name="isSelected" source="jsx3.amp.util.MenuItem"/>
+  <method id="method:clone" idfk="method:clone" inherited="1" name="clone" source="jsx3.lang.Object"/>
+  <method id="method:equals" idfk="method:equals" inherited="1" name="equals" source="jsx3.lang.Object"/>
+  <method id="method:eval" idfk="method:eval" inherited="1" name="eval" source="jsx3.lang.Object"/>
+  <method id="method:getClass" idfk="method:getClass" inherited="1" name="getClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOf" idfk="method:getInstanceOf" inherited="1" name="getInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfClass" idfk="method:getInstanceOfClass" inherited="1" name="getInstanceOfClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfPackage" idfk="method:getInstanceOfPackage" inherited="1" name="getInstanceOfPackage" source="jsx3.lang.Object"/>
+  <method id="method:instanceOf" idfk="method:instanceOf" inherited="1" name="instanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isInstanceOf" idfk="method:isInstanceOf" inherited="1" name="isInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isSubclassOf" idfk="method:isSubclassOf" inherited="1" name="isSubclassOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:jsxmix" idfk="method:jsxmix" inherited="1" name="jsxmix" source="jsx3.lang.Object"/>
+  <method id="method:jsxsuper" idfk="method:jsxsuper" inherited="1" name="jsxsuper" source="jsx3.lang.Object"/>
+  <method id="method:jsxsupermix" idfk="method:jsxsupermix" inherited="1" name="jsxsupermix" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:setInstanceOf" idfk="method:setInstanceOf" inherited="1" name="setInstanceOf" source="jsx3.lang.Object"/>
+  <method id="method:toString" idfk="method:toString" inherited="1" name="toString" source="jsx3.lang.Object"/>
+</class>
