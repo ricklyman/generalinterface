@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface abstract="1" access="public" id="class:jsx3.net.URIResolver" name="jsx3.net.URIResolver" package="jsx3.net" shortname="URIResolver" since="3.2&#10; ">
+  <text>An interface specifying the methods necessary to define a context against which URIs are resolved.</text>
+  <implementor id="implementor:0" loaded="1" name="jsx3.amp.PlugIn"/>
+  <implementor id="implementor:1" loaded="1" name="jsx3.app.AddIn"/>
+  <implementor id="implementor:2" loaded="1" name="jsx3.app.Server"/>
+  <field access="public" class="jsx3.net.URIResolver" fullname="jsx3.net.URIResolver.DEFAULT" id="sfield:DEFAULT" name="DEFAULT" static="1">
+    <type link="1" name="jsx3.net.URIResolver"/>
+    <text> The default URI resolver. This resolver can resolve any of the absolute URI formats
+supported by the system. Other absolute URIs and all relative URIs are unmodified. The absolute URI formats are:
+<ul>
+  <li>
+          <code>JSX/...</code> –</li>
+  <li>
+          <code>JSXAPPS/...</code> –</li>
+  <li>
+          <code>GI_Builder/...</code> –</li>
+  <li>
+          <code>jsx:/...</code> –</li>
+  <li>
+          <code>jsxapp://appPath/...</code> –</li>
+  <li>
+          <code>jsxaddin://addinKey/...</code> –</li>
+  <li>
+          <code>jsxuser:/...</code> –</li>
+</ul>
+   </text>
+  </field>
+  <field access="public" class="jsx3.net.URIResolver" fullname="jsx3.net.URIResolver.JSX" id="sfield:JSX" name="JSX" static="1">
+    <type link="1" name="jsx3.net.URIResolver"/>
+    <text> Resolves URIs according to the default resolver except that all relative URIs are 
+resolved relative to the <code>JSX/</code> directory. This resolver resolves the following URIs to the same value:
+<ul>
+  <li>
+          <code>JSX/file.xml</code>
+        </li>
+  <li>
+          <code>jsx:/file.xml</code>
+        </li>
+  <li>
+          <code>file.xml</code>
+        </li>
+</ul>
+   </text>
+  </field>
+  <field access="public" class="jsx3.net.URIResolver" fullname="jsx3.net.URIResolver.USER" id="sfield:USER" name="USER" static="1">
+    <type link="1" name="jsx3.net.URIResolver"/>
+    <text> Resolves URIs according to the default resolver except that all relative URIs are 
+resolved relative to the user directory (or <code>JSXAPPS/../</code>). This resolver resolves the following 
+URIs to the same value:
+<ul>
+  <li>
+          <code>JSXAPPS/../file.xml</code>
+        </li>
+  <li>
+          <code>jsxuser:/file.xml</code>
+        </li>
+  <li>
+          <code>file.xml</code>
+        </li>
+</ul>
+   </text>
+  </field>
+  <method abstract="1" access="public" id="method:getUriPrefix" name="getUriPrefix">
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the URI prefix that when prepended to relative URIs resolves them. This prefix may include 
+<code>"../"</code> path segments. </text>
+  </method>
+  <method abstract="1" access="public" id="method:relativizeURI" name="relativizeURI">
+    <param name="strURI" text="">
+      <type link="1" name="String"/>
+      <type link="1" name="jsx3.net.URI"/>
+    </param>
+    <param name="bRel" text="">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <return text="">
+      <type link="1" name="jsx3.net.URI"/>
+    </return>
+    <text>Transforms a URI relative to the URL of the HTML page containing the JSX system into an absolute URI defined
+in relation to this resolver. When resolved against any resolver, the returned URI resolves to <code>strURI</code>.</text>
+  </method>
+  <method abstract="1" access="public" id="method:resolveURI" name="resolveURI">
+    <param name="strURI" text="">
+      <type link="1" name="String"/>
+      <type link="1" name="jsx3.net.URI"/>
+    </param>
+    <return text="">
+      <type link="1" name="jsx3.net.URI"/>
+    </return>
+    <text>Resolves the URI <code>strURI</code> against the base context of this resolver. Converts a URI relative to this
+resolver into a URI relative to the URL of the HTML page containing the JSX system. Implementations of this
+method should delegate to the default resolver any URIs that are judged to be absolute by the method
+<code>URIResolver.isAbsoluteURI()</code>.</text>
+    <see idfk="smethod:isAbsoluteURI" source="jsx3.net.URIResolver">isAbsoluteURI()</see>
+  </method>
+  <method access="public" id="smethod:getResolver" name="getResolver" static="1">
+    <param name="strURI" text="">
+      <type link="1" name="String"/>
+      <type link="1" name="jsx3.net.URI"/>
+    </param>
+    <return text="">
+      <type link="1" name="jsx3.net.URIResolver"/>
+    </return>
+    <text>Returns the resolver explicitly referenced in the scheme, host, and path parts of the URI <code>strURI</code>. 
+This method returns the the following values depending URI:
+<ul>
+  <li>jsx: – <code>URIResolver.JSX</code>.</li>
+  <li>jsxapp: – and instance of <code>URIResolver</code> capable of resolving URIs relative to the base
+    directory of the application corresponding to the host part of the URI.</li>
+  <li>jsxaddin: – the instance of <code>jsx3.app.AddIn</code> corresponding to the host part of the URI. If
+    the addin is not loaded then <code>null</code> is returned.</li>
+  <li>jsxuser: – <code>URIResolver.USER</code>.</li>
+  <li>JSX/ – <code>URIResolver.DEFAULT</code>.</li>
+  <li>JSXAPPS/ – <code>URIResolver.USER</code>.</li>
+  <li>GI_Builder/ – <code>URIResolver.DEFAULT</code>.</li>
+  <li>otherwise <code>null</code>.</li>
+</ul>
+    </text>
+  </method>
+  <method access="public" id="smethod:isAbsoluteURI" name="isAbsoluteURI" static="1">
+    <param name="strURI" text="">
+      <type link="1" name="String"/>
+      <type link="1" name="jsx3.net.URI"/>
+    </param>
+    <return text="">
+      <type class="Boolean" link="1" name="boolean"/>
+    </return>
+    <text>Returns whether the URI <code>strURI</code> is considered absolute in the JSX system. Implementors of the
+<code>URIResolver</code> interface should always delegate resolution of absolute URIs to the default resolver.
+This method is not equivalent to <code>URI.isAbsolute()</code> because, for example, URIs beginning with 
+<code>"JSX/"</code> are considered absolute in the JSX system.</text>
+  </method>
+  <method access="public" id="smethod:register" name="register" static="1">
+    <param name="strScheme" text="">
+      <type link="1" name="String"/>
+    </param>
+    <param name="objResolver" text="">
+      <type link="1" name="jsx3.net.URIResolver"/>
+      <type link="1" name="Function"/>
+    </param>
+  </method>
+</interface>

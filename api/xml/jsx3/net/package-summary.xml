@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package access="public" id="class:jsx3.net" name="jsx3.net">
+  <text>Networking related classes.
+ </text>
+  <nested access="public" id="nested:jsx3.net.Form" loaded="1" name="jsx3.net.Form" shortname="Form" since="3.0&#10; " type="class">
+    <text>Provides support for legacy HTML GET and POST forms.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.net.Request" loaded="1" name="jsx3.net.Request" shortname="Request" type="class">
+    <text>A generic wrapper to hide the complexities and API-specifics of the native XMLHTTP control for a given browser.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.net.Service" loaded="1" name="jsx3.net.Service" shortname="Service" type="class">
+    <text>This class is used in conjunction with the XML Mapping Utility to provide transactional support for those services using XML-based messaging.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.net.URI" loaded="1" name="jsx3.net.URI" shortname="URI" since="3.1&#10; " type="class">
+    <text>Represents a Uniform Resource Identifier (URI) reference.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.net.URIResolver" loaded="1" name="jsx3.net.URIResolver" shortname="URIResolver" since="3.2&#10; " type="interface">
+    <text>An interface specifying the methods necessary to define a context against which URIs are resolved.</text>
+  </nested>
+</package>

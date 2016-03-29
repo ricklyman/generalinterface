@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class access="public" id="class:jsx3.net.Request" name="jsx3.net.Request" package="jsx3.net" shortname="Request">
+  <text>A generic wrapper to hide the complexities and API-specifics of the native XMLHTTP control for a given browser.
+Developers wishing to create/modify XML documents can use this class to access common XMLHTTP methods.
+<p/>
+Note that when using this interface to post xml content to a server, the called server may expect the content
+type to be set for the posting.  For example,
+<code>objRequest.setRequestHeader("Content-Type", "text/xml");</code>
+ </text>
+  <superclass id="super:0" loaded="1" name="Object"/>
+  <superclass direct="1" id="super:1" loaded="1" name="jsx3.lang.Object"/>
+  <implements direct="1" id="implements:0" loaded="1" name="jsx3.util.EventDispatcher"/>
+  <constructor access="public" id="method:init" name="init">
+    <param name="id" text="&lt;span style=&quot;text-decoration:line-through;&quot;&gt;If the call will be asynchronous, assigns a unique identifier.&lt;/span&gt;&#10;   &lt;b&gt;Using this deprecated parameter will cause memory to leak. Don't use it.&lt;/b&gt;&#10;   ">
+      <type link="1" name="String"/>
+    </param>
+    <text>The instance initializer.</text>
+  </constructor>
+  <field access="public" class="jsx3.net.Request" final="1" fullname="jsx3.net.Request.EVENT_ON_RESPONSE" id="sfield:EVENT_ON_RESPONSE" name="EVENT_ON_RESPONSE" static="1" value="&quot;response&quot;">
+    <type link="1" name="String"/>
+    <text> Event type published when the response has loaded.</text>
+  </field>
+  <field access="public" class="jsx3.net.Request" final="1" fullname="jsx3.net.Request.EVENT_ON_TIMEOUT" id="sfield:EVENT_ON_TIMEOUT" name="EVENT_ON_TIMEOUT" static="1" value="&quot;timeout&quot;">
+    <type link="1" name="String"/>
+    <text> Event type published when the server has not responded after the specified timeout period.</text>
+  </field>
+  <method access="public" id="method:abort" name="abort">
+    <return text="this object.&#10;   ">
+      <type link="1" name="jsx3.net.Request"/>
+    </return>
+    <text>Aborts the request.</text>
+  </method>
+  <method access="public" id="method:getAllResponseHeaders" name="getAllResponseHeaders">
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>Gets the value of all the HTTP headers.</text>
+  </method>
+  <method access="public" deprecated="1" id="method:getNative" name="getNative">
+    <return text="">
+      <type name="XMLHttpRequest"/>
+    </return>
+  </method>
+  <method access="public" deprecated="1" id="method:getReadyState" name="getReadyState">
+    <return text="">
+      <type class="Number" link="1" name="int"/>
+    </return>
+    <text>Gets the ready state for the request; return values include:
+         0) The object has been created, but not initialized (the open method has not been called).
+         1) The object has been created, but the send method has not been called.
+         2) The send method has been called, but the status and headers are not yet available.
+         3) Some data has been received. Calling the responseBody and responseText properties at this state to obtain partial results will return an error, because status and response headers are not fully available.
+         4) All the data has been received, and the complete data is available via the getResponseText()/getResponseXML() methods</text>
+    <deprecated>This method is not consistent between browsers. Use the event publisher interface instead to track
+   the state of the request.
+   </deprecated>
+  </method>
+  <method access="public" id="method:getResponseHeader" name="getResponseHeader">
+    <param name="strName" text="the name for the response header to retrieve.">
+      <type link="1" name="String"/>
+    </param>
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>Gets the value of a specific HTTP response header.</text>
+  </method>
+  <method access="public" id="method:getResponseText" name="getResponseText">
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>Gets the content of the response as string.</text>
+  </method>
+  <method access="public" id="method:getResponseXML" name="getResponseXML">
+    <return text="">
+      <type link="1" name="jsx3.xml.Document"/>
+    </return>
+    <text>Gets the content of the response as an XML document. If the response is not a valid XML document,
+<code>null</code> is returned.</text>
+  </method>
+  <method access="public" id="method:getStatus" name="getStatus">
+    <return text="">
+      <type class="Number" link="1" name="int"/>
+    </return>
+    <text>Gets the HTTP response status code (e.g. 200, 404, 500, etc). The following code checks for a request error 
+condition.
+<pre>
+r.send();
+
+if (r.getStatus() &gt;= 200 &amp;&amp; r.getStatus() &lt; 400) {
+  jsx3.log("success");
+} else {
+  jsx3.log("failed with status " + r.getStatus());
+}
+</pre>
+<p/>
+The native object that this <code>Request</code> wraps may have a status code that is not a valid HTTP code 
+(200-599). This is especially true if an HTTP server was not involved in the request like, for example, if
+the resource was loaded from the <code>file:///</code> scheme or if a network error occurred while contacting the
+HTTP server. Moreover, the various supported browsers may have different status values for the same conditions. 
+<p/>
+This method attempts to constrain the possible status values that it returns. So, instead of returning 0 
+(usually a success on the <code>file:////</code> scheme), it returns 200. When running in Safari certain  
+status values known to be error conditions are returned as 400. If the native object's status is greater than 
+599 then this method makes no attempt to convert it. Such values should probably be interpreted as error 
+conditions. When in doubt consult the documentation for the host browser. 
+</text>
+  </method>
+  <method access="public" id="method:getStatusText" name="getStatusText">
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>Gets the HTTP response line status (e.g. "OK").</text>
+  </method>
+  <method access="public" id="method:getURL" name="getURL">
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>Gets the URL passed when opening this request.</text>
+  </method>
+  <method access="public" id="method:open" name="open">
+    <param name="strMethod" text="The HTTP method used to open the connection. Valid values include: GET, POST, or PUT.">
+      <type link="1" name="String"/>
+    </param>
+    <param name="strURL" text="The requested URL. This can be either an absolute URL, such as &quot;http://www.TIBCO.com&quot;, or a relative URL, such as &quot;../MyPath/MyFile&quot;.">
+      <type link="1" name="String"/>
+      <type link="1" name="jsx3.net.URI"/>
+    </param>
+    <param name="bAsync" text="whether to issue the request asynchronously, if true this class will use the EventDispatcher interface to publish an event on response or timeout.">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <param name="strUser" text="The name of the user for authentication. If this parameter is null (&quot;&quot;) or missing and the site requires authentication, the native HTTP control will display a logon window.">
+      <type link="1" name="String"/>
+    </param>
+    <param name="strPass" text="The password for authentication. This parameter is ignored if the user parameter is null (&quot;&quot;) or missing.">
+      <type link="1" name="String"/>
+    </param>
+    <return text="this object.&#10;   ">
+      <type link="1" name="jsx3.net.Request"/>
+    </return>
+    <text>Initializes the request, and specifies the method, URL, and authentication information for the request.</text>
+  </method>
+  <method access="public" id="method:send" name="send">
+    <param name="strContent" text="The content to send for a POST request.">
+      <type link="1" name="String"/>
+    </param>
+    <param name="intTimeout" text="the number milliseconds to wait before publishing a timeout event. This only applies&#10;   to asynchronous requests. If used, subscribe to the &lt;code&gt;jsx3.net.Request.EVENT_ON_TIMEOUT&lt;/code&gt; event to&#10;   be notified of a timeout.">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <return text="this object.&#10;   ">
+      <type link="1" name="jsx3.net.Request"/>
+    </return>
+    <text>Sends the request.</text>
+  </method>
+  <method access="public" id="method:setRequestHeader" name="setRequestHeader">
+    <param name="strName" text="the name for the request header to send to the server with the request content.">
+      <type link="1" name="String"/>
+    </param>
+    <param name="strValue" text="the value for the request header to send to the server with the request content.">
+      <type link="1" name="String"/>
+    </param>
+    <return text="this object.&#10;   ">
+      <type link="1" name="jsx3.net.Request"/>
+    </return>
+    <text>Sets the value of a specific HTTP request header. The <code>open()</code> method should be called before calling
+this method.</text>
+  </method>
+  <method access="public" deprecated="1" id="method:setTimeouts" name="setTimeouts">
+    <param name="intResolveTimeout" text="The value is applied to mapping host names (such as &quot;www.microsoft.com&quot;) to IP addresses; the default value is infinite, meaning no timeout.">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <param name="intConnectTimeout" text="The value is applied to establishing a communication socket with the target server, with a default timeout value of 60 seconds.">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <param name="intSendTimeout" text="The value applies to sending an individual packet of request data (if any) on the communication socket to the target server. A large request sent to a server will normally be broken up into multiple packets; the send timeout applies to sending each packet individually. The default value is 5 minutes.">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <param name="intReceiveTimeout" text="The value applies to receiving a packet of response data from the target server. Large responses will be broken up into multiple packets; the receive timeout applies to fetching each packet of data off the socket. The default value is 60 minutes.">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <return text="this instance.">
+      <type link="1" name="jsx3.net.Request"/>
+    </return>
+    <text>Specifies timeout settings for resolving the domain name, establishing the connection to the server, sending the data, and receiving the response. The timeout parameters of the setTimeouts method are specified in milliseconds, so a value of 1000 would represent 1 second. A value of zero represents an infinite timeout. There are four separate timeout parameters: resolveTimeout, connectTimeout, sendTimeout, and receiveTimeout. When calling the setTimeouts method, all four values must be specified. The timeouts are applied at the Winsock layer.</text>
+    <deprecated>IE only.
+   </deprecated>
+  </method>
+  <method access="public" id="smethod:addSchemeHandler" name="addSchemeHandler" since="3.7&#10;   " static="1">
+    <param name="scheme" text="the scheme that the handler to handle.">
+      <type link="1" name="String"/>
+    </param>
+    <param name="handler" text="a custom subclass of Request.">
+      <type link="1" name="jsx3.lang.Class"/>
+    </param>
+    <text>Adds a handler that will field requests to a particular URL scheme.</text>
+  </method>
+  <method access="public" deprecated="1" id="smethod:cancelRequest" name="cancelRequest" static="1">
+    <param name="strRequestId" text="named id for the request (assigned by developer when the Request was instanced);">
+      <type link="1" name="String"/>
+    </param>
+    <text>Cancels the named request.</text>
+    <deprecated>Use &lt;code&gt;abort()&lt;/code&gt; instead.</deprecated>
+    <see idfk="method:abort" source="jsx3.net.Request">abort()</see>
+  </method>
+  <method access="public" deprecated="1" id="smethod:getRequest" name="getRequest" static="1">
+    <param name="strRequestId" text="named id for the request (assigned by developer when the Request was instanced);">
+      <type link="1" name="String"/>
+    </param>
+    <return text="">
+      <type link="1" name="jsx3.net.Request"/>
+    </return>
+    <text>Gets the named request instance.</text>
+    <deprecated>Static access to pending requests by id is deprecated.
+   </deprecated>
+  </method>
+  <method access="public" deprecated="1" id="smethod:getVersion" name="getVersion" static="1">
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>gets the release/build for the class (i.e., "3.0.00")</text>
+  </method>
+  <method access="public" id="smethod:open" name="open" since="3.7" static="1">
+    <param name="strMethod" text=""/>
+    <param name="strURL" text=""/>
+    <param name="bAsync" text=""/>
+    <param name="strUser" text=""/>
+    <param name="strPass" text=""/>
+    <text>Creates and opens a request object. This is a factory method that creates the proper subclass of
+<code>Request</code> based on the scheme of <code>strURL</code>.</text>
+    <see idfk="smethod:addSchemeHandler" source="jsx3.net.Request">addSchemeHandler()</see>
+  </method>
+  <method access="public" id="smethod:xdr" name="xdr" static="1">
+    <param name="strURI" text="the URI of the resource that loaded.">
+      <type link="1" name="String"/>
+    </param>
+    <param name="strData" text="the file data.&#10;   ">
+      <type link="1" name="String"/>
+    </param>
+    <text>The cross-domain response callback. This method compares all pending cross-domain requests against
+<code>strURI</code>. If the path of a pending request equals <code>strURI</code> resolved, then that request
+object will publish a response event.
+<p/>
+Note that this method is only available when running from source or from a build that included the XD symbol.
+This method is not meant to be called directly from application code. Rather it is designed as the callback
+for data files that are processed for cross-domain access with the <code>JsEncodeTask</code>.
+<p/>
+The static method <code>Request.open()</code>, when called for an asynchronous non-authenticating request,
+will return an instance of <code>Request</code> appropriate for cross-domain data access. This request object will
+attempt to load a JavaScript file whose path is <code>.js</code> appended to the path of the original resource.
+This JavaScript file must exist and must call this method in its body for the cross-domain request to succeed.
+<p/>
+<code>Request.open()</code> will only initiate a cross-domain request for resource URIs that match the
+<code>jsxxd</code> deployment parameter. This parameter is a space delimited list of URI prefixes. If the
+resolved URI of a resource matches any of these prefixes then it will be loaded cross-domain. </text>
+  </method>
+  <method id="method:publish" idfk="method:publish" inherited="1" name="publish" source="jsx3.util.EventDispatcher"/>
+  <method id="method:subscribe" idfk="method:subscribe" inherited="1" name="subscribe" source="jsx3.util.EventDispatcher"/>
+  <method id="method:unsubscribe" idfk="method:unsubscribe" inherited="1" name="unsubscribe" source="jsx3.util.EventDispatcher"/>
+  <method id="method:unsubscribeAll" idfk="method:unsubscribeAll" inherited="1" name="unsubscribeAll" source="jsx3.util.EventDispatcher"/>
+  <method id="method:clone" idfk="method:clone" inherited="1" name="clone" source="jsx3.lang.Object"/>
+  <method id="method:equals" idfk="method:equals" inherited="1" name="equals" source="jsx3.lang.Object"/>
+  <method id="method:eval" idfk="method:eval" inherited="1" name="eval" source="jsx3.lang.Object"/>
+  <method id="method:getClass" idfk="method:getClass" inherited="1" name="getClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOf" idfk="method:getInstanceOf" inherited="1" name="getInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfClass" idfk="method:getInstanceOfClass" inherited="1" name="getInstanceOfClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfPackage" idfk="method:getInstanceOfPackage" inherited="1" name="getInstanceOfPackage" source="jsx3.lang.Object"/>
+  <method id="method:instanceOf" idfk="method:instanceOf" inherited="1" name="instanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isInstanceOf" idfk="method:isInstanceOf" inherited="1" name="isInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isSubclassOf" idfk="method:isSubclassOf" inherited="1" name="isSubclassOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:jsxmix" idfk="method:jsxmix" inherited="1" name="jsxmix" source="jsx3.lang.Object"/>
+  <method id="method:jsxsuper" idfk="method:jsxsuper" inherited="1" name="jsxsuper" source="jsx3.lang.Object"/>
+  <method id="method:jsxsupermix" idfk="method:jsxsupermix" inherited="1" name="jsxsupermix" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:setInstanceOf" idfk="method:setInstanceOf" inherited="1" name="setInstanceOf" source="jsx3.lang.Object"/>
+  <method id="method:toString" idfk="method:toString" inherited="1" name="toString" source="jsx3.lang.Object"/>
+</class>
