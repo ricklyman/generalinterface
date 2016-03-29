@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  ~ Copyright (c) 2001-2011, TIBCO Software Inc.
+  ~ Use, modification, and distribution subject to terms of license.
+  --><serialization xmlns="urn:tibco.com/v3.0">
+  <onAfterDeserialize><![CDATA[var
+da="jsx_deployment_";objJSX.getFirstResponder=function(){return this.getDescendantOfName("");};objJSX.savePrefs=function(){var
+ka=jsx3.ide.PROJECT.getSettings(true);var
+ya={};var
+N=this.getDescendantsOfType(jsx3.gui.Form);for(var
+Ka=0;Ka<N.length;Ka++){var
+ia=N[Ka];if((ia.getName()).indexOf(da)!=0)continue;var
+ea=(ia.getName()).substring(da.length);if(ya[ea])continue;ya[ea]=true;ka.set(ea,ia.getValue());}ka.save();return true;};objJSX.loadPrefs=function(){var
+Cb=jsx3.ide.PROJECT.getSettings(false);var
+ma={};var
+pb=this.getDescendantsOfType(jsx3.gui.Form);for(var
+Ja=0;Ja<pb.length;Ja++){var
+Nb=pb[Ja];if((Nb.getName()).indexOf(da)!=0)continue;var
+hb=(Nb.getName()).substring(da.length);if(ma[hb])continue;ma[hb]=true;var
+Ba=Cb.get(hb);if(Ba!=null)Nb.setValue(Ba);}};objJSX.makeDirty=function(){(this.getPane()).setDirty(true);};]]></onAfterDeserialize>
+  <object type="jsx3.gui.Block">
+    <dynamics jsxpadding="@8Pixel"/>
+    <variants jsxheight="156" jsxoverflow="3" jsxrelativeposition="1"/>
+    <strings jsxhelpid="ide.projset.legacy" jsxname="prefspane" jsxwidth="100%"/>
+    <object type="jsx3.gui.LayoutGrid">
+      <variants/>
+      <strings jsxcols="120,*" jsxname="jsxlayoutx" jsxrows="24,24"/>
+      <object type="jsx3.gui.Block">
+        <dynamics jsxfontname="@Label1 FN" jsxfontsize="@Label1 FS" jsxfontweight="@Label1 FW" jsxtext="_dpl_tx11" jsxtip="_dpl_tp11"/>
+        <variants jsxoverflow="2"/>
+        <strings jsxpadding="2 6 0 0" jsxtextalign="right" jsxwidth="100%"/>
+      </object>
+      <!-- field wrapper -->
+      <object type="jsx3.gui.Block">
+        <variants jsxoverflow="2"/>
+        <strings jsxpadding="2 6 0 0"/>
+        <object type="jsx3.gui.TextBox">
+          <variants jsxwidth="125"/>
+          <strings jsxname="jsx_deployment_version" jsxwidth="100%"/>
+          <events jsxincchange="prefspane.makeDirty(this);"/>
+        </object>
+      </object>
+      <object type="jsx3.gui.Block">
+        <dynamics jsxfontname="@Label1 FN" jsxfontsize="@Label1 FS" jsxfontweight="@Label1 FW"/>
+        <variants jsxoverflow="2"/>
+        <strings jsxpadding="2 6 0 0" jsxtext="Event Protocol" jsxtextalign="right" jsxwidth="100%"/>
+      </object>
+      <!-- field wrapper -->
+      <object type="jsx3.gui.Block">
+        <variants jsxoverflow="2"/>
+        <strings jsxpadding="2 6 0 0"/>
+        <object type="jsx3.gui.Select">
+          <variants jsxwidth="125"/>
+          <strings jsxname="jsx_deployment_eventsvers" jsxvalue="3.1" jsxxml="&lt;data jsxid=&quot;jsxroot&quot;&gt;&lt;record jsxid=&quot;3.0&quot; jsxtext=&quot;3.0 (deprecated)&quot;/&gt;&lt;record jsxid=&quot;3.1&quot; jsxtext=&quot;3.1&quot;/&gt;&lt;/data&gt;"/>
+          <events jsxselect="prefspane.makeDirty();"/>
+        </object>
+      </object>
+    </object>
+  </object>
+</serialization>

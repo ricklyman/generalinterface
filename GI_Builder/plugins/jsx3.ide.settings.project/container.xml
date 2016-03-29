@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  ~ Copyright (c) 2001-2011, TIBCO Software Inc.
+  ~ Use, modification, and distribution subject to terms of license.
+  --><serialization xmlns="urn:tibco.com/v3.0">
+  <onAfterDeserialize><![CDATA[var
+ob=jsx3.amp.util.Prefs;objJSX._onSaved=function(i){(this.getPlugIn()).publish({subject:"saved",pane:i.pane});};objJSX.doMinimize=function(){this.doToggleState(jsx3.gui.Dialog.MINIMIZED);};objJSX.doConfirmedClose=function(){(this.getPrefs()).unload();};objJSX.registerHotKey("doMinimize","m",false,true,false);objJSX.openPrefs=function(p){(this.getPrefs()).renderIn(content,p);(this.getPrefs()).subscribe(ob.UNLOAD,objJSX,"doClose");(this.getPrefs()).subscribe(ob.SAVE,objJSX,"_onSaved");};objJSX.showPrefs=function(j){(this.getPrefs()).showPane(j);};]]></onAfterDeserialize>
+    <object type="jsx3.gui.Dialog">
+      <dynamics jsxbgcolor="@Solid Medium"/>
+      <variants jsxheight="400" jsxminx="475" jsxminy="350" jsxwidth="525"/>
+      <strings jsxhelpid="ide.projset" jsxname="jsx_deployment"/>
+        <object type="jsx3.gui.WindowBar">
+          <variants/>
+          <strings jsxtext="Project Settings"/>
+            <object type="jsx3.gui.ToolbarButton">
+              <dynamics jsximage="@Min Icon" jsxtip="jsx3.gui.Dialog.min"/>
+              <variants/>
+              <strings/>
+              <events jsxexecute="jsx_deployment.doToggleState();"/>
+            </object>
+            <object type="jsx3.gui.ToolbarButton">
+              <dynamics jsximage="@Close Icon"/>
+              <variants/>
+              <strings jsxname="jsx_tbb" jsxtip="close dialog"/>
+              <events jsxexecute="jsx_deployment.doConfirmedClose();"/>
+            </object>
+        </object>
+        <object type="jsx3.gui.Block">
+          <variants jsxoverflow="2"/>
+          <strings jsxheight="100%" jsxname="content" jsxwidth="100%"/>
+        </object>        
+    </object>
+</serialization>

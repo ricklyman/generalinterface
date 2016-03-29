@@ -1,0 +1,164 @@
+/*
+ * Copyright (c) 2007-2009, TIBCO Software Inc.
+ * Use, modification, and distribution subject to terms of license.
+ */
+
+body { margin: 0px; padding: 0px 2px 2px 2px; }
+body, td, th, input { font-family: Verdana, Arial, sans-serif; font-size: 11px; }
+th { position: relative; text-align: left; }
+td { position: relative; vertical-align: top; padding: 0px; }
+
+table#table_main { width: 100%; height: 100%; margin: 0px; padding: 0px; }
+
+input#input_gi, select#input_gi { width: 225px; font-size: 10px; }
+input#input_project, select#input_project { width: 225px; font-size: 10px; }
+input#input_js { width: 225px; font-size: 10px; }
+select#input_js { width: 225px; font-size: 10px; vertical-align: top; }
+
+td#td_controls {
+  width: 300px;
+  padding-right: 2px;
+}
+
+div#logo {
+  padding: 0px;
+  background-color: #AEB7BE;
+}
+div#inputs {
+  text-align: right;
+  padding: 6px 10px 6px 0px;
+  background-color: #D4D6D8;
+}
+table#table_inputs {
+}
+table#table_inputs td {
+  padding: 2px 2px 4px 2px;
+}
+table#table_inputs td.label {
+  width: 100%;
+  text-align: right;
+  font-weight: bold;
+  padding-top: 4px;
+}
+table#table_inputs td.input {
+  text-align: right;
+  width: 1px;
+  padding: 2px 0px 4px 2px;
+}
+div#controls {
+  text-align: right;
+  padding: 6px 10px 6px 0px;
+  background-color: #82A1BD;
+  background-image: url(images/buttonbar_bg.gif);
+}
+td#ctrl_left {
+  text-align: left;
+  white-space: nowrap;
+  padding: 4px 10px 0px 6px;
+}
+td#ctrl_right {
+  text-align: right;
+  width: 100%;
+}
+div#controls input {
+  width: 55px;
+}
+span#runs {
+  color: #334A66;
+}
+div#results {
+  overflow: auto;
+  background-color: #EFEEEF;
+}
+div#log {
+  background-color: #D4D6D8;
+  height: 30px;
+  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
+  font-size: 9px;
+  color: #333333;
+}
+div#log div.pad { padding: 1px 4px 1px 4px; }
+div#log div.pad div { padding: 2px; }
+div#div_export {
+  position: relative;
+  text-align: right;
+  height: 32px;
+  padding: 0px 10px 0px 0px;
+  background-color: #82A1BD;
+  background-image: url(images/buttonbar_bg.gif);
+}
+div#div_export input { margin-top: 6px; }
+div#div_export img { z-index: 2; position: absolute; left:1px; top: 19px; cursor: pointer;}
+
+table#table_results { width: 100%; border-spacing: 0px; }
+table#table_results td, table#table_results th { padding: 3px; }
+/*table#table_results th { border-bottom: 1px dotted #999999;}*/
+table#table_results td.name, table#table_results th.name { padding-left: 5px; }
+table#table_results td.val1, table#table_results th.val1 { text-align: right; }
+table#table_results td.val2, table#table_results th.val2 {}
+table#table_results tr.active { background-color: #FFFF66; }
+
+span.error { text-decoration: underline; cursor: pointer; }
+
+td#td_app {
+  width:100%;
+  padding: 2px 2px 2px 0px;
+}
+div#app_container {
+  left:0px; top:0px; width:100%; height:100%;
+  overflow: hidden;
+  background-color: #EFEEEF;
+  border: 1px solid #CCCCCC;
+  position: relative;
+}
+div#app_container div#app {
+  left:0px; top:0px; width:100%; height:100%;
+  position:relative;
+}
+
+div.twopxspace { height:2px;overflow:hidden;font-size:1px; }
+div.onepxbrd { height:1px;overflow:hidden;font-size:1px;background-color:#AAA8A9; }
+
+div#scriptlet {
+  z-index: 1;
+  left: 0px;
+  top: -169px;
+  width: 300px;
+  height: 201px;
+  background-color: #D4D6D8;
+  opacity: .93;
+  filter: alpha(opacity=93);
+  text-align: right;
+  visibility: hidden;
+}
+div#scriptlet input {
+  margin: 0px 4px 0px 0px;
+}
+textarea#eval_script {
+  text-align: left;
+  margin: 4px;
+  width: 292;
+  font-family: Monaco, Courier, monospace;
+  height: 100px;
+  background-color: white;
+  font-size: 11px;
+}
+div#eval_result {
+  width: 300px;
+  background-color: #AAA8A9;
+  position: absolute;
+  left: 0px;
+  top: 138px;
+  height: 63px;
+  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
+  font-size: 9px;
+  font-family: Monaco, Courier, monospace;
+}
+div#eval_result div {
+  padding: 4px 4px 4px 18px;
+  text-align: left;
+}

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  ~ Copyright (c) 2001-2011, TIBCO Software Inc.
+  ~ Use, modification, and distribution subject to terms of license.
+  --><serialization xmlns="urn:tibco.com/v3.0">
+  <onAfterDeserialize><![CDATA[objJSX.getFirstResponder=function(){};objJSX.savePrefs=function(){var
+ra=classpathlist;var
+Oa=(ra.getXML()).selectNodes("//record");var
+Ha=[];for(var
+Ma=Oa.iterator();Ma.hasNext();){var
+Na=Ma.next();if(Na.getAttribute("path"))Ha.push(Na.getAttribute("path")+":"+Na.getAttribute("pkg"));}var
+ua=jsx3.ide.PROJECT.getSettings(true);ua.set("classpath",Ha.join(","));ua.save();return {title:"Restart Required",message:"You must restart General Interface Builder for the changes to take effect."};};objJSX.loadPrefs=function(){var
+_=(jsx3.ide.PROJECT.getSettings()).get("classpath")||"";var
+Ib=classpathlist;var
+da=_.split(",");for(var
+kb=0;kb<da.length;kb++){var
+pb=da[kb].split(":");if(pb[0])Ib.insertRecord({jsxid:jsx3.xml.CDF.getKey(),path:pb[0],pkg:pb[1]},null,false);}Ib.repaintData();};objJSX.onAdd=function(){var
+jb=classpathlist;jb.insertRecord({jsxid:jsx3.xml.CDF.getKey(),path:"",pkg:""},null,true);};objJSX.onRemove=function(){var
+G=classpathlist;var
+Kb=G.getValue();if(Kb){G.deleteRecord(Kb,true);this.makeDirty();}};objJSX.makeDirty=function(){(this.getPane()).setDirty(true);};var
+Ia=objJSX.getDescendantOfName("classpathlist");(Ia.getChild(0)).setFormatHandler(function(d,j,Ia,h,q,f){if(j=="jsxautorow")d.innerHTML="<div title=\"add new row\" class=\"jsx3ide_dynprops_autorow\" onclick=\"jsx3.IDE.getJSXById('"+Ia.getId()+"').commitAutoRowSession();\">&#160;</div>";});]]></onAfterDeserialize>
+    <object type="jsx3.gui.Block">
+      <variants jsxleft="0" jsxoverflow="3" jsxrelativeposition="0" jsxtop="0"/>
+      <strings jsxheight="100%" jsxhelpid="ide.projset.classpath" jsxname="prefspane" jsxpadding="8 8 4 8" jsxwidth="100%"/>
+        <object type="jsx3.gui.LayoutGrid">
+          <variants jsxleft="0" jsxoverflow="2" jsxrelativeposition="0" jsxtop="0"/>
+          <strings jsxheight="100%" jsxrows="32,*" jsxwidth="100%"/>
+            <object type="jsx3.gui.Block">
+              <dynamics/>
+              <variants jsxoverflow="2"/>
+              <strings jsxheight="100%" jsxtext="The classpaths of a project define where to look for classes when loading them dynamically." jsxwidth="100%"/>
+            </object>
+            <object type="jsx3.gui.Block">
+              <dynamics jsxborder="@Inset"/>
+              <variants jsxoverflow="1"/>
+              <strings jsxheight="100%" jsxwidth="100%"/>
+                <object type="jsx3.gui.Matrix">
+                  <dynamics jsxbgcolor="@Solid Light"/>
+                  <variants jsxautorow="2" jsxpagingmodel="0" jsxreorder="0" jsxscalewidth="1" jsxselectionmodel="0"/>
+                  <strings jsxbodyborder="1px solid #d8d8e5" jsxfocusstyle=";" jsxname="classpathlist"/>
+                  <events jsxaftercommit="prefspane.makeDirty();"/>
+                  <xslparameters jsx_autorow_style="background-color:#f0f0f8;color:#0000ff;" jsx_rowbg1="#ffffff" jsx_rowbg2="#ffffff"/>
+                    <object type="jsx3.gui.Matrix.Column">
+                    <dynamics jsxbg="@Fade TopDown" jsxborder="@Outset" jsxcellborder="@Matrix AllCol Border"/>
+                    <variants jsxresize="0" jsxwidth="20"/>
+                    <strings jsxcellpadding="1" jsxname="jsxcol" jsxpadding="2 3 0 3" jsxtext="&amp;#160;" jsxvaluetemplate="@empty"/>
+                      <object type="jsx3.gui.ImageButton">
+                       <variants jsxheight="16" jsxwidth="16"/>
+                       <strings jsximage="jsxapp:/images/icon_55.gif" jsxname="imagebutton" jsxtip="remove row"/>
+                       <events jsxexecute="(this.emGetSession()).matrix.deleteRecord((this.emGetSession()).recordId);"/>
+                      </object>
+                    </object>
+                    <object type="jsx3.gui.Matrix.Column">
+                      <dynamics jsxbg="@Fade TopDown" jsxborder="@Outset" jsxcellborder="@Matrix AllCol Border"/>
+                      <variants/>
+                      <strings jsxcellpadding="3" jsxname="abclist_col1" jsxpadding="2 3 0 3" jsxpath="path" jsxtext="Path" jsxwidth="*"/>
+                        <object type="jsx3.gui.TextBox">
+                          <dynamics jsxcolor="@Matrix Edit Color"/>
+                          <strings jsxname="textbox"/>
+                        </object>
+                    </object>
+                    <object type="jsx3.gui.Matrix.Column">
+                      <dynamics jsxbg="@Fade TopDown" jsxborder="@Outset" jsxcellborder="@Matrix AllCol Border"/>
+                      <variants/>
+                      <strings jsxcellpadding="3" jsxname="abclist_col2" jsxpadding="2 3 0 3" jsxpath="pkg" jsxtext="Packages" jsxwidth="*"/>
+                        <object type="jsx3.gui.TextBox">
+                          <dynamics jsxcolor="@Matrix Edit Color"/>
+                          <strings jsxname="textbox"/>
+                        </object>
+                    </object>
+                </object>
+            </object>
+        </object>
+    </object>
+</serialization>
