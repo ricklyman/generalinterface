@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class access="public" id="class:jsx3.util.Logger.Manager" name="jsx3.util.Logger.Manager" package="jsx3.util" shortname="Logger.Manager">
+  <text>Manager class for the logging system. The singleton instance of this class is configured with the logger 
+configuration file specified by the system environment variable <code>jsx_logger_config</code>, 
+or if that is not provided, by the default configuration file located at <code>$GI/logger.xml</code>. 
+<p/>
+The DTD of that configuration file is as follows:
+<pre>
+&lt;!ELEMENT configuration (handler | logger)* &gt;
+&lt;!ELEMENT handler (property)* &gt;
+&lt;!ATTLIST handler name CDATA #REQUIRED
+                  class CDATA #REQUIRED
+                  lazy (true|false) "false"
+                  require (true|false) "false"
+                  level (OFF|FATAL|ERROR|WARN|INFO|DEBUG|TRACE) #IMPLIED&gt;
+&lt;!ELEMENT logger (property | handler-ref)* &gt;
+&lt;!ATTLIST logger name CDATA #REQUIRED
+                 useParent (true|false) "true"
+                 level (OFF|FATAL|ERROR|WARN|INFO|DEBUG|TRACE) #IMPLIED&gt;
+&lt;!-- Properties allow for bean-style configuration of handlers and loggers.
+     The class should have a setter method corresponding to the name of the 
+     property. --&gt;
+&lt;!ELEMENT property (EMPTY)&gt;
+&lt;!ATTLIST property name CDATA #REQUIRED
+                   value CDATA #REQUIRED
+                   eval (true|false) "false"&gt;
+&lt;!ELEMENT handler-ref (EMPTY)&gt;
+&lt;!ATTLIST handler-ref name CDATA #REQUIRED&gt;
+</pre>
+ </text>
+  <superclass id="super:0" loaded="1" name="Object"/>
+  <superclass direct="1" id="super:1" loaded="1" name="jsx3.lang.Object"/>
+  <method access="public" id="method:addHandler" name="addHandler">
+    <param name="objHandler" text="">
+      <type link="1" name="jsx3.util.Logger.Handler"/>
+    </param>
+    <text>Add a Handler instance to this manager's registry.</text>
+  </method>
+  <method access="public" id="method:addLogger" name="addLogger">
+    <param name="objLogger" text="">
+      <type link="1" name="jsx3.util.Logger"/>
+    </param>
+    <text>Add a Logger instance to the manager's registry.</text>
+  </method>
+  <method access="public" id="method:getHandler" name="getHandler">
+    <param name="strName"/>
+    <return text="">
+      <type link="1" name="jsx3.util.Logger.Handler"/>
+    </return>
+    <text>Returns a Handler from the manager's registry by name, or null if no such Handler is registered.</text>
+  </method>
+  <method access="public" id="method:getHandlerNames" name="getHandlerNames">
+    <return text="">
+      <type link="1" name="Array">
+        <type link="1" name="String"/>
+      </type>
+    </return>
+    <text>Returns a list containing the names of all the handlers registered with this manager.</text>
+  </method>
+  <method access="public" id="method:getLogger" name="getLogger">
+    <param name="strName"/>
+    <return text="">
+      <type link="1" name="jsx3.util.Logger"/>
+    </return>
+    <text>Returns a Logger from this manager's registry by name, or null if no such Logger is registered.</text>
+  </method>
+  <method access="public" id="smethod:getManager" name="getManager" static="1">
+    <return text="">
+      <type link="1" name="jsx3.util.Logger.Manager"/>
+    </return>
+    <text>Singleton accessor method.</text>
+  </method>
+  <method id="method:clone" idfk="method:clone" inherited="1" name="clone" source="jsx3.lang.Object"/>
+  <method id="method:equals" idfk="method:equals" inherited="1" name="equals" source="jsx3.lang.Object"/>
+  <method id="method:eval" idfk="method:eval" inherited="1" name="eval" source="jsx3.lang.Object"/>
+  <method id="method:getClass" idfk="method:getClass" inherited="1" name="getClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOf" idfk="method:getInstanceOf" inherited="1" name="getInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfClass" idfk="method:getInstanceOfClass" inherited="1" name="getInstanceOfClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfPackage" idfk="method:getInstanceOfPackage" inherited="1" name="getInstanceOfPackage" source="jsx3.lang.Object"/>
+  <method id="method:instanceOf" idfk="method:instanceOf" inherited="1" name="instanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isInstanceOf" idfk="method:isInstanceOf" inherited="1" name="isInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isSubclassOf" idfk="method:isSubclassOf" inherited="1" name="isSubclassOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:jsxmix" idfk="method:jsxmix" inherited="1" name="jsxmix" source="jsx3.lang.Object"/>
+  <method id="method:jsxsuper" idfk="method:jsxsuper" inherited="1" name="jsxsuper" source="jsx3.lang.Object"/>
+  <method id="method:jsxsupermix" idfk="method:jsxsupermix" inherited="1" name="jsxsupermix" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:setInstanceOf" idfk="method:setInstanceOf" inherited="1" name="setInstanceOf" source="jsx3.lang.Object"/>
+  <method id="method:toString" idfk="method:toString" inherited="1" name="toString" source="jsx3.lang.Object"/>
+</class>

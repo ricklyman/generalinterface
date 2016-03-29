@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class access="public" id="class:jsx3.util.Job" name="jsx3.util.Job" package="jsx3.util" shortname="Job" since="3.6">
+  <superclass id="super:0" loaded="1" name="Object"/>
+  <superclass direct="1" id="super:1" loaded="1" name="jsx3.util.GNode"/>
+  <implements direct="1" id="implements:0" loaded="1" name="jsx3.util.EventDispatcher"/>
+  <constructor access="public" id="method:init" name="init">
+    <param name="id" text="the unique job id. If this parameter is not provided, a suitable unique value is generated.&#10;       ">
+      <type link="1" name="String"/>
+    </param>
+    <param name="fctRun"/>
+    <text>The instance initializer.</text>
+  </constructor>
+  <field access="public" class="jsx3.util.Job" final="1" fullname="jsx3.util.Job.DONE" id="sfield:DONE" name="DONE" static="1" value="1">
+    <type class="Number" link="1" name="int"/>
+    <text> Value that the <code>run()</code> method may return to indicate that the job has finished and any dependent
+  jobs should be run immediately.</text>
+  </field>
+  <field access="public" class="jsx3.util.Job" final="1" fullname="jsx3.util.Job.FINISH" id="sfield:FINISH" name="FINISH" static="1" value="&quot;finish&quot;">
+    <type link="1" name="String"/>
+    <text> Event subject published when this job finishes.</text>
+  </field>
+  <field access="public" class="jsx3.util.Job" final="1" fullname="jsx3.util.Job.FINISHED" id="sfield:FINISHED" name="FINISHED" static="1" value="1">
+    <type class="Number" link="1" name="int"/>
+    <text> Value for the state property indicating that this job has finished.</text>
+  </field>
+  <field access="public" class="jsx3.util.Job" final="1" fullname="jsx3.util.Job.PUSH" id="sfield:PUSH" name="PUSH" static="1" value="3">
+    <type class="Number" link="1" name="int"/>
+    <text> Value that the <code>run()</code> method may return to indicate that the job should be put back on the
+  waiting job queue.</text>
+  </field>
+  <field access="public" class="jsx3.util.Job" final="1" fullname="jsx3.util.Job.SLEEP" id="sfield:SLEEP" name="SLEEP" static="1" value="2">
+    <type class="Number" link="1" name="int"/>
+    <text> Value that the <code>run()</code> method may return to indicate that the job has finished and any dependent
+  jobs should be run after breaking the JavaScript stack with <code>window.setTimeout()</code>.</text>
+  </field>
+  <field access="public" class="jsx3.util.Job" final="1" fullname="jsx3.util.Job.WAIT" id="sfield:WAIT" name="WAIT" static="1" value="0">
+    <type class="Number" link="1" name="int"/>
+    <text> Value that the <code>run()</code> method may return to indicate that the job will not finish until the
+  <code>finish()</code> method is called.</text>
+  </field>
+  <field access="public" class="jsx3.util.Job" final="1" fullname="jsx3.util.Job.WAITING" id="sfield:WAITING" name="WAITING" static="1" value="0">
+    <type class="Number" link="1" name="int"/>
+    <text> Value for the state property indicating that this job has not yet finished.</text>
+  </field>
+  <method access="public" id="method:finish" name="finish">
+    <text>A job should call this method on itself if its run() method returns <code>WAIT</code> to communicate to the
+job manager that it has finished.</text>
+    <see idfk="sfield:WAIT" source="jsx3.util.Job">WAIT</see>
+  </method>
+  <method access="public" id="method:run" name="run">
+    <return text="&lt;code&gt;WAIT&lt;/code&gt;, &lt;code&gt;DONE&lt;/code&gt;, or &lt;code&gt;SLEEP&lt;/code&gt;.">
+      <type class="Number" link="1" name="int"/>
+    </return>
+    <text>Runs the job. This method should be overridden for any job that wants to perform some action.</text>
+    <see idfk="sfield:WAIT" source="jsx3.util.Job">WAIT</see>
+    <see idfk="sfield:DONE" source="jsx3.util.Job">DONE</see>
+    <see idfk="sfield:SLEEP" source="jsx3.util.Job">SLEEP</see>
+  </method>
+  <method access="public" id="method:state" name="state">
+    <return text="&lt;code&gt;WAITING&lt;/code&gt; or &lt;code&gt;FINISHED&lt;/code&gt;."/>
+    <text>Returns the job state.</text>
+    <see idfk="sfield:WAITING" source="jsx3.util.Job">WAITING</see>
+    <see idfk="sfield:FINISHED" source="jsx3.util.Job">FINISHED</see>
+  </method>
+  <method id="method:publish" idfk="method:publish" inherited="1" name="publish" source="jsx3.util.EventDispatcher"/>
+  <method id="method:subscribe" idfk="method:subscribe" inherited="1" name="subscribe" source="jsx3.util.EventDispatcher"/>
+  <method id="method:unsubscribe" idfk="method:unsubscribe" inherited="1" name="unsubscribe" source="jsx3.util.EventDispatcher"/>
+  <method id="method:unsubscribeAll" idfk="method:unsubscribeAll" inherited="1" name="unsubscribeAll" source="jsx3.util.EventDispatcher"/>
+  <method id="method:add" idfk="method:add" inherited="1" name="add" source="jsx3.util.GNode"/>
+  <method id="method:del" idfk="method:del" inherited="1" name="del" source="jsx3.util.GNode"/>
+  <method id="method:down" idfk="method:down" inherited="1" name="down" source="jsx3.util.GNode"/>
+  <method id="method:graph" idfk="method:graph" inherited="1" name="graph" source="jsx3.util.GNode"/>
+  <method id="method:id" idfk="method:id" inherited="1" name="id" source="jsx3.util.GNode"/>
+  <method id="method:up" idfk="method:up" inherited="1" name="up" source="jsx3.util.GNode"/>
+  <method id="method:toString" idfk="method:toString" inherited="1" name="toString" native="1" source="Object"/>
+</class>

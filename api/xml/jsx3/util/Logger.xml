@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class access="public" id="class:jsx3.util.Logger" name="jsx3.util.Logger" package="jsx3.util" shortname="Logger" since="3.1&#10; ">
+  <text>A Logger is used to log messages about a particular component of an application. 
+<p/>
+Loggers are organized hierarchically according to name, descending from the root logger, "global." A period 
+denotes levels in the hierarchy. For example, <code>global</code> is the parent of <code>com</code> is the parent 
+of <code>com.tibco</code> is the parent of <code>com.tibco.gi</code>, etc. 
+<p/>
+A Logger has a level that determines what severity of messages will be handled. Messages with severity below the
+level of the Logger will be ignored. If the level of a Logger is not explicitly defined, the level is inherited
+from its parent.
+<p/>
+A Logger can have any number of handlers, each of which can output a log message to a different place. By default
+a logger will also forward log messages to the handlers of its ancestors, although this can be disabled per Logger.
+<p/>
+A typical usage pattern is to create a Logger for each class, setting it as a private static field of that class, 
+as in the following code example:
+<pre>
+jsx3.Class.defineClass('eg.Thing', null, null, function(Thing, Thing_prototype) {
+  
+  // import jsx3.util.Logger
+  var Logger = jsx3.util.Logger;
+  // create Logger for this class
+  Thing._LOG = Logger.getLogger(Thing.jsxclass.getName());
+  Thing.prototype.init = function(arg1, arg2, arg2) {
+    Thing._LOG.debug("received args: " + arg1 + ", " + arg2 + ", " + arg3);
+    if (isNaN(arg1)) {
+      Thing._LOG.warn("arg1 is not a number, setting to 0");
+      this._one = 0;
+    } else {
+      this._one = arg1;
+    }
+  };
+});
+</pre>
+If the creation of the log message is expensive (depending on the implementation, 
+<code>toString()</code> can be expensive), <code>isLoggable()</code> can be used to check whether the log
+statement will actually be handled before creating the log message:
+<pre>
+if (LOG.isLoggable(jsx3.util.Logger.INFO))
+  LOG.info(anObject.toString());
+</pre>
+  </text>
+  <superclass id="super:0" loaded="1" name="Object"/>
+  <superclass direct="1" id="super:1" loaded="1" name="jsx3.lang.Object"/>
+  <nested access="public" id="nested:jsx3.util.Logger.AlertHandler" loaded="1" name="jsx3.util.Logger.AlertHandler" shortname="Logger.AlertHandler" type="class">
+    <text>Handles a logging record by sending it to a JavaScript alert.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.util.Logger.ConsoleHandler" loaded="1" name="jsx3.util.Logger.ConsoleHandler" shortname="Logger.ConsoleHandler" type="class">
+    <text>Handles a logging record by sending it to the Firebug console.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.util.Logger.FormatHandler" loaded="1" name="jsx3.util.Logger.FormatHandler" shortname="Logger.FormatHandler" type="class">
+    <text>A subclass of <code>Handler</code> that includes functionality for formatting logging records as human-readable
+strings.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.util.Logger.Handler" loaded="1" name="jsx3.util.Logger.Handler" shortname="Logger.Handler" type="class">
+    <text>The base logging handler class.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.util.Logger.Manager" loaded="1" name="jsx3.util.Logger.Manager" shortname="Logger.Manager" type="class">
+    <text>Manager class for the logging system.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.util.Logger.MemoryHandler" loaded="1" name="jsx3.util.Logger.MemoryHandler" shortname="Logger.MemoryHandler" type="class">
+    <text>A simple Handler class that stores a rotating cache of log records in memory.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.util.Logger.Record" loaded="1" name="jsx3.util.Logger.Record" shortname="Logger.Record" type="class">
+    <text>Record bean that stores information about a logging message.</text>
+  </nested>
+  <field access="public" class="jsx3.util.Logger" final="1" fullname="jsx3.util.Logger.DEBUG" id="sfield:DEBUG" name="DEBUG" static="1" value="5">
+    <type class="Number" link="1" name="int"/>
+    <text> Level indicating debug message.</text>
+  </field>
+  <field access="public" class="jsx3.util.Logger" final="1" fullname="jsx3.util.Logger.ERROR" id="sfield:ERROR" name="ERROR" static="1" value="2">
+    <type class="Number" link="1" name="int"/>
+    <text> Level indicating error.</text>
+  </field>
+  <field access="public" class="jsx3.util.Logger" final="1" fullname="jsx3.util.Logger.FATAL" id="sfield:FATAL" name="FATAL" static="1" value="1">
+    <type class="Number" link="1" name="int"/>
+    <text> Level indicating fatal error.</text>
+  </field>
+  <field access="public" class="jsx3.util.Logger" fullname="jsx3.util.Logger.GLOBAL" id="sfield:GLOBAL" name="GLOBAL" static="1">
+    <type link="1" name="jsx3.util.Logger"/>
+    <text> Convenient access to <code>jsx3.util.Logger.getLogger('global')</code>.
+   </text>
+  </field>
+  <field access="public" class="jsx3.util.Logger" final="1" fullname="jsx3.util.Logger.INFO" id="sfield:INFO" name="INFO" static="1" value="4">
+    <type class="Number" link="1" name="int"/>
+    <text> Level indicating informational message.</text>
+  </field>
+  <field access="public" class="jsx3.util.Logger" final="1" fullname="jsx3.util.Logger.OFF" id="sfield:OFF" name="OFF" static="1" value="0">
+    <type class="Number" link="1" name="int"/>
+    <text> Set the level of a Logger or Handler to this value to ignore all messages.</text>
+  </field>
+  <field access="public" class="jsx3.util.Logger" final="1" fullname="jsx3.util.Logger.TRACE" id="sfield:TRACE" name="TRACE" static="1" value="6">
+    <type class="Number" link="1" name="int"/>
+    <text> Level indicating trace message.</text>
+  </field>
+  <field access="public" class="jsx3.util.Logger" final="1" fullname="jsx3.util.Logger.WARN" id="sfield:WARN" name="WARN" static="1" value="3">
+    <type class="Number" link="1" name="int"/>
+    <text> Level indicating warning.</text>
+  </field>
+  <method access="public" id="method:addHandler" name="addHandler">
+    <param name="objHandler" text="">
+      <type link="1" name="jsx3.util.Logger.Handler"/>
+    </param>
+    <text>Add a handler to this Logger.</text>
+  </method>
+  <method access="public" id="method:debug" name="debug">
+    <param name="strMessage" text="the message to log">
+      <type link="1" name="String"/>
+    </param>
+    <param name="strArgs" text="either an array of message parameters, variable&#10;  argument message parameters, or an exception; optional argument&#10;   ">
+      <type link="1" name="Array">
+        <type link="1" name="String"/>
+      </type>
+      <type link="1" name="String" varargs="1"/>
+      <type link="1" name="jsx3.lang.Exception"/>
+    </param>
+    <text>Log a message at level DEBUG. Polymorphic method honors the signature of either <code>log()</code> or
+<code>logError()</code> (without the first <code>intLevel</code> parameter).</text>
+  </method>
+  <method access="public" id="method:error" name="error">
+    <param name="strMessage" text="the message to log">
+      <type link="1" name="String"/>
+    </param>
+    <param name="strArgs" text="either an array of message parameters, variable&#10;  argument message parameters, or an exception; optional argument&#10;   ">
+      <type link="1" name="Array">
+        <type link="1" name="String"/>
+      </type>
+      <type link="1" name="String" varargs="1"/>
+      <type link="1" name="jsx3.lang.Exception"/>
+    </param>
+    <text>Log a message at level ERROR. Polymorphic method honors the signature of either <code>log()</code> or
+<code>logError()</code> (without the first <code>intLevel</code> parameter).</text>
+  </method>
+  <method access="public" id="method:fatal" name="fatal">
+    <param name="strMessage" text="the message to log">
+      <type link="1" name="String"/>
+    </param>
+    <param name="strArgs" text="either an array of message parameters, variable &#10;  argument message parameters, or an exception; optional argument&#10;   ">
+      <type link="1" name="Array">
+        <type link="1" name="String"/>
+      </type>
+      <type link="1" name="String" varargs="1"/>
+      <type link="1" name="jsx3.lang.Exception"/>
+    </param>
+    <text>Log a message at level FATAL. Polymorphic method honors the signature of either <code>log()</code> or 
+<code>logError()</code> (without the first <code>intLevel</code> parameter).</text>
+  </method>
+  <method access="public" id="method:getEffectiveLevel" name="getEffectiveLevel">
+    <return text="">
+      <type class="Number" link="1" name="int"/>
+    </return>
+    <text>Returns the effective level of this Logger, which is either the explicitly set value of this Logger or the 
+effective level of this Logger's parent Logger. </text>
+  </method>
+  <method access="public" id="method:getLevel" name="getLevel">
+    <return text="">
+      <type class="Number" link="1" name="int"/>
+    </return>
+    <text>Returns the level of this Logger. This method will return null unless the level of this Logger has been
+explicitly set either in the configuration file or with a call to setLevel().</text>
+  </method>
+  <method access="public" id="method:getName" name="getName">
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the name of this Logger.</text>
+  </method>
+  <method access="public" id="method:getParent" name="getParent">
+    <return text="">
+      <type link="1" name="jsx3.util.Logger"/>
+    </return>
+    <text>Returns the parent Logger of this Logger. The global logger will return null from this method.</text>
+  </method>
+  <method access="public" id="method:getUseParentHandlers" name="getUseParentHandlers">
+    <return text="">
+      <type class="Boolean" link="1" name="boolean"/>
+    </return>
+    <text>Returns whether this Logger will publish log messages to the handlers of its parent Logger.</text>
+  </method>
+  <method access="public" id="method:info" name="info">
+    <param name="strMessage" text="the message to log">
+      <type link="1" name="String"/>
+    </param>
+    <param name="strArgs" text="either an array of message parameters, variable&#10;  argument message parameters, or an exception; optional argument&#10;   ">
+      <type link="1" name="Array">
+        <type link="1" name="String"/>
+      </type>
+      <type link="1" name="String" varargs="1"/>
+      <type link="1" name="jsx3.lang.Exception"/>
+    </param>
+    <text>Log a message at level INFO. Polymorphic method honors the signature of either <code>log()</code> or
+<code>logError()</code> (without the first <code>intLevel</code> parameter).</text>
+  </method>
+  <method access="public" id="method:isLoggable" name="isLoggable">
+    <param name="intLevel" text="the level to test">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <return text="">
+      <type class="Boolean" link="1" name="boolean"/>
+    </return>
+    <text>Returns true if a log message sent to this logger at level <code>intLevel</code> will be forwarded on to the
+handlers of this logger.</text>
+  </method>
+  <method access="public" id="method:log" name="log">
+    <param name="intLevel" text="the level of the message">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <param name="strMessage" text="the message to log">
+      <type link="1" name="String"/>
+    </param>
+    <param name="strArgs" text="either an array of or variable argument message parameters, optional argument&#10;   ">
+      <type link="1" name="Array">
+        <type link="1" name="String"/>
+      </type>
+      <type link="1" name="String" varargs="1"/>
+    </param>
+    <text>Log a message.</text>
+  </method>
+  <method access="public" id="method:logError" name="logError">
+    <param name="intLevel" text="the level of the message">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <param name="strMessage" text="the message to log with the exception, may be null">
+      <type link="1" name="String"/>
+    </param>
+    <param name="objError" text="the exception to log &#10;   ">
+      <type link="1" name="jsx3.lang.Exception"/>
+    </param>
+    <text>Log an exception.</text>
+  </method>
+  <method access="public" id="method:logStack" name="logStack">
+    <param name="intLevel" text="the level of the message">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <param name="strMessage" text="the message to log, optional argument">
+      <type link="1" name="String"/>
+    </param>
+    <param name="intSkip" text="">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <text>Log the current stack with a message.</text>
+  </method>
+  <method access="public" id="method:removeHandler" name="removeHandler">
+    <param name="objHandler" text="">
+      <type link="1" name="jsx3.util.Logger.Handler"/>
+    </param>
+    <text>Remove a handler from this Logger.</text>
+  </method>
+  <method access="public" id="method:setLevel" name="setLevel">
+    <param name="intLevel" text="">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <text>Sets the level of this Logger.</text>
+  </method>
+  <method access="public" id="method:setParent" name="setParent">
+    <param name="objParent" text="">
+      <type link="1" name="jsx3.util.Logger"/>
+    </param>
+    <text>Sets the parent Logger of this Logger.</text>
+  </method>
+  <method access="public" id="method:setUseParentHandlers" name="setUseParentHandlers">
+    <param name="bUseParent" text="">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <text>Sets whether this Logger will publish log messages to the handlers of its parent Logger.</text>
+  </method>
+  <method access="public" id="method:trace" name="trace">
+    <param name="strMessage" text="the message to log">
+      <type link="1" name="String"/>
+    </param>
+    <param name="strArgs" text="either an array of message parameters, variable&#10;  argument message parameters, or an exception; optional argument&#10;   ">
+      <type link="1" name="Array">
+        <type link="1" name="String"/>
+      </type>
+      <type link="1" name="String" varargs="1"/>
+      <type link="1" name="jsx3.lang.Exception"/>
+    </param>
+    <text>Log a message at level TRACE. Polymorphic method honors the signature of either <code>log()</code> or
+<code>logError()</code> (without the first <code>intLevel</code> parameter).</text>
+  </method>
+  <method access="public" id="method:warn" name="warn">
+    <param name="strMessage" text="the message to log">
+      <type link="1" name="String"/>
+    </param>
+    <param name="strArgs" text="either an array of message parameters, variable&#10;  argument message parameters, or an exception; optional argument&#10;   ">
+      <type link="1" name="Array">
+        <type link="1" name="String"/>
+      </type>
+      <type link="1" name="String" varargs="1"/>
+      <type link="1" name="jsx3.lang.Exception"/>
+    </param>
+    <text>Log a message at level WARN. Polymorphic method honors the signature of either <code>log()</code> or
+<code>logError()</code> (without the first <code>intLevel</code> parameter).</text>
+  </method>
+  <method access="public" deprecated="1" id="smethod:doLog" name="doLog" static="1">
+    <param name="strErrorNumber" text="arbitrary identifier passed by the calling function to track the specific location of the error">
+      <type link="1" name="String"/>
+    </param>
+    <param name="strMessage" text="message to describe the error">
+      <type link="1" name="String"/>
+    </param>
+    <param name="PRIORITY" text="one of 1, 2 or 3, with 1 being most serious (red..orange..yellow)">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <param name="bTrace" text="true if null; if true, the stack trace is printed, displaying the order of the call stack">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <text>
+      <span style="text-decoration:line-through;">
+Called by several foundation classes when non-critical errors occur. Basically allows the error to be saved to
+memory and be queried by the application developer for more-specific information about why a given request may
+have failed.</span> Sends a log message to the global Logger. Attempts to convert the <code>PRIORITY</code>
+argument to a valid value for Logger, defaults to INFO.</text>
+    <deprecated>use either &lt;code&gt;jsx3.log&lt;/code&gt; or &lt;code&gt;Logger.log()&lt;/code&gt;</deprecated>
+    <see idfk="smethod:log" source="jsx3">jsx3.log()</see>
+    <see idfk="method:log" source="jsx3.util.Logger">log()</see>
+  </method>
+  <method access="public" deprecated="1" id="smethod:errorToString" name="errorToString" static="1">
+    <param name="error"/>
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>returns a text-based version of the error log object.  This is helpful when debugging a JSX application that
+           doesn't fully initialize. In practice, if you are viewing a web page with an embedded JSX application,
+           you can type (ctrl + o) to show the browser's 'open' dialog.  From there, enter the following bit of Javascript
+           to call this function:  javascript:alert(jsx3.util.Logger.toString());</text>
+  </method>
+  <method access="public" deprecated="1" id="smethod:getLog" name="getLog" static="1">
+    <return text="JavaScript Array">
+      <type link="1" name="Object"/>
+    </return>
+    <text>returns the JavaScript Array containing all non-fatal app errors trapped by various foundation classes;
+           as a developer, you can access a specific error by simply referencing its ordinal index.  This will give
+           you a handle to the individual error object (a JavaScript object).  You can then query this object for
+           a specific property, including:  code, description, priority, timestamp.
+           So, for example, to get the timestamp for the oldest error in the log you would call:   jsx3.util.Logger.getLog[0]["timestamp"]</text>
+    <deprecated>returns an empty array
+   </deprecated>
+  </method>
+  <method access="public" id="smethod:getLogger" name="getLogger" static="1">
+    <param name="strName" text="the name of the logger to return">
+      <type link="1" name="String"/>
+    </param>
+    <return text="">
+      <type link="1" name="jsx3.util.Logger"/>
+    </return>
+    <text>Returns an Logger instance. Either creates a new logger or returns a pre-existing logger of the same name.
+This class is a factory class so instances of Logger may not be instantiated
+directly. Use this method to get a handle to a logger.</text>
+  </method>
+  <method access="public" deprecated="1" id="smethod:getMinPriority" name="getMinPriority" static="1">
+    <text>No errors will be published with priority level less than (integer greater than) this value.</text>
+    <deprecated>use &lt;code&gt;Logger.isLoggable()&lt;/code&gt;
+   </deprecated>
+  </method>
+  <method access="public" id="smethod:levelAsString" name="levelAsString" static="1">
+    <param name="intLevel" text="a level value between FATAL and TRACE">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <return text="a string representation of the level value&#10;   ">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the string (English) representation of a level value.</text>
+  </method>
+  <method access="public" deprecated="1" id="smethod:logError" name="logError" static="1">
+    <param name="e" text="the exception object to log">
+      <type link="1" name="Object"/>
+    </param>
+    <param name="PRIORITY" text="priority of error">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <text>Log all properties of an exception to the system log.</text>
+    <deprecated>use instance method &lt;code&gt;Logger.logError()&lt;/code&gt;
+   </deprecated>
+  </method>
+  <method access="public" deprecated="1" id="smethod:reset" name="reset" static="1">
+    <text>Resets the system out; publishes event to the jsx3.util.Logger.ON_MESSAGE subject.</text>
+    <deprecated>no effect
+   </deprecated>
+  </method>
+  <method access="public" deprecated="1" id="smethod:toString" name="toString" static="1">
+    <return text="JavaScript Array">
+      <type link="1" name="Object"/>
+    </return>
+    <text>returns a text-based version of the error log object.  This is helpful when debugging a JSX application that
+           doesn't fully initialize. In practice, if you are viewing a web page with an embedded JSX application,
+           you can type (ctrl + o) to show the browser's 'open' dialog.  From there, enter the following bit of Javascript
+           to call this function:  javascript:alert(jsx3.util.Logger.toString());</text>
+    <deprecated>Returns empty string.
+   </deprecated>
+    <overrides id="overrides:toString" idfk="method:toString" name="toString" source="jsx3.lang.Object"/>
+  </method>
+  <method id="method:clone" idfk="method:clone" inherited="1" name="clone" source="jsx3.lang.Object"/>
+  <method id="method:equals" idfk="method:equals" inherited="1" name="equals" source="jsx3.lang.Object"/>
+  <method id="method:eval" idfk="method:eval" inherited="1" name="eval" source="jsx3.lang.Object"/>
+  <method id="method:getClass" idfk="method:getClass" inherited="1" name="getClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOf" idfk="method:getInstanceOf" inherited="1" name="getInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfClass" idfk="method:getInstanceOfClass" inherited="1" name="getInstanceOfClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfPackage" idfk="method:getInstanceOfPackage" inherited="1" name="getInstanceOfPackage" source="jsx3.lang.Object"/>
+  <method id="method:instanceOf" idfk="method:instanceOf" inherited="1" name="instanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isInstanceOf" idfk="method:isInstanceOf" inherited="1" name="isInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isSubclassOf" idfk="method:isSubclassOf" inherited="1" name="isSubclassOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:jsxmix" idfk="method:jsxmix" inherited="1" name="jsxmix" source="jsx3.lang.Object"/>
+  <method id="method:jsxsuper" idfk="method:jsxsuper" inherited="1" name="jsxsuper" source="jsx3.lang.Object"/>
+  <method id="method:jsxsupermix" idfk="method:jsxsupermix" inherited="1" name="jsxsupermix" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:setInstanceOf" idfk="method:setInstanceOf" inherited="1" name="setInstanceOf" source="jsx3.lang.Object"/>
+  <method id="method:toString" idfk="method:toString" inherited="1" name="toString" source="jsx3.lang.Object"/>
+</class>

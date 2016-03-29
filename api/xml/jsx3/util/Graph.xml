@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class access="public" id="class:jsx3.util.Graph" name="jsx3.util.Graph" package="jsx3.util" shortname="Graph" since="3.6">
+  <superclass direct="1" id="super:0" loaded="1" name="Object"/>
+  <constructor access="public" id="method:init" name="init">
+    <text>The instance initializer.
+       </text>
+  </constructor>
+  <method access="public" id="method:add" name="add">
+    <param name="objNode" text="">
+      <type name="GNode"/>
+    </param>
+    <return text="whether the node was added.&#10;       ">
+      <type class="Boolean" link="1" name="boolean"/>
+    </return>
+    <text>Adds a sub-graph to this graph. <code>objNode</code> is the root of the directed sub-graph.</text>
+  </method>
+  <method access="public" id="method:del" name="del">
+    <param name="objNode" text="">
+      <type name="GNode"/>
+    </param>
+    <return text="whether the node was removed.&#10;       ">
+      <type class="Boolean" link="1" name="boolean"/>
+    </return>
+    <text>Removes a single node from this graph.</text>
+  </method>
+  <method access="public" id="method:node" name="node">
+    <param name="id" text="">
+      <type link="1" name="String"/>
+      <type link="1" name="Number"/>
+    </param>
+    <return text="">
+      <type name="GNode"/>
+    </return>
+    <text>Returns a node by its ID.</text>
+  </method>
+  <method access="public" id="method:nodes" name="nodes">
+    <return text="">
+      <type link="1" name="Array">
+        <type name="GNode"/>
+      </type>
+    </return>
+    <text>Returns all the nodes of this graph.</text>
+  </method>
+  <method access="public" id="method:roots" name="roots">
+    <return text="">
+      <type link="1" name="Array">
+        <type name="GNode"/>
+      </type>
+    </return>
+    <text>Returns all the root nodes of this graph. A root node has no parent nodes.</text>
+  </method>
+  <method access="public" id="method:size" name="size">
+    <return text="">
+      <type class="Number" link="1" name="int"/>
+    </return>
+    <text>Returns the number of nodes in this graph.</text>
+  </method>
+  <method id="method:toString" idfk="method:toString" inherited="1" name="toString" native="1" source="Object"/>
+</class>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class access="public" id="class:jsx3.util.Dojo" name="jsx3.util.Dojo" package="jsx3.util" shortname="Dojo">
+  <text>Provides the ability to load the Dojo JavaScript library.</text>
+  <see source="jsx3.gui.DojoWidget">jsx3.gui.DojoWidget</see>
+  <see source="jsx3.xml.DojoDataStore">jsx3.xml.DojoDataStore</see>
+  <superclass id="super:0" loaded="1" name="Object"/>
+  <superclass direct="1" id="super:1" loaded="1" name="jsx3.lang.Object"/>
+  <field access="public" class="jsx3.util.Dojo" fullname="jsx3.util.Dojo.hub" id="sfield:hub" name="hub" static="1">
+    <type link="1" name="jsx3.util.EventDispatcher"/>
+    <text>A bridge to Dojo's publish/subscribe hub. Events on the Dojo hub can be subscribed to through this
+instance. Events can also be published through this bridge, and they will be broadcast on the Dojo hub.
+<code>Dojo.load()</code> must be called before this object can be used.</text>
+    <see idfk="smethod:load" source="jsx3.util.Dojo">load()</see>
+  </field>
+  <method access="public" id="smethod:getPath" name="getPath" static="1">
+    <param name="s" text="the relative path of a Dojo resource.&#10;   ">
+      <type link="1" name="String"/>
+    </param>
+    <text>Returns the resolved path to Dojo or a file within Dojo. Dojo is assumed to be installed in the directory
+<code>dojo-toolkit/</code> as a peer of <code>JSX/</code>. This location may be overridden by setting the
+<code>jsx_dojo</code> deployment parameter.</text>
+  </method>
+  <method access="public" id="smethod:isLoaded" name="isLoaded" static="1">
+    <return text="">
+      <type class="Boolean" link="1" name="boolean"/>
+    </return>
+    <text>Returns whether Dojo has been loaded.</text>
+  </method>
+  <method access="public" id="smethod:load" name="load" static="1">
+    <text>Loads the Dojo JavaScript library. Dojo must be installed at URI <code>jsx:/../dojo-toolkit</code> or the
+<code>jsx_dojo</code> deployment parameter must be set to the location where Dojo is installed.
+   </text>
+  </method>
+  <method id="method:clone" idfk="method:clone" inherited="1" name="clone" source="jsx3.lang.Object"/>
+  <method id="method:equals" idfk="method:equals" inherited="1" name="equals" source="jsx3.lang.Object"/>
+  <method id="method:eval" idfk="method:eval" inherited="1" name="eval" source="jsx3.lang.Object"/>
+  <method id="method:getClass" idfk="method:getClass" inherited="1" name="getClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOf" idfk="method:getInstanceOf" inherited="1" name="getInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfClass" idfk="method:getInstanceOfClass" inherited="1" name="getInstanceOfClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfPackage" idfk="method:getInstanceOfPackage" inherited="1" name="getInstanceOfPackage" source="jsx3.lang.Object"/>
+  <method id="method:instanceOf" idfk="method:instanceOf" inherited="1" name="instanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isInstanceOf" idfk="method:isInstanceOf" inherited="1" name="isInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isSubclassOf" idfk="method:isSubclassOf" inherited="1" name="isSubclassOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:jsxmix" idfk="method:jsxmix" inherited="1" name="jsxmix" source="jsx3.lang.Object"/>
+  <method id="method:jsxsuper" idfk="method:jsxsuper" inherited="1" name="jsxsuper" source="jsx3.lang.Object"/>
+  <method id="method:jsxsupermix" idfk="method:jsxsupermix" inherited="1" name="jsxsupermix" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:setInstanceOf" idfk="method:setInstanceOf" inherited="1" name="setInstanceOf" source="jsx3.lang.Object"/>
+  <method id="method:toString" idfk="method:toString" inherited="1" name="toString" source="jsx3.lang.Object"/>
+</class>

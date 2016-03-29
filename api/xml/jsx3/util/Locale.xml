@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class access="public" id="class:jsx3.util.Locale" name="jsx3.util.Locale" package="jsx3.util" shortname="Locale" since="3.2&#10; ">
+  <text>Represents a region of the world. Other classes may be localized, meaning that their behavior depends on
+their assigned locale.</text>
+  <superclass id="super:0" loaded="1" name="Object"/>
+  <superclass direct="1" id="super:1" loaded="1" name="jsx3.lang.Object"/>
+  <constructor access="public" id="method:init" name="init">
+    <param name="strLanguage" text="the lowercase two letter ISO-639 language code.">
+      <type link="1" name="String"/>
+    </param>
+    <param name="strCountry" text="the uppercase two letter ISO-3166 country code.&#10;   ">
+      <type link="1" name="String"/>
+    </param>
+    <text>The instance initializer.</text>
+  </constructor>
+  <field access="public" class="jsx3.util.Locale" fullname="jsx3.util.Locale.ENGLISH" id="sfield:ENGLISH" name="ENGLISH" static="1">
+    <type link="1" name="jsx3.util.Locale"/>
+    <text> Locale for English (country unspecified). </text>
+  </field>
+  <field access="public" class="jsx3.util.Locale" fullname="jsx3.util.Locale.ROOT" id="sfield:ROOT" name="ROOT" static="1">
+    <type link="1" name="jsx3.util.Locale"/>
+    <text> The root locale. </text>
+  </field>
+  <field access="public" class="jsx3.util.Locale" fullname="jsx3.util.Locale.UK" id="sfield:UK" name="UK" static="1">
+    <type link="1" name="jsx3.util.Locale"/>
+    <text> Locale for United Kingdom. </text>
+  </field>
+  <field access="public" class="jsx3.util.Locale" fullname="jsx3.util.Locale.US" id="sfield:US" name="US" static="1">
+    <type link="1" name="jsx3.util.Locale"/>
+    <text> Locale for United States of America. </text>
+  </field>
+  <method access="public" id="method:equals" name="equals">
+    <param name="obj" text="">
+      <type link="1" name="Object"/>
+    </param>
+    <return text="">
+      <type class="Boolean" link="1" name="boolean"/>
+    </return>
+    <text>Returns true if <code>obj</code> is equal to this locale.</text>
+    <overrides id="overrides:equals" idfk="method:equals" name="equals" source="jsx3.lang.Object"/>
+  </method>
+  <method access="public" id="method:getCountry" name="getCountry">
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the uppercase two letter ISO-3166 country code.</text>
+  </method>
+  <method access="public" id="method:getDisplayCountry" name="getDisplayCountry">
+    <param name="objLocale" text="the locale in which to format the country. If this parameter is not &#10;  provided, the system locale is used.">
+      <type link="1" name="jsx3.util.Locale"/>
+    </param>
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the country of this locale, localized for <code>objLocale</code>.</text>
+  </method>
+  <method access="public" id="method:getDisplayLanguage" name="getDisplayLanguage">
+    <param name="objLocale" text="the locale in which to format the language. If this parameter is not &#10;  provided, the system locale is used.">
+      <type link="1" name="jsx3.util.Locale"/>
+    </param>
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the language of this locale, localized for <code>objLocale</code>.</text>
+  </method>
+  <method access="public" id="method:getDisplayName" name="getDisplayName">
+    <param name="objLocale" text="the locale in which to format the language and country. If this parameter is not &#10;  provided, the system locale is used.">
+      <type link="1" name="jsx3.util.Locale"/>
+    </param>
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the language and country of this locale, localized for <code>objLocale</code>.</text>
+  </method>
+  <method access="public" id="method:getLanguage" name="getLanguage">
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the lowercase two letter ISO-639 language code.</text>
+  </method>
+  <method access="public" id="method:toString" name="toString">
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <overrides id="overrides:toString" idfk="method:toString" name="toString" source="jsx3.lang.Object"/>
+  </method>
+  <method access="public" id="smethod:valueOf" name="valueOf" static="1">
+    <param name="strKey" text="the locale key, &lt;code&gt;ll_CC&lt;/code&gt;, where &lt;code&gt;ll&lt;/code&gt; is the two letter language &#10;  code and &lt;code&gt;CC&lt;/code&gt; is the two letter country code.">
+      <type link="1" name="String"/>
+    </param>
+    <return text="">
+      <type link="1" name="jsx3.util.Locale"/>
+    </return>
+    <text>Returns a locale instance represented by <code>strKey</code>.</text>
+  </method>
+  <method id="method:clone" idfk="method:clone" inherited="1" name="clone" source="jsx3.lang.Object"/>
+  <method id="method:eval" idfk="method:eval" inherited="1" name="eval" source="jsx3.lang.Object"/>
+  <method id="method:getClass" idfk="method:getClass" inherited="1" name="getClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOf" idfk="method:getInstanceOf" inherited="1" name="getInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfClass" idfk="method:getInstanceOfClass" inherited="1" name="getInstanceOfClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfPackage" idfk="method:getInstanceOfPackage" inherited="1" name="getInstanceOfPackage" source="jsx3.lang.Object"/>
+  <method id="method:instanceOf" idfk="method:instanceOf" inherited="1" name="instanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isInstanceOf" idfk="method:isInstanceOf" inherited="1" name="isInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isSubclassOf" idfk="method:isSubclassOf" inherited="1" name="isSubclassOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:jsxmix" idfk="method:jsxmix" inherited="1" name="jsxmix" source="jsx3.lang.Object"/>
+  <method id="method:jsxsuper" idfk="method:jsxsuper" inherited="1" name="jsxsuper" source="jsx3.lang.Object"/>
+  <method id="method:jsxsupermix" idfk="method:jsxsupermix" inherited="1" name="jsxsupermix" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:setInstanceOf" idfk="method:setInstanceOf" inherited="1" name="setInstanceOf" source="jsx3.lang.Object"/>
+</class>

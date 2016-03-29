@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface access="public" id="class:jsx3.util.EventDispatcher" name="jsx3.util.EventDispatcher" package="jsx3.util" shortname="EventDispatcher" since="3.0&#10; ">
+  <text>An Event Dispatcher mixin interface, adds the ability to register event listeners and dispatch events
+to those listeners.
+<p/>
+(Deprecated) Classes that implement this mixin must also implement a method getServer(), which returns the server in
+which to look for JSX ids.</text>
+  <implementor id="implementor:0" loaded="1" name="jsx3.EVT"/>
+  <implementor id="implementor:1" loaded="1" name="jsx3.amp.Engine"/>
+  <implementor id="implementor:2" loaded="1" name="jsx3.amp.ExtPoint"/>
+  <implementor id="implementor:3" loaded="1" name="jsx3.amp.PlugIn"/>
+  <implementor id="implementor:4" loaded="1" name="jsx3.amp.Resource"/>
+  <implementor id="implementor:5" loaded="1" name="jsx3.amp.util.Prefs"/>
+  <implementor id="implementor:6" loaded="1" name="jsx3.amp.util.PrefsPane"/>
+  <implementor id="implementor:7" loaded="1" name="jsx3.amp.util.Wizard"/>
+  <implementor id="implementor:8" loaded="1" name="jsx3.amp.util.WizardPane"/>
+  <implementor id="implementor:9" loaded="1" name="jsx3.app.Cache"/>
+  <implementor id="implementor:10" loaded="1" name="jsx3.app.DOM"/>
+  <implementor id="implementor:11" loaded="1" name="jsx3.app.Model"/>
+  <implementor id="implementor:12" loaded="1" name="jsx3.app.Server"/>
+  <implementor id="implementor:13" loaded="1" name="jsx3.chart.AreaChart"/>
+  <implementor id="implementor:14" loaded="1" name="jsx3.chart.AreaSeries"/>
+  <implementor id="implementor:15" loaded="1" name="jsx3.chart.Axis"/>
+  <implementor id="implementor:16" loaded="1" name="jsx3.chart.BCChart"/>
+  <implementor id="implementor:17" loaded="1" name="jsx3.chart.BCSeries"/>
+  <implementor id="implementor:18" loaded="1" name="jsx3.chart.BarChart"/>
+  <implementor id="implementor:19" loaded="1" name="jsx3.chart.BarSeries"/>
+  <implementor id="implementor:20" loaded="1" name="jsx3.chart.BubbleSeries"/>
+  <implementor id="implementor:21" loaded="1" name="jsx3.chart.CartesianChart"/>
+  <implementor id="implementor:22" loaded="1" name="jsx3.chart.CategoryAxis"/>
+  <implementor id="implementor:23" loaded="1" name="jsx3.chart.Chart"/>
+  <implementor id="implementor:24" loaded="1" name="jsx3.chart.ChartComponent"/>
+  <implementor id="implementor:25" loaded="1" name="jsx3.chart.ChartLabel"/>
+  <implementor id="implementor:26" loaded="1" name="jsx3.chart.ColumnChart"/>
+  <implementor id="implementor:27" loaded="1" name="jsx3.chart.ColumnSeries"/>
+  <implementor id="implementor:28" loaded="1" name="jsx3.chart.GridLines"/>
+  <implementor id="implementor:29" loaded="1" name="jsx3.chart.Legend"/>
+  <implementor id="implementor:30" loaded="1" name="jsx3.chart.LineChart"/>
+  <implementor id="implementor:31" loaded="1" name="jsx3.chart.LineSeries"/>
+  <implementor id="implementor:32" loaded="1" name="jsx3.chart.LinearAxis"/>
+  <implementor id="implementor:33" loaded="1" name="jsx3.chart.LogarithmicAxis"/>
+  <implementor id="implementor:34" loaded="1" name="jsx3.chart.PieChart"/>
+  <implementor id="implementor:35" loaded="1" name="jsx3.chart.PieSeries"/>
+  <implementor id="implementor:36" loaded="1" name="jsx3.chart.PlotChart"/>
+  <implementor id="implementor:37" loaded="1" name="jsx3.chart.PlotSeries"/>
+  <implementor id="implementor:38" loaded="1" name="jsx3.chart.PointSeries"/>
+  <implementor id="implementor:39" loaded="1" name="jsx3.chart.RadialChart"/>
+  <implementor id="implementor:40" loaded="1" name="jsx3.chart.Series"/>
+  <implementor id="implementor:41" loaded="1" name="jsx3.gui.Block"/>
+  <implementor id="implementor:42" loaded="1" name="jsx3.gui.BlockX"/>
+  <implementor id="implementor:43" loaded="1" name="jsx3.gui.Button"/>
+  <implementor id="implementor:44" loaded="1" name="jsx3.gui.CDF"/>
+  <implementor id="implementor:45" loaded="1" name="jsx3.gui.CheckBox"/>
+  <implementor id="implementor:46" loaded="1" name="jsx3.gui.ColorPicker"/>
+  <implementor id="implementor:47" loaded="1" name="jsx3.gui.Column"/>
+  <implementor id="implementor:48" loaded="1" name="jsx3.gui.DatePicker"/>
+  <implementor id="implementor:49" loaded="1" name="jsx3.gui.Dialog"/>
+  <implementor id="implementor:50" loaded="1" name="jsx3.gui.DojoWidget"/>
+  <implementor id="implementor:51" loaded="1" name="jsx3.gui.Grid"/>
+  <implementor id="implementor:52" loaded="1" name="jsx3.gui.HotKey"/>
+  <implementor id="implementor:53" loaded="1" name="jsx3.gui.IFrame"/>
+  <implementor id="implementor:54" loaded="1" name="jsx3.gui.Image"/>
+  <implementor id="implementor:55" loaded="1" name="jsx3.gui.ImageButton"/>
+  <implementor id="implementor:56" loaded="1" name="jsx3.gui.Label"/>
+  <implementor id="implementor:57" loaded="1" name="jsx3.gui.LayoutGrid"/>
+  <implementor id="implementor:58" loaded="1" name="jsx3.gui.List"/>
+  <implementor id="implementor:59" loaded="1" name="jsx3.gui.Matrix"/>
+  <implementor id="implementor:60" loaded="1" name="jsx3.gui.Matrix.Column"/>
+  <implementor id="implementor:61" loaded="1" name="jsx3.gui.Menu"/>
+  <implementor id="implementor:62" loaded="1" name="jsx3.gui.NativeButton"/>
+  <implementor id="implementor:63" loaded="1" name="jsx3.gui.NativeFileUpload"/>
+  <implementor id="implementor:64" loaded="1" name="jsx3.gui.NativeForm"/>
+  <implementor id="implementor:65" loaded="1" name="jsx3.gui.NativeHidden"/>
+  <implementor id="implementor:66" loaded="1" name="jsx3.gui.NativeSelect"/>
+  <implementor id="implementor:67" loaded="1" name="jsx3.gui.NumberInput"/>
+  <implementor id="implementor:68" loaded="1" name="jsx3.gui.Painted"/>
+  <implementor id="implementor:69" loaded="1" name="jsx3.gui.RadioButton"/>
+  <implementor id="implementor:70" loaded="1" name="jsx3.gui.Select"/>
+  <implementor id="implementor:71" loaded="1" name="jsx3.gui.Slider"/>
+  <implementor id="implementor:72" loaded="1" name="jsx3.gui.Sound"/>
+  <implementor id="implementor:73" loaded="1" name="jsx3.gui.Splitter"/>
+  <implementor id="implementor:74" loaded="1" name="jsx3.gui.Stack"/>
+  <implementor id="implementor:75" loaded="1" name="jsx3.gui.StackGroup"/>
+  <implementor id="implementor:76" loaded="1" name="jsx3.gui.Tab"/>
+  <implementor id="implementor:77" loaded="1" name="jsx3.gui.TabbedPane"/>
+  <implementor id="implementor:78" loaded="1" name="jsx3.gui.Table"/>
+  <implementor id="implementor:79" loaded="1" name="jsx3.gui.Template.Block"/>
+  <implementor id="implementor:80" loaded="1" name="jsx3.gui.TextBox"/>
+  <implementor id="implementor:81" loaded="1" name="jsx3.gui.TimePicker"/>
+  <implementor id="implementor:82" loaded="1" name="jsx3.gui.ToolbarButton"/>
+  <implementor id="implementor:83" loaded="1" name="jsx3.gui.Tree"/>
+  <implementor id="implementor:84" loaded="1" name="jsx3.gui.Window"/>
+  <implementor id="implementor:85" loaded="1" name="jsx3.gui.WindowBar"/>
+  <implementor id="implementor:86" loaded="1" name="jsx3.lang.ClassLoader"/>
+  <implementor id="implementor:87" loaded="1" name="jsx3.net.Form"/>
+  <implementor id="implementor:88" loaded="1" name="jsx3.net.Request"/>
+  <implementor id="implementor:89" loaded="1" name="jsx3.net.Service"/>
+  <implementor id="implementor:90" loaded="1" name="jsx3.util.Job"/>
+  <implementor id="implementor:91" loaded="1" name="jsx3.util.JobGraph"/>
+  <implementor id="implementor:92" loaded="1" name="jsx3.vector.Block"/>
+  <implementor id="implementor:93" loaded="1" name="jsx3.xml.CDF.Document"/>
+  <implementor id="implementor:94" loaded="1" name="jsx3.xml.CDFSchema"/>
+  <implementor id="implementor:95" loaded="1" name="jsx3.xml.Document"/>
+  <implementor id="implementor:96" loaded="1" name="jsx3.xml.XslDocument"/>
+  <field access="public" class="jsx3.util.EventDispatcher" final="1" fullname="jsx3.util.EventDispatcher.SUBJECT_ALL" id="sfield:SUBJECT_ALL" name="SUBJECT_ALL" static="1" value="&quot;*&quot;"/>
+  <method access="public" id="method:publish" name="publish">
+    <param name="objEvent" text="the event, should have at least a field 'subject' that is the event id, another common field is 'target' (target will default to this instance)">
+      <type link="1" name="Object"/>
+    </param>
+    <return text="the number of listeners to which the event was broadcast">
+      <type class="Number" link="1" name="int"/>
+    </return>
+    <throws text="objEvent is not an object with a &lt;code&gt;subject&lt;/code&gt; property&#10;   ">
+      <type link="1" name="jsx3.lang.IllegalArgumentException"/>
+    </throws>
+    <text>Publishes an event to all subscribed objects.</text>
+  </method>
+  <method access="public" id="method:subscribe" name="subscribe">
+    <param name="strEventId" text="the event type(s).">
+      <type link="1" name="String"/>
+      <type link="1" name="Array">
+        <type link="1" name="String"/>
+      </type>
+    </param>
+    <param name="objHandler" text="if an object, the instance to notify of events (objFunction is required); if a string, the JSX id of the instance to notify of events (objFunction is required), must exist in the same Server; if a function, the function to call to notify of events (objFunction ignored)">
+      <type link="1" name="Object"/>
+      <type link="1" name="String"/>
+      <type name="function"/>
+    </param>
+    <param name="objFunction" text="if objHandler is a string or object then the function to call on that instance. either a function or a string that is the name of a method of the instance">
+      <type name="function"/>
+      <type link="1" name="String"/>
+    </param>
+    <throws text="if objHandler/objFunction are not a valid combination of types&#10;   ">
+      <type link="1" name="jsx3.lang.IllegalArgumentException"/>
+    </throws>
+    <text>Subscribes an object or function to a type of event published by this object.
+<p/>
+As of version 3.4 a string value for <code>objHandler</code> is deprecated.</text>
+  </method>
+  <method access="public" id="method:unsubscribe" name="unsubscribe">
+    <param name="strEventId" text="the event type(s).">
+      <type link="1" name="String"/>
+      <type link="1" name="Array">
+        <type link="1" name="String"/>
+      </type>
+    </param>
+    <param name="objHandler" text="the value of objHandler passed to subscribe&#10;   ">
+      <type link="1" name="Object"/>
+      <type link="1" name="String"/>
+      <type name="function"/>
+    </param>
+    <text>Unsubscribe an object or function from an event published by this object.
+<p/>
+As of version 3.4 a string value for <code>objHandler</code> is deprecated.</text>
+  </method>
+  <method access="public" id="method:unsubscribeAll" name="unsubscribeAll">
+    <param name="strEventId" text="the event type&#10;   ">
+      <type link="1" name="String"/>
+    </param>
+    <text>Unsubscribes all subscribed objects to a type of event published by this object.</text>
+  </method>
+</interface>

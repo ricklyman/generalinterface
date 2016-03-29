@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class access="public" id="class:jsx3.util.List" name="jsx3.util.List" package="jsx3.util" shortname="List" since="3.2&#10; ">
+  <text>An object-oriented version of the built-in JavaScript <code>Array</code> class.
+<p/>
+Note that methods such as <code>indexOf</code> and <code>remove</code> compare objects
+with the strict equality operators (<code>===</code> and <code>!==</code>). Therefore, for the purposes of this
+class <code>1</code> and <code>"1"</code> are not equal.</text>
+  <superclass id="super:0" loaded="1" name="Object"/>
+  <superclass direct="1" id="super:1" loaded="1" name="jsx3.lang.Object"/>
+  <constructor access="public" id="method:init" name="init">
+    <param name="a" text="">
+      <type class="Number" link="1" name="int"/>
+      <type link="1" name="Array"/>
+      <type link="1" name="jsx3.util.List"/>
+    </param>
+    <param name="bLive" text="">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <text>The instance initializer. Creates a new list. If <code>a</code> is a number, the list is initialized with
+that size. If <code>a</code> is an array or list, the contents of <code>a</code> are copied into the new list.</text>
+  </constructor>
+  <method access="public" id="method:add" name="add">
+    <param name="objElm" text="">
+      <type link="1" name="Object"/>
+    </param>
+    <param name="intAt" text="">
+      <type class="Number" link="1" name="int"/>
+    </param>
+  </method>
+  <method access="public" id="method:addAll" name="addAll">
+    <param name="a" text="">
+      <type link="1" name="Array"/>
+      <type link="1" name="jsx3.util.List"/>
+    </param>
+    <param name="intAt" text="">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <throws text="if &lt;code&gt;a&lt;/code&gt; is not a list or array.&#10;   ">
+      <type link="1" name="jsx3.lang.IllegalArgumentException"/>
+    </throws>
+  </method>
+  <method access="public" id="method:clear" name="clear">
+    <text>Removes all elements from this list.
+   </text>
+  </method>
+  <method access="public" id="method:clone" name="clone">
+    <return text="">
+      <type link="1" name="jsx3.util.List"/>
+    </return>
+    <text>Returns a copy of this list.</text>
+    <overrides id="overrides:clone" idfk="method:clone" name="clone" source="jsx3.lang.Object"/>
+  </method>
+  <method access="public" id="method:contains" name="contains">
+    <param name="objElm" text="the item to find">
+      <type link="1" name="Object"/>
+    </param>
+    <return text="">
+      <type class="Boolean" link="1" name="boolean"/>
+    </return>
+  </method>
+  <method access="public" id="method:equals" name="equals">
+    <param name="l" text="">
+      <type link="1" name="Object"/>
+    </param>
+    <return text="">
+      <type class="Boolean" link="1" name="boolean"/>
+    </return>
+    <text>Returns true if this list and <code>l</code> have the same length and <code>this.get(n) = l.get(n)</code>
+for all n.</text>
+    <overrides id="overrides:equals" idfk="method:equals" name="equals" source="jsx3.lang.Object"/>
+  </method>
+  <method access="public" id="method:filter" name="filter">
+    <param name="fctFilter" text="a function that is called once for each item in this array and returns true if the item&#10;   should be included in the filtered list. The signature of this function is&#10;   &lt;code&gt;function(item : Object) : boolean&lt;/code&gt;.">
+      <type link="1" name="Function"/>
+    </param>
+    <return text="">
+      <type link="1" name="jsx3.util.List"/>
+    </return>
+    <text>Creates a new list with the filtered contents of this list. The <code>fctFilter</code> parameter defines
+the filtering function.</text>
+  </method>
+  <method access="public" id="method:get" name="get">
+    <param name="intIndex" text="">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <return text="">
+      <type link="1" name="Object"/>
+    </return>
+  </method>
+  <method access="public" deprecated="1" id="method:getIndex" name="getIndex">
+    <deprecated>Use the &lt;code&gt;jsx3.util.Iterator&lt;/code&gt; interface instead.
+   </deprecated>
+  </method>
+  <method access="public" deprecated="1" id="method:getItem" name="getItem">
+    <param name="intIndex"/>
+    <deprecated>Use &lt;code&gt;get()&lt;/code&gt; instead.
+   </deprecated>
+  </method>
+  <method access="public" deprecated="1" id="method:getLength" name="getLength">
+    <deprecated>Use &lt;code&gt;size()&lt;/code&gt; instead.
+   </deprecated>
+  </method>
+  <method access="public" deprecated="1" id="method:hasNext" name="hasNext">
+    <deprecated>Use the &lt;code&gt;jsx3.util.Iterator&lt;/code&gt; interface instead.
+   </deprecated>
+  </method>
+  <method access="public" id="method:indexOf" name="indexOf">
+    <param name="objElm" text="the item to find">
+      <type link="1" name="Object"/>
+    </param>
+    <param name="intStartAt" text="">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <return text="the index of the found object or &lt;code&gt;-1&lt;/code&gt; if not found.&#10;   ">
+      <type class="Number" link="1" name="int"/>
+    </return>
+    <text>Returns the index of the first occurrence of <code>objElm</code> in this list. Comparisons are performed with
+strict equals (===).</text>
+  </method>
+  <method access="public" id="method:iterator" name="iterator">
+    <return text="">
+      <type link="1" name="jsx3.util.Iterator"/>
+    </return>
+  </method>
+  <method access="public" id="method:lastIndexOf" name="lastIndexOf">
+    <param name="objElm" text="the item to find">
+      <type link="1" name="Object"/>
+    </param>
+    <param name="intStartAt" text="">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <return text="the index of the found object or -1 if not found&#10;   ">
+      <type class="Number" link="1" name="int"/>
+    </return>
+    <text>Returns the index of the last occurrence of <code>objElm</code> in this list. Comparisons are performed with
+strict equals (===).</text>
+  </method>
+  <method access="public" id="method:map" name="map">
+    <param name="fctMapper" text="a function that is called once for each item in this array and returns the mapped&#10;   value. The signature of this function depends on the values for the &lt;code&gt;bExpand&lt;/code&gt; and&#10;   &lt;code&gt;bObject&lt;/code&gt; parameters.">
+      <type link="1" name="Function"/>
+    </param>
+    <param name="bExpand" text="if &lt;code&gt;true&lt;/code&gt;, the resulting mapped array or object may any number of values&#10;   corresponding to each item in this list. Otherwise, it will have exactly one value for each item in this list.">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <param name="bObject" text="if &lt;code&gt;true&lt;/code&gt;, this array is mapped to an object with property name/value pairs.&#10;   Otherwise this array is mapped to another array.">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <return text="a list if the &lt;code&gt;bObject&lt;/code&gt; parameter is &lt;code&gt;null&lt;/code&gt; or&#10;   &lt;code&gt;false&lt;/code&gt;, otherwise an &lt;code&gt;Object&lt;/code&gt;.&#10;   ">
+      <type link="1" name="jsx3.util.List"/>
+      <type link="1" name="Object"/>
+    </return>
+    <text>Creates a new list with the mapped contents of this array. The <code>fctMapper</code> parameter defines
+the mapping function.
+<p/>
+This method has four modes corresponding to the four possible values for <code>{bExpand, bObject}</code>:
+<ul>
+<li>
+          <code>{false, false}</code> (default) – the filtering function takes an item in this list and returns
+   a single object value which will take the place of the item in the mapped result.</li>
+<li>
+          <code>{true, false}</code> – the filtering function takes an item in this list and returns
+   a single object value or an array of values, all of which will be inserted into the mapped result at the index
+   of the item.</li>
+<li>
+          <code>{false, true}</code> – the filtering function takes an item in this list and returns an array with
+   exactly two values, which become a name/value pair in the mapped result.</li>
+<li>
+          <code>{true, true}</code> – the filtering function takes an item in this list and returns an array with
+   zero or an even number of items, which become name/value pairs in the mapped result.</li>
+</ul>
+    </text>
+  </method>
+  <method access="public" deprecated="1" id="method:move" name="move">
+    <param name="intIndex"/>
+    <deprecated>Use the &lt;code&gt;jsx3.util.Iterator&lt;/code&gt; interface instead.
+   </deprecated>
+  </method>
+  <method access="public" deprecated="1" id="method:next" name="next">
+    <deprecated>Use the &lt;code&gt;jsx3.util.Iterator&lt;/code&gt; interface instead.
+   </deprecated>
+  </method>
+  <method access="public" id="method:remove" name="remove">
+    <param name="objElm" text="the object to remove">
+      <type link="1" name="Object"/>
+    </param>
+    <return text="the removed object or null if no object was removed&#10;   "/>
+    <text>Removes the first occurrence of <code>objElm</code> in this list.</text>
+  </method>
+  <method access="public" id="method:removeAt" name="removeAt">
+    <param name="intStart" text="">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <param name="intEnd" text="">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <return text="the removed object or null if no object was removed&#10;   ">
+      <type link="1" name="Object"/>
+      <type link="1" name="jsx3.util.List">
+        <type link="1" name="Object"/>
+      </type>
+    </return>
+    <text>Removes a single or a range of elements from this list.</text>
+  </method>
+  <method access="public" deprecated="1" id="method:reset" name="reset">
+    <deprecated>Use the &lt;code&gt;jsx3.util.Iterator&lt;/code&gt; interface instead.
+   </deprecated>
+  </method>
+  <method access="public" id="method:set" name="set">
+    <param name="intIndex" text="">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <param name="objElm" text="">
+      <type link="1" name="Object"/>
+    </param>
+  </method>
+  <method access="public" id="method:size" name="size">
+    <return text="">
+      <type class="Number" link="1" name="int"/>
+    </return>
+  </method>
+  <method access="public" id="method:slice" name="slice">
+    <param name="intStart" text="">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <param name="intEnd" text="">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <return text="">
+      <type name="List"/>
+    </return>
+    <text>Returns a section of this list as another list. The returned section is a copy of this list and is not affected
+by subsequent changes to this list.</text>
+  </method>
+  <method access="public" id="method:sort" name="sort">
+    <param name="fctComparator" text="">
+      <type link="1" name="Function"/>
+    </param>
+    <text>Sorts this list.</text>
+  </method>
+  <method access="public" id="method:toArray" name="toArray">
+    <param name="bLive" text="if true, then the returned array is the actual backing array of this list.">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <return text="">
+      <type link="1" name="Array"/>
+    </return>
+    <text>Returns a copy of this list as an array.</text>
+  </method>
+  <method access="public" id="smethod:wrap" name="wrap" static="1">
+    <param name="a" text="">
+      <type link="1" name="Array"/>
+      <type link="1" name="jsx3.util.List"/>
+    </param>
+    <return text="">
+      <type link="1" name="jsx3.util.List"/>
+    </return>
+    <throws text="if &lt;code&gt;a&lt;/code&gt; is not a list or array.&#10;   ">
+      <type link="1" name="jsx3.lang.IllegalArgumentException"/>
+    </throws>
+    <text>If <code>a</code> is already an instance of this class, this method returns <code>a</code>.
+If <code>a</code> is an array, this method returns a new List instance backed by <code>a</code>.</text>
+  </method>
+  <method id="method:eval" idfk="method:eval" inherited="1" name="eval" source="jsx3.lang.Object"/>
+  <method id="method:getClass" idfk="method:getClass" inherited="1" name="getClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOf" idfk="method:getInstanceOf" inherited="1" name="getInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfClass" idfk="method:getInstanceOfClass" inherited="1" name="getInstanceOfClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfPackage" idfk="method:getInstanceOfPackage" inherited="1" name="getInstanceOfPackage" source="jsx3.lang.Object"/>
+  <method id="method:instanceOf" idfk="method:instanceOf" inherited="1" name="instanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isInstanceOf" idfk="method:isInstanceOf" inherited="1" name="isInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isSubclassOf" idfk="method:isSubclassOf" inherited="1" name="isSubclassOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:jsxmix" idfk="method:jsxmix" inherited="1" name="jsxmix" source="jsx3.lang.Object"/>
+  <method id="method:jsxsuper" idfk="method:jsxsuper" inherited="1" name="jsxsuper" source="jsx3.lang.Object"/>
+  <method id="method:jsxsupermix" idfk="method:jsxsupermix" inherited="1" name="jsxsupermix" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:setInstanceOf" idfk="method:setInstanceOf" inherited="1" name="setInstanceOf" source="jsx3.lang.Object"/>
+  <method id="method:toString" idfk="method:toString" inherited="1" name="toString" source="jsx3.lang.Object"/>
+</class>

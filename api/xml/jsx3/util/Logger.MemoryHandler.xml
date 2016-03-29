@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class access="public" id="class:jsx3.util.Logger.MemoryHandler" name="jsx3.util.Logger.MemoryHandler" package="jsx3.util" shortname="Logger.MemoryHandler">
+  <text>A simple Handler class that stores a rotating cache of log records in memory.
+<p/>
+May be configured with the <code>bufferSize</code> property (default 100).
+ </text>
+  <superclass id="super:0" loaded="1" name="Object"/>
+  <superclass id="super:1" loaded="1" name="jsx3.lang.Object"/>
+  <superclass direct="1" id="super:2" loaded="1" name="jsx3.util.Logger.Handler"/>
+  <constructor access="public" id="method:init" name="init">
+    <param name="strName"/>
+    <text>Instance initializer.
+   </text>
+  </constructor>
+  <method access="public" id="method:clearBuffer" name="clearBuffer">
+    <text>Clears the contents of the buffer.
+   </text>
+  </method>
+  <method access="public" id="method:getBufferSize" name="getBufferSize">
+    <return text="">
+      <type class="Number" link="1" name="int"/>
+    </return>
+    <text>Returns the size of the buffer. This handler will store at most this many log records before discarding old ones.</text>
+  </method>
+  <method access="public" id="method:getRecords" name="getRecords">
+    <param name="intCount" text="the number of records to return, the most recently added records will be returned. Pass &lt;code&gt;null&lt;/code&gt; to get all records.">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <return text="">
+      <type link="1" name="Array">
+        <type link="1" name="jsx3.util.Logger.Record"/>
+      </type>
+    </return>
+    <text>Returns the contents of the record buffer.</text>
+  </method>
+  <method access="public" id="method:handle" name="handle">
+    <param name="objRecord" text="">
+      <type link="1" name="jsx3.util.Logger.Record"/>
+    </param>
+    <text>Stores the log record in memory. Removes the oldest record if the buffer is full.</text>
+    <overrides id="overrides:handle" idfk="method:handle" name="handle" source="jsx3.util.Logger.Handler"/>
+  </method>
+  <method access="public" id="method:setBufferSize" name="setBufferSize">
+    <param name="intBufferSize" text="">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <text>Sets the size of the buffer. If this operation decreases the size of the buffer, log records may be discarded.</text>
+  </method>
+  <method id="method:getLevel" idfk="method:getLevel" inherited="1" name="getLevel" source="jsx3.util.Logger.Handler"/>
+  <method id="method:getName" idfk="method:getName" inherited="1" name="getName" source="jsx3.util.Logger.Handler"/>
+  <method id="method:isLoggable" idfk="method:isLoggable" inherited="1" name="isLoggable" source="jsx3.util.Logger.Handler"/>
+  <method id="method:setLevel" idfk="method:setLevel" inherited="1" name="setLevel" source="jsx3.util.Logger.Handler"/>
+  <method id="method:clone" idfk="method:clone" inherited="1" name="clone" source="jsx3.lang.Object"/>
+  <method id="method:equals" idfk="method:equals" inherited="1" name="equals" source="jsx3.lang.Object"/>
+  <method id="method:eval" idfk="method:eval" inherited="1" name="eval" source="jsx3.lang.Object"/>
+  <method id="method:getClass" idfk="method:getClass" inherited="1" name="getClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOf" idfk="method:getInstanceOf" inherited="1" name="getInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfClass" idfk="method:getInstanceOfClass" inherited="1" name="getInstanceOfClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfPackage" idfk="method:getInstanceOfPackage" inherited="1" name="getInstanceOfPackage" source="jsx3.lang.Object"/>
+  <method id="method:instanceOf" idfk="method:instanceOf" inherited="1" name="instanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isInstanceOf" idfk="method:isInstanceOf" inherited="1" name="isInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isSubclassOf" idfk="method:isSubclassOf" inherited="1" name="isSubclassOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:jsxmix" idfk="method:jsxmix" inherited="1" name="jsxmix" source="jsx3.lang.Object"/>
+  <method id="method:jsxsuper" idfk="method:jsxsuper" inherited="1" name="jsxsuper" source="jsx3.lang.Object"/>
+  <method id="method:jsxsupermix" idfk="method:jsxsupermix" inherited="1" name="jsxsupermix" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:setInstanceOf" idfk="method:setInstanceOf" inherited="1" name="setInstanceOf" source="jsx3.lang.Object"/>
+  <method id="method:toString" idfk="method:toString" inherited="1" name="toString" source="jsx3.lang.Object"/>
+</class>

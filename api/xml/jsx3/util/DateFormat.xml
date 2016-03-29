@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class access="public" id="class:jsx3.util.DateFormat" name="jsx3.util.DateFormat" package="jsx3.util" shortname="DateFormat" since="3.2&#10; ">
+  <text>Formats and parses dates according to a token-based string format. This class is fully localized.
+<p/>
+An instance of this class is defined by its format, which is a string conforming to the following syntax:
+<ul>
+<li>Some letters (a-z, A-Z) are tokens that represent date fields (the tokens are described below). All other
+  letters are reserved.</li>
+<li>Letters that are not part of tokens must lie between single quotation marks.</li>
+<li>
+        <code>''</code> formats/parses a single quotation mark.</li>
+<li>All other characters are allowed and have no special meaning.</li>
+</ul>
+The following tokens are supported:
+<ul>
+<li>
+        <b>G</b> — the era (BC/AD) (<a href="#jsx3.util.DateFormat:intro.Text">Text</a>).</li>
+<li>
+        <b>y</b> — the year, either as the full year or
+  as the last two digits of the year (<a href="#jsx3.util.DateFormat:intro.Year">Year</a>).</li>
+<li>
+        <b>M</b> — the month, either as a digit or as
+  the name (<a href="#jsx3.util.DateFormat:intro.Month">Month</a>).</li>
+<li>
+        <b>d</b> — the day of the month (<a href="#jsx3.util.DateFormat:intro.Number">Number</a>).</li>
+<li>
+        <b>E</b> — the day of the week (<a href="#jsx3.util.DateFormat:intro.Text">Text</a>).</li>
+<li>
+        <b>H</b> — the hour of the day (0-23) (<a href="#jsx3.util.DateFormat:intro.Number">Number</a>).</li>
+<li>
+        <b>h</b> — the hour of the day (1-12) (<a href="#jsx3.util.DateFormat:intro.Number">Number</a>).</li>
+<li>
+        <b>m</b> — the minute of the hour (<a href="#jsx3.util.DateFormat:intro.Number">Number</a>).</li>
+<li>
+        <b>s</b> — the second of the minute (<a href="#jsx3.util.DateFormat:intro.Number">Number</a>).</li>
+<li>
+        <b>S</b> — the milliseconds of the second (<a href="#jsx3.util.DateFormat:intro.Number">Number</a>).</li>
+<li>
+        <b>a</b> — AM/PM marker (<a href="#jsx3.util.DateFormat:intro.Text">Text</a>).</li>
+<li>
+        <b>z</b> — the time zone formatted as <code>GMT-08:00</code>
+      </li>
+<li>
+        <b>Z</b> — the time zone formatted as <code>-0800</code>
+      </li>
+</ul>
+Each token has a type, which determines how it is formatted and parsed. The token types are:
+<ul>
+<li>
+        <b>
+          <a name="jsx3.util.DateFormat:intro.Number">Number</a>
+        </b> —
+  For formatting, the number of characters in the token is the minimum number of digits to display. Smaller
+  numbers are zero-padded on the left. For parsing, if the following token is non-numeric, any number of digits
+  is parsed. Otherwise, exactly the number of digits is parsed as characters in the token.</li>
+<li>
+        <b>
+          <a name="jsx3.util.DateFormat:intro.Text">Text</a>
+        </b> —
+  For formatting, if the token is four characters or longer, the entire string is printed, otherwise a substring
+  equal in length to the length of the token is printed. For parsing, the best match at least one character long
+  is parsed.</li>
+<li>
+        <b>
+          <a name="jsx3.util.DateFormat:intro.Year">Year</a>
+        </b> —
+  If the length of the token is 2, the token is formatted and parsed as the last two digits of a year between
+  80 years prior and 20 years subsequent to the current date. Otherwise, it is formatted and parsed as a Number.</li>
+<li>
+        <b>
+          <a name="jsx3.util.DateFormat:intro.Month">Month</a>
+        </b> —
+  If the length of the token is 2 or shorter, the token is formatted and parsed as a Number. Otherwise, the
+  month is formatted and parsed as Text.</li>
+</ul>
+  </text>
+  <superclass id="super:0" loaded="1" name="Object"/>
+  <superclass direct="1" id="super:1" loaded="1" name="jsx3.lang.Object"/>
+  <constructor access="public" id="method:init" name="init">
+    <param name="strFormat" text="the date format.">
+      <type link="1" name="String"/>
+    </param>
+    <param name="objLocale" text="the locale with which to format and parse dates. If this parameter is not&#10;  provided the default system locale is used.">
+      <type link="1" name="jsx3.util.Locale"/>
+    </param>
+    <throws text="if &lt;code&gt;strFormat&lt;/code&gt; cannot be parsed.">
+      <type link="1" name="jsx3.lang.Exception"/>
+    </throws>
+    <text>The instance initializer. Instances of this class are immutable.</text>
+    <see source="jsx3.util.DateFormat">Date Format Syntax</see>
+  </constructor>
+  <field access="public" class="jsx3.util.DateFormat" final="1" fullname="jsx3.util.DateFormat.FULL" id="sfield:FULL" name="FULL" static="1" value="4">
+    <type class="Number" link="1" name="int"/>
+    <text> Type for a full-length localized date or time format.</text>
+  </field>
+  <field access="public" class="jsx3.util.DateFormat" final="1" fullname="jsx3.util.DateFormat.LONG" id="sfield:LONG" name="LONG" static="1" value="3">
+    <type class="Number" link="1" name="int"/>
+    <text> Type for a long localized date or time format.</text>
+  </field>
+  <field access="public" class="jsx3.util.DateFormat" final="1" fullname="jsx3.util.DateFormat.MEDIUM" id="sfield:MEDIUM" name="MEDIUM" static="1" value="2">
+    <type class="Number" link="1" name="int"/>
+    <text> Type for a medium-length localized date or time format.</text>
+  </field>
+  <field access="public" class="jsx3.util.DateFormat" final="1" fullname="jsx3.util.DateFormat.SHORT" id="sfield:SHORT" name="SHORT" static="1" value="1">
+    <type class="Number" link="1" name="int"/>
+    <text> Type for a short localized date or time format.</text>
+  </field>
+  <method access="public" id="method:format" name="format">
+    <param name="objDate" text="the date to format.">
+      <type link="1" name="Number"/>
+      <type link="1" name="Object"/>
+      <type link="1" name="Date"/>
+    </param>
+    <return text="the formatted date.&#10;   ">
+      <type link="1" name="String"/>
+    </return>
+    <text>Formats a date according to this date format.</text>
+  </method>
+  <method access="public" id="method:getFormat" name="getFormat">
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the format passed to the constructor.</text>
+  </method>
+  <method access="public" id="method:getLocale" name="getLocale">
+    <return text="">
+      <type link="1" name="jsx3.util.Locale"/>
+    </return>
+  </method>
+  <method access="public" id="method:getTimeZoneOffset" name="getTimeZoneOffset">
+    <param name="objDate" text="the date for which to return the timezone offset.">
+      <type link="1" name="Date"/>
+    </param>
+    <return text="the timezone offset in minutes.&#10;   ">
+      <type class="Number" link="1" name="int"/>
+    </return>
+    <text>Returns the timezone offset of this date format. This is the difference between GMT and the local time of this
+date format, in minutes. For example, Pacific Standard Time is -480 (-08h * 60). If the timezone offset has been
+set explicitly with <code>setTimeZoneOffset()</code>, that value is returned.
+<p/>
+Since the timezone offset may change over the year for Daylight Savings Time, this method takes a
+<code>Date</code> argument, <code>objDate</code>. All dates are created with the timezone offset of the host
+browser's timezone, adjusted for Daylight Savings Time. Therefore, if the timezone offset of this date format
+has not been set explicitly, the timezone offset is determined from the <code>objDate</code> parameter, or, if
+that is not provided, from the current time.</text>
+  </method>
+  <method access="public" id="method:parse" name="parse">
+    <param name="strDate" text="the string to parse.">
+      <type link="1" name="String"/>
+    </param>
+    <return text="the parsed date.">
+      <type link="1" name="Date"/>
+    </return>
+    <throws text="if &lt;code&gt;strDate&lt;/code&gt; cannot be parsed according to this format.&#10;   ">
+      <type link="1" name="jsx3.lang.Exception"/>
+    </throws>
+    <text>Parses a string according to this date format and returns the resulting date. If <code>strDate</code> does
+not conform to this date format, an exception is thrown.
+<p/>
+The default date for the purposes of this method is 1-Jan-1970 12:00AM, local time. If any date fields
+are omitted from this format, the date returned by this method will inherit those fields from the default date.</text>
+  </method>
+  <method access="public" id="method:setLocale" name="setLocale">
+    <param name="objLocale" text="">
+      <type link="1" name="jsx3.util.Locale"/>
+    </param>
+  </method>
+  <method access="public" id="method:setTimeZoneOffset" name="setTimeZoneOffset">
+    <param name="intMinutes" text="the timezone offset in minutes.">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <text>Sets the timezone offset of this date format. The default value is the value for the local time.</text>
+    <see idfk="method:getTimeZoneOffset" source="jsx3.util.DateFormat">getTimeZoneOffset()</see>
+  </method>
+  <method access="public" id="method:toString" name="toString">
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns a string representation of this date format.</text>
+    <overrides id="overrides:toString" idfk="method:toString" name="toString" source="jsx3.lang.Object"/>
+  </method>
+  <method access="public" id="smethod:getDateInstance" name="getDateInstance" static="1">
+    <param name="intType" text="&lt;code&gt;SHORT&lt;/code&gt;, &lt;code&gt;MEDIUM&lt;/code&gt;, &lt;code&gt;LONG&lt;/code&gt;, or &lt;code&gt;FULL&lt;/code&gt;">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <param name="objLocale" text="the locale for which to return a format. If this parameter is not provided,&#10;  the default system locale is used.">
+      <type link="1" name="jsx3.util.Locale"/>
+    </param>
+    <return text="">
+      <type link="1" name="jsx3.util.DateFormat"/>
+    </return>
+    <text>Returns a date format localized for a particular locale.</text>
+  </method>
+  <method access="public" id="smethod:getDateTimeInstance" name="getDateTimeInstance" static="1">
+    <param name="intDateType" text="&lt;code&gt;SHORT&lt;/code&gt;, &lt;code&gt;MEDIUM&lt;/code&gt;, &lt;code&gt;LONG&lt;/code&gt;, or &lt;code&gt;FULL&lt;/code&gt;">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <param name="intTimeType" text="&lt;code&gt;SHORT&lt;/code&gt;, &lt;code&gt;MEDIUM&lt;/code&gt;, &lt;code&gt;LONG&lt;/code&gt;, or &lt;code&gt;FULL&lt;/code&gt;">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <param name="objLocale" text="the locale for which to return a format. If this parameter is not provided,&#10;  the default system locale is used.">
+      <type link="1" name="jsx3.util.Locale"/>
+    </param>
+    <return text="">
+      <type link="1" name="jsx3.util.DateFormat"/>
+    </return>
+    <text>Returns a date and time format localized for a particular locale.</text>
+  </method>
+  <method access="public" id="smethod:getTimeInstance" name="getTimeInstance" static="1">
+    <param name="intType" text="&lt;code&gt;SHORT&lt;/code&gt;, &lt;code&gt;MEDIUM&lt;/code&gt;, &lt;code&gt;LONG&lt;/code&gt;, or &lt;code&gt;FULL&lt;/code&gt;">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <param name="objLocale" text="the locale for which to return a format. If this parameter is not provided,&#10;  the default system locale is used.">
+      <type link="1" name="jsx3.util.Locale"/>
+    </param>
+    <return text="">
+      <type link="1" name="jsx3.util.DateFormat"/>
+    </return>
+    <text>Returns a time format localized for a particular locale.</text>
+  </method>
+  <method id="method:clone" idfk="method:clone" inherited="1" name="clone" source="jsx3.lang.Object"/>
+  <method id="method:equals" idfk="method:equals" inherited="1" name="equals" source="jsx3.lang.Object"/>
+  <method id="method:eval" idfk="method:eval" inherited="1" name="eval" source="jsx3.lang.Object"/>
+  <method id="method:getClass" idfk="method:getClass" inherited="1" name="getClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOf" idfk="method:getInstanceOf" inherited="1" name="getInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfClass" idfk="method:getInstanceOfClass" inherited="1" name="getInstanceOfClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfPackage" idfk="method:getInstanceOfPackage" inherited="1" name="getInstanceOfPackage" source="jsx3.lang.Object"/>
+  <method id="method:instanceOf" idfk="method:instanceOf" inherited="1" name="instanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isInstanceOf" idfk="method:isInstanceOf" inherited="1" name="isInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isSubclassOf" idfk="method:isSubclassOf" inherited="1" name="isSubclassOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:jsxmix" idfk="method:jsxmix" inherited="1" name="jsxmix" source="jsx3.lang.Object"/>
+  <method id="method:jsxsuper" idfk="method:jsxsuper" inherited="1" name="jsxsuper" source="jsx3.lang.Object"/>
+  <method id="method:jsxsupermix" idfk="method:jsxsupermix" inherited="1" name="jsxsupermix" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:setInstanceOf" idfk="method:setInstanceOf" inherited="1" name="setInstanceOf" source="jsx3.lang.Object"/>
+</class>

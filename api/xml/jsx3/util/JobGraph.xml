@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class access="public" id="class:jsx3.util.JobGraph" name="jsx3.util.JobGraph" package="jsx3.util" shortname="JobGraph" since="3.6">
+  <superclass direct="1" id="super:0" loaded="1" name="Object"/>
+  <implements direct="1" id="implements:0" loaded="1" name="jsx3.util.EventDispatcher"/>
+  <constructor access="public" id="method:init" name="init">
+    <text>The instance initializer.
+       </text>
+  </constructor>
+  <field access="public" class="jsx3.util.JobGraph" fullname="jsx3.util.JobGraph.DONE" id="sfield:DONE" name="DONE" static="1" value="&quot;done&quot;">
+    <type link="1" name="String"/>
+    <text> Event subject published when the job graph empties. </text>
+  </field>
+  <field access="public" class="jsx3.util.JobGraph" fullname="jsx3.util.JobGraph.RAN_JOB" id="sfield:RAN_JOB" name="RAN_JOB" static="1" value="&quot;ran&quot;">
+    <type link="1" name="String"/>
+    <text> Event subject published when a job is finished. </text>
+  </field>
+  <method access="public" id="method:addJob" name="addJob">
+    <param name="objJob" text="the job to add.">
+      <type link="1" name="jsx3.util.Job"/>
+    </param>
+    <param name="preReqs" text="the ids of all the jobs that must finish before the job is run.">
+      <type link="1" name="String"/>
+      <type link="1" name="Array">
+        <type link="1" name="String"/>
+      </type>
+    </param>
+    <param name="postReqs" text="the ids of all the jobs that must must not run before the job is run.">
+      <type link="1" name="String"/>
+      <type link="1" name="Array">
+        <type link="1" name="String"/>
+      </type>
+    </param>
+    <throws text="if a job with the same id as &lt;code&gt;objJob&lt;/code&gt; is currently waiting in this manager or&#10;  if any prerequisite id does not correspond to a job not currently waiting in this job manager.&#10;       ">
+      <type name="Error"/>
+    </throws>
+    <text>Add a job to this manager. If the manager is running and no prerequisites are specified then the job is run
+immediately.</text>
+  </method>
+  <method access="public" id="method:addPrereq" name="addPrereq">
+    <param name="objJob" text="the job or its ID to which to add the prerequisite.">
+      <type link="1" name="String"/>
+      <type link="1" name="jsx3.util.Job"/>
+    </param>
+    <param name="preJob" text="the job or its ID that is a prerequisite of job &lt;code&gt;objJob&lt;/code&gt;.">
+      <type link="1" name="String"/>
+      <type link="1" name="jsx3.util.Job"/>
+    </param>
+    <throws text="if either parameter refers to a job not currently waiting in this job manager.&#10;       ">
+      <type name="Error"/>
+    </throws>
+    <text>Adds a prerequisite to the job with id <code>jobId</code>.</text>
+  </method>
+  <method access="public" id="method:doneCt" name="doneCt">
+    <text>Returns the number of jobs that have finished.
+       </text>
+  </method>
+  <method access="public" id="method:insertJob" name="insertJob">
+    <param name="newJob"/>
+    <param name="referenceJob"/>
+    <text>Inserts <code>newJob</code> as a graph root and adds all children of <code>referenceJob</code> as children of
+<code>newJob</code>. This method is typically called in the "onDone" of <code>referenceJob</code>, when it
+creates <code>newJob</code> and wants <code>newJob</code> to run before any dependent jobs of itself
+(<code>referenceJob</code>).
+       </text>
+  </method>
+  <method access="public" id="method:isRunning" name="isRunning">
+    <return text="">
+      <type class="Boolean" link="1" name="boolean"/>
+    </return>
+  </method>
+  <method access="public" id="method:pause" name="pause">
+    <text>Pauses this job manager.
+       </text>
+  </method>
+  <method access="public" id="method:reset" name="reset">
+    <text>Resets this job manager.
+       </text>
+  </method>
+  <method access="public" id="method:start" name="start">
+    <text>Starts this job manager.
+       </text>
+  </method>
+  <method id="method:publish" idfk="method:publish" inherited="1" name="publish" source="jsx3.util.EventDispatcher"/>
+  <method id="method:subscribe" idfk="method:subscribe" inherited="1" name="subscribe" source="jsx3.util.EventDispatcher"/>
+  <method id="method:unsubscribe" idfk="method:unsubscribe" inherited="1" name="unsubscribe" source="jsx3.util.EventDispatcher"/>
+  <method id="method:unsubscribeAll" idfk="method:unsubscribeAll" inherited="1" name="unsubscribeAll" source="jsx3.util.EventDispatcher"/>
+  <method id="method:toString" idfk="method:toString" inherited="1" name="toString" native="1" source="Object"/>
+</class>

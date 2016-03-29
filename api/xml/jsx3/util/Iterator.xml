@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface abstract="1" access="public" id="class:jsx3.util.Iterator" name="jsx3.util.Iterator" package="jsx3.util" shortname="Iterator" since="3.2&#10; ">
+  <text>An interface that defines an object that can be iterated over.</text>
+  <method abstract="1" access="public" id="method:hasNext" name="hasNext">
+    <return text="">
+      <type class="Boolean" link="1" name="boolean"/>
+    </return>
+    <text>Returns whether there are more elements remaining in this iterator.</text>
+  </method>
+  <method abstract="1" access="public" id="method:next" name="next">
+    <return text="">
+      <type link="1" name="Object"/>
+    </return>
+    <text>Returns the next element in this iterator.</text>
+  </method>
+  <method abstract="1" access="public" id="method:remove" name="remove">
+    <text>Removes the last object returned by next() from the source backing this iterator.
+   </text>
+  </method>
+</interface>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class access="public" id="class:jsx3.util.GNode" name="jsx3.util.GNode" package="jsx3.util" shortname="GNode" since="3.6">
+  <superclass direct="1" id="super:0" loaded="1" name="Object"/>
+  <subclass id="sub:0" loaded="1" name="jsx3.util.Job"/>
+  <constructor access="public" id="method:init" name="init">
+    <param name="id" text="">
+      <type link="1" name="String"/>
+      <type link="1" name="Number"/>
+    </param>
+    <text>The instance initializer.</text>
+  </constructor>
+  <method access="public" id="method:add" name="add">
+    <param name="objNode"/>
+    <return text="whether the node was added.&#10;       ">
+      <type class="Boolean" link="1" name="boolean"/>
+    </return>
+    <text>Adds <code>objNode</code> as a child of this node. The node can only be added if both nodes already belong to
+the same graph or neither node belongs to a graph.</text>
+  </method>
+  <method access="public" id="method:del" name="del">
+    <param name="objNode"/>
+    <return text="whether the node was removed.&#10;       ">
+      <type class="Boolean" link="1" name="boolean"/>
+    </return>
+    <text>Removes <code>objNode</code> as a child of this node.</text>
+  </method>
+  <method access="public" id="method:down" name="down">
+    <return text="">
+      <type link="1" name="Array">
+        <type name="GNode"/>
+      </type>
+    </return>
+    <text>Returns the child nodes of this node.</text>
+  </method>
+  <method access="public" id="method:graph" name="graph">
+    <return text="">
+      <type name="Graph"/>
+    </return>
+    <text>Returns the graph that this node belongs to, if any.</text>
+  </method>
+  <method access="public" id="method:id" name="id">
+    <return text="">
+      <type link="1" name="String"/>
+      <type link="1" name="Number"/>
+    </return>
+    <text>This function returns the unique ID of this node. Subclasses of this class are expected to provide their own
+implementation of this method. However, this implementation also generates unique IDs.</text>
+  </method>
+  <method access="public" id="method:up" name="up">
+    <return text="">
+      <type link="1" name="Array">
+        <type name="GNode"/>
+      </type>
+    </return>
+    <text>Returns the parent nodes of this node.</text>
+  </method>
+  <method id="method:toString" idfk="method:toString" inherited="1" name="toString" native="1" source="Object"/>
+</class>

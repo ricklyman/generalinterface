@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package access="public" id="class:jsx3.util" name="jsx3.util">
+  <text>Utility classes.
+ </text>
+  <nested access="public" deprecated="1" id="nested:jsx3.util.Collection" loaded="1" name="jsx3.util.Collection" shortname="Collection" type="class">
+    <deprecated>Subsumed by &lt;code&gt;jsx3.util.List&lt;/code&gt;.</deprecated>
+    <see source="jsx3.util.List">jsx3.util.List</see>
+  </nested>
+  <nested access="public" id="nested:jsx3.util.DateFormat" loaded="1" name="jsx3.util.DateFormat" shortname="DateFormat" since="3.2&#10; " type="class">
+    <text>Formats and parses dates according to a token-based string format.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.util.Dojo" loaded="1" name="jsx3.util.Dojo" shortname="Dojo" type="class">
+    <text>Provides the ability to load the Dojo JavaScript library.</text>
+    <see source="jsx3.gui.DojoWidget">jsx3.gui.DojoWidget</see>
+    <see source="jsx3.xml.DojoDataStore">jsx3.xml.DojoDataStore</see>
+  </nested>
+  <nested access="public" id="nested:jsx3.util.GNode" loaded="1" name="jsx3.util.GNode" shortname="GNode" since="3.6" type="class"/>
+  <nested access="public" id="nested:jsx3.util.Graph" loaded="1" name="jsx3.util.Graph" shortname="Graph" since="3.6" type="class"/>
+  <nested access="public" id="nested:jsx3.util.Job" loaded="1" name="jsx3.util.Job" shortname="Job" since="3.6" type="class"/>
+  <nested access="public" id="nested:jsx3.util.JobGraph" loaded="1" name="jsx3.util.JobGraph" shortname="JobGraph" since="3.6" type="class"/>
+  <nested access="public" id="nested:jsx3.util.List" loaded="1" name="jsx3.util.List" shortname="List" since="3.2&#10; " type="class">
+    <text>An object-oriented version of the built-in JavaScript <code>Array</code> class.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.util.Locale" loaded="1" name="jsx3.util.Locale" shortname="Locale" since="3.2&#10; " type="class">
+    <text>Represents a region of the world.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.util.Logger" loaded="1" name="jsx3.util.Logger" shortname="Logger" since="3.1&#10; " type="class">
+    <text>A Logger is used to log messages about a particular component of an application.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.util.Logger.AlertHandler" loaded="1" name="jsx3.util.Logger.AlertHandler" shortname="Logger.AlertHandler" type="class">
+    <text>Handles a logging record by sending it to a JavaScript alert.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.util.Logger.ConsoleHandler" loaded="1" name="jsx3.util.Logger.ConsoleHandler" shortname="Logger.ConsoleHandler" type="class">
+    <text>Handles a logging record by sending it to the Firebug console.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.util.Logger.FormatHandler" loaded="1" name="jsx3.util.Logger.FormatHandler" shortname="Logger.FormatHandler" type="class">
+    <text>A subclass of <code>Handler</code> that includes functionality for formatting logging records as human-readable
+strings.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.util.Logger.Handler" loaded="1" name="jsx3.util.Logger.Handler" shortname="Logger.Handler" type="class">
+    <text>The base logging handler class.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.util.Logger.Manager" loaded="1" name="jsx3.util.Logger.Manager" shortname="Logger.Manager" type="class">
+    <text>Manager class for the logging system.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.util.Logger.MemoryHandler" loaded="1" name="jsx3.util.Logger.MemoryHandler" shortname="Logger.MemoryHandler" type="class">
+    <text>A simple Handler class that stores a rotating cache of log records in memory.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.util.Logger.Record" loaded="1" name="jsx3.util.Logger.Record" shortname="Logger.Record" type="class">
+    <text>Record bean that stores information about a logging message.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.util.MessageFormat" loaded="1" name="jsx3.util.MessageFormat" shortname="MessageFormat" since="3.2" type="class">
+    <text>Constructs messages from a pattern and parameters.</text>
+    <see source="jsx3.util.NumberFormat">jsx3.util.NumberFormat</see>
+    <see source="jsx3.util.DateFormat">jsx3.util.DateFormat</see>
+  </nested>
+  <nested access="public" id="nested:jsx3.util.NumberFormat" loaded="1" name="jsx3.util.NumberFormat" shortname="NumberFormat" since="3.2&#10; " type="class">
+    <text>Formats numbers.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.util.EventDispatcher" loaded="1" name="jsx3.util.EventDispatcher" shortname="EventDispatcher" since="3.0&#10; " type="interface">
+    <text>An Event Dispatcher mixin interface, adds the ability to register event listeners and dispatch events
+to those listeners.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.util.Iterator" loaded="1" name="jsx3.util.Iterator" shortname="Iterator" since="3.2&#10; " type="interface">
+    <text>An interface that defines an object that can be iterated over.</text>
+  </nested>
+  <method access="public" id="smethod:arrIndexOf" name="arrIndexOf" static="1">
+    <param name="a" text="">
+      <type link="1" name="Array"/>
+    </param>
+    <param name="o" text="">
+      <type link="1" name="Object"/>
+    </param>
+    <return text="">
+      <type class="Number" link="1" name="int"/>
+    </return>
+    <text>Returns the array index of <code>o</code> in <code>a</code>. Comparisons are performed with strict equals (===).</text>
+  </method>
+  <method access="public" id="smethod:isName" name="isName" static="1">
+    <param name="n" text="the candidate name.">
+      <type link="1" name="String"/>
+    </param>
+    <return text="">
+      <type class="Boolean" link="1" name="boolean"/>
+    </return>
+    <text>Returns <code>true</code> if <code>n</code> is a valid JavaScript name and not a JavaScript reserved word.
+</text>
+  </method>
+  <method access="public" id="smethod:numIsNaN" name="numIsNaN" since="3.2&#10;   " static="1">
+    <param name="v" text="any value.">
+      <type link="1" name="Object"/>
+    </param>
+    <return text="">
+      <type class="Boolean" link="1" name="boolean"/>
+    </return>
+    <text>Returns <code>v == null || isNaN(v)</code>.</text>
+  </method>
+  <method access="public" id="smethod:numMod" name="numMod" since="3.2&#10;   " static="1">
+    <param name="v" text="a">
+      <type link="1" name="Number"/>
+    </param>
+    <param name="mod" text="b">
+      <type link="1" name="Number"/>
+    </param>
+    <return text="&lt;code&gt;a mod b&lt;/code&gt; if &lt;code&gt;a &gt;= 0&lt;/code&gt;, &lt;code&gt;b + a mod b&lt;/code&gt;, if &lt;code&gt;a &lt; 0&lt;/code&gt;.">
+      <type link="1" name="Number"/>
+    </return>
+    <text>Calculates <code>a mod b</code>, but the result is not allowed to be negative.</text>
+  </method>
+  <method access="public" id="smethod:numRound" name="numRound" since="3.2&#10;   " static="1">
+    <param name="v" text="">
+      <type link="1" name="Number"/>
+    </param>
+    <param name="intUnit" text="">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <return text="">
+      <type link="1" name="Number"/>
+    </return>
+    <text>Rounds <code>v</code> to the nearest value that can be divided by <code>intUnit</code>.</text>
+  </method>
+  <method access="public" id="smethod:strDecodeBase64" name="strDecodeBase64" since="3.2&#10;   " static="1">
+    <param name="s" text="">
+      <type link="1" name="String"/>
+    </param>
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the result of decoding <code>s</code> from its base-64 equivalent.</text>
+  </method>
+  <method access="public" id="smethod:strEmpty" name="strEmpty" since="3.2&#10;   " static="1">
+    <param name="s" text="">
+      <type link="1" name="String"/>
+    </param>
+    <return text="">
+      <type class="Boolean" link="1" name="boolean"/>
+    </return>
+    <text>Returns whether <code>s</code> is <code>null</code> or an empty string.</text>
+  </method>
+  <method access="public" id="smethod:strEncodeBase64" name="strEncodeBase64" since="3.2&#10;   " static="1">
+    <param name="s" text="">
+      <type link="1" name="String"/>
+    </param>
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the result of encoding <code>s</code> to its base-64 equivalent.</text>
+  </method>
+  <method access="public" id="smethod:strEndsWith" name="strEndsWith" since="3.2&#10;   " static="1">
+    <param name="s" text="">
+      <type link="1" name="String"/>
+    </param>
+    <param name="strTest" text="">
+      <type link="1" name="String"/>
+    </param>
+    <return text="">
+      <type class="Boolean" link="1" name="boolean"/>
+    </return>
+    <text>Returns whether <code>s</code> ends with <code>strTest</code>.</text>
+  </method>
+  <method access="public" id="smethod:strEscapeHTML" name="strEscapeHTML" since="3.2&#10;   " static="1">
+    <param name="s" text="">
+      <type link="1" name="String"/>
+    </param>
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns <code>s</code> with the following four characters replaced by their escaped equivalent:
+<code>&amp; &lt; &gt; "</code>. This method also replaces any character that is not a valid XML character
+(valid character codes are: 0x09, 0x0A, 0x0D, 0x20-0xD7FF, 0xE000-0xFFFD, 0x10000-0x10FFFF) with "\uXX" where XX
+is the unicode hex value of the character.</text>
+  </method>
+  <method access="public" id="smethod:strEscapeJSON" name="strEscapeJSON" since="3.6&#10;   " static="1">
+    <param name="str" text="">
+      <type link="1" name="String"/>
+    </param>
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns <code>str</code> appropriately formatted and escaped for use as a JSON string.  If evaluated via
+<code>window.eval</code>, the return from this method will be an exact match of the input.</text>
+  </method>
+  <method access="public" id="smethod:strTrim" name="strTrim" since="3.2&#10;   " static="1">
+    <param name="s" text="">
+      <type link="1" name="String"/>
+    </param>
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns <code>s</code> trimmed of trailing and leading spaces (anything matching the regexp <code>/\s/</code>).</text>
+  </method>
+  <method access="public" id="smethod:strTruncate" name="strTruncate" since="3.2&#10;   " static="1">
+    <param name="s" text="">
+      <type link="1" name="String"/>
+    </param>
+    <param name="intMax" text="the maximum length of the string returned by this method.">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <param name="strEllipsis" text="the ellipsis to use. &lt;code&gt;&quot;...&quot;&lt;/code&gt; is used by default.">
+      <type link="1" name="String"/>
+    </param>
+    <param name="fltPos" text="the placement of the ellipsis as a value between 0 and 1. 1, the default, means that the&#10;  ellipsis comes at the end of the truncated string. Other values mean that the head and tail of the string&#10;  will be returned with the ellipsis somewhere in the middle.">
+      <type link="1" name="Number"/>
+    </param>
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>Limits <code>s</code> to length <code>intMax</code> by placing an ellipsis in values that are too long.</text>
+  </method>
+</package>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class abstract="1" access="public" id="class:jsx3.util.Logger.AlertHandler" name="jsx3.util.Logger.AlertHandler" package="jsx3.util" shortname="Logger.AlertHandler">
+  <text>Handles a logging record by sending it to a JavaScript alert.
+ </text>
+  <superclass id="super:0" loaded="1" name="Object"/>
+  <superclass id="super:1" loaded="1" name="jsx3.lang.Object"/>
+  <superclass id="super:2" loaded="1" name="jsx3.util.Logger.Handler"/>
+  <superclass direct="1" id="super:3" loaded="1" name="jsx3.util.Logger.FormatHandler"/>
+  <method access="public" id="method:getConfirmInterval" name="getConfirmInterval">
+    <return text="">
+      <type class="Number" link="1" name="int"/>
+    </return>
+    <text>Returns the message interval at which the user has the opportunity to disable this handler.</text>
+  </method>
+  <method access="public" id="method:setConfirmInterval" name="setConfirmInterval">
+    <param name="intInterval" text="">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <text>Sets the message interval at which the user has the opportunity to disable this handler.</text>
+  </method>
+  <method id="method:getFormat" idfk="method:getFormat" inherited="1" name="getFormat" source="jsx3.util.Logger.FormatHandler"/>
+  <method id="method:setFormat" idfk="method:setFormat" inherited="1" name="setFormat" source="jsx3.util.Logger.FormatHandler"/>
+  <method id="method:getLevel" idfk="method:getLevel" inherited="1" name="getLevel" source="jsx3.util.Logger.Handler"/>
+  <method id="method:getName" idfk="method:getName" inherited="1" name="getName" source="jsx3.util.Logger.Handler"/>
+  <method abstract="1" id="method:handle" idfk="method:handle" inherited="1" name="handle" source="jsx3.util.Logger.Handler"/>
+  <method id="method:isLoggable" idfk="method:isLoggable" inherited="1" name="isLoggable" source="jsx3.util.Logger.Handler"/>
+  <method id="method:setLevel" idfk="method:setLevel" inherited="1" name="setLevel" source="jsx3.util.Logger.Handler"/>
+  <method id="method:clone" idfk="method:clone" inherited="1" name="clone" source="jsx3.lang.Object"/>
+  <method id="method:equals" idfk="method:equals" inherited="1" name="equals" source="jsx3.lang.Object"/>
+  <method id="method:eval" idfk="method:eval" inherited="1" name="eval" source="jsx3.lang.Object"/>
+  <method id="method:getClass" idfk="method:getClass" inherited="1" name="getClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOf" idfk="method:getInstanceOf" inherited="1" name="getInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfClass" idfk="method:getInstanceOfClass" inherited="1" name="getInstanceOfClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfPackage" idfk="method:getInstanceOfPackage" inherited="1" name="getInstanceOfPackage" source="jsx3.lang.Object"/>
+  <method id="method:instanceOf" idfk="method:instanceOf" inherited="1" name="instanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isInstanceOf" idfk="method:isInstanceOf" inherited="1" name="isInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isSubclassOf" idfk="method:isSubclassOf" inherited="1" name="isSubclassOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:jsxmix" idfk="method:jsxmix" inherited="1" name="jsxmix" source="jsx3.lang.Object"/>
+  <method id="method:jsxsuper" idfk="method:jsxsuper" inherited="1" name="jsxsuper" source="jsx3.lang.Object"/>
+  <method id="method:jsxsupermix" idfk="method:jsxsupermix" inherited="1" name="jsxsupermix" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:setInstanceOf" idfk="method:setInstanceOf" inherited="1" name="setInstanceOf" source="jsx3.lang.Object"/>
+  <method id="method:toString" idfk="method:toString" inherited="1" name="toString" source="jsx3.lang.Object"/>
+</class>

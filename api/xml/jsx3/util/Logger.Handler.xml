@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class abstract="1" access="public" id="class:jsx3.util.Logger.Handler" name="jsx3.util.Logger.Handler" package="jsx3.util" shortname="Logger.Handler">
+  <text>The base logging handler class. Handlers receive log records from loggers and output (or ignore) them in some way.
+<p/>
+Concrete subclasses of this class must implement the <code>handle()</code> method. This method defines what
+to do to "handle" the logging record. This method does not need to check the handler's level against the level
+of the record. The the logger does this before calling <code>handle()</code> and will not call 
+<code>handle()</code> if the record's level is not severe enough.
+ </text>
+  <superclass id="super:0" loaded="1" name="Object"/>
+  <superclass direct="1" id="super:1" loaded="1" name="jsx3.lang.Object"/>
+  <subclass id="sub:0" loaded="1" name="jsx3.util.Logger.FormatHandler"/>
+  <subclass id="sub:1" loaded="1" name="jsx3.util.Logger.MemoryHandler"/>
+  <constructor access="public" id="method:init" name="init">
+    <param name="strName" text="the name to assign this handler&#10;   ">
+      <type link="1" name="String"/>
+    </param>
+  </constructor>
+  <method access="public" id="method:getLevel" name="getLevel">
+    <return text="">
+      <type class="Number" link="1" name="int"/>
+    </return>
+    <text>Returns the level of this handler. May be <code>null</code> if no level has been specified.</text>
+  </method>
+  <method access="public" id="method:getName" name="getName">
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the name of this Handler.</text>
+  </method>
+  <method abstract="1" access="public" id="method:handle" name="handle">
+    <param name="objRecord" text="">
+      <type link="1" name="jsx3.util.Logger.Record"/>
+    </param>
+    <text>Concrete subclasses of this class must implement this method, which defines how a log record is handled.</text>
+  </method>
+  <method access="public" id="method:isLoggable" name="isLoggable">
+    <param name="intLevel" text="the level to test">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <return text="">
+      <type class="Boolean" link="1" name="boolean"/>
+    </return>
+    <text>Returns true if a log message sent to this handler at level <code>intLevel</code> will be processed rather than
+ignored.</text>
+  </method>
+  <method access="public" id="method:setLevel" name="setLevel">
+    <param name="intLevel"/>
+    <return text="one of FATAL to TRACE, OFF, or null&#10;   ">
+      <type class="Number" link="1" name="int"/>
+    </return>
+    <text>Sets the level of this handler. </text>
+  </method>
+  <method access="public" id="smethod:registerHandlerClass" name="registerHandlerClass" static="1">
+    <param name="objClass" text="the subclass of Handler that was defined&#10;   ">
+      <type link="1" name="jsx3.lang.Class"/>
+    </param>
+    <text>Call this method to let the logging system know that a new subclass of Handler has been defined. Handlers may
+be defined in the configuration file to be lazy. The class of a lazy handler is not required to exist when the 
+logging system initializes. However, for the lazy handler to be instantiated, this method must be called to let
+the logging system know that the necessary class has loaded.
+</text>
+  </method>
+  <method id="method:clone" idfk="method:clone" inherited="1" name="clone" source="jsx3.lang.Object"/>
+  <method id="method:equals" idfk="method:equals" inherited="1" name="equals" source="jsx3.lang.Object"/>
+  <method id="method:eval" idfk="method:eval" inherited="1" name="eval" source="jsx3.lang.Object"/>
+  <method id="method:getClass" idfk="method:getClass" inherited="1" name="getClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOf" idfk="method:getInstanceOf" inherited="1" name="getInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfClass" idfk="method:getInstanceOfClass" inherited="1" name="getInstanceOfClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfPackage" idfk="method:getInstanceOfPackage" inherited="1" name="getInstanceOfPackage" source="jsx3.lang.Object"/>
+  <method id="method:instanceOf" idfk="method:instanceOf" inherited="1" name="instanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isInstanceOf" idfk="method:isInstanceOf" inherited="1" name="isInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isSubclassOf" idfk="method:isSubclassOf" inherited="1" name="isSubclassOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:jsxmix" idfk="method:jsxmix" inherited="1" name="jsxmix" source="jsx3.lang.Object"/>
+  <method id="method:jsxsuper" idfk="method:jsxsuper" inherited="1" name="jsxsuper" source="jsx3.lang.Object"/>
+  <method id="method:jsxsupermix" idfk="method:jsxsupermix" inherited="1" name="jsxsupermix" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:setInstanceOf" idfk="method:setInstanceOf" inherited="1" name="setInstanceOf" source="jsx3.lang.Object"/>
+  <method id="method:toString" idfk="method:toString" inherited="1" name="toString" source="jsx3.lang.Object"/>
+</class>

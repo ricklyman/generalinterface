@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class access="public" id="class:jsx3.util.MessageFormat" name="jsx3.util.MessageFormat" package="jsx3.util" shortname="MessageFormat" since="3.2">
+  <text>Constructs messages from a pattern and parameters. A message format takes a list of arguments, formats
+them, and inserts them into the pattern at specific places. 
+<p/>
+Replacement tokens are delimited with curly braces. Tokens begin with an integer, which determines the format
+parameter that is inserted in place of the token. The following tokens are supported where <code>n</code> is the
+zero-based parameter index:
+<ul>
+  <li>
+        <b>{n}</b> — Replaced with the nth parameter. The formatting of the nth parameter, <code>param</code>,
+                  depends on its data type:
+    <ul>
+      <li>
+            <code>null</code> — "null"</li>
+      <li>
+            <code>string</code> — param</li>
+      <li>
+            <code>number</code> — {n,number}</li>
+      <li>
+            <code>Object</code> — param.toString()</li>
+      <li>
+            <code>Date</code> — {n,datetime,short}</li>
+      <li>Not provided — "{n}"</li>
+    </ul>
+  </li>
+  <li>
+        <b>{n,date}</b> — Formats the nth parameter as a date with the default format length (medium).</li>
+  <li>
+        <b>{n,date,[short|medium|long|full|<i>format</i>]}</b> — Formats the nth parameter as a date according to the
+      specified format length or an arbitrary date format. </li>
+  <li>
+        <b>{n,time}</b> — Formats the nth parameter as a time with the default format length (medium).</li>
+  <li>
+        <b>{n,time,[short|medium|long|full|<i>format</i>]}</b> — Formats the nth parameter as a time according to the
+      specified format length or an arbitrary date format. </li>
+  <li>
+        <b>{n,datetime}</b> — Formats the nth parameter as a date/time with the default format length (medium).</li>
+  <li>
+        <b>{n,datetime,[short|medium|long|full|<i>format</i>]}</b> — Formats the nth parameter as a date/time according to the
+      specified format length or an arbitrary date format. </li>
+  <li>
+        <b>{n,number}</b> — Formats the nth parameter as a number with the default number format.</li>
+  <li>
+        <b>{n,number,[integer|percent|currency|<i>format</i>]}</b> — Formats the nth parameter as a number according
+      to the specified number format type or an arbitrary number format. </li>
+</ul>
+The formatting of date, time, datetime, and number tokens depends on the locale of the message format. The formats
+used to format such tokens inherit their locale from the message format. If no locale is passed to the message
+format constructor, the default system locale is used.
+<p/>
+Within a format, single quotes (') delimit quoted sequences that are not parsed for tokens. Therefore, in order
+to insert a curly bracket in a message format, it should be surrounded by single quotes:
+<code>new MessageFormat("A curly bracket: '{'")</code>. To insert a single quote character, use two single
+quotes in succession: <code>new MessageFormat("A single quote: ''")</code>.</text>
+  <see source="jsx3.util.NumberFormat">jsx3.util.NumberFormat</see>
+  <see source="jsx3.util.DateFormat">jsx3.util.DateFormat</see>
+  <superclass id="super:0" loaded="1" name="Object"/>
+  <superclass direct="1" id="super:1" loaded="1" name="jsx3.lang.Object"/>
+  <constructor access="public" id="method:init" name="init">
+    <param name="strFormat" text="the format pattern.">
+      <type link="1" name="String"/>
+    </param>
+    <param name="objLocale" text="the locale of the format. The locale affects how numbers and dates are&#10;  formatted. If this parameter is omitted, the system locale is used.">
+      <type link="1" name="jsx3.util.Locale"/>
+    </param>
+    <throws text="if &lt;code&gt;strFormat&lt;/code&gt; cannot be parsed.&#10;   ">
+      <type link="1" name="jsx3.lang.Exception"/>
+    </throws>
+    <text>The instance initializer.</text>
+  </constructor>
+  <method access="public" id="method:format" name="format">
+    <param name="args" text="the argument objects. Replacement tokens of the pattern of this format&#10;  will be replaced by these arguments.">
+      <type link="1" name="Object" varargs="1"/>
+      <type link="1" name="Array">
+        <type link="1" name="Object"/>
+      </type>
+    </param>
+    <return text="the string resulting from the pattern and arguments.&#10;   ">
+      <type link="1" name="String"/>
+    </return>
+    <text>Formats a collection of objects according to this message format.</text>
+  </method>
+  <method access="public" id="method:getLocale" name="getLocale">
+    <return text="">
+      <type link="1" name="jsx3.util.Locale"/>
+    </return>
+    <text>Returns the locale of this message format.</text>
+  </method>
+  <method access="public" id="method:setLocale" name="setLocale">
+    <param name="objLocale" text="">
+      <type link="1" name="jsx3.util.Locale"/>
+    </param>
+    <text>Sets the locale of this message format.</text>
+  </method>
+  <method access="public" id="method:toString" name="toString">
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <overrides id="overrides:toString" idfk="method:toString" name="toString" source="jsx3.lang.Object"/>
+  </method>
+  <method id="method:clone" idfk="method:clone" inherited="1" name="clone" source="jsx3.lang.Object"/>
+  <method id="method:equals" idfk="method:equals" inherited="1" name="equals" source="jsx3.lang.Object"/>
+  <method id="method:eval" idfk="method:eval" inherited="1" name="eval" source="jsx3.lang.Object"/>
+  <method id="method:getClass" idfk="method:getClass" inherited="1" name="getClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOf" idfk="method:getInstanceOf" inherited="1" name="getInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfClass" idfk="method:getInstanceOfClass" inherited="1" name="getInstanceOfClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfPackage" idfk="method:getInstanceOfPackage" inherited="1" name="getInstanceOfPackage" source="jsx3.lang.Object"/>
+  <method id="method:instanceOf" idfk="method:instanceOf" inherited="1" name="instanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isInstanceOf" idfk="method:isInstanceOf" inherited="1" name="isInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isSubclassOf" idfk="method:isSubclassOf" inherited="1" name="isSubclassOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:jsxmix" idfk="method:jsxmix" inherited="1" name="jsxmix" source="jsx3.lang.Object"/>
+  <method id="method:jsxsuper" idfk="method:jsxsuper" inherited="1" name="jsxsuper" source="jsx3.lang.Object"/>
+  <method id="method:jsxsupermix" idfk="method:jsxsupermix" inherited="1" name="jsxsupermix" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:setInstanceOf" idfk="method:setInstanceOf" inherited="1" name="setInstanceOf" source="jsx3.lang.Object"/>
+</class>
