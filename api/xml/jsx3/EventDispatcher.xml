@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface access="public" deprecated="1" id="class:jsx3.EventDispatcher" name="jsx3.EventDispatcher" package="jsx3" shortname="EventDispatcher">
+  <deprecated>Renamed to jsx3.util.EventDispatcher</deprecated>
+  <see source="jsx3.util.EventDispatcher">jsx3.util.EventDispatcher</see>
+</interface>

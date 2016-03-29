@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class access="public" deprecated="1" id="class:jsx3.Document" name="jsx3.Document" package="jsx3" shortname="Document">
+  <deprecated>Renamed to jsx3.xml.Document</deprecated>
+  <see source="jsx3.xml.Document">jsx3.xml.Document</see>
+</class>

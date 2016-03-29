@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class access="public" deprecated="1" id="class:jsx3.Tab" name="jsx3.Tab" package="jsx3" shortname="Tab">
+  <deprecated>Renamed to jsx3.gui.Tab</deprecated>
+  <see source="jsx3.gui.Tab">jsx3.gui.Tab</see>
+</class>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class access="public" id="class:jsx3.$Function" name="jsx3.$Function" package="jsx3" shortname="$Function" since="3.7">
+  <text>Useful extensions to the JavaScript <code>Function</code> class.</text>
+  <superclass direct="1" id="super:0" loaded="1" name="Object"/>
+  <method access="public" id="method:bind" name="bind">
+    <param name="thisObj" text="">
+      <type link="1" name="Object"/>
+    </param>
+    <param name="argsArr" text="">
+      <type link="1" name="Array"/>
+    </param>
+    <return text="">
+      <type link="1" name="jsx3.$Function"/>
+    </return>
+    <text>Returns a method that is this function applied to <code>thisObj</code> with arguments <code>argsArr</code>.</text>
+  </method>
+  <method id="method:toString" idfk="method:toString" inherited="1" name="toString" native="1" source="Object"/>
+</class>

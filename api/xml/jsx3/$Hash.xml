@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class access="public" id="class:jsx3.$Hash" name="jsx3.$Hash" package="jsx3" shortname="$Hash" since="3.7">
+  <text>Useful extensions to the JavaScript <code>Object</code> class for emulating a hashtable.</text>
+  <superclass id="super:0" loaded="1" name="Object"/>
+  <superclass direct="1" id="super:1" loaded="1" name="jsx3.$Object"/>
+  <method access="public" id="method:each" name="each">
+    <param name="fct" text="&lt;code&gt;function(key : String, value: Object} : void&lt;/code&gt;&#10;     ">
+      <type link="1" name="Function"/>
+    </param>
+    <text>Iterates over all the key-value pairs of this hashtable. <code>fct</code> is called for each pair; the pair key
+is the first parameter and the pair value is the second parameter.</text>
+  </method>
+  <method access="public" id="method:keys" name="keys">
+    <return text="">
+      <type link="1" name="jsx3.$Array"/>
+    </return>
+    <text>Returns the list of keys of this hashtable.</text>
+  </method>
+  <method access="public" id="method:values" name="values">
+    <return text="">
+      <type link="1" name="jsx3.$Array"/>
+    </return>
+    <text>Returns the list of values of this hashtable.</text>
+  </method>
+  <method id="method:clone" idfk="method:clone" inherited="1" name="clone" source="jsx3.$Object"/>
+  <method id="method:extend" idfk="method:extend" inherited="1" name="extend" source="jsx3.$Object"/>
+  <method id="method:toString" idfk="method:toString" inherited="1" name="toString" native="1" source="Object"/>
+</class>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class access="public" deprecated="1" id="class:jsx3.Service" name="jsx3.Service" package="jsx3" shortname="Service">
+  <deprecated>Renamed to jsx3.net.Service</deprecated>
+  <see source="jsx3.net.Service">jsx3.net.Service</see>
+</class>

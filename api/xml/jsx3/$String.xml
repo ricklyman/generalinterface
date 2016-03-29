@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class access="public" id="class:jsx3.$String" name="jsx3.$String" package="jsx3" shortname="$String" since="3.7">
+  <text>Useful extensions to the JavaScript <code>String</code> class.</text>
+  <superclass id="super:0" loaded="1" name="Object"/>
+  <superclass direct="1" id="super:1" loaded="1" name="jsx3.$Object"/>
+  <method access="public" id="method:endsWith" name="endsWith">
+    <param name="s" text="">
+      <type link="1" name="String"/>
+    </param>
+    <return text="">
+      <type class="Boolean" link="1" name="boolean"/>
+    </return>
+    <text>Returns true if this string ends with string <code>s</code>.</text>
+  </method>
+  <method access="public" id="method:trim" name="trim">
+    <return text="">
+      <type link="1" name="jsx3.$String"/>
+    </return>
+    <text>Returns this string with all leading and trailing space removed.</text>
+  </method>
+  <method id="method:clone" idfk="method:clone" inherited="1" name="clone" source="jsx3.$Object"/>
+  <method id="method:extend" idfk="method:extend" inherited="1" name="extend" source="jsx3.$Object"/>
+  <method id="method:toString" idfk="method:toString" inherited="1" name="toString" native="1" source="Object"/>
+</class>

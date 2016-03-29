@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class access="public" deprecated="1" id="class:jsx3.Select" name="jsx3.Select" package="jsx3" shortname="Select">
+  <deprecated>Renamed to jsx3.gui.Select</deprecated>
+  <see source="jsx3.gui.Select">jsx3.gui.Select</see>
+</class>

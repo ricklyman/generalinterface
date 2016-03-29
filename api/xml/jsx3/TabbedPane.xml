@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class access="public" deprecated="1" id="class:jsx3.TabbedPane" name="jsx3.TabbedPane" package="jsx3" shortname="TabbedPane">
+  <deprecated>Renamed to jsx3.gui.TabbedPane</deprecated>
+  <see source="jsx3.gui.TabbedPane">jsx3.gui.TabbedPane</see>
+</class>

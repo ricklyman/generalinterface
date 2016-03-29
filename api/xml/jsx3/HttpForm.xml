@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class access="public" deprecated="1" id="class:jsx3.HttpForm" name="jsx3.HttpForm" package="jsx3" shortname="HttpForm">
+  <deprecated>Renamed to jsx3.net.Form</deprecated>
+  <see source="jsx3.net.Form">jsx3.net.Form</see>
+</class>

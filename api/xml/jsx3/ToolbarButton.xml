@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class access="public" deprecated="1" id="class:jsx3.ToolbarButton" name="jsx3.ToolbarButton" package="jsx3" shortname="ToolbarButton">
+  <deprecated>Renamed to jsx3.gui.ToolbarButton</deprecated>
+  <see source="jsx3.gui.ToolbarButton">jsx3.gui.ToolbarButton</see>
+</class>

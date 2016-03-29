@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class access="public" deprecated="1" id="class:jsx3.Menu" name="jsx3.Menu" package="jsx3" shortname="Menu">
+  <deprecated>Renamed to jsx3.gui.Menu</deprecated>
+  <see source="jsx3.gui.Menu">jsx3.gui.Menu</see>
+</class>

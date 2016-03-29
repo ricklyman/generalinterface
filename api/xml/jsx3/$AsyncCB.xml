@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class access="public" id="class:jsx3.$AsyncCB" name="jsx3.$AsyncCB" package="jsx3" shortname="$AsyncCB" since="3.7">
+  <text>The callback object passed as the single argument to an asynchronous method.</text>
+  <see idfk="smethod:$Y" source="jsx3">jsx3.$Y()</see>
+  <superclass direct="1" id="super:0" loaded="1" name="Object"/>
+  <method access="public" id="method:args" name="args">
+    <return text="">
+      <type link="1" name="Array">
+        <type link="1" name="Object"/>
+      </type>
+    </return>
+    <text>Returns the arguments that were passed to the asynchronous method wrapper.</text>
+  </method>
+  <method access="public" id="method:done" name="done">
+    <param name="rv" text="the return value.&#10;     ">
+      <type link="1" name="Object"/>
+    </param>
+    <text>Signals the callback object that the asynchronous method is done and passes the asynchronous return value.</text>
+  </method>
+  <method id="method:toString" idfk="method:toString" inherited="1" name="toString" native="1" source="Object"/>
+</class>

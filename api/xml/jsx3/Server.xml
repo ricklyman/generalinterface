@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class access="public" deprecated="1" id="class:jsx3.Server" name="jsx3.Server" package="jsx3" shortname="Server">
+  <deprecated>Renamed to jsx3.app.Server</deprecated>
+  <see source="jsx3.app.Server">jsx3.app.Server</see>
+</class>

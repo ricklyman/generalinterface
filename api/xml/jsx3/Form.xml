@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface access="public" deprecated="1" id="class:jsx3.Form" name="jsx3.Form" package="jsx3" shortname="Form">
+  <deprecated>Renamed to jsx3.gui.Form</deprecated>
+  <see source="jsx3.gui.Form">jsx3.gui.Form</see>
+</interface>

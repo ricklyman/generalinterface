@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class access="public" deprecated="1" id="class:jsx3.Entity" name="jsx3.Entity" package="jsx3" shortname="Entity">
+  <deprecated>Renamed to jsx3.xml.Entity</deprecated>
+  <see source="jsx3.xml.Entity">jsx3.xml.Entity</see>
+</class>

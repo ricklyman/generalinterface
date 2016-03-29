@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class access="public" deprecated="1" id="class:jsx3.BlockX" name="jsx3.BlockX" package="jsx3" shortname="BlockX">
+  <deprecated>Renamed to jsx3.gui.BlockX. Most functionality of this class was moved into a new interface,
+   &lt;code&gt;jsx3.xml.Cacheable&lt;/code&gt;.</deprecated>
+  <see source="jsx3.gui.BlockX">jsx3.gui.BlockX</see>
+  <see source="jsx3.xml.Cacheable">jsx3.xml.Cacheable</see>
+</class>

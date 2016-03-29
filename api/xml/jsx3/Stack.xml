@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class access="public" deprecated="1" id="class:jsx3.Stack" name="jsx3.Stack" package="jsx3" shortname="Stack">
+  <deprecated>Renamed to jsx3.gui.Stack</deprecated>
+  <see source="jsx3.gui.Stack">jsx3.gui.Stack</see>
+</class>

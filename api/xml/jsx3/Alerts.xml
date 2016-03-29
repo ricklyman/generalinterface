@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface access="public" deprecated="1" id="class:jsx3.Alerts" name="jsx3.Alerts" package="jsx3" shortname="Alerts">
+  <deprecated>Renamed to jsx3.gui.Alerts.</deprecated>
+  <see source="jsx3.gui.Alerts">jsx3.gui.Alerts</see>
+</interface>

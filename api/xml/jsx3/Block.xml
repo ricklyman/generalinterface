@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class access="public" deprecated="1" id="class:jsx3.Block" name="jsx3.Block" package="jsx3" shortname="Block">
+  <deprecated>Renamed to jsx3.gui.Block</deprecated>
+  <see source="jsx3.gui.Block">jsx3.gui.Block</see>
+</class>

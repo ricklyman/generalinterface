@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class access="public" id="class:jsx3.$Array" name="jsx3.$Array" package="jsx3" shortname="$Array" since="3.7">
+  <text>Useful extensions to the JavaScript <code>Array</code> class.</text>
+  <superclass id="super:0" loaded="1" name="Object"/>
+  <superclass direct="1" id="super:1" loaded="1" name="Array"/>
+  <method access="public" id="method:addAll" name="addAll">
+    <param name="a" text="">
+      <type link="1" name="Array"/>
+    </param>
+    <text>Appends the contents of <code>a</code> to this array.</text>
+  </method>
+  <method access="public" id="method:contains" name="contains">
+    <param name="o" text="">
+      <type link="1" name="Object"/>
+    </param>
+    <return text="">
+      <type class="Boolean" link="1" name="boolean"/>
+    </return>
+    <text>Returns true if <code>o</code> is in this array. This method uses strict equality for comparing objects
+(<code>===</code>).</text>
+    <overrides id="overrides:contains" idfk="method:contains" name="contains" source="Array"/>
+  </method>
+  <method access="public" id="method:each" name="each">
+    <param name="fct" text="">
+      <type link="1" name="Function"/>
+    </param>
+    <text>Calls <code>fct</code> for each element in this array. <code>fct</code> is passed each element as the
+sole parameter.</text>
+  </method>
+  <method access="public" id="method:eq" name="eq" since="3.9&#10;     ">
+    <param name="a" text="">
+      <type link="1" name="Array"/>
+    </param>
+    <return text="">
+      <type class="Boolean" link="1" name="boolean"/>
+    </return>
+    <text>Returns true if the contents of this array equal the contents of <code>a</code>.</text>
+  </method>
+  <method access="public" id="method:filter" name="filter">
+    <param name="fct" text="">
+      <type link="1" name="Function"/>
+    </param>
+    <return text="">
+      <type link="1" name="jsx3.$Array"/>
+    </return>
+    <text>Creates a new array with the filtered contents of this array. <code>fct</code> is called for
+each element in this array and the element is passed as the sole argument. The new array is constructed with
+only the elements of this array for which <code>fct</code> returns <code>true</code>.</text>
+    <overrides id="overrides:filter" idfk="method:filter" name="filter" source="Array"/>
+  </method>
+  <method access="public" id="method:find" name="find">
+    <param name="fct" text="">
+      <type link="1" name="Function"/>
+    </param>
+    <return text="">
+      <type link="1" name="Object"/>
+    </return>
+    <text>Returns the first element in this array for which <code>fct</code> returns true when passed the element as
+the sole parameter.</text>
+  </method>
+  <method access="public" id="method:indexOf" name="indexOf">
+    <param name="o" text="">
+      <type link="1" name="Object"/>
+    </param>
+    <return text="">
+      <type class="Number" link="1" name="int"/>
+    </return>
+    <text>Returns the first index of <code>o</code> in this array. This method uses strict equality for comparing objects
+(<code>===</code>).</text>
+    <overrides id="overrides:indexOf" idfk="method:indexOf" name="indexOf" source="Array"/>
+  </method>
+  <method access="public" id="method:map" name="map">
+    <param name="fct" text="">
+      <type link="1" name="Function"/>
+    </param>
+    <return text="">
+      <type link="1" name="jsx3.$Array"/>
+    </return>
+    <text>Creates a new array using the mapped values of each element in this array. <code>fct</code> is called for
+each element in this array and the element is passed as the sole argument. The new array is constructed with
+the return values of each call to <code>fct</code>.
+sole parameter.</text>
+    <overrides id="overrides:map" idfk="method:map" name="map" source="Array"/>
+  </method>
+  <method access="public" id="method:remove" name="remove">
+    <param name="o" text="">
+      <type link="1" name="Object"/>
+    </param>
+    <return text="the removed object or &lt;code&gt;undefined&lt;/code&gt; if &lt;code&gt;o&lt;/code&gt; is not in this array.&#10;     ">
+      <type link="1" name="Object"/>
+    </return>
+    <text>Removes the first occurrence of <code>o</code> in this array. This method uses strict equality for comparing objects
+(<code>===</code>).</text>
+    <overrides id="overrides:remove" idfk="method:remove" name="remove" source="Array"/>
+  </method>
+  <method access="public" id="method:unique" name="unique">
+    <return text="">
+      <type link="1" name="jsx3.$Array"/>
+    </return>
+    <text>Returns a list containing only the unique elements in this list.</text>
+  </method>
+  <method deprecated="1" id="method:clone" idfk="method:clone" inherited="1" name="clone" source="Array"/>
+  <method id="method:concat" idfk="method:concat" inherited="1" name="concat" native="1" source="Array"/>
+  <method deprecated="1" id="method:contentsEqual" idfk="method:contentsEqual" inherited="1" name="contentsEqual" source="Array"/>
+  <method id="method:join" idfk="method:join" inherited="1" name="join" native="1" source="Array"/>
+  <method deprecated="1" id="method:lastIndexOf" idfk="method:lastIndexOf" inherited="1" name="lastIndexOf" source="Array"/>
+  <field id="field:length" idfk="field:length" inherited="1" name="length" native="1" source="Array"/>
+  <method id="method:pop" idfk="method:pop" inherited="1" name="pop" native="1" source="Array"/>
+  <method id="method:push" idfk="method:push" inherited="1" name="push" native="1" source="Array"/>
+  <method deprecated="1" id="method:pushAll" idfk="method:pushAll" inherited="1" name="pushAll" source="Array"/>
+  <method id="method:reverse" idfk="method:reverse" inherited="1" name="reverse" native="1" source="Array"/>
+  <method id="method:shift" idfk="method:shift" inherited="1" name="shift" native="1" source="Array"/>
+  <method id="method:slice" idfk="method:slice" inherited="1" name="slice" native="1" source="Array"/>
+  <method id="method:sort" idfk="method:sort" inherited="1" name="sort" native="1" source="Array"/>
+  <method id="method:splice" idfk="method:splice" inherited="1" name="splice" native="1" source="Array"/>
+  <method id="method:toString" idfk="method:toString" inherited="1" name="toString" native="1" source="Array"/>
+  <method id="method:unshift" idfk="method:unshift" inherited="1" name="unshift" native="1" source="Array"/>
+</class>

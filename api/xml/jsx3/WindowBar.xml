@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class access="public" deprecated="1" id="class:jsx3.WindowBar" name="jsx3.WindowBar" package="jsx3" shortname="WindowBar">
+  <deprecated>Renamed to jsx3.gui.WindowBar</deprecated>
+  <see source="jsx3.gui.WindowBar">jsx3.gui.WindowBar</see>
+</class>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class access="public" deprecated="1" id="class:jsx3.Collection" name="jsx3.Collection" package="jsx3" shortname="Collection">
+  <deprecated>Subsumed by &lt;code&gt;jsx3.util.List&lt;/code&gt;.</deprecated>
+  <see source="jsx3.util.List">jsx3.util.List</see>
+</class>

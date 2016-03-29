@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class access="public" deprecated="1" id="class:jsx3.Button" name="jsx3.Button" package="jsx3" shortname="Button">
+  <deprecated>Renamed to jsx3.gui.Button</deprecated>
+  <see source="jsx3.gui.Button">jsx3.gui.Button</see>
+</class>

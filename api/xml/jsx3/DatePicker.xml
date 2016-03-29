@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class access="public" deprecated="1" id="class:jsx3.DatePicker" name="jsx3.DatePicker" package="jsx3" shortname="DatePicker">
+  <deprecated>Renamed to jsx3.gui.DatePicker</deprecated>
+  <see source="jsx3.gui.DatePicker">jsx3.gui.DatePicker</see>
+</class>

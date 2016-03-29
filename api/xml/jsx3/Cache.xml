@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class access="public" deprecated="1" id="class:jsx3.Cache" name="jsx3.Cache" package="jsx3" shortname="Cache">
+  <deprecated>Renamed to jsx3.app.Cache</deprecated>
+  <see source="jsx3.app.Cache">jsx3.app.Cache</see>
+</class>

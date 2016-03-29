@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class access="public" deprecated="1" id="class:jsx3.CheckBox" name="jsx3.CheckBox" package="jsx3" shortname="CheckBox">
+  <deprecated>Renamed to jsx3.gui.CheckBox</deprecated>
+  <see source="jsx3.gui.CheckBox">jsx3.gui.CheckBox</see>
+</class>

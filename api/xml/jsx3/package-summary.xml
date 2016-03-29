@@ -1,0 +1,572 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package access="public" id="class:jsx3" name="jsx3">
+  <nested access="public" id="nested:jsx3.$Array" loaded="1" name="jsx3.$Array" shortname="$Array" since="3.7" type="class">
+    <text>Useful extensions to the JavaScript <code>Array</code> class.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.$AsyncCB" loaded="1" name="jsx3.$AsyncCB" shortname="$AsyncCB" since="3.7" type="class">
+    <text>The callback object passed as the single argument to an asynchronous method.</text>
+    <see idfk="smethod:$Y" source="jsx3">jsx3.$Y()</see>
+  </nested>
+  <nested access="public" id="nested:jsx3.$AsyncRV" loaded="1" name="jsx3.$AsyncRV" shortname="$AsyncRV" since="3.7" type="class">
+    <text>The return value from an asynchronous method.</text>
+    <see idfk="smethod:$Y" source="jsx3">jsx3.$Y()</see>
+  </nested>
+  <nested access="public" id="nested:jsx3.$Function" loaded="1" name="jsx3.$Function" shortname="$Function" since="3.7" type="class">
+    <text>Useful extensions to the JavaScript <code>Function</code> class.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.$Hash" loaded="1" name="jsx3.$Hash" shortname="$Hash" since="3.7" type="class">
+    <text>Useful extensions to the JavaScript <code>Object</code> class for emulating a hashtable.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.$Object" loaded="1" name="jsx3.$Object" shortname="$Object" since="3.7" type="class">
+    <text>Useful extensions to the JavaScript <code>Object</code> class.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.$String" loaded="1" name="jsx3.$String" shortname="$String" since="3.7" type="class">
+    <text>Useful extensions to the JavaScript <code>String</code> class.</text>
+  </nested>
+  <nested access="public" deprecated="1" id="nested:jsx3.Block" loaded="1" name="jsx3.Block" shortname="Block" type="class">
+    <deprecated>Renamed to jsx3.gui.Block</deprecated>
+    <see source="jsx3.gui.Block">jsx3.gui.Block</see>
+  </nested>
+  <nested access="public" deprecated="1" id="nested:jsx3.BlockX" loaded="1" name="jsx3.BlockX" shortname="BlockX" type="class">
+    <deprecated>Renamed to jsx3.gui.BlockX. Most functionality of this class was moved into a new interface,
+   &lt;code&gt;jsx3.xml.Cacheable&lt;/code&gt;.</deprecated>
+    <see source="jsx3.gui.BlockX">jsx3.gui.BlockX</see>
+    <see source="jsx3.xml.Cacheable">jsx3.xml.Cacheable</see>
+  </nested>
+  <nested access="public" id="nested:jsx3.Boolean" loaded="1" name="jsx3.Boolean" shortname="Boolean" type="class">
+    <text>Boolean class encapsulates GI's XML boolean values (0 and 1 rather than true and false).</text>
+  </nested>
+  <nested access="public" deprecated="1" id="nested:jsx3.Button" loaded="1" name="jsx3.Button" shortname="Button" type="class">
+    <deprecated>Renamed to jsx3.gui.Button</deprecated>
+    <see source="jsx3.gui.Button">jsx3.gui.Button</see>
+  </nested>
+  <nested access="public" deprecated="1" id="nested:jsx3.Cache" loaded="1" name="jsx3.Cache" shortname="Cache" type="class">
+    <deprecated>Renamed to jsx3.app.Cache</deprecated>
+    <see source="jsx3.app.Cache">jsx3.app.Cache</see>
+  </nested>
+  <nested access="public" deprecated="1" id="nested:jsx3.CheckBox" loaded="1" name="jsx3.CheckBox" shortname="CheckBox" type="class">
+    <deprecated>Renamed to jsx3.gui.CheckBox</deprecated>
+    <see source="jsx3.gui.CheckBox">jsx3.gui.CheckBox</see>
+  </nested>
+  <nested access="public" deprecated="1" id="nested:jsx3.Collection" loaded="1" name="jsx3.Collection" shortname="Collection" type="class">
+    <deprecated>Subsumed by &lt;code&gt;jsx3.util.List&lt;/code&gt;.</deprecated>
+    <see source="jsx3.util.List">jsx3.util.List</see>
+  </nested>
+  <nested access="public" deprecated="1" id="nested:jsx3.Column" loaded="1" name="jsx3.Column" shortname="Column" type="class">
+    <deprecated>Renamed to jsx3.gui.Column</deprecated>
+    <see source="jsx3.gui.Column">jsx3.gui.Column</see>
+  </nested>
+  <nested access="public" deprecated="1" id="nested:jsx3.DOM" loaded="1" name="jsx3.DOM" shortname="DOM" type="class">
+    <deprecated>Renamed to jsx3.app.DOM</deprecated>
+    <see source="jsx3.app.DOM">jsx3.app.DOM</see>
+  </nested>
+  <nested access="public" deprecated="1" id="nested:jsx3.DatePicker" loaded="1" name="jsx3.DatePicker" shortname="DatePicker" type="class">
+    <deprecated>Renamed to jsx3.gui.DatePicker</deprecated>
+    <see source="jsx3.gui.DatePicker">jsx3.gui.DatePicker</see>
+  </nested>
+  <nested access="public" deprecated="1" id="nested:jsx3.Dialog" loaded="1" name="jsx3.Dialog" shortname="Dialog" type="class">
+    <deprecated>Renamed to jsx3.gui.Dialog</deprecated>
+    <see source="jsx3.gui.Dialog">jsx3.gui.Dialog</see>
+  </nested>
+  <nested access="public" deprecated="1" id="nested:jsx3.Document" loaded="1" name="jsx3.Document" shortname="Document" type="class">
+    <deprecated>Renamed to jsx3.xml.Document</deprecated>
+    <see source="jsx3.xml.Document">jsx3.xml.Document</see>
+  </nested>
+  <nested access="public" deprecated="1" id="nested:jsx3.ERROR" loaded="1" name="jsx3.ERROR" shortname="ERROR" type="class">
+    <deprecated>Renamed to jsx3.util.Logger</deprecated>
+    <see source="jsx3.util.Logger">jsx3.util.Logger</see>
+  </nested>
+  <nested access="public" deprecated="1" id="nested:jsx3.EVT" loaded="1" name="jsx3.EVT" shortname="EVT" type="class">
+    <text>This class is the static event controller for the GI framework.</text>
+    <deprecated>Use class &lt;code&gt;jsx3.gui.Event&lt;/code&gt; instead.</deprecated>
+    <see source="jsx3.gui.Event">jsx3.gui.Event</see>
+  </nested>
+  <nested access="public" deprecated="1" id="nested:jsx3.Entity" loaded="1" name="jsx3.Entity" shortname="Entity" type="class">
+    <deprecated>Renamed to jsx3.xml.Entity</deprecated>
+    <see source="jsx3.xml.Entity">jsx3.xml.Entity</see>
+  </nested>
+  <nested access="public" deprecated="1" id="nested:jsx3.Grid" loaded="1" name="jsx3.Grid" shortname="Grid" type="class">
+    <deprecated>Renamed to jsx3.gui.Grid</deprecated>
+    <see source="jsx3.gui.Grid">jsx3.gui.Grid</see>
+  </nested>
+  <nested access="public" deprecated="1" id="nested:jsx3.Heavyweight" loaded="1" name="jsx3.Heavyweight" shortname="Heavyweight" type="class">
+    <deprecated>Renamed to jsx3.gui.Heavyweight</deprecated>
+    <see source="jsx3.gui.Heavyweight">jsx3.gui.Heavyweight</see>
+  </nested>
+  <nested access="public" deprecated="1" id="nested:jsx3.HttpForm" loaded="1" name="jsx3.HttpForm" shortname="HttpForm" type="class">
+    <deprecated>Renamed to jsx3.net.Form</deprecated>
+    <see source="jsx3.net.Form">jsx3.net.Form</see>
+  </nested>
+  <nested access="public" deprecated="1" id="nested:jsx3.HttpRequest" loaded="1" name="jsx3.HttpRequest" shortname="HttpRequest" type="class">
+    <deprecated>Renamed to jsx3.net.Request</deprecated>
+    <see source="jsx3.net.Request">jsx3.net.Request</see>
+  </nested>
+  <nested access="public" deprecated="1" id="nested:jsx3.LayoutGrid" loaded="1" name="jsx3.LayoutGrid" shortname="LayoutGrid" type="class">
+    <deprecated>Renamed to jsx3.gui.LayoutGrid</deprecated>
+    <see source="jsx3.gui.LayoutGrid">jsx3.gui.LayoutGrid</see>
+  </nested>
+  <nested access="public" deprecated="1" id="nested:jsx3.List" loaded="1" name="jsx3.List" shortname="List" type="class">
+    <deprecated>Renamed to jsx3.gui.List</deprecated>
+    <see source="jsx3.gui.List">jsx3.gui.List</see>
+  </nested>
+  <nested access="public" deprecated="1" id="nested:jsx3.Menu" loaded="1" name="jsx3.Menu" shortname="Menu" type="class">
+    <deprecated>Renamed to jsx3.gui.Menu</deprecated>
+    <see source="jsx3.gui.Menu">jsx3.gui.Menu</see>
+  </nested>
+  <nested access="public" deprecated="1" id="nested:jsx3.Model" loaded="1" name="jsx3.Model" shortname="Model" type="class">
+    <deprecated>Renamed to jsx3.app.Model</deprecated>
+    <see source="jsx3.app.Model">jsx3.app.Model</see>
+  </nested>
+  <nested access="public" deprecated="1" id="nested:jsx3.RadioButton" loaded="1" name="jsx3.RadioButton" shortname="RadioButton" type="class">
+    <deprecated>Renamed to jsx3.gui.RadioButton</deprecated>
+    <see source="jsx3.gui.RadioButton">jsx3.gui.RadioButton</see>
+  </nested>
+  <nested access="public" deprecated="1" id="nested:jsx3.Select" loaded="1" name="jsx3.Select" shortname="Select" type="class">
+    <deprecated>Renamed to jsx3.gui.Select</deprecated>
+    <see source="jsx3.gui.Select">jsx3.gui.Select</see>
+  </nested>
+  <nested access="public" deprecated="1" id="nested:jsx3.Server" loaded="1" name="jsx3.Server" shortname="Server" type="class">
+    <deprecated>Renamed to jsx3.app.Server</deprecated>
+    <see source="jsx3.app.Server">jsx3.app.Server</see>
+  </nested>
+  <nested access="public" deprecated="1" id="nested:jsx3.Service" loaded="1" name="jsx3.Service" shortname="Service" type="class">
+    <deprecated>Renamed to jsx3.net.Service</deprecated>
+    <see source="jsx3.net.Service">jsx3.net.Service</see>
+  </nested>
+  <nested access="public" deprecated="1" id="nested:jsx3.Settings" loaded="1" name="jsx3.Settings" shortname="Settings" type="class">
+    <deprecated>Renamed to jsx3.app.Settings</deprecated>
+    <see source="jsx3.app.Settings">jsx3.app.Settings</see>
+  </nested>
+  <nested access="public" deprecated="1" id="nested:jsx3.Slider" loaded="1" name="jsx3.Slider" shortname="Slider" type="class">
+    <deprecated>Renamed to jsx3.gui.Slider</deprecated>
+    <see source="jsx3.gui.Slider">jsx3.gui.Slider</see>
+  </nested>
+  <nested access="public" deprecated="1" id="nested:jsx3.Splitter" loaded="1" name="jsx3.Splitter" shortname="Splitter" type="class">
+    <deprecated>Renamed to jsx3.gui.Splitter</deprecated>
+    <see source="jsx3.gui.Splitter">jsx3.gui.Splitter</see>
+  </nested>
+  <nested access="public" deprecated="1" id="nested:jsx3.Stack" loaded="1" name="jsx3.Stack" shortname="Stack" type="class">
+    <deprecated>Renamed to jsx3.gui.Stack</deprecated>
+    <see source="jsx3.gui.Stack">jsx3.gui.Stack</see>
+  </nested>
+  <nested access="public" deprecated="1" id="nested:jsx3.StackGroup" loaded="1" name="jsx3.StackGroup" shortname="StackGroup" type="class">
+    <deprecated>Renamed to jsx3.gui.StackGroup</deprecated>
+    <see source="jsx3.gui.StackGroup">jsx3.gui.StackGroup</see>
+  </nested>
+  <nested access="public" deprecated="1" id="nested:jsx3.Tab" loaded="1" name="jsx3.Tab" shortname="Tab" type="class">
+    <deprecated>Renamed to jsx3.gui.Tab</deprecated>
+    <see source="jsx3.gui.Tab">jsx3.gui.Tab</see>
+  </nested>
+  <nested access="public" deprecated="1" id="nested:jsx3.TabbedPane" loaded="1" name="jsx3.TabbedPane" shortname="TabbedPane" type="class">
+    <deprecated>Renamed to jsx3.gui.TabbedPane</deprecated>
+    <see source="jsx3.gui.TabbedPane">jsx3.gui.TabbedPane</see>
+  </nested>
+  <nested access="public" deprecated="1" id="nested:jsx3.TextBox" loaded="1" name="jsx3.TextBox" shortname="TextBox" type="class">
+    <deprecated>Renamed to jsx3.gui.TextBox</deprecated>
+    <see source="jsx3.gui.TextBox">jsx3.gui.TextBox</see>
+  </nested>
+  <nested access="public" deprecated="1" id="nested:jsx3.ToolbarButton" loaded="1" name="jsx3.ToolbarButton" shortname="ToolbarButton" type="class">
+    <deprecated>Renamed to jsx3.gui.ToolbarButton</deprecated>
+    <see source="jsx3.gui.ToolbarButton">jsx3.gui.ToolbarButton</see>
+  </nested>
+  <nested access="public" deprecated="1" id="nested:jsx3.Tree" loaded="1" name="jsx3.Tree" shortname="Tree" type="class">
+    <deprecated>Renamed to jsx3.gui.Tree</deprecated>
+    <see source="jsx3.gui.Tree">jsx3.gui.Tree</see>
+  </nested>
+  <nested access="public" deprecated="1" id="nested:jsx3.UserSettings" loaded="1" name="jsx3.UserSettings" shortname="UserSettings" type="class">
+    <deprecated>Renamed to jsx3.app.UserSettings</deprecated>
+    <see source="jsx3.app.UserSettings">jsx3.app.UserSettings</see>
+  </nested>
+  <nested access="public" deprecated="1" id="nested:jsx3.WindowBar" loaded="1" name="jsx3.WindowBar" shortname="WindowBar" type="class">
+    <deprecated>Renamed to jsx3.gui.WindowBar</deprecated>
+    <see source="jsx3.gui.WindowBar">jsx3.gui.WindowBar</see>
+  </nested>
+  <field access="public" class="jsx3" deprecated="1" fullname="jsx3.ABSOLUTEPATH" id="sfield:ABSOLUTEPATH" name="ABSOLUTEPATH" static="1" value="&quot;&quot;">
+    <type link="1" name="String"/>
+    <text> Absolute path (the path on the server (file or http) from the accessible root to the directory
+  containing the JSX system folder. Specifies a directory (ie it's empty or ends with a "/").</text>
+    <deprecated>Use &lt;code&gt;jsx3.getEnv("jsxabspath")&lt;/code&gt;.
+     </deprecated>
+  </field>
+  <field access="public" class="jsx3" fullname="jsx3.ADDINSPATH" id="sfield:ADDINSPATH" name="ADDINSPATH" static="1" value="&quot;JSX/addins/&quot;">
+    <type link="1" name="String"/>
+    <text> location for addin resources.
+   </text>
+  </field>
+  <field access="public" class="jsx3" deprecated="1" fullname="jsx3.APPPATH" id="sfield:APPPATH" name="APPPATH" static="1" value="&quot;&quot;">
+    <type link="1" name="String"/>
+    <text> Path for application resources (the prefix that precedes JSXAPPS). Specifies a directory (ie it's
+  empty or ends with a "/").</text>
+    <deprecated>Use &lt;code&gt;jsx3.getEnv("jsxhomepath")&lt;/code&gt;.
+     </deprecated>
+  </field>
+  <field access="public" class="jsx3" deprecated="1" fullname="jsx3.CACHE" id="sfield:CACHE" name="CACHE" static="1">
+    <type link="1" name="jsx3.app.Cache"/>
+    <text> The <code>jsx3.app.Cache</code> instance used by the JSX system to store XML and XSL documents.</text>
+    <deprecated>Use &lt;code&gt;getSharedCache()&lt;/code&gt; instead.</deprecated>
+    <see idfk="smethod:getSharedCache" source="jsx3">getSharedCache()</see>
+  </field>
+  <field access="public" class="jsx3" fullname="jsx3.CLASS_LOADER" id="sfield:CLASS_LOADER" name="CLASS_LOADER" static="1">
+    <type link="1" name="jsx3.lang.ClassLoader"/>
+    <text> the system class loader.
+     </text>
+  </field>
+  <field access="public" class="jsx3" deprecated="1" fullname="jsx3.DESERIALIZE" id="sfield:DESERIALIZE" name="DESERIALIZE" static="1" value="&quot;JSX30DESERIALIZE&quot;">
+    <deprecated>The new &lt;code&gt;jsx3.lang.Class&lt;/code&gt; framework does not use this constant for instantiating objects.
+   </deprecated>
+  </field>
+  <field access="public" class="jsx3" deprecated="1" fullname="jsx3.EVENT" id="sfield:EVENT" name="EVENT" static="1">
+    <type link="1" name="jsx3.EVT"/>
+    <text> wrapped static access to the current JavaScript event</text>
+    <deprecated>Static access to the event object is deprecated as it is not cross-platform. Access to the current
+  event object, where available, is granted via a method parameter or model event context variable.</deprecated>
+    <see source="jsx3.gui.Event">jsx3.gui.Event</see>
+  </field>
+  <field access="public" class="jsx3" deprecated="1" fullname="jsx3.HTTPREGKEY" id="sfield:HTTPREGKEY" name="HTTPREGKEY" static="1" value="&quot;Msxml2.XMLHTTP.3.0&quot;">
+    <type link="1" name="String"/>
+    <text> Default ActiveX HTTP object key.</text>
+  </field>
+  <field access="public" class="jsx3" deprecated="1" fullname="jsx3.INITIALIZE" id="sfield:INITIALIZE" name="INITIALIZE" static="1" value="&quot;JSX30INITIALIZE&quot;">
+    <deprecated>The new &lt;code&gt;jsx3.lang.Class&lt;/code&gt; framework does not use this constant for instantiating objects.
+   </deprecated>
+  </field>
+  <field access="public" class="jsx3" fullname="jsx3.STARTUP_EVENT" id="sfield:STARTUP_EVENT" name="STARTUP_EVENT" static="1">
+    <type link="1" name="jsx3.gui.Event"/>
+    <text>     </text>
+  </field>
+  <field access="public" class="jsx3" deprecated="1" fullname="jsx3.XMLREGKEY" id="sfield:XMLREGKEY" name="XMLREGKEY" static="1" value="&quot;Msxml2.FreeThreadedDOMDocument.3.0&quot;">
+    <type link="1" name="String"/>
+    <text> Default ActiveX XML object key.</text>
+  </field>
+  <field access="public" class="jsx3" deprecated="1" fullname="jsx3.XSLREGKEY" id="sfield:XSLREGKEY" name="XSLREGKEY" static="1" value="&quot;Msxml2.XSLTemplate.3.0&quot;">
+    <type link="1" name="String"/>
+    <text> Default ActiveX XSL object key.</text>
+  </field>
+  <nested access="public" deprecated="1" id="nested:jsx3.Alerts" loaded="1" name="jsx3.Alerts" shortname="Alerts" type="interface">
+    <deprecated>Renamed to jsx3.gui.Alerts.</deprecated>
+    <see source="jsx3.gui.Alerts">jsx3.gui.Alerts</see>
+  </nested>
+  <nested access="public" deprecated="1" id="nested:jsx3.CDF" loaded="1" name="jsx3.CDF" shortname="CDF" type="interface">
+    <deprecated>Renamed to jsx3.xml.CDF</deprecated>
+    <see source="jsx3.xml.CDF">jsx3.xml.CDF</see>
+  </nested>
+  <nested access="public" deprecated="1" id="nested:jsx3.Event" loaded="1" name="jsx3.Event" shortname="Event" type="interface">
+    <deprecated>Renamed to jsx3.gui.Interactive</deprecated>
+    <see source="jsx3.gui.Interactive">jsx3.gui.Interactive</see>
+  </nested>
+  <nested access="public" deprecated="1" id="nested:jsx3.EventDispatcher" loaded="1" name="jsx3.EventDispatcher" shortname="EventDispatcher" type="interface">
+    <deprecated>Renamed to jsx3.util.EventDispatcher</deprecated>
+    <see source="jsx3.util.EventDispatcher">jsx3.util.EventDispatcher</see>
+  </nested>
+  <nested access="public" deprecated="1" id="nested:jsx3.Form" loaded="1" name="jsx3.Form" shortname="Form" type="interface">
+    <deprecated>Renamed to jsx3.gui.Form</deprecated>
+    <see source="jsx3.gui.Form">jsx3.gui.Form</see>
+  </nested>
+  <method access="public" id="smethod:$A" name="$A" since="3.7&#10;   " static="1">
+    <param name="a" text="">
+      <type link="1" name="Array"/>
+      <type link="1" name="Object"/>
+    </param>
+    <text>Injects class <code>jsx3.$Array</code> into array instance <code>a</code>.</text>
+  </method>
+  <method access="public" id="smethod:$F" name="$F" since="3.7&#10;   " static="1">
+    <param name="f" text="">
+      <type link="1" name="Function"/>
+    </param>
+    <text>Injects class <code>jsx3.$Function</code> into function instance <code>f</code>.</text>
+  </method>
+  <method access="public" id="smethod:$H" name="$H" since="3.7&#10;   " static="1">
+    <param name="o" text="">
+      <type link="1" name="Object"/>
+      <type link="1" name="Array"/>
+    </param>
+    <text>Injects class <code>jsx3.$Hash</code> into object instance <code>o</code>. If <code>o</code> is an array, it
+is first converted into an object by setting a property equal to <code>1</code> for each item in the array.</text>
+  </method>
+  <method access="public" id="smethod:$O" name="$O" since="3.7&#10;   " static="1">
+    <param name="o" text="">
+      <type link="1" name="Object"/>
+    </param>
+    <text>Injects class <code>jsx3.$Object</code> into object instance <code>o</code>.</text>
+  </method>
+  <method access="public" id="smethod:$S" name="$S" since="3.7&#10;   " static="1">
+    <param name="s" text="">
+      <type link="1" name="String"/>
+    </param>
+    <text>Injects class <code>jsx3.$String</code> into string instance <code>s</code>.</text>
+  </method>
+  <method access="public" id="smethod:$Y" name="$Y" since="3.7" static="1">
+    <param name="f" text="the function to wrap.">
+      <type link="1" name="Function"/>
+    </param>
+    <return text="the wrapped function.&#10;   ">
+      <type link="1" name="Function"/>
+    </return>
+    <text>Wraps an asynchronous method. An asynchronous method follows a very strict contract. It can be called
+with any number of parameters but the wrapped method sees only a single parameter, an instance of
+<code>jsx3.$AsyncCB</code>. The wrapped method must call <code>done()</code> on this
+method parameter, either synchronously or asynchronously. The <code>done()</code> method takes a single
+parameter, which is the return value of the method.
+<p/>
+The wrapped method should not itself return anything. The only exception to this is that the method may return
+and instance of <code>jsx3.$AsyncRV</code>. In this case, the method will return when and with the same return
+value as the returned instance of <code>jsx3.$AsyncRV</code>. 
+<p/>
+Client code that calls the asynchronous method will see a synchronous return value of type
+<code>jsx3.$AsyncRV</code>. Client code should use the <code>when()</code> method of this return value to
+continue execution when the asynchronous method has completed. Or this return value may be used in conjuction
+with other asynchronous methods (such as by passing is as a parameter to an asynchronous method).
+<p/>
+Another feature of asynchronous methods is that you can pass instances of <code>jsx3.$AsyncRV</code> as
+parameters to the method and the method is only invoked once all of those parameters have returned. The parameters
+that the wrapped method sees are automatically converted into the return values of the <code>jsx3.$AsyncRV</code>
+instances.</text>
+    <see source="jsx3.$AsyncCB">jsx3.$AsyncCB</see>
+    <see idfk="method:done" source="jsx3.$AsyncCB">jsx3.$AsyncCB.done()</see>
+    <see source="jsx3.$AsyncRV">jsx3.$AsyncRV</see>
+    <see idfk="method:when" source="jsx3.$AsyncRV">jsx3.$AsyncRV.when()</see>
+  </method>
+  <method access="public" id="smethod:$Z" name="$Z" since="3.7&#10;   " static="1">
+    <param name="strMethod" text="the function to wrap or the name of a method of &lt;code&gt;objThis&lt;/code&gt; to wrap.">
+      <type link="1" name="String"/>
+      <type link="1" name="Function"/>
+    </param>
+    <param name="objThis" text="optionally, the object to which to bind the wrapper.">
+      <type link="1" name="Object"/>
+      <type link="1" name="jsx3.$AsyncRV"/>
+    </param>
+    <return text="the wrapper function.">
+      <type link="1" name="Function"/>
+    </return>
+    <text>Returns an asynchronous wrapper of a synchronous method. The returned method is method <code>strMethod</code>
+bound to object <code>objThis</code>. <code>objThis</code> is optional and may be an object or an instance of
+<code>jsx3.$AsyncRV</code>. If the latter, then the wrapped method is only called on the return value of
+<code>objThis</code> after <code>objThis</code> returns.
+<p/>
+The wrapper takes the same parameters as the wrapped method. However, instead of returning the return value of the
+wrapped method, it returns an instance of <code>jsx3.$AsyncRV</code>.
+<p/>
+The returned method may be passed parameters that are actually instances of <code>jsx3.$AsyncRV</code>. In this
+case, the wrapped method is only actually called when all the parameters have returned.</text>
+  </method>
+  <method access="public" id="smethod:GO" name="GO" static="1">
+    <param name="strIdName" text="JSX 'id' or 'name' property for the object to get a handle to">
+      <type link="1" name="String"/>
+    </param>
+    <param name="strNS" text="namespace for the server to get the object from; when a 'name' is passed as @strNameId&#10;           (as opposed to the object's 'id'), this allows the global JSX controller to more-quickly find the&#10;           server that owns the given object. As this parameter is optional, the JSX controller will try to locate&#10;           the named object by iterating through all server instances running in the browser in load order if no&#10;           namespace is passed. When an 'id' is passed, the namespaces is not required as it explicitly contains&#10;           this namespace.">
+      <type link="1" name="String"/>
+      <type link="1" name="jsx3.app.Server"/>
+    </param>
+    <return text="handle to given JSX GUI object or null if none found">
+      <type link="1" name="jsx3.app.Model"/>
+    </return>
+    <text>global call to get a handle to a specific JSX GUI Object; NOTE: This is a significant modification used to support
+           multi-instance servers. It is equivalently the same as calling 'getJO' in all builds prior to 3.0; returns null
+           if object cannot be found. The specific app (a jsx3.app.Server instance) can also be queried for objects using its own
+           DOM APIs.</text>
+  </method>
+  <method access="public" deprecated="1" id="smethod:doDefine" name="doDefine" static="1">
+    <param name="strClassName" text="named class containing the anonymous function to call">
+      <type link="1" name="String"/>
+    </param>
+    <param name="anonymousFunction" text="inner function containing named prototypes to bind">
+      <type link="1" name="String"/>
+    </param>
+    <text>Registers all prototype functions and properties, contained by the inner function @anonymousFunction; used by jsx3.Object</text>
+    <deprecated>create classes using &lt;code&gt;jsx3.Class&lt;/code&gt;</deprecated>
+    <see source="jsx3.lang.Class">jsx3.lang.Class</see>
+  </method>
+  <method access="public" deprecated="1" id="smethod:doImplement" name="doImplement" static="1">
+    <param name="subClass" text="named subclass to transfer prototypes to">
+      <type link="1" name="String"/>
+    </param>
+    <param name="superClass" text="named superclass to transfer prototypes from">
+      <type link="1" name="String"/>
+    </param>
+    <return text="the eval value of the script"/>
+    <text>transfers prototype methods from one class to another</text>
+    <deprecated>create classes using &lt;code&gt;jsx3.Class&lt;/code&gt;</deprecated>
+    <see source="jsx3.lang.Class">jsx3.lang.Class</see>
+  </method>
+  <method access="public" deprecated="1" id="smethod:doInherit" name="doInherit" static="1">
+    <param name="subClass" text="named subclass to transfer prototypes to">
+      <type link="1" name="String"/>
+    </param>
+    <param name="superClass" text="named superclass to transfer prototypes from">
+      <type link="1" name="String"/>
+    </param>
+    <param name="bImplement" text="if true, @superClass is an interface">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <return text="the eval value of the script"/>
+    <text>transfers prototype methods from one class to another; establishes @superClass as the super for @subClass</text>
+    <deprecated>create classes using &lt;code&gt;jsx3.Class&lt;/code&gt;</deprecated>
+    <see source="jsx3.lang.Class">jsx3.lang.Class</see>
+  </method>
+  <method access="public" deprecated="1" id="smethod:doMixin" name="doMixin" static="1">
+    <param name="objInstance" text="any JavaScript object">
+      <type link="1" name="Object"/>
+    </param>
+    <param name="strClassName" text="the name of a class">
+      <type link="1" name="String"/>
+    </param>
+    <text>transfer the methods of a class to a object instance</text>
+    <deprecated>use &lt;code&gt;jsx3.Class.mixin()&lt;/code&gt;</deprecated>
+    <see idfk="method:mixin" source="jsx3.lang.Class">jsx3.lang.Class.mixin()</see>
+  </method>
+  <method access="public" id="smethod:eval" name="eval" static="1">
+    <param name="strScript" text="the JavaScript to evaluate.">
+      <type link="1" name="String"/>
+    </param>
+    <param name="objContext" text="a map containing the local variable context. Each key is the name&#10;   of a variable to expose and each value is the value of that variable. ">
+      <type link="1" name="Object">
+        <type link="1" name="String"/>
+        <type link="1" name="Object"/>
+      </type>
+    </param>
+    <return text="the results of evaluating &lt;code&gt;strScript&lt;/code&gt;.&#10;"/>
+    <text>Evaluates a JavaScript expression in a controlled local variable context. Every name-value pair in 
+<code>objContext</code> will be exposed as a local variable to the evaluated script. All names must be valid
+JavaScript names in order to be exposed as local variables. Any invalid names will be ignored.</text>
+    <see idfk="smethod:isName" source="jsx3.util">jsx3.util.isName()</see>
+  </method>
+  <method access="public" deprecated="1" id="smethod:getClassConstants" name="getClassConstants" static="1">
+    <param name="strClassName" text="name of the class to get the constants for. For example: jsx3.gui.Block, jsx3.gui.Select, etc.">
+      <type link="1" name="String"/>
+    </param>
+    <return text="JavaScript array">
+      <type link="1" name="Object"/>
+    </return>
+    <text>Returns a JavaScript array of all named constants for this class; these names (strings) can then be used by the developer to
+           lookup/evaluate/modify applicable constants; To derive the value for the first named constant for the
+           jsx3.gui.Block class, a method such as the following would work: var myFirstConstantValue = eval(jsx3.getClassConstants("jsx3.gui.Block")[0]);
+           NOTE: passing an invalid class name results in a null value being returned.  If no constants exist for the given class, an empty array will be returned</text>
+    <deprecated>use &lt;code&gt;jsx3.lang.Class&lt;/code&gt;</deprecated>
+    <see source="jsx3.lang.Class">jsx3.lang.Class</see>
+  </method>
+  <method access="public" deprecated="1" id="smethod:getClassMethods" name="getClassMethods" static="1">
+    <param name="strClassName" text="name of the class to get the constants for. For example: jsx3.gui.Block, jsx3.gui.Select, etc.">
+      <type link="1" name="String"/>
+    </param>
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns a new-line-delimited (e.g., \n) list of all instance methods for the particular class</text>
+    <deprecated>use &lt;code&gt;jsx3.lang.Class&lt;/code&gt;</deprecated>
+    <see source="jsx3.lang.Class">jsx3.lang.Class</see>
+  </method>
+  <method access="public" id="smethod:getEnv" name="getEnv" static="1">
+    <param name="strKey" text="the case-insensitive environment variable key.">
+      <type link="1" name="String"/>
+    </param>
+    <return text="the environment variable value.">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the value of a system-wide environment variable. System-wide environment parameters are set either
+by query parameters in the launch page URL or by attributes on the GI <b>script</b> tag. System-wide
+environment variable keys always begin with <code>"jsx"</code> and do not begin with <code>"jsxapp"</code>.</text>
+    <see idfk="method:getEnv" source="jsx3.app.Server">jsx3.app.Server.getEnv()</see>
+  </method>
+  <method access="public" deprecated="1" id="smethod:getInstanceMethods" name="getInstanceMethods" static="1">
+    <param name="strClassName" text="name of the class to get the constants for. For example: jsx3.gui.Block, jsx3.gui.Select, etc.">
+      <type link="1" name="String"/>
+    </param>
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns a new-line-delimited (e.g., \n) list of all instance methods for the particular class</text>
+    <deprecated>use &lt;code&gt;jsx3.lang.Class&lt;/code&gt;</deprecated>
+    <see source="jsx3.lang.Class">jsx3.lang.Class</see>
+  </method>
+  <method access="public" id="smethod:getSharedCache" name="getSharedCache" static="1">
+    <return text="">
+      <type link="1" name="jsx3.app.Cache"/>
+    </return>
+    <text>Returns the global JSX XML/XSL cache. This cache is shared by all applications in the JSX runtime. Every
+server cache instance consults this cache when <code>getDocument()</code> is called on the server cache with
+a cache id that does not correspond to a document in the server cache.</text>
+  </method>
+  <method access="public" id="smethod:getVersion" name="getVersion" static="1">
+    <text>Returns the version of General Interface.</text>
+  </method>
+  <method access="public" id="smethod:log" name="log" static="1">
+    <param name="strMessage" text="the message to send to the logging system.">
+      <type link="1" name="String"/>
+    </param>
+    <text>Sends a message to the logging system. This method is an alias for <code>jsx3.util.Logger.GLOBAL.info()</code>.
+<p/>
+Since this method is defined before the logging system, any messages passed to this method before the logging 
+system is defined are cached and sent with the first message passed after the logging system is defined.</text>
+    <see idfk="sfield:GLOBAL" source="jsx3.util.Logger">jsx3.util.Logger.GLOBAL</see>
+  </method>
+  <method access="public" deprecated="1" id="smethod:out" name="out" static="1">
+    <param name="strErrorNumber" text="arbitrary identifier passed by the calling function to track the specific location of the error">
+      <type link="1" name="String"/>
+    </param>
+    <param name="strMessage" text="message to describe the error">
+      <type link="1" name="String"/>
+    </param>
+    <param name="PRIORITY" text="one of 1, 2 or 3, with 1 being most serious (red..orange..yellow)">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <param name="bTrace" text="true if null; if true, the stack trace is printed, displaying the order of the call stack">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <text>Alias for <code>jsx3.util.Logger.doLog()</code> (formerly <code>jsx3.Error.doLog()</code>).</text>
+    <deprecated>use &lt;code&gt;jsx3.log()&lt;/code&gt; or the &lt;code&gt;jsx3.util.Logger&lt;/code&gt; interface</deprecated>
+    <see idfk="smethod:log" source="jsx3">log()</see>
+    <see source="jsx3.util.Logger">jsx3.util.Logger</see>
+  </method>
+  <method access="public" id="smethod:require" name="require" since="3.2&#10;   " static="1">
+    <param name="strClass" text="the fully-qualified names of the classes to load.">
+      <type link="1" name="String" varargs="1"/>
+    </param>
+    <text>Ensures that one or more classes is available before this method returns. Any class that fails to load will
+throw an error. Only classes that can be found by the system class loader may be loaded in this manner.</text>
+  </method>
+  <method access="public" async="1" id="smethod:requireAsync" name="requireAsync" since="3.9&#10;   " static="1">
+    <param name="strClass" text="the fully-qualified names of the classes to load.">
+      <type link="1" name="String" varargs="1"/>
+    </param>
+    <return text="">
+      <type link="1" name="jsx3.$AsyncRV"/>
+    </return>
+    <throws text="if the package of &lt;code&gt;strClass&lt;/code&gt; is not registered as a system, add-in or application classpath.">
+      <type link="1" name="jsx3.lang.Exception"/>
+    </throws>
+    <text>Loads a class or classes asynchronously. If multiple classes are specified they are loaded serially rather
+than in parallel. This method does not resolve dependencies, i.e. if the class to load contains a call to
+<code>jsx3.require</code> that class will be loaded synchronously.
+<p/>
+Note that if <code>strClass</code> does not correspond to an file on the classpath or if the
+corresponding file does not actualy define a class whose name is <code>strClass</code>, this async function
+will never complete and no callbacks will be executed.</text>
+  </method>
+  <method access="public" id="smethod:resolveURI" name="resolveURI" static="1">
+    <param name="strURI" text="the URI to resolve.">
+      <type link="1" name="String"/>
+      <type link="1" name="jsx3.net.URI"/>
+    </param>
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns a URI resolved against the default URI resolver, <code>URIResolver.DEFAULT</code>.</text>
+    <see idfk="sfield:DEFAULT" source="jsx3.net.URIResolver">jsx3.net.URIResolver.DEFAULT</see>
+  </method>
+  <method access="public" id="smethod:sleep" name="sleep" since="3.2&#10;   " static="1">
+    <param name="objFunction" text="an anonymous function to call after a timeout.">
+      <type link="1" name="Function"/>
+    </param>
+    <param name="strId" text="the id of this job. If this parameter is not &lt;code&gt;null&lt;/code&gt; and a job already&#10;   exists in the queue with this id, then this job is not added to the queue.">
+      <type link="1" name="String"/>
+    </param>
+    <param name="objThis" text="if provided, this object is the &quot;this&quot; context for the anonymous function&#10;        &lt;code&gt;objFunction&lt;/code&gt; when it is called.">
+      <type link="1" name="Object"/>
+    </param>
+    <param name="bClobber" text="if &lt;code&gt;true&lt;/code&gt; and a job already exists, this new job clobbers the old job.">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <text>A replacement for peppering code with <code>window.setTimeout(fnct, 0)</code> statements. This method places
+all jobs in a queue. Each job gets its own stack.</text>
+  </method>
+</package>

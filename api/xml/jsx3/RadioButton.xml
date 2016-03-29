@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class access="public" deprecated="1" id="class:jsx3.RadioButton" name="jsx3.RadioButton" package="jsx3" shortname="RadioButton">
+  <deprecated>Renamed to jsx3.gui.RadioButton</deprecated>
+  <see source="jsx3.gui.RadioButton">jsx3.gui.RadioButton</see>
+</class>

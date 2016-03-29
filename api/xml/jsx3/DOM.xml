@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class access="public" deprecated="1" id="class:jsx3.DOM" name="jsx3.DOM" package="jsx3" shortname="DOM">
+  <deprecated>Renamed to jsx3.app.DOM</deprecated>
+  <see source="jsx3.app.DOM">jsx3.app.DOM</see>
+</class>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class access="public" deprecated="1" id="class:jsx3.LayoutGrid" name="jsx3.LayoutGrid" package="jsx3" shortname="LayoutGrid">
+  <deprecated>Renamed to jsx3.gui.LayoutGrid</deprecated>
+  <see source="jsx3.gui.LayoutGrid">jsx3.gui.LayoutGrid</see>
+</class>

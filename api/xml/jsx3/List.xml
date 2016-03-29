@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class access="public" deprecated="1" id="class:jsx3.List" name="jsx3.List" package="jsx3" shortname="List">
+  <deprecated>Renamed to jsx3.gui.List</deprecated>
+  <see source="jsx3.gui.List">jsx3.gui.List</see>
+</class>

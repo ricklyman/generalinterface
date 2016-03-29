@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class access="public" deprecated="1" id="class:jsx3.Tree" name="jsx3.Tree" package="jsx3" shortname="Tree">
+  <deprecated>Renamed to jsx3.gui.Tree</deprecated>
+  <see source="jsx3.gui.Tree">jsx3.gui.Tree</see>
+</class>

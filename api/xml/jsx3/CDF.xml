@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface access="public" deprecated="1" id="class:jsx3.CDF" name="jsx3.CDF" package="jsx3" shortname="CDF">
+  <deprecated>Renamed to jsx3.xml.CDF</deprecated>
+  <see source="jsx3.xml.CDF">jsx3.xml.CDF</see>
+</interface>

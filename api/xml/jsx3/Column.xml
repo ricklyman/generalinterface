@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class access="public" deprecated="1" id="class:jsx3.Column" name="jsx3.Column" package="jsx3" shortname="Column">
+  <deprecated>Renamed to jsx3.gui.Column</deprecated>
+  <see source="jsx3.gui.Column">jsx3.gui.Column</see>
+</class>
