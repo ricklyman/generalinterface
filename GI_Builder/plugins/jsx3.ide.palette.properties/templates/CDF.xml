@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  ~ Copyright (c) 2001-2011, TIBCO Software Inc.
+  ~ Use, modification, and distribution subject to terms of license.
+  --><data jsxid="jsxroot">
+  <record group="object" include="master.xml"/>
+  <record group="position" include="master.xml"/>
+  <record group="blockx-xml" include="master.xml"/>
+  <record group="1" jsxid="jsx3block" jsxtext="Block">
+    <record children="1" group="jsxtagname" include="master.xml"/>
+  </record>
+  <record group="font" include="master.xml"/>
+  <record group="box" include="master.xml"/>
+  <record group="css" include="master.xml"/>
+  <record group="interaction" include="master.xml"/>
+  <record group="drag" include="master.xml"/>
+  <record group="move" include="master.xml"/>
+  <record group="access" include="master.xml"/>
+  <record group="1" jsxid="metadatax" jsxtext="Metadata">
+    <record include="master.xml" path="/data/record[@jsxid='metadata']/record[@jsxid!='jsxcdfattribute']"/>
+  </record>
+
+</data>

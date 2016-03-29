@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  ~ Copyright (c) 2001-2011, TIBCO Software Inc.
+  ~ Use, modification, and distribution subject to terms of license.
+  --><data jsxid="jsxroot">
+  <record group="object" include="master.xml"/>
+
+  <record group="1" jsxid="position" jsxtext="Positioning">
+    <record docdefault="Centered in the parent container" docgetter="getLeft" docsetter="setLeft" eval="0" jsxexecute="objJSX.setLeft(jsx3.util.numIsNaN(vntValue)?vntValue:+vntValue,true);if(vntValue==null)objJSX.repaint();" jsxid="jsxleft" jsxmask="jsxtext" jsxtext="Left" jsxtip="Sets the distance from left edge of container in pixels. The unit (px) is implied and should not be entered." validate="/^(\-?\d+|)$/"/>
+    <record docdefault="Centered in the parent container" docgetter="getTop" docsetter="setTop" eval="0" jsxexecute="objJSX.setTop(jsx3.util.numIsNaN(vntValue)?vntValue:+vntValue,true);if(vntValue==null)objJSX.repaint();" jsxid="jsxtop" jsxmask="jsxtext" jsxtext="Top" jsxtip="Sets the distance from top edge of container in pixels. The unit (px) is implied and should not be entered." validate="/^(\-?\d+|)$/"/>
+    <record docdefault="No default, must specify" docgetter="getWidth" docsetter="setWidth" eval="0" jsxexecute="objJSX.setWidth(jsx3.util.numIsNaN(vntValue)?vntValue:+vntValue,true);" jsxid="jsxwidth" jsxmask="jsxtext" jsxtext="Width" jsxtip="Sets width of this dialog in pixels. The unit (px) is implied and should not be entered." validate="/^\d+$/"/>
+    <record docdefault="No default, must specify" docgetter="getHeight" docsetter="setHeight" eval="0" jsxexecute="objJSX.setHeight(jsx3.util.numIsNaN(vntValue)?vntValue:+vntValue,true);" jsxid="jsxheight" jsxmask="jsxtext" jsxtext="Height" jsxtip="Sets height of this dialog in pixels. The unit (px) is implied and should not be entered." validate="/^\d+$/"/>
+  </record>
+
+  <record group="resize" include="master.xml"/>
+
+  <record group="1" jsxid="jsx3dialog" jsxtext="Dialog">
+    <record docdefault="None (&lt;code&gt;jsx3.gui.Dialog.NONMODAL&lt;/code&gt;)" docgetter="getModal" docsetter="setModal" eval="1" jsxid="jsxmodal" jsxmask="jsxselect" jsxtext="Modal" jsxtip="Sets whether this Dialog is modal. Modal dialogs mask the rest of the container with a semi-transparent mask that blocks mouse interaction. Modal dialogs do not show up in the taskbar.">
+      <enum jsxid="jsx3.gui.Dialog.NONMODAL" jsxtext="Default/None"/>
+      <enum jsxid="jsx3.gui.Dialog.MODAL" jsxtext="Modal"/>
+    </record>
+    <record docdefault="Maximized (&lt;code&gt;jsx3.gui.Dialog.MAXIMIZED&lt;/code&gt;)" docgetter="getWindowState" docsetter="setWindowState" eval="1" jsxexecute="objJSX.doToggleState(vntValue);" jsxid="jsxwindowstate" jsxmask="jsxselect" jsxtext="State" jsxtip="Sets the window state to full-sized (Maximized) or window-shaded (Minimized).">
+      <enum jsxid="jsx3.gui.Dialog.MAXIMIZED" jsxtext="Maximized"/>
+      <enum jsxid="jsx3.gui.Dialog.MINIMIZED" jsxtext="Minimized"/>
+    </record>
+    <record docdefault="&lt;code&gt;1&lt;/code&gt;" docgetter="getZMultiplier" docsetter="setZMultiplier" eval="1" jsxid="jsxzmultiplier" jsxmask="jsxtext" jsxtext="Z Multiplier" jsxtip="Sets the number to multiply the z-index for this dialog to give it precedence (dialogs index in the 5000 range). If a dialog needs to always be on top of other dialog instances, this multiplier can be increased to assure the appropriate z-index. For example, a value of 5 would stack this dialog on top of all dialogs with an alwaysOnTop multiplier less than 5."/>
+  </record>
+
+  <record group="1" jsxid="box" jsxtext="Box">
+    <record include="master.xml" path="/data/record[@jsxid='box']/record[@jsxid='jsxbgcolor']"/>
+    <record include="master.xml" path="/data/record[@jsxid='box']/record[@jsxid='jsxbg']"/>
+    <record include="master.xml" path="/data/record[@jsxid='box']/record[@jsxid='jsxborder']"/>
+    <record disallow="'" docdefault="Empty" docgetter="getContentBorder" docsetter="setContentBorder" eval="0" jsxexecute="objJSX.setContentBorder(vntValue);objJSX.repaint();" jsxid="jsxcontentborder" jsxmask="jsxtext" jsxtext="Content Border" jsxtip="Sets the CSS border definition for the dialog's content box. Specified as one or four value sets (top, right, bottom, and left). Specified as: style width color. For example, &lt;code&gt;solid 1px red;dashed 2px red;double 3px black; solid 1px red;&lt;/code&gt;."/>
+    <record disallow="[^0-9]" docdefault="Empty" docgetter="getBuffer" docsetter="setBuffer" eval="0" jsxexecute="objJSX.setBuffer(+vntValue);objJSX.repaint();" jsxid="jsxbuffer" jsxmask="jsxtext" jsxtext="Buffer" jsxtip="Sets the white-space gap between the outer edge/border of this dialog and its content. If the dialog has a caption bar, this buffer will also be applied between the content box and the caption bar. Specified as a single pixel value. If no value is specified, the system default will be applied."/>
+    <record include="master.xml" path="/data/record[@jsxid='box']/record[@jsxid='jsxtextalign']"/>
+    <record include="master.xml" path="/data/record[@jsxid='box']/record[@jsxid='jsxoverflow']"/>
+  </record>
+
+  <record group="css_noclass" include="master.xml"/>
+
+<!--  <record jsxid="access" group="1" jsxtext="Accessibility">
+    <record include="master.xml" path="/data/record[@jsxid='access']/record[@jsxid='jsxaural']"/>
+  </record> -->
+  <record group="metadata" include="master.xml"/>
+</data>

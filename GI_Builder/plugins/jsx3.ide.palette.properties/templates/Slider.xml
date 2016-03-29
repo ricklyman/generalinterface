@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  ~ Copyright (c) 2001-2011, TIBCO Software Inc.
+  ~ Use, modification, and distribution subject to terms of license.
+  --><data jsxid="jsxroot">
+  <record group="object" include="master.xml"/>
+
+  <record group="1" jsxid="position" jsxtext="Positioning">
+    <record include="master.xml" path="/data/record[@jsxid='position']/record[@jsxid='jsxrelativeposition']"/>
+    <record include="master.xml" path="/data/record[@jsxid='position']/record[@jsxid='jsxleft']"/>
+    <record include="master.xml" path="/data/record[@jsxid='position']/record[@jsxid='jsxtop']"/>
+    <record disallow="[^%^0-9]" docdefault="&lt;code&gt;100&lt;/code&gt;" docgetter="getLength" docsetter="setLength" eval="0" jsxexecute="objJSX.setLength(jsx3.util.numIsNaN(vntValue)?vntValue:+vntValue,true);" jsxid="jsxlength" jsxmask="jsxtext" jsxtext="Length" jsxtip="Sets the length of the slider. This value is applied as an implied pixel or a percentage. For example, &lt;code&gt;100&lt;/code&gt; or &lt;code&gt;25%&lt;/code&gt;."/>
+    <record include="master.xml" path="/data/record[@jsxid='position']/record[@jsxid='jsxzindex']"/>
+  </record>
+
+  <record group="1" jsxid="jsx3slider" jsxtext="Slider">
+    <record docdefault="Horizontal (&lt;code&gt;jsx3.gui.Slider.HORIZONTAL&lt;/code&gt;)" docgetter="getOrientation" docsetter="setOrientation" eval="1" jsxexecute="objJSX.setOrientation(vntValue);objJSX.repaint();" jsxid="jsxorientation" jsxmask="jsxselect" jsxtext="Orientation" jsxtip="Sets the orientation of the slider, such as horizontal or vertical.">
+      <enum jsxid="jsx3.gui.Slider.HORIZONTAL" jsxtext="Horizontal"/>
+      <enum jsxid="jsx3.gui.Slider.VERTICAL" jsxtext="Vertical"/>
+    </record>
+    <record disallow="['&quot;]" docdefault="Default system-provided image" docgetter="getHandleImage" docsetter="setHandleImage" eval="0" jsxexecute="objJSX.setHandleImage(vntValue);" jsxid="jsximg" jsxmask="jsxpath" jsxtext="Handle Image" jsxtip="Sets the URL of the image to use for the handle. If no URL is set, a default image is used." jsxtype="sliderhandleimage"/>
+    <record docdefault="Show (&lt;code&gt;jsx3.Boolean.TRUE&lt;/code&gt;)" docgetter="getPaintTrack" docsetter="setPaintTrack" eval="1" jsxexecute="objJSX.setPaintTrack(vntValue,true);" jsxid="jsxpainttrack" jsxmask="jsxselect" jsxtext="Show Track" jsxtip="Sets whether to show the slider track.">
+      <enum jsxid="jsx3.Boolean.TRUE" jsxtext="Show"/>
+      <enum jsxid="jsx3.Boolean.FALSE" jsxtext="Hide"/>
+    </record>
+    <record docdefault="On (&lt;code&gt;jsx3.Boolean.TRUE&lt;/code&gt;)" docgetter="getTrackClickable" docsetter="setTrackClickable" eval="1" jsxexecute="objJSX.setTrackClickable(vntValue);" jsxid="jsxtrackclick" jsxmask="jsxselect" jsxtext="Jump-To Click" jsxtip="Sets whether clicking on the track moves the handle to that value.">
+      <enum jsxid="jsx3.Boolean.TRUE" jsxtext="On"/>
+      <enum jsxid="jsx3.Boolean.FALSE" jsxtext="Off"/>
+    </record>
+    <record children="1" group="form" include="master.xml"/>
+  </record>
+
+  <record group="1" jsxid="box_tree" jsxtext="Box">
+    <record include="master.xml" path="/data/record[@jsxid='box']/record[@jsxid='jsxbgcolor']"/>
+    <record children="1" group="jsxdisabledbgcolor" include="master.xml"/>
+    <record include="master.xml" path="/data/record[@jsxid='box']/record[@jsxid='jsxbg']"/>
+    <record include="master.xml" path="/data/record[@jsxid='box']/record[@jsxid='jsxmargin']"/>
+    <record include="master.xml" path="/data/record[@jsxid='box']/record[@jsxid='jsxborder']"/>
+  </record>
+
+  <record group="css_noclass" include="master.xml"/>
+
+  <record group="1" jsxid="interaction" jsxtext="Interaction">
+    <record include="master.xml" path="/data/record[@jsxid='jsxmenu']/*"/>
+  </record>
+
+  <record group="access" include="master.xml"/>
+  <record group="metadata" include="master.xml"/>
+</data>

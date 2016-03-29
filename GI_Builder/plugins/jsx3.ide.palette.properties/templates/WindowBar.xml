@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  ~ Copyright (c) 2001-2011, TIBCO Software Inc.
+  ~ Use, modification, and distribution subject to terms of license.
+  --><data jsxid="jsxroot">
+  <record group="object" include="master.xml"/>
+  <record group="position_fixedwidth" include="master.xml"/>
+
+  <record group="1" jsxid="jsx3windowbar" jsxtext="WindowBar">
+    <record docdefault="Empty" docgetter="getText" docsetter="setText" eval="0" jsxexecute="objJSX.setText(vntValue,true);" jsxid="jsxtext" jsxmask="jsxtext" jsxtext="Text/HTML" jsxtip="Sets the text/HTML content of the window bar"/>
+    <record docdefault="Captionbar (&lt;code&gt;jsx3.gui.WindowBar.TYPECAPTION&lt;/code&gt;)" docgetter="setType" docsetter="setType" eval="1" jsxexecute="objJSX.setType(vntValue);objJSX.repaint();" jsxid="jsxbartype" jsxmask="jsxselect" jsxtext="Type" jsxtip="Sets the type of window bar.">
+      <enum jsxid="jsx3.gui.WindowBar.TYPECAPTION" jsxtext="Captionbar (Dialog)"/>
+      <enum jsxid="jsx3.gui.WindowBar.TYPETOOL" jsxtext="Toolbar (Buttons)"/>
+      <enum jsxid="jsx3.gui.WindowBar.TYPEMENU" jsxtext="Menubar (Menus)"/>
+      <enum jsxid="jsx3.gui.WindowBar.TYPETASK" jsxtext="Taskbar (Minimized)"/>
+    </record>
+  </record>
+
+  <record group="font" include="master.xml"/>
+  <record group="box_flush" include="master.xml"/>
+  <record group="css_override" include="master.xml"/>
+  <record group="interaction" include="master.xml"/>
+  <record group="access" include="master.xml"/>
+  <record group="metadata" include="master.xml"/>
+</data>

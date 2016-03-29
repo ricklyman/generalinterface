@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  ~ Copyright (c) 2001-2011, TIBCO Software Inc.
+  ~ Use, modification, and distribution subject to terms of license.
+  --><data jsxid="jsxroot">
+  <record group="object" include="master.xml"/>
+  <record group="position_fixedsize" include="master.xml"/>
+
+  <record group="1" jsxid="jsx3menu" jsxtext="Menu">
+    <record children="1" group="jsxtext" include="master.xml"/>
+    <record children="1" group="form_novalue" include="master.xml"/>
+    <record children="1" group="jsxdivider" include="master.xml"/>
+    <record children="1" group="jsximage" include="master.xml"/>
+  </record>
+
+  <record group="blockx" include="master.xml"/>
+  <record group="font" include="master.xml"/>
+
+  <record group="1" jsxid="box" jsxtext="Box">
+    <record disallow="[^-0-9a-zA-Z#\(\);:\/\.,]" docdefault="The default background color specified in the static field, &lt;code&gt;DEFAULTBACKGROUNDCOLOR&lt;/code&gt;, of the component class.  For example, the default background color for a list is #f3f2f4 and is specified in &lt;code&gt;jsx3.gui.List.DEFAULTBACKGROUNDCOLOR&lt;/code&gt;. See the API documentation for the component. For some components, this property is empty." docgetter="getBackgroundColor" docsetter="setBackgroundColor" eval="0" jsxexecute="objJSX.setBackgroundColor(vntValue);" jsxid="jsxbgcolor" jsxmask="jsxcolor" jsxtext="BG Color" jsxtip="Sets the background color. Accepts CSS values, such as predefined color names, RGB, or hexadecimal values. For example, &lt;code&gt;red&lt;/code&gt;, &lt;code&gt;rgb(255,0,0)&lt;/code&gt;, or &lt;code&gt;#ff0000&lt;/code&gt;."/>
+    <record include="master.xml" path="/data/record[@jsxid='box']/record[@jsxid='jsxbg']"/>
+    <record include="master.xml" path="/data/record[@jsxid='box']/record[@jsxid='jsxmargin']"/>
+  </record>
+
+  <record group="css_noclass" include="master.xml"/>
+  <record group="interaction_nomenu" include="master.xml"/>
+  <record group="access" include="master.xml"/>
+  <record group="metadata" include="master.xml"/>
+</data>

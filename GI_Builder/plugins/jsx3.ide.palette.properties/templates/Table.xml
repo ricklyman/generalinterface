@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  ~ Copyright (c) 2001-2011, TIBCO Software Inc.
+  ~ Use, modification, and distribution subject to terms of license.
+  --><data jsxid="jsxroot">
+  <record group="object" include="master.xml"/>
+
+  <record group="1" jsxid="jsx3mx" jsxtext="Models">
+    <record docdefault="jsxroot (this is the ID used by the &amp;lt;data&amp;gt; node)" docgetter="getRenderingContext" docsetter="setRenderingContext" eval="0" jsxexecute="objJSX.setRenderingContext(vntValue);" jsxid="jsxrenderingcontext" jsxmask="jsxtext" jsxtext="Rendering Ctxt" jsxtip="Sets the jsxid for the parent record whose immediate child records will be painted.">
+    </record>
+    <record docdefault="Single Row (&lt;code&gt;jsx3.gui.Table.SELECTION_ROW&lt;/code&gt;)" docgetter="getSelectionModel" docsetter="setSelectionModel" eval="1" jsxexecute="objJSX.setSelectionModel(vntValue);" jsxid="jsxselectionmodel" jsxmask="jsxselect" jsxtext="Selection Model" jsxtip="Sets the selection model.">
+      <enum jsxid="jsx3.gui.Table.SELECTION_UNSELECTABLE" jsxtext="Not Selectable"/>
+      <enum jsxid="jsx3.gui.Table.SELECTION_ROW" jsxtext="Single Row"/>
+      <enum jsxid="jsx3.gui.Table.SELECTION_MULTI_ROW" jsxtext="Multi-row"/>
+    </record>
+  </record>
+
+  <record group="1" jsxid="colprof" jsxtext="Column Profile">
+     <record docgetter="getColumnProfile" docsetter="setColumnProfile" eval="0" jsxexecute="objJSX.setColumnProfile(vntValue);objJSX.repaint();" jsxid="jsxcolumnprofile" jsxmask="jsxcdf" jsxtext="Columns" jsxtip="The table control defines its columns via an instance property instead of using the General Interface DOM as is common with other controls."/>
+ </record>
+
+  <record group="1" jsxid="tblprops" jsxtext="Table Box">
+    <record disallow="[^-0-9a-zA-Z#\(\);:\/\.,]" docgetter="getBackgroundColor" docsetter="setBackgroundColor" eval="0" jsxid="jsxbgcolor" jsxmask="jsxcolor" jsxtext="BG Color" jsxtip="Sets the background color for the table (header and data). Accepts CSS values, such as predefined color names, RGB, or hexadecimal values. For example, &lt;code&gt;red&lt;/code&gt;, &lt;code&gt;rgb(255,0,0)&lt;/code&gt;, or &lt;code&gt;#ff0000&lt;/code&gt;."/>
+    <record disallow="[^0-9]" docdefault="&lt;code&gt;jsx3.gui.Table.DEFAULT_HEADER_HEIGHT&lt;/code&gt;. See the API documentation for this component." docgetter="getHeaderHeight" docsetter="setHeaderHeight" eval="1" jsxexecute="objJSX.setHeaderHeight(vntValue);" jsxid="jsxheaderheight" jsxmask="jsxtext" jsxtext="Header Height" jsxtip="Sets the height of the header row in implied pixels. Only positive integers are allowed. Set to &lt;code&gt;0&lt;/code&gt; if the table does not use a header."/>
+    <record include="master.xml" path="/data/record[@jsxid='box']/record[@jsxid='jsxborder']"/>
+  </record>
+
+  <record group="1" jsxid="tblheaderprops" jsxtext="Table Font">
+    <record include="master.xml" path="/data/record[@jsxid='font']/record[not(@jsxid='jsxoverflow') and not(@jsxid='jsxmargin')]"/>
+  </record>
+
+  <record group="1" jsxid="tblheaderstyles" jsxtext="Header CSS">
+     <record docdefault="Empty" docgetter="getBackground" docsetter="setBackground" eval="0" jsxid="jsxbg" jsxmask="jsxtext" jsxtext="Background" jsxtip="Sets the CSS background property for the HTML row containing the column headers. For example, &lt;code&gt;background-image:url(abc.gif);&lt;/code&gt;."/>
+     <record docgetter="getHeaderStyle" docsetter="setHeaderStyle" eval="0" jsxexecute="objJSX.setHeaderStyle(vntValue);objJSX.repaintHead();" jsxid="jsxheaderstyle" jsxmask="jsxtextarea" jsxtext="Style" jsxtip="Sets the CSS style properties for the HTML row containing the column headers. Multiple properties are supported.            For example: &lt;code&gt;background-color:gray;&lt;/code&gt;.            The following CSS properties (those affecting layout and position) are not allowed: width, height,            left, top, position, overflow, border, padding, margin."/>
+     <record docgetter="getHeaderClass" docsetter="setHeaderClass" eval="0" jsxexecute="objJSX.setHeaderClass(vntValue);objJSX.repaintHead();" jsxid="jsxheaderclass" jsxmask="jsxtextarea" jsxtext="Class" jsxtip="Sets the CSS rule for the HTML row containing the column headers.  Multiple rules are supported.            For example: &lt;code&gt;boldText titleText&lt;/code&gt;.            The following CSS properties (those affecting layout and position) are not allowed for the rule: width, height,            left, top, position, overflow, border, padding, margin."/>
+   </record>
+
+   <record group="1" jsxid="tblrowstyles" jsxtext="Row CSS">
+     <record docgetter="getRowStyle" docsetter="setRowStyle" eval="0" jsxexecute="objJSX.setRowStyle(vntValue);objJSX.repaintData();" jsxid="jsxrowstyle" jsxmask="jsxtextarea" jsxtext="Style" jsxtip="Sets the CSS style properties for the HTML row element(s) containing the table data. Every row will            apply the properties defined by this value, unless an alternate row style is used, in which case, the properties are alternated            between this value and the value applied by &lt;code&gt;setAlternateRowStyle&lt;/code&gt;.  Multiple properties are supported.            For example: &lt;code&gt;background-color:white;font-family:Arial;&lt;/code&gt;."/>
+     <record docgetter="getRowClass" docsetter="setRowClass" eval="0" jsxexecute="objJSX.setRowClass(vntValue);objJSX.repaintData();" jsxid="jsxrowclass" jsxmask="jsxtextarea" jsxtext="Class" jsxtip="Sets the CSS rule for the HTML row element(s) containing the table data. Every row will            apply the rule defined by this value, unless an alternate row rule is used, in which case, the rule (classname) is alternated            between this value and the value applied by &lt;code&gt;setAlternateRowClass&lt;/code&gt;.  Multiple rules are supported.            For example: &lt;code&gt;bodyText normalText&lt;/code&gt;."/>
+     <record docgetter="getAlternateRowStyle" docsetter="setAlternateRowStyle" eval="0" jsxexecute="objJSX.setAlternateRowStyle(vntValue);objJSX.repaintData();" jsxid="jsxaltrowstyle" jsxmask="jsxtextarea" jsxtext="Style (Alt)" jsxtip="Sets the CSS style properties for the HTML row element(s) containing the &lt;b&gt;alternating&lt;/b&gt; table data rows. Multiple properties are supported.            For example: &lt;code&gt;background-color:red;&lt;/code&gt;."/>
+     <record docgetter="getAlternateRowClass" docsetter="setAlternateRowClass" eval="0" jsxexecute="objJSX.setAlternateRowClass(vntValue);objJSX.repaintData();" jsxid="jsxaltrowclass" jsxmask="jsxtextarea" jsxtext="Class (Alt)" jsxtip="Sets the CSS rule for the HTML row element(s) containing the &lt;b&gt;alternating&lt;/b&gt; table data rows. Multiple rules are supported.            For example: &lt;code&gt;bodyText normalText&lt;/code&gt;."/>
+   </record>
+
+   <record group="1" jsxid="tblcellstyles" jsxtext="Cell CSS">
+     <record docgetter="getCellStyle" docsetter="setCellStyle" eval="0" jsxexecute="objJSX.setCellStyle(vntValue);objJSX.repaint();" jsxid="jsxcellstyle" jsxmask="jsxtextarea" jsxtext="Style" jsxtip="Sets the CSS style properties that will be inlined on &lt;b&gt;every&lt;/b&gt; HTML cell in the body of the table. Multiple properties are supported.            For example: &lt;code&gt;border-bottom:solid 1px #aeaeae;&lt;/code&gt;."/>
+     <record docgetter="getCellClass" docsetter="setCellClass" eval="0" jsxexecute="objJSX.setCellClass(vntValue);objJSX.repaint();" jsxid="jsxcellclass" jsxmask="jsxtextarea" jsxtext="Class" jsxtip="Sets the CSS rule that will be applied to &lt;b&gt;every&lt;/b&gt; HTML cell in the body of the table.            Multiple rules are supported.  For example: &lt;code&gt;normalText bodyText&lt;/code&gt;."/>
+   </record>
+
+  <record group="1" jsxid="headerstyles" jsxtext="Cell Content">
+    <record docdefault="&lt;code&gt;jsx3.gui.Table.DEFAULT_CELL_VALUE_TEMPLATE&lt;/code&gt;" docgetter="getValueTemplate" docsetter="setValueTemplate" eval="0" jsxexecute="objJSX.setValueTemplate(vntValue);objJSX.repaint();" jsxid="jsxvaluetemplate" jsxmask="jsxtextarea" jsxtext="Value Template" jsxtip="The XSL template to generate the cell content.         This template is shared by all columns, so any conditional output must be handled by this single template.         This template executes in context of the current CDF record and is passed a single parameter (xsl:param) named         &lt;code&gt;attname&lt;/code&gt;"/>
+    <record docdefault="&lt;code&gt;false (jsx3.Boolean.FALSE)&lt;/code&gt;" docgetter="getWrap" docsetter="setWrap" eval="1" jsxexecute="objJSX.setWrap(vntValue);objJSX.repaintData();" jsxid="jsxwrap" jsxmask="jsxselect" jsxtext="Text Wrap" jsxtip="The word wrapping for this object's data cells. If set to &lt;code&gt;True&lt;/code&gt;, text wraps.">
+      <enum jsxid="jsx3.Boolean.TRUE" jsxtext="True"/>
+      <enum jsxid="jsx3.Boolean.FALSE" jsxtext="False"/>
+    </record>
+  </record>
+
+  <record group="1" jsxid="tblcolumns" jsxtext="Interaction">
+    <record docgetter="getSortPath" docsetter="setSortPath" eval="0" jsxexecute="objJSX.setSortPath(vntValue);objJSX.repaint();" jsxid="jsxsortpath" jsxmask="jsxtext" jsxtext="Sort Path" jsxtip="Sets the attribute path to sort on, such as &lt;code&gt;jsxtext&lt;/code&gt;.">
+    </record>
+    <record docdefault="Text (&lt;code&gt;jsx3.gui.Table.TYPETEXT&lt;/code&gt;)" docgetter="getSortType" docsetter="setSortType" eval="0" jsxid="jsxsorttype" jsxmask="jsxselect" jsxtext="Sort Data Type" jsxtip="Sets the default data type for columns in this list/grid.">
+      <enum jsxid="jsx3.gui.Table.TYPE_TEXT" jsxtext="Text"/>
+      <enum jsxid="jsx3.gui.Table.TYPE_NUMBER" jsxtext="Numerical"/>
+    </record>
+    <record docdefault="Ascending (&lt;code&gt;jsx3.gui.Table.SORTASCENDING&lt;/code&gt;)" docgetter="getSortDirection" docsetter="setSortDirection" eval="0" jsxexecute="objJSX.setSortDirection(vntValue);objJSX.repaint();" jsxid="jsxsortdirection" jsxmask="jsxselect" jsxtext="Sort Direction" jsxtip="Sets whether the Table is sorted ascending (a-z) or descending (z-a).">
+      <enum jsxid="jsx3.gui.Table.SORT_ASCENDING" jsxtext="Ascending (a-z)"/>
+      <enum jsxid="jsx3.gui.Table.SORT_DESCENDING" jsxtext="Descending (z-a)"/>
+    </record>
+    <record docgetter="getCanSort" docsetter="setCanSort" eval="1" jsxexecute="objJSX.setCanSort(vntValue);" jsxid="jsxsort" jsxmask="jsxselect" jsxtext="Sortable" jsxtip="Sets whether or not the Table is sortable.">
+      <enum jsxid="jsx3.Boolean.TRUE" jsxtext="True"/>
+      <enum jsxid="jsx3.Boolean.FALSE" jsxtext="False"/>
+    </record>
+
+    <record include="master.xml" path="/data/record[@jsxid='jsxmenu']/*"/>
+    <record include="master.xml" path="//record[@jsxid='jsxindex']"/>
+    <record children="1" group="jsxrequired" include="master.xml"/>
+  </record>
+
+  <record group="1" jsxid="intractionstyles" jsxtext="Interaction Styles">
+    <record docdefault="jsx:///images/table/select.gif (&lt;code&gt;jsx3.gui.Table.SELECTION_BG&lt;/code&gt;)" docgetter="getSelectionBG" docsetter="setSelectionBG" eval="0" jsxexecute="objJSX.setSelectionBG(vntValue);" jsxid="jsxselectionbg" jsxmask="jsxtextarea" jsxtext="Selection BG" jsxtip="Sets the URL of the background-image to apply to the cell/row background to designate it as selected. For example, jsx:///images/table/select.gif"/>
+    <!-- record jsxid="jsxspystyle" jsxtext="Spy Styles"
+        eval="0"
+        jsxtip="Sets the CSS style(s) to apply to a cell when the cursor 'mouses over' the cell &lt;b&gt;and&lt;/b&gt; a spyglass is applied."
+        docgetter="getSpyStyles" docsetter="setSpyStyles"
+        docdefault="textDecoration:underline"
+        jsxexecute="objJSX.setSpyStyles(vntValue);"
+        jsxmask="jsxtextarea"/ -->
+  </record>
+
+  <record group="blockx-xml" include="master.xml"/>
+  <record group="metadata" include="master.xml"/>
+
+</data>

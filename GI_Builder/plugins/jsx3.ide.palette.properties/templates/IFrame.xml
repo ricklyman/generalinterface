@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  ~ Copyright (c) 2001-2011, TIBCO Software Inc.
+  ~ Use, modification, and distribution subject to terms of license.
+  --><data jsxid="jsxroot">
+  <record group="object" include="master.xml"/>
+
+  <record group="1" jsxid="jsx3iframe" jsxtext="IFrame">
+    <record docgetter="getSrc" docsetter="setSrc" eval="0" jsxexecute="objJSX.setSrc(vntValue);" jsxid="jsxsrc" jsxmask="jsxpath" jsxtext="Source URL" jsxtip="Sets the path of the file to display in the IFRAME. The path is relative to the project root."/>
+    <record docgetter="getScrolling" docsetter="setScrolling" eval="1" jsxid="jsxscroll" jsxmask="jsxselect" jsxtext="Scrolling" jsxtip="Controls the scroll setting of the IFRAME.">
+      <enum jsxid="jsx3.gui.IFrame.SCROLLYES" jsxtext="Yes"/>
+      <enum jsxid="jsx3.gui.IFrame.SCROLLNO" jsxtext="No"/>
+      <enum jsxid="jsx3.gui.IFrame.SCROLLAUTO" jsxtext="Auto"/>
+    </record>
+  </record>
+
+  <record group="css_noclass" include="master.xml"/>
+  <record group="metadata" include="master.xml"/>
+</data>

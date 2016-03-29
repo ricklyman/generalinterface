@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  ~ Copyright (c) 2001-2011, TIBCO Software Inc.
+  ~ Use, modification, and distribution subject to terms of license.
+  --><data jsxid="jsxroot">
+  <record group="object" include="master.xml"/>
+  <record group="position" include="master.xml"/>
+
+  <record group="1" jsxid="jsx3radio" jsxtext="RadioButton">
+    <record children="1" group="jsxtext" include="master.xml"/>
+    <record children="1" group="form" include="master.xml"/>
+    <record children="1" group="jsxrequired" include="master.xml"/>
+    <record disallow="[\.\s\{\}\^\(\)]" docdefault="Empty" docgetter="getGroupName" docsetter="setGroupName" eval="0" jsxid="jsxgroupname" jsxmask="jsxtext" jsxtext="Radio Group" jsxtip="Sets the name of this radio group."/>
+    <record docdefault="Unselected (&lt;code&gt;jsx3.gui.RadioButton.UNSELECTED&lt;/code&gt;)" docgetter="getSelected" docsetter="setSelected" eval="1" jsxexecute="objJSX.setSelected(vntValue);" jsxid="jsxselected" jsxmask="jsxselect" jsxtext="Selected" jsxtip="Sets whether or not this radio button is selected.">
+      <enum jsxid="jsx3.gui.RadioButton.SELECTED" jsxtext="Selected"/>
+      <enum jsxid="jsx3.gui.RadioButton.UNSELECTED" jsxtext="Unselected"/>
+    </record>
+  </record>
+
+  <record group="font" include="master.xml">
+    <record children="1" group="jsxdisabledcolor" include="master.xml"/>
+  </record>
+  <record group="box_nobg" include="master.xml">
+    <record children="1" group="jsxdisabledbgcolor" include="master.xml"/>
+  </record>
+  <record group="css" include="master.xml"/>
+  <record group="interaction" include="master.xml"/>
+  <record group="access" include="master.xml"/>
+  <record group="metadata" include="master.xml"/>
+</data>

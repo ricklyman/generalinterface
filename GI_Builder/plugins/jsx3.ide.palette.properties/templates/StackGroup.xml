@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  ~ Copyright (c) 2001-2011, TIBCO Software Inc.
+  ~ Use, modification, and distribution subject to terms of license.
+  --><data jsxid="jsxroot">
+  <record group="object" include="master.xml"/>
+
+  <record group="1" jsxid="position" jsxtext="Positioning">
+    <record include="master.xml" path="/data/record[@jsxid='position']/record[@jsxid='jsxrelativeposition']"/>
+  </record>
+
+
+  <record group="1" jsxid="jsx3stackgroup" jsxtext="StackGroup">
+    <record disallow="[^0-9]" docdefault="&lt;code&gt;jsx3.gui.StackGroup.DEFAULTBARSIZE&lt;/code&gt;. See the API documentation for this component." docgetter="getBarSize" docsetter="setBarSize" eval="1" jsxid="jsxbarsize" jsxmask="jsxtext" jsxtext="Bar Size" jsxtip="Sets the height/width of the caption bar for each child stack, depending upon orientation"/>
+    <record docdefault="Top-over (--) (&lt;code&gt;jsx3.gui.StackGroup.ORIENTATIONV&lt;/code&gt;)" docgetter="getOrientation" docsetter="setOrientation" eval="1" jsxid="jsxorientation" jsxmask="jsxselect" jsxtext="Orientation" jsxtip="Sets whether this stack group is rendered top-over (--) or side-by-side (|).">
+      <enum jsxid="jsx3.gui.StackGroup.ORIENTATIONV" jsxtext="Top-over (--)"/>
+      <enum jsxid="jsx3.gui.StackGroup.ORIENTATIONH" jsxtext="Side-by-side (|)"/>
+    </record>
+    <record disallow="[^0-9]" docdefault="&lt;code&gt;0&lt;/code&gt;" docgetter="getSelectedIndex" eval="1" jsxid="jsxselectedindex" jsxmask="jsxtext" jsxtext="Active Stack Index" jsxtip="Sets the zero-based index of the active tab."/>
+  </record>
+
+  <record group="1" jsxid="box" jsxtext="Box">
+    <record include="master.xml" path="/data/record[@jsxid='box']/record[@jsxid='jsxbgcolor']"/>
+    <record include="master.xml" path="/data/record[@jsxid='box']/record[@jsxid='jsxbg']"/>
+    <record include="master.xml" path="/data/record[@jsxid='box']/record[@jsxid='jsxborder']"/>
+  </record>
+  <record group="css_noclass" include="master.xml"/>
+  <record group="access" include="master.xml"/>
+  <record group="metadata" include="master.xml"/>
+</data>

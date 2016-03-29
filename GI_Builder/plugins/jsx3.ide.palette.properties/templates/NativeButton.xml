@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  ~ Copyright (c) 2001-2011, TIBCO Software Inc.
+  ~ Use, modification, and distribution subject to terms of license.
+  --><data jsxid="jsxroot">
+  <record group="object" include="master.xml"/>
+  <record group="position" include="master.xml"/>
+
+  <record group="1" jsxid="jsx3button" jsxtext="Button">
+    <record children="1" group="form" include="master.xml"/>
+    <record docdefault="Normal (&lt;code&gt;jsx3.gui.NativeButton.BUTTON&lt;/code&gt;)" docgetter="getType" docsetter="setType" eval="1" jsxid="jsxtype" jsxmask="jsxselect" jsxtext="Type" jsxtip="Sets the button type.">
+      <enum jsxid="jsx3.gui.NativeButton.BUTTON" jsxtext="Normal"/>
+      <enum jsxid="jsx3.gui.NativeButton.SUBMIT" jsxtext="Form Submit"/>
+      <enum jsxid="jsx3.gui.NativeButton.RESET" jsxtext="Form Reset"/>
+    </record>
+  </record>
+
+  <record group="font" include="master.xml">
+    <record children="1" group="jsxdisabledcolor" include="master.xml"/>
+  </record>
+
+  <record group="box_nobg" include="master.xml">
+    <record children="1" group="jsxdisabledbgcolor" include="master.xml"/>
+  </record>
+
+  <record group="css" include="master.xml"/>
+
+  <record group="interaction" include="master.xml">
+    <record children="1" group="jsxkeycode" include="master.xml"/>
+  </record>
+
+  <record group="access" include="master.xml"/>
+  <record group="metadata" include="master.xml"/>
+</data>

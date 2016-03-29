@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  ~ Copyright (c) 2001-2011, TIBCO Software Inc.
+  ~ Use, modification, and distribution subject to terms of license.
+  --><data jsxid="jsxroot">
+  <record group="object" include="master.xml"/>
+
+  <record group="1" jsxid="position" jsxtext="Positioning">
+    <record include="master.xml" path="/data/record[@jsxid='position']/record[@jsxid='jsxrelativeposition']"/>
+    <record include="master.xml" path="/data/record[@jsxid='position']/record[@jsxid='jsxzindex']"/>
+  </record>
+
+  <record group="1" jsxid="jsx3tabbedpane" jsxtext="TabbedPane">
+    <record disallow="[^0-9]" docdefault="&lt;code&gt;jsx3.gui.TabbedPane.DEFAULTTABHEIGHT&lt;/code&gt;. See the API documentation for this component." docgetter="getTabHeight" docsetter="setTabHeight" eval="1" jsxexecute="(objJSX.setTabHeight(vntValue)).repaint();" jsxid="jsxtabheight" jsxmask="jsxtext" jsxtext="Tab Height" jsxtip="Sets the height of the tabs in pixels."/>
+    <record default="&lt;code&gt;jsx3.Boolean.TRUE&lt;/code&gt;" docdefault="Show (&lt;code&gt;jsx3.Boolean.TRUE&lt;/code&gt;)" docgetter="getShowTabs" docsetter="setShowTabs" eval="1" jsxexecute="(objJSX.setShowTabs(vntValue)).repaint();" jsxid="jsxshowtabs" jsxmask="jsxselect" jsxtext="Show Tabs" jsxtip="Sets whether or not to show the tabs of the tabbed pane. If set to &lt;code&gt;false&lt;/code&gt; (Hide), only the content of each tab is drawn.">
+      <enum jsxid="jsx3.Boolean.TRUE" jsxtext="Show"/>
+      <enum jsxid="jsx3.Boolean.FALSE" jsxtext="Hide"/>
+    </record>
+    <record disallow="[^0-9]" docdefault="&lt;code&gt;0&lt;/code&gt;" docgetter="getSelectedIndex" docsetter="setSelectedIndex" eval="1" jsxexecute="objJSX.setSelectedIndex(vntValue,true);" jsxid="jsxselectedindex" jsxmask="jsxtext" jsxtext="Active Tab Index" jsxtip="Sets the zero-based index of the active tab."/>
+  </record>
+
+  <record group="box_list" include="master.xml">
+    <record disallow="'" docdefault="&lt;code&gt;jsx3.gui.TabbedPane.CONTENTBORDER&lt;/code&gt;" docgetter="getBorder" docsetter="setBorder" eval="0" jsxexecute="objJSX.setBorder(vntValue);objJSX.recalcBox();objJSX.repaint();" jsxid="jsxborder" jsxmask="jsxtext" jsxtext="Border" jsxtip="The border around each child tab. Specified as one or four value sets (top, right, bottom, and left). Specified as: style width color. For example, &lt;code&gt;solid 1px red;dashed 2px red;double 3px black; solid 1px red;&lt;/code&gt;."/>    
+  </record>
+  
+  <record group="css_noclass" include="master.xml"/>
+  <record group="interaction" include="master.xml"/>
+  <record group="access" include="master.xml"/>
+  <record group="metadata" include="master.xml"/>
+</data>

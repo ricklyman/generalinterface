@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  ~ Copyright (c) 2001-2011, TIBCO Software Inc.
+  ~ Use, modification, and distribution subject to terms of license.
+  --><data jsxid="jsxroot">
+  <record group="object" include="master.xml"/>
+
+  <record group="1" jsxid="jsx3mx" jsxtext="Models">
+    <record docdefault="deep" docgetter="getRenderingModel" docsetter="setRenderingModel" eval="0" jsxexecute="objJSX.setRenderingModel(vntValue);" jsxid="jsxrenderingmodel" jsxmask="jsxselect" jsxtext="Rendering Model" jsxtip="Sets if the data will be rendered flat (deep or shallow) or hierarchical.">
+      <enum jsxid="'deep'" jsxtext="Deep"/>
+      <enum jsxid="'shallow'" jsxtext="Shallow"/>
+      <enum jsxid="'hierarchical'" jsxtext="Hierarchical"/>
+    </record>
+    <record docdefault="jsxroot (this is the ID used by the &amp;lt;data&amp;gt; node)" docgetter="getRenderingContext" docsetter="setRenderingContext" eval="0" jsxexecute="objJSX.setRenderingContext(vntValue);" jsxid="jsxrenderingcontext" jsxmask="jsxtext" jsxtext="Rendering Ctxt" jsxtip="Sets the jsxid for the parent record whose children and/or descendants will be painted.">
+    </record>
+    <record docdefault="Single Row (&lt;code&gt;jsx3.gui.Matrix.SELECTION_ROW&lt;/code&gt;)" docgetter="getSelectionModel" docsetter="setSelectionModel" eval="1" jsxexecute="objJSX.setSelectionModel(vntValue);" jsxid="jsxselectionmodel" jsxmask="jsxselect" jsxtext="Selection Model" jsxtip="Sets the selection model.">
+      <enum jsxid="jsx3.gui.Matrix.SELECTION_UNSELECTABLE" jsxtext="Not Selectable"/>
+      <enum jsxid="jsx3.gui.Matrix.SELECTION_ROW" jsxtext="Single Row"/>
+      <enum jsxid="jsx3.gui.Matrix.SELECTION_MULTI_ROW" jsxtext="Multi-row"/>
+    </record>
+    <record docdefault="No paging (&lt;code&gt;jsx3.gui.Matrix.PAGING_OFF&lt;/code&gt;)" docgetter="getPagingModel" docsetter="setPagingModel" eval="1" jsxexecute="objJSX.setPagingModel(vntValue);objJSX.repaint();" jsxid="jsxpagingmodel" jsxmask="jsxselect" jsxtext="Paging Model" jsxtip="Sets the paging model.">
+      <enum jsxid="jsx3.gui.Matrix.PAGING_OFF" jsxtext="No paging"/>
+      <enum jsxid="jsx3.gui.Matrix.PAGING_2PASS" jsxtext="2-pass"/>
+      <enum jsxid="jsx3.gui.Matrix.PAGING_CHUNKED" jsxtext="Chunked"/>
+      <enum jsxid="jsx3.gui.Matrix.PAGING_PAGED" jsxtext="Paged"/>
+      <enum jsxid="jsx3.gui.Matrix.PAGING_STEPPED" jsxtext="Stepped (hierarchical)"/>
+    </record>
+  </record>
+
+
+  <record group="1" jsxid="pagingtuners" jsxtext="Paging Tuners">
+    <record docdefault="5 (&lt;code&gt;jsx3.gui.Matrix.DEFAULT_PANEL_POOL_COUNT&lt;/code&gt;)" docgetter="getPanelPoolSize" docsetter="setPanelPoolSize" eval="1" jsxexecute="objJSX.setPanelPoolSize(vntValue);" jsxid="jsxpanelpoolsize" jsxmask="jsxtext" jsxtext="Panel Pool Size" jsxtip="When rendering model is Matrix.PAGING_PAGED, the maximum allowed number of pooled panels.">
+    </record>
+
+    <record docdefault="50 (&lt;code&gt;jsx3.gui.Matrix.DEFAULT_ROWS_PER_PANEL&lt;/code&gt;)" docgetter="getRowsPerPanel" docsetter="setRowsPerPanel" eval="1" jsxexecute="objJSX.setRowsPerPanel(vntValue);" jsxid="jsxrowsperpanel" jsxmask="jsxtext" jsxtext="Rows Per Panel" jsxtip="When rendering model is Matrix.PAGING_PAGED, the number of rows in a panel.">
+    </record>
+
+    <record docdefault="3 (&lt;code&gt;jsx3.gui.Matrix.DEFAULT_PANEL_QUEUE_SIZE&lt;/code&gt;)" docgetter="getPanelQueueSize" docsetter="setPanelQueueSize" eval="1" jsxexecute="objJSX.setPanelQueueSize(vntValue);" jsxid="jsxpaintqueuesize" jsxmask="jsxtext" jsxtext="Panel Queue Size" jsxtip="When rendering model is Matrix.PAGING_PAGED, the maximum allowed number of panels in the paint queue.">
+    </record>
+
+    <record docdefault="&lt;code&gt;jsx3.gui.Matrix.DEFAULT_INFO_LABEL&lt;/code&gt;" docgetter="getScrollInfoLabel" docsetter="setScrollInfoLabel" eval="0" jsxexecute="objJSX.setScrollInfoLabel(vntValue);" jsxid="jsxscrollinfolabel" jsxmask="jsxtext" jsxtext="Scroll Info" jsxtip="Returns the &lt;i&gt;info label&lt;/i&gt; to display when scrolling a paged instance.">
+    </record>
+  </record>
+
+  <record group="1" jsxid="mtxprops" jsxtext="Box">
+    <record disallow="[^-0-9a-zA-Z#\(\);:\/\.,]" docdefault="The default background color specified in the static field, &lt;code&gt;DEFAULTBACKGROUNDCOLOR&lt;/code&gt;, of the component class.  For example, the default background color for a list is #f3f2f4 and is specified in &lt;code&gt;jsx3.gui.List.DEFAULTBACKGROUNDCOLOR&lt;/code&gt;. See the API documentation for the component. For some components, this property is empty." docgetter="getBackgroundColor" docsetter="setBackgroundColor" eval="0" jsxid="jsxbgcolor" jsxmask="jsxcolor" jsxtext="BG Color" jsxtip="Sets the background color. Accepts valid CSS values, such as predefined color names, RGB, or hexadecimal values. For example, &lt;code&gt;red&lt;/code&gt;, &lt;code&gt;rgb(255,0,0)&lt;/code&gt;, or &lt;code&gt;#ff0000&lt;/code&gt;."/>
+    <record docdefault="Empty" docgetter="getBackground" docsetter="setBackground" eval="0" jsxid="jsxbg" jsxmask="jsxtext" jsxtext="Background" jsxtip="Sets the CSS background definition, such as &lt;code&gt;background-image:url(abc.gif);background-repeat:repeat-x;&lt;/code&gt;."/>
+    <record disallow="[^0-9]" docdefault="&lt;code&gt;jsx3.gui.Matrix.DEFAULT_HEADER_HEIGHT&lt;/code&gt;. See the API documentation for this component." docgetter="getHeaderHeight" docsetter="setHeaderHeight" eval="1" jsxexecute="objJSX.setHeaderHeight(vntValue);" jsxid="jsxheaderheight" jsxmask="jsxtext" jsxtext="Header Height" jsxtip="Sets the height of the header row in implied pixels. Only positive integers are allowed. Set to &lt;code&gt;0&lt;/code&gt; if the list does not use a header."/>
+    <record disallow="[^0-9]" docdefault="&lt;code&gt;jsx3.gui.Matrix.DEFAULT_ROW_HEIGHT&lt;/code&gt;." docgetter="getRowHeight" docsetter="setRowHeight" eval="1" jsxexecute="objJSX.setRowHeight(vntValue);" jsxid="jsxrowheight" jsxmask="jsxtext" jsxtext="Row Height" jsxtip="Sets the height of the data rows. Set to &lt;code&gt;0&lt;/code&gt; if the data rows should use a flex height."/>
+    <record disallow="'" docdefault="Empty" docgetter="getHeaderBorder" docsetter="setHeaderBorder" eval="0" jsxexecute="objJSX.setHeaderBorder(vntValue);" jsxid="jsxheaderborder" jsxmask="jsxtext" jsxtext="Header Border" jsxtip="Sets the border for the header row."/>
+    <record disallow="'" docdefault="Empty" docgetter="getBodyBorder" docsetter="setBodyBorder" eval="0" jsxexecute="objJSX.setBodyBorder(vntValue);" jsxid="jsxbodyborder" jsxmask="jsxtext" jsxtext="Body Border" jsxtip="Sets the border for the body. Note: to set the border for an individual column, update the APIs for the given column."/>
+    <record docdefault="&lt;code&gt;false (jsx3.Boolean.FALSE)&lt;/code&gt;" docgetter="getScaleWidth" docsetter="setScaleWidth" eval="1" jsxexecute="objJSX.setScaleWidth(vntValue);" jsxid="jsxscalewidth" jsxmask="jsxselect" jsxtext="Scale Width" jsxtip="Sets whether or not the column widths should be scaled to fit within the visible region, or if a horizontal scrollbar should be used.">
+      <enum jsxid="jsx3.Boolean.TRUE" jsxtext="True"/>
+      <enum jsxid="jsx3.Boolean.FALSE" jsxtext="False"/>
+    </record>
+    <record docgetter="getSuppressHScroller" docsetter="setSuppressHScroller" eval="1" jsxexecute="objJSX.setSuppressHScroller(vntValue);" jsxid="jsxsuppresshscroll" jsxmask="jsxselect" jsxtext="Hide H-Scroller" jsxtip="Sets whether or not to hide the horizontal scrollbar. Set to &lt;code&gt;true&lt;/code&gt; to hide it.">
+      <enum jsxid="jsx3.Boolean.TRUE" jsxtext="True"/>
+      <enum jsxid="jsx3.Boolean.FALSE" jsxtext="False"/>
+    </record>
+    <record docgetter="getSuppressVScroller" docsetter="setSuppressVScroller" eval="1" jsxexecute="objJSX.setSuppressVScroller(vntValue);" jsxid="jsxsuppressvscroll" jsxmask="jsxselect" jsxtext="Hide V-Scroller" jsxtip="Sets whether or not to hide the vertical scrollbar. Set to &lt;code&gt;true&lt;/code&gt; to hide it.">
+      <enum jsxid="jsx3.Boolean.TRUE" jsxtext="True"/>
+      <enum jsxid="jsx3.Boolean.FALSE" jsxtext="False"/>
+    </record>
+    <record include="master.xml" path="/data/record[@jsxid='css']/record[@jsxid='jsxclassname']"/>
+  </record>
+
+  <record group="1" jsxid="jsx3mtxtree" jsxtext="Tree">
+    <record docgetter="getRenderNavigators" docsetter="setRenderNavigators" eval="1" jsxexecute="objJSX.setRenderNavigators(vntValue);" jsxid="jsxrendernavigators" jsxmask="jsxselect" jsxtext="Render Nav" jsxtip="Sets whether or not to render the navigation controls on the first column when rendering in hierarchical mode.">
+      <enum jsxid="jsx3.Boolean.TRUE" jsxtext="True"/>
+      <enum jsxid="jsx3.Boolean.FALSE" jsxtext="False"/>
+    </record>
+    <record docdefault="&lt;code&gt;jsx3.gui.Matrix.ICON_MINUS&lt;/code&gt;. See the API documentation for this component." docgetter="getIconMinus" docsetter="setIconMinus" eval="0" jsxid="jsxiconminus" jsxmask="jsxpath" jsxtext="Close Icon" jsxtip="The 16x16 transparent .gif used to signal that clicking the item  collapses its contents."/>
+    <record docdefault="&lt;code&gt;jsx3.gui.Matrix.ICON_PLUS&lt;/code&gt;. See the API documentation for this component." docgetter="getIconPlus" docsetter="setIconPlus" eval="0" jsxid="jsxiconplus" jsxmask="jsxpath" jsxtext="Open Icon" jsxtip="The 16x16 transparent .gif used to signal that clicking the item displays/expands its contents."/>
+    <record docdefault="&lt;code&gt;jsx3.gui.Matrix.ICON&lt;/code&gt;. See the API documentation for this component." docgetter="getIcon" docsetter="setIcon" eval="0" jsxid="jsxicon" jsxmask="jsxpath" jsxtext="Icon" jsxtip="The icon to use for items in the tree."/>
+  </record>
+
+  <record group="1" jsxid="mtxcolumns" jsxtext="Interaction">
+    <record docgetter="getSortPath" docsetter="setSortPath" eval="0" jsxexecute="objJSX.setSortPath(vntValue);objJSX.repaint();" jsxid="jsxsortpath" jsxmask="jsxtext" jsxtext="Sort Path" jsxtip="Sets the attribute path to sort on, such as &lt;code&gt;@jsxtext&lt;/code&gt;.">
+    </record>
+    <record docdefault="Text (&lt;code&gt;jsx3.gui.Column.TYPETEXT&lt;/code&gt;)" docgetter="getSortType" docsetter="setSortType" eval="0" jsxid="jsxsorttype" jsxmask="jsxselect" jsxtext="Sort Data Type" jsxtip="Sets the default data type for columns in this list/grid.">
+      <enum jsxid="jsx3.gui.Matrix.Column.TYPE_TEXT" jsxtext="Text"/>
+      <enum jsxid="jsx3.gui.Matrix.Column.TYPE_NUMBER" jsxtext="Numerical"/>
+    </record>
+    <record docdefault="Ascending (&lt;code&gt;jsx3.gui.List.SORTASCENDING&lt;/code&gt;)" docgetter="getSortDirection" docsetter="setSortDirection" eval="0" jsxexecute="objJSX.setSortDirection(vntValue);objJSX.repaint();" jsxid="jsxsortdirection" jsxmask="jsxselect" jsxtext="Sort Direction" jsxtip="Sets whether the Grid is sorted ascending (a-z) or descending (z-a).">
+      <enum jsxid="jsx3.gui.Matrix.SORT_ASCENDING" jsxtext="Ascending (a-z)"/>
+      <enum jsxid="jsx3.gui.Matrix.SORT_DESCENDING" jsxtext="Descending (z-a)"/>
+    </record>
+    <record docgetter="getCanSort" docsetter="setCanSort" eval="1" jsxexecute="objJSX.setCanSort(vntValue);" jsxid="jsxsort" jsxmask="jsxselect" jsxtext="Sortable" jsxtip="Sets whether or not this column is sortable.">
+      <enum jsxid="jsx3.Boolean.TRUE" jsxtext="True"/>
+      <enum jsxid="jsx3.Boolean.FALSE" jsxtext="False"/>
+    </record>
+    <record docgetter="getResizable" docsetter="setResizable" eval="1" jsxexecute="objJSX.setResizable(vntValue);objJSX.repaintHead();" jsxid="jsxresize" jsxmask="jsxselect" jsxtext="Resizable" jsxtip="Sets whether or not the instance is resizable.">
+      <enum jsxid="jsx3.Boolean.TRUE" jsxtext="True"/>
+      <enum jsxid="jsx3.Boolean.FALSE" jsxtext="False"/>
+    </record>
+    <record docgetter="getCanReorder" docsetter="setCanReorder" eval="1" jsxexecute="objJSX.setCanReorder(vntValue);" jsxid="jsxreorder" jsxmask="jsxselect" jsxtext="Reorderable" jsxtip="Sets whether or not the instance is sortable.">
+      <enum jsxid="jsx3.Boolean.TRUE" jsxtext="True"/>
+      <enum jsxid="jsx3.Boolean.FALSE" jsxtext="False"/>
+    </record>
+    <record docgetter="getFixedColumnIndex" docsetter="setFixedColumnIndex" eval="1" jsxexecute="objJSX.setFixedColumnIndex(vntValue);" jsxid="jsxfixedcolumnindex" jsxmask="jsxtext" jsxtext="Fixed Columns" jsxtip="Sets index of the first column that can be reordered. All columns of a lesser index can not be reordered."/>
+    <record docgetter="getAutoRow" docsetter="setAutoRow" eval="1" jsxexecute="objJSX.setAutoRow(vntValue);objJSX.repaint();" jsxid="jsxautorow" jsxmask="jsxselect" jsxtext="Auto Row" jsxtip="Sets whether or not the instance allows new rows to be added at runtime via user interaction. Note that hierarchical rendering and pagination (Matrix.PAGING_PAGED) do not support the auto row behavior.">
+      <enum jsxid="jsx3.gui.Matrix.AUTOROW_NONE" jsxtext="Disabled"/>
+      <enum jsxid="jsx3.gui.Matrix.AUTOROW_LAST_ROW" jsxtext="Last Row"/>
+      <enum jsxid="jsx3.gui.Matrix.AUTOROW_FIRST_ROW" jsxtext="First Row"/>
+    </record>
+    <record children="1" group="drag" include="master.xml"/>
+    <record include="master.xml" path="/data/record[@jsxid='jsxmenu']/*"/>
+    <record include="master.xml" path="//record[@jsxid='jsxindex']"/>
+    <record children="1" group="jsxrequired" include="master.xml"/>
+  </record>
+
+  <record group="1" jsxid="intractionstyles" jsxtext="Interaction Styles">
+    <record docdefault="font-weight:bold (&lt;code&gt;jsx3.gui.Matrix.FOCUS_STYLE&lt;/code&gt;)" docgetter="getFocusStyle" docsetter="setFocusStyle" eval="0" jsxexecute="objJSX.setFocusStyle(vntValue);" jsxid="jsxfocusstyle" jsxmask="jsxtextarea" jsxtext="Focus Style" jsxtip="Sets the CSS style(s) to apply to a cell when it has cursor focus. For example: &lt;code&gt;color:red&lt;/code&gt;"/>
+    <record docdefault="jsx:///images/matrix/select.gif (&lt;code&gt;jsx3.gui.Matrix.SELECTION_BG&lt;/code&gt;)" docgetter="getSelectionBG" docsetter="setSelectionBG" eval="0" jsxexecute="objJSX.setSelectionBG(vntValue);" jsxid="jsxselectionbg" jsxmask="jsxtextarea" jsxtext="Selection BG" jsxtip="Sets the URL of the background-image to apply to the cell/row background to designate it as selected. For example, jsx:///images/matrix/select.gif"/>
+    <record docdefault="textDecoration:underline" docgetter="getSpyStyles" docsetter="setSpyStyles" eval="0" jsxexecute="objJSX.setSpyStyles(vntValue);" jsxid="jsxspystyle" jsxmask="jsxtextarea" jsxtext="Spy Styles" jsxtip="Sets the CSS style(s) to apply to a cell when the cursor 'mouses over' the cell &lt;b&gt;and&lt;/b&gt; a spyglass is applied."/>
+  </record>
+
+  <record group="blockx-xml" include="master.xml"/>
+  <record group="metadata" include="master.xml"/>
+
+</data>

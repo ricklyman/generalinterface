@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  ~ Copyright (c) 2001-2011, TIBCO Software Inc.
+  ~ Use, modification, and distribution subject to terms of license.
+  --><data jsxid="jsxroot">
+  <record group="object" include="master.xml"/>
+  <record group="position" include="master.xml"/>
+
+  <record group="1" jsxid="jsx3select" jsxtext="Select">
+    <record docdefault="Select (&lt;code&gt;jsx3.gui.Select.TYPESELECT&lt;/code&gt;)" docgetter="getType" docsetter="setType" eval="1" jsxexecute="objJSX.setType(vntValue);objJSX.repaint();" jsxid="jsxtype" jsxmask="jsxselect" jsxtext="Type" jsxtip="Sets the type of the select, such as Select or Combo/Type Ahead.">
+      <enum jsxid="jsx3.gui.Select.TYPESELECT" jsxtext="Select"/>
+      <enum jsxid="jsx3.gui.Select.TYPECOMBO" jsxtext="Combo/Type Ahead"/>
+    </record>
+    <record disallow="[^0-9]" docdefault="Empty" docgetter="getMaxLength" docsetter="setMaxLength" eval="1" jsxid="jsxmaxlength" jsxmask="jsxtext" jsxtext="Max Length" jsxtip="Sets the maximum allowed length of the input field of this combo control."/>
+    <record docdefault="A value appropriate for the server locale, for example: &quot;- Select -&quot;" docgetter="getDefaultText" docsetter="setDefaultText" jsxid="jsxdefaulttext" jsxmask="jsxtext" jsxtext="Default Text" jsxtip="Sets the text to display if the value of this select box is &lt;code&gt;null&lt;/code&gt;."/>
+    <record children="1" group="form" include="master.xml"/>
+    <record children="1" group="jsxrequired" include="master.xml"/>
+  </record>
+
+  <record group="blockx" include="master.xml"/>
+  <record group="font" include="master.xml"/>
+
+  <record group="box_nobg" include="master.xml">
+    <record children="1" group="jsxdisabledbgcolor" include="master.xml"/>
+    <record docdefault="&lt;code&gt;jsx3.gui.Select.ARROWICON&lt;/code&gt;. See the API documentation for this component." docgetter="getIcon" docsetter="setIcon" eval="0" jsxid="jsxicon" jsxmask="jsxpath" jsxtext="Icon" jsxtip="The icon to use for the dropdown arrow. This image will be positioned at the top-right corner of the control when painted.  The recommended image size is 16 x 16 pixels."/>
+  </record>
+
+  <record group="css" include="master.xml"/>
+  <record group="interaction" include="master.xml"/>
+  <record group="access" include="master.xml"/>
+  <record group="metadata" include="master.xml"/>
+</data>

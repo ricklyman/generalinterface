@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  ~ Copyright (c) 2001-2011, TIBCO Software Inc.
+  ~ Use, modification, and distribution subject to terms of license.
+  --><data jsxid="jsxroot">
+  <record group="object" include="master.xml"/>
+  <record group="position" include="master.xml"/>
+
+  <record group="1" jsxid="jsx3block" jsxtext="BlockX">
+    <record children="1" group="jsxtagname" include="master.xml"/>
+  </record>
+
+  <record group="blockx-xml" include="master.xml">
+    <record docdefault="Unique ID assigned by the system" docgetter="getXSLId" docsetter="setXSLId" eval="0" jsxexecute="objJSX.setXSLId(vntValue);" jsxid="jsxxslid" jsxmask="jsxtext" jsxtext="XSL Cache Id" jsxtip="Sets the cache ID for the XSL document this object is mapped to." validate="/^[\w\-\.]*$/"/>
+    <record docgetter="getXSLString" docsetter="setXSLString" eval="0" jsxexecute="objJSX.setXSLString(vntValue);" jsxid="jsxxsl" jsxmask="jsxtextarea" jsxtext="XSL String" jsxtip="Sets the XSL document as a string."/>
+    <record docgetter="getXSLURL" docsetter="setXSLURL" eval="0" jsxexecute="objJSX.setXSLURL(vntValue);" jsxid="jsxxslurl" jsxmask="jsxpath" jsxtext="XSL URL" jsxtip="Sets the URL for the resource. This resource is synchronously loaded when this object is painted on-screen."/>
+    <record docdefault="Synchronous (&lt;code&gt;jsx3.Boolean.FALSE&lt;/code&gt;)" docgetter="getXslAsync" docsetter="setXslAsync" eval="1" jsxexecute="objJSX.setXslAsync(vntValue);" jsxid="jsxxslasync" jsxmask="jsxselect" jsxtext="XSL Async" jsxtip="If set to Asynchronous and the XSL template of this control is loaded from a URL, then the template is loaded asynchronously and a loading message is displayed in this control until the it loads.">
+      <enum jsxid="jsx3.Boolean.TRUE" jsxtext="Asynchronous"/>
+      <enum jsxid="jsx3.Boolean.FALSE" jsxtext="Synchronous"/>
+    </record>
+  </record>
+
+  <record group="font" include="master.xml"/>
+  <record group="box" include="master.xml"/>
+  <record group="css" include="master.xml"/>
+  <record group="interaction" include="master.xml"/>
+  <record group="access" include="master.xml"/>
+  <record group="metadata" include="master.xml"/>
+</data>

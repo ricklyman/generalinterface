@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  ~ Copyright (c) 2001-2011, TIBCO Software Inc.
+  ~ Use, modification, and distribution subject to terms of license.
+  --><data jsxid="jsxroot">
+  <record group="object" include="master.xml"/>
+  <record group="position" include="master.xml"/>
+
+  <record group="1" jsxid="jsx3image" jsxtext="Image">
+    <record docgetter="getSrc" docsetter="setSrc" eval="0" jsxid="jsxsrc" jsxmask="jsxpath" jsxtext="Source URL" jsxtip="Sets the path of the image file. The path is relative to the project root."/>
+    <record docdefault="Empty" docgetter="getText" docsetter="setText" eval="0" jsxid="jsxtext" jsxmask="jsxtext" jsxtext="Alt Text" jsxtip="Sets the alternative text for the image."/>
+  </record>
+
+  <record group="box" include="master.xml"/>
+  <record group="css" include="master.xml"/>
+  <record group="interaction" include="master.xml"/>
+  <record group="drag" include="master.xml"/>
+  <record group="move" include="master.xml"/>
+  <record group="access" include="master.xml"/>
+  <record group="metadata" include="master.xml"/>
+</data>

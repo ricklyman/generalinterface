@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  ~ Copyright (c) 2001-2011, TIBCO Software Inc.
+  ~ Use, modification, and distribution subject to terms of license.
+  --><data jsxid="jsxroot">
+  <record group="object" include="master.xml"/>
+  <record group="position" include="master.xml"/>
+
+  <record group="1" jsxid="jsx3checkbox" jsxtext="CheckBox">
+    <record children="1" group="jsxtext" include="master.xml"/>
+    <record docdefault="Unchecked (&lt;code&gt;jsx3.gui.CheckBox.UNCHECKED&lt;/code&gt;)" docgetter="getChecked" docsetter="setChecked" eval="1" jsxid="jsxchecked" jsxmask="jsxselect" jsxtext="Checked" jsxtip="Sets whether or not this check box is checked.">
+      <enum jsxid="jsx3.gui.CheckBox.CHECKED" jsxtext="Checked"/>
+      <enum jsxid="jsx3.gui.CheckBox.UNCHECKED" jsxtext="Unchecked"/>
+      <enum jsxid="jsx3.gui.CheckBox.PARTIAL" jsxtext="Partial"/>
+    </record>
+    <record children="1" group="form_novalue" include="master.xml"/>
+    <record children="1" group="jsxrequired" include="master.xml"/>
+  </record>
+
+  <record group="font" include="master.xml">
+    <record children="1" group="jsxdisabledcolor" include="master.xml"/>
+  </record>
+  <record group="box_nobg" include="master.xml">
+    <record children="1" group="jsxdisabledbgcolor" include="master.xml"/>
+  </record>
+  <record group="css" include="master.xml"/>
+  <record group="interaction" include="master.xml"/>
+  <record group="access" include="master.xml"/>
+  <record group="metadata" include="master.xml"/>
+</data>

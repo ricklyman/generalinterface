@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  ~ Copyright (c) 2001-2011, TIBCO Software Inc.
+  ~ Use, modification, and distribution subject to terms of license.
+  --><data jsxid="jsxroot">
+  <record group="object" include="master.xml"/>
+
+  <record group="1" jsxid="jsx3list" jsxtext="List">
+    <record disallow="[^0-9]" docdefault="&lt;code&gt;jsx3.gui.List.DEFAULTHEADERHEIGHT&lt;/code&gt;. See the API documentation for this component." docgetter="getHeaderHeight" docsetter="setHeaderHeight" eval="1" jsxid="jsxheaderheight" jsxmask="jsxtext" jsxtext="Header Height" jsxtip="Sets the height of the header row in implied pixels. Only positive integers are allowed. Set to &lt;code&gt;0&lt;/code&gt; if the list does not use a header."/>
+
+    <record disallow="[^-0-9a-zA-Z#\(\);:\/\.,]" docdefault="&lt;code&gt;jsx3.gui.List.DEFAULTBACKGROUNDCOLORHEAD&lt;/code&gt;. See the API documentation for this component." docgetter="getBackgroundColorHead" docsetter="setBackgroundColorHead" eval="0" jsxid="jsxbgcolorhead" jsxmask="jsxcolor" jsxtext="BG Color Head" jsxtip="Sets the background color of the header row of the list. Accepts valid CSS values, such as predefined color names, RGB, or hexadecimal values. For example, &lt;code&gt;red&lt;/code&gt;, &lt;code&gt;rgb(255,0,0)&lt;/code&gt;, or &lt;code&gt;#ff0000&lt;/code&gt;."/>
+    <record disallow="'" docdefault="&lt;code&gt;jsx3.gui.List.DEFAULTBACKGROUNDHEAD&lt;/code&gt;. See the API documentation for this component." docgetter="getBackgroundHead" docsetter="setBackgroundHead" eval="0" jsxid="jsxbghead" jsxmask="jsxtext" jsxtext="Background Head" jsxtip="Sets the CSS background property for the header row. For example, &lt;code&gt;background-image:url(abc.gif);background-repeat:repeat-x;&lt;/code&gt;."/>
+
+    <record group="box_list" include="master.xml"/>
+
+    <record children="1" group="jsxrequired" include="master.xml"/>
+    <record docdefault="Multi-Select (&lt;code&gt;jsx3.gui.List.MULTI&lt;/code&gt;)" docgetter="getMultiSelect" docsetter="setMultiSelect" eval="1" jsxexecute="objJSX.setMultiSelect(vntValue);" jsxid="jsxmultiselect" jsxmask="jsxselect" jsxtext="Selectable" jsxtip="Sets whether or not the list is multi-select, single-select, or not selectable.">
+      <enum jsxid="jsx3.gui.List.MULTI" jsxtext="Multi-Select"/>
+      <enum jsxid="jsx3.gui.List.SINGLE" jsxtext="Single-Select"/>
+      <enum jsxid="jsx3.gui.List.NOTSELECTABLE" jsxtext="Not Selectable"/>
+    </record>
+
+    <record group="column_interactions" include="master.xml"/>
+    <record children="1" group="drag" include="master.xml"/>
+
+    <record group="1" jsxid="myspy" jsxtext="Spyglass">
+      <record include="master.xml" path="/data/record[@jsxid='move']/record[@jsxid='jsxspy']"/>
+    </record>
+
+    <record children="1" group="list" include="master.xml"/>
+
+  </record>
+
+  <record group="blockx" include="master.xml"/>
+  <record include="master.xml" path="/data/record[@jsxid='font']/record[@jsxid='jsxfontname' or @jsxid='jsxfontsize']"/>
+
+  <record include="master.xml" path="/data/record[@jsxid='css']/record[@jsxid!='jsxstyleoverride']"/>
+
+  <record include="master.xml" path="/data/record[@jsxid='jsxmenu']/*"/>
+  <record include="master.xml" path="//record[@jsxid='jsxindex']"/>
+  <record group="metadata" include="master.xml"/>
+</data>

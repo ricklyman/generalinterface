@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  ~ Copyright (c) 2001-2011, TIBCO Software Inc.
+  ~ Use, modification, and distribution subject to terms of license.
+  --><data jsxid="jsxroot">
+  <record group="object" include="master.xml"/>
+  <record group="position" include="master.xml"/>
+
+  <record group="1" jsxid="jsx3imagebutton" jsxtext="ImageButton">
+    <record docdefault="Normal (&lt;code&gt;jsx3.gui.ImageButton.TYPE_NORMAL&lt;/code&gt;)" docgetter="getType" docsetter="setType" eval="1" jsxid="jsxtype" jsxmask="jsxselect" jsxtext="Type" jsxtip="Sets the type of image button.">
+      <enum jsxid="jsx3.gui.ImageButton.TYPE_NORMAL" jsxtext="Normal"/>
+      <enum jsxid="jsx3.gui.ImageButton.TYPE_TOGGLE" jsxtext="Toggle"/>
+    </record>
+    <record docdefault="Off (&lt;code&gt;jsx3.gui.ImageButton.STATE_OFF&lt;/code&gt;)" docgetter="getState" docsetter="setState" eval="1" jsxid="jsxstate" jsxmask="jsxselect" jsxtext="State" jsxtip="Sets the state of the image button.">
+      <enum jsxid="jsx3.gui.ImageButton.STATE_OFF" jsxtext="Off"/>
+      <enum jsxid="jsx3.gui.ImageButton.STATE_ON" jsxtext="On"/>
+    </record>
+    <record eval="0" jsxid="jsximage" jsxmask="jsxpath" jsxtext="Image"/>
+    <record eval="0" jsxid="jsxoverimage" jsxmask="jsxpath" jsxtext="Over Image"/>
+    <record eval="0" jsxid="jsxdownimage" jsxmask="jsxpath" jsxtext="Down Image"/>
+    <record eval="0" jsxid="jsxonimage" jsxmask="jsxpath" jsxtext="On Image"/>
+    <record eval="0" jsxid="jsxdisabledimage" jsxmask="jsxpath" jsxtext="Disabled Image"/>
+    <record children="1" group="form_novalue" include="master.xml"/>
+    <record children="1" group="jsxrequired" include="master.xml"/>
+    <record docdefault="Empty" docgetter="getText" docsetter="setText" eval="0" jsxid="jsxtext" jsxmask="jsxtext" jsxtext="Alt Text" jsxtip="Sets the alternative text for the image."/>
+  </record>
+
+  <record group="box_nobg" include="master.xml">
+    <record children="1" group="jsxdisabledbgcolor" include="master.xml"/>
+  </record>
+
+  <record group="css_noclass" include="master.xml"/>
+
+  <record group="interaction" include="master.xml">
+    <record children="1" group="jsxkeycode" include="master.xml"/>
+  </record>
+
+  <record group="access" include="master.xml"/>
+  <record group="metadata" include="master.xml"/>
+</data>

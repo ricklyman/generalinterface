@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  ~ Copyright (c) 2001-2011, TIBCO Software Inc.
+  ~ Use, modification, and distribution subject to terms of license.
+  --><data jsxid="jsxroot">
+  <record group="object" include="master.xml"/>
+
+  <record group="1" jsxid="jsx3list" jsxtext="List">
+
+    <record disallow="[^0-9]" docdefault="The default height for the header row specified in the static field, &lt;code&gt;DEFAULTHEADERHEIGHT&lt;/code&gt;, of the component class (&lt;code&gt;jsx3.gui.List.DEFAULTHEADERHEIGHT&lt;/code&gt;). See the API documentation." docgetter="getHeaderHeight" docsetter="setHeaderHeight" eval="1" jsxid="jsxheaderheight" jsxmask="jsxtext" jsxtext="Header Height" jsxtip="Sets the height of the header row in implied pixels. Only positive integers are allowed. Set to &lt;code&gt;0&lt;/code&gt; if the list does not use a header."/>
+    <record disallow="[^-0-9a-zA-Z#\(\);:\/\.,]" docdefault="The default background color for the header row specified in the static field, &lt;code&gt; DEFAULTBACKGROUNDCOLORHEAD&lt;/code&gt;, of the component class  (&lt;code&gt;jsx3.gui.List.DEFAULTBACKGROUNDCOLORHEAD&lt;/code&gt;). See the API documentation." docgetter="getBackgroundColorHead" docsetter="setBackgroundColorHead" eval="0" jsxid="jsxbgcolorhead" jsxmask="jsxcolor" jsxtext="BG Color Head" jsxtip="Sets the CSS color for the header row. For example, &lt;code&gt;red&lt;/code&gt;, &lt;code&gt;rgb(255,0,0)&lt;/code&gt;, or &lt;code&gt;#ff0000&lt;/code&gt;."/>
+    <record disallow="'" docdefault="The default background for the header row specified in the static field, &lt;code&gt;DEFAULTBACKGROUNDHEAD&lt;/code&gt;, of the component class         (&lt;code&gt;jsx3.gui.List.DEFAULTBACKGROUNDHEAD&lt;/code&gt;). See the API documentation." docgetter="getBackgroundHead" docsetter="setBackgroundHead" eval="0" jsxid="jsxbghead" jsxmask="jsxtext" jsxtext="Background Head" jsxtip="Sets the CSS background definition for the header row, such as &lt;code&gt;background-image:url(abc.gif);background-repeat:repeat-x;&lt;/code&gt;."/>
+    <record group="box_list" include="master.xml"/>
+
+    <record group="column_interactions" include="master.xml"/>
+    <record group="1" jsxid="myspy" jsxtext="Spyglass">
+      <record include="master.xml" path="/data/record[@jsxid='move']/record[@jsxid='jsxspy']"/>
+    </record>
+    <record children="1" group="list" include="master.xml"/>
+
+    <record children="1" group="drag" include="master.xml"/>
+
+
+  </record>
+
+  <record group="blockx" include="master.xml"/>
+  <record include="master.xml" path="/data/record[@jsxid='font']/record[@jsxid='jsxfontname' or @jsxid='jsxfontsize']"/>
+
+  <record include="master.xml" path="/data/record[@jsxid='css']/record[@jsxid!='jsxstyleoverride']"/>
+
+  <record include="master.xml" path="/data/record[@jsxid='jsxmenu']/*"/>
+  <record include="master.xml" path="//record[@jsxid='jsxindex']"/>
+  <record group="metadata" include="master.xml"/>
+</data>

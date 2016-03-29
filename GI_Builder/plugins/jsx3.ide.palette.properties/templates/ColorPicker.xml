@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  ~ Copyright (c) 2001-2011, TIBCO Software Inc.
+  ~ Use, modification, and distribution subject to terms of license.
+  --><data jsxid="jsxroot">
+  <record group="object" include="master.xml"/>
+  <record group="position" include="master.xml"/>
+
+  <record group="1" jsxid="jsx3colorpicker" jsxtext="Slider">
+    <record disallow="[^x0-9a-fA-F]" docgetter="getRGB" docsetter="setRGB" eval="1" getter="getRgbAsHex" jsxexecute="objJSX.setRGB(vntValue);" jsxid="jsxrgb" jsxmask="jsxtext" jsxtext="Color" jsxtip="Sets the RGB of the selected color."/>
+
+    <record docgetter="getAxis" docsetter="setAxis" eval="1" jsxid="jsxaxis" jsxmask="jsxselect" jsxtext="Axis" jsxtip="Sets the color axis displayed on the right side of the color picker.">
+      <enum jsxid="jsx3.gui.ColorPicker.HUE" jsxtext="Hue (H)"/>
+      <enum jsxid="jsx3.gui.ColorPicker.SATURATION" jsxtext="Saturation (S)"/>
+      <enum jsxid="jsx3.gui.ColorPicker.BRIGHTNESS" jsxtext="Brightness (B)"/>
+    </record>
+  </record>
+
+  <record group="1" jsxid="box" jsxtext="Box">
+    <record disallow="'" docdefault="Empty" docgetter="getBorder" docsetter="setBorder" eval="0" jsxid="jsxborder" jsxmask="jsxtext" jsxtext="Border" jsxtip="Sets the valid CSS border definition. Specified as one or four value sets (north, east, south, west):  width [color] [style] [width2 [color2] [style2]...width4 [color4] [style4]]. For example, 1px red solid, 2px red dashed, 3px black double, 1px red solid;"/>
+  </record>
+
+  <record group="1" jsxid="css" jsxtext="CSS">
+    <record include="master.xml" path="/data/record[@jsxid='css']/record[@jsxid='jsxdisplay']"/>
+    <record include="master.xml" path="/data/record[@jsxid='css']/record[@jsxid='jsxvisibility']"/>
+  </record>
+
+  <record group="metadata" include="master.xml"/>
+</data>

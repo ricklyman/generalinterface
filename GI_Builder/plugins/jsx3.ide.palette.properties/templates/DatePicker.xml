@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  ~ Copyright (c) 2001-2011, TIBCO Software Inc.
+  ~ Use, modification, and distribution subject to terms of license.
+  --><data jsxid="jsxroot">
+  <record group="object" include="master.xml"/>
+  <record group="position" include="master.xml"/>
+
+  <record group="1" jsxid="jsx3datepicker" jsxtext="DatePicker">
+    <record children="1" group="form_novalue" include="master.xml"/>
+    <record children="1" group="jsxrequired" include="master.xml"/>
+    <record disallow="&quot;" docdefault="Determined by the locale of the server containing this DatePicker." docgetter="getFormat" docsetter="setFormat" eval="0" jsxexecute="objJSX.setFormat(vntValue);objJSX.repaint();" jsxid="jsxdateformat" jsxmask="jsxtext" jsxtext="Date Format" jsxtip="Sets the date format used to format and parse the value of this DatePicker in its text field. Supported tokens include y, M, d, and E. See the API documentation for &lt;code&gt;jsx3.util.DateFormat&lt;/code&gt;." jsxtype="jsxdateformat"/>
+    <record docdefault="Determined by the locale of the server containing this DatePicker." docgetter="getFirstDayOfWeek" docsetter="setFirstDayOfWeek" eval="1" jsxid="jsxfirstweekday" jsxmask="jsxselect" jsxtext="Week Start" jsxtip="Sets the first day of the week.">
+      <enum jsxid="0" jsxtext="{date.day[0]}"/>
+      <enum jsxid="1" jsxtext="{date.day[1]}"/>
+      <enum jsxid="2" jsxtext="{date.day[2]}"/>
+      <enum jsxid="3" jsxtext="{date.day[3]}"/>
+      <enum jsxid="4" jsxtext="{date.day[4]}"/>
+      <enum jsxid="5" jsxtext="{date.day[5]}"/>
+      <enum jsxid="6" jsxtext="{date.day[6]}"/>
+    </record>
+    <record docdefault="The string representation of the date format of this DatePicker." docgetter="getDefaultText" docsetter="setDefaultText" eval="0" jsxid="jsxnulllabel" jsxmask="jsxtext" jsxtext="Null Label" jsxtip="The label to show in this DatePicker when its value is null."/>
+  </record>
+
+  <record group="font" include="master.xml"/>
+
+  <record group="1" jsxid="box_tree" jsxtext="Box">
+    <record include="master.xml" path="/data/record[@jsxid='box']/record[@jsxid='jsxbgcolor']"/>
+    <record include="master.xml" path="/data/record[@jsxid='box']/record[@jsxid='jsxbg']"/>
+    <record include="master.xml" path="/data/record[@jsxid='box']/record[@jsxid='jsxmargin']"/>
+    <record include="master.xml" path="/data/record[@jsxid='box']/record[@jsxid='jsxborder']"/>
+    <record children="1" group="jsxdisabledbgcolor" include="master.xml"/>
+    <record docdefault="See the API documentation for this component." docgetter="getIcon" docsetter="setIcon" eval="0" jsxid="jsxicon" jsxmask="jsxpath" jsxtext="Icon" jsxtip="The persistent image that will trigger the display of the calendar. This image will be positioned at the right-most edge of the control when painted.  The recommended image size is 13 x 18 pixels."/>
+  </record>
+
+  <record group="css_noclass" include="master.xml"/>
+  <record group="interaction_nocursor" include="master.xml"/>
+  <record group="access" include="master.xml"/>
+  <record group="metadata" include="master.xml"/>
+</data>

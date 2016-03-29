@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  ~ Copyright (c) 2001-2011, TIBCO Software Inc.
+  ~ Use, modification, and distribution subject to terms of license.
+  --><data jsxid="jsxroot">
+  <record group="object" include="master.xml"/>
+  <record group="position_fixedsize" include="master.xml"/>
+
+  <record group="1" jsxid="jsx3tbutton" jsxtext="ToolbarButton">
+    <record children="1" group="jsxtext" include="master.xml"/>
+    <record children="1" group="form_novalue" include="master.xml"/>
+    <record children="1" group="jsxdivider" include="master.xml"/>
+    <record children="1" group="jsximage" include="master.xml"/>
+    <record docdefault="Normal (&lt;code&gt;jsx3.gui.ToolbarButton.TYPENORMAL&lt;/code&gt;)" docgetter="getType" docsetter="setType" eval="1" jsxid="jsxtype" jsxmask="jsxselect" jsxtext="Type" jsxtip="Sets the button type.">
+      <enum jsxid="jsx3.gui.ToolbarButton.TYPENORMAL" jsxtext="Normal"/>
+      <enum jsxid="jsx3.gui.ToolbarButton.TYPECHECK" jsxtext="Check/Toggle"/>
+      <enum jsxid="jsx3.gui.ToolbarButton.TYPERADIO" jsxtext="Radio Group"/>
+    </record>
+    <record docdefault="Off (&lt;code&gt;jsx3.gui.ToolbarButton.STATEOFF&lt;/code&gt;)" docgetter="getState" docsetter="setState" eval="1" jsxid="jsxstate" jsxmask="jsxselect" jsxtext="State" jsxtip="For Radio and Check/Toggle buttons, designates whether or not the button is in an &lt;code&gt;ON&lt;/code&gt; state.">
+      <enum jsxid="jsx3.gui.ToolbarButton.STATEOFF" jsxtext="Off"/>
+      <enum jsxid="jsx3.gui.ToolbarButton.STATEON" jsxtext="On"/>
+    </record>
+
+    <record docgetter="getGroupName" docsetter="setGroupName" eval="0" jsxid="jsxgroupname" jsxmask="jsxtext" jsxtext="Group Name" jsxtip="Sets the group name when the button type is &lt;code&gt;Radio Group&lt;/code&gt;."/>
+  </record>
+
+  <record group="font" include="master.xml"/>
+
+  <record group="1" jsxid="box" jsxtext="Box">
+    <record include="master.xml" path="/data/record[@jsxid='box']/record[@jsxid='jsxmargin']"/>
+  </record>
+
+  <record group="css_noclass" include="master.xml"/>
+
+  <record group="interaction" include="master.xml">
+    <record children="1" group="jsxkeycode" include="master.xml"/>
+  </record>
+
+  <record group="access" include="master.xml"/>
+  <record group="metadata" include="master.xml"/>
+</data>

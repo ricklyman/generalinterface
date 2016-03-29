@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  ~ Copyright (c) 2001-2011, TIBCO Software Inc.
+  ~ Use, modification, and distribution subject to terms of license.
+  --><data jsxid="jsxroot">
+  <record group="object" include="master.xml"/>
+
+  <record group="1" jsxid="jsx3tree" jsxtext="Tree">
+    <record children="1" group="form_novalue" include="master.xml"/>
+    <record children="1" group="jsxrequired" include="master.xml"/>
+    <record docdefault="Single-Select (&lt;code&gt;jsx3.gui.Tree.SINGLE&lt;/code&gt;)" docgetter="getMultiSelect" docsetter="setMultiSelect" eval="1" jsxexecute="objJSX.setMultiSelect(vntValue);" jsxid="jsxmultiselect" jsxmask="jsxselect" jsxtext="Multi-Select" jsxtip="Sets whether the tree supports multi-select or single-select.">
+      <enum jsxid="jsx3.gui.Tree.MULTI" jsxtext="Multi-Select"/>
+      <enum jsxid="jsx3.gui.Tree.SINGLE" jsxtext="Single-Select"/>
+    </record>
+    <record docdefault="&lt;code&gt;jsx3.gui.Tree.ICONMINUS&lt;/code&gt;. See the API documentation for this component." docgetter="getIconMinus" docsetter="setIconMinus" eval="0" jsxid="jsxiconminus" jsxmask="jsxpath" jsxtext="Close Icon" jsxtip="The 16x16 transparent .gif used to signal that clicking the item  collapses its contents."/>
+    <record docdefault="&lt;code&gt;jsx3.gui.Tree.ICONPLUS&lt;/code&gt;. See the API documentation for this component." docgetter="getIconPlus" docsetter="setIconPlus" eval="0" jsxid="jsxiconplus" jsxmask="jsxpath" jsxtext="Open Icon" jsxtip="The 16x16 transparent .gif used to signal that clicking the item displays/expands its contents."/>
+    <record docdefault="&lt;code&gt;jsx3.gui.Tree.ICON&lt;/code&gt;. See the API documentation for this component." docgetter="getIcon" docsetter="setIcon" eval="0" jsxid="jsxicon" jsxmask="jsxpath" jsxtext="Icon" jsxtip="The icon to use for items in the tree."/>
+    <record children="1" group="drag" include="master.xml"/>
+    <record docdefault="Show (&lt;code&gt;jsx3.Boolean.TRUE&lt;/code&gt;)" docgetter="getRoot" docsetter="setRoot" eval="1" jsxid="jsxuseroot" jsxmask="jsxselect" jsxtext="Show Root Node" jsxtip="Whether to show the root node in the tree.">
+      <enum jsxid="jsx3.Boolean.TRUE" jsxtext="Show"/>
+      <enum jsxid="jsx3.Boolean.FALSE" jsxtext="Hide"/>
+    </record>
+  </record>
+
+  <record group="blockx" include="master.xml"/>
+
+  <record group="font" include="master.xml">
+    <record children="1" group="jsxdisabledcolor" include="master.xml"/>
+  </record>
+  <record group="box_tree" include="master.xml">
+    <record children="1" group="jsxdisabledbgcolor" include="master.xml"/>
+  </record>
+
+  <record group="css_noclass" include="master.xml"/>
+  <record group="interaction" include="master.xml"/>
+  <record group="access" include="master.xml"/>
+  <record group="metadata" include="master.xml"/>
+</data>
