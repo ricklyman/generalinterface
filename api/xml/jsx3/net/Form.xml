@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class access="public" id="class:jsx3.net.Form" name="jsx3.net.Form" package="jsx3.net" shortname="Form" since="3.0&#10; ">
+  <text>Provides support for legacy HTML GET and POST forms. Allows the submission of forms with arbitrary
+key-value pairs as well as file upload.
+<p/>
+<b>Prompting the user for a file upload field (<code>promptForFile()</code>) is only supported in
+Microsoft Internet Explorer.</b>
+  </text>
+  <superclass id="super:0" loaded="1" name="Object"/>
+  <superclass direct="1" id="super:1" loaded="1" name="jsx3.lang.Object"/>
+  <implements direct="1" id="implements:0" loaded="1" name="jsx3.util.EventDispatcher"/>
+  <constructor access="public" id="method:init" name="init">
+    <param name="strMethod" text="form method, METHOD_GET (default) or METHOD_POST">
+      <type link="1" name="String"/>
+    </param>
+    <param name="strAction" text="the URL to submit to">
+      <type link="1" name="String"/>
+    </param>
+    <param name="bMultipart" text="if true the form can support file upload&#10;   ">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <text>instance initializer</text>
+  </constructor>
+  <field access="public" class="jsx3.net.Form" final="1" fullname="jsx3.net.Form.EVENT_FILE_SELECTED" id="sfield:EVENT_FILE_SELECTED" name="EVENT_FILE_SELECTED" static="1" value="&quot;file&quot;">
+    <type link="1" name="String"/>
+    <text> Event type published when a file has been chosen through user interaction. The event has properties field and value.</text>
+  </field>
+  <field access="public" class="jsx3.net.Form" final="1" fullname="jsx3.net.Form.EVENT_ON_ERROR" id="sfield:EVENT_ON_ERROR" name="EVENT_ON_ERROR" static="1" value="&quot;error&quot;">
+    <type link="1" name="String"/>
+    <text> Event type published when a security error occurs trying to access the response.</text>
+  </field>
+  <field access="public" class="jsx3.net.Form" final="1" fullname="jsx3.net.Form.EVENT_ON_RESPONSE" id="sfield:EVENT_ON_RESPONSE" name="EVENT_ON_RESPONSE" static="1" value="&quot;response&quot;">
+    <type link="1" name="String"/>
+    <text> Event type published when the response has loaded.</text>
+  </field>
+  <field access="public" class="jsx3.net.Form" final="1" fullname="jsx3.net.Form.EVENT_ON_TIMEOUT" id="sfield:EVENT_ON_TIMEOUT" name="EVENT_ON_TIMEOUT" static="1" value="&quot;timeout&quot;">
+    <type link="1" name="String"/>
+    <text> Event type published when the response is still not ready after the specified timeout period.</text>
+  </field>
+  <field access="public" class="jsx3.net.Form" final="1" fullname="jsx3.net.Form.METHOD_GET" id="sfield:METHOD_GET" name="METHOD_GET" static="1" value="&quot;get&quot;">
+    <type link="1" name="String"/>
+  </field>
+  <field access="public" class="jsx3.net.Form" final="1" fullname="jsx3.net.Form.METHOD_POST" id="sfield:METHOD_POST" name="METHOD_POST" static="1" value="&quot;post&quot;">
+    <type link="1" name="String"/>
+  </field>
+  <method access="public" id="method:abort" name="abort">
+    <text>Stops polling for a response.
+   </text>
+  </method>
+  <method access="public" id="method:addFileUploadField" name="addFileUploadField">
+    <param name="strName" text="the name of the new field.&#10;   ">
+      <type link="1" name="String"/>
+    </param>
+    <text>Adds a file upload field to this form.</text>
+  </method>
+  <method access="public" id="method:conceal" name="conceal" since="3.2">
+    <text>Hides the IFRAME containing this form after it has been shown by calling <code>reveal()</code>.</text>
+    <see idfk="method:reveal" source="jsx3.net.Form">reveal()</see>
+  </method>
+  <method access="public" id="method:destroy" name="destroy">
+    <text>Destroys the form and the hidden IFRAME. This method should be called after receiving an onResponse, onError, or 
+onTimeout event for proper garbage collection.
+   </text>
+  </method>
+  <method access="public" id="method:getAction" name="getAction">
+    <return text="action&#10;   ">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the action of this form, the URL that this form is submitted to.</text>
+  </method>
+  <method access="public" id="method:getField" name="getField">
+    <param name="strName" text="the name of the form field to query.">
+      <type link="1" name="String"/>
+    </param>
+    <return text="the field value or &lt;code&gt;null&lt;/code&gt; if no such field exists.&#10;   ">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the value of a field in this form.</text>
+  </method>
+  <method access="public" id="method:getFields" name="getFields">
+    <return text="">
+      <type link="1" name="Array">
+        <type link="1" name="String"/>
+      </type>
+    </return>
+    <text>Returns the names of all fields in this form.</text>
+  </method>
+  <method access="public" id="method:getMethod" name="getMethod">
+    <return text="&lt;code&gt;METHOD_GET&lt;/code&gt; or &lt;code&gt;METHOD_POST&lt;/code&gt;.&#10;   ">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the method of this form. </text>
+  </method>
+  <method access="public" id="method:getMultipart" name="getMultipart">
+    <return text="">
+      <type class="Boolean" link="1" name="boolean"/>
+    </return>
+    <text>Returns whether this form is multipart. Only multipart forms may upload files.</text>
+  </method>
+  <method access="public" id="method:getResponseText" name="getResponseText">
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the content of the response as a string.</text>
+  </method>
+  <method access="public" id="method:getResponseXML" name="getResponseXML">
+    <return text="">
+      <type link="1" name="jsx3.xml.Document"/>
+    </return>
+    <text>Returns the content of the response as an XML document.</text>
+  </method>
+  <method access="public" id="method:promptForFile" name="promptForFile">
+    <param name="strFieldName" text="the name of the file upload field.&#10;   ">
+      <type link="1" name="String"/>
+    </param>
+    <text>Invokes the operating system file browser to choose a file for a file upload field. <b>This method is not
+supported in browsers other than Microsoft Internet Explorer.</b>
+    </text>
+  </method>
+  <method access="public" id="method:removeField" name="removeField">
+    <param name="strName" text="the name of the form field to remove.&#10;   ">
+      <type link="1" name="String"/>
+    </param>
+    <text>Removes a field from this form.</text>
+  </method>
+  <method access="public" id="method:reveal" name="reveal" since="3.2">
+    <param name="l" text="pixels from the left side of the HTML page that the IFRAME will be displayed.">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <param name="t" text="pixels from the top of the HTML page that the IFRAME will be displayed.">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <param name="w" text="width of the revealed IFRAME, in pixels.">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <param name="h" text="height of the revealed IFRAME, in pixels.">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <text>Reveals the IFRAME containing this form for debugging purposes. Dimensions of the revealed form may be provided
+or a default position and dimensions will be used.</text>
+    <see idfk="method:conceal" source="jsx3.net.Form">conceal()</see>
+  </method>
+  <method access="public" id="method:send" name="send">
+    <param name="intPollInterval" text="milliseconds between checking for a response. If not provided, the default value is 1/4 sec.">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <param name="intTimeout" text="total milliseconds before timeout. If not provided, the default value is 30 sec.&#10;   ">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <text>Sends the form. Sending the form is always asynchronous. Once a form has been sent it may not be reused.</text>
+  </method>
+  <method access="public" id="method:setAction" name="setAction">
+    <param name="action" text="">
+      <type link="1" name="String"/>
+    </param>
+    <text>Sets the action of this form.</text>
+  </method>
+  <method access="public" id="method:setField" name="setField">
+    <param name="strName" text="the name of the form field to set.">
+      <type link="1" name="String"/>
+    </param>
+    <param name="strValue" text="the new value of form field.">
+      <type link="1" name="String"/>
+    </param>
+    <param name="bConcat" text="if true, will append &lt;code&gt;&quot; &quot; + strValue&lt;/code&gt; to the existing value. The space is&#10;  only inserted if the existing value is not empty.&#10;   ">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <text>Sets the value of a field in this form. Line breaks and whitespace are honored although any line breaks
+will be converted to either <code>\r\n</code> or <code>\n</code> depending on the platform.
+Setting the value to <code>null</code> will set it to the empty string.
+</text>
+  </method>
+  <method access="public" id="method:setMethod" name="setMethod">
+    <param name="method" text="&lt;code&gt;METHOD_GET&lt;/code&gt; or &lt;code&gt;METHOD_POST&lt;/code&gt;.&#10;   ">
+      <type link="1" name="String"/>
+    </param>
+    <text>Sets the method of this form.</text>
+  </method>
+  <method access="public" id="method:setMultipart" name="setMultipart">
+    <param name="multipart" text="">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <text>Sets whether this form is multipart.</text>
+  </method>
+  <method access="public" id="smethod:newFromFragment" name="newFromFragment" static="1">
+    <param name="strFragment" text="the html fragment containing a &lt;form/&gt; tag.">
+      <type link="1" name="String"/>
+    </param>
+    <return text="">
+      <type link="1" name="jsx3.net.Form"/>
+    </return>
+    <throws text="an error if the fragment was not well-formed or did not contain a form tag."/>
+    <text>Creates a new form and initialize it from the HTML representation of a form.</text>
+  </method>
+  <method id="method:publish" idfk="method:publish" inherited="1" name="publish" source="jsx3.util.EventDispatcher"/>
+  <method id="method:subscribe" idfk="method:subscribe" inherited="1" name="subscribe" source="jsx3.util.EventDispatcher"/>
+  <method id="method:unsubscribe" idfk="method:unsubscribe" inherited="1" name="unsubscribe" source="jsx3.util.EventDispatcher"/>
+  <method id="method:unsubscribeAll" idfk="method:unsubscribeAll" inherited="1" name="unsubscribeAll" source="jsx3.util.EventDispatcher"/>
+  <method id="method:clone" idfk="method:clone" inherited="1" name="clone" source="jsx3.lang.Object"/>
+  <method id="method:equals" idfk="method:equals" inherited="1" name="equals" source="jsx3.lang.Object"/>
+  <method id="method:eval" idfk="method:eval" inherited="1" name="eval" source="jsx3.lang.Object"/>
+  <method id="method:getClass" idfk="method:getClass" inherited="1" name="getClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOf" idfk="method:getInstanceOf" inherited="1" name="getInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfClass" idfk="method:getInstanceOfClass" inherited="1" name="getInstanceOfClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfPackage" idfk="method:getInstanceOfPackage" inherited="1" name="getInstanceOfPackage" source="jsx3.lang.Object"/>
+  <method id="method:instanceOf" idfk="method:instanceOf" inherited="1" name="instanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isInstanceOf" idfk="method:isInstanceOf" inherited="1" name="isInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isSubclassOf" idfk="method:isSubclassOf" inherited="1" name="isSubclassOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:jsxmix" idfk="method:jsxmix" inherited="1" name="jsxmix" source="jsx3.lang.Object"/>
+  <method id="method:jsxsuper" idfk="method:jsxsuper" inherited="1" name="jsxsuper" source="jsx3.lang.Object"/>
+  <method id="method:jsxsupermix" idfk="method:jsxsupermix" inherited="1" name="jsxsupermix" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:setInstanceOf" idfk="method:setInstanceOf" inherited="1" name="setInstanceOf" source="jsx3.lang.Object"/>
+  <method id="method:toString" idfk="method:toString" inherited="1" name="toString" source="jsx3.lang.Object"/>
+</class>
