@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  ~ Copyright (c) 2001-2011, TIBCO Software Inc.
+  ~ Use, modification, and distribution subject to terms of license.
+  --><data jsxid="jsxroot">
+    <record jsxid="jsxid" jsxmask="jsxnull" jsxtext="Rule ID" jsxtip="unique ID assigned by the system when the rule node was created"/>
+    <record jsxid="mytype" jsxmask="jsxnull" jsxtext="Rule Type" jsxtip="rule node type" value="Output"/>
+    <record jsxid="jsxtext" jsxmask="jsxnull" jsxtext="Node Name" jsxtip="The name of the node as it will appear in the XML message that will be created/processed"/>
+    <record jsxid="path" jsxmask="jsxTextMask" jsxtext="Source Path" jsxtip="'XSL Path' to locate the source node in the pattern master that was used to create the selected rule node"/>
+    <record jsxid="src" jsxmask="jsxTextMask" jsxtext="Input Source" jsxtip="URL to the input pattern master (Schema, XML) used to generate these rules. Does not apply to WSDLs"/>
+  <record jsxid="soapuse" jsxmask="jsxTextMask" jsxtext="SOAP Use" jsxtip="Encode if 'encoded'"/>
+  <record jsxid="soapencstyle" jsxmask="jsxTextMask" jsxtext="SOAP Encoding" jsxtip="Encode if 'http://schemas.xmlsoap.org/soap/encoding/'"/>
+</data>

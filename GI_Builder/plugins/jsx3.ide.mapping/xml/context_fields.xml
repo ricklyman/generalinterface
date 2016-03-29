@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  ~ Copyright (c) 2001-2011, TIBCO Software Inc.
+  ~ Use, modification, and distribution subject to terms of license.
+  --><data jsxid="jsxroot">
+  <record description="CDF record node being acted upon" flow="input, output" jsxid="CDFCONTEXT" jsxtext="CDFCONTEXT"/>
+  <record description="CDF records collection being iterated" flow="input, output" jsxid="CDFRECORDS" jsxtext="CDFRECORDS"/>
+  <record description="Current node in the rules tree being processed" flow="input, output" jsxid="RULENODE" jsxtext="RULENODE"/>
+  <record description="Node in the message being processed" flow="input, output" jsxid="MESSAGENODE" jsxtext="MESSAGENODE"/>
+  <record description="Deprecated. Now evaluates to 'Script'" flow="input, output" jsxid="OBJECTTYPE" jsxtext="OBJECTTYPE"/>
+  <record description="Deprecated. Will always evaluate to what FILTER once evaluated to--namely the Script being evaluated" flow="input, output" jsxid="OBJECTNAME" jsxtext="OBJECTNAME"/>
+  <record description="Deprecated. Do not use." flow="input, output" jsxid="FILTER" jsxtext="FILTER"/>
+  <record description="Equivalent to MESSAGENODE.setValue(strValue)" flow="input" jsxid="setValue" jsxtext="setValue(strValue)"/>
+  <record description="Valid selection query to update CDFCONTEXT. Must return an object reference to a CDF Record node" flow="input" jsxid="setCDFContext" jsxtext="setCDFContext(strXSLQuery)"/>
+  <record description="Updates record collection to be iterated. Must return a valid jsx3.util.Collection instance containing one or more CDF Record nodes" flow="input" jsxid="setCDFRecords" jsxtext="setCDFRecords(strXSLQuery)"/>
+  <record description="Disables the named child rule, so that it does not execute until enableNamedRule is called." flow="input" jsxid="disableNamedRule" jsxtext="disableNamedRule(strNodeName)"/>
+  <record description="Re-enables the named child rule." flow="input" jsxid="enableNamedRule" jsxtext="enableNamedRule(strNodeName)"/>
+  <record description="Disables the child rule, so that it does not execute until enableReferencedRule is called." flow="input" jsxid="disableReferencedRule" jsxtext="disableReferencedRule(objRuleChild)"/>
+  <record description="Re-enables the child rule." flow="input" jsxid="enableReferencedRule" jsxtext="enableReferencedRule(objRuleChild)"/>
+</data>

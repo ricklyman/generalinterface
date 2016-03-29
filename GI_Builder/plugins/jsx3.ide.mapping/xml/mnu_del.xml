@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  ~ Copyright (c) 2001-2011, TIBCO Software Inc.
+  ~ Use, modification, and distribution subject to terms of license.
+  --><data jsxid="jsxroot">
+    <record jsxexecute="(this.getAncestorOfType(jsx3.ide.mapper.Mapper)).doRemoveBranch();" jsxid="04" jsxtext="Selected Rules" jsxtip="deletes the selected rules from the tree"/>
+    <record jsxdivider="1" jsxexecute="(this.getAncestorOfType(jsx3.ide.mapper.Mapper)).doRemoveSiblingBranches();" jsxid="05" jsxtext="Unselected Sibling Rules" jsxtip="deletes all siblings of the selected items from the tree"/>
+</data>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  ~ Copyright (c) 2001-2011, TIBCO Software Inc.
+  ~ Use, modification, and distribution subject to terms of license.
+  --><data jsxid="jsxroot">
+  <record jsxgroupname="level" jsxid="0" jsxtext="OFF"/>
+  <record jsxgroupname="level" jsxid="1" jsxtext="FATAL"/>
+  <record jsxgroupname="level" jsxid="2" jsxtext="ERROR"/>
+  <record jsxgroupname="level" jsxid="3" jsxtext="WARN"/>
+  <record jsxgroupname="level" jsxid="4" jsxtext="INFO"/>
+  <record jsxgroupname="level" jsxid="5" jsxtext="DEBUG"/>
+  <record jsxgroupname="level" jsxid="6" jsxtext="TRACE"/>
+</data>

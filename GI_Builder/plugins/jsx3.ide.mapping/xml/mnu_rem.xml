@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  ~ Copyright (c) 2001-2011, TIBCO Software Inc.
+  ~ Use, modification, and distribution subject to terms of license.
+  --><data jsxid="jsxroot">
+    <record jsxexecute="(this.getAncestorOfType(jsx3.ide.mapper.Mapper)).doRemoveComplexStructure(&quot;mappings&quot;);" jsxid="01" jsxtext="Mappings" jsxtip="removes all mapping rules for the selected node"/>
+    <record jsxexecute="(this.getAncestorOfType(jsx3.ide.mapper.Mapper)).doRemoveComplexStructure(&quot;restrictions&quot;);" jsxid="02" jsxtext="Restrictions" jsxtip="removes all restrictions for the selected node"/>
+    <record jsxexecute="(this.getAncestorOfType(jsx3.ide.mapper.Mapper)).doRemoveComplexStructure(&quot;headers&quot;);" jsxid="03" jsxtext="Headers" jsxtip="removes all HTTP headers for the selected node"/>
+</data>

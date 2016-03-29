@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  ~ Copyright (c) 2001-2011, TIBCO Software Inc.
+  ~ Use, modification, and distribution subject to terms of license.
+  --><data jsxid="jsxroot">
+    <record jsxexecute="(this.getAncestorOfType(jsx3.ide.mapper.Mapper)).doAutoMap(objRECORD.getAttribute(&quot;jsxtext&quot;));" jsxid="21" jsxtext="CDF Attribute" jsxtip="creates a CDF Attribute mapping, using the rule name as the attribute name"/>
+    <record jsxexecute="(this.getAncestorOfType(jsx3.ide.mapper.Mapper)).doAutoMap(objRECORD.getAttribute(&quot;jsxtext&quot;));" jsxid="22" jsxtext="CDF Record" jsxtip="creates a CDF Record mapping as well as CDF Attribute mappings for descendant Elements (E) and Attributes (A)"/>
+    <record jsxexecute="(this.getAncestorOfType(jsx3.ide.mapper.Mapper)).doAutoMap(objRECORD.getAttribute(&quot;jsxtext&quot;));" jsxid="23" jsxtext="DOM (map and create)" jsxtip="creates a new Form element and appends it to the active selection within the the DOM palette; creates the mapping"/>
+</data>

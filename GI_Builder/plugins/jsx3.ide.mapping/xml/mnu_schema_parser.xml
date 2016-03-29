@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  ~ Copyright (c) 2001-2011, TIBCO Software Inc.
+  ~ Use, modification, and distribution subject to terms of license.
+  --><data jsxid="jsxroot">
+  <record jsxid="1" jsxtext="Add New Rule" jsxtip="appends a new rule to the selected rule">
+    <record jsxexecute="(this.getAncestorOfType(jsx3.ide.mapper.Mapper)).doAddChildNode(this.getContextRecordId(),&quot;E&quot;);" jsxid="11" jsxtext="Element" jsxtip="appends an 'element' rule"/>
+    <record jsxexecute="(this.getAncestorOfType(jsx3.ide.mapper.Mapper)).doAddChildNode(this.getContextRecordId(),&quot;A&quot;);" jsxid="12" jsxtext="Attribute" jsxtip="appends an 'attribute' rule"/>
+    <record jsxexecute="(this.getAncestorOfType(jsx3.ide.mapper.Mapper)).doAddChildNode(this.getContextRecordId(),&quot;D&quot;);" jsxid="13" jsxtext="CDATA" jsxtip="appends a 'CDATA' rule"/>
+  </record>
+  <record jsxexecute="(this.getAncestorOfType(jsx3.ide.mapper.Mapper)).doCloneNode(this.getContextRecordId());" jsxid="clone" jsxtext="Clone" jsxtip="makes an exact copy of this rule and appends as a sibling"/>
+  <record jsxdivider="1" jsxexecute="((this.getContextParent()).getAncestorOfType(jsx3.ide.mapper.Mapper)).reparseBranch(this.getContextRecordId());" jsxid="reparse" jsxtext="Reparse..." jsxtip="reparses this branch of the rules tree"/>
+  <record jsxdivider="1" jsxexecute="((this.getContextParent()).getAncestorOfType(jsx3.ide.mapper.Mapper)).generateSample();" jsxid="sample" jsxtext="Sample Message..." jsxtip="generates a sample message and displays in a new dialog (applies only to input, output, and fault rules)"/>
+  <record jsxexecute="((this.getContextParent()).getAncestorOfType(jsx3.ide.mapper.Mapper)).execute(this.getContextRecordId());" jsxid="quicktest" jsxtext="Execute (Quick Test)" jsxtip="executes the selected operation (equivalent to calling doCall at runtime)"/>
+</data>
