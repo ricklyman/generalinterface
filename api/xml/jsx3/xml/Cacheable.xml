@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface access="public" id="class:jsx3.xml.Cacheable" name="jsx3.xml.Cacheable" package="jsx3.xml" shortname="Cacheable" since="3.1&#10; ">
+  <text>A mixin interface that provides the following capabilities to implementing classes:
+<ul>
+  <li>fetching and caching of an XML document from an XML string, URL, or cache id</li>
+  <li>fetching and caching of an XSL document from an XSL string, URL, or cache id</li>
+  <li>transformation of the XML document by the XSL document</li>
+  <li>XSL parameterization via setXSLParam/getXSLParams</li>
+  <li>management of cached resources</li>
+</ul>
+A class that implement this interface should usually be a subclass of <code>jsx3.app.Model</code> since this
+interface assumes that its instances have methods in that class (in particular <code>getId()</code> and
+<code>getServer()</code>).
+<p/>
+As of version 3.2 using custom XSL templates for built-in GUI classes implementing this interface is deprecated.
+Therefore, several methods related to storing per-instance XSL documents are deprecated.</text>
+  <implementor id="implementor:0" loaded="1" name="jsx3.chart.AreaChart"/>
+  <implementor id="implementor:1" loaded="1" name="jsx3.chart.BCChart"/>
+  <implementor id="implementor:2" loaded="1" name="jsx3.chart.BarChart"/>
+  <implementor id="implementor:3" loaded="1" name="jsx3.chart.CartesianChart"/>
+  <implementor id="implementor:4" loaded="1" name="jsx3.chart.Chart"/>
+  <implementor id="implementor:5" loaded="1" name="jsx3.chart.ColumnChart"/>
+  <implementor id="implementor:6" loaded="1" name="jsx3.chart.LineChart"/>
+  <implementor id="implementor:7" loaded="1" name="jsx3.chart.PieChart"/>
+  <implementor id="implementor:8" loaded="1" name="jsx3.chart.PlotChart"/>
+  <implementor id="implementor:9" loaded="1" name="jsx3.chart.RadialChart"/>
+  <implementor id="implementor:10" loaded="1" name="jsx3.gui.BlockX"/>
+  <implementor id="implementor:11" loaded="1" name="jsx3.gui.CDF"/>
+  <implementor id="implementor:12" loaded="1" name="jsx3.gui.Grid"/>
+  <implementor id="implementor:13" loaded="1" name="jsx3.gui.List"/>
+  <implementor id="implementor:14" loaded="1" name="jsx3.gui.Matrix"/>
+  <implementor id="implementor:15" loaded="1" name="jsx3.gui.Menu"/>
+  <implementor id="implementor:16" loaded="1" name="jsx3.gui.NativeSelect"/>
+  <implementor id="implementor:17" loaded="1" name="jsx3.gui.Select"/>
+  <implementor id="implementor:18" loaded="1" name="jsx3.gui.Table"/>
+  <implementor id="implementor:19" loaded="1" name="jsx3.gui.Tree"/>
+  <field access="public" class="jsx3.xml.Cacheable" final="1" fullname="jsx3.xml.Cacheable.CLEANUPRESOURCES" id="sfield:CLEANUPRESOURCES" name="CLEANUPRESOURCES" static="1" value="0">
+    <type class="Number" link="1" name="int"/>
+    <text> Value of the <code>shareResources</code> property for an object that removes its XML and XSL
+  documents from the server XML cache when it is destroyed.</text>
+  </field>
+  <field access="public" class="jsx3.xml.Cacheable" fullname="jsx3.xml.Cacheable.DEFAULTSTYLESHEET" id="sfield:DEFAULTSTYLESHEET" name="DEFAULTSTYLESHEET" static="1">
+    <type link="1" name="String"/>
+    <text> JSX/xsl/xml.xsl
+   </text>
+  </field>
+  <field access="public" class="jsx3.xml.Cacheable" deprecated="1" fullname="jsx3.xml.Cacheable.DEFAULTXSLCACHEID" id="sfield:DEFAULTXSLCACHEID" name="DEFAULTXSLCACHEID" static="1" value="&quot;JSX_XML_XSL&quot;">
+    <type link="1" name="String"/>
+    <text> JSX_XML_XSL</text>
+  </field>
+  <field access="public" class="jsx3.xml.Cacheable" final="1" fullname="jsx3.xml.Cacheable.SHARERESOURCES" id="sfield:SHARERESOURCES" name="SHARERESOURCES" static="1" value="1">
+    <type class="Number" link="1" name="int"/>
+    <text> Value of the <code>shareResources</code> property for an object that leaves its XML and XSL
+  documents in the server XML cache when it is destroyed.</text>
+  </field>
+  <method access="public" id="method:clearXmlData" name="clearXmlData">
+    <text>Resets the XML source document stored in the server cache under the XML ID of this object to an empty CDF
+document.</text>
+    <see idfk="smethod:newDocument" source="jsx3.xml.CDF">jsx3.xml.CDF.newDocument()</see>
+  </method>
+  <method access="public" deprecated="1" id="method:getNodeSet" name="getNodeSet">
+    <return text="">
+      <type link="1" name="jsx3.xml.Entity"/>
+    </return>
+    <text>Returns the node set of this object.</text>
+  </method>
+  <method access="public" id="method:getShareResources" name="getShareResources">
+    <return text="&lt;code&gt;CLEANUPRESOURCES&lt;/code&gt; or &lt;code&gt;SHARERESOURCES&lt;/code&gt;.&#10;   ">
+      <type class="Number" link="1" name="int"/>
+    </return>
+    <text>Returns whether this object removes its XML and XSL source documents from the cache of its server when it
+is destroyed.</text>
+  </method>
+  <method access="public" id="method:getXML" name="getXML">
+    <return text="">
+      <type link="1" name="jsx3.xml.Document"/>
+    </return>
+    <text>Returns the XML source document of this object. The XML document is determined by the following steps:
+<ol>
+  <li>If an XML document exists in the server cache under an ID equal to the XML ID of this object, that
+    document is returned.</li>
+  <li>If the XML string of this object is not empty, a new document is created by parsing this string.</li>
+  <li>If the XML URL of this object is not empty, a new document is created by parsing the file at the location
+    specified by the URL resolved against the server owning this object.</li>
+  <li>Otherwise, an empty CDF document is returned.</li>
+</ol>
+If a new document is created for this object (any of the steps listed above except for the first one), the
+following actions are also taken:
+<ol>
+  <li>If creating the document resulted in an error (XML parsing error, file not found error, etc) the offending
+    document is returned immediately.</li>
+  <li>Otherwise, <code>setSourceXML</code> is called on this object, passing in the created document.</li>
+</ol>
+    </text>
+    <see idfk="method:setSourceXML" source="jsx3.xml.Cacheable">setSourceXML()</see>
+  </method>
+  <method access="public" id="method:getXMLId" name="getXMLId">
+    <return text="the XML ID.&#10;   ">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the XML ID of this object.</text>
+  </method>
+  <method access="public" id="method:getXMLString" name="getXMLString">
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the XML string of this object.</text>
+    <see idfk="method:getXML" source="jsx3.xml.Cacheable">getXML()</see>
+  </method>
+  <method access="public" id="method:getXMLTransformers" name="getXMLTransformers" since="3.2&#10;   ">
+    <return text="">
+      <type link="1" name="Array">
+        <type link="1" name="String"/>
+      </type>
+    </return>
+    <text>Returns the list of XML transformers of this object.</text>
+    <see idfk="method:setXMLTransformers" source="jsx3.xml.Cacheable">setXMLTransformers()</see>
+  </method>
+  <method access="public" id="method:getXMLURL" name="getXMLURL">
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the XML URL of this object.</text>
+  </method>
+  <method access="public" id="method:getXSL" name="getXSL">
+    <return text="the XSL source document.&#10;   ">
+      <type link="1" name="jsx3.xml.Document"/>
+    </return>
+    <text>Returns the XSL source document of this object. The XSL document is determined by the following steps:
+<ol>
+  <li>If an XSL document exists in the server cache under an ID equal to the XSL ID of this object, that
+    document is returned.</li>
+  <li>(Deprecated) If the XSL string of this object is not <code>null</code>, a new document is created by parsing this string.</li>
+  <li>(Deprecated) If the XSL URL of this object is not <code>null</code>, a new document is created by parsing the file at the location
+    specified by the URL resolved against the server owning this object.</li>
+  <li>Otherwise, the default stylesheet (<code>Cacheable.DEFAULTSTYLESHEET</code>) is returned.</li>
+</ol>
+    </text>
+  </method>
+  <method access="public" id="method:getXSLId" name="getXSLId">
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the XSL ID of this object.</text>
+    <see idfk="method:setXMLTransformers" source="jsx3.xml.Cacheable">setXMLTransformers()</see>
+  </method>
+  <method access="public" id="method:getXSLParams" name="getXSLParams">
+    <return text="">
+      <type link="1" name="Object">
+        <type link="1" name="String"/>
+        <type link="1" name="String"/>
+      </type>
+    </return>
+    <text>Returns a map containing all the parameters to pass to the XSL stylesheet during transformation.</text>
+  </method>
+  <method access="public" deprecated="1" id="method:getXSLString" name="getXSLString">
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the XSL string of this object.</text>
+    <deprecated>Per-instance control of the XSL template is deprecated. Consider using the XML transformers
+   functionality instead.</deprecated>
+    <see idfk="method:setXMLTransformers" source="jsx3.xml.Cacheable">setXMLTransformers()</see>
+  </method>
+  <method access="public" deprecated="1" id="method:getXSLURL" name="getXSLURL">
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the XSL URL of this object.</text>
+    <deprecated>Per-instance control of the XSL template is deprecated. Consider using the XML transformers
+   functionality instead.</deprecated>
+    <see idfk="method:setXMLTransformers" source="jsx3.xml.Cacheable">setXMLTransformers()</see>
+  </method>
+  <method access="public" id="method:getXmlAsync" name="getXmlAsync" since="3.5&#10;   ">
+    <return text="&lt;code&gt;0&lt;/code&gt; or &lt;code&gt;1&lt;/code&gt;.">
+      <type class="Number" link="1" name="int"/>
+    </return>
+    <text>Returns whether the XML data source of this object is loaded asynchronously.</text>
+  </method>
+  <method access="public" id="method:getXmlBind" name="getXmlBind" since="3.5&#10;   ">
+    <return text="&lt;code&gt;0&lt;/code&gt; or &lt;code&gt;1&lt;/code&gt;.">
+      <type class="Number" link="1" name="int"/>
+    </return>
+    <text>Returns whether this object is bound to the XML document stored in the data cache.</text>
+  </method>
+  <method access="protected" id="method:onXmlBinding" name="onXmlBinding" since="3.5">
+    <param name="objEvent" text="the event published by the cache.">
+      <type link="1" name="Object"/>
+    </param>
+    <text>This method is called in two situations:
+<ol>
+  <li>When the datasource of this object finishes loading (success, error, or timeout), if the
+      <code>xmlAsync</code> property of this object is <code>true</code>, its datasource is specified as an
+       XML URL, and the first time <code>doTransform()</code> was called the datasource was still loading.</li>
+  <li>Any time the value stored in the server XML cache under the key equal to the XML Id of this object
+      changes, if the <code>xmlBind</code> property of this object is <code>true</code>.</li>
+</ol>
+Any methods overriding this method should begin with a call to <code>jsxsupermix()</code>.</text>
+  </method>
+  <method access="public" id="method:removeXSLParam" name="removeXSLParam">
+    <param name="strName" text="the name of the XSL parameter to remove.">
+      <type link="1" name="String"/>
+    </param>
+    <return text="this object.&#10;   ">
+      <type link="1" name="jsx3.xml.Cacheable"/>
+    </return>
+    <text>Removes a parameter from the list of parameters to pass to the XSL stylesheet during transformation.</text>
+  </method>
+  <method access="public" id="method:removeXSLParams" name="removeXSLParams">
+    <return text="this object.&#10;   ">
+      <type link="1" name="jsx3.xml.Cacheable"/>
+    </return>
+    <text>Removes all parameters from the list of parameters to pass to the XSL stylesheet during transformation.</text>
+  </method>
+  <method access="public" id="method:resetCacheData" name="resetCacheData">
+    <param name="objServer" text="the server owning the cache to modify. This is a required argument only if&#10;   &lt;code&gt;this.getServer()&lt;/code&gt; does not returns a server instance.&#10;   ">
+      <type link="1" name="jsx3.app.Server"/>
+    </param>
+    <text>Removes the XML and XSL source documents from the server cache.</text>
+  </method>
+  <method access="public" deprecated="1" id="method:resetData" name="resetData">
+    <deprecated>renamed to clearXmlData()</deprecated>
+  </method>
+  <method access="public" id="method:resetXmlCacheData" name="resetXmlCacheData">
+    <param name="objServer" text="the server owning the cache to modify. This is a required argument only if&#10;   &lt;code&gt;this.getServer()&lt;/code&gt; does not returns a server instance.&#10;   ">
+      <type link="1" name="jsx3.app.Server"/>
+    </param>
+    <text>Removes the XML source document stored under the XML ID of this object from the server cache.</text>
+  </method>
+  <method access="public" deprecated="1" id="method:resetXslCacheData" name="resetXslCacheData">
+    <param name="objServer" text="the server owning the cache to modify. This is a required argument only if&#10;   &lt;code&gt;this.getServer()&lt;/code&gt; does not returns a server instance.">
+      <type link="1" name="jsx3.app.Server"/>
+    </param>
+    <text>Removes the XSL source document stored under the XSL ID of this object from the server cache.</text>
+    <deprecated>Per-instance control of the XSL template is deprecated. Consider using the XML transformers
+   functionality instead.</deprecated>
+    <see idfk="method:setXMLTransformers" source="jsx3.xml.Cacheable">setXMLTransformers()</see>
+  </method>
+  <method access="public" deprecated="1" id="method:setNodeSet" name="setNodeSet">
+    <param name="objNodeSet" text="">
+      <type link="1" name="jsx3.xml.Entity"/>
+    </param>
+    <text>Sets the node set of this object. If the node set of this object is set by calling this method,
+the default XSL transformation will use this node set instead of the return value of <code>getXML()</code> as
+the XML document to transform.</text>
+  </method>
+  <method access="public" id="method:setShareResources" name="setShareResources">
+    <param name="intShare" text="&lt;code&gt;CLEANUPRESOURCES&lt;/code&gt; or &lt;code&gt;SHARERESOURCES&lt;/code&gt;. &lt;code&gt;CLEANUPRESOURCES&lt;/code&gt;&#10;  is the default value if the property is &lt;code&gt;null&lt;/code&gt;.">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <return text="this object.">
+      <type link="1" name="jsx3.xml.Cacheable"/>
+    </return>
+    <text>Sets whether this object removes its XML and XSL source documents from the cache of its server when it
+is destroyed.</text>
+    <see idfk="sfield:CLEANUPRESOURCES" source="jsx3.xml.Cacheable">CLEANUPRESOURCES</see>
+    <see idfk="sfield:SHARERESOURCES" source="jsx3.xml.Cacheable">SHARERESOURCES</see>
+  </method>
+  <method access="public" id="method:setSourceXML" name="setSourceXML">
+    <param name="objDoc" text="">
+      <type link="1" name="jsx3.xml.Document"/>
+    </param>
+    <param name="objCache" text="">
+      <type link="1" name="jsx3.app.Cache"/>
+    </param>
+    <param name="bNoCache" text="">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <return text="the document stored in the server cache as the data source of this object. If&#10;  transformers were run, this value will not be equal to the &lt;code&gt;objDoc&lt;/code&gt; parameter.">
+      <type link="1" name="jsx3.xml.Document"/>
+    </return>
+    <text>Sets the source document of this object as though <code>objDoc</code> were retrieved from the XML URL or XML
+string of this object. This method executes the following steps:
+<ol>
+  <li>The document is transformed serially by each XML transformers of this object.</li>
+  <li>The XML document is saved in the server cache under the XML ID of this object.</li>
+  <li>If this object is an instance of <code>jsx3.xml.CDF</code> and the root node is a &lt;data&gt; element
+    and its <code>jsxassignids</code> attribute is equal to 1, all &lt;record&gt; elements without a
+    <code>jsxid</code> attribute are assigned a unique jsxid.</li>
+  <li>If this object is an instance of <code>jsx3.xml.CDF</code>, <code>convertProperties()</code> is called
+    on this object.</li>
+</ol>
+    </text>
+    <see source="jsx3.xml.CDF">jsx3.xml.CDF</see>
+    <see idfk="method:convertProperties" source="jsx3.xml.CDF">jsx3.xml.CDF.convertProperties()</see>
+    <see idfk="method:setXMLTransformers" source="jsx3.xml.Cacheable">setXMLTransformers()</see>
+  </method>
+  <method access="public" id="method:setXMLId" name="setXMLId">
+    <param name="strXMLId" text="">
+      <type link="1" name="String"/>
+    </param>
+    <return text="this object.">
+      <type link="1" name="jsx3.xml.Cacheable"/>
+    </return>
+    <text>Sets the XML ID of this object. This value is the key under which the XML source document of this object is
+saved in the cache of the server owning this object. The developer may specify either a unique or shared value.
+If no value is specified, a unique id is generated.</text>
+    <see idfk="method:getXML" source="jsx3.xml.Cacheable">getXML()</see>
+  </method>
+  <method access="public" id="method:setXMLString" name="setXMLString">
+    <param name="strXML" text="&lt;code&gt;null&lt;/code&gt; or a well-formed serialized XML element.">
+      <type link="1" name="String"/>
+    </param>
+    <return text="this object.">
+      <type link="1" name="jsx3.xml.Cacheable"/>
+    </return>
+    <text>Sets the XML string of this object. Setting this value to the string serialization of an XML document is one
+way of specifying the source XML document of this object.</text>
+    <see idfk="method:getXML" source="jsx3.xml.Cacheable">getXML()</see>
+  </method>
+  <method access="public" id="method:setXMLTransformers" name="setXMLTransformers" since="3.2&#10;   ">
+    <param name="arrTrans" text="">
+      <type link="1" name="Array">
+        <type link="1" name="String"/>
+      </type>
+    </param>
+    <text>Sets the list of XML transformers of this object. The XML source document of this object is transformed
+serially by each of these transformers before it is placed in the XML cache.
+<p/>
+Each transformer is either the URI of an XSLT document (which will be resolved against the
+the server of this object) or the cache id of a XSLT document in the XML cache of the server
+of this object. When any transformer is loaded from a URI it is placed in the server cache under the id
+equal to its resolved URI. Any transformer that does not correspond to a valid XSLT document will be skipped
+without throwing an error.</text>
+  </method>
+  <method access="public" id="method:setXMLURL" name="setXMLURL">
+    <param name="strXMLURL" text="&lt;code&gt;null&lt;/code&gt; or a URI that when resolved against the server owning this object&#10;  specifies a valid XML document.">
+      <type link="1" name="String"/>
+    </param>
+    <return text="this object.">
+      <type link="1" name="jsx3.xml.Cacheable"/>
+    </return>
+    <text>Sets the XML URL of this object. Settings this value to the URI of an XML document is one way of specifying the
+source XML document of this object.</text>
+    <see idfk="method:getXML" source="jsx3.xml.Cacheable">getXML()</see>
+  </method>
+  <method access="public" deprecated="1" id="method:setXSLId" name="setXSLId">
+    <param name="strXSLId" text="">
+      <type link="1" name="String"/>
+    </param>
+    <return text="this object.">
+      <type link="1" name="jsx3.xml.Cacheable"/>
+    </return>
+    <text>Sets the XSL ID of this object.</text>
+    <deprecated>Per-instance control of the XSL template is deprecated. Consider using the XML transformers
+   functionality instead.</deprecated>
+    <see idfk="method:getXSL" source="jsx3.xml.Cacheable">getXSL()</see>
+    <see idfk="method:setXMLTransformers" source="jsx3.xml.Cacheable">setXMLTransformers()</see>
+  </method>
+  <method access="public" id="method:setXSLParam" name="setXSLParam">
+    <param name="strName" text="the name of the XSL parameter to add.">
+      <type link="1" name="String"/>
+    </param>
+    <param name="strValue" text="the value of the XSL parameter to add.">
+      <type link="1" name="String"/>
+    </param>
+    <return text="this object.&#10;   ">
+      <type link="1" name="jsx3.xml.Cacheable"/>
+    </return>
+    <text>Adds a name/value pair to the list of parameters to pass to the XSL stylesheet during transformation. If
+<code>strValue</code> is <code>null</code> the parameter is removed.</text>
+  </method>
+  <method access="public" deprecated="1" id="method:setXSLString" name="setXSLString">
+    <param name="strXSL" text="">
+      <type link="1" name="String"/>
+    </param>
+    <return text="this object.">
+      <type link="1" name="jsx3.xml.Cacheable"/>
+    </return>
+    <text>Sets the XSL string of this object.</text>
+    <deprecated>Per-instance control of the XSL template is deprecated. Consider using the XML transformers
+   functionality instead.</deprecated>
+    <see idfk="method:getXSL" source="jsx3.xml.Cacheable">getXSL()</see>
+    <see idfk="method:setXMLTransformers" source="jsx3.xml.Cacheable">setXMLTransformers()</see>
+  </method>
+  <method access="public" deprecated="1" id="method:setXSLURL" name="setXSLURL">
+    <param name="strXSLURL" text="">
+      <type link="1" name="String"/>
+    </param>
+    <return text="this object.">
+      <type link="1" name="jsx3.xml.Cacheable"/>
+    </return>
+    <text>Sets the XSL URL of this object.</text>
+    <deprecated>Per-instance control of the XSL template is deprecated. Consider using the XML transformers
+   functionality instead.</deprecated>
+    <see idfk="method:getXSL" source="jsx3.xml.Cacheable">getXSL()</see>
+    <see idfk="method:setXMLTransformers" source="jsx3.xml.Cacheable">setXMLTransformers()</see>
+  </method>
+  <method access="public" id="method:setXmlAsync" name="setXmlAsync" since="3.5&#10;   ">
+    <param name="bAsync" text="">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <return text="this object.">
+      <type link="1" name="jsx3.xml.Cacheable"/>
+    </return>
+    <text>Sets whether the XML data source of this object is loaded asynchronously. This setting only applies to
+data sources loaded from an XML URL.</text>
+  </method>
+  <method access="public" id="method:setXmlBind" name="setXmlBind" since="3.5&#10;   ">
+    <param name="bBind"/>
+    <return text="this object.">
+      <type link="1" name="jsx3.xml.Cacheable"/>
+    </return>
+    <text>Sets whether this object is bound to the XML document stored in the data cache. If this object is bound to the
+cache, then the <code>onXmlBinding()</code> method of this object is called any time the document stored in
+the cache under the XML Id of this object changes.</text>
+  </method>
+  <method access="public" deprecated="1" id="smethod:getVersion" name="getVersion" static="1">
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>gets the release/build for the class (i.e., "2.2.00")</text>
+  </method>
+</interface>
