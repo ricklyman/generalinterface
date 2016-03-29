@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  ~ Copyright (c) 2001-2011, TIBCO Software Inc.
+  ~ Use, modification, and distribution subject to terms of license.
+  --><serialization xmlns="urn:tibco.com/v3.0">
+ <onAfterDeserialize></onAfterDeserialize>
+  <object type="jsx3.gui.BlockX">
+   <dynamics jsxfontname="@Script FN" jsxfontsize="@Script FS" jsxpadding="@8Pixel"/>
+   <variants jsxoverflow="3"/>
+   <strings jsxdisplay="none" jsxheight="100%" jsxname="jsx_schema_sourcexml" jsxwidth="100%" jsxxslid="jsx:///xsl/xml.xsl" jsxxslurl="jsx:///xsl/xml.xsl"/>
+  </object>
+</serialization>

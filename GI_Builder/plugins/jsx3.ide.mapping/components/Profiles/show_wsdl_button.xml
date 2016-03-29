@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  ~ Copyright (c) 2001-2011, TIBCO Software Inc.
+  ~ Use, modification, and distribution subject to terms of license.
+  --><serialization xmlns="urn:tibco.com/v3.0" jsxversion="3.2">
+  <name/>
+  <icon/>
+  <description/>
+  <onBeforeDeserialize/>
+  <onAfterDeserialize>objJSX.setEvent("this.getAncestorOfType(jsx3.ide.mapper.Mapper).showSchema(null,true);",jsx3.gui.Interactive.EXECUTE);</onAfterDeserialize>
+  <object type="jsx3.gui.Button">
+    <variants jsxheight="18" jsxindex="0" jsxleft="8" jsxrelativeposition="0" jsxtop="8"/>
+    <strings jsxfontname="Verdana" jsxname="jsx_btn_show_wsdl" jsxtext="Display WSDL Source" jsxtip="Displaying the entire WSDL can be resource intensive. Please wait after clicking." jsxwidth="100%"/>
+    <events/>
+  </object>
+</serialization>

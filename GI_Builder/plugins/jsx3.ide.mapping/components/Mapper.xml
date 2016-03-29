@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  ~ Copyright (c) 2001-2011, TIBCO Software Inc.
+  ~ Use, modification, and distribution subject to terms of license.
+  --><serialization xmlns="urn:tibco.com/v3.0">
+ <onAfterDeserialize><![CDATA[objJSX.b_dirty=false;objJSX.b_reload=false;objJSX.b_new=false;objJSX.b_open=false;objJSX.b_close=false;objJSX.curFilePath;objJSX.getMapper=function(){return jsx3.ide.mapper.Mapper?(this.getDescendantsOfType(jsx3.ide.mapper.Mapper))[0]:null;};objJSX.getFilePath=function(){return this.curFilePath;};objJSX.setFilePath=function(q,i){this.curFilePath=q;if(q==null)((this.getPathBlock()).setTip("[untitled]")).setText("[untitled]",true);else ((this.getPathBlock()).setTip(i)).setText(jsx3.util.strTruncate(i,35,null,0.6666666666666666),true);};objJSX.reset=function(){this.setFilePath();this.setDirty(false);};objJSX.getPathBlock=function(){return this.getDescendantOfName("jsx_schema_parser_filename");};objJSX.setDirty=function(f){this.b_dirty=f;(this.getPathBlock()).setColor(f?"crimson":"",true);};objJSX.getDirty=function(){return this.b_dirty;};objJSX.doOpenRulesFile=function(){var
+ub={a:"Unsaved File",b:"The current rules file has been edited. Do you wish to Save the changes?",c:"Save",d:"Cancel",e:"Don't Save"};if(this.getDirty()){var
+ka=this;jsx3.IDE.confirm(ub.a,ub.b,function(m){m.doClose();ka.b_open=true;ka.doSaveRulesFile();},null,ub.c,ub.d,1,function(q){q.doClose();ka.setDirty(false);ka.doResumeOpenRulesFile();},ub.e);}else this.doResumeOpenRulesFile();};objJSX.doResumeOpenRulesFile=function(){var
+ub={a:"jsx3.io.browser",b:"jsxdialog",c:"Choose Mapping Rules File",d:"OK"};(jsx3.ide.getPlugIn(ub.a)).chooseFile(jsx3.IDE.getRootBlock(),{name:ub.b,modal:true,title:ub.c,okLabel:ub.d,folder:jsx3.ide.getCurrentDirectory(),onChoose:(jsx3.$F(function(r){this.doOpenRulesFileExecute(r);jsx3.ide.setCurrentDirectory(r.getParentFile());})).bind(this)});};objJSX.doOpenRulesFileExecute=function(g){this.doNewRulesFile(g);};objJSX.doNewRulesFile=function(r){var
+ub={a:"Unsaved File",b:"The current rules file has been edited. Do you wish to Save the changes?",c:"Save",d:"Cancel",e:"Don't Save"};var
+_=jsx3.ide.getSystemDirFile();var
+ya=r==null?jsx3.ide.mapper.Mapper.NEW_FILE_PATH:_.relativePathTo(r);if(this.getDirty()&&ya==jsx3.ide.mapper.Mapper.NEW_FILE_PATH){var
+Ia=this;jsx3.IDE.confirm(ub.a,ub.b,function(h){h.doClose();Ia.b_new=true;Ia.doSaveRulesFile();},null,ub.c,ub.d,1,function(l){l.doClose();Ia.setDirty(false);Ia.doResumeNewRulesFile(r,ya);},ub.e);}else this.doResumeNewRulesFile(r,ya);};objJSX.doResumeNewRulesFile=function(i,b){var
+ub={a:"services"};var
+Qa=this.getMapper();if(Qa!=null){if(i){var
+_=jsx3.ide.relativePathTo(i);var
+R=jsx3.net.URI.decode((jsx3.ide.PROJECT.getDirectory()).relativePathTo(i));}else _=b;if(_==jsx3.ide.mapper.Mapper.NEW_FILE_PATH){window.setTimeout(function(){jsx3.ide.mapper.openUtility();},10);this._closeMe();}else{this.setFilePath(_,R);Qa.onOpen(b);this.setDirty(false);if(i)jsx3.ide.addResourceToProject(i,ub.a,false);}}else{var
+D=this;window.setTimeout(function(){D.doResumeNewRulesFile(i,b);},10);}};objJSX.onParse=function(j){(this.getDescendantOfName("jsx_schema_parser_save")).setEnabled(j,true);(this.getDescendantOfName("jsx_schema_parser_saveas")).setEnabled(j,true);};objJSX.doSaveRulesFile=function(){if(this.getFilePath()!=null){this.doSaveAsRulesFileExecute(jsx3.ide.getSystemRelativeFile(this.getFilePath()));}else this.doSaveAsRulesFile();};objJSX.doSaveAsRulesFile=function(){var
+ub={a:"jsx3.io.browser",b:"jsx_ide_file_dialog",c:"Save Mapping Rules File",d:"Save"};var
+Fa=jsx3.ide.getCurrentUserHome();(jsx3.ide.getPlugIn(ub.a)).saveFile(jsx3.IDE.getRootBlock(),{name:ub.b,modal:true,title:ub.c,okLabel:ub.d,folder:jsx3.ide.getCurrentDirectory(),baseFolder:Fa,onChoose:(jsx3.$F(function(g){this.doSaveAsRulesFileExecute(g);jsx3.ide.setCurrentDirectory(g.getParentFile());})).bind(this)});};objJSX.doSaveAsRulesFileExecute=function(j){(this.getMapper()).writeMappings(true);var
+A=(this.getMapper()).getContent();if(A!=null){var
+lb=jsx3.ide.writeUserFile(j,A);if(!lb){(this.getMapper())._LOG.error("Save Failed. The file could not be saved. Please validate that the file is not locked (read only).");jsx3.IDE.alert("Save Failed","The file could not be saved. Please validate that the file is not locked (read only)");}else{jsx3.ide.addResourceToProject(j,"services",false);this.setDirty(false);var
+ta=jsx3.ide.getSystemDirFile();var
+Wa=ta.relativePathTo(j);var
+ia=jsx3.net.URI.decode((jsx3.ide.PROJECT.getDirectory()).relativePathTo(j));this.setFilePath(Wa,ia);if(this.b_reload){this.doNewRulesFile(j);this.b_reload=false;this.doRulesReload();}else if(this.b_open){this.doNewRulesFile(j);this.b_open=false;this.doOpenRulesFile();}else if(this.b_close){this._closeMe();}else if(this.b_new){this.b_new=false;this.doNewRulesFile();}}}else jsx3.log("iddp","No valid entries for the current dynamic property file. File was not saved.");};objJSX.closeEditor=function(){var
+ub={a:"Unsaved File",b:"The current rules file has been edited. Do you wish to Save the changes before closing the XML Mapping Utility?",c:"Save",d:"Cancel",e:"Don't Save"};if(this.getDirty()){var
+db=this;jsx3.IDE.confirm(ub.a,ub.b,function(j){j.doClose();db.b_close=true;db.doSaveRulesFile();},null,ub.c,ub.d,1,function(a){a.doClose();db._closeMe();},ub.e);}else this._closeMe();};objJSX._closeMe=function(){jsx3.IDE.EDITOR_MGR.close(this.getEditor());};objJSX.constrainPosition(true);]]></onAfterDeserialize>
+  <object type="jsx3.gui.Dialog">
+   <dynamics jsxbgcolor="@Solid Medium"/>
+   <variants jsxoverflow="2"/>
+   <strings jsxheight="600" jsxhelpid="ide.mapper" jsxminx="660" jsxminy="600" jsxname="jsx_schema_dialog" jsxwidth="900"/>
+    <object type="jsx3.gui.WindowBar">
+     <strings jsxname="jsxcbar" jsxtext="XML Mapping Utility"/>
+      <object type="jsx3.gui.ToolbarButton">
+       <dynamics jsximage="@Min Icon" jsxtip="jsx3.gui.Dialog.min"/>
+       <strings jsxname="jsxtbb"/>
+       <events jsxexecute="(this.getAncestorOfType(jsx3.gui.Dialog)).doToggleState();"/>
+      </object>
+      <object type="jsx3.gui.ToolbarButton">
+       <dynamics jsxtip="jsx3.gui.Dialog.max"/>
+       <strings jsximage="JSX/images/dialog/max.gif" jsxname="jsxtbb"/>
+       <events jsxexecute="(this.getAncestorOfType(jsx3.gui.Dialog)).doMaximize(this);"/>
+      </object>
+      <object type="jsx3.gui.ToolbarButton">
+       <dynamics jsximage="@Close Icon" jsxtip="jsx3.gui.Dialog.close"/>
+       <strings jsxname="jsxtbb"/>
+       <events jsxexecute="(this.getAncestorOfType(jsx3.gui.Dialog)).closeEditor();"/>
+      </object>
+    </object>
+    <object type="jsx3.gui.LayoutGrid">
+     <dynamics jsxbgcolor="@Solid Disabled"/>
+     <variants/>
+     <strings jsxrows="26,8,*"/>
+      <object type="jsx3.gui.LayoutGrid">
+       <dynamics jsxbgcolor="@Solid Medium"/>
+       <variants/>
+       <strings jsxborder="0px;0px;solid 1px #9898a5;0px" jsxcols="290,*"/>
+        <object type="jsx3.gui.WindowBar">
+         <dynamics jsxbgcolor="@Transparent BG"/>
+         <variants jsxbartype="2"/>
+         <strings jsxborder="." jsxname="jsxwindowbar"/>
+          <object type="jsx3.gui.ToolbarButton">
+           <strings jsximage="GI_Builder/images/icon_29.gif" jsxname="jsx_schema_parser_new" jsxtip="create new mapping ruleset"/>
+           <events jsxexecute="(this.getAncestorOfType(jsx3.gui.Dialog)).doNewRulesFile();"/>
+          </object>
+          <object type="jsx3.gui.ToolbarButton">
+           <strings jsximage="GI_Builder/images/icon_60.gif" jsxname="jsx_schema_parser_open" jsxtip="open mapping ruleset..."/>
+           <events jsxexecute="(this.getAncestorOfType(jsx3.gui.Dialog)).doOpenRulesFile();"/>
+          </object>
+          <object type="jsx3.gui.ToolbarButton">
+           <variants jsxenabled="0"/>
+           <strings jsxdivider="1" jsximage="GI_Builder/images/icon_13.gif" jsxname="jsx_schema_parser_save" jsxtip="save"/>
+           <events jsxexecute="(this.getAncestorOfType(jsx3.gui.Dialog)).doSaveRulesFile();"/>
+          </object>
+          <object type="jsx3.gui.ToolbarButton">
+           <variants jsxenabled="0"/>
+           <strings jsximage="GI_Builder/images/icon_14.gif" jsxname="jsx_schema_parser_saveas" jsxtip="save as..."/>
+           <events jsxexecute="(this.getAncestorOfType(jsx3.gui.Dialog)).doSaveAsRulesFile();"/>
+          </object>
+          <object type="jsx3.gui.ToolbarButton">
+           <strings jsxdivider="1" jsximage="GI_Builder/images/icon_59.gif" jsxname="jsx_schema_parser_help"/>
+           <events jsxexecute="(this.getServer()).invokeHelp(this.getAncestorOfType(jsx3.gui.Dialog));"/>
+          </object>
+        </object>
+        <object type="jsx3.gui.Block">
+         <variants jsxoverflow="2"/>
+         <strings jsxcolor="crimson" jsxfontsize="12" jsxfontweight="bold" jsxheight="100%" jsxname="jsx_schema_parser_filename" jsxpadding="5" jsxtext="[untitled]" jsxtextalign="right" jsxwidth="100%"/>
+        </object>
+      </object>
+      <object type="jsx3.gui.Block">
+       <variants jsxoverflow="2"/>
+       <strings jsxheight="100%" jsxwidth="100%"/>
+      </object>
+      <object type="jsx3.gui.Block">
+       <variants jsxoverflow="1"/>
+       <strings jsxheight="100%" jsxname="jsxmapperpane" jsxrelativeposition="1" jsxwidth="100%"/>
+        <include async="true" src="components/_Mapper.xml"/>
+      </object>
+      <object type="jsx3.gui.Block">
+       <dynamics jsxbgcolor="@Solid Light" jsxborder="@Inset"/>
+       <variants jsxoverflow="2"/>
+       <strings jsxheight="100%" jsxname="jsxmapper_component_bin" jsxwidth="100%"/>
+      </object>
+    </object>
+  </object>
+</serialization>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  ~ Copyright (c) 2001-2011, TIBCO Software Inc.
+  ~ Use, modification, and distribution subject to terms of license.
+  --><serialization xmlns="urn:tibco.com/v3.0">
+  <name>inbound_node.xml</name>
+  <icon/>
+  <description/>
+  <onBeforeDeserialize/>
+  <onAfterDeserialize/>
+  <objects>
+    <object type="jsx3.gui.LayoutGrid">
+      <variants/>
+      <strings jsxrows="62,*"/>
+      <object type="jsx3.gui.Block">
+        <dynamics jsxborder="@Dashed Bottom" jsxpadding="@8Pixel"/>
+        <variants jsxoverflow="2"/>
+        <strings/>
+        <object type="jsx3.gui.Block">
+          <variants jsxheight="20"/>
+          <strings jsxfontweight="bold" jsxname="label" jsxtagname="div" jsxtext="&#10;          &lt;nobr&gt;Stub URL&lt;span style=&quot;vertical-align:super;color:blue;font-size:8px;cursor:help;&quot; title=&quot;typical XML document that can be used to simulate the server response when running in static mode&quot;&gt;[?]&lt;/span&gt;&lt;/nobr&gt;&#10;        "/>
+        </object>
+        <object type="jsx3.gui.TextBox">
+          <variants jsxtype="0"/>
+          <strings jsxname="jsx_schema_mapnode_stubsrc" jsxwidth="100%"/>
+          <events jsxblur="(this.getAncestorOfType(jsx3.ide.mapper.Mapper)).writeMappings(true);"/>
+        </object>
+      </object>
+      <object type="jsx3.gui.Block">
+        <dynamics jsxpadding="@8Pixel"/>
+        <variants jsxoverflow="2"/>
+        <strings/>
+        <object type="jsx3.gui.Block">
+          <variants jsxheight="20"/>
+          <strings jsxfontweight="bold" jsxname="label" jsxtagname="div" jsxtext="&#10;          &lt;nobr&gt;onAfterReceive&lt;span style=&quot;vertical-align:super;color:blue;font-size:8px;cursor:help;&quot; title=&quot;script to execute immediately after the message is received&quot;&gt;[?]&lt;/span&gt;&lt;/nobr&gt;&#10;        "/>
+        </object>
+        <object type="jsx3.gui.TextBox">
+          <dynamics jsxbg="@Grid Lines"/>
+          <variants jsxheight="120" jsxtype="1"/>
+          <strings jsxname="jsx_schema_mapnode_onafterreceive" jsxwidth="100%"/>
+          <events jsxblur="(this.getAncestorOfType(jsx3.ide.mapper.Mapper)).writeMappings(true);" jsxkeydown="jsx3.ide.doTextEditorKeyDown(objEVENT,this);"/>
+        </object>
+      </object>
+    </object>
+  </objects>
+</serialization>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  ~ Copyright (c) 2001-2011, TIBCO Software Inc.
+  ~ Use, modification, and distribution subject to terms of license.
+  --><serialization xmlns="urn:tibco.com/v3.0">
+ <onAfterDeserialize></onAfterDeserialize>
+  <object type="jsx3.gui.LayoutGrid">
+   <variants jsxleft="0" jsxoverflow="2" jsxrelativeposition="0" jsxtop="0"/>
+   <strings jsxheight="100%" jsxhelpid="ide.mapper.tester.panel2" jsxrows="34,40,26,*" jsxwidth="100%"/>
+    <object type="jsx3.gui.Block">
+     <variants jsxleft="0" jsxoverflow="2" jsxtop="0"/>
+     <strings jsxheight="100%" jsxpadding="8 8 8 100" jsxwidth="100%"/>
+      <object type="jsx3.gui.ToolbarButton">
+       <variants jsxleft="8" jsxrelativeposition="0" jsxtop="8" jsxtype="1"/>
+       <strings jsximage="images/pause.gif" jsxname="jsx_schema_pause_2" jsxtip="pause before sending the message"/>
+      </object>
+      <object type="jsx3.gui.ToolbarButton">
+       <variants jsxenabled="0" jsxleft="35" jsxrelativeposition="0" jsxtop="8"/>
+       <strings jsximage="images/play.gif" jsxname="jsx_schema_play_2" jsxtip="resume test (send message)..."/>
+       <events jsxexecute="(this.getAncestorOfType(jsx3.ide.mapper.ServiceTest)).send();"/>
+      </object>
+      <object type="jsx3.gui.Block">
+       <variants jsxheight="12" jsxleft="67" jsxoverflow="2" jsxrelativeposition="0" jsxtop="12" jsxwidth="30"/>
+       <strings jsxfontweight="bold" jsxname="jsx_schema_label_2" jsxtext="URL" jsxtip="the service endpoint (where the request will be sent)"/>
+      </object>
+      <object type="jsx3.gui.TextBox">
+       <variants jsxheight="18" jsxindex="0" jsxleft="0" jsxtop="0" jsxtype="0"/>
+       <strings jsxname="jsx_schema_outbound_url" jsxwidth="100%"/>
+      </object>
+    </object>
+    <object type="jsx3.gui.Block">
+     <variants jsxleft="0" jsxoverflow="2" jsxtop="0"/>
+     <strings jsxheight="100%" jsxpadding="0 8 2 100" jsxwidth="100%"/>
+      <object type="jsx3.gui.Block">
+       <variants jsxheight="12" jsxleft="6" jsxoverflow="2" jsxrelativeposition="0" jsxtop="3" jsxwidth="84"/>
+       <strings jsxfontweight="bold" jsxtext="HTTP Headers" jsxtextalign="right" jsxtip="HTTP request headers"/>
+      </object>
+      <object type="jsx3.gui.TextBox">
+       <dynamics jsxborder="@Inset"/>
+       <variants jsxindex="0" jsxleft="100" jsxtop="0" jsxtype="1"/>
+       <strings jsxheight="100%" jsxname="jsx_schema_headers" jsxwidth="100%"/>
+      </object>
+    </object>
+    <object type="jsx3.gui.Block">
+     <variants jsxleft="0" jsxoverflow="2" jsxtop="0"/>
+     <strings jsxheight="100%" jsxpadding="0 8 0 100" jsxwidth="100%"/>
+      <object type="jsx3.gui.Block">
+       <variants jsxheight="12" jsxleft="6" jsxoverflow="2" jsxrelativeposition="0" jsxtop="11" jsxwidth="84"/>
+       <strings jsxfontweight="bold" jsxtext="Name" jsxtextalign="right" jsxtip="enter a user name if the service requires HTTP authentication"/>
+      </object>
+      <object type="jsx3.gui.TextBox">
+       <dynamics jsxborder="@Inset"/>
+       <variants jsxheight="18" jsxindex="0" jsxleft="100" jsxrelativeposition="0" jsxtop="8" jsxtype="0" jsxwidth="120"/>
+       <strings jsxname="jsx_schema_username"/>
+      </object>
+      <object type="jsx3.gui.Block">
+       <variants jsxheight="12" jsxleft="230" jsxoverflow="2" jsxrelativeposition="0" jsxtop="13" jsxwidth="64"/>
+       <strings jsxfontweight="bold" jsxtext="Password" jsxtextalign="right" jsxtip="enter a password if the service requires HTTP authentication"/>
+      </object>
+      <object type="jsx3.gui.TextBox">
+       <dynamics jsxborder="@Inset"/>
+       <variants jsxheight="18" jsxindex="0" jsxleft="300" jsxrelativeposition="0" jsxtop="8" jsxtype="2" jsxwidth="120"/>
+       <strings jsxname="jsx_schema_userpass"/>
+      </object>
+      <object type="jsx3.gui.Block">
+       <variants jsxheight="12" jsxleft="410" jsxoverflow="2" jsxrelativeposition="0" jsxtop="12" jsxwidth="64"/>
+       <strings jsxfontweight="bold" jsxtext="Method" jsxtextalign="right" jsxtip="use 'POST' if XML content will be sent"/>
+      </object>
+      <object type="jsx3.gui.Select">
+       <variants jsxheight="18" jsxleft="480" jsxrelativeposition="0" jsxtop="8" jsxwidth="70"/>
+       <strings jsxmargin="0 4 0 0" jsxname="jsx_schema_method" jsxvalue="POST" jsxxmlurl="xml/http_methods_test.xml"/>
+      </object>
+    </object>
+    <object type="jsx3.gui.Block">
+     <dynamics jsxpadding="@8Pixel"/>
+     <variants jsxleft="0" jsxoverflow="2" jsxtop="0"/>
+     <strings jsxheight="100%" jsxwidth="100%"/>
+      <object type="jsx3.gui.TextBox">
+       <dynamics jsxborder="@Inset"/>
+       <variants jsxindex="0" jsxleft="0" jsxtop="0" jsxtype="1"/>
+       <strings jsxheight="100%" jsxname="jsx_schema_envelope" jsxvalue="" jsxwidth="100%"/>
+      </object>
+    </object>
+  </object>
+</serialization>

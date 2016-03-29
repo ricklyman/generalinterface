@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  ~ Copyright (c) 2001-2011, TIBCO Software Inc.
+  ~ Use, modification, and distribution subject to terms of license.
+  --><serialization xmlns="urn:tibco.com/v3.0">
+ <onAfterDeserialize></onAfterDeserialize>
+  <object type="jsx3.gui.LayoutGrid">
+   <variants jsxleft="0" jsxoverflow="2" jsxrelativeposition="0" jsxtop="0"/>
+   <strings jsxheight="100%" jsxrows="22,*" jsxwidth="100%"/>
+    <object type="jsx3.gui.Block">
+     <dynamics jsxborder="@Outset Top"/>
+     <variants jsxoverflow="2"/>
+     <strings jsxbgcolor="#60709f" jsxcolor="#ffffff" jsxfontweight="normal" jsxheight="100%" jsxpadding="1 1 1 4" jsxtext="" jsxtip="original schema definition for the selected node in the Rules Tree" jsxwidth="100%"/>
+      <object type="jsx3.gui.RadioButton">
+       <dynamics jsxcolor="@Light"/>
+       <variants jsxdefaultselected="1" jsxenabled="1" jsxheight="18" jsxrelativeposition="1" jsxselected="1"/>
+       <strings jsxgroupname="jsx_schema_profile" jsxmargin="0 4 0 0" jsxname="jsx_schema_rdo_schema" jsxtext="Original Schema Source" jsxtip="show the original schema source for the selected node in the Rules Tree" jsxvalue="schema"/>
+       <events jsxselect="(this.getAncestorOfType(jsx3.ide.mapper.Mapper)).updateProfilePane(this);"/>
+      </object>
+      <object type="jsx3.gui.RadioButton">
+       <dynamics jsxcolor="@Light"/>
+       <variants jsxdefaultselected="1" jsxenabled="1" jsxheight="18" jsxrelativeposition="1" jsxselected="0"/>
+       <strings jsxgroupname="jsx_schema_profile" jsxmargin="0 4 0 0" jsxname="jsx_schema_rdo_profile" jsxtext="Rule Node Profile" jsxtip="show the rule node profile for the selected node in the Rules Tree" jsxvalue="profile"/>
+       <events jsxselect="(this.getAncestorOfType(jsx3.ide.mapper.Mapper)).updateProfilePane(this);"/>
+      </object>
+    </object>
+    <object type="jsx3.gui.Block">
+     <dynamics jsxbgcolor="@Solid Light" jsxborder="@Inset"/>
+     <variants jsxoverflow="1"/>
+     <strings jsxheight="100%" jsxname="jsx_schema_source" jsxwidth="100%"/>
+      <include async="false" src="components/Profiles/schema.xml"/>
+    </object>
+  </object>
+</serialization>

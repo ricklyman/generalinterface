@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  ~ Copyright (c) 2001-2011, TIBCO Software Inc.
+  ~ Use, modification, and distribution subject to terms of license.
+  --><serialization xmlns="urn:tibco.com/v3.0">
+ <onAfterDeserialize></onAfterDeserialize>
+  <object type="jsx3.gui.Dialog">
+   <dynamics jsxbgcolor="@Solid Medium"/>
+   <variants jsxheight="500" jsxoverflow="2" jsxwidth="550"/>
+   <strings jsxname="jsxdialog"/>
+    <object type="jsx3.gui.WindowBar">
+     <strings jsxname="jsxcaptionbar" jsxtext="Simulated Message"/>
+      <object type="jsx3.gui.ToolbarButton">
+       <dynamics jsximage="@Min Icon" jsxtip="jsx3.gui.Dialog.min"/>
+       <strings jsxname="jsxminbutton"/>
+       <events jsxexecute="(this.getAncestorOfType(jsx3.gui.Dialog)).doToggleState();"/>
+      </object>
+      <object type="jsx3.gui.ToolbarButton">
+       <dynamics jsxtip="jsx3.gui.Dialog.max"/>
+       <strings jsximage="JSX/images/dialog/max.gif" jsxname="max button"/>
+       <events jsxexecute="(this.getAncestorOfType(jsx3.gui.Dialog)).doMaximize(this);"/>
+      </object>
+      <object type="jsx3.gui.ToolbarButton">
+       <dynamics jsximage="@Close Icon" jsxtip="jsx3.gui.Dialog.close"/>
+       <strings jsxname="jsxclosebutton"/>
+       <events jsxexecute="(this.getAncestorOfType(jsx3.gui.Dialog)).doClose();"/>
+      </object>
+    </object>
+    <object type="jsx3.gui.Splitter">
+      <variants jsxleft="0" jsxorientation="1" jsxtop="0"/>
+      <strings jsxname="jsxsplitter" jsxsubcontainer1pct="80%"/>
+        <object type="jsx3.gui.Block">
+          <variants jsxoverflow="1"/>
+          <strings jsxheight="100%" jsxname="jsxpane" jsxwidth="100%"/>
+            <object type="jsx3.gui.BlockX">
+             <dynamics jsxbgcolor="@Solid Light" jsxpadding="@8Pixel"/>
+             <variants jsxoverflow="1"/>
+             <strings jsxheight="100%" jsxname="jsxpreviewmarkup" jsxwidth="100%" jsxxml="&lt;script&gt;&lt;/script&gt;" jsxxslid="jsx:///xsl/xml.xsl" jsxxslurl="jsx:///xsl/xml.xsl"/>
+            </object>
+          <dynamics jsxborder="@Inset"/>
+        </object>
+        <object type="jsx3.gui.Block">
+          <variants jsxleft="0" jsxoverflow="2" jsxrelativeposition="1" jsxtop="0"/>
+          <strings jsxheight="100%" jsxname="jsxpane" jsxpadding="8" jsxwidth="100%"/>
+            <object type="jsx3.gui.TextBox">
+              <variants jsxleft="0" jsxrelativeposition="1" jsxtop="0" jsxtype="1"/>
+              <strings jsxheight="100%" jsxmargin="0 4 0 0" jsxname="jsxpreviewmarkup_raw" jsxwidth="100%"/>
+            </object>
+          <dynamics jsxborder="@Inset"/>
+        </object>
+    </object>
+  </object>
+</serialization>

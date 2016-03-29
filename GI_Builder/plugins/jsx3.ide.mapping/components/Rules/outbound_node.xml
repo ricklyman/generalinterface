@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  ~ Copyright (c) 2001-2011, TIBCO Software Inc.
+  ~ Use, modification, and distribution subject to terms of license.
+  --><serialization xmlns="urn:tibco.com/v3.0">
+  <name>outbound_node.xml</name>
+  <icon/>
+  <description/>
+  <onBeforeDeserialize/>
+  <onAfterDeserialize/>
+  <objects>
+    <object type="jsx3.gui.LayoutGrid">
+      <variants/>
+      <strings jsxrows="62,62,*"/>
+      <object type="jsx3.gui.Block">
+        <dynamics jsxborder="@Dashed Bottom" jsxpadding="@8Pixel"/>
+        <variants jsxoverflow="2"/>
+        <strings jsxname="jsx_schema_outbound_rule_panel"/>
+        <object type="jsx3.gui.Block">
+          <variants jsxheight="20"/>
+          <strings jsxfontweight="bold" jsxtagname="div" jsxtext="&#10;          &lt;nobr&gt;Stub URL&lt;span style=&quot;vertical-align:super;color:blue;font-size:8px;cursor:help;&quot; title=&quot;XML document that will encapsulate the generated message. For example, SOAP messages need a stub document that contains, at a minimum, Envelope and Body tags&quot;&gt;[?]&lt;/span&gt;&lt;/nobr&gt;&#10;        "/>
+          <object type="jsx3.gui.Block">
+            <dynamics jsxcursor="@Hand"/>
+            <variants jsxfontsize="9"/>
+            <strings jsxcolor="blue" jsxfontweight="normal" jsxname="label" jsxstyleoverride="" jsxtext="&amp;#160;&amp;#160;&amp;#160;[enable]" jsxtip="Click to enable the Stub URL field. Note: using the default stub is strongly recommended"/>
+            <properties onclick="((jsx3.GO(&quot;jsx_schema_outbound_rule_panel&quot;)).getDescendantOfName(&quot;jsx_schema_mapnode_stubsrc&quot;)).setEnabled(1,true);"/>
+          </object>
+        </object>
+        <object type="jsx3.gui.TextBox">
+          <variants jsxenabled="0" jsxtype="0"/>
+          <strings jsxname="jsx_schema_mapnode_stubsrc" jsxwidth="100%"/>
+          <events jsxblur="(this.getAncestorOfType(jsx3.ide.mapper.Mapper)).writeMappings(true);"/>
+        </object>
+      </object>
+      <object type="jsx3.gui.Block">
+        <dynamics jsxborder="@Dashed Bottom" jsxpadding="@8Pixel"/>
+        <variants jsxoverflow="2"/>
+        <strings/>
+        <object type="jsx3.gui.Block">
+          <variants jsxheight="20"/>
+          <strings jsxfontweight="bold" jsxtagname="div" jsxtext="&#10;          &lt;nobr&gt;Stub Path&lt;span style=&quot;vertical-align:super;color:blue;font-size:8px;cursor:help;&quot; title=&quot;XSL Query for the node in the stub document to which to append the generated message&quot;&gt;[?]&lt;/span&gt;&lt;/nobr&gt;&#10;        "/>
+          <object type="jsx3.gui.Block">
+            <dynamics jsxcursor="@Hand"/>
+            <variants jsxfontsize="9"/>
+            <strings jsxcolor="blue" jsxfontweight="normal" jsxname="label" jsxstyleoverride="" jsxtext="&amp;#160;&amp;#160;&amp;#160;[enable]" jsxtip="Click to enable the Stub Path field"/>
+            <properties onclick="(jsx3.GO(&quot;jsx_schema_mapnode_stubpath&quot;)).setEnabled(1,true);"/>
+          </object>
+        </object>
+        <object type="jsx3.gui.TextBox">
+          <variants jsxenabled="0" jsxtype="0"/>
+          <strings jsxname="jsx_schema_mapnode_stubpath" jsxwidth="100%"/>
+          <events jsxblur="(this.getAncestorOfType(jsx3.ide.mapper.Mapper)).writeMappings(true);"/>
+        </object>
+      </object>
+      <object type="jsx3.gui.Block">
+        <dynamics jsxpadding="@8Pixel"/>
+        <variants jsxoverflow="2"/>
+        <strings/>
+        <object type="jsx3.gui.Block">
+          <variants jsxheight="20"/>
+          <strings jsxfontweight="bold" jsxtagname="div" jsxtext="&#10;          &lt;nobr&gt;onBeforeSend&lt;span style=&quot;vertical-align:super;color:blue;font-size:8px;cursor:help;&quot; title=&quot;script to execute immediately before the message is sent.&quot;&gt;[?]&lt;/span&gt;&lt;/nobr&gt;&#10;        "/>
+        </object>
+        <object type="jsx3.gui.TextBox">
+          <dynamics jsxbg="@Grid Lines"/>
+          <variants jsxheight="120" jsxtype="1"/>
+          <strings jsxname="jsx_schema_mapnode_onbeforesend" jsxwidth="100%"/>
+          <events jsxblur="(this.getAncestorOfType(jsx3.ide.mapper.Mapper)).writeMappings(true);" jsxkeydown="jsx3.ide.doTextEditorKeyDown(objEVENT,this);"/>
+        </object>
+      </object>
+    </object>
+  </objects>
+</serialization>

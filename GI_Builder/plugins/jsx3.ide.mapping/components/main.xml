@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  ~ Copyright (c) 2001-2011, TIBCO Software Inc.
+  ~ Use, modification, and distribution subject to terms of license.
+  --><serialization xmlns="urn:tibco.com/v3.0">
+ <onAfterDeserialize></onAfterDeserialize>
+  <object type="jsx3.gui.Splitter">
+   <dynamics jsxbgcolor="@Solid Medium"/>
+   <variants jsxleft="0" jsxrelativeposition="0" jsxtop="0"/>
+   <strings jsxname="splitter" jsxsubcontainer2pct="60%"/>
+    <object type="jsx3.gui.Splitter">
+     <dynamics jsxbgcolor="@Solid Medium"/>
+     <variants jsxorientation="1"/>
+     <strings jsxname="splitter" jsxsubcontainer1pct="75%"/>
+      <object type="jsx3.gui.Block">
+       <variants jsxoverflow="2"/>
+       <strings jsxhelpid="ide.mapper.rulestree" jsxname="jsx_schema_rules_container"/>
+        <object type="jsx3.gui.LayoutGrid">
+         <variants jsxrelativeposition="0"/>
+         <strings jsxrows="22,24,*"/>
+          <object type="jsx3.gui.Block">
+           <dynamics jsxborder="@Outset Top"/>
+           <variants jsxoverflow="2"/>
+           <strings jsxbgcolor="#60709f" jsxcolor="#ffffff" jsxpadding="4" jsxtext="Rules Tree" jsxtip="The parsed input document (WSDL/XML/Schema) visualized as a hierarchy of rules"/>
+          </object>
+          <object type="jsx3.gui.Block">
+           <variants jsxoverflow="3"/>
+           <strings jsxborder="0px;solid 1px #9898a5;0px;0px"/>
+            <object type="jsx3.gui.ToolbarButton">
+             <variants/>
+             <strings jsximage="images/play.gif" jsxname="jsxtbb" jsxtext="Test..." jsxtip="launches the step-through test interface to execute operation(s) in the Rules Tree"/>
+             <events jsxexecute="(this.getAncestorOfType(jsx3.ide.mapper.Mapper)).openTester();"/>
+            </object>
+            <object type="jsx3.gui.Menu">
+             <variants jsxdivider="1" jsxstate="0"/>
+             <strings jsximage="images/add.gif" jsxname="jsx_schema_menu_add" jsxtext="Map" jsxtip="create mappings" jsxxmlurl="xml/mnu_add.xml"/>
+             <events jsxmenu="(this.getAncestorOfType(jsx3.ide.mapper.Mapper)).formatToolbar(this);"/>
+            </object>
+            <object type="jsx3.gui.Menu">
+             <variants jsxdivider="1" jsxstate="0"/>
+             <strings jsximage="images/rem.gif" jsxname="jsx_schema_menu_rem" jsxtext="Detach" jsxtip="remove mappings" jsxxmlurl="xml/mnu_rem.xml"/>
+            </object>
+            <object type="jsx3.gui.Menu">
+             <variants jsxdivider="1" jsxstate="0"/>
+             <strings jsximage="images/del.gif" jsxname="jsx_schema_menu_del" jsxtext="Delete" jsxtip="delete rules" jsxxmlurl="xml/mnu_del.xml"/>
+            </object>
+            <object type="jsx3.gui.Menu">
+             <variants jsxdivider="1" jsxstate="0"/>
+             <strings jsximage="images/code.gif" jsxname="jsx_schema_tbb_code" jsxtext="Generate" jsxtip="auto-generates JavaScript code to call the selected operation (Note: the rules file must first be saved)"/>
+             <events jsxexecute="(this.getAncestorOfType(jsx3.ide.mapper.Mapper)).generateCode(this);" jsxmenu="(this.getAncestorOfType(jsx3.ide.mapper.Mapper)).listOperations(this);"/>
+            </object>
+          </object>
+          <object type="jsx3.gui.Block">
+           <dynamics jsxbgcolor="@Solid Light" jsxborder="@Inset"/>
+           <variants jsxoverflow="2"/>
+           <strings/>
+            <object type="jsx3.gui.Tree">
+             <dynamics jsxpadding="@Tree Padding"/>
+             <variants jsxdrag="1" jsxdrop="1" jsxmultiselect="1"/>
+             <strings jsxmenu="jsx_schema_menu" jsxname="jsx_schema_rulestree" jsxxmlurl="rules/_new.xml" jsxxslurl="xsl/rulestree.xsl"/>
+             <events jsxchange="(this.getAncestorOfType(jsx3.ide.mapper.Mapper)).onRuleSelect(true);" jsxdrag="" jsxdrop="(this.getAncestorOfType(jsx3.ide.mapper.Mapper)).onRuleDrop(this,objSOURCE,strDRAGIDS,strRECORDID,bINSERTBEFORE);" jsxexecute="(this.getAncestorOfType(jsx3.ide.mapper.Mapper)).doDrill(strRECORDID,true,this,objRECORD);" jsxtoggle="(this.getAncestorOfType(jsx3.ide.mapper.Mapper)).doDrill(strRECORDID,bOPEN,this,objRECORD);"/>
+             <xslparameters jsxindent="16"/>
+            </object>
+          </object>
+          <object type="jsx3.gui.Menu">
+           <variants/>
+           <strings jsxdisplay="none" jsxname="jsx_schema_menu" jsxtext="menu" jsxtip="menu" jsxxmlurl="xml/mnu_schema_parser.xml"/>
+           <events jsxmenu="(this.getAncestorOfType(jsx3.ide.mapper.Mapper)).formatMenu(this);"/>
+          </object>
+        </object>
+      </object>
+      <object type="jsx3.gui.Block">
+       <variants jsxoverflow="1"/>
+       <strings jsxhelpid="ide.mapper.profile" jsxname="child2"/>
+        <include async="true" src="components/Profiles/source.xml"/>
+      </object>
+    </object>
+    <object type="jsx3.gui.Block">
+     <variants jsxoverflow="2"/>
+     <strings jsxhelpid="ide.mapper.settings" jsxname="jsx_schema_bindingeditor"/>
+      <object type="jsx3.gui.LayoutGrid">
+       <variants jsxrelativeposition="0"/>
+       <strings jsxrows="22,*"/>
+        <object type="jsx3.gui.Block">
+         <dynamics jsxborder="@Outset Top"/>
+         <variants jsxoverflow="2"/>
+         <strings jsxbgcolor="#60709f" jsxcolor="#ffffff" jsxpadding="4" jsxtext="Settings" jsxtip="edit interface for the selected node in the Rules Tree"/>
+        </object>
+        <object type="jsx3.gui.Block">
+         <dynamics jsxbgcolor="@Solid Medium" jsxborder="@Inset"/>
+         <variants jsxoverflow="2"/>
+         <strings jsxheight="100%" jsxname="jsx_schema_binding" jsxwidth="100%"/>
+        </object>
+      </object>
+    </object>
+  </object>
+</serialization>

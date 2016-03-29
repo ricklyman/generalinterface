@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  ~ Copyright (c) 2001-2011, TIBCO Software Inc.
+  ~ Use, modification, and distribution subject to terms of license.
+  --><serialization xmlns="urn:tibco.com/v3.0">
+<name>profile.xml</name>
+<icon/>
+<description/>
+<onBeforeDeserialize/>
+<onAfterDeserialize/>
+<objects>
+
+<object type="jsx3.gui.Matrix">
+<dynamics jsxbgcolor="@Solid Medium" jsxbodyborder="@Outset"/>
+<variants jsxpagingmodel="1" jsxreorder="0" jsxrowheight="0" jsxscalewidth="1" jsxselectionmodel="0" jsxsort="0"/>
+<strings jsxname="jsx_schema_profile" jsxrenderingmodel="deep"/>
+<events jsxafteredit="(this.getAncestorOfType(jsx3.ide.mapper.Mapper)).onProfileEdit(strRECORDID,objCOLUMN.getEditMask(),this);" jsxbeforeedit="(this.getRecord(strRECORDID)).jsxmask!=&quot;jsxnull&quot;;"/>
+
+<object type="jsx3.gui.Matrix.Column">
+<dynamics jsxbg="@Fade TopDown" jsxborder="@Outset"/>
+<variants jsxwidth="120"/>
+<strings jsxcellborder="solid 0px;solid 0px;solid 1px #f8e8ff;solid 0px" jsxcellpadding="3 2 2 3" jsxname="jsx_name" jsxpadding="2 3 0 3" jsxpath="jsxtext" jsxtext="Name"/>
+</object>
+
+<object type="jsx3.gui.Matrix.Column">
+<dynamics jsxbg="@Fade TopDown" jsxborder="@Outset NoRight"/>
+<variants jsxcellwrap="1"/>
+<strings jsxcellborder="solid 0px;solid 0px;solid 1px #f8e8ff;solid 0px" jsxcellpadding="3 2 2 3" jsxformathandler="&#10;        function(element,cdfkey,matrix/*, 'matrixcolumn', 'onscreenrownumber','server'*/) {&#10;          if(matrix.getRecordNode(cdfkey).getAttribute(&quot;jsxmask&quot;) != &quot;jsxnull&quot;) {&#10;            element.parentNode.style.backgroundColor = &quot;#ffffff&quot;;&#10;          } else {&#10;            element.style.color = &quot;#9898a5&quot;;&#10;          }&#10;        }&#10;      " jsxname="jsx_value" jsxpadding="2 3 0 3" jsxpath="value" jsxtext="Value" jsxwidth="*"/>
+<object type="jsx3.gui.TextBox">
+<dynamics jsxcolor="@Matrix Edit Color"/>
+<variants jsxtype="1"/>
+<strings jsxdisplay="none" jsxname="jsxTextMask" jsxoverflow="auto" jsxpadding="2" jsxtip="Double-click to expand editable field height."/>
+<events jsxdblclick="this.setHeight(this.getHeight()+20,true);objEVENT.cancelBubble();"/>
+</object>
+</object>
+
+</object>
+</objects>
+</serialization>
