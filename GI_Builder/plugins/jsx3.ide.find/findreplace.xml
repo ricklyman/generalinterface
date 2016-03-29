@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  ~ Copyright (c) 2001-2011, TIBCO Software Inc.
+  ~ Use, modification, and distribution subject to terms of license.
+  --><serialization xmlns="urn:tibco.com/v3.0">
+  <onAfterDeserialize><![CDATA[objJSX.updateButtonState=function(b){var
+fb=this.findDescendants(function(a){return a instanceof jsx3.gui.Button;},true,true);for(var
+Na=0;Na<fb.length;Na++)fb[Na].setEnabled(b?jsx3.gui.Form.STATEENABLED:jsx3.gui.Form.STATEDISABLED,true);};objJSX._doSearch=function(d,k,s,e){var
+sb=jsx3.ide.getActiveEditor();if(sb&&sb.canSearch()){var
+ib=sb.doIncrSearch(d,k,s,e);if(!ib)jsx3.sleep(this._refocus,this.getId(),this);return ib;}else this.beep();};objJSX._refocus=function(){jsxfind.focus();};objJSX.findNext=function(){if(this._doSearch(jsxfind.getValue(),null,find_cs.getChecked(),find_regexp.getChecked()))return true;else this.beep();};objJSX.replace=function(){if(this._doSearch(jsxfind.getValue(),jsxreplace.getValue(),find_cs.getChecked(),find_regexp.getChecked())){this._setEditorDirty();return true;}else this.beep();};objJSX.replaceAndFind=function(){if(this.replace())return this.findNext();};objJSX.replaceAll=function(){var
+mb=false;while(this._doSearch(jsxfind.getValue(),jsxreplace.getValue(),find_cs.getChecked(),find_regexp.getChecked()))mb=true;if(mb)this._setEditorDirty();else this.beep();};objJSX._setEditorDirty=function(){var
+x=jsx3.ide.getActiveEditor();x.setDirty(true);if(x.getActiveView&&(x.getActiveView()).setDirty)(x.getActiveView()).setDirty(true);};objJSX._doFindClose=function(){this._persistState();this.doClose();};objJSX._persistState=function(){var
+xb=jsx3.ide.getIDESettings();xb.set("find-replace",{left:this.getLeft(),top:this.getTop(),cs:find_cs.getChecked(),regexp:find_regexp.getChecked()});};objJSX.initTool=function(){var
+ka=jsx3.ide.getIDESettings();var
+H=ka.get("find-replace");if(H){if(H.left)this.setLeft(H.left);if(H.top)this.setTop(H.top);find_cs.setChecked(H.cs);find_regexp.setChecked(H.regexp);this.constrainPosition();}var
+Da=jsx3.ide.getActiveEditor();if(!(Da&&Da.canSearch()))this.updateButtonState(false);jsxfind.focus();};objJSX.toolRefocus=function(){this.findNext();};objJSX.registerHotKey("findNext",jsx3.gui.Event.KEY_ENTER,false,true,false);objJSX.registerHotKey("findNext","f",false,true,false);objJSX.registerHotKey("replace","r",false,true,false);objJSX.registerHotKey("replaceAll","r",true,true,false);objJSX.registerHotKey("replaceAndFind","t",false,true,false);]]></onAfterDeserialize>
+    <object type="jsx3.gui.Dialog">
+      <dynamics jsxbgcolor="@Solid Medium"/>
+      <variants jsxheight="186" jsxresize="0" jsxwidth="400"/>
+      <strings jsxhelpid="ide.find" jsxname="jsxfindreplace"/>
+        <object type="jsx3.gui.WindowBar">
+          <variants/>
+          <strings jsxname="jsxcbar" jsxtext="Find and Replace"/>
+            <object type="jsx3.gui.ToolbarButton">
+              <dynamics jsximage="@Min Icon" jsxtip="jsx3.gui.Dialog.min"/>
+              <variants/>
+              <strings jsxkeycode="ctrl+m" jsxname="jsxminbutton"/>
+              <events jsxexecute="jsxfindreplace.doToggleState();"/>
+            </object>
+            <object type="jsx3.gui.ToolbarButton">
+              <dynamics jsximage="@Close Icon" jsxtip="jsx3.gui.Dialog.close"/>
+              <variants/>
+              <strings jsxkeycode="alt+w" jsxname="jsxclosebutton"/>
+              <events jsxexecute="jsxfindreplace._doFindClose();"/>
+            </object>
+        </object>
+        <object type="jsx3.gui.Block">
+          <dynamics jsxpadding="@8Pixel"/>
+          <variants jsxoverflow="2"/>
+          <strings jsxheight="100%" jsxwidth="100%"/>
+            <object type="jsx3.gui.LayoutGrid">
+              <variants/>
+              <strings jsxrows="116,*"/>
+                <object type="jsx3.gui.LayoutGrid">
+                  <variants/>
+                  <strings jsxcols="60,*"/>
+                    <object type="jsx3.gui.Block">
+                      <variants jsxoverflow="2"/>
+                      <strings/>
+                        <object type="jsx3.gui.Block">
+                          <variants jsxheight="65" jsxoverflow="2"/>
+                          <strings jsxpadding="2 0 0 4" jsxtext="Find" jsxwidth="100%"/>
+                        </object>
+                        <object type="jsx3.gui.Block">
+                          <variants jsxheight="20" jsxoverflow="2"/>
+                          <strings jsxpadding="2 0 0 4" jsxtext="Replace" jsxwidth="100%"/>
+                        </object>
+                    </object>
+                    <object type="jsx3.gui.Block">
+                      <variants jsxoverflow="1"/>
+                        <object type="jsx3.gui.TextBox">
+                          <dynamics jsxborder="@Inset"/>
+                          <variants jsxheight="40" jsxleft="0" jsxrelativeposition="0" jsxtop="0" jsxtype="1"/>
+                          <strings jsxname="jsxfind" jsxwidth="100%"/>
+                          <events jsxkeydown="if(objEVENT.keyCode()==jsx3.gui.Event.KEY_ENTER&amp;&amp;!objEVENT.hasModifier()){objEVENT.cancelAll();jsxfindbutton.doExecute();}"/>
+                        </object>
+                        <object type="jsx3.gui.TextBox">
+                          <dynamics jsxborder="@Inset"/>
+                          <variants jsxheight="40" jsxleft="0" jsxrelativeposition="0" jsxtop="68" jsxtype="1"/>
+                          <strings jsxname="jsxreplace" jsxwidth="100%"/>
+                          <events jsxkeydown="if(objEVENT.keyCode()==jsx3.gui.Event.KEY_ENTER&amp;&amp;!objEVENT.hasModifier()){objEVENT.cancelAll();jsxfindbutton.doExecute();}"/>
+                        </object>
+                        <object type="jsx3.gui.CheckBox">
+                         <variants jsxchecked="0" jsxheight="20" jsxleft="0" jsxrelativeposition="0" jsxtop="41" jsxwidth="150"/>
+                         <strings jsxname="find_cs" jsxtext="Case Sensitive"/>
+                        </object>
+                        <object type="jsx3.gui.CheckBox">
+                         <variants jsxchecked="0" jsxheight="20" jsxleft="120" jsxrelativeposition="0" jsxtop="41" jsxwidth="150"/>
+                         <strings jsxname="find_regexp" jsxtext="Regular Expression"/>
+                        </object>
+                    </object>
+                </object>
+                <object type="jsx3.gui.Block">
+                  <variants jsxoverflow="1"/>
+                  <strings jsxtextalign="right"/>
+                    <object type="jsx3.gui.Button">
+                      <variants jsxheight="18" jsxindex="0" jsxwidth="60"/>
+                      <strings jsxkeycode="ctrl+r" jsxmargin="0 4 0 0" jsxtext="Replace" jsxtip="performs a case-insensitive search/replace for the exact character string"/>
+                      <events jsxexecute="jsxfindreplace.replace();"/>
+                    </object>
+                    <object type="jsx3.gui.Button">
+                      <variants jsxheight="18" jsxindex="0"/>
+                      <strings jsxkeycode="ctrl+t" jsxmargin="0 4 0 0" jsxtext="Replace &amp;#38; Find Again"/>
+                      <events jsxexecute="jsxfindreplace.replaceAndFind();"/>
+                    </object>
+                    <object type="jsx3.gui.Button">
+                      <variants jsxheight="18" jsxindex="0" jsxwidth="70"/>
+                      <strings jsxmargin="0 26 0 0" jsxtext="Replace All" jsxtip="allows for a regular expression to be entered into the 'find' box to peform a case-sensitive find and replace"/>
+                      <events jsxexecute="jsxfindreplace.replaceAll();"/>
+                    </object>
+                    <object type="jsx3.gui.Button">
+                      <variants jsxheight="18" jsxindex="0" jsxwidth="60"/>
+                      <strings jsxfontweight="bold" jsxkeycode="enter" jsxmargin="0 4 0 0" jsxname="jsxfindbutton" jsxtext="Find" jsxtip="performs a case-insensitive search for the exact character string, highlighting the first instance of the found text"/>
+                      <events jsxexecute="jsxfindreplace.findNext();"/>
+                    </object>
+                </object>
+            </object>
+        </object>
+    </object>
+</serialization>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  ~ Copyright (c) 2001-2011, TIBCO Software Inc.
+  ~ Use, modification, and distribution subject to terms of license.
+  --><serialization xmlns="urn:tibco.com/v3.0">
+  <onAfterDeserialize><![CDATA[objJSX.initializeTitle=function(e){this.contactName=e.name||e.jid;windowBar.setText("Chat with "+this.contactName,true);this._initializeConvArea=true;var
+K=jsx3.util.DateFormat;this.date_format=K.getDateTimeInstance(K.SHORT,K.SHORT);};objJSX.onNewMessage=function(l,o){if(!this.chatInstance||this.chatInstance.chatid!=l.chatid)this.chatInstance=l;if(o)this.displayMessage(o);};objJSX.showLast=function(){var
+ub={a:"tbody"};var
+Pa=jsxconversationarea.getRendered();var
+Na=Pa.firstChild.firstChild&&(String(Pa.firstChild.firstChild.tagName)).toLowerCase()==ub.a?Pa.firstChild.firstChild:Pa.firstChild;if(!this._scrollTOID&&Na.lastChild&&Pa.scrollTop>=Na.lastChild.offsetTop-parseInt(Pa.style.height)-2*Na.lastChild.offsetHeight)this._scrollTOID=window.setTimeout((jsx3.$F(function(){this._scrollTOID=null;if(Na&&Na.lastChild)Pa.scrollTop=Na.lastChild.offsetTop;})).bind(this),200);};objJSX.displayMessage=function(f,h){var
+ub={a:"<table></table>",b:"Me",c:"tbody",d:"tr",e:"td",f:"name",g:"message",h:"date"};var
+Ua=h||new
+Date();var
+Ya=true;var
+mb=jsxconversationarea.getRendered();var
+Ha=this;var
+u=function(){Ha._msgLogTO=null;var
+mb=jsxconversationarea.getRendered();if(!mb){Ha._msgLogTO=window.setTimeout(jsx3.$F(function(){u();}),200);}else{var
+Xa;while(Xa=Ha._msgLog.shift())Ha.displayMessage(Xa.msg,Xa.cameIn);Ha._msgLog=null;}};if(!mb){if(!this._msgLog)this._msgLog=[];this._msgLog.push({cameIn:Ua,msg:f});if(this._msgLogTO)return;this._msgLogTO=window.setTimeout(jsx3.$F(function(){u();}),200);return;}if(!mb.firstChild)mb.innerHTML=ub.a;var
+na=f.from?this.contactName:ub.b;var
+xa=mb.firstChild.firstChild&&(String(mb.firstChild.firstChild.tagName)).toLowerCase()==ub.c?mb.firstChild.firstChild:mb.firstChild;var
+va=document.createElement(ub.d);var
+Sa=document.createElement(ub.e);Sa.className=ub.f;if(na!=this._lastName)Sa.innerHTML=jsx3.util.strTruncate(na,15);var
+Wa=document.createElement(ub.e);Wa.className=ub.g;Wa.innerHTML=f.body;var
+J=document.createElement(ub.e);J.className=ub.h;J.innerHTML=this.date_format.format(Ua);va.appendChild(Sa);va.appendChild(Wa);va.appendChild(J);xa.appendChild(va);this._lastName=na;this.showLast();};objJSX.sendMessage=function(j){if(j){if(!j.enterKey()||j.shiftKey())return;j.cancelKey();j.cancelReturn();j.cancelBubble();}try{var
+L=jsxchatarea.getValue();L=L.replace(/\n/g,"<br/>");this.chatInstance.sendMessage({body:L});this.displayMessage({body:L});jsxchatarea.setValue("",true);this._updateBtnState("");}catch(Kb){}};objJSX._updateBtnState=function(c){jsxsend.setEnabled(c.length>0,true);};]]></onAfterDeserialize>
+  <object type="jsx3.gui.Dialog">
+    <variants jsxheight="318" jsxleft="70" jsxtop="26" jsxwidth="431" jsxwindowstate="1"/>
+    <strings jsxname="jsx_chat_dialog"/>
+    <dynamics jsxbgcolor="@Solid Medium"/>
+    <object type="jsx3.gui.WindowBar">
+      <variants/>
+      <strings jsxname="windowBar" jsxtext="[Caption]"/>
+      <object type="jsx3.gui.ToolbarButton">
+        <variants/>
+        <strings jsxname="btnMinimize"/>
+        <dynamics jsximage="@Min Icon" jsxtip="jsx3.gui.Dialog.min"/>
+        <events jsxexecute="(this.getAncestorOfType(jsx3.gui.Dialog)).doToggleState();"/>
+      </object>
+      <object type="jsx3.gui.ToolbarButton">
+        <variants/>
+        <strings jsxname="btnMaximize"/>
+        <dynamics jsximage="@Max Icon" jsxtip="jsx3.gui.Dialog.max"/>
+        <events jsxexecute="(this.getAncestorOfType(jsx3.gui.Dialog)).doMaximize(this);"/>
+      </object>
+      <object type="jsx3.gui.ToolbarButton">
+        <variants/>
+        <strings jsxname="btnClose"/>
+        <dynamics jsximage="@Close Icon" jsxtip="jsx3.gui.Dialog.close"/>
+        <events jsxexecute="(this.getAncestorOfType(jsx3.gui.Dialog)).doClose();"/>
+      </object>
+    </object>
+    <object type="jsx3.gui.Block">
+      <variants jsxloadtype="1" jsxoverflow="3"/>
+      <strings jsxheight="100%" jsxname="block" jsxrelativeposition="1" jsxwidth="100%"/>
+      <object type="jsx3.gui.LayoutGrid">
+        <variants/>
+        <strings jsxrows="*,40"/>
+        <object type="jsx3.gui.Block">
+          <variants jsxoverflow="1" jsxpadding="4"/>
+          <strings jsxclassname="chatdialog" jsxheight="100%" jsxname="jsxconversationarea" jsxrelativeposition="1" jsxwidth="100%"/>
+          <dynamics jsxbgcolor="@Solid Light"/>
+        </object>
+        <object type="jsx3.gui.Block">
+          <variants jsxoverflow="3"/>
+          <strings jsxborder="1px solid #585865;none;none;none" jsxheight="100%" jsxname="paneBottom" jsxpadding="4 8 4 8" jsxwidth="100%"/>
+          <dynamics jsxbgcolor="@Solid Shadow"/>
+          <object type="jsx3.gui.LayoutGrid">
+            <variants jsxleft="0" jsxoverflow="2" jsxrelativeposition="0" jsxtop="0"/>
+            <strings jsxcols="*,65" jsxheight="100%" jsxname="layoutRows" jsxwidth="100%"/>
+            <object type="jsx3.gui.Block">
+              <strings jsxheight="100%" jsxname="pane1" jsxwidth="100%"/>
+              <object type="jsx3.gui.TextBox">
+                <variants jsxenabled="1" jsxtype="1"/>
+                <strings jsxborder="none" jsxheight="100%" jsxmargin="0" jsxname="jsxchatarea" jsxvalue="" jsxwidth="100%"/>
+                <events jsxincchange="jsx_chat_dialog._updateBtnState(strVALUE);" jsxkeypress="jsx_chat_dialog.sendMessage(objEVENT);"/>
+              </object>
+            </object>
+            <object type="jsx3.gui.Block">
+              <variants jsxoverflow="1"/>
+              <strings jsxfontweight="bold" jsxheight="100%" jsxname="pane2" jsxpadding="6 0 0 8" jsxtextalign="center" jsxwidth="100%"/>
+              <object type="jsx3.gui.Button">
+                <variants jsxheight="19" jsxindex="0"/>
+                <strings jsxenabled="0" jsxname="jsxsend" jsxtext="Send" jsxtextalign="center" jsxwidth="100%"/>
+                <events jsxexecute="jsx_chat_dialog.sendMessage();"/>
+              </object>
+            </object>
+          </object>
+        </object>
+      </object>
+    </object>
+  </object>
+</serialization>

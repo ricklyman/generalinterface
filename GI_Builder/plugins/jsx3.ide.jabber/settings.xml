@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  ~ Copyright (c) 2001-2011, TIBCO Software Inc.
+  ~ Use, modification, and distribution subject to terms of license.
+  --><serialization xmlns="urn:tibco.com/v3.0">
+  <onAfterDeserialize><![CDATA[objJSX.getFirstResponder=function(){return server;};objJSX.savePrefs=function(){var
+Oa=server.getValue();var
+sb=port.getValue();var
+la=bind.getValue();var
+ma=useSSL.getValue();var
+H=userid.getValue();var
+sa=password.getValue();var
+ka=remember.getValue();var
+ta=autologin.getValue();var
+db=jsx3.ide.getIDESettings();var
+Wa=(this.getPlugIn()).getId();var
+db=jsx3.ide.getIDESettings();var
+Wa=(this.getPlugIn()).getId();if(db.get(Wa,"server")!=Oa)db.set(Wa,"server",Oa);if(db.get(Wa,"port")!=sb)db.set(Wa,"port",sb);if(db.get(Wa,"bind")!=la)db.set(Wa,"bind",la);if(db.get(Wa,"ssl")!=ma)db.set(Wa,"ssl",ma);if(db.get(Wa,"remember")!=ka)db.set(Wa,"remember",ka);if(db.get(Wa,"autologin")!=ta)db.set(Wa,"autologin",ta);if(db.get(Wa,"userid")!=H)db.set(Wa,"userid",H);db.set(Wa,"sounds",sounds.getValue());if(ka){(this.getPlugIn()).setTempPassword(null);if(db.get(Wa,"password")!=sa)db.set(Wa,"password",sa);}else{(this.getPlugIn()).setTempPassword(sa);db.set(Wa,"password","");}return true;};objJSX.loadPrefs=function(){var
+M=jsx3.ide.getIDESettings();var
+wb=(this.getPlugIn()).getId();if(M.get(wb)){server.setValue(M.get(wb,"server"));port.setValue(M.get(wb,"port"));bind.setValue(M.get(wb,"bind"));useSSL.setValue(M.get(wb,"ssl"));userid.setValue(M.get(wb,"userid"));password.setValue(M.get(wb,"password"));remember.setValue(M.get(wb,"remember"));autologin.setValue(M.get(wb,"autologin"));sounds.setValue(M.get(wb,"sounds"));}else{server.setValue("chat.generalinterface.org");port.setValue("80");bind.setValue("http-bind");remember.setValue(1);autologin.setValue(1);}};objJSX.makeDirty=function(c){(this.getPane()).setDirty(true);};]]></onAfterDeserialize>
+  <object type="jsx3.gui.Block">
+    <variants jsxleft="0" jsxoverflow="3" jsxrelativeposition="0" jsxtop="0"/>
+    <strings jsxheight="100%" jsxhelpid="ide.prefs.jabber" jsxname="prefspane" jsxpadding="8" jsxwidth="100%"/>
+      <object type="jsx3.gui.LayoutGrid">
+        <variants jsxoverflow="2" jsxrelativeposition="1"/>
+        <strings jsxcols="100,*" jsxrows="26,26,26,26,26,26,26,26,26"/>
+        <object type="jsx3.gui.Block">
+          <variants jsxoverflow="2"/>
+          <strings jsxfontweight="bold" jsxheight="100%" jsxname="pane1" jsxpadding="5 6 0 0" jsxtext="Jabber Server:" jsxtextalign="right" jsxwidth="100%"/>
+        </object>
+        <object type="jsx3.gui.Block">
+          <variants jsxoverflow="3"/>
+          <strings jsxheight="100%" jsxname="pane2" jsxpadding="2 0 0 0" jsxwidth="100%"/>
+          <object type="jsx3.gui.TextBox">
+            <variants jsxheight="18"/>
+            <strings jsxmargin="0 4 0 0" jsxname="server" jsxvalue="chat.generalinterface.org" jsxwidth="100%"/>
+            <events jsxincchange="prefspane.makeDirty(this);"/>
+          </object>
+        </object>
+        <object type="jsx3.gui.Block">
+          <variants jsxoverflow="2"/>
+          <strings jsxfontweight="bold" jsxheight="100%" jsxname="pane1" jsxpadding="5 6 0 0" jsxtext="Port:" jsxtextalign="right" jsxwidth="100%"/>
+        </object>
+        <object type="jsx3.gui.Block">
+          <variants jsxoverflow="3"/>
+          <strings jsxheight="100%" jsxname="pane2" jsxpadding="2 0 0 0" jsxwidth="100%"/>
+          <object type="jsx3.gui.TextBox">
+            <variants jsxheight="18" jsxwidth="150"/>
+            <strings jsxmargin="0 4 0 0" jsxname="port" jsxvalidationtype="number" jsxvalue="80"/>
+            <events jsxincchange="prefspane.makeDirty(this);"/>
+          </object>
+        </object>
+        <object type="jsx3.gui.Block">
+          <variants jsxoverflow="2"/>
+          <strings jsxfontweight="bold" jsxheight="100%" jsxname="pane1" jsxpadding="5 6 0 0" jsxtext="Bind URL:" jsxtextalign="right" jsxwidth="100%"/>
+        </object>
+        <object type="jsx3.gui.Block">
+          <variants jsxoverflow="3"/>
+          <strings jsxheight="100%" jsxname="pane2" jsxpadding="2 0 0 0" jsxwidth="100%"/>
+          <object type="jsx3.gui.TextBox">
+            <variants jsxheight="18"/>
+            <strings jsxmargin="0 4 0 0" jsxname="bind" jsxvalue="http-bind" jsxwidth="150"/>
+            <events jsxincchange="prefspane.makeDirty(this);"/>
+          </object>
+        </object>
+        <object type="jsx3.gui.Block"/>
+        <object type="jsx3.gui.Block">
+          <variants jsxoverflow="3"/>
+          <strings jsxheight="100%" jsxname="pane2" jsxpadding="2 0 0 0" jsxwidth="100%"/>
+          <object type="jsx3.gui.CheckBox">
+            <variants jsxheight="18"/>
+            <strings jsxmargin="0 4 0 0" jsxname="useSSL" jsxtext="Use SSL"/>
+            <events jsxtoggle="prefspane.makeDirty(this);"/>
+          </object>
+        </object>
+        <object type="jsx3.gui.Block">
+          <variants jsxoverflow="2"/>
+          <strings jsxfontweight="bold" jsxheight="100%" jsxname="pane1" jsxpadding="5 6 0 0" jsxtext="User ID:" jsxtextalign="right" jsxwidth="100%"/>
+        </object>
+        <object type="jsx3.gui.Block">
+          <variants jsxoverflow="3"/>
+          <strings jsxheight="100%" jsxname="pane2" jsxpadding="2 0 0 0" jsxwidth="100%"/>
+          <object type="jsx3.gui.TextBox">
+            <variants jsxheight="18"/>
+            <strings jsxmargin="0 4 0 0" jsxname="userid" jsxvalue="" jsxwidth="150"/>
+            <events jsxincchange="prefspane.makeDirty(this);"/>
+          </object>
+        </object>
+        <object type="jsx3.gui.Block">
+          <variants jsxoverflow="2"/>
+          <strings jsxfontweight="bold" jsxheight="100%" jsxname="pane1" jsxpadding="5 6 0 0" jsxtext="Password:" jsxtextalign="right" jsxwidth="100%"/>
+        </object>
+        <object type="jsx3.gui.Block">
+          <variants jsxoverflow="3"/>
+          <strings jsxheight="100%" jsxname="pane2" jsxpadding="2 0 0 0" jsxwidth="100%"/>
+          <object type="jsx3.gui.TextBox">
+            <variants jsxheight="18" jsxtype="2"/>
+            <strings jsxmargin="0 4 0 0" jsxname="password" jsxvalue="" jsxwidth="150"/>
+            <events jsxincchange="prefspane.makeDirty(this);"/>
+          </object>
+        </object>
+        <object type="jsx3.gui.Block"/>
+        <object type="jsx3.gui.Block">
+          <variants jsxoverflow="3"/>
+          <strings jsxheight="100%" jsxname="pane2" jsxpadding="2 0 0 0" jsxwidth="100%"/>
+          <object type="jsx3.gui.CheckBox">
+            <variants jsxheight="18"/>
+            <strings jsxmargin="0 4 0 0" jsxname="remember" jsxtext="Remember password (password will be stored as plain text)"/>
+            <events jsxtoggle="prefspane.makeDirty(this);"/>
+          </object>
+        </object>
+        <object type="jsx3.gui.Block"/>
+        <object type="jsx3.gui.Block">
+          <variants jsxoverflow="3"/>
+          <strings jsxheight="100%" jsxname="pane2" jsxpadding="2 0 0 0" jsxwidth="100%"/>
+          <object type="jsx3.gui.CheckBox">
+            <variants jsxheight="18"/>
+            <strings jsxmargin="0 4 0 0" jsxname="autologin" jsxtext="Login automatically on start up"/>
+            <events jsxtoggle="prefspane.makeDirty(this);"/>
+          </object>
+        </object>
+        <object type="jsx3.gui.Block"/>
+        <object type="jsx3.gui.Block">
+          <variants jsxoverflow="3"/>
+          <strings jsxheight="100%" jsxname="pane2" jsxpadding="2 0 0 0" jsxwidth="100%"/>
+          <object type="jsx3.gui.CheckBox">
+            <variants jsxheight="18"/>
+            <strings jsxmargin="0 4 0 0" jsxname="sounds" jsxtext="Play sounds"/>
+            <events jsxtoggle="prefspane.makeDirty(this);"/>
+          </object>
+        </object>
+    </object>
+  </object>
+</serialization>
