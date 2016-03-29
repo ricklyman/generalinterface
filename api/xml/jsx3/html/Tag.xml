@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class access="public" id="class:jsx3.html.Tag" name="jsx3.html.Tag" package="jsx3.html" shortname="Tag">
+  <text>Represents an HTML element. Provides an object oriented way of painting to screen.
+<p/>
+This class is available only when the Charting add-in is enabled.
+ </text>
+  <superclass id="super:0" loaded="1" name="Object"/>
+  <superclass direct="1" id="super:1" loaded="1" name="jsx3.lang.Object"/>
+  <subclass id="sub:0" loaded="1" name="jsx3.html.BlockTag"/>
+  <subclass id="sub:1" loaded="1" name="jsx3.html.Text"/>
+  <subclass id="sub:2" loaded="1" name="jsx3.vector.Fill"/>
+  <subclass id="sub:3" loaded="1" name="jsx3.vector.Stroke"/>
+  <constructor access="public" id="method:init" name="init">
+    <param name="strTagNS" text="">
+      <type link="1" name="String"/>
+    </param>
+    <param name="strTagName" text="">
+      <type link="1" name="String"/>
+    </param>
+    <text>The instance initializer.</text>
+  </constructor>
+  <method access="public" id="method:appendChild" name="appendChild">
+    <param name="child" text="the child to add, must not already have a parent&#10;   ">
+      <type link="1" name="jsx3.html.Tag"/>
+    </param>
+    <text>Sdds a child to the list of this tag's children; may be vetoed by <code>onAppendChild().</code>
+    </text>
+  </method>
+  <method access="public" id="method:getChildren" name="getChildren">
+    <return text="children&#10;   ">
+      <type link="1" name="Array">
+        <type link="1" name="jsx3.html.Tag"/>
+      </type>
+    </return>
+    <text>Returns the children tags.</text>
+  </method>
+  <method access="public" id="method:getClassName" name="getClassName">
+    <return text="cssClass&#10;   ">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the cssClass field.</text>
+  </method>
+  <method access="public" id="method:getClassName" name="getClassName">
+    <return text="cssClass&#10;   ">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the cssClass field.</text>
+  </method>
+  <method access="public" id="method:getFirstChildOfType" name="getFirstChildOfType">
+    <param name="type" text="the fully-qualified class name or the class constructor function.">
+      <type link="1" name="String"/>
+      <type link="1" name="Function"/>
+    </param>
+    <return text="">
+      <type link="1" name="jsx3.html.Tag"/>
+    </return>
+    <text>Returns the first child tag of type <code>type</code>.</text>
+  </method>
+  <method access="public" id="method:getId" name="getId">
+    <return text="id&#10;   ">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the id field.</text>
+  </method>
+  <method access="public" id="method:getParent" name="getParent">
+    <return text="parent&#10;   ">
+      <type link="1" name="jsx3.html.Tag"/>
+    </return>
+    <text>Returns the parent tag.</text>
+  </method>
+  <method access="public" id="method:getProperty" name="getProperty">
+    <param name="strName" text="the name of the attribute.">
+      <type link="1" name="String"/>
+    </param>
+    <return text="the value of the attribute.&#10;   ">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns an attribute of this HTML element.</text>
+  </method>
+  <method access="public" id="method:getStyle" name="getStyle">
+    <param name="strName" text="the name of the style.">
+      <type link="1" name="String"/>
+    </param>
+    <return text="the value of the style.&#10;   ">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns a style of this HTML element.</text>
+  </method>
+  <method access="public" id="method:getTagNS" name="getTagNS">
+    <return text="the tag name&#10;   ">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the namespace of this HTML element.</text>
+  </method>
+  <method access="public" id="method:getTagName" name="getTagName">
+    <return text="the tag name&#10;   ">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the name of this HTML element, such as "table" or "div".</text>
+  </method>
+  <method access="protected" id="method:onAppendChild" name="onAppendChild">
+    <param name="child" text="">
+      <type link="1" name="jsx3.html.Tag"/>
+    </param>
+    <return text="&lt;code&gt;true&lt;/code&gt; to allow the append, &lt;code&gt;false&lt;/code&gt; to veto.">
+      <type class="Boolean" link="1" name="boolean"/>
+    </return>
+    <text>Called before appending a child.</text>
+  </method>
+  <method access="protected" id="method:onRemoveChild" name="onRemoveChild">
+    <param name="child" text="">
+      <type link="1" name="jsx3.html.Tag"/>
+    </param>
+    <return text="&lt;code&gt;true&lt;/code&gt; to allow the removal, &lt;code&gt;false&lt;/code&gt; to veto.">
+      <type class="Boolean" link="1" name="boolean"/>
+    </return>
+    <text>Called before removing a child.</text>
+  </method>
+  <method access="public" id="method:paint" name="paint">
+    <return text="this tag serialized to HTML.&#10;   ">
+      <type link="1" name="String"/>
+    </return>
+    <text>Serializes this HTML element to an HTML string using various overridable methods in this class.
+<b>This method is only available in the VML version of this class.</b>
+    </text>
+  </method>
+  <method access="public" id="method:paintDom" name="paintDom">
+    <return text="the native browser html element.&#10;   ">
+      <type link="1" name="HTMLElement"/>
+    </return>
+    <text>Prepares this HTML element for insertion into the live browser DOM and returns the underlying native HTML element.
+<b>This method is only available in the SVG version of this class.</b>
+    </text>
+  </method>
+  <method access="protected" id="method:paintUpdate" name="paintUpdate">
+    <text>This method is called on each HTML tag before it is painted to screen. Methods in subclasses of this class that
+override this method should begin with a call to <code>jsxsuper()</code>.</text>
+  </method>
+  <method access="public" id="method:release" name="release">
+    <text>Releases all bi-directional references between this instance and its children.
+   </text>
+  </method>
+  <method access="public" id="method:removeChild" name="removeChild">
+    <param name="child" text="the child to remove, must exist in the list of children&#10;   ">
+      <type link="1" name="jsx3.html.Tag"/>
+    </param>
+    <text>Removes a child from the list of this tag's children; may be vetoed by <code>onRemoveChild()</code>.</text>
+  </method>
+  <method access="public" id="method:removeChildren" name="removeChildren">
+    <text>Removes all the children of this tag.
+   </text>
+  </method>
+  <method access="public" id="method:removeProperty" name="removeProperty">
+    <param name="strName" text="the names of the attributes.&#10;   ">
+      <type link="1" name="String" varargs="1"/>
+    </param>
+    <text>Removes any number of properties from this HTML element.</text>
+  </method>
+  <method access="public" id="method:removeStyle" name="removeStyle">
+    <param name="strName" text="the names of the styles.&#10;   ">
+      <type link="1" name="String" varargs="1"/>
+    </param>
+    <text>Removes any number of styles from this HTML element.</text>
+  </method>
+  <method access="public" id="method:replaceChild" name="replaceChild">
+    <param name="child" text="the new child.">
+      <type link="1" name="jsx3.html.Tag"/>
+    </param>
+    <param name="oldChild" text="the child to replace.&#10;   ">
+      <type link="1" name="jsx3.html.Tag"/>
+    </param>
+    <text>Replaces a child of this tag.</text>
+  </method>
+  <method access="public" id="method:setClassName" name="setClassName">
+    <param name="cssClass" text="the new value for cssClass&#10;   ">
+      <type link="1" name="String"/>
+    </param>
+    <text>Sets the cssClass field, the HTML 'class' attribute.</text>
+  </method>
+  <method access="public" id="method:setClassName" name="setClassName">
+    <param name="cssClass" text="the new value for cssClass&#10;   ">
+      <type link="1" name="String"/>
+    </param>
+    <text>Sets the cssClass field, the HTML 'class' attribute.</text>
+  </method>
+  <method access="public" id="method:setExtraStyles" name="setExtraStyles">
+    <param name="extraStyles" text="the new value for extraStyles&#10;   ">
+      <type link="1" name="String"/>
+    </param>
+    <text>Sets the extraStyles field, this string is prepended as-is to the generated value for the style attribute of the tag.</text>
+  </method>
+  <method access="public" id="method:setId" name="setId">
+    <param name="id" text="the new value for id&#10;   ">
+      <type link="1" name="String"/>
+    </param>
+    <text>Sets the id field.</text>
+  </method>
+  <method access="public" id="method:setProperty" name="setProperty">
+    <param name="strName" text="the name of the attribute.">
+      <type link="1" name="String"/>
+    </param>
+    <param name="strValue" text="the value of the attribute. If &lt;code&gt;null&lt;/code&gt;, the attribute is removed.&#10;   ">
+      <type link="1" name="String"/>
+    </param>
+    <text>Sets an attribute of this HTML element. This method may be called with a variable number of arguments, which are
+interpreted as name/value pairs, i.e.: <code>tag.setProperty(n1, p1, n2, p2);</code>.</text>
+  </method>
+  <method access="public" id="method:setStyle" name="setStyle">
+    <param name="strName" text="the name of the style.">
+      <type link="1" name="String"/>
+    </param>
+    <param name="strValue" text="the value of the style.&#10;   ">
+      <type link="1" name="String"/>
+    </param>
+    <text>Sets a style of this HTML element. This method may be called with a variable number of arguments, which are
+interpreted as name/value pairs, i.e.: <code>tag.setStyle(n1, s1, n2, s2);</code>.</text>
+  </method>
+  <method access="public" id="method:toString" name="toString">
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <overrides id="overrides:toString" idfk="method:toString" name="toString" source="jsx3.lang.Object"/>
+  </method>
+  <method id="method:clone" idfk="method:clone" inherited="1" name="clone" source="jsx3.lang.Object"/>
+  <method id="method:equals" idfk="method:equals" inherited="1" name="equals" source="jsx3.lang.Object"/>
+  <method id="method:eval" idfk="method:eval" inherited="1" name="eval" source="jsx3.lang.Object"/>
+  <method id="method:getClass" idfk="method:getClass" inherited="1" name="getClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOf" idfk="method:getInstanceOf" inherited="1" name="getInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfClass" idfk="method:getInstanceOfClass" inherited="1" name="getInstanceOfClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfPackage" idfk="method:getInstanceOfPackage" inherited="1" name="getInstanceOfPackage" source="jsx3.lang.Object"/>
+  <method id="method:instanceOf" idfk="method:instanceOf" inherited="1" name="instanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isInstanceOf" idfk="method:isInstanceOf" inherited="1" name="isInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isSubclassOf" idfk="method:isSubclassOf" inherited="1" name="isSubclassOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:jsxmix" idfk="method:jsxmix" inherited="1" name="jsxmix" source="jsx3.lang.Object"/>
+  <method id="method:jsxsuper" idfk="method:jsxsuper" inherited="1" name="jsxsuper" source="jsx3.lang.Object"/>
+  <method id="method:jsxsupermix" idfk="method:jsxsupermix" inherited="1" name="jsxsupermix" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:setInstanceOf" idfk="method:setInstanceOf" inherited="1" name="setInstanceOf" source="jsx3.lang.Object"/>
+</class>

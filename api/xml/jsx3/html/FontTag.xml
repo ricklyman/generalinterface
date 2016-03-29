@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface access="public" id="class:jsx3.html.FontTag" name="jsx3.html.FontTag" package="jsx3.html" shortname="FontTag">
+  <text>Represents an HTML element that defines font styles.
+<p/>
+This class is available only when the Charting add-in is enabled.
+ </text>
+  <implementor id="implementor:0" loaded="1" name="jsx3.vector.TextLine"/>
+  <method access="public" id="method:getColor" name="getColor">
+    <return text="color&#10;   ">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the color field.</text>
+  </method>
+  <method access="public" id="method:getFontFamily" name="getFontFamily">
+    <return text="fontFamily&#10;   ">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the fontFamily field.</text>
+  </method>
+  <method access="public" id="method:getFontSize" name="getFontSize">
+    <return text="fontsize&#10;   ">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the fontsize field.</text>
+  </method>
+  <method access="public" id="method:getFontStyle" name="getFontStyle">
+    <return text="fontStyle&#10;   ">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the fontStyle field.</text>
+  </method>
+  <method access="public" id="method:getFontWeight" name="getFontWeight">
+    <return text="fontWeight&#10;   ">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the fontWeight field.</text>
+  </method>
+  <method access="public" id="method:getTextAlign" name="getTextAlign">
+    <return text="textAlign&#10;   ">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the textAlign field.</text>
+  </method>
+  <method access="public" id="method:getTextDecoration" name="getTextDecoration">
+    <return text="textDecoration&#10;   ">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the textDecoration field.</text>
+  </method>
+  <method access="public" id="method:setColor" name="setColor">
+    <param name="color" text="the new value for color&#10;   ">
+      <type link="1" name="String"/>
+    </param>
+    <text>Sets the color field.</text>
+  </method>
+  <method access="public" id="method:setFontFamily" name="setFontFamily">
+    <param name="fontFamily" text="the new value for fontFamily&#10;   ">
+      <type link="1" name="String"/>
+    </param>
+    <text>Sets the fontFamily field.</text>
+  </method>
+  <method access="public" id="method:setFontSize" name="setFontSize">
+    <param name="fontSize" text="the new value for fontsize&#10;   ">
+      <type class="Number" link="1" name="int"/>
+      <type link="1" name="String"/>
+    </param>
+    <text>Sets the fontsize field.</text>
+  </method>
+  <method access="public" id="method:setFontStyle" name="setFontStyle">
+    <param name="fontStyle" text="the new value for fontStyle&#10;   ">
+      <type link="1" name="String"/>
+    </param>
+    <text>Sets the fontStyle field.</text>
+  </method>
+  <method access="public" id="method:setFontWeight" name="setFontWeight">
+    <param name="fontWeight" text="the new value for fontWeight&#10;   ">
+      <type link="1" name="String"/>
+    </param>
+    <text>Sets the fontWeight field.</text>
+  </method>
+  <method access="public" id="method:setTextAlign" name="setTextAlign">
+    <param name="textAlign" text="the new value for textAlign&#10;   ">
+      <type link="1" name="String"/>
+    </param>
+    <text>Sets the textAlign field.</text>
+  </method>
+  <method access="public" id="method:setTextDecoration" name="setTextDecoration">
+    <param name="textDecoration" text="the new value for textDecoration&#10;   ">
+      <type link="1" name="String"/>
+    </param>
+    <text>Sets the textDecoration field.</text>
+  </method>
+</interface>

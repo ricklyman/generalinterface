@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package access="public" id="class:jsx3.html" name="jsx3.html">
+  <text>Utility methods related to rendering HTML.
+ </text>
+  <nested access="public" id="nested:jsx3.html.BlockTag" loaded="1" name="jsx3.html.BlockTag" shortname="BlockTag" type="class">
+    <text>Represents an HTML element that occupies a rectangle of the screen.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.html.DOM" loaded="1" name="jsx3.html.DOM" shortname="DOM" since="3.6&#10; " type="class">
+    <text>Handles Provides methods to manipulate browser DOM nodes.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.html.Style" loaded="1" name="jsx3.html.Style" shortname="Style" since="3.6&#10; " type="class">
+    <text>Handles Provides methods to manipulate browser DOM nodes.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.html.Tag" loaded="1" name="jsx3.html.Tag" shortname="Tag" type="class">
+    <text>Represents an HTML element.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.html.Text" loaded="1" name="jsx3.html.Text" shortname="Text" type="class">
+    <text>Represents an HTML text node.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.html.FontTag" loaded="1" name="jsx3.html.FontTag" shortname="FontTag" type="interface">
+    <text>Represents an HTML element that defines font styles.</text>
+  </nested>
+  <method access="public" id="smethod:copy" name="copy" static="1">
+    <param name="strText" text="text to copy&#10;   ">
+      <type link="1" name="String"/>
+    </param>
+    <text>Copies the given string of text to the clipboard</text>
+  </method>
+  <method access="public" id="smethod:getJSXParent" name="getJSXParent" static="1">
+    <param name="objGUI" text="">
+      <type link="1" name="HTMLElement"/>
+    </param>
+    <param name="objServer" text="if provided, only return a DOM node from this server.">
+      <type link="1" name="jsx3.app.Server"/>
+    </param>
+    <return text="">
+      <type link="1" name="jsx3.app.Model"/>
+    </return>
+    <text>Traverses the browser DOM up from <code>objGUI</code> and returns the first GI DOM node that contains
+<code>objGUI</code>.</text>
+  </method>
+  <method access="public" id="smethod:getOuterHTML" name="getOuterHTML" static="1">
+    <param name="objElement" text="">
+      <type link="1" name="HTMLElement"/>
+    </param>
+    <text>Returns the serialized HTML representation of <code>objElement</code>.</text>
+  </method>
+  <method access="public" id="smethod:loadImages" name="loadImages" static="1">
+    <param name="varImages" text="one or more relative URIs to image files. Each URI will be resolved against the&#10;   default resolver.&#10;   ">
+      <type link="1" name="String" varargs="1"/>
+      <type link="1" name="jsx3.net.URI" varargs="1"/>
+      <type link="1" name="Array">
+        <typeor>
+          <type link="1" name="String"/>
+          <type link="1" name="jsx3.net.URI"/>
+        </typeor>
+      </type>
+    </param>
+    <text>Pre-loads images into the HTML page so that they are available immediately when a control paints them.</text>
+  </method>
+  <method access="public" id="smethod:paste" name="paste" static="1">
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the current text content of the clipboard</text>
+  </method>
+  <method access="public" id="smethod:scrollIntoView" name="scrollIntoView" static="1">
+    <param name="objGUI" text="the DOM element to reveal.">
+      <type link="1" name="HTMLElement"/>
+    </param>
+    <param name="objRoot" text="optionally, the last parent to reveal &lt;code&gt;objGUI&lt;/code&gt; relative to.">
+      <type link="1" name="HTMLElement"/>
+    </param>
+    <param name="intPaddingX" text="the desired horizontal pixel padding after revealing, if null then no horizontal&#10;    repositioning if at least part of the DOM element is showing.">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <param name="intPaddingY" text="the desired vertical pixel padding after revealing, if null then no vertical&#10;    repositioning if at least part of the DOM element is showing.&#10;   ">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <text>Reveals a DOM element by scrolling the necessary parent DIVs and SPANs.</text>
+  </method>
+  <method access="public" id="smethod:setInnerText" name="setInnerText" static="1">
+    <param name="objElement" text="">
+      <type link="1" name="HTMLElement"/>
+    </param>
+    <param name="strText" text="">
+      <type link="1" name="String"/>
+    </param>
+    <text>Replaces the children of <code>objElement</code> with a text node of value <code>strText</code>.</text>
+  </method>
+  <method access="public" id="smethod:setOuterHTML" name="setOuterHTML" static="1">
+    <param name="objElement" text="">
+      <type link="1" name="HTMLElement"/>
+    </param>
+    <param name="strHTML" text="">
+      <type link="1" name="String"/>
+    </param>
+    <text>Replaces <code>objElement</code> with an HTML snippet, <code>strHTML</code>.</text>
+  </method>
+</package>

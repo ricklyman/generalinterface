@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class access="public" id="class:jsx3.html.DOM" name="jsx3.html.DOM" package="jsx3.html" shortname="DOM" since="3.6&#10; ">
+  <text>Handles Provides methods to manipulate browser DOM nodes.</text>
+  <superclass id="super:0" loaded="1" name="Object"/>
+  <superclass direct="1" id="super:1" loaded="1" name="jsx3.lang.Object"/>
+  <constructor access="public" id="method:init" name="init">
+    <text>instance initializer
+   </text>
+  </constructor>
+  <method access="public" id="smethod:clearStyles" name="clearStyles" static="1">
+    <param name="objNode" text="native browser DOM node">
+      <type link="1" name="HTMLElement"/>
+    </param>
+    <param name="strCSS" text="string of CSS. One of two variants are supported:  &lt;code&gt;left:10px;height:20px;width:100px;&lt;/code&gt; or  &lt;code&gt;left:;height:;width:;&lt;/code&gt;&#10;   ">
+      <type link="1" name="String"/>
+    </param>
+    <text>Clears a string of multiple CSS style properties to a DOM element; Provides a way for a string of CSS to be removed from the node</text>
+  </method>
+  <method access="public" id="smethod:getExtendedOffsetHeight" name="getExtendedOffsetHeight" static="1">
+    <param name="objNode" text="native browser DOM node of type 'Element' that supports layout">
+      <type link="1" name="HTMLElement"/>
+    </param>
+    <return text="">
+      <type class="Number" link="1" name="int"/>
+    </return>
+    <text>Gets the true offset height for the element including: margin, padding, border, and content</text>
+  </method>
+  <method access="public" id="smethod:getExtendedOffsetWidth" name="getExtendedOffsetWidth" static="1">
+    <param name="objNode" text="native browser DOM node of type 'Element' that supports layout">
+      <type link="1" name="HTMLElement"/>
+    </param>
+    <return text="">
+      <type class="Number" link="1" name="int"/>
+    </return>
+    <text>Gets the true offset width for the element including: margin, padding, border, and content</text>
+  </method>
+  <method access="public" id="smethod:removeEventListener" name="removeEventListener" static="1">
+    <param name="objNode" text="native browser DOM node">
+      <type link="1" name="HTMLElement"/>
+    </param>
+    <param name="strName" text="Event name. For example, onclick, onfocus">
+      <type link="1" name="String"/>
+    </param>
+    <param name="objFn" text="function, function literal&#10;   ">
+      <type link="1" name="Object"/>
+    </param>
+    <text>Removes the function, objFn, as the event handler for the given DOM node.</text>
+  </method>
+  <method access="public" id="smethod:setStyle" name="setStyle" static="1">
+    <param name="objNode" text="native browser DOM node">
+      <type link="1" name="HTMLElement"/>
+    </param>
+    <param name="strCSSName" text="Either the CSS property name (i.e., background-color) or its scriptable property name (i.e., backgroundColor)">
+      <type link="1" name="String"/>
+    </param>
+    <param name="strValue" text="For example, red&#10;   ">
+      <type link="1" name="String"/>
+    </param>
+    <text>Applies a single CSS style to a DOM node</text>
+  </method>
+  <method access="public" id="smethod:setStyles" name="setStyles" static="1">
+    <param name="objNode" text="native browser DOM node">
+      <type link="1" name="HTMLElement"/>
+    </param>
+    <param name="strCSS" text="string of CSS. For example,  left:10px;height:20px;width:100px;&#10;   ">
+      <type link="1" name="String"/>
+    </param>
+    <text>Applies a string of multiple CSS style properties to a DOM element</text>
+  </method>
+  <method id="method:clone" idfk="method:clone" inherited="1" name="clone" source="jsx3.lang.Object"/>
+  <method id="method:equals" idfk="method:equals" inherited="1" name="equals" source="jsx3.lang.Object"/>
+  <method id="method:eval" idfk="method:eval" inherited="1" name="eval" source="jsx3.lang.Object"/>
+  <method id="method:getClass" idfk="method:getClass" inherited="1" name="getClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOf" idfk="method:getInstanceOf" inherited="1" name="getInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfClass" idfk="method:getInstanceOfClass" inherited="1" name="getInstanceOfClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfPackage" idfk="method:getInstanceOfPackage" inherited="1" name="getInstanceOfPackage" source="jsx3.lang.Object"/>
+  <method id="method:instanceOf" idfk="method:instanceOf" inherited="1" name="instanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isInstanceOf" idfk="method:isInstanceOf" inherited="1" name="isInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isSubclassOf" idfk="method:isSubclassOf" inherited="1" name="isSubclassOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:jsxmix" idfk="method:jsxmix" inherited="1" name="jsxmix" source="jsx3.lang.Object"/>
+  <method id="method:jsxsuper" idfk="method:jsxsuper" inherited="1" name="jsxsuper" source="jsx3.lang.Object"/>
+  <method id="method:jsxsupermix" idfk="method:jsxsupermix" inherited="1" name="jsxsupermix" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:setInstanceOf" idfk="method:setInstanceOf" inherited="1" name="setInstanceOf" source="jsx3.lang.Object"/>
+  <method id="method:toString" idfk="method:toString" inherited="1" name="toString" source="jsx3.lang.Object"/>
+</class>
