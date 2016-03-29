@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class access="public" deprecated="1" id="class:jsx3.xml.Processor" name="jsx3.xml.Processor" package="jsx3.xml" shortname="Processor">
+  <text>Wrapper of the native browser XSLT processor.</text>
+  <deprecated>Use &lt;code&gt;jsx3.xml.Template&lt;/code&gt; instead.</deprecated>
+  <see source="jsx3.xml.Template">jsx3.xml.Template</see>
+  <superclass id="super:0" loaded="1" name="Object"/>
+  <superclass direct="1" id="super:1" loaded="1" name="jsx3.lang.Object"/>
+  <constructor access="public" id="method:init" name="init">
+    <param name="objXML" text="the source document to transform">
+      <type link="1" name="jsx3.xml.Entity"/>
+    </param>
+    <param name="objXSL" text="a valid XSL Stylesheet (version 1.0 of &quot;http://www.w3.org/1999/XSL/Transform&quot;)">
+      <type link="1" name="jsx3.xml.Document"/>
+    </param>
+    <param name="objParams" text="JavaScript associative array of name/value pairs. If this parameter&#10;   if provided the transformation will use a paramaterized stylesheet to perform the transformation.&#10;   ">
+      <type link="1" name="Object">
+        <type link="1" name="String"/>
+        <type link="1" name="String"/>
+      </type>
+    </param>
+    <text>The instance initializer.</text>
+  </constructor>
+  <method access="public" id="method:getError" name="getError">
+    <return text="">
+      <type link="1" name="Object"/>
+    </return>
+    <text>Returns an error object (a plain JavaScript object) with two properties that the developer can query for:
+<ul>
+<li>code – an integer error code, 0 for no error.</li>
+<li>description – a text description of the error that occurred.</li>
+</ul>
+    </text>
+  </method>
+  <method access="public" id="method:hasError" name="hasError">
+    <return text="">
+      <type class="Boolean" link="1" name="boolean"/>
+    </return>
+    <text>Returns <code>true</code> if the last operation on this XML entity caused an error.</text>
+  </method>
+  <method access="public" id="method:setParams" name="setParams">
+    <param name="objParams" text="JavaScript object array of name/value pairs. If this parameter is&#10;   not empty, the transformation will use a paramaterized stylesheet to perform the transformation.">
+      <type link="1" name="Object">
+        <type link="1" name="String"/>
+        <type link="1" name="String"/>
+      </type>
+    </param>
+    <return text="reference to self&#10;   ">
+      <type link="1" name="jsx3.xml.Processor"/>
+    </return>
+    <text>Sets reference to Params that should be passed to the processor.</text>
+  </method>
+  <method access="public" id="method:setXML" name="setXML">
+    <param name="objXML" text="">
+      <type link="1" name="jsx3.xml.Entity"/>
+    </param>
+    <return text="this object.&#10;   ">
+      <type link="1" name="Object"/>
+    </return>
+    <text>Sets the XML that should be transformed.</text>
+  </method>
+  <method access="public" id="method:setXSL" name="setXSL">
+    <param name="objXSL" text="instance containing a valid XSL Stylesheet (version 1.0 of &quot;http://www.w3.org/1999/XSL/Transform&quot;)">
+      <type link="1" name="jsx3.xml.Document"/>
+    </param>
+    <return text="reference to self&#10;   ">
+      <type link="1" name="jsx3.xml.Processor"/>
+    </return>
+    <text>Sets reference to XSL that should be transformed.</text>
+  </method>
+  <method access="public" id="method:transform" name="transform">
+    <param name="bObject" text="if true, a jsx3.xml.Document instance is returned (not the string)">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <return text="the result of the transformation&#10;   ">
+      <type link="1" name="String"/>
+    </return>
+    <text>Performs an XSLT merge. If an error occurs while performing the transform, this method sets the error
+property of this processor and returns <code>null</code>.</text>
+  </method>
+  <method access="public" id="method:transformToObject" name="transformToObject">
+    <return text="if a valid result tree is formed as a result of the transformation&#10;   ">
+      <type link="1" name="jsx3.xml.Document"/>
+    </return>
+    <text>Performs an XSLT merge. If an error occurs while performing the transform, this method sets the error
+property of this processor and returns <code>null</code>.</text>
+  </method>
+  <method id="method:clone" idfk="method:clone" inherited="1" name="clone" source="jsx3.lang.Object"/>
+  <method id="method:equals" idfk="method:equals" inherited="1" name="equals" source="jsx3.lang.Object"/>
+  <method id="method:eval" idfk="method:eval" inherited="1" name="eval" source="jsx3.lang.Object"/>
+  <method id="method:getClass" idfk="method:getClass" inherited="1" name="getClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOf" idfk="method:getInstanceOf" inherited="1" name="getInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfClass" idfk="method:getInstanceOfClass" inherited="1" name="getInstanceOfClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfPackage" idfk="method:getInstanceOfPackage" inherited="1" name="getInstanceOfPackage" source="jsx3.lang.Object"/>
+  <method id="method:instanceOf" idfk="method:instanceOf" inherited="1" name="instanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isInstanceOf" idfk="method:isInstanceOf" inherited="1" name="isInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isSubclassOf" idfk="method:isSubclassOf" inherited="1" name="isSubclassOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:jsxmix" idfk="method:jsxmix" inherited="1" name="jsxmix" source="jsx3.lang.Object"/>
+  <method id="method:jsxsuper" idfk="method:jsxsuper" inherited="1" name="jsxsuper" source="jsx3.lang.Object"/>
+  <method id="method:jsxsupermix" idfk="method:jsxsupermix" inherited="1" name="jsxsupermix" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:setInstanceOf" idfk="method:setInstanceOf" inherited="1" name="setInstanceOf" source="jsx3.lang.Object"/>
+  <method id="method:toString" idfk="method:toString" inherited="1" name="toString" source="jsx3.lang.Object"/>
+</class>

@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class access="public" id="class:jsx3.xml.Entity" name="jsx3.xml.Entity" package="jsx3.xml" shortname="Entity">
+  <text>Wrapper of the native browser XML node class. This class provides methods for querying, traversing, and creating
+XML entities.
+<p/>
+This class is never instantiated by the developer, rather instances are returned from various methods in this
+class and the <code>jsx3.xml.Document</code> class.
+<p/>
+Note that several methods of this class fail quietly when an error occurs with the wrapped native browser XML
+classes. Methods that are documented as failing quietly should always be followed by a call to
+<code>hasError()</code> to ensure that no error has occurred.
+ </text>
+  <superclass id="super:0" loaded="1" name="Object"/>
+  <superclass direct="1" id="super:1" loaded="1" name="jsx3.lang.Object"/>
+  <subclass id="sub:0" loaded="1" name="jsx3.xml.Document"/>
+  <constructor access="public" id="method:init" name="init">
+    <param name="objEntity" text="the browser native entity instance to wrap.&#10;   ">
+      <type link="1" name="Object"/>
+    </param>
+    <text>The instance initializer. If an error occurs while instantiating this entity, this method sets the error
+property of this entity and returns quietly.</text>
+  </constructor>
+  <field access="public" class="jsx3.xml.Entity" final="1" fullname="jsx3.xml.Entity.TYPEATTRIBUTE" id="sfield:TYPEATTRIBUTE" name="TYPEATTRIBUTE" static="1" value="2">
+    <type class="Number" link="1" name="int"/>
+    <text> The node type for an attribute node. </text>
+  </field>
+  <field access="public" class="jsx3.xml.Entity" final="1" fullname="jsx3.xml.Entity.TYPECDATA" id="sfield:TYPECDATA" name="TYPECDATA" static="1" value="4">
+    <type class="Number" link="1" name="int"/>
+    <text> The node type for a character data node.</text>
+  </field>
+  <field access="public" class="jsx3.xml.Entity" final="1" fullname="jsx3.xml.Entity.TYPECOMMENT" id="sfield:TYPECOMMENT" name="TYPECOMMENT" static="1" value="8">
+    <type class="Number" link="1" name="int"/>
+    <text> The node type for a comment node.</text>
+  </field>
+  <field access="public" class="jsx3.xml.Entity" final="1" fullname="jsx3.xml.Entity.TYPEELEMENT" id="sfield:TYPEELEMENT" name="TYPEELEMENT" static="1" value="1">
+    <type class="Number" link="1" name="int"/>
+    <text> The node type for an element node.</text>
+  </field>
+  <field access="public" class="jsx3.xml.Entity" final="1" fullname="jsx3.xml.Entity.TYPETEXT" id="sfield:TYPETEXT" name="TYPETEXT" static="1" value="3">
+    <type class="Number" link="1" name="int"/>
+    <text> The node type for a text node.</text>
+  </field>
+  <method access="public" id="method:appendChild" name="appendChild">
+    <param name="objEntity" text="jsx3.xml.Entity instance that will be bound as a child to this jsx3.xml.Entity instance">
+      <type link="1" name="jsx3.xml.Entity"/>
+    </param>
+    <return text="reference to self&#10;   ">
+      <type link="1" name="jsx3.xml.Entity"/>
+    </return>
+    <text>Appends the <code>objEntity</code> parameter as a child of this entity. If an error occurs while
+appending to this XML entity, this method sets the error property of this entity and returns quietly.</text>
+  </method>
+  <method access="public" id="method:cloneNode" name="cloneNode">
+    <param name="bDeep" text="if true, all descendants of this object will also be cloned and returned">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <return text="newly cloned MSXML Node object wrapped in a jsx3.xml.Entity instance&#10;   ">
+      <type link="1" name="jsx3.xml.Entity"/>
+    </return>
+    <text>Creates a new node that is an exact clone of this node. If an error occurs while
+cloning this XML entity, this method sets the error property of this entity and returns quietly.</text>
+  </method>
+  <method access="public" id="method:createNode" name="createNode">
+    <param name="intType" text="Four types are supported: jsx3.xml.Entity.TYPEELEMENT, jsx3.xml.Entity.TYPEATTRIBUTE, jsx3.xml.Entity.TYPETEXT, jsx3.xml.Entity.TYPECDATA. Note: only nodes of TYPEELEMENT and TYPEATTRIBUTE will pay attention to the @strNodeName property; if not of this TYPE, pass an empty string">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <param name="strNodeName" text="node name for the node to add as a child">
+      <type link="1" name="String"/>
+    </param>
+    <param name="strNS" text="namespace URI for the node being created, if it is preceded by a URI.&#10;           So, for example, if 'strName' is &quot;xsi:string&quot;, then the 'strNS'&#10;           value should be the namespace associated with the xsi prefix">
+      <type link="1" name="String"/>
+    </param>
+    <return text="reference to the new node wrapped in a jsx3.xml.Entity instance&#10;   ">
+      <type link="1" name="jsx3.xml.Entity"/>
+    </return>
+    <text>Creates a new node and returns as jsx3.xml.Entity instance</text>
+  </method>
+  <method access="public" id="method:equals" name="equals">
+    <param name="objEntity" text="jsx3.xml.Entity object">
+      <type link="1" name="jsx3.xml.Entity"/>
+    </param>
+    <return text="true or false&#10;   ">
+      <type class="Boolean" link="1" name="boolean"/>
+    </return>
+    <text>Tests the equivalency of two jsx3.xml.Entity instances as they wrap and can therefore point to the same native entity, causing a standard "==" comparison to fail</text>
+    <overrides id="overrides:equals" idfk="method:equals" name="equals" source="jsx3.lang.Object"/>
+  </method>
+  <method access="public" id="method:getAttribute" name="getAttribute">
+    <param name="strName" text="the name of the attribute.">
+      <type link="1" name="String"/>
+    </param>
+    <return text="the attribute value or &lt;code&gt;null&lt;/code&gt; if the attribute does not exist.&#10;   ">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the value for the named attribute <code>strName</code>.</text>
+  </method>
+  <method access="public" id="method:getAttributeNames" name="getAttributeNames" since="3.4&#10;   ">
+    <return text="">
+      <type link="1" name="Array">
+        <type link="1" name="String"/>
+      </type>
+    </return>
+    <text>Returns the names of all the attributes of this node. Iterating over the attribute names is more performant than
+using the <code>getAttributes()</code> method.</text>
+    <see idfk="method:getAttributes" source="jsx3.xml.Entity">getAttributes()</see>
+  </method>
+  <method access="public" id="method:getAttributeNode" name="getAttributeNode">
+    <param name="strName" text="name of the attribute">
+      <type link="1" name="String"/>
+    </param>
+    <return text="jsx3.xml.Entity instance referencing a single attribute node object&#10;   ">
+      <type link="1" name="jsx3.xml.Entity"/>
+    </return>
+    <text>Returns an object reference (a jsx3.xml.Entity instance) to the child attribute with the name, @strName.
+This method should only be called on an instance of type <code>TYPEELEMENT</code>.</text>
+  </method>
+  <method access="public" id="method:getAttributes" name="getAttributes">
+    <return text="">
+      <type link="1" name="jsx3.util.List">
+        <type link="1" name="jsx3.xml.Entity"/>
+      </type>
+    </return>
+    <text>Returns handle to a jsx3.util.List instance of all children; note that this collection will always be empty (length = 0) for all types except for jsx3.xml.Entity.TYPEELEMENT</text>
+    <see idfk="method:getAttributeNames" source="jsx3.xml.Entity">getAttributeNames()</see>
+  </method>
+  <method access="public" id="method:getBaseName" name="getBaseName">
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the right-hand side of a namespace qualified name. For example, "Price" will be returned for the
+element &lt;USD:Price&gt;</text>
+  </method>
+  <method access="public" id="method:getChildIterator" name="getChildIterator" since="3.4&#10;   ">
+    <param name="bIncludeText" text="if &lt;code&gt;true&lt;/code&gt; then the returned iterator will include the child text nodes&#10;  of this node.">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <return text="">
+      <type link="1" name="jsx3.util.Iterator">
+        <type link="1" name="jsx3.xml.Entity"/>
+      </type>
+    </return>
+    <text>Returns an iterator that iterates over the child nodes of this node. Note that the iterator grants access to
+only one child node at a time; once <code>next()</code> is called, the value returned by the previous call to
+<code>next()</code> is no longer valid. This method is more performant than <code>getChildNodes()</code>.
+<p/>
+Note also that the iterator is a pointer into the children node list so removing or adding children to this node
+while iterating may cause unexpected behavior.</text>
+    <see idfk="method:getChildNodes" source="jsx3.xml.Entity">getChildNodes()</see>
+  </method>
+  <method access="public" id="method:getChildNodes" name="getChildNodes">
+    <param name="bIncludeText" text="if &lt;code&gt;true&lt;/code&gt;, text and cdata children are returned with element children.">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <return text="">
+      <type link="1" name="jsx3.util.List">
+        <type link="1" name="jsx3.xml.Entity"/>
+      </type>
+    </return>
+    <text>Returns the child nodes of this entity. By default this method only returns the child nodes that are elements.
+Text and CDATA children will be returned if <code>bIncludeText</code> is <code>true</code>.</text>
+    <see idfk="method:getChildIterator" source="jsx3.xml.Entity">getChildIterator()</see>
+  </method>
+  <method access="public" id="method:getError" name="getError">
+    <return text="">
+      <type link="1" name="Object"/>
+    </return>
+    <text>Returns an error object (a plain JavaScript object) with two properties that the developer can query for:
+<ul>
+<li>code – an integer error code, 0 for no error.</li>
+<li>description – a text description of the error that occurred.</li>
+</ul>
+    </text>
+  </method>
+  <method access="public" id="method:getFirstChild" name="getFirstChild">
+    <return text="jsx3.xml.Entity instance or null&#10;   ">
+      <type link="1" name="jsx3.xml.Entity"/>
+    </return>
+    <text>Returns the first child element of type jsx3.xml.Entity.TYPEELEMENT; requires that this object also be of TYPEELEMENT; returns null if both conditions are not met</text>
+  </method>
+  <method access="public" id="method:getLastChild" name="getLastChild">
+    <return text="jsx3.xml.Entity instance or null&#10;   ">
+      <type link="1" name="jsx3.xml.Entity"/>
+    </return>
+    <text>Returns the last child element of type jsx3.xml.Entity.TYPEELEMENT; requires that this object also be of TYPEELEMENT; returns null if both conditions are not met</text>
+  </method>
+  <method access="public" id="method:getNamespaceURI" name="getNamespaceURI">
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the value (as string) for URI (universal resource identifier) of the namespace for the given node; returns an empty string if no namespace exists</text>
+  </method>
+  <method access="public" id="method:getNative" name="getNative">
+    <return text="">
+      <type link="1" name="Object"/>
+    </return>
+    <text>Returns the native browser XML node wrapped by this entity.</text>
+  </method>
+  <method access="public" id="method:getNextSibling" name="getNextSibling">
+    <return text="jsx3.xml.Entity instance or null&#10;   ">
+      <type link="1" name="jsx3.xml.Entity"/>
+    </return>
+    <text>Returns the next sibling if this node and the referenced sibling are of type jsx3.xml.Entity.TYPEELEMENT; returns null if condition is not met</text>
+  </method>
+  <method access="public" id="method:getNodeName" name="getNodeName">
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the name of the node as string (assuming this jsx3.xml.Entity instance is of type jsx3.xml.Entity.TYPEELEMENT or jsx3.xml.Entity.TYPEATTRIBUTE). The other TYPES return "#cdata-section" and "#text" respectively</text>
+  </method>
+  <method access="public" id="method:getNodeType" name="getNodeType">
+    <return text="">
+      <type class="Number" link="1" name="int"/>
+    </return>
+    <text>Returns one of: jsx3.xml.Entity.TYPEELEMENT, jsx3.xml.Entity.TYPEATTRIBUTE, jsx3.xml.Entity.TYPETEXT, jsx3.xml.Entity.TYPECDATA</text>
+  </method>
+  <method access="public" id="method:getOwnerDocument" name="getOwnerDocument">
+    <return text="">
+      <type link="1" name="jsx3.xml.Document"/>
+    </return>
+    <text>Returns the document that owns this entity.</text>
+  </method>
+  <method access="public" id="method:getParent" name="getParent">
+    <return text="parent node or null&#10;   ">
+      <type link="1" name="jsx3.xml.Entity"/>
+    </return>
+    <text>Returns the parent node of the context node. If the context node is the root node of the document, null is returned.</text>
+  </method>
+  <method access="public" id="method:getPrefix" name="getPrefix">
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the left-hand side of a namespace qualified name. For example, "USD" will be returned for the
+element &lt;USD:Price&gt;</text>
+  </method>
+  <method access="public" id="method:getPreviousSibling" name="getPreviousSibling">
+    <return text="jsx3.xml.Entity instance or null&#10;   ">
+      <type link="1" name="jsx3.xml.Entity"/>
+    </return>
+    <text>Returns the previous sibling if this node and the referenced sibling are of type jsx3.xml.Entity.TYPEELEMENT; returns null if condition is not met</text>
+  </method>
+  <method access="public" id="method:getRootNode" name="getRootNode">
+    <return text="jsx3.xml.Entity instance&#10;   ">
+      <type link="1" name="jsx3.xml.Entity"/>
+    </return>
+    <text>Returns reference to the document element (root) wrapped in jsx3.xml.Entity instance</text>
+  </method>
+  <method access="public" id="method:getValue" name="getValue">
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>Contains the text content of the node, including the concatenated text contained by all descendant entities</text>
+  </method>
+  <method access="public" deprecated="1" id="method:getXML" name="getXML">
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the XML (as String) for this node and any descendants. For an attribute this would be the
+         attribute name and value (i.e., name="value")</text>
+    <deprecated>Use &lt;code&gt;toString()&lt;/code&gt; instead.</deprecated>
+    <see idfk="method:toString" source="jsx3.xml.Entity">toString()</see>
+  </method>
+  <method access="public" id="method:hasError" name="hasError">
+    <return text="">
+      <type class="Boolean" link="1" name="boolean"/>
+    </return>
+    <text>Returns <code>true</code> if the last operation on this XML entity caused an error.</text>
+  </method>
+  <method access="public" id="method:insertBefore" name="insertBefore">
+    <param name="objEntityNew" text="jsx3.xml.Entity object (the new one to add)">
+      <type link="1" name="jsx3.xml.Entity"/>
+    </param>
+    <param name="objEntityRef" text="jsx3.xml.Entity object (the reference node in front of which to insert the new node)">
+      <type link="1" name="jsx3.xml.Entity"/>
+    </param>
+    <return text="jsx3.xml.Entity instance or null&#10;   ">
+      <type link="1" name="jsx3.xml.Entity"/>
+    </return>
+    <text>inserts the jsx3.xml.Entity instance, @objEntityNew immediately before the existing child @objEntityRef and returns a handle to @objEntityNew; requires that both parameters be of type jsx3.xml.Entity.TYPEELEMENT; requires that this object also be of TYPEELEMENT; returns null if all conditions are not met</text>
+  </method>
+  <method access="public" id="method:removeAttribute" name="removeAttribute">
+    <param name="strAttName" text="the name of the attribute to remove&#10;   ">
+      <type link="1" name="String"/>
+    </param>
+    <text>Removes the specified attribute by the given name (can only be called for nodes of type jsx3.xml.Entity.TYPELEMENT)</text>
+  </method>
+  <method access="public" id="method:removeAttributeNode" name="removeAttributeNode">
+    <param name="objAtt" text="jsx3.xml.Entity instance of type jsx3.xml.Entity.TYPEATTRIBUTE;">
+      <type link="1" name="jsx3.xml.Entity"/>
+    </param>
+    <return text="reference to this&#10;   ">
+      <type link="1" name="jsx3.xml.Entity"/>
+    </return>
+    <text>removes the attribute object as a child of the element;</text>
+  </method>
+  <method access="public" id="method:removeChild" name="removeChild">
+    <param name="objChildEntity" text="jsx3.xml.Entity object that is a direct child of this jsx3.xml.Entity instance">
+      <type link="1" name="jsx3.xml.Entity"/>
+    </param>
+    <return text="jsx3.xml.Entity instance or null&#10;   ">
+      <type link="1" name="jsx3.xml.Entity"/>
+    </return>
+    <text>Removes the specified child (@objChildEntity) from the list of children and returns it; returns null if @objChildEntity is not actually a child</text>
+  </method>
+  <method access="public" id="method:removeChildren" name="removeChildren">
+    <text>Removes all descendant entities of this node
+   </text>
+  </method>
+  <method access="public" id="method:replaceNode" name="replaceNode">
+    <param name="objEntityNew" text="the element to add.">
+      <type link="1" name="jsx3.xml.Entity"/>
+    </param>
+    <param name="objEntityOld" text="the child element to replace.">
+      <type link="1" name="jsx3.xml.Entity"/>
+    </param>
+    <return text="the replaced element or &lt;code&gt;null&lt;/code&gt; if the replacement did not occur because one&#10;   or more of the parameters was invalid. &#10;   ">
+      <type link="1" name="jsx3.xml.Entity"/>
+    </return>
+    <text>Replaces a child element of this element, <code>objEntityOld</code> with another element, <code>objEntityNew</code> 
+and returns <code>objEntityOld</code>. Both children must be XML element nodes. <code>objEntityOld</code> must
+be an existing child node of this node. 
+</text>
+  </method>
+  <method access="public" id="method:selectNodeIterator" name="selectNodeIterator" since="3.4&#10;   ">
+    <param name="strQuery" text="an XPath query such as: &lt;code&gt;//somenode[@id='12']/somechild&lt;/code&gt;.">
+      <type link="1" name="String"/>
+    </param>
+    <param name="strNS" text="the selection namespace to use just for this query. This parameter is an optional&#10;   shortcut for calling &lt;code&gt;setSelectionNamespaces()&lt;/code&gt; on the owning document. The format of this parameter&#10;   as a string is &lt;code&gt;&quot;xmlns:ns1='uri1' xmlns:ns2='uri2'&quot;&lt;/code&gt; or as an object is &lt;code&gt;{'uri1':'ns1',&#10;   'uri2':'ns2'}&lt;/code&gt;.">
+      <type link="1" name="String"/>
+      <type link="1" name="Object"/>
+    </param>
+    <return text="">
+      <type link="1" name="jsx3.util.Iterator">
+        <type link="1" name="jsx3.xml.Entity"/>
+      </type>
+    </return>
+    <text>Returns an iterator that iterates over the the result of an XPath query. Note that the iterator grants access to
+only one child node at a time; once <code>next()</code> is called, the value returned by the previous call to
+<code>next()</code> is no longer valid. This method is more performant than <code>selectNodes()</code>.</text>
+    <see idfk="method:selectNodes" source="jsx3.xml.Entity">selectNodes()</see>
+  </method>
+  <method access="public" id="method:selectNodes" name="selectNodes">
+    <param name="strQuery" text="an XPath query such as: &lt;code&gt;//somenode[@id='12']/somechild&lt;/code&gt;.">
+      <type link="1" name="String"/>
+    </param>
+    <param name="strNS" text="the selection namespace to use just for this query. This parameter is an optional&#10;   shortcut for calling &lt;code&gt;setSelectionNamespaces()&lt;/code&gt; on the owning document. The format of this parameter&#10;   as a string is &lt;code&gt;&quot;xmlns:ns1='uri1' xmlns:ns2='uri2'&quot;&lt;/code&gt; or as an object is &lt;code&gt;{'uri1':'ns1',&#10;   'uri2':'ns2'}&lt;/code&gt;.">
+      <type link="1" name="String"/>
+      <type link="1" name="Object"/>
+    </param>
+    <return text="">
+      <type link="1" name="jsx3.util.List">
+        <type link="1" name="jsx3.xml.Entity"/>
+      </type>
+    </return>
+    <text>Returns a list of nodes selected by an XPath query executed on this node.</text>
+    <see idfk="method:selectNodeIterator" source="jsx3.xml.Entity">selectNodeIterator()</see>
+    <see idfk="method:selectSingleNode" source="jsx3.xml.Entity">See selectSingleNode() for more information</see>
+  </method>
+  <method access="public" id="method:selectSingleNode" name="selectSingleNode">
+    <param name="strQuery" text="an XPath query such as: &lt;code&gt;//somenode[@id='12']/somechild&lt;/code&gt;.">
+      <type link="1" name="String"/>
+    </param>
+    <param name="strNS" text="the selection namespace to use just for this query. This parameter is an optional&#10;   shortcut for calling &lt;code&gt;setSelectionNamespaces()&lt;/code&gt; on the owning document. The format of this parameter&#10;   as a string is &lt;code&gt;&quot;xmlns:ns1='uri1' xmlns:ns2='uri2'&quot;&lt;/code&gt; or as an object is &lt;code&gt;{'uri1':'ns1',&#10;   'uri2':'ns2'}&lt;/code&gt;.">
+      <type link="1" name="String"/>
+      <type link="1" name="Object"/>
+    </param>
+    <return text="jsx3.xml.Entity instance or null&#10;   ">
+      <type link="1" name="jsx3.xml.Entity"/>
+    </return>
+    <text>Returns a single node selected by an XPath query executed on this node, or <code>null</code> if none is selected.
+<p/>
+Note that the XPath query is executed in the context of this node so relative paths are relative to this node.
+However, this node may be nested in a larger XML document, in which case absolute paths are relative to the
+root document of this node. This behavior matches the XPath specification.</text>
+  </method>
+  <method access="public" id="method:setAttribute" name="setAttribute">
+    <param name="strName" text="name of the attribute">
+      <type link="1" name="String"/>
+    </param>
+    <param name="strValue" text="value of the attribute, if null then remove the attribute">
+      <type link="1" name="String"/>
+    </param>
+    <return text="reference to this&#10;   ">
+      <type link="1" name="jsx3.xml.Entity"/>
+    </return>
+    <text>Sets the @strValue of the named @strAttribute and binds as child of this</text>
+  </method>
+  <method access="public" id="method:setAttributeNode" name="setAttributeNode">
+    <param name="objAtt" text="jsx3.xml.Entity instance of type jsx3.xml.Entity.TYPEATTRIBUTE;">
+      <type link="1" name="jsx3.xml.Entity"/>
+    </param>
+    <return text="reference to this&#10;   ">
+      <type link="1" name="jsx3.xml.Entity"/>
+    </return>
+    <text>Sets the attribute object as a child of the element; if transferring an attribute from one element to another, this call must be preceded with removeAttributeNode on the previous owner</text>
+  </method>
+  <method access="public" id="method:setValue" name="setValue">
+    <param name="strValue" text="value to set for this entity">
+      <type link="1" name="String"/>
+    </param>
+    <return text="self&#10;   ">
+      <type link="1" name="jsx3.xml.Entity"/>
+    </return>
+    <text>sets the text value for this entity; returns a handle to this jsx3.xml.Entity instance</text>
+  </method>
+  <method access="public" id="method:toString" name="toString">
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the XML (as String) for this node and any descendants. For an attribute this would be the
+         attribute name and value (i.e., name="value")</text>
+    <overrides id="overrides:toString" idfk="method:toString" name="toString" source="jsx3.lang.Object"/>
+  </method>
+  <method access="public" id="method:transformNode" name="transformNode">
+    <param name="objEntityFilter" text="jsx3.xml.Entity instance containing the XSLT document to transform 'this' jsx3.xml.Entity instance with">
+      <type link="1" name="jsx3.xml.Entity"/>
+    </param>
+    <param name="objParams" text="JavaScript object array of name/value pairs; if passed, the transformation will use a&#10;         paramaterized stylesheet to perform the transformation">
+      <type link="1" name="Object">
+        <type link="1" name="String"/>
+        <type link="1" name="String"/>
+      </type>
+    </param>
+    <param name="bObject" text="if &lt;code&gt;true&lt;/code&gt; this method returns a document instead of a string.">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <return text="the result of the transformation&#10;   ">
+      <type link="1" name="String"/>
+      <type link="1" name="jsx3.xml.Document"/>
+    </return>
+    <text>performs an XSLT transformation, using @objEntityFilter as the XSLT filter for the transformation; returns
+         results of the transformation as a string (of text/html/xml/etc)</text>
+  </method>
+  <method access="public" deprecated="1" id="smethod:getVersion" name="getVersion" static="1">
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the release/build for the class (i.e., "2.2.00")</text>
+  </method>
+  <method id="method:clone" idfk="method:clone" inherited="1" name="clone" source="jsx3.lang.Object"/>
+  <method id="method:eval" idfk="method:eval" inherited="1" name="eval" source="jsx3.lang.Object"/>
+  <method id="method:getClass" idfk="method:getClass" inherited="1" name="getClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOf" idfk="method:getInstanceOf" inherited="1" name="getInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfClass" idfk="method:getInstanceOfClass" inherited="1" name="getInstanceOfClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfPackage" idfk="method:getInstanceOfPackage" inherited="1" name="getInstanceOfPackage" source="jsx3.lang.Object"/>
+  <method id="method:instanceOf" idfk="method:instanceOf" inherited="1" name="instanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isInstanceOf" idfk="method:isInstanceOf" inherited="1" name="isInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isSubclassOf" idfk="method:isSubclassOf" inherited="1" name="isSubclassOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:jsxmix" idfk="method:jsxmix" inherited="1" name="jsxmix" source="jsx3.lang.Object"/>
+  <method id="method:jsxsuper" idfk="method:jsxsuper" inherited="1" name="jsxsuper" source="jsx3.lang.Object"/>
+  <method id="method:jsxsupermix" idfk="method:jsxsupermix" inherited="1" name="jsxsupermix" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:setInstanceOf" idfk="method:setInstanceOf" inherited="1" name="setInstanceOf" source="jsx3.lang.Object"/>
+</class>

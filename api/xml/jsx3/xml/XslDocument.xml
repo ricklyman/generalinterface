@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class access="public" id="class:jsx3.xml.XslDocument" name="jsx3.xml.XslDocument" package="jsx3.xml" shortname="XslDocument">
+  <text>An extension of <code>jsx3.xml.Document</code> that encapsulates a compiled XSL template.
+ </text>
+  <superclass id="super:0" loaded="1" name="Object"/>
+  <superclass id="super:1" loaded="1" name="jsx3.lang.Object"/>
+  <superclass id="super:2" loaded="1" name="jsx3.xml.Entity"/>
+  <superclass direct="1" id="super:3" loaded="1" name="jsx3.xml.Document"/>
+  <implements id="implements:0" loaded="1" name="jsx3.util.EventDispatcher"/>
+  <method access="public" id="method:reset" name="reset">
+    <see idfk="method:reset" source="jsx3.xml.Template">jsx3.xml.Template.reset()</see>
+  </method>
+  <method access="public" id="method:setParam" name="setParam">
+    <param name="strName" text="">
+      <type link="1" name="String"/>
+    </param>
+    <param name="objValue" text="">
+      <type link="1" name="Object"/>
+    </param>
+    <see idfk="method:setParam" source="jsx3.xml.Template">jsx3.xml.Template.setParam()</see>
+  </method>
+  <method access="public" id="method:setParams" name="setParams">
+    <param name="objParams" text="">
+      <type link="1" name="Object">
+        <type link="1" name="String"/>
+        <type link="1" name="Object"/>
+      </type>
+    </param>
+    <see idfk="method:setParams" source="jsx3.xml.Template">jsx3.xml.Template.setParams()</see>
+  </method>
+  <method access="public" id="method:transform" name="transform">
+    <param name="objXML" text="">
+      <type link="1" name="jsx3.xml.Entity"/>
+    </param>
+    <see idfk="method:transform" source="jsx3.xml.Template">jsx3.xml.Template.transform()</see>
+  </method>
+  <method access="public" id="method:transformToObject" name="transformToObject">
+    <param name="objXML" text="">
+      <type link="1" name="jsx3.xml.Entity"/>
+    </param>
+    <see idfk="method:transformToObject" source="jsx3.xml.Template">jsx3.xml.Template.transformToObject()</see>
+  </method>
+  <method access="public" id="smethod:wrap" name="wrap" static="1">
+    <param name="objXML" text="">
+      <type link="1" name="jsx3.xml.Document"/>
+    </param>
+    <return text="">
+      <type link="1" name="jsx3.xml.XslDocument"/>
+    </return>
+  </method>
+  <method id="method:abort" idfk="method:abort" inherited="1" name="abort" source="jsx3.xml.Document"/>
+  <method id="method:cloneDocument" idfk="method:cloneDocument" inherited="1" name="cloneDocument" source="jsx3.xml.Document"/>
+  <method id="method:createDocumentElement" idfk="method:createDocumentElement" inherited="1" name="createDocumentElement" source="jsx3.xml.Document"/>
+  <method id="method:createNamespaceAxis" idfk="method:createNamespaceAxis" inherited="1" name="createNamespaceAxis" source="jsx3.xml.Document"/>
+  <method id="method:createProcessingInstruction" idfk="method:createProcessingInstruction" inherited="1" name="createProcessingInstruction" source="jsx3.xml.Document"/>
+  <method id="method:getAsync" idfk="method:getAsync" inherited="1" name="getAsync" source="jsx3.xml.Document"/>
+  <method id="method:getDeclaredNamespaces" idfk="method:getDeclaredNamespaces" inherited="1" name="getDeclaredNamespaces" source="jsx3.xml.Document"/>
+  <method id="method:getNativeDocument" idfk="method:getNativeDocument" inherited="1" name="getNativeDocument" source="jsx3.xml.Document"/>
+  <method deprecated="1" id="method:getResolveExternals" idfk="method:getResolveExternals" inherited="1" name="getResolveExternals" source="jsx3.xml.Document"/>
+  <method deprecated="1" id="method:getSelectionLanguage" idfk="method:getSelectionLanguage" inherited="1" name="getSelectionLanguage" source="jsx3.xml.Document"/>
+  <method id="method:getSelectionNamespaces" idfk="method:getSelectionNamespaces" inherited="1" name="getSelectionNamespaces" source="jsx3.xml.Document"/>
+  <method id="method:getSourceURL" idfk="method:getSourceURL" inherited="1" name="getSourceURL" source="jsx3.xml.Document"/>
+  <method deprecated="1" id="method:getValidateOnParse" idfk="method:getValidateOnParse" inherited="1" name="getValidateOnParse" source="jsx3.xml.Document"/>
+  <method id="method:getXmlEncoding" idfk="method:getXmlEncoding" inherited="1" name="getXmlEncoding" source="jsx3.xml.Document"/>
+  <method id="method:getXmlStandalone" idfk="method:getXmlStandalone" inherited="1" name="getXmlStandalone" source="jsx3.xml.Document"/>
+  <method id="method:getXmlVersion" idfk="method:getXmlVersion" inherited="1" name="getXmlVersion" source="jsx3.xml.Document"/>
+  <method id="method:load" idfk="method:load" inherited="1" name="load" source="jsx3.xml.Document"/>
+  <method id="method:loadXML" idfk="method:loadXML" inherited="1" name="loadXML" source="jsx3.xml.Document"/>
+  <method id="method:serialize" idfk="method:serialize" inherited="1" name="serialize" source="jsx3.xml.Document"/>
+  <method id="method:setAsync" idfk="method:setAsync" inherited="1" name="setAsync" source="jsx3.xml.Document"/>
+  <method deprecated="1" id="method:setResolveExternals" idfk="method:setResolveExternals" inherited="1" name="setResolveExternals" source="jsx3.xml.Document"/>
+  <method deprecated="1" id="method:setSelectionLanguage" idfk="method:setSelectionLanguage" inherited="1" name="setSelectionLanguage" source="jsx3.xml.Document"/>
+  <method id="method:setSelectionNamespaces" idfk="method:setSelectionNamespaces" inherited="1" name="setSelectionNamespaces" source="jsx3.xml.Document"/>
+  <method deprecated="1" id="method:setValidateOnParse" idfk="method:setValidateOnParse" inherited="1" name="setValidateOnParse" source="jsx3.xml.Document"/>
+  <method id="method:publish" idfk="method:publish" inherited="1" name="publish" source="jsx3.util.EventDispatcher"/>
+  <method id="method:subscribe" idfk="method:subscribe" inherited="1" name="subscribe" source="jsx3.util.EventDispatcher"/>
+  <method id="method:unsubscribe" idfk="method:unsubscribe" inherited="1" name="unsubscribe" source="jsx3.util.EventDispatcher"/>
+  <method id="method:unsubscribeAll" idfk="method:unsubscribeAll" inherited="1" name="unsubscribeAll" source="jsx3.util.EventDispatcher"/>
+  <method id="method:appendChild" idfk="method:appendChild" inherited="1" name="appendChild" source="jsx3.xml.Entity"/>
+  <method id="method:cloneNode" idfk="method:cloneNode" inherited="1" name="cloneNode" source="jsx3.xml.Entity"/>
+  <method id="method:createNode" idfk="method:createNode" inherited="1" name="createNode" source="jsx3.xml.Entity"/>
+  <method id="method:equals" idfk="method:equals" inherited="1" name="equals" source="jsx3.xml.Entity"/>
+  <method id="method:getAttribute" idfk="method:getAttribute" inherited="1" name="getAttribute" source="jsx3.xml.Entity"/>
+  <method id="method:getAttributeNames" idfk="method:getAttributeNames" inherited="1" name="getAttributeNames" source="jsx3.xml.Entity"/>
+  <method id="method:getAttributeNode" idfk="method:getAttributeNode" inherited="1" name="getAttributeNode" source="jsx3.xml.Entity"/>
+  <method id="method:getAttributes" idfk="method:getAttributes" inherited="1" name="getAttributes" source="jsx3.xml.Entity"/>
+  <method id="method:getBaseName" idfk="method:getBaseName" inherited="1" name="getBaseName" source="jsx3.xml.Entity"/>
+  <method id="method:getChildIterator" idfk="method:getChildIterator" inherited="1" name="getChildIterator" source="jsx3.xml.Entity"/>
+  <method id="method:getChildNodes" idfk="method:getChildNodes" inherited="1" name="getChildNodes" source="jsx3.xml.Entity"/>
+  <method id="method:getError" idfk="method:getError" inherited="1" name="getError" source="jsx3.xml.Entity"/>
+  <method id="method:getFirstChild" idfk="method:getFirstChild" inherited="1" name="getFirstChild" source="jsx3.xml.Entity"/>
+  <method id="method:getLastChild" idfk="method:getLastChild" inherited="1" name="getLastChild" source="jsx3.xml.Entity"/>
+  <method id="method:getNamespaceURI" idfk="method:getNamespaceURI" inherited="1" name="getNamespaceURI" source="jsx3.xml.Entity"/>
+  <method id="method:getNative" idfk="method:getNative" inherited="1" name="getNative" source="jsx3.xml.Entity"/>
+  <method id="method:getNextSibling" idfk="method:getNextSibling" inherited="1" name="getNextSibling" source="jsx3.xml.Entity"/>
+  <method id="method:getNodeName" idfk="method:getNodeName" inherited="1" name="getNodeName" source="jsx3.xml.Entity"/>
+  <method id="method:getNodeType" idfk="method:getNodeType" inherited="1" name="getNodeType" source="jsx3.xml.Entity"/>
+  <method id="method:getOwnerDocument" idfk="method:getOwnerDocument" inherited="1" name="getOwnerDocument" source="jsx3.xml.Entity"/>
+  <method id="method:getParent" idfk="method:getParent" inherited="1" name="getParent" source="jsx3.xml.Entity"/>
+  <method id="method:getPrefix" idfk="method:getPrefix" inherited="1" name="getPrefix" source="jsx3.xml.Entity"/>
+  <method id="method:getPreviousSibling" idfk="method:getPreviousSibling" inherited="1" name="getPreviousSibling" source="jsx3.xml.Entity"/>
+  <method id="method:getRootNode" idfk="method:getRootNode" inherited="1" name="getRootNode" source="jsx3.xml.Entity"/>
+  <method id="method:getValue" idfk="method:getValue" inherited="1" name="getValue" source="jsx3.xml.Entity"/>
+  <method deprecated="1" id="method:getXML" idfk="method:getXML" inherited="1" name="getXML" source="jsx3.xml.Entity"/>
+  <method id="method:hasError" idfk="method:hasError" inherited="1" name="hasError" source="jsx3.xml.Entity"/>
+  <method id="method:insertBefore" idfk="method:insertBefore" inherited="1" name="insertBefore" source="jsx3.xml.Entity"/>
+  <method id="method:removeAttribute" idfk="method:removeAttribute" inherited="1" name="removeAttribute" source="jsx3.xml.Entity"/>
+  <method id="method:removeAttributeNode" idfk="method:removeAttributeNode" inherited="1" name="removeAttributeNode" source="jsx3.xml.Entity"/>
+  <method id="method:removeChild" idfk="method:removeChild" inherited="1" name="removeChild" source="jsx3.xml.Entity"/>
+  <method id="method:removeChildren" idfk="method:removeChildren" inherited="1" name="removeChildren" source="jsx3.xml.Entity"/>
+  <method id="method:replaceNode" idfk="method:replaceNode" inherited="1" name="replaceNode" source="jsx3.xml.Entity"/>
+  <method id="method:selectNodeIterator" idfk="method:selectNodeIterator" inherited="1" name="selectNodeIterator" source="jsx3.xml.Entity"/>
+  <method id="method:selectNodes" idfk="method:selectNodes" inherited="1" name="selectNodes" source="jsx3.xml.Entity"/>
+  <method id="method:selectSingleNode" idfk="method:selectSingleNode" inherited="1" name="selectSingleNode" source="jsx3.xml.Entity"/>
+  <method id="method:setAttribute" idfk="method:setAttribute" inherited="1" name="setAttribute" source="jsx3.xml.Entity"/>
+  <method id="method:setAttributeNode" idfk="method:setAttributeNode" inherited="1" name="setAttributeNode" source="jsx3.xml.Entity"/>
+  <method id="method:setValue" idfk="method:setValue" inherited="1" name="setValue" source="jsx3.xml.Entity"/>
+  <method id="method:toString" idfk="method:toString" inherited="1" name="toString" source="jsx3.xml.Entity"/>
+  <method id="method:transformNode" idfk="method:transformNode" inherited="1" name="transformNode" source="jsx3.xml.Entity"/>
+  <method id="method:clone" idfk="method:clone" inherited="1" name="clone" source="jsx3.lang.Object"/>
+  <method id="method:eval" idfk="method:eval" inherited="1" name="eval" source="jsx3.lang.Object"/>
+  <method id="method:getClass" idfk="method:getClass" inherited="1" name="getClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOf" idfk="method:getInstanceOf" inherited="1" name="getInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfClass" idfk="method:getInstanceOfClass" inherited="1" name="getInstanceOfClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfPackage" idfk="method:getInstanceOfPackage" inherited="1" name="getInstanceOfPackage" source="jsx3.lang.Object"/>
+  <method id="method:instanceOf" idfk="method:instanceOf" inherited="1" name="instanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isInstanceOf" idfk="method:isInstanceOf" inherited="1" name="isInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isSubclassOf" idfk="method:isSubclassOf" inherited="1" name="isSubclassOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:jsxmix" idfk="method:jsxmix" inherited="1" name="jsxmix" source="jsx3.lang.Object"/>
+  <method id="method:jsxsuper" idfk="method:jsxsuper" inherited="1" name="jsxsuper" source="jsx3.lang.Object"/>
+  <method id="method:jsxsupermix" idfk="method:jsxsupermix" inherited="1" name="jsxsupermix" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:setInstanceOf" idfk="method:setInstanceOf" inherited="1" name="setInstanceOf" source="jsx3.lang.Object"/>
+</class>

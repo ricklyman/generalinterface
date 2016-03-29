@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class abstract="1" access="public" id="class:jsx3.xml.DojoDataStore" name="jsx3.xml.DojoDataStore" package="jsx3.xml" shortname="DojoDataStore">
+  <text>Provides access to Dojo data store through the CDF interface.
+ </text>
+  <superclass id="super:0" loaded="1" name="Object"/>
+  <superclass direct="1" id="super:1" loaded="1" name="jsx3.lang.Object"/>
+  <implements direct="1" id="implements:0" loaded="1" name="jsx3.xml.CDF"/>
+  <constructor access="public" id="method:init" name="init">
+    <param name="store" text="the Dojo data store object.&#10;   ">
+      <type link="1" name="Object"/>
+    </param>
+    <text>The instance initializer.</text>
+  </constructor>
+  <method id="method:adoptRecord" idfk="method:adoptRecord" inherited="1" name="adoptRecord" source="jsx3.xml.CDF"/>
+  <method id="method:adoptRecordBefore" idfk="method:adoptRecordBefore" inherited="1" name="adoptRecordBefore" source="jsx3.xml.CDF"/>
+  <method id="method:convertProperties" idfk="method:convertProperties" inherited="1" name="convertProperties" source="jsx3.xml.CDF"/>
+  <method id="method:deleteRecord" idfk="method:deleteRecord" inherited="1" name="deleteRecord" source="jsx3.xml.CDF"/>
+  <method id="method:deleteRecordProperty" idfk="method:deleteRecordProperty" inherited="1" name="deleteRecordProperty" source="jsx3.xml.CDF"/>
+  <method id="method:getRecord" idfk="method:getRecord" inherited="1" name="getRecord" source="jsx3.xml.CDF"/>
+  <method id="method:getRecordIds" idfk="method:getRecordIds" inherited="1" name="getRecordIds" source="jsx3.xml.CDF"/>
+  <method id="method:getRecordNode" idfk="method:getRecordNode" inherited="1" name="getRecordNode" source="jsx3.xml.CDF"/>
+  <method id="method:getSchema" idfk="method:getSchema" inherited="1" name="getSchema" source="jsx3.xml.CDF"/>
+  <method id="method:insertRecord" idfk="method:insertRecord" inherited="1" name="insertRecord" source="jsx3.xml.CDF"/>
+  <method id="method:insertRecordBefore" idfk="method:insertRecordBefore" inherited="1" name="insertRecordBefore" source="jsx3.xml.CDF"/>
+  <method id="method:insertRecordNode" idfk="method:insertRecordNode" inherited="1" name="insertRecordNode" source="jsx3.xml.CDF"/>
+  <method id="method:insertRecordProperty" idfk="method:insertRecordProperty" inherited="1" name="insertRecordProperty" source="jsx3.xml.CDF"/>
+  <method abstract="1" id="method:redrawRecord" idfk="method:redrawRecord" inherited="1" name="redrawRecord" source="jsx3.xml.CDF"/>
+  <method deprecated="1" id="method:reloadFromSource" idfk="method:reloadFromSource" inherited="1" name="reloadFromSource" source="jsx3.xml.CDF"/>
+  <method deprecated="1" id="method:resetData" idfk="method:resetData" inherited="1" name="resetData" source="jsx3.xml.CDF"/>
+  <method id="method:setSchema" idfk="method:setSchema" inherited="1" name="setSchema" source="jsx3.xml.CDF"/>
+  <method id="method:clone" idfk="method:clone" inherited="1" name="clone" source="jsx3.lang.Object"/>
+  <method id="method:equals" idfk="method:equals" inherited="1" name="equals" source="jsx3.lang.Object"/>
+  <method id="method:eval" idfk="method:eval" inherited="1" name="eval" source="jsx3.lang.Object"/>
+  <method id="method:getClass" idfk="method:getClass" inherited="1" name="getClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOf" idfk="method:getInstanceOf" inherited="1" name="getInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfClass" idfk="method:getInstanceOfClass" inherited="1" name="getInstanceOfClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfPackage" idfk="method:getInstanceOfPackage" inherited="1" name="getInstanceOfPackage" source="jsx3.lang.Object"/>
+  <method id="method:instanceOf" idfk="method:instanceOf" inherited="1" name="instanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isInstanceOf" idfk="method:isInstanceOf" inherited="1" name="isInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isSubclassOf" idfk="method:isSubclassOf" inherited="1" name="isSubclassOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:jsxmix" idfk="method:jsxmix" inherited="1" name="jsxmix" source="jsx3.lang.Object"/>
+  <method id="method:jsxsuper" idfk="method:jsxsuper" inherited="1" name="jsxsuper" source="jsx3.lang.Object"/>
+  <method id="method:jsxsupermix" idfk="method:jsxsupermix" inherited="1" name="jsxsupermix" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:setInstanceOf" idfk="method:setInstanceOf" inherited="1" name="setInstanceOf" source="jsx3.lang.Object"/>
+  <method id="method:toString" idfk="method:toString" inherited="1" name="toString" source="jsx3.lang.Object"/>
+</class>

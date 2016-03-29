@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface abstract="1" access="public" id="class:jsx3.xml.CDF" name="jsx3.xml.CDF" package="jsx3.xml" shortname="CDF">
+  <text>Mixin interface that provides methods for accessing and manipulating an XML document in CDF schema.
+<p/>
+Classes that implement this interface must also define a <code>getXML()</code> method. This interface uses
+that method to access the XML document for which it provides a CDF interface.
+ </text>
+  <implementor id="implementor:0" loaded="1" name="jsx3.chart.AreaChart"/>
+  <implementor id="implementor:1" loaded="1" name="jsx3.chart.BCChart"/>
+  <implementor id="implementor:2" loaded="1" name="jsx3.chart.BarChart"/>
+  <implementor id="implementor:3" loaded="1" name="jsx3.chart.CartesianChart"/>
+  <implementor id="implementor:4" loaded="1" name="jsx3.chart.Chart"/>
+  <implementor id="implementor:5" loaded="1" name="jsx3.chart.ColumnChart"/>
+  <implementor id="implementor:6" loaded="1" name="jsx3.chart.LineChart"/>
+  <implementor id="implementor:7" loaded="1" name="jsx3.chart.PieChart"/>
+  <implementor id="implementor:8" loaded="1" name="jsx3.chart.PlotChart"/>
+  <implementor id="implementor:9" loaded="1" name="jsx3.chart.RadialChart"/>
+  <implementor id="implementor:10" loaded="1" name="jsx3.gui.CDF"/>
+  <implementor id="implementor:11" loaded="1" name="jsx3.gui.Grid"/>
+  <implementor id="implementor:12" loaded="1" name="jsx3.gui.List"/>
+  <implementor id="implementor:13" loaded="1" name="jsx3.gui.Matrix"/>
+  <implementor id="implementor:14" loaded="1" name="jsx3.gui.Menu"/>
+  <implementor id="implementor:15" loaded="1" name="jsx3.gui.NativeSelect"/>
+  <implementor id="implementor:16" loaded="1" name="jsx3.gui.Select"/>
+  <implementor id="implementor:17" loaded="1" name="jsx3.gui.Table"/>
+  <implementor id="implementor:18" loaded="1" name="jsx3.gui.Tree"/>
+  <implementor id="implementor:19" loaded="1" name="jsx3.xml.CDF.Document"/>
+  <implementor id="implementor:20" loaded="1" name="jsx3.xml.DojoDataStore"/>
+  <nested access="public" id="nested:jsx3.xml.CDF.Document" loaded="1" name="jsx3.xml.CDF.Document" shortname="CDF.Document" type="class">
+    <text>A subclass of <code>jsx3.xml.Document</code> that implements the CDF interface.</text>
+  </nested>
+  <field access="public" class="jsx3.xml.CDF" deprecated="1" final="1" fullname="jsx3.xml.CDF.ATTR_DISABLED" id="sfield:ATTR_DISABLED" name="ATTR_DISABLED" static="1" value="&quot;jsxdisabled&quot;">
+    <type link="1" name="String"/>
+  </field>
+  <field access="public" class="jsx3.xml.CDF" deprecated="1" final="1" fullname="jsx3.xml.CDF.ATTR_EXECUTE" id="sfield:ATTR_EXECUTE" name="ATTR_EXECUTE" static="1" value="&quot;jsxexecute&quot;">
+    <type link="1" name="String"/>
+  </field>
+  <field access="public" class="jsx3.xml.CDF" deprecated="1" final="1" fullname="jsx3.xml.CDF.ATTR_ID" id="sfield:ATTR_ID" name="ATTR_ID" static="1" value="&quot;jsxid&quot;">
+    <type link="1" name="String"/>
+  </field>
+  <field access="public" class="jsx3.xml.CDF" deprecated="1" final="1" fullname="jsx3.xml.CDF.ATTR_IMG" id="sfield:ATTR_IMG" name="ATTR_IMG" static="1" value="&quot;jsximg&quot;">
+    <type link="1" name="String"/>
+  </field>
+  <field access="public" class="jsx3.xml.CDF" deprecated="1" final="1" fullname="jsx3.xml.CDF.ATTR_KEYCODE" id="sfield:ATTR_KEYCODE" name="ATTR_KEYCODE" static="1" value="&quot;jsxkeycode&quot;">
+    <type link="1" name="String"/>
+  </field>
+  <field access="public" class="jsx3.xml.CDF" deprecated="1" final="1" fullname="jsx3.xml.CDF.ATTR_SELECTED" id="sfield:ATTR_SELECTED" name="ATTR_SELECTED" static="1" value="&quot;jsxselected&quot;">
+    <type link="1" name="String"/>
+  </field>
+  <field access="public" class="jsx3.xml.CDF" deprecated="1" final="1" fullname="jsx3.xml.CDF.ATTR_TEXT" id="sfield:ATTR_TEXT" name="ATTR_TEXT" static="1" value="&quot;jsxtext&quot;">
+    <type link="1" name="String"/>
+  </field>
+  <field access="public" class="jsx3.xml.CDF" deprecated="1" final="1" fullname="jsx3.xml.CDF.ATTR_TIP" id="sfield:ATTR_TIP" name="ATTR_TIP" static="1" value="&quot;jsxtip&quot;">
+    <type link="1" name="String"/>
+  </field>
+  <field access="public" class="jsx3.xml.CDF" deprecated="1" final="1" fullname="jsx3.xml.CDF.ATTR_UNSELECTABLE" id="sfield:ATTR_UNSELECTABLE" name="ATTR_UNSELECTABLE" static="1" value="&quot;jsxunselectable&quot;">
+    <type link="1" name="String"/>
+  </field>
+  <field access="public" class="jsx3.xml.CDF" final="1" fullname="jsx3.xml.CDF.DELETE" id="sfield:DELETE" name="DELETE" static="1" value="0">
+    <type class="Number" link="1" name="int"/>
+  </field>
+  <field access="public" class="jsx3.xml.CDF" deprecated="1" final="1" fullname="jsx3.xml.CDF.ELEM_RECORD" id="sfield:ELEM_RECORD" name="ELEM_RECORD" static="1" value="&quot;record&quot;">
+    <type link="1" name="String"/>
+  </field>
+  <field access="public" class="jsx3.xml.CDF" deprecated="1" final="1" fullname="jsx3.xml.CDF.ELEM_ROOT" id="sfield:ELEM_ROOT" name="ELEM_ROOT" static="1" value="&quot;data&quot;">
+    <type link="1" name="String"/>
+  </field>
+  <field access="public" class="jsx3.xml.CDF" final="1" fullname="jsx3.xml.CDF.INSERT" id="sfield:INSERT" name="INSERT" static="1" value="1">
+    <type class="Number" link="1" name="int"/>
+  </field>
+  <field access="public" class="jsx3.xml.CDF" final="1" fullname="jsx3.xml.CDF.INSERTBEFORE" id="sfield:INSERTBEFORE" name="INSERTBEFORE" static="1" value="3">
+    <type class="Number" link="1" name="int"/>
+  </field>
+  <field access="public" class="jsx3.xml.CDF" final="1" fullname="jsx3.xml.CDF.UPDATE" id="sfield:UPDATE" name="UPDATE" static="1" value="2">
+    <type class="Number" link="1" name="int"/>
+  </field>
+  <method access="public" id="method:adoptRecord" name="adoptRecord">
+    <param name="strSourceId" text="&lt;span style=&quot;text-decoration: line-through;&quot;&gt;either the id of the source object or the&lt;/span&gt; source object itself.">
+      <type link="1" name="String"/>
+      <type link="1" name="jsx3.xml.CDF"/>
+    </param>
+    <param name="strRecordId" text="the &lt;code&gt;jsxid&lt;/code&gt; attribute of the data record in the source object to transfer.">
+      <type link="1" name="String"/>
+    </param>
+    <param name="strParentRecordId" text="the unique &lt;code&gt;jsxid&lt;/code&gt; of an existing record. If this optional parameter&#10;   is provided, the adopted record will be added as a child of this record. Otherwise, the adopted record will&#10;   be added to the root &lt;code&gt;data&lt;/code&gt; element.">
+      <type link="1" name="String"/>
+    </param>
+    <param name="bRedraw" text="forces suppression of the insert event">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <return text="the adopted record.&#10;   ">
+      <type link="1" name="jsx3.xml.Entity"/>
+    </return>
+    <text>Transfers a CDF record from another object to this object. If no XML data source exists
+yet for this object, an empty one is created before adding the new record. This method always updates the
+on-screen view of both the source and destination objects.
+<p/>
+This method fails quietly if any of the following conditions apply:
+<ul>
+<li>there is no object with id equal to <code>strSourceId</code>
+        </li>
+<li>there is no record in the source object with jsxid equal to <code>strRecordId</code>
+        </li>
+<li>
+          <code>strParentRecordId</code> is specified and there is no record in this object with
+   jsxid equal to <code>strParentRecordId</code>
+        </li>
+<li>the this object already has a record with jsxid equal to the record to adopt</li>
+</ul>
+    </text>
+  </method>
+  <method access="public" id="method:adoptRecordBefore" name="adoptRecordBefore">
+    <param name="strSourceId" text="&lt;span style=&quot;text-decoration: line-through;&quot;&gt;either the id of the source object or the&lt;/span&gt; source object itself.">
+      <type link="1" name="String"/>
+      <type link="1" name="jsx3.xml.CDF"/>
+    </param>
+    <param name="strRecordId" text="the &lt;code&gt;jsxid&lt;/code&gt; attribute of the data record in the source object to transfer.">
+      <type link="1" name="String"/>
+    </param>
+    <param name="strSiblingRecordId" text="the unique &lt;code&gt;jsxid&lt;/code&gt; of an existing record in front of&#10;which the record identified by strSourceId will be placed">
+      <type link="1" name="String"/>
+    </param>
+    <param name="bRedraw" text="if &lt;code&gt;true&lt;/code&gt; or &lt;code&gt;null&lt;/code&gt;, the on-screen view of this object is&#10;   immediately updated to reflect the deleted record.">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <return text="the adopted record.&#10;   ">
+      <type link="1" name="jsx3.xml.Entity"/>
+    </return>
+    <text>Equivalent to adoptRecord, except that the to-be relationship is as a previousSibling to the CDF record identified by the parameter, <b>strSiblingRecordId</b>
+<p/>
+This method fails quietly if any of the following conditions apply:
+<ul>
+<li>there is no record with a jsxid equal to <code>strSourceId</code>
+        </li>
+<li>there is no record in the source object with a jsxid equal to <code>strRecordId</code>
+        </li>
+<li>
+          <code>strSiblingRecordId</code> is specified and there is no record in this object with a
+   jsxid equal to <code>strParentRecordId</code>
+        </li>
+<li>this object already has a record with jsxid equal to the record to adopt</li>
+</ul>
+    </text>
+  </method>
+  <method access="public" id="method:convertProperties" name="convertProperties">
+    <param name="objProps" text="the properties repository to query.">
+      <type link="1" name="jsx3.app.Properties"/>
+    </param>
+    <param name="arrProps" text="if provided, these attributes are converted rather than the default set of&#10;   attributes.">
+      <type link="1" name="Array">
+        <type link="1" name="String"/>
+      </type>
+    </param>
+    <param name="bUnion" text="if &lt;code&gt;true&lt;/code&gt;, &lt;code&gt;arrProps&lt;/code&gt; is combined with the default set of&#10;   attributes and those attributes are converted.&#10;   ">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <text>Converts all attributes in this CDF document that are property keys of the form <code>{key}</code> to
+the value of the property.</text>
+  </method>
+  <method access="public" id="method:deleteRecord" name="deleteRecord">
+    <param name="strRecordId" text="the &lt;code&gt;jsxid&lt;/code&gt; attribute of the data record to remove.">
+      <type link="1" name="String"/>
+    </param>
+    <param name="bRedraw" text="if &lt;code&gt;true&lt;/code&gt; or &lt;code&gt;null&lt;/code&gt;, the on-screen view of this object is&#10;   immediately updated to reflect the deleted record.">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <return text="the record removed from the data source or &lt;code&gt;null&lt;/code&gt; if no such record found.&#10;   ">
+      <type link="1" name="jsx3.xml.Entity"/>
+    </return>
+    <text>Removes a record from the XML data source of this object.</text>
+  </method>
+  <method access="public" id="method:deleteRecordProperty" name="deleteRecordProperty">
+    <param name="strRecordId" text="the &lt;code&gt;jsxid&lt;/code&gt; attribute of the data record to modify.">
+      <type link="1" name="String"/>
+    </param>
+    <param name="strPropName" text="the name of the property to remove from the record.">
+      <type link="1" name="String"/>
+    </param>
+    <param name="bRedraw" text="if &lt;code&gt;true&lt;/code&gt; or &lt;code&gt;null&lt;/code&gt;, the on-screen view of this object is&#10;   immediately updated to reflect the deleted property.&#10;   ">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <text>Removes a specific property from a record. If no such record exists in the XML document, this method fails quietly.</text>
+  </method>
+  <method access="public" id="method:getRecord" name="getRecord">
+    <param name="strRecordId" text="the &lt;code&gt;jsxid&lt;/code&gt; attribute of the data record to return.">
+      <type link="1" name="String"/>
+    </param>
+    <return text="the object representation of a CDF node or &lt;code&gt;null&lt;/code&gt; if no such record found.">
+      <type link="1" name="Object">
+        <type link="1" name="String"/>
+        <type link="1" name="String"/>
+      </type>
+    </return>
+    <text>Returns an object containing the attributes of a particular CDF record as property/value pairs. The object returned by this
+method is a copy of the underlying data. Therefore, updates to this object will not affect the underlying data.
+<p/>
+The following two lines of code evaluate to the same value:
+<pre>
+objCDF.getRecord(strId).propName;
+objCDF.getRecordNode(strId).getAttribute("propName");</pre>
+    </text>
+    <see idfk="method:getRecordNode" source="jsx3.xml.CDF">getRecordNode()</see>
+  </method>
+  <method access="public" id="method:getRecordIds" name="getRecordIds">
+    <return text="the array of jsxid.&#10;   ">
+      <type link="1" name="Array">
+        <type link="1" name="String"/>
+      </type>
+    </return>
+    <text>Returns an array containing all CDF IDs (<code>jsxid</code>) of this CDF.</text>
+  </method>
+  <method access="public" id="method:getRecordNode" name="getRecordNode">
+    <param name="strRecordId" text="the &lt;code&gt;jsxid&lt;/code&gt; attribute of the data record to return.">
+      <type link="1" name="String"/>
+    </param>
+    <return text="the record node or &lt;code&gt;null&lt;/code&gt; if none exists with a &lt;code&gt;jsxid&lt;/code&gt;&#10;   attribute equal to &lt;code&gt;strRecordId&lt;/code&gt;.">
+      <type link="1" name="jsx3.xml.Entity"/>
+    </return>
+    <text>Returns a record from the XML data source of this object. This returned value is a handle to the record and
+not a clone. Therefore, any updates made to the returned value with update the XML document of this object.
+To reflect such changes in the on-screen view of this object, call
+<code>redrawRecord(strRecordId, jsx3.xml.CDF.UPDATE);</code> on this object.</text>
+    <see idfk="method:redrawRecord" source="jsx3.xml.CDF">redrawRecord()</see>
+    <see idfk="method:getRecord" source="jsx3.xml.CDF">getRecord()</see>
+  </method>
+  <method access="public" id="method:getSchema" name="getSchema" since="3.9&#10;   ">
+    <return text="">
+      <type link="1" name="jsx3.xml.CDFSchema"/>
+    </return>
+    <text>Returns the schema for this CDF control as set by <code>setSchema()</code>, the first child of this object
+of type <code>CDFSchema</code>, or the default CDF schema.</text>
+  </method>
+  <method access="public" id="method:insertRecord" name="insertRecord">
+    <param name="objRecord" text="a JavaScript object containing property/value pairs that define the&#10;   attributes of the XML entity to create. Note that most classes that implement this interface require that all&#10;   records have an attribute named &lt;code&gt;jsxid&lt;/code&gt; that is unique across all records in the XML document.&#10;   All property values will be treated as strings. Additionally, the following 3 characters are escaped:&#10;   &lt;code&gt;&quot; &amp;gt; &amp;lt;&lt;/code&gt;.">
+      <type link="1" name="Object">
+        <type link="1" name="String"/>
+        <type link="1" name="String"/>
+      </type>
+    </param>
+    <param name="strParentRecordId" text="the unique &lt;code&gt;jsxid&lt;/code&gt; of an existing record. If this optional parameter&#10;   is provided and a record exists with a matching &lt;code&gt;jsxid&lt;/code&gt; attribute, the new record will be added as a child of&#10;   this record. Otherwise, the new record will be added to the root &lt;code&gt;data&lt;/code&gt; element. However, if a&#10;   record already exists with a &lt;code&gt;jsxid&lt;/code&gt; attribute equal to the &lt;code&gt;jsxid&lt;/code&gt; property of&#10;   &lt;code&gt;objRecord&lt;/code&gt;, this parameter will be ignored. In this case &lt;code&gt;adoptRecord()&lt;/code&gt; must be called&#10;   to change the parent of the record.">
+      <type link="1" name="String"/>
+    </param>
+    <param name="bRedraw" text="if &lt;code&gt;true&lt;/code&gt; or &lt;code&gt;null&lt;/code&gt;, the on-screen view of this object is&#10;   immediately updated to reflect the additional record.">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <return text="the newly created or updated entity.">
+      <type link="1" name="jsx3.xml.Entity"/>
+    </return>
+    <text>Inserts a new record into the XML data source of this object. If no XML data source exists
+yet for this object, an empty one is created before adding the new record.
+If a record already exists with an id equal to the <code>jsxid</code> property of <code>objRecord</code>,
+the operation is treated as an update, meaning the existing record is completely removed and a new record with
+the given jsxid is inserted.</text>
+    <see idfk="method:adoptRecord" source="jsx3.xml.CDF">adoptRecord()</see>
+  </method>
+  <method access="public" id="method:insertRecordBefore" name="insertRecordBefore">
+    <param name="objRecord" text="a JavaScript object containing property/value pairs that define the&#10;   attributes of the XML entity to create. Note that most classes that implement this interface require that all&#10;   records have an attribute named &lt;code&gt;jsxid&lt;/code&gt; that is unique across all records in the XML document.&#10;   All property values will be treated as strings. Additionally, the following 3 characters are escaped:&#10;   &lt;code&gt;&quot; &amp;gt; &amp;lt;&lt;/code&gt;.">
+      <type link="1" name="Object">
+        <type link="1" name="String"/>
+        <type link="1" name="String"/>
+      </type>
+    </param>
+    <param name="strSiblingRecordId" text="the unique &lt;code&gt;jsxid&lt;/code&gt; of an existing record before which the new record will be inserted.">
+      <type link="1" name="String"/>
+    </param>
+    <param name="bRedraw" text="if &lt;code&gt;true&lt;/code&gt; or &lt;code&gt;null&lt;/code&gt;, the on-screen view of this object is&#10;   immediately updated to reflect the additional record.">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <return text="the newly created entity.">
+      <type link="1" name="jsx3.xml.Entity"/>
+    </return>
+    <text>Creates a new CDF record and inserts it into the CDF data source of this object, <i>before</i> the record identified by <b>strSiblingRecordId</b>.
+<p/>
+This method fails quietly if any of the following conditions apply:
+<ul>
+<li>there is no existing record with a jsxid equal to <code>strSiblingRecordId</code>
+        </li>
+<li>there is an existing record with jsxid equal to <code>objRecord.jsxid</code>
+        </li>
+</ul>
+    </text>
+    <see idfk="method:adoptRecordBefore" source="jsx3.xml.CDF">adoptRecordBefore()</see>
+  </method>
+  <method access="public" id="method:insertRecordNode" name="insertRecordNode">
+    <param name="objRecordNode" text="an XML element of name &lt;code&gt;record&lt;/code&gt;. Note that most classes that&#10;   implement this interface require that all records have an attribute named &lt;code&gt;jsxid&lt;/code&gt; that is unique&#10;   across all records in the XML document.">
+      <type link="1" name="jsx3.xml.Entity"/>
+    </param>
+    <param name="strParentRecordId" text="the unique &lt;code&gt;jsxid&lt;/code&gt; of an existing record. If this optional parameter&#10;   is provided and a record exists with a matching &lt;code&gt;jsxid&lt;/code&gt; attribute, the new record will be added as a child of&#10;   this record. Otherwise, the new record will be added to the root &lt;code&gt;data&lt;/code&gt; element.">
+      <type link="1" name="String"/>
+    </param>
+    <param name="bRedraw" text="if &lt;code&gt;true&lt;/code&gt; or &lt;code&gt;null&lt;/code&gt;, the on-screen view of this object is&#10;   immediately updated to reflect the additional record.">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <text>Inserts a new record into the XML data source of this object. This method is the same as
+<code>insertRecord()</code> except that its first parameter is of type <code>jsx3.xml.Entity</code> rather than
+<code>Object</code>.</text>
+    <see idfk="method:insertRecord" source="jsx3.xml.CDF">insertRecord()</see>
+  </method>
+  <method access="public" id="method:insertRecordProperty" name="insertRecordProperty">
+    <param name="strRecordId" text="the &lt;code&gt;jsxid&lt;/code&gt; attribute of the data record to modify.">
+      <type link="1" name="String"/>
+    </param>
+    <param name="strPropName" text="the name of the property to insert into the record.">
+      <type link="1" name="String"/>
+    </param>
+    <param name="strPropValue" text="the value of the property to insert.">
+      <type link="1" name="String"/>
+    </param>
+    <param name="bRedraw" text="if &lt;code&gt;true&lt;/code&gt; or &lt;code&gt;null&lt;/code&gt;, the on-screen view of this object is&#10;   immediately updated to reflect the inserted property.">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <return text="this object.&#10;   ">
+      <type link="1" name="jsx3.xml.CDF"/>
+    </return>
+    <text>Inserts a new property into an existing record with <code>jsxid</code> equal to <code>strRecordId</code>.
+If the property already exists, the existing property value will be updated. If no such record exists
+in the XML document, this method fails quietly.</text>
+  </method>
+  <method abstract="1" access="public" id="method:redrawRecord" name="redrawRecord">
+    <param name="strRecordId" text="the &lt;code&gt;jsxid&lt;/code&gt; attribute of the data record to redraw.">
+      <type link="1" name="String"/>
+    </param>
+    <param name="intAction" text="&lt;code&gt;INSERT&lt;/code&gt;, &lt;code&gt;UPDATE&lt;/code&gt;, or &lt;code&gt;DELETE&lt;/code&gt;.">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <text>An abstract method that must be implemented by any class that implements this interface. Implementations of this
+method should redraw the specified record in the on-screen view.</text>
+    <see idfk="sfield:INSERT" source="jsx3.xml.CDF">INSERT</see>
+    <see idfk="sfield:UPDATE" source="jsx3.xml.CDF">UPDATE</see>
+    <see idfk="sfield:DELETE" source="jsx3.xml.CDF">DELETE</see>
+  </method>
+  <method access="public" deprecated="1" id="method:reloadFromSource" name="reloadFromSource">
+    <param name="bSystem" text="if true, the document will be removed even if this is a system-owned document">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <return text="jsx3.xml.Document instance">
+      <type link="1" name="jsx3.xml.Document"/>
+    </return>
+    <text>Removes this object's existing document from the cache and reloads the document from its original source.
+This method is different from the method <code>resetData()</code> in that this method does not reset the XML
+document of this object to an empty CDF document.</text>
+    <deprecated>use &lt;code&gt;jsx3.xml.Cacheable.resetXmlCacheData()&lt;/code&gt; instead</deprecated>
+    <see idfk="method:resetData" source="jsx3.xml.CDF">resetData()</see>
+    <see idfk="method:resetXmlCacheData" source="jsx3.xml.Cacheable">jsx3.xml.Cacheable.resetXmlCacheData()</see>
+  </method>
+  <method access="public" deprecated="1" id="method:resetData" name="resetData">
+    <param name="bRepaint" text="if &lt;code&gt;true&lt;/code&gt; or &lt;code&gt;null&lt;/code&gt;, the on-screen view of this object is&#10;   immediately updated to reflect the inserted property.">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <text>Resets the XML of this control to the value returned by <code>CDF.newDocument()</code> and places the document
+in the server cache.</text>
+    <deprecated>Use &lt;code&gt;jsx3.xml.Cacheable.clearXmlData()&lt;/code&gt; instead.</deprecated>
+    <see idfk="smethod:newDocument" source="jsx3.xml.CDF">newDocument()</see>
+    <see idfk="method:clearXmlData" source="jsx3.xml.Cacheable">jsx3.xml.Cacheable.clearXmlData()</see>
+  </method>
+  <method access="public" id="method:setSchema" name="setSchema" since="3.9&#10;   ">
+    <param name="objSchema" text="">
+      <type link="1" name="jsx3.xml.CDFSchema"/>
+    </param>
+    <text>Sets the schema for this CDF control.</text>
+  </method>
+  <method access="public" id="smethod:getKey" name="getKey" static="1">
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>Generates a unique <code>jsxid</code> attribute for a CDF record. This method can be used for new CDF records
+when there is no natural unique key to assign to them.</text>
+  </method>
+  <method access="public" deprecated="1" id="smethod:getVersion" name="getVersion" static="1">
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>Returns the release/build for the class (i.e., "2.2.00").</text>
+  </method>
+  <method access="public" id="smethod:newDocument" name="newDocument" static="1">
+    <return text="the newly created document.&#10;   ">
+      <type link="1" name="jsx3.xml.Document"/>
+    </return>
+    <text>Creates a new XML document that represents an empty CDF document. The XML source of the new document
+is <code>&lt;data jsxid="jsxroot"/&gt;</code>.</text>
+  </method>
+</interface>

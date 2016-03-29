@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class access="public" id="class:jsx3.xml.Document" name="jsx3.xml.Document" package="jsx3.xml" shortname="Document">
+  <text>Wrapper of the native browser XML document class. Developers wishing to create/modify XML documents should use
+this class to access common XML parser methods (adding attributes and nodes, transformations, etc).
+<p/>
+When querying an instance of this class (with e.g. <code>selectSingleNode</code>, <code>selectNodes</code>,
+<code>getChildNodes</code>, etc.), the node context will always be the root node (documentElement) and
+<b>not</b> the parser instance (ownerDocument). Therefore, all queries are assumed to begin at the root, meaning
+querying an instance of this class for the root node (assuming its name is "Price") would require a query such
+as <code>"."</code> or <code>"/Price"</code>, not <code>"Price"</code>.
+<p/>
+Note that several methods of this class fail quietly when an error occurs with the wrapped native browser XML
+classes. Methods that are documented as failing quietly should always be followed by a call to
+<code>hasError()</code> to ensure that no error has occurred.</text>
+  <see>#hasError()</see>
+  <superclass id="super:0" loaded="1" name="Object"/>
+  <superclass id="super:1" loaded="1" name="jsx3.lang.Object"/>
+  <superclass direct="1" id="super:2" loaded="1" name="jsx3.xml.Entity"/>
+  <implements direct="1" id="implements:0" loaded="1" name="jsx3.util.EventDispatcher"/>
+  <subclass id="sub:0" loaded="1" name="jsx3.xml.CDF.Document"/>
+  <subclass id="sub:1" loaded="1" name="jsx3.xml.XslDocument"/>
+  <constructor access="public" id="method:init" name="init">
+    <param name="objDoc" text="if an &lt;code&gt;Entity&lt;/code&gt; then clone the node as a new document.&#10;    Otherwise, the native browser document object (optional).&#10;   ">
+      <type link="1" name="Object"/>
+      <type link="1" name="jsx3.xml.Entity"/>
+    </param>
+    <text>The instance initializer. If an error occurs while instantiating the native browser XML document class,
+this method sets the error property of this document and returns quietly.</text>
+  </constructor>
+  <field access="public" class="jsx3.xml.Document" final="1" fullname="jsx3.xml.Document.ON_ERROR" id="sfield:ON_ERROR" name="ON_ERROR" static="1" value="&quot;error&quot;">
+    <type link="1" name="String"/>
+    <text> Event type published when an error occurs during the asynchronous loading of a document.</text>
+  </field>
+  <field access="public" class="jsx3.xml.Document" final="1" fullname="jsx3.xml.Document.ON_RESPONSE" id="sfield:ON_RESPONSE" name="ON_RESPONSE" static="1" value="&quot;response&quot;">
+    <type link="1" name="String"/>
+    <text> Event type published when an asynchronous load operation has completed successfully.</text>
+  </field>
+  <field access="public" class="jsx3.xml.Document" final="1" fullname="jsx3.xml.Document.ON_TIMEOUT" id="sfield:ON_TIMEOUT" name="ON_TIMEOUT" static="1" value="&quot;timeout&quot;">
+    <type link="1" name="String"/>
+    <text> Event type published when an asynchronous load times out before loading.</text>
+  </field>
+  <field access="public" class="jsx3.xml.Document" final="1" fullname="jsx3.xml.Document.SEARCHABLE_NAMESPACE" id="sfield:SEARCHABLE_NAMESPACE" name="SEARCHABLE_NAMESPACE" static="1" value="&quot;http://xsd.tns.tibco.com/gi/cxf/2006&quot;">
+    <type link="1" name="String"/>
+    <text> Namespace to use when querying against the namespace axis in firefox</text>
+  </field>
+  <field access="public" class="jsx3.xml.Document" final="1" fullname="jsx3.xml.Document.SEARCHABLE_PREFIX" id="sfield:SEARCHABLE_PREFIX" name="SEARCHABLE_PREFIX" static="1" value="&quot;jsx_xmlns&quot;">
+    <type link="1" name="String"/>
+    <text> Prefix to use when querying against the namespace axis in firefox</text>
+  </field>
+  <method access="public" id="method:abort" name="abort" since="3.9&#10;   ">
+    <text>If this is a document that is currently loading asynchronously, this method will abort the request. This method
+also resets the error state of this document.
+</text>
+  </method>
+  <method access="public" id="method:cloneDocument" name="cloneDocument">
+    <return text="newly cloned MSXML Node object wrapped in a jsx3.xml.Document instance&#10;   ">
+      <type link="1" name="jsx3.xml.Document"/>
+    </return>
+    <text>Creates a new node that is an exact clone of this node; returns the newly cloned node wrapped in a jsx3.xml.Entity instance</text>
+  </method>
+  <method access="public" id="method:createDocumentElement" name="createDocumentElement">
+    <param name="strNodeName" text="node name for the root node">
+      <type link="1" name="String"/>
+    </param>
+    <param name="strNSURI" text="namespace (optional). For example, &quot;http:/someURN.com/&quot;. Note that if this parameter is used, @strNodeName can be optionally prefixed (i.e., abc:myRoot) to create an explicit namespace prefix.">
+      <type link="1" name="String"/>
+    </param>
+    <return text="reference to the new node wrapped in a jsx3.xml.Entity instance&#10;   ">
+      <type link="1" name="jsx3.xml.Entity"/>
+    </return>
+    <text>Creates a new root node on an empty document.
+<p>Usage:</p>
+<pre>
+var objDoc = new jsx3.xml.Document();
+objDoc.createDocumentElement("myRoot");
+</pre>
+    </text>
+  </method>
+  <method access="public" id="method:createNamespaceAxis" name="createNamespaceAxis">
+    <return text="prefix used to represent the xmlns.  By default the return will be &lt;b&gt;jsx_xmlns&lt;/b&gt;. However, if this prefix is&#10;already being used by the document instance (i.e., &lt;code&gt;xmlns:jsx_xmlns=&quot;?&quot;&lt;/code&gt;), the prefix will be&#10;incremented as follows: jsx_xmlns0, jsx_xmlns1, jsx_xmlns2, etc, until a unique prefix is found.">
+      <type link="1" name="String"/>
+    </return>
+    <text>The Firefox implementation of the XSLT specification does not implement a searchable <b>namespace</b> axis. To overcome this limitation,
+this method can be called to create a searchable equivalent that is part of the <b>attribute</b> axis. After XML content has been loaded, call this method before
+calling any other methods on the Document instance in order to ensure proper functioning of subsequent calls. The document
+can then be queried, using valid XPath syntax to discover the declared namespaces. However, instead of using <b>namespace::xsd</b>, the
+relevant query would be <b>attribute::jsx_xmlns:xsd</b>, where jsx_xmlns:xsd would resolve to the
+universal name, <b>{http://xsd.tns.tibco.com/gi/cxf/2006}:xsd</b>. Following this call with <code>getDeclaredNamespaces</code>
+is useful to resolve the prefix actually used, providing a reverse-lookup to resolve the actual prefix being used.
+For example, assume <b>objMap</b> is the return object when calling getDeclaredNamespaces. In such a case, the following
+query can be used to locate the URI for a given namespace prefix, even though Firefox does not support such a construct:
+<p/>
+<pre>
+var objMap = someDoc.getDeclaredNamespaces();
+var myXpathQuery = "ancestor-or-self::*[attribute::" +
+  objMap[jsx3.xml.Document.SEARCHABLE_NAMESPACE] +  ":xsd]/attribute::" +
+  objMap[jsx3.xml.Document.SEARCHABLE_NAMESPACE] + ":xsd";
+var objNode = someNode.selectSingleNode(myXpathQuery,objMap);
+</pre>
+    </text>
+    <see>getDeclaredNamespaces</see>
+  </method>
+  <method access="public" id="method:createProcessingInstruction" name="createProcessingInstruction">
+    <param name="strTarget" text="String that specifies the target part of the processing instruction. This supplies the nodeName property of the new object.">
+      <type link="1" name="String"/>
+    </param>
+    <param name="strData" text="String that specifies the rest of the processing instruction preceding the closing ?&gt; characters. This supplies the nodeValue property for the new object.&#10;   ">
+      <type link="1" name="String"/>
+    </param>
+    <text>Creates a processing instruction node that containing the target and data information. Note that you cannot specify a namespace with this method.
+<p>Usage:</p>
+<pre>
+[document].createProcessingInstruction("xml","version=\"1.0\" encoding=\"UTF-8\"");
+[document].createDocumentElement("myRoot");
+</pre>
+    </text>
+  </method>
+  <method access="public" id="method:getAsync" name="getAsync">
+    <param name="strName"/>
+    <return text="">
+      <type class="Boolean" link="1" name="boolean"/>
+    </return>
+    <text>Returns whether this document loads asynchronously.</text>
+  </method>
+  <method access="public" id="method:getDeclaredNamespaces" name="getDeclaredNamespaces">
+    <param name="objMap" text="Optional. should follow the format &lt;code&gt;{prefix1:1,prefix2:1}&lt;/code&gt;. If passed, the returned Object will resolve to any matched prefix, while using arbitrary sequential prefixes (jsx1, jsx2, etc) for all other uris.">
+      <type link="1" name="Object"/>
+    </param>
+    <return text="">
+      <type link="1" name="Object"/>
+    </return>
+    <text>Returns a map of all implemented namespaces in the following format: {some_uri:"jsx1",some_other_uri,"jsx2",another_uri:"jsx3"}.
+<br/>
+The returned object map can then be used to resolve the qualified name (QName) for the nodes in a given query via a reverse lookup.
+For example:
+<pre>
+//open an XML Document (just use one of the sample prototypes that ships with Builder)
+var objXML = new jsx3.xml.Document();
+objXML.load("GI_Builder/prototypes/Block/Text.xml");
+//get an object map of all known selection namespaces
+var objMap = objXML.getDeclaredNamespaces();
+//construct a qualified query (Note that all nodes in a GI serialization file belong to the namespace, 'urn:tibco.com/v3.0')
+var myQualifiedQuery = "//" + objMap["urn:tibco.com/v3.0"] + ":object";
+//query the document for the given node.
+var objNode = objXML.selectSingleNode(myQualifiedQuery,objMap);
+//alert the return
+alert(objNode);
+</pre>
+    </text>
+  </method>
+  <method access="public" id="method:getNativeDocument" name="getNativeDocument">
+    <return text="">
+      <type link="1" name="Object"/>
+    </return>
+    <text>Returns the native XML parser</text>
+  </method>
+  <method access="public" deprecated="1" id="method:getResolveExternals" name="getResolveExternals" since="3.2">
+    <return text="">
+      <type class="Boolean" link="1" name="boolean"/>
+    </return>
+    <text>Returns whether or not the parser should resolve externally referenced entities. The default setting is false;</text>
+    <deprecated>IE-only.
+   </deprecated>
+  </method>
+  <method access="public" deprecated="1" id="method:getSelectionLanguage" name="getSelectionLanguage">
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>Gets the selection language to use for selection queries (i.e., selectSingleNode/selectNodes); The default is XSLPattern;</text>
+    <deprecated>This method is only implemented on Internet Explorer. &lt;code&gt;XPath&lt;/code&gt; is the only supported value.
+   </deprecated>
+  </method>
+  <method access="public" id="method:getSelectionNamespaces" name="getSelectionNamespaces">
+    <param name="strName"/>
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>Gets a list of namespace prefixes and their associated URIs. This allows any code to generically prefix name-space qualified nodes and still get the correct selection result</text>
+  </method>
+  <method access="public" id="method:getSourceURL" name="getSourceURL" since="3.2&#10;   ">
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+  </method>
+  <method access="public" deprecated="1" id="method:getValidateOnParse" name="getValidateOnParse" since="3.2">
+    <return text="">
+      <type class="Boolean" link="1" name="boolean"/>
+    </return>
+    <text>Returns whether or not the parser should validate the XML content during the initial parse. The default setting is false;</text>
+    <deprecated>IE-only.
+   </deprecated>
+  </method>
+  <method access="public" id="method:getXmlEncoding" name="getXmlEncoding">
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+  </method>
+  <method access="public" id="method:getXmlStandalone" name="getXmlStandalone">
+    <return text="">
+      <type class="Boolean" link="1" name="boolean"/>
+    </return>
+  </method>
+  <method access="public" id="method:getXmlVersion" name="getXmlVersion">
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+  </method>
+  <method access="public" id="method:load" name="load">
+    <param name="strURL" text="either a relative or absolute URL pointing to an XML document to load.">
+      <type link="1" name="String"/>
+      <type link="1" name="jsx3.net.URI"/>
+    </param>
+    <param name="intTimeout" text="the number of milliseconds to wait before timing out. This parameter is only relevant&#10;  if this document is loading XML asynchronously. A zero or &lt;code&gt;null&lt;/code&gt; value will cause this operation&#10;  to wait forever.">
+      <type class="Number" link="1" name="int"/>
+    </param>
+    <return text="this object.">
+      <type link="1" name="jsx3.xml.Document"/>
+    </return>
+    <text>Loads an XML document at the URL specified by the <code>strURL</code> parameter. If an error occurs while
+loading the XML document, this method sets the error property of this document and returns quietly. If this
+document loads synchronously, the results of the load will be available immediately after the call to this
+method. Otherwise, this document publishes events through the <code>EventDispatcher</code> interface to notify
+the client that loading has completed.</text>
+    <see source="jsx3.util.EventDispatcher">jsx3.util.EventDispatcher</see>
+  </method>
+  <method access="public" id="method:loadXML" name="loadXML">
+    <param name="strXML" text="an XML document as string. Note that if this document contains an encoding attribute in&#10;   its initial declaration (such as encoding=&quot;UTF-8&quot;) it must correspond to the encoding of the actual string,&#10;   &lt;code&gt;strXML&lt;/code&gt;. If, for example, &lt;code&gt;strXML&lt;/code&gt; is in unicode format, explicitly passing the UTF-8&#10;   encoding attribute will cause the load to fail, as the byte order will cause the parser to look for the&#10;   UTF-16 attribute.">
+      <type link="1" name="String"/>
+    </param>
+    <return text="this object.&#10;   ">
+      <type link="1" name="jsx3.xml.Document"/>
+    </return>
+    <text>Loads an XML document from a string containing the XML source. If an error occurs while
+loading the XML document, this method sets the error property of this document and returns quietly. Loading
+an XML document from a string always happens synchronously regardless of the value of the <code>async</code>
+property of this document.</text>
+  </method>
+  <method access="public" id="method:serialize" name="serialize">
+    <param name="strVersion" text="">
+      <type class="Boolean" link="1" name="boolean"/>
+      <type link="1" name="String"/>
+    </param>
+    <param name="strEncoding" text="">
+      <type class="Boolean" link="1" name="boolean"/>
+      <type link="1" name="String"/>
+    </param>
+    <param name="bStandalone" text="">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+  </method>
+  <method access="public" id="method:setAsync" name="setAsync">
+    <param name="bAsync" text="if &lt;code&gt;true&lt;/code&gt; the document loads asynchronously.">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <return text="this object.">
+      <type link="1" name="jsx3.xml.Document"/>
+    </return>
+    <text>Sets whether this document loads asynchronously. The default is to load synchronously. If this document loads
+asynchronously, it publishes the events <code>ON_RESPONSE</code>, <code>ON_ERROR</code>, and
+<code>ON_TIMEOUT</code> to notify the client that loading has finished.</text>
+    <see idfk="sfield:ON_RESPONSE" source="jsx3.xml.Document">ON_RESPONSE</see>
+    <see idfk="sfield:ON_ERROR" source="jsx3.xml.Document">ON_ERROR</see>
+    <see idfk="sfield:ON_TIMEOUT" source="jsx3.xml.Document">ON_TIMEOUT</see>
+  </method>
+  <method access="public" deprecated="1" id="method:setResolveExternals" name="setResolveExternals" since="3.2">
+    <param name="bResolve" text="">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <text>Sets whether or not the parser should resolve externally referenced entities.</text>
+    <deprecated>IE-only.
+   </deprecated>
+  </method>
+  <method access="public" deprecated="1" id="method:setSelectionLanguage" name="setSelectionLanguage">
+    <param name="strLanguage" text="one of the strings: &lt;code&gt;XSLPattern&lt;/code&gt;, &lt;code&gt;XPath&lt;/code&gt;">
+      <type link="1" name="String"/>
+    </param>
+    <return text="reference to this">
+      <type link="1" name="jsx3.xml.Document"/>
+    </return>
+    <text>Sets the selection language to use for selection queries (i.e., selectSingleNode/selectNodes); The default is XSLPattern;</text>
+    <deprecated>This method is only implemented on Internet Explorer. &lt;code&gt;XPath&lt;/code&gt; is the only supported value.
+   </deprecated>
+  </method>
+  <method access="public" id="method:setSelectionNamespaces" name="setSelectionNamespaces">
+    <param name="declaration" text="Relevant selection namespace(s) in Object format. For example: &lt;code&gt;{some_uri:&quot;jsx1&quot;,some_other_uri,&quot;jsx2&quot;}&lt;/code&gt;&#10;                             or in String format. For example: &lt;code&gt;&quot;xmlns:jsx1='some_uri' xmlns:jsx2='some_other_uri'&quot;&lt;/code&gt;">
+      <type link="1" name="Object"/>
+      <type link="1" name="String"/>
+    </param>
+    <return text="reference to this&#10;   ">
+      <type link="1" name="jsx3.xml.Document"/>
+    </return>
+    <text>Sets a list of namespace prefixes and their associated URIs. This allows any code to generically prefix name-space qualified nodes and still get the correct selection result</text>
+  </method>
+  <method access="public" deprecated="1" id="method:setValidateOnParse" name="setValidateOnParse" since="3.2">
+    <param name="bValidate" text="">
+      <type class="Boolean" link="1" name="boolean"/>
+    </param>
+    <text>Sets whether or not the parser should validate the XML content during the initial parse.</text>
+    <deprecated>IE-only.
+   </deprecated>
+  </method>
+  <method access="public" deprecated="1" id="smethod:getVersion" name="getVersion" static="1">
+    <return text="">
+      <type link="1" name="String"/>
+    </return>
+    <text>gets the release/build for the class (i.e., "2.2.00")</text>
+  </method>
+  <method id="method:publish" idfk="method:publish" inherited="1" name="publish" source="jsx3.util.EventDispatcher"/>
+  <method id="method:subscribe" idfk="method:subscribe" inherited="1" name="subscribe" source="jsx3.util.EventDispatcher"/>
+  <method id="method:unsubscribe" idfk="method:unsubscribe" inherited="1" name="unsubscribe" source="jsx3.util.EventDispatcher"/>
+  <method id="method:unsubscribeAll" idfk="method:unsubscribeAll" inherited="1" name="unsubscribeAll" source="jsx3.util.EventDispatcher"/>
+  <method id="method:appendChild" idfk="method:appendChild" inherited="1" name="appendChild" source="jsx3.xml.Entity"/>
+  <method id="method:cloneNode" idfk="method:cloneNode" inherited="1" name="cloneNode" source="jsx3.xml.Entity"/>
+  <method id="method:createNode" idfk="method:createNode" inherited="1" name="createNode" source="jsx3.xml.Entity"/>
+  <method id="method:equals" idfk="method:equals" inherited="1" name="equals" source="jsx3.xml.Entity"/>
+  <method id="method:getAttribute" idfk="method:getAttribute" inherited="1" name="getAttribute" source="jsx3.xml.Entity"/>
+  <method id="method:getAttributeNames" idfk="method:getAttributeNames" inherited="1" name="getAttributeNames" source="jsx3.xml.Entity"/>
+  <method id="method:getAttributeNode" idfk="method:getAttributeNode" inherited="1" name="getAttributeNode" source="jsx3.xml.Entity"/>
+  <method id="method:getAttributes" idfk="method:getAttributes" inherited="1" name="getAttributes" source="jsx3.xml.Entity"/>
+  <method id="method:getBaseName" idfk="method:getBaseName" inherited="1" name="getBaseName" source="jsx3.xml.Entity"/>
+  <method id="method:getChildIterator" idfk="method:getChildIterator" inherited="1" name="getChildIterator" source="jsx3.xml.Entity"/>
+  <method id="method:getChildNodes" idfk="method:getChildNodes" inherited="1" name="getChildNodes" source="jsx3.xml.Entity"/>
+  <method id="method:getError" idfk="method:getError" inherited="1" name="getError" source="jsx3.xml.Entity"/>
+  <method id="method:getFirstChild" idfk="method:getFirstChild" inherited="1" name="getFirstChild" source="jsx3.xml.Entity"/>
+  <method id="method:getLastChild" idfk="method:getLastChild" inherited="1" name="getLastChild" source="jsx3.xml.Entity"/>
+  <method id="method:getNamespaceURI" idfk="method:getNamespaceURI" inherited="1" name="getNamespaceURI" source="jsx3.xml.Entity"/>
+  <method id="method:getNative" idfk="method:getNative" inherited="1" name="getNative" source="jsx3.xml.Entity"/>
+  <method id="method:getNextSibling" idfk="method:getNextSibling" inherited="1" name="getNextSibling" source="jsx3.xml.Entity"/>
+  <method id="method:getNodeName" idfk="method:getNodeName" inherited="1" name="getNodeName" source="jsx3.xml.Entity"/>
+  <method id="method:getNodeType" idfk="method:getNodeType" inherited="1" name="getNodeType" source="jsx3.xml.Entity"/>
+  <method id="method:getOwnerDocument" idfk="method:getOwnerDocument" inherited="1" name="getOwnerDocument" source="jsx3.xml.Entity"/>
+  <method id="method:getParent" idfk="method:getParent" inherited="1" name="getParent" source="jsx3.xml.Entity"/>
+  <method id="method:getPrefix" idfk="method:getPrefix" inherited="1" name="getPrefix" source="jsx3.xml.Entity"/>
+  <method id="method:getPreviousSibling" idfk="method:getPreviousSibling" inherited="1" name="getPreviousSibling" source="jsx3.xml.Entity"/>
+  <method id="method:getRootNode" idfk="method:getRootNode" inherited="1" name="getRootNode" source="jsx3.xml.Entity"/>
+  <method id="method:getValue" idfk="method:getValue" inherited="1" name="getValue" source="jsx3.xml.Entity"/>
+  <method deprecated="1" id="method:getXML" idfk="method:getXML" inherited="1" name="getXML" source="jsx3.xml.Entity"/>
+  <method id="method:hasError" idfk="method:hasError" inherited="1" name="hasError" source="jsx3.xml.Entity"/>
+  <method id="method:insertBefore" idfk="method:insertBefore" inherited="1" name="insertBefore" source="jsx3.xml.Entity"/>
+  <method id="method:removeAttribute" idfk="method:removeAttribute" inherited="1" name="removeAttribute" source="jsx3.xml.Entity"/>
+  <method id="method:removeAttributeNode" idfk="method:removeAttributeNode" inherited="1" name="removeAttributeNode" source="jsx3.xml.Entity"/>
+  <method id="method:removeChild" idfk="method:removeChild" inherited="1" name="removeChild" source="jsx3.xml.Entity"/>
+  <method id="method:removeChildren" idfk="method:removeChildren" inherited="1" name="removeChildren" source="jsx3.xml.Entity"/>
+  <method id="method:replaceNode" idfk="method:replaceNode" inherited="1" name="replaceNode" source="jsx3.xml.Entity"/>
+  <method id="method:selectNodeIterator" idfk="method:selectNodeIterator" inherited="1" name="selectNodeIterator" source="jsx3.xml.Entity"/>
+  <method id="method:selectNodes" idfk="method:selectNodes" inherited="1" name="selectNodes" source="jsx3.xml.Entity"/>
+  <method id="method:selectSingleNode" idfk="method:selectSingleNode" inherited="1" name="selectSingleNode" source="jsx3.xml.Entity"/>
+  <method id="method:setAttribute" idfk="method:setAttribute" inherited="1" name="setAttribute" source="jsx3.xml.Entity"/>
+  <method id="method:setAttributeNode" idfk="method:setAttributeNode" inherited="1" name="setAttributeNode" source="jsx3.xml.Entity"/>
+  <method id="method:setValue" idfk="method:setValue" inherited="1" name="setValue" source="jsx3.xml.Entity"/>
+  <method id="method:toString" idfk="method:toString" inherited="1" name="toString" source="jsx3.xml.Entity"/>
+  <method id="method:transformNode" idfk="method:transformNode" inherited="1" name="transformNode" source="jsx3.xml.Entity"/>
+  <method id="method:clone" idfk="method:clone" inherited="1" name="clone" source="jsx3.lang.Object"/>
+  <method id="method:eval" idfk="method:eval" inherited="1" name="eval" source="jsx3.lang.Object"/>
+  <method id="method:getClass" idfk="method:getClass" inherited="1" name="getClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOf" idfk="method:getInstanceOf" inherited="1" name="getInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfClass" idfk="method:getInstanceOfClass" inherited="1" name="getInstanceOfClass" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:getInstanceOfPackage" idfk="method:getInstanceOfPackage" inherited="1" name="getInstanceOfPackage" source="jsx3.lang.Object"/>
+  <method id="method:instanceOf" idfk="method:instanceOf" inherited="1" name="instanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isInstanceOf" idfk="method:isInstanceOf" inherited="1" name="isInstanceOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:isSubclassOf" idfk="method:isSubclassOf" inherited="1" name="isSubclassOf" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:jsxmix" idfk="method:jsxmix" inherited="1" name="jsxmix" source="jsx3.lang.Object"/>
+  <method id="method:jsxsuper" idfk="method:jsxsuper" inherited="1" name="jsxsuper" source="jsx3.lang.Object"/>
+  <method id="method:jsxsupermix" idfk="method:jsxsupermix" inherited="1" name="jsxsupermix" source="jsx3.lang.Object"/>
+  <method deprecated="1" id="method:setInstanceOf" idfk="method:setInstanceOf" inherited="1" name="setInstanceOf" source="jsx3.lang.Object"/>
+</class>

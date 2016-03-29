@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package access="public" id="class:jsx3.xml" name="jsx3.xml">
+  <text>XML related classes.
+ </text>
+  <nested access="public" id="nested:jsx3.xml.CDF.Document" loaded="1" name="jsx3.xml.CDF.Document" shortname="CDF.Document" type="class">
+    <text>A subclass of <code>jsx3.xml.Document</code> that implements the CDF interface.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.xml.CDFSchema" loaded="1" name="jsx3.xml.CDFSchema" shortname="CDFSchema" since="3.9&#10; " type="class">
+    <text>The CDF data schema.</text>
+    <see idfk="method:setSchema" source="jsx3.xml.CDF">jsx3.xml.CDF.setSchema()</see>
+  </nested>
+  <nested access="public" id="nested:jsx3.xml.Document" loaded="1" name="jsx3.xml.Document" shortname="Document" type="class">
+    <text>Wrapper of the native browser XML document class.</text>
+    <see>#hasError()</see>
+  </nested>
+  <nested access="public" id="nested:jsx3.xml.DojoDataStore" loaded="1" name="jsx3.xml.DojoDataStore" shortname="DojoDataStore" type="class">
+    <text>Provides access to Dojo data store through the CDF interface.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.xml.Entity" loaded="1" name="jsx3.xml.Entity" shortname="Entity" type="class">
+    <text>Wrapper of the native browser XML node class.</text>
+  </nested>
+  <nested access="public" deprecated="1" id="nested:jsx3.xml.Processor" loaded="1" name="jsx3.xml.Processor" shortname="Processor" type="class">
+    <text>Wrapper of the native browser XSLT processor.</text>
+    <deprecated>Use &lt;code&gt;jsx3.xml.Template&lt;/code&gt; instead.</deprecated>
+    <see source="jsx3.xml.Template">jsx3.xml.Template</see>
+  </nested>
+  <nested access="public" id="nested:jsx3.xml.Template" loaded="1" name="jsx3.xml.Template" shortname="Template" since="3.4&#10; " type="class">
+    <text>Wrapper of the native browser XSLT processor.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.xml.XslDocument" loaded="1" name="jsx3.xml.XslDocument" shortname="XslDocument" type="class">
+    <text>An extension of <code>jsx3.xml.Document</code> that encapsulates a compiled XSL template.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.xml.CDF" loaded="1" name="jsx3.xml.CDF" shortname="CDF" type="interface">
+    <text>Mixin interface that provides methods for accessing and manipulating an XML document in CDF schema.</text>
+  </nested>
+  <nested access="public" id="nested:jsx3.xml.Cacheable" loaded="1" name="jsx3.xml.Cacheable" shortname="Cacheable" since="3.1&#10; " type="interface">
+    <text>A mixin interface that provides the following capabilities to implementing classes:
+</text>
+  </nested>
+</package>
