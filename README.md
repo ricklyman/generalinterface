@@ -1,8 +1,9 @@
 # General Interface:<br>
-Using Microsoft Windows:<br>
-Download Zip file.<br>
-Unzip contents to a local drive.<br>
-Run GI_Builder.hta.<br>
-Choose a local directory for projects.<br>
-
-
+Version 3.9.1 last updated in 2011<br>
+<br>
+- Using Microsoft Windows:
+- Download Zip file.
+- Unzip contents to a local drive.
+- Run GI_Builder.hta.
+- Choose a local directory for projects.
+<br>
