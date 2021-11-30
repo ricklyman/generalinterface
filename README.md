@@ -1,10 +1,11 @@
 # TIBCO General Interface (GI), Open Source<br>
 Version 3.9.1 last updated in 2012<br>
-<br>
+
+<img src="./generalinterface_logo.png">
+
 General Interface joined the Dojo Foundation in 2009
 - https://www.tibco.com/press-releases/2009/tibco-contributes-general-interface-open-source-community
 - https://dojofoundation.org
-<br>
 
 ### How to run GI
 Using Microsoft Windows:
