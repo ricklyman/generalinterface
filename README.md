@@ -20,6 +20,7 @@ have a quick search on Google Images
 - https://www.google.com/search?q=dojo+general+interface+tibco&source=lnms&tbm=isch&sa=X
 
 ### Offical Documenation
-TIBCO Docs Website: https://docs.tibco.com/products/tibco-general-interface-enterprise-edition-3-9-1
+Detailed Docs: https://docs.tibco.com/products/tibco-general-interface-enterprise-edition-3-9-1 (August 2011)
+TIBCO Docs Website: https://docs.tibco.com/products/tibco-general-interface-enterprise-edition-3-9-2 (March 2014)
 
-> Note: GI is still used and fully supported by TIBCO (last status from end of 2018) 
+> Note: GI is still used and fully supported by TIBCO (last status from end of 2021) 
