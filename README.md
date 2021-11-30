@@ -19,7 +19,7 @@ Using Microsoft Windows:
 have a quick search on Google Images
 - https://www.google.com/search?q=dojo+general+interface+tibco&source=lnms&tbm=isch&sa=X
 
-### Offical Documenation
+### Offical Documentation
 Detailed Docs: https://docs.tibco.com/products/tibco-general-interface-enterprise-edition-3-9-1 (August 2011)
 TIBCO Docs Website: https://docs.tibco.com/products/tibco-general-interface-enterprise-edition-3-9-2 (March 2014)
 
